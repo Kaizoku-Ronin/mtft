@@ -2,13 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "MTFT: Modular Time Field Theory"
-version: 0.4.0
+version: 0.3.0
 date-released: 2026-03-22
 authors:
   - family-names: "Tano"
     given-names: "Roger"
 license: MIT
-repository-code: "https://github.com/Kaizoku-Ronin/mtft"
+repository-code: "https://github.com/rogertano/mtft"
 keywords:
   - modular-forms
   - gauge-theory

@@ -6,7 +6,7 @@ MTFT — Modular Time Field Theory  (v0.3.0)
 weights through lattice gauge theory and experimental verification.
 """
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
