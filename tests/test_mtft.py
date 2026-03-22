@@ -320,3 +320,90 @@ def test_viz_export_plotly():
     data = stiffness_landscape(n_points=10, N_values=(3,))
     exported = export_for_plotly(data)
     assert isinstance(exported["y"], list)
+
+# ── Crypto ───────────────────────────────────────────────────
+
+def test_arithmetic_hash_deterministic():
+    from mtft.crypto import ArithmeticHash
+    h = ArithmeticHash()
+    assert h.hexdigest(b"MTFT") == h.hexdigest(b"MTFT")
+
+def test_arithmetic_hash_avalanche():
+    from mtft.crypto import ArithmeticHash
+    h = ArithmeticHash()
+    av = h.verify_avalanche(b"test message for hash")
+    assert av["bits_changed"] > 30  # significant diffusion
+
+def test_hash_different_inputs():
+    from mtft.crypto import ArithmeticHash
+    h = ArithmeticHash()
+    assert h.hexdigest(b"hello") != h.hexdigest(b"Hello")
+
+def test_burning_ship_prng():
+    from mtft.crypto import BurningShipPRNG
+    prng = BurningShipPRNG(seed=42)
+    vals = [prng.random_float() for _ in range(100)]
+    assert all(0 <= v < 1 for v in vals)
+    assert len(set(vals)) > 90  # should be nearly all unique
+
+def test_sl2z_key_exchange():
+    from mtft.crypto import ModularKeyExchange
+    w = ModularKeyExchange.generate_secret_word(10, seed=7)
+    pub = ModularKeyExchange.public_key(w)
+    # Public key should still be in SL(2,Z): det = 1
+    det = int(pub[0,0]*pub[1,1] - pub[0,1]*pub[1,0])
+    assert det == 1
+
+def test_arithmetic_lattice():
+    from mtft.crypto import ArithmeticLattice
+    lat = ArithmeticLattice(dimension=8, y=0.18)
+    assert lat.shortest_vector_estimate() > 0
+    lwe = lat.generate_lwe_instance(secret_dim=4)
+    assert lwe["A"].shape == (4, 4)
+
+# ── Quantum Computing ────────────────────────────────────────
+
+def test_gell_mann_count():
+    from mtft.quantum import gell_mann_matrices
+    assert len(gell_mann_matrices(2)) == 3   # Pauli matrices
+    assert len(gell_mann_matrices(3)) == 8   # Gell-Mann matrices
+    assert len(gell_mann_matrices(4)) == 15
+
+def test_gell_mann_traceless():
+    from mtft.quantum import gell_mann_matrices
+    for T in gell_mann_matrices(3):
+        assert abs(np.trace(T)) < 1e-12
+
+def test_holonomy_gate_unitary():
+    from mtft.quantum import HolonomyGate
+    gate = HolonomyGate(d=3, generator_index=0, angle=0.5)
+    assert gate.is_unitary()
+
+def test_topological_qudit():
+    from mtft.quantum import TopologicalQudit
+    q = TopologicalQudit(d=3, coefficients=[1, 1, 1])
+    assert q.manifold_dimension == 8
+    assert q.total_maps == 56
+    assert q.nontrivial_maps == 18
+    assert q.topological_gap() > 0
+
+def test_topological_spectrum_d7():
+    from mtft.quantum import topological_spectrum_info
+    info = topological_spectrum_info(7)
+    assert info["manifold_dim"] == 48
+    assert info["total_maps"] == 17296
+
+def test_arithmetic_code_roundtrip():
+    from mtft.quantum import ArithmeticCode
+    code = ArithmeticCode(d_logical=2, n_physical=16)
+    logical = np.array([1, 0], dtype=complex)
+    encoded = code.encode(logical)
+    decoded = code.decode(encoded)
+    # Should approximately recover the logical state
+    assert abs(abs(decoded[0]) - 1.0) < 0.2
+
+def test_skyrmion_number():
+    from mtft.quantum import skyrmion_number
+    assert skyrmion_number(0, 1) == -1
+    assert skyrmion_number(0, -5) == 5
+    assert skyrmion_number(5, -8) == 13

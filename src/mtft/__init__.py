@@ -6,7 +6,7 @@ MTFT — Modular Time Field Theory  (v0.3.0)
 weights through lattice gauge theory and experimental verification.
 """
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -42,3 +42,9 @@ from mtft.burning_ship import burning_ship_iterate, ANISOTROPIC
 # ── Tier 5: Dimensional Bridge & Decay ───────────────────────
 from mtft.dimensional_bridge import electron_mass_from_eta, charge_from_feigenbaum
 from mtft.decay import ModularDecay
+
+# ── Tier 6: Quantum Computing ────────────────────────────────
+from mtft.quantum import (
+    TopologicalQudit, HolonomyGate, ArithmeticCode,
+    gell_mann_matrices, topological_spectrum_info, skyrmion_number,
+)

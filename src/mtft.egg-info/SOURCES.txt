@@ -6,6 +6,7 @@ src/mtft/arithmetic.py
 src/mtft/burning_ship.py
 src/mtft/constants.py
 src/mtft/cosmology.py
+src/mtft/crypto.py
 src/mtft/dark_sector.py
 src/mtft/decay.py
 src/mtft/dimensional_bridge.py
@@ -16,6 +17,7 @@ src/mtft/koide.py
 src/mtft/lattice.py
 src/mtft/modular.py
 src/mtft/particles.py
+src/mtft/quantum.py
 src/mtft/verify.py
 src/mtft/viz.py
 src/mtft/x0_143.py
