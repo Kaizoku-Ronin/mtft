@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MTFT: Modular Time Field Theory"
+version: 0.3.0
+date-released: 2026-03-22
+authors:
+  - family-names: "Tano"
+    given-names: "Roger"
+license: MIT
+repository-code: "https://github.com/rogertano/mtft"
+keywords:
+  - modular-forms
+  - gauge-theory
+  - dark-matter
+  - information-geometry
+  - Yang-Mills
+  - mass-gap
+  - Feigenbaum
+  - Koide-formula
+abstract: >-
+  Python implementation of Modular Time Field Theory (MTFT),
+  deriving fundamental constants (α, α_s, sin²θ_W, particle masses)
+  from arithmetic weights wₙ = Σ_{d|n} (log d)/d and the Feigenbaum
+  constant. Includes lattice gauge theory, the Tano Mass Formula for
+  lepton masses from X₀(143), and 22 testable predictions with 18
+  matching experiment to <1%.

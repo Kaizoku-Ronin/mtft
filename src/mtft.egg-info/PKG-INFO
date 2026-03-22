@@ -1,0 +1,172 @@
+Metadata-Version: 2.4
+Name: mtft
+Version: 0.3.0
+Summary: Modular Time Field Theory — core data structures, modular geometry, gauge-Higgs unification, dark sector, and information geometry
+Author-email: Roger <mtft@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/roger/mtft
+Project-URL: Documentation, https://github.com/roger/mtft#readme
+Keywords: physics,modular-forms,gauge-theory,dark-matter,information-geometry
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.22
+Provides-Extra: full
+Requires-Dist: scipy>=1.9; extra == "full"
+Requires-Dist: matplotlib>=3.5; extra == "full"
+Provides-Extra: viz
+Requires-Dist: matplotlib>=3.5; extra == "viz"
+Requires-Dist: plotly>=5.0; extra == "viz"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
+
+# MTFT — Modular Time Field Theory
+
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A Python library implementing the core data structures and computational tools for **Modular Time Field Theory (MTFT)**.
+
+## Overview
+
+MTFT proposes a modular time field **τ(x) = t_R / t_U** mapping spacetime to the upper half-plane **ℍ**, unifying dark matter, particle masses, and cosmic structure through:
+
+- **Modular symmetry** — SL(2,ℤ) acting on τ
+- **Gauge-Higgs unification** — Higgs = A_τ holonomy via the Hosotani mechanism
+- **τ-vortex dark matter** — logarithmic τ-profiles give flat rotation curves with no dark particles
+- **Information geometry bridge** — Fisher-Rao curvature of the logistic map connects chaos → geometry → dynamics
+
+### The Three-Layer Architecture
+
+```
+Counting   →  Logistic map orbits, figurate-number degeneracies
+Geometry   →  Fisher-Rao metric, Ricci curvature R_core
+Dynamics   →  SM masses, dark matter halos, decay rates, cosmology
+```
+
+Connected by the **spectral determinant identity**:
+
+```
+det(1 − q^{1/m} P_m) = η(τ)^{−1/m} θ₃(0,τ)^{1/m}
+```
+
+linking Fredholm determinants (chaos/RG) to CFT partition functions.
+
+## Installation
+
+```bash
+pip install -e .              # minimal (numpy only)
+pip install -e ".[full]"      # with scipy + matplotlib
+pip install -e ".[dev]"       # with pytest + ruff
+```
+
+## Quick Start
+
+```python
+import mtft
+
+# ── Modular forms ─────────────────────────────────────
+tau = 0.1 + 1.5j
+eta = mtft.dedekind_eta(tau)
+j   = mtft.forms.j_invariant(tau)
+print(f"η(τ) = {eta:.6f}")
+print(f"j(τ) = {j:.2f}")
+
+# Verify the spectral determinant identity
+result = mtft.forms.verify_spectral_identity(tau, m=2)
+print(f"Spectral identity relative error: {result['relative_error']:.2e}")
+
+# ── Hosotani mechanism ────────────────────────────────
+hp = mtft.HosotaniPotential(fermion_fraction=0.4, kappa_ew=0.05)
+theta0 = hp.find_vacuum()
+masses = hp.gauge_masses()
+print(f"Vacuum θ₀ = {theta0:.4f}")
+print(f"m_W = {masses['m_W']:.2f} GeV  (PDG: 80.37)")
+print(f"m_Z = {masses['m_Z']:.2f} GeV  (PDG: 91.19)")
+
+# ── Particle spectrum ─────────────────────────────────
+sm = mtft.StandardModel()
+top = sm.by_name("Top")
+print(f"Top quark: m = {top.mass_GeV} GeV, κ = {top.kappa}")
+
+# Full κ-hierarchy
+for name, kappa in sm.kappa_hierarchy():
+    print(f"  {name:15s}  κ = {kappa:.2e}")
+
+# ── Dark sector ───────────────────────────────────────
+import numpy as np
+halo = mtft.TauVortexHalo(A=1e20, r0=1e30)
+r = np.logspace(31, 35, 100)
+v = halo.v_circular(r)
+print(f"v_∞ = {halo.v_infinity:.4e} (flat rotation velocity)")
+
+# ── Information geometry ──────────────────────────────
+R = mtft.info_geometry.R_core()
+print(f"R_core (Feigenbaum) = {R:.4f}")
+
+# ── Cosmology ─────────────────────────────────────────
+cosmo = mtft.FriedmannMTFT(Omega_tau=0.25)
+hist = cosmo.expansion_history()
+```
+
+## Package Structure
+
+```
+mtft/
+├── constants.py       # PDG masses, SM parameters, physical constants
+├── modular.py         # τ-field, SL(2,ℤ), hyperbolic geometry
+├── forms.py           # Dedekind η, Jacobi θ₃, Eisenstein, spectral det
+├── hosotani.py        # Effective potential, vacuum finder, EWSB
+├── particles.py       # SM particle database with κ-couplings
+├── dark_sector.py     # τ-vortex halos, rotation curves, Tully-Fisher
+├── info_geometry.py   # Fisher-Rao metric, Ricci curvature, logistic map
+└── cosmology.py       # Modified Friedmann, perturbations, G(t) oscillation
+```
+
+## Key Equations
+
+| Component | Equation |
+|-----------|----------|
+| Modular time field | τ(x) = t_R(x)/t_U(x) ∈ ℍ |
+| Hyperbolic metric | ds² = (dx² + dy²)/y², K = −1 |
+| W mass | m_W = κ_EW \|sin θ_H\| / (2R_τ) |
+| Fermion mass | m_f = κ_f \|sin θ₀\| / R_τ |
+| τ-vortex density | ρ_τ(r) = A²/(2r²) |
+| Flat rotation | v²_∞ = 2πGA² |
+| Tully-Fisher | v⁴ ∝ M_BH ∝ M_baryonic |
+| R_core bridge | m_τ² = c_m \|R_core\| |
+
+## Testing
+
+```bash
+pytest tests/ -v
+```
+
+## License
+
+MIT
+
+## Citation
+
+If you use this package in research, please cite:
+
+```bibtex
+@software{mtft2025,
+  title  = {MTFT: Modular Time Field Theory Python Package},
+  author = {Roger},
+  year   = {2025},
+  url    = {https://github.com/roger/mtft}
+}
+```

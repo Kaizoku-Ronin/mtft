@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtft"
+version = "0.3.0"
+description = "Modular Time Field Theory — core data structures, modular geometry, gauge-Higgs unification, dark sector, and information geometry"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Roger", email = "mtft@example.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["physics", "modular-forms", "gauge-theory", "dark-matter", "information-geometry"]
+
+dependencies = [
+    "numpy>=1.22",
+]
+
+[project.optional-dependencies]
+full = ["scipy>=1.9", "matplotlib>=3.5"]
+viz = ["matplotlib>=3.5", "plotly>=5.0"]
+dev = ["pytest>=7.0", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/roger/mtft"
+Documentation = "https://github.com/roger/mtft#readme"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100

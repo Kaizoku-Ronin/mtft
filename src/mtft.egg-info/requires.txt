@@ -1,0 +1,14 @@
+numpy>=1.22
+
+[dev]
+pytest>=7.0
+pytest-cov
+ruff
+
+[full]
+scipy>=1.9
+matplotlib>=3.5
+
+[viz]
+matplotlib>=3.5
+plotly>=5.0
