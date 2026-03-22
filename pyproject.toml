@@ -34,8 +34,8 @@ viz = ["matplotlib>=3.5", "plotly>=5.0"]
 dev = ["pytest>=7.0", "pytest-cov", "ruff"]
 
 [project.urls]
-Homepage = "https://github.com/roger/mtft"
-Documentation = "https://github.com/roger/mtft#readme"
+Homepage = "https://github.com/Kaizoku-Ronin/mtft"
+Documentation = "https://github.com/Kaizoku-Ronin/mtft#readme"
 
 [tool.setuptools.packages.find]
 where = ["src"]
