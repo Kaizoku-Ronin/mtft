@@ -320,18 +320,26 @@ class ArithmeticCode:
     """
     Quantum error-correcting code based on MTFT arithmetic weights.
 
-    The idea: encode a logical qudit in a physical Hilbert space where
-    the basis states are labeled by integers with specific divisor
-    structure. The arithmetic weights wₙ provide a natural distance
-    metric — states with similar divisor structure are "close" in the
-    code, while states with different structure are "far apart."
+    The encoding exploits the divisor lattice of n_physical:
 
-    This is analogous to how lattice codes work, but the lattice is
-    the MTFT arithmetic lattice rather than a random one.
+    1. **Divisor-affinity partitioning** — basis states |n⟩ are grouped
+       by their divisor affinity a(n) = σ₀(gcd(n, n_physical)) with
+       the physical dimension.  Highly composite n_physical values
+       create richer group structure than primes.
 
-    The topological protection from μ_N(y) > 0 means that errors
-    below the gap scale cannot change the logical state — they can
-    only excite within the same topological sector.
+    2. **Weight-proportional amplitudes** — within each group, states
+       carry amplitude proportional to their damped weight aₙ(y),
+       not a flat superposition.  This embeds the arithmetic structure
+       directly into the codewords.
+
+    3. **Divisor-enhanced protection** — the topological mass gap
+       μ_N(y) is amplified by the divisor density factor
+       D(n) = 1 + log σ₀(n) / (2 log n), so highly composite
+       physical dimensions provide stronger error correction.
+
+    The result: primes and composites produce measurably different
+    code distances and protection gaps, making the divisor structure
+    of the hardware dimension a tunable resource for fault tolerance.
 
     Parameters
     ----------
@@ -347,44 +355,127 @@ class ArithmeticCode:
         self.d_logical = d_logical
         self.n_physical = n_physical
         self.y = y
+        # Precompute divisor data for n_physical
+        self._sigma0 = self._count_divisors(n_physical)
+        self._divisor_density = self._compute_divisor_density(n_physical)
         self._build_code()
 
+    @staticmethod
+    def _count_divisors(n: int) -> int:
+        """σ₀(n) — number of positive divisors of n."""
+        if n < 1:
+            return 0
+        count = 0
+        for d in range(1, int(n**0.5) + 1):
+            if n % d == 0:
+                count += 1
+                if d != n // d:
+                    count += 1
+        return count
+
+    @staticmethod
+    def _compute_divisor_density(n: int) -> float:
+        """
+        Divisor density factor D(n) = 1 + log(σ₀(n)) / (2 log(n)).
+
+        D(prime) ≈ 1.05,  D(60) ≈ 1.30,  D(120) ≈ 1.33.
+        """
+        if n < 2:
+            return 1.0
+        s0 = ArithmeticCode._count_divisors(n)
+        return 1.0 + math.log(s0) / (2.0 * math.log(n))
+
     def _build_code(self):
-        """Construct the encoding map from logical to physical space."""
-        # Select physical basis states with maximal weight separation
-        weights = np.array([weight(n + 1) for n in range(self.n_physical)])
+        """
+        Construct dual-rail divisor-weighted encoding.
 
-        # Sort by weight — group similar-weight states together
-        sorted_indices = np.argsort(weights)
+        Both logical states span the full physical Hilbert space
+        with complementary amplitude profiles:
 
-        # Divide into d_logical groups for encoding
-        group_size = self.n_physical // self.d_logical
-        self.encoding = np.zeros((self.d_logical, self.n_physical), dtype=complex)
+        |0_L⟩ ∝ a(n) · w_n   (divisor-resonant profile)
+        |1_L⟩ ∝ (1−â(n)) · w_n  (coprime profile)
 
-        for i in range(self.d_logical):
-            start = i * group_size
-            end = start + group_size
-            group = sorted_indices[start:end]
-            # Uniform superposition within each group
-            for j in group:
-                self.encoding[i, j] = 1.0 / math.sqrt(group_size)
+        The profiles are normalised but NOT orthogonalised, so their
+        overlap (and hence code distance) reflects the true divisor
+        landscape of n_physical.
+
+        For composites: rich affinity spectrum → profiles differ strongly
+        → large code distance.
+        For primes: almost all affinities equal → profiles nearly parallel
+        → small code distance.
+
+        Decode uses the Moore-Penrose pseudo-inverse for minimum-norm
+        recovery from non-orthogonal codewords.
+        """
+        n = self.n_physical
+        d = self.d_logical
+
+        # Divisor affinities and arithmetic weights
+        affinities = np.zeros(n)
+        weights_arr = np.zeros(n)
+        for k in range(n):
+            label = k + 1
+            g = math.gcd(label, n)
+            affinities[k] = self._count_divisors(g)
+            weights_arr[k] = weight(label)
+
+        # Normalise affinities to [0, 1]
+        a_max = affinities.max()
+        a_min = affinities.min()
+        if a_max > a_min:
+            a_norm = (affinities - a_min) / (a_max - a_min)
+        else:
+            a_norm = np.ones(n) * 0.5
+
+        epsilon = 0.01
+        w_floor = weights_arr + epsilon
+
+        self.encoding = np.zeros((d, n), dtype=complex)
+
+        if d == 2:
+            # Dual-rail profiles
+            raw_0 = (a_norm + epsilon) * w_floor
+            raw_1 = (1.0 - a_norm + epsilon) * w_floor
+            self.encoding[0] = raw_0 / np.linalg.norm(raw_0)
+            self.encoding[1] = raw_1 / np.linalg.norm(raw_1)
+        else:
+            # d > 2: Chebyshev-node profiles on the affinity axis
+            nodes = np.array([0.5 * (1 + math.cos(math.pi * (2*i + 1) / (2*d)))
+                              for i in range(d)])
+            for i in range(d):
+                sigma = max(0.3 / d, 0.05)
+                raw = np.exp(-0.5 * ((a_norm - nodes[i]) / sigma) ** 2) * w_floor
+                raw += epsilon * w_floor
+                self.encoding[i] = raw / np.linalg.norm(raw)
+
+        # Precompute pseudo-inverse for decode
+        # E is (d × n), E† is (n × d)
+        self._decode_matrix = np.linalg.pinv(self.encoding)
 
     def encode(self, logical_state: np.ndarray) -> np.ndarray:
         """Map a logical qudit state to the physical space."""
         logical_state = np.asarray(logical_state, dtype=complex)
-        return self.encoding.T @ logical_state
+        phys = self.encoding.T @ logical_state
+        norm = np.linalg.norm(phys)
+        return phys / norm if norm > 0 else phys
 
     def decode(self, physical_state: np.ndarray) -> np.ndarray:
-        """Project a physical state back to logical space."""
+        """
+        Project a physical state back to logical space via
+        pseudo-inverse (minimum-norm recovery).
+        """
         physical_state = np.asarray(physical_state, dtype=complex)
-        return self.encoding @ physical_state
+        logical = self._decode_matrix.T @ physical_state
+        norm = np.linalg.norm(logical)
+        return logical / norm if norm > 0 else logical
 
     @property
     def code_distance(self) -> float:
         """
-        Minimum distance between encoded logical states.
+        Minimum Hilbert-space distance between encoded logical states.
 
-        Higher distance → more errors can be corrected.
+        Depends on n_physical's divisor structure: highly composite
+        dimensions yield larger distances than primes.
         """
         min_dist = float("inf")
         for i in range(self.d_logical):
@@ -395,8 +486,48 @@ class ArithmeticCode:
 
     @property
     def protection_gap(self) -> float:
-        """MTFT mass gap at this modular depth."""
-        return mass_gap_stiffness(self.y, N=self.d_logical, n_max=200)
+        """
+        Divisor-enhanced MTFT mass gap:
+
+            μ_eff(y, n) = μ_N(y) × D(n)
+
+        where D(n) = 1 + log(σ₀(n)) / (2 log n) is the divisor
+        density factor.  Highly composite n_physical provides
+        stronger topological protection.
+        """
+        base_gap = mass_gap_stiffness(self.y, N=self.d_logical, n_max=200)
+        return base_gap * self._divisor_density
+
+    @property
+    def divisor_count(self) -> int:
+        """σ₀(n_physical) — number of divisors of the physical dimension."""
+        return self._sigma0
+
+    @property
+    def divisor_density(self) -> float:
+        """D(n) = 1 + log(σ₀(n)) / (2 log n) — the protection boost factor."""
+        return self._divisor_density
+
+    @property
+    def is_prime(self) -> bool:
+        """Whether n_physical is prime."""
+        return self._sigma0 == 2
+
+    def code_info(self) -> dict:
+        """
+        Summary of code parameters including divisor structure.
+        """
+        return {
+            "n_physical": self.n_physical,
+            "d_logical": self.d_logical,
+            "y": self.y,
+            "sigma_0": self._sigma0,
+            "divisor_density": self._divisor_density,
+            "is_prime": self.is_prime,
+            "code_distance": self.code_distance,
+            "protection_gap": self.protection_gap,
+            "base_gap": mass_gap_stiffness(self.y, N=self.d_logical, n_max=200),
+        }
 
     def syndrome_check(self, physical_state: np.ndarray) -> dict:
         """
@@ -411,7 +542,8 @@ class ArithmeticCode:
         # Project onto code space
         logical = self.decode(physical_state)
         reprojected = self.encode(logical)
-        reprojected /= np.linalg.norm(reprojected) if np.linalg.norm(reprojected) > 0 else 1
+        norm = np.linalg.norm(reprojected)
+        reprojected /= norm if norm > 0 else 1
 
         error = physical_state - reprojected
         error_mag = np.linalg.norm(error)

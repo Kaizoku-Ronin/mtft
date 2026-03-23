@@ -160,6 +160,44 @@ def tully_fisher(v_flat: float) -> float:
     return C_TF * v_flat ** 4 / (2.0 * math.pi * PC.G_N) ** 2
 
 
+def rotation_curve_kpc(
+    r_kpc: np.ndarray | float,
+    v_flat_kms: float = 220.0,
+    M_baryon_Msun: float = 0.0,
+    r0_kpc: float = 1.0,
+) -> np.ndarray:
+    """
+    Rotation curve in astrophysical units.
+
+    Parameters
+    ----------
+    r_kpc : array or float
+        Radial distances in kiloparsecs.
+    v_flat_kms : float
+        Target asymptotic flat velocity in km/s (used to set the
+        vortex amplitude A).
+    M_baryon_Msun : float
+        Central baryonic mass in solar masses.
+    r0_kpc : float
+        Core radius in kiloparsecs.
+
+    Returns
+    -------
+    v_kms : array
+        Circular velocity in km/s at each radius.
+    """
+    r_kpc = np.asarray(r_kpc, dtype=float)
+    v_flat_c = v_flat_kms / (PC.c_SI * 1e-3)  # km/s → v/c
+    # A from v²_∞ = 2πG A²
+    A = v_flat_c / math.sqrt(2.0 * math.pi * PC.G_N)
+    r_nat = r_kpc * PC.kpc_GeV_inv
+    r0_nat = r0_kpc * PC.kpc_GeV_inv
+    M_baryon = M_baryon_Msun * PC.M_sun_GeV
+    halo = TauVortexHalo(A=A, r0=r0_nat)
+    v_c = halo.v_circular(r_nat, M_baryon=M_baryon)
+    return v_c * PC.c_SI * 1e-3  # v/c → km/s
+
+
 def vortex_from_bh_mass(M_bh: float) -> float:
     """
     Compute vortex amplitude A from black hole mass via entropy scaling:

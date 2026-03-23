@@ -147,6 +147,21 @@ class _MTFTSM:
     def g_prime(self) -> float:
         return self.g_weak * GAUGE.sin_theta_W / GAUGE.cos_theta_W
 
+    @property
+    def cos_theta_W(self) -> float:
+        """cos θ_W = √(10/13) from MTFT gauge sector."""
+        return GAUGE.cos_theta_W
+
+    @property
+    def sin_theta_W(self) -> float:
+        """sin θ_W = √(3/13) from MTFT gauge sector."""
+        return GAUGE.sin_theta_W
+
+    @property
+    def sin2_theta_W(self) -> float:
+        """sin²θ_W = 3/13 from MTFT gauge sector."""
+        return GAUGE.sin2_theta_W
+
 SM = _MTFTSM()
 
 # ── PDG Reference (verification only, NOT inputs) ────────────

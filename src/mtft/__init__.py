@@ -6,7 +6,7 @@ MTFT — Modular Time Field Theory  (v0.3.0)
 weights through lattice gauge theory and experimental verification.
 """
 
-__version__ = "0.4.1"
+__version__ = "0.5.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -25,11 +25,11 @@ from mtft.modular import TauField, sl2z_transform
 from mtft.forms import dedekind_eta, jacobi_theta3, eisenstein_E2k, verify_spectral_identity
 
 # ── Tier 2: Gauge-Higgs ──────────────────────────────────────
-from mtft.hosotani import HosotaniPotential
+from mtft.hosotani import HosotaniPotential, HosotaniMTFT
 from mtft.particles import Particle, StandardModel
 
 # ── Tier 3: Phenomenology ────────────────────────────────────
-from mtft.dark_sector import TauVortexHalo, rotation_curve, tully_fisher
+from mtft.dark_sector import TauVortexHalo, rotation_curve, rotation_curve_kpc, tully_fisher
 from mtft.info_geometry import fisher_rao_metric, ricci_scalar_logistic
 from mtft.cosmology import FriedmannMTFT
 
@@ -42,6 +42,12 @@ from mtft.burning_ship import burning_ship_iterate, ANISOTROPIC
 # ── Tier 5: Dimensional Bridge & Decay ───────────────────────
 from mtft.dimensional_bridge import electron_mass_from_eta, charge_from_feigenbaum
 from mtft.decay import ModularDecay
+
+# ── Tier 5b: Falsifiability Engine ───────────────────────────
+from mtft.falsify import (
+    prediction_table, coupling_shift, coupling_shift_table,
+    falsification_test, holonomy_flux, desert_check,
+)
 
 # ── Tier 6: Quantum Computing ────────────────────────────────
 from mtft.quantum import (
