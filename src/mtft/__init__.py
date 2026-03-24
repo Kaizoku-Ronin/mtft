@@ -1,12 +1,16 @@
 """
-MTFT — Modular Time Field Theory  (v0.3.0)
+MTFT — Modular Time Field Theory  (v0.6.0)
 ============================================
 
-16 modules covering the complete MTFT framework from arithmetic
-weights through lattice gauge theory and experimental verification.
+28 modules covering the complete MTFT framework from arithmetic
+weights through lattice gauge theory, materials science, LHC
+confrontation, and experimental verification.
+
+Install: pip install mtft
+CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -23,6 +27,7 @@ from mtft.arithmetic import (
 # ── Tier 1: Modular Geometry & Forms ─────────────────────────
 from mtft.modular import TauField, sl2z_transform
 from mtft.forms import dedekind_eta, jacobi_theta3, eisenstein_E2k, verify_spectral_identity
+from mtft.modular_curve import ModularCurve, X0
 
 # ── Tier 2: Gauge-Higgs ──────────────────────────────────────
 from mtft.hosotani import HosotaniPotential, HosotaniMTFT
@@ -49,8 +54,37 @@ from mtft.falsify import (
     falsification_test, holonomy_flux, desert_check,
 )
 
+# ── Tier 5c: Multi-N Tower ───────────────────────────────────
+from mtft.tower import (
+    tower_stiffness, even_n_universality, phase_transition_scaling,
+    boundary_tracking, arithmetic_genome, arithmetic_periodic_table,
+    character_orthogonality, tower_report,
+)
+
+# ── Tier 5d: Riemann Explicit Formula ────────────────────────
+from mtft.riemann import (
+    RIEMANN_ZEROS, explicit_formula, bakry_emery_curvature,
+    rh_diagnostic, tower_rigidity, gamma_suppression_table,
+)
+
+# ── Tier 5e: Materials Science ───────────────────────────────
+from mtft.tano_metric import (
+    tano_contrast, geometry_index, predict_Tc, materials_screening,
+    seebeck_diagnostic, josephson_holonomy, ELEMENTS,
+)
+
 # ── Tier 6: Quantum Computing ────────────────────────────────
 from mtft.quantum import (
     TopologicalQudit, HolonomyGate, ArithmeticCode,
     gell_mann_matrices, topological_spectrum_info, skyrmion_number,
 )
+
+# ── Tier 7: Cryptography ────────────────────────────────────
+from mtft.monster_hash import MonsterHash
+
+# ── Tier 8: LHC Confrontation ───────────────────────────────
+# (optional — requires uproot)
+try:
+    from mtft.lhcb_analysis import LHCbNtuple
+except ImportError:
+    pass  # uproot not installed

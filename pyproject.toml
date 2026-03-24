@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mtft"
-version = "0.5.0"
-description = "Modular Time Field Theory — falsifiability engine, modular geometry, gauge-Higgs unification, dark sector, and information geometry"
+version = "0.6.0"
+description = "Modular Time Field Theory — falsifiability engine, modular geometry, gauge-Higgs unification, dark sector, LHC confrontation, and information geometry"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
