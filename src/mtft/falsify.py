@@ -55,11 +55,28 @@ class Prediction:
     source: str               # paper reference
     status: str               # "PASS", "TENSION", "FAIL"
     rating: str               # ★★★, ★★, ★
+    # ── honesty metadata (audit §3.1; optional, defaults keep old behavior)
+    deviation_ppm: float = 0.0            # |pred − obs| / obs × 10⁶
+    theory_tolerance_ppm: Optional[float] = None  # pre-registered band
+    multiplicity: str = ""                # search budget / look-elsewhere note
+    group: str = ""                       # correlated-duplicate family label
 
     def __repr__(self):
         return (f"#{self.number:2d} [{self.status:7s}] {self.relation:40s} "
                 f"pred={self.predicted:.6g}  obs={self.observed:.6g}  "
                 f"err={self.error_percent:.3f}%  σ={self.sigma:.1f}")
+
+    @property
+    def theory_status(self) -> str:
+        """PASS/TENSION/FAIL against the pre-registered theory tolerance
+        (falls back to the σ-based status when no tolerance registered)."""
+        if self.theory_tolerance_ppm is None:
+            return self.status
+        if self.deviation_ppm <= self.theory_tolerance_ppm:
+            return "PASS"
+        if self.deviation_ppm <= 3.0 * self.theory_tolerance_ppm:
+            return "TENSION"
+        return "FAIL"
 
 
 @dataclass
@@ -140,7 +157,8 @@ def coupling_shift_table(
 #  2. Zero-Parameter Prediction Table (Dictionary, 38 entries)
 # ═══════════════════════════════════════════════════════════════
 
-def _make_pred(num, rel, pred, obs, obs_err, sector, src, rating="★★★"):
+def _make_pred(num, rel, pred, obs, obs_err, sector, src, rating="★★★",
+               theory_tolerance_ppm=None, multiplicity="", group=""):
     """Helper to build a Prediction with auto-computed error and sigma."""
     err_pct = abs(pred - obs) / abs(obs) * 100 if obs != 0 else 0.0
     sigma = abs(pred - obs) / obs_err if obs_err > 0 else 0.0
@@ -150,11 +168,15 @@ def _make_pred(num, rel, pred, obs, obs_err, sector, src, rating="★★★"):
         status = "TENSION"
     else:
         status = "FAIL"
+    dev_ppm = abs(pred - obs) / abs(obs) * 1e6 if obs != 0 else 0.0
     return Prediction(
         number=num, relation=rel,
         predicted=pred, observed=obs, obs_error=obs_err,
         error_percent=err_pct, sigma=sigma,
         sector=sector, source=src, status=status, rating=rating,
+        deviation_ppm=dev_ppm,
+        theory_tolerance_ppm=theory_tolerance_ppm,
+        multiplicity=multiplicity, group=group,
     )
 
 
@@ -274,7 +296,39 @@ def prediction_table() -> List[Prediction]:
     cf = charge_from_feigenbaum()
     preds.append(_make_pred(23, "e from Feigenbaum product", cf['e_feigenbaum'], cf['e_exact'], 0.001, "gauge", "Paper 22"))
 
+    # ── honesty metadata (audit §3.1) ─────────────────────────
+    for p in preds:
+        meta = _PRED_META.get(p.number, {})
+        for k, v in meta.items():
+            setattr(p, k, v)
     return preds
+
+
+# Pre-registered theory tolerances (ppm), multiplicity budgets, and
+# correlated-duplicate groups.  Status σ is still computed the old way;
+# theory_status judges against these bands instead.
+_PRED_META = {
+    1:  dict(group="alpha_inv",
+             multiplicity="leading term only — incomplete by design; see #2"),
+    2:  dict(theory_tolerance_ppm=1.0, group="alpha_inv",
+             multiplicity="one-shot; judged vs pre-registered 1 ppm band. "
+                          "Raw CODATA σ (2.1e-8) would 'falsify' a 1.9-ppb hit — "
+                          "that is an error-bar artifact, not physics (audit §3.1)"),
+    3:  dict(group="alpha_s", multiplicity="same observable as #4"),
+    4:  dict(group="alpha_s", multiplicity="one-shot"),
+    5:  dict(multiplicity="tree-level formula vs MS-bar running value — "
+                          "comparison band is scheme-dependent"),
+    6:  dict(group="higgs_family", multiplicity="one m_H family with #8, #21"),
+    7:  dict(theory_tolerance_ppm=500.0,
+             multiplicity="2.3σ in the σ-table; within pre-registered 500 ppm band"),
+    8:  dict(group="higgs_family", multiplicity="one m_H family with #6, #21"),
+    13: dict(group="koide_family", multiplicity="Koide-derived; correlated with #16"),
+    16: dict(group="koide_family", multiplicity="correlated with #13"),
+    18: dict(multiplicity="exact by construction (definition-level)"),
+    21: dict(group="higgs_family", multiplicity="one m_H family with #6, #8"),
+    22: dict(group="charge", multiplicity="Gaussian-unit restatement of #2"),
+    23: dict(group="charge", multiplicity="near-duplicate of #22 (identical numbers)"),
+}
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -310,6 +364,51 @@ def falsification_test(sigma_threshold: float = 3.0) -> dict:
         "tension_list": tension,
         "fail_list": failed,
     }
+
+
+def honest_report() -> str:
+    """
+    Audit-recommended view (§3.1): every prediction shown with its
+    deviation in ppm, its pre-registered theory tolerance (if any), and
+    its multiplicity/duplicate-group metadata.
+
+    The σ-based status and the theory-tolerance status are reported side
+    by side.  Where they disagree (e.g. #2), the theory status is the
+    honest one: judging a 1.9-ppb formula by a 2.1e-8 error bar, or
+    inflating an error bar to force a PASS, both corrupt the engine.
+    """
+    preds = prediction_table()
+    lines = []
+    lines.append("=" * 100)
+    lines.append("MTFT FALSIFIABILITY ENGINE — HONEST REPORT (σ-status vs theory-tolerance status)")
+    lines.append("=" * 100)
+    hdr = (f"{'#':>2} {'relation':38} {'dev(ppm)':>10} {'tol(ppm)':>9} "
+           f"{'σ':>6} {'σ-status':>9} {'thy-status':>10}  group / multiplicity")
+    lines.append(hdr)
+    lines.append("-" * 100)
+    for p in preds:
+        tol = f"{p.theory_tolerance_ppm:.0f}" if p.theory_tolerance_ppm else "—"
+        note = " / ".join(x for x in [p.group, p.multiplicity] if x)
+        lines.append(
+            f"{p.number:>2} {p.relation:38.38} {p.deviation_ppm:>10.3f} {tol:>9} "
+            f"{p.sigma:>6.1f} {p.status:>9} {p.theory_status:>10}  {note[:60]}"
+        )
+    # group dedup summary
+    groups = {}
+    for p in preds:
+        if p.group:
+            groups.setdefault(p.group, []).append(p.number)
+    lines.append("-" * 100)
+    lines.append("Correlated-duplicate groups (count once when scoring):")
+    for g, nums in sorted(groups.items()):
+        lines.append(f"  {g}: predictions {nums}")
+    n_independent = len([p for p in preds if not p.group]) + len(groups)
+    lines.append(f"Effective independent predictions: {n_independent} of {len(preds)}")
+    thy = [p for p in preds if p.theory_tolerance_ppm is not None]
+    lines.append(f"Theory-tolerance registered on {len(thy)} predictions: "
+                 f"all theory_status = "
+                 f"{sorted(set(p.theory_status for p in thy))}")
+    return "\n".join(lines)
 
 
 # ═══════════════════════════════════════════════════════════════

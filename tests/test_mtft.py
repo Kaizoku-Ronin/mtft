@@ -203,20 +203,29 @@ def test_generation_count():
     assert generation_count() == 3
 
 def test_tano_mass_formula():
+    """The Tano formula is SUPERSEDED (phantom eigenvalue, audit B10/B11).
+    It must still evaluate (historical continuity) but must carry the
+    supersession flag so nobody cites it as a prediction."""
     from mtft.x0_143 import tano_mass_predictions
     pred = tano_mass_predictions()
-    assert pred["errors_percent"]["muon"] < 2.0
-    assert pred["errors_percent"]["tau"] < 2.0
+    assert pred["superseded"] is True
+    assert "phantom" in pred["supersession_note"].lower()
 
 def test_hecke_polynomial_roots():
-    from mtft.x0_143 import hecke_roots_f3, A2_COMPLEX
+    """Audit-verified truth: T₂|f₃ has 6 REAL roots inside Ramanujan,
+    and the historical 'complex eigenvalue' is NOT among them."""
+    import math as _m
+    from mtft.x0_143 import hecke_roots_f3, verify_complex_eigenvalue
     roots = hecke_roots_f3()
-    complex_roots = [r for r in roots if abs(r.imag) > 0.01]
-    assert len(complex_roots) >= 2
-    best = min(complex_roots, key=lambda r: abs(r - A2_COMPLEX))
-    assert abs(best - A2_COMPLEX) < 0.01
+    assert max(abs(r.imag) for r in roots) < 1e-8          # all real
+    assert max(abs(r) for r in roots) < 2 * _m.sqrt(2)     # Ramanujan
+    v = verify_complex_eigenvalue()
+    assert v["all_roots_real"] and v["ramanujan_satisfied"]
+    assert not v["phantom_is_root"]
 
 def test_koide_angle_vs_experiment():
+    """Historical numerical coincidence (built on the phantom value);
+    kept as a continuity check of the archived constant only."""
     from mtft.x0_143 import koide_angle_tano, koide_angle_experimental
     theta_tano = koide_angle_tano()
     theta_exp = koide_angle_experimental()

@@ -26,16 +26,29 @@ EULER_GAMMA = 0.5772156649015328606065120900824024310421
 # ── Tier 2: Feigenbaum ───────────────────────────────────────
 FEIGENBAUM_DELTA = 4.669201609102990671853203821578
 FEIGENBAUM_ALPHA = 2.502907875095892822283902873218
-DELTA_X = FEIGENBAUM_DELTA ** 1.29          # ≈7.30 attractor fold
-DELTA_Y = FEIGENBAUM_DELTA ** 0.79          # ≈3.38 barrier fold
+DELTA_X = FEIGENBAUM_DELTA ** 1.29          # ≈7.30 attractor fold (DEFINED)
+DELTA_Y = FEIGENBAUM_DELTA ** 0.79          # ≈3.38 barrier fold (DEFINED)
+# Measured Burning Ship values (Paper 16) — distinct from the defined
+# exponentials above (audit B9: keep the two provenances separate):
+DELTA_X_MEASURED = 7.2422                   # attractor fold, measured
+DELTA_Y_MEASURED = 3.3699                   # barrier fold, measured
 BETA_X  = +0.29
 BETA_Y  = -0.21
 XI      = math.sqrt(7.0 / 5.0)             # sector metric ≈1.183
 
 # ── Tier 3: Number-theoretic ─────────────────────────────────
 ZETA_PRIME_2    = -0.9375482543988
-T_INF           = -ZETA_PRIME_2 / 2.0      # vacuum torque ≈0.4688
-TORQUE_FULL    = -ZETA_PRIME_2                  # full torque = −ζ'(2) ≈ 0.9375
+# Vacuum-torque conventions (audit B3 — the repo's canonical resolution):
+#   TORQUE_FULL = −ζ′(2) = 0.9375 is the PROVED Cesàro limit
+#       lim_{N→∞} (1/N) Σ_{n≤N} w_n,  w_n = Σ_{d|n} (log d)/d
+#     (regression-locked in tests/test_x0_143_verified.py).
+#   T_INF = TORQUE_FULL/2 is the DEFINITION used by the physics chain
+#     (α_s = T_INF/4 = −ζ′(2)/8).  AG Df 0.5.5 conflates the two;
+#     the factor of 2 lives here, deliberately, in one place.
+T_INF           = -ZETA_PRIME_2 / 2.0      # vacuum torque ≈0.4688 (defined)
+TORQUE_FULL    = -ZETA_PRIME_2                  # full torque = −ζ'(2) ≈ 0.9375 (Cesàro limit)
+# ln|M| of the Monster group (audit B2: AG Df 10.2.1 misprints 124.01348).
+LN_MONSTER      = 124.126423366            # ln(8.08017...×10⁵³)
 MEISSEL_MERTENS = 0.2614972128476427837554268386086958590516
 LAMBERT_OMEGA   = 0.5671432904097838729999686622103555497538
 ZETA_2 = PI**2 / 6.0
@@ -52,6 +65,17 @@ class _MTFTGauge:
         """α⁻¹ = 2πδ² + 1/(4δ) − ξT∞/δ⁶"""
         d = FEIGENBAUM_DELTA
         return 2*PI*d**2 + 1/(4*d) - XI*T_INF/d**6
+
+    @property
+    def alpha_inv_4term(self) -> float:
+        """α⁻¹ = 2πδ² + 1/(4δ) − ξT∞/δ⁶ − y_c/δ⁹  (137.03599917)."""
+        d = FEIGENBAUM_DELTA
+        return self.alpha_inv - CriticalDepths.y_conf / d**9
+
+    @property
+    def alpha_inv_monster(self) -> float:
+        """α⁻¹ = ln|M| + genus − 1/dim S₂^new = 137.0355 (3.5 ppm, parameter-free)."""
+        return LN_MONSTER + 13.0 - 1.0/11.0
 
     @property
     def alpha(self) -> float:

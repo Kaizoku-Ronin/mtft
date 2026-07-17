@@ -191,19 +191,24 @@ def koide_sector() -> List[Prediction]:
 
 
 def tano_formula() -> List[Prediction]:
-    """Tano mass formula predictions."""
+    """Tano mass formula predictions.
+
+    SUPERSEDED (audit B10/B11): the formula is built on the phantom
+    eigenvalue 0.5732+0.3564i (root of a wrong polynomial).  Retained for
+    archival continuity; excluded from any live prediction count.
+    """
     from mtft.x0_143 import tano_mass_predictions
     pred = tano_mass_predictions()
     results = []
     for particle in ["muon", "tau"]:
         results.append(Prediction(
-            f"m_{particle} (Tano formula)",
-            "θ₀ = 2/δ² + 4·arg(a₂ᶜˣ)",
+            f"m_{particle} (Tano formula, SUPERSEDED)",
+            "θ₀ = 2/δ² + 4·arg(a₂ᶜˣ) [phantom input]",
             pred["masses_MeV"][particle],
             pred["experimental_MeV"][particle],
             "MeV",
             pred["errors_percent"][particle],
-            "Paper 26 §8", "Tano"
+            "Paper 26 §8 (superseded, Correction Session 1)", "Tano-archival"
         ))
     return results
 

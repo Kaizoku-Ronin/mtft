@@ -8,15 +8,25 @@ The MTFT stiffness admits an explicit formula decomposition:
 
 where ρ = 1/2 + iγ_k runs over the nontrivial zeros of ζ(s).
 
-Key result (Paper 18, §2):
-    RH ⟺ κ(y) = d²/d(ln y)² ln μ_N(y) ≥ 0 for all y > 0
-    (Non-negative Bakry-Émery curvature of the arithmetic vacuum.)
+SUPERSESSION NOTICE (July 2026, audit B4/B5)
+--------------------------------------------
+The old headline "RH ⟺ κ(y) ≥ 0" is FALSE (κ^Λ(y) < 0 unconditionally,
+verified June 2026).  The corrected equivalence — Theorem 1 of
+"The Corrected RH Equivalence" (July 2026) — is implemented in the
+final section of this module:
 
-The Gamma factor e^{−πγ/2} kills the zero-sum tail extremely fast:
-the first zero (γ₁ ≈ 14.13) contributes ~10⁻¹⁸, so 5-10 zeros
-capture everything numerically.
+    RH  ⟺  limsup_{y→0⁺} |𝒟(y)| < ∞,
+    𝒟(y) := Δκ(y)·X^{−3/2},   Δκ := κ^Λ − κ_Main (stable normal form Df 3),
 
-Reference: Papers 5, 18, 23; Bridge Paper 14.
+evaluated on the skeleton stiffness μ^Λ(y) = Σ_n w_n e^{−2πny} with
+w_n = Σ_{dm=n} d²·mΛ(m).  On true zeros the envelope log-slope of |𝒟|
+is ≈ 0 (bounded); a synthetic off-line quadruplet at β₀ gives slope
+≈ 1/2 − β₀ (divergence).  See corrected_rh_diagnostic().
+
+The legacy functions below are retained for compatibility; read
+rh_diagnostic()'s docstring before using it.
+
+Reference: Papers 5, 18, 23; Bridge Paper 14; July 2026 RH draft.
 """
 
 from __future__ import annotations
@@ -280,15 +290,20 @@ def rh_diagnostic(
     n_max: int = 500,
 ) -> dict:
     """
-    Scan Bakry-Émery curvature across y range.
+    SUPERSEDED DIAGNOSTIC (audit B4).  The criterion "RH ⟺ κ(y) ≥ 0
+    everywhere" is false: κ^Λ(y) < 0 unconditionally for all y > 0
+    (verified June 2026).  The RH-sensitive object is the BOUNDEDNESS of
+    the normalized oscillation 𝒟(y), not the sign of the curvature —
+    use corrected_rh_diagnostic() (July 2026 Th 1) instead.
 
-    RH ⟺ κ(y) ≥ 0 everywhere.
+    Legacy behavior preserved: scans Bakry-Émery curvature across y.
 
     Returns:
       curvature_values: array of κ(y)
       curvature_positive: True if κ ≥ 0 everywhere
       min_curvature: minimum κ found
       y_at_min: depth where minimum occurs
+      superseded: True (always)
     """
     ys = np.linspace(y_min, y_max, n_points)
     kappas = np.array([bakry_emery_curvature(y, N, n_max) for y in ys])
@@ -303,6 +318,9 @@ def rh_diagnostic(
         "y_at_min": float(ys[min_idx]),
         "N": N,
         "consistent_with_RH": bool(np.all(kappas >= -1e-10)),
+        "superseded": True,
+        "supersession_note": "kappa >= 0 is NOT an RH criterion (false since "
+                             "June 2026 verification). Use corrected_rh_diagnostic().",
     }
 
 
@@ -351,3 +369,205 @@ def tower_rigidity(
             "would break the entire N-tower."
         ),
     }
+
+
+# ═══════════════════════════════════════════════════════════════
+#  Corrected RH Equivalence (July 2026 Th 1) — requires mpmath
+# ═══════════════════════════════════════════════════════════════
+#
+# Skeleton stiffness:  μ^Λ(y) = Σ_n w_n e^{−nX}, X = 2πy,
+#   w_n = Σ_{dm=n} d²·mΛ(m)   (von Mangoldt Λ)
+# Mellin parent: F(s) = ζ(s−2)·G(s−1), G(w) = −ζ′(w)/ζ(w).
+#
+# Explicit formula (Pr 1):  μ^Λ = M + Z + T,
+#   M(X) = 2G(2)X^{−3} + ζ(0)X^{−2}   (zero-free part; trivial tower T
+#                                     is O(X³ ln X), negligible for y ≤ 10⁻²)
+#   Z(X) = Σ_ρ m_ρ c_ρ X^{−(ρ+1)},    c_ρ = −Γ(ρ+1)ζ(ρ−1)
+#
+# Diagnostic (Df 2):  Δκ = D²log μ^Λ − D²log M,  𝒟 = Δκ·X^{−3/2},
+# evaluated in the stable normal form (Df 3):
+#   Δκ = D[P/Q],  P = (DZ)M − Z(DM),  DP = (D²Z)M − Z(D²M),  Q = M(M+Z).
+#
+# Th 1:  RH ⟺ limsup_{y→0⁺} |𝒟(y)| < ∞.
+# Numerical signature: envelope slope of log|𝒟| vs log y is ≈ 0 on the
+# true zeros (bounded), ≈ 1/2 − β₀ < 0 for a synthetic off-line
+# quadruplet at real part β₀ (divergence as y → 0⁺).
+
+def _mp():
+    try:
+        import mpmath
+        return mpmath
+    except ImportError as e:  # pragma: no cover
+        raise ImportError(
+            "The corrected RH diagnostic needs mpmath: pip install mpmath"
+        ) from e
+
+
+def skeleton_weights(n_max: int) -> list:
+    """
+    w_n = Σ_{dm=n} d²·m·Λ(m) for n = 1..n_max (exact integer arithmetic).
+    """
+    import math as _math
+    w = [0] * (n_max + 1)
+    # Λ(m) via prime powers
+    lam = [0.0] * (n_max + 1)
+    for p in range(2, n_max + 1):
+        if lam[p] == 0.0:  # prime candidate (sieve)
+            # mark p as prime: check no smaller prime divided — use simple test
+            is_prime = all(p % q for q in range(2, int(p ** 0.5) + 1))
+            if not is_prime:
+                continue
+            lp = _math.log(p)
+            pk = p
+            while pk <= n_max:
+                lam[pk] = lp
+                pk *= p
+    for d in range(1, n_max + 1):
+        d2 = d * d
+        for m in range(2, n_max // d + 1):
+            if lam[m] != 0.0:
+                w[d * m] += d2 * m * lam[m]
+    return w
+
+
+def skeleton_stiffness(y: float, n_max: int = 2000) -> float:
+    """μ^Λ(y) = Σ w_n e^{−2πny} by direct summation (float)."""
+    mp = _mp()
+    w = skeleton_weights(n_max)
+    X = 2.0 * math.pi * y
+    return float(mp.fsum(w[n] * mp.exp(-n * X) for n in range(1, n_max + 1)))
+
+
+def _G(w):
+    mp = _mp()
+    return -mp.zeta(w, derivative=1) / mp.zeta(w)
+
+
+def zero_coefficient(rho) -> complex:
+    """c_ρ = −Γ(ρ+1)·ζ(ρ−1)  (Df 4 coefficient formula; ≠ 0 by Pr 2)."""
+    mp = _mp()
+    return -mp.gamma(rho + 1) * mp.zeta(rho - 1)
+
+
+def _main_part(X):
+    """M, DM, D²M at X (D = d/d ln X).  Trivial tower omitted (O(X³ ln X))."""
+    mp = _mp()
+    terms = [(2 * _G(2), mp.mpf(3)), (mp.zeta(0), mp.mpf(2))]
+    M = DM = D2M = mp.mpf(0)
+    for c, a in terms:
+        t = c * X ** (-a)
+        M += t
+        DM += -a * t
+        D2M += a * a * t
+    return M, DM, D2M
+
+
+def _zero_part(X, zeros):
+    """Z, DZ, D²Z at X.  zeros: list of (rho, c_rho); conjugate pairs → 2 Re."""
+    mp = _mp()
+    Z = DZ = D2Z = mp.mpf(0)
+    for rho, c in zeros:
+        a = rho + 1
+        t = c * X ** (-a)
+        Z += 2 * mp.re(t)
+        DZ += 2 * mp.re(-a * t)
+        D2Z += 2 * mp.re(a * a * t)
+    return Z, DZ, D2Z
+
+
+def delta_kappa_stable(y: float, zeros) -> float:
+    """
+    Δκ(y) via the stable normal form (Df 3): exact identity, immune to
+    the catastrophic cancellation of the naive two-κ subtraction.
+    """
+    mp = _mp()
+    X = 2 * mp.pi * y
+    M, DM, D2M = _main_part(X)
+    Z, DZ, D2Z = _zero_part(X, zeros)
+    P = DZ * M - Z * DM
+    DP = D2Z * M - Z * D2M
+    Q = M * (M + Z)
+    DQ = DM * (M + Z) + M * (DM + DZ)
+    return (DP * Q - P * DQ) / (Q * Q)
+
+
+def normalized_oscillation(y: float, zeros) -> float:
+    """𝒟(y) = Δκ(y)·X^{−3/2} — the Th 1 diagnostic object."""
+    mp = _mp()
+    X = 2 * mp.pi * y
+    return delta_kappa_stable(y, zeros) * X ** (-mp.mpf(3) / 2)
+
+
+def envelope_slope(zeros, y_min_pow=-7.0, y_max_pow=-1.8, n_points=91) -> dict:
+    """
+    Binned-RMS envelope slope of log₁₀|𝒟| vs log₁₀ y over
+    y ∈ [10^y_min_pow, 10^y_max_pow].  Predicted: 0 (true zeros),
+    1/2 − β₀ (synthetic off-line quadruplet at Re β₀).
+    """
+    mp = _mp()
+    bins = {}
+    for i in range(n_points):
+        ly = y_min_pow + (y_max_pow - y_min_pow) * i / (n_points - 1)
+        y = mp.mpf(10) ** ly
+        d = abs(normalized_oscillation(y, zeros))
+        b = math.floor(float(mp.log10(y)) * 2) / 2
+        bins.setdefault(b, []).append(float(d * d))
+    pts = sorted((b, math.log10(math.sqrt(sum(v) / len(v)))) for b, v in bins.items())
+    n = len(pts)
+    sx = sum(p[0] for p in pts)
+    sy = sum(p[1] for p in pts)
+    sxx = sum(p[0] * p[0] for p in pts)
+    sxy = sum(p[0] * p[1] for p in pts)
+    slope = (n * sxy - sx * sy) / (n * sxx - sx * sx)
+    return {"slope": slope, "n_bins": n, "points": pts}
+
+
+def on_line_zeros(n_zeros: int = 12) -> list:
+    """First n_zeros true zeros as (ρ, c_ρ) pairs, ρ = 1/2 + iγ."""
+    mp = _mp()
+    half = mp.mpf(1) / 2
+    return [(mp.mpc(half, g), zero_coefficient(mp.mpc(half, g)))
+            for g in RIEMANN_ZEROS[:n_zeros]]
+
+
+def offline_quadruplet(beta: float, gamma: float) -> list:
+    """
+    Synthetic off-line quadruplet (Df 4 admissible multiset):
+    (β ± iγ, 1−β ± iγ) with the canonical coefficients.
+    """
+    mp = _mp()
+    r1 = mp.mpc(beta, gamma)
+    r2 = mp.mpc(1 - beta, gamma)
+    return [(r1, zero_coefficient(r1)), (r2, zero_coefficient(r2))]
+
+
+def corrected_rh_diagnostic(n_zeros: int = 12,
+                            beta_tests=(0.6, 0.75, 0.9),
+                            y_range=(-7.0, -1.8)) -> dict:
+    """
+    The July 2026 diagnostic, replacing "κ ≥ 0".
+
+    Runs the envelope-slope test on:
+      (a) the true zeros           — expect slope ≈ 0     (bounded 𝒟: Th 1a)
+      (b) synthetic off-line quadruplets at β₀ — expect ≈ 1/2 − β₀ (Th 1b)
+
+    Anchors (draft Appendix A.2/A.3): on-line log-slope of |Δκ| = 1.479
+    (pred. 3/2, i.e. |𝒟| slope ≈ 0); off-line slopes −0.089/−0.258/−0.413
+    for β₀ = 0.6/0.75/0.9 (pred. −0.1/−0.25/−0.4).
+    """
+    mp = _mp()
+    mp.mp.dps = 30
+    out = {"theorem": "RH  <==>  limsup_{y->0+} |D(y)| < infinity",
+           "diagnostic": "envelope slope of log|D|: 0 bounded, 1/2-beta0 divergent"}
+    on = on_line_zeros(n_zeros)
+    res_on = envelope_slope(on, *y_range)
+    out["on_line"] = {"slope": res_on["slope"], "predicted": 0.0,
+                      "bounded": abs(res_on["slope"]) < 0.05}
+    out["off_line"] = {}
+    for b in beta_tests:
+        zs = offline_quadruplet(b, RIEMANN_ZEROS[0]) + on[1:]
+        res = envelope_slope(zs, *y_range)
+        out["off_line"][b] = {"slope": res["slope"], "predicted": 0.5 - b,
+                              "matches": abs(res["slope"] - (0.5 - b)) < 0.05}
+    out["consistent_with_RH"] = out["on_line"]["bounded"]
+    return out

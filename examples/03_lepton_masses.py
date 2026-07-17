@@ -79,28 +79,30 @@ print(f"  Galois orbit dimensions: {ORBIT_DIMENSIONS}")
 print(f"  Fermion generations: {generation_count()} (theorem, not assumption)")
 print()
 
-# ── 6. The complex Hecke eigenvalue ──────────────────────────
-print("THE CRITICAL HECKE EIGENVALUE")
+# ── 6. The "complex Hecke eigenvalue" — RETIRED (audit B11) ──────────────
+print("THE PHANTOM EIGENVALUE (SUPERSEDED)")
 print("-" * 60)
-print(f"  a2_cx(f3) = {A2_COMPLEX}")
-print(f"  |a2_cx|   = {abs(A2_COMPLEX):.6f}")
-print(f"  arg(a2_cx) = {math.degrees(math.atan2(A2_COMPLEX.imag, A2_COMPLEX.real)):.4f} deg")
-print(f"  This is the ONLY non-real datum in all of X_0(143).")
-print(f"  Its phase determines the lepton mass hierarchy.")
+print(f"  Historical value a2_cx(f3) = {A2_COMPLEX}")
+print(f"  This was believed to be the ONLY non-real datum in all of X_0(143).")
+print(f"  AUDIT RESULT: it is a root of the WRONG polynomial.  The correct")
+print(f"  T_2|f_3 charpoly x^6 - 10x^4 + 2x^3 + 24x^2 - 7x - 12 has 6 REAL")
+print(f"  roots (trivial nebentypus => all Hecke eigenvalues are totally real).")
 
 check = verify_complex_eigenvalue()
-if "computed" in check:
-    print(f"  Verified from P_6 roots: error = {check['error']:.6f}")
+print(f"  all roots real:        {check['all_roots_real']}")
+print(f"  max |root|:            {check['max_abs_root']:.4f} (Ramanujan 2*sqrt(2) = {check['ramanujan_bound']:.4f})")
+print(f"  phantom min distance to a true root: {check['phantom_min_distance_to_true_root']:.4f}")
 print()
 
-# ── 7. The Tano mass formula ─────────────────────────────────
-print("THE TANO MASS FORMULA (Paper 26, Theorem 8.1)")
+# ── 7. The Tano mass formula — SUPERSEDED (audit B10) ────────────────────
+print("THE TANO MASS FORMULA (Paper 26, Theorem 8.1) — SUPERSEDED")
 print("=" * 60)
 print(f"  theta_0 = 2/delta^2 + dim(f2) * arg(a2_cx(f3))")
-print(f"          = 2/{FEIGENBAUM_DELTA:.4f}^2 + {ORBIT_DIMENSIONS[1]} * {math.degrees(math.atan2(A2_COMPLEX.imag, A2_COMPLEX.real)):.4f} deg")
-print(f"          = {math.degrees(koide_angle_tano()):.3f} deg")
+print(f"          = {math.degrees(koide_angle_tano()):.3f} deg  (historical value)")
 print(f"  Experimental: {math.degrees(koide_angle_experimental()):.3f} deg")
 print(f"  Difference:   {abs(math.degrees(koide_angle_tano()) - math.degrees(koide_angle_experimental())):.3f} deg")
+print(f"  NOTE: arg(a2_cx) uses the phantom value, so this is a numerical")
+print(f"  coincidence, not arithmetic of X_0(143).  Retained for continuity.")
 print()
 
 pred = tano_mass_predictions()

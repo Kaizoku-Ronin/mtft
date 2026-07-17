@@ -1,0 +1,64 @@
+# Publish to PyPI via Trusted Publishing (OIDC — no API tokens).
+#
+# Trigger: creating a GitHub Release (which release.ps1 already does).
+# Flow:    test → build → publish. If any test fails, nothing publishes.
+#
+# One-time setup required on PyPI (see TRUSTED_PUBLISHING_SETUP.md):
+#   pypi.org → project "mtft" → Settings → Publishing → Add publisher
+#   owner: Kaizoku-Ronin   repo: mtft   workflow: publish.yml   environment: pypi
+
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+
+      - name: Run test suite (publish is blocked if this fails)
+        run: python -m pytest tests/ -q
+
+      - name: Build sdist and wheel
+        run: |
+          pip install build
+          python -m build
+
+      - name: Validate distributions
+        run: |
+          pip install twine
+          python -m twine check dist/*
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/mtft/
+    permissions:
+      id-token: write   # this line is what enables Trusted Publishing
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

@@ -10,7 +10,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -40,7 +40,11 @@ from mtft.cosmology import FriedmannMTFT
 
 # ── Tier 4: Lattice & Fermions ───────────────────────────────
 from mtft.lattice import LatticeConfig, MTFTAction, metropolis_sweep, avg_plaquette, avg_polyakov
-from mtft.x0_143 import tano_mass_predictions, koide_angle_tano, generation_count, JACOBIAN
+from mtft.x0_143 import (
+    tano_mass_predictions, koide_angle_tano, generation_count, JACOBIAN,
+    ORBIT_TRACES_VERIFIED, TRACE_TOTALS_50, ROOT_NUMBERS_LIST,
+    rankin_selberg_Q, verify_complex_eigenvalue,
+)
 from mtft.koide import koide_ratio, koide_leptons, predict_tau_mass, koide_manifold_point
 from mtft.burning_ship import burning_ship_iterate, ANISOTROPIC
 
@@ -65,6 +69,8 @@ from mtft.tower import (
 from mtft.riemann import (
     RIEMANN_ZEROS, explicit_formula, bakry_emery_curvature,
     rh_diagnostic, tower_rigidity, gamma_suppression_table,
+    skeleton_stiffness, normalized_oscillation, envelope_slope,
+    corrected_rh_diagnostic,
 )
 
 # ── Tier 5e: Materials Science ───────────────────────────────

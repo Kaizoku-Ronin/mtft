@@ -13,14 +13,27 @@ It is the self-referential fixed point of MTFT:
 The Atkin-Lehner involutions W₁₁, W₁₃ form ℤ₂ × ℤ₂, identical to the
 parity-time orbifold mapping Mandelbrot → Burning Ship.
 
-The Tano Mass Formula (Paper 26, Theorem 8.1):
+SUPERSESSION NOTICE (independent audit + Correction Sessions 1–6, July 2026)
+----------------------------------------------------------------------------
+The Tano Mass Formula (Paper 26, Theorem 8.1),
 
-    θ₀ = 2/δ² + dim(f₂) · arg(a₂ᶜˣ(f₃))
+    θ₀ = 2/δ² + dim(f₂) · arg(a₂ᶜˣ(f₃)),
 
-predicts muon and tau masses from the Hecke eigenvalue structure
-with zero free parameters beyond the electron mass anchor.
+was built on the polynomial x⁶−x⁵−9x⁴+11x³+13x²−20x+8, which is NOT the
+characteristic polynomial of T₂ on f₃.  The correct charpoly (PARI
+mfeigenbasis; independently verified by orbit traces at a₂, a₄, a₉) is
 
-All data LMFDB-verified.  Reference: Papers 25, 26, 29, 30.
+    x⁶ − 10x⁴ + 2x³ + 24x² − 7x − 12,
+
+whose 6 roots are ALL REAL (as they must be: trivial nebentypus ⇒ every
+Hecke eigenvalue on S₂^new is totally real).  The "complex eigenvalue"
+a₂ᶜˣ = 0.5732 + 0.3564i is a root of the wrong polynomial only — a phantom.
+The formula is retained below, clearly marked SUPERSEDED, for historical
+continuity; do not use it in new work.
+
+All other data LMFDB-verified; per-orbit traces independently verified by
+curve point-counts and companion-matrix evaluation of the PARI polmods.
+Reference: Papers 25, 26, 29, 30; Correction Sessions 1–6 (2026).
 """
 
 from __future__ import annotations
@@ -78,15 +91,18 @@ class EllipticCurve143a1:
     analytic_rank: int = 0
     root_number: int = -1
 
-    # First Hecke eigenvalues aₚ(f₁) — verified by point counting
+    # First Hecke eigenvalues aₚ(f₁) — verified by direct point counting
+    # on y² + y = x³ − x² − x − 2 AND against the PARI q-expansion
+    # (multiplicativity checked to a₅₀).  [Audit fix: the previous table
+    # was wrong at p = 37, 41, 43, 47, 53, 59, 61.]
     hecke_eigenvalues: dict = None
 
     def __post_init__(self):
         if self.hecke_eigenvalues is None:
             object.__setattr__(self, "hecke_eigenvalues", {
                 2: 0, 3: -1, 5: -1, 7: -2, 11: -1, 13: -1,
-                17: -4, 19: 2, 23: 7, 29: -2, 31: -3, 37: 3,
-                41: -10, 43: 4, 47: 0, 53: -2, 59: 12, 61: 2,
+                17: -4, 19: 2, 23: 7, 29: -2, 31: -3, 37: -11,
+                41: 10, 43: -4, 47: -4, 53: 2, 59: -1, 61: -2,
             })
 
 
@@ -110,15 +126,36 @@ def hecke_polynomial_f2_T2() -> np.ndarray:
 def hecke_polynomial_f3_T2() -> np.ndarray:
     """
     Characteristic polynomial of T₂ on f₃ (dimension 6):
-        P₆(x) = x⁶ − x⁵ − 9x⁴ + 11x³ + 13x² − 20x + 8
+        P₆(x) = x⁶ − 10x⁴ + 2x³ + 24x² − 7x − 12
 
-    Has 4 real roots and ONE complex conjugate pair:
-        a₂ᶜˣ = 0.5732 ± 0.3564i
+    ALL SIX ROOTS REAL, |a₂| ≤ 2.71 < 2√2 (Ramanujan).  Verified via
+    PARI mfeigenbasis and by orbit traces Tr_f₃(a₂) = 0, Tr_f₃(a₄) = 8,
+    Tr_f₃(a₉) = 13 (Newton-identity moments).
 
-    This is the ONLY non-real datum in the entire newform
-    decomposition — its phase determines the lepton masses.
+    [Audit fix B11: the polynomial previously hardcoded here,
+    x⁶−x⁵−9x⁴+11x³+13x²−20x+8, is NOT a Hecke charpoly of this space.
+    Its complex pair 0.5732±0.3564i was the "phantom eigenvalue" on
+    which the superseded Tano formula was built.]
     """
-    return np.array([1, -1, -9, 11, 13, -20, 8], dtype=float)
+    return np.array([1, 0, -10, 2, 24, -7, -12], dtype=float)
+
+
+def hecke_polynomial_f2_T3() -> np.ndarray:
+    """
+    Characteristic polynomial of T₃ on f₂ (dimension 4):
+        x⁴ − 7x² + 4x + 1
+    All roots real, |a₃| ≤ 1.84 < 2√3.  (PARI-verified.)
+    """
+    return np.array([1, 0, -7, 4, 1], dtype=float)
+
+
+def hecke_polynomial_f3_T3() -> np.ndarray:
+    """
+    Characteristic polynomial of T₃ on f₃ (dimension 6):
+        x⁶ − 3x⁵ − 11x⁴ + 33x³ + 25x² − 91x + 28
+    All roots real, |a₃| ≤ 3.31 < 2√3.  (PARI-verified.)
+    """
+    return np.array([1, -3, -11, 33, 25, -91, 28], dtype=float)
 
 
 def hecke_roots_f2() -> np.ndarray:
@@ -127,30 +164,44 @@ def hecke_roots_f2() -> np.ndarray:
 
 
 def hecke_roots_f3() -> np.ndarray:
-    """All 6 roots of P₆(x) — includes the complex conjugate pair."""
+    """All 6 roots of P₆(x) — ALL REAL (trivial nebentypus)."""
     return np.roots(hecke_polynomial_f3_T2())
 
 
-# The critical complex eigenvalue
-A2_COMPLEX = 0.5732 + 0.3564j     # a₂ᶜˣ(f₃)
+# ── SUPERSEDED: the "complex Hecke eigenvalue" ────────────────────────────
+# The value below is a root of the WRONG polynomial (see hecke_polynomial_f3_T2
+# docstring).  It does not exist in the arithmetic of X₀(143): every Hecke
+# eigenvalue on S₂^new(Γ₀(143)) is totally real.  Retained ONLY so that
+# historical code (Paper 26 §8, examples/03) still runs; the Tano Mass
+# Formula built on it is superseded.  Do not use in new work.
+A2_COMPLEX = 0.5732 + 0.3564j     # PHANTOM — root of a wrong polynomial
 A2_COMPLEX_CONJ = A2_COMPLEX.conjugate()
+_TANO_SUPERSEDED = True
 
 
 def verify_complex_eigenvalue() -> dict:
-    """Verify a₂ᶜˣ against the roots of P₆."""
+    """
+    Audit replacement for the old phantom check.
+
+    Verifies the TRUTH: the correct T₂|f₃ charpoly has six real roots,
+    all inside the Ramanujan bound, and the historical value
+    0.5732 + 0.3564i is NOT among them.
+    """
     roots = hecke_roots_f3()
-    complex_roots = [r for r in roots if abs(r.imag) > 0.01]
-    if len(complex_roots) >= 2:
-        # Find the one closest to our stored value
-        best = min(complex_roots, key=lambda r: abs(r - A2_COMPLEX))
-        return {
-            "stored": A2_COMPLEX,
-            "computed": best,
-            "error": abs(best - A2_COMPLEX),
-            "phase_rad": cmath.phase(best),
-            "phase_deg": math.degrees(cmath.phase(best)),
-        }
-    return {"error": "No complex roots found"}
+    max_imag = float(max(abs(r.imag) for r in roots))
+    max_abs = float(max(abs(r) for r in roots))
+    phantom_dist = float(min(abs(r - A2_COMPLEX) for r in roots))
+    return {
+        "all_roots_real": max_imag < 1e-8,
+        "max_imaginary_part": max_imag,
+        "max_abs_root": max_abs,
+        "ramanujan_bound": 2.0 * math.sqrt(2.0),
+        "ramanujan_satisfied": max_abs < 2.0 * math.sqrt(2.0) + 1e-8,
+        "phantom_value": A2_COMPLEX,
+        "phantom_min_distance_to_true_root": phantom_dist,
+        "phantom_is_root": phantom_dist < 1e-6,
+        "status": "SUPERSEDED — the complex eigenvalue was an artifact of a wrong polynomial",
+    }
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -199,16 +250,17 @@ def generation_count() -> int:
 
 def koide_angle_tano() -> float:
     """
+    SUPERSEDED (audit B10/B11; Correction Session 1).
+
     The Tano Mass Formula for the Koide angle:
 
         θ₀ = 2/δ² + dim(f₂) · arg(a₂ᶜˣ(f₃))
 
-    where:
-        δ = 4.669201609...   (Feigenbaum)
-        dim(f₂) = 4          (muon-sector orbit dimension)
-        a₂ᶜˣ(f₃) = 0.5732 + 0.3564i  (complex Hecke eigenvalue)
-
-    Returns θ₀ in radians.
+    is built on the phantom value a₂ᶜˣ = 0.5732 + 0.3564i, which is NOT a
+    Hecke eigenvalue of X₀(143) (all such eigenvalues are real; see
+    hecke_polynomial_f3_T2).  The formula is therefore not evaluable as
+    arithmetic of the modular curve.  This function still returns the
+    historical number (θ₀ ≈ 2.31687 rad) for continuity checks only.
     """
     feigenbaum_term = 2.0 / FEIGENBAUM_DELTA ** 2     # ≈ 0.09174 rad (5.26°)
     arithmetic_angle = ORBIT_DIMENSIONS[1] * cmath.phase(A2_COMPLEX)  # 4 × 0.55628
@@ -230,12 +282,12 @@ def koide_angle_experimental() -> float:
 
 def tano_mass_predictions(m_e_MeV: float = 0.51099895) -> dict:
     """
-    Predict muon and tau masses from the Tano Mass Formula.
+    SUPERSEDED (audit B10/B11; Correction Session 1).
 
-    Uses only m_e as dimensional anchor + arithmetic of X₀(143).
-
-    Returns dict with 'theta0_rad', 'theta0_deg', 'masses_MeV',
-    'experimental_MeV', 'errors_percent'.
+    Historical evaluation of the Tano Mass Formula.  The formula depends
+    on the phantom complex eigenvalue and is not part of the verified
+    arithmetic of X₀(143).  Retained for continuity; the dict gains a
+    'superseded' flag.  Do not cite as a prediction.
     """
     theta0 = koide_angle_tano()
 
@@ -263,6 +315,9 @@ def tano_mass_predictions(m_e_MeV: float = 0.51099895) -> dict:
         "masses_MeV": {"electron": masses_MeV[0], "muon": masses_MeV[1], "tau": masses_MeV[2]},
         "experimental_MeV": {"electron": exp_MeV[0], "muon": exp_MeV[1], "tau": exp_MeV[2]},
         "errors_percent": {"electron": errors[0], "muon": errors[1], "tau": errors[2]},
+        "superseded": True,
+        "supersession_note": "Built on the phantom eigenvalue 0.5732+0.3564i "
+                             "(root of a wrong polynomial). Not a verified prediction.",
     }
 
 
@@ -319,3 +374,109 @@ class JacobianStiffness:
 
 
 JACOBIAN = JacobianStiffness()
+
+
+# ═══════════════════════════════════════════════════════════════
+#  Verified Hecke Data (audit + Correction Sessions, July 2026)
+# ═══════════════════════════════════════════════════════════════
+#
+# Provenance: PARI mfeigenbasis polmods (Session 1), converted to exact
+# integer traces via companion matrices of the coefficient-field polys.
+# Cross-checks: f₁ from direct point-counts on 143.a1; per-orbit sums
+# reproduce the trace form Tr(T_n) at every n ≤ 50 (51/51); q-expansion
+# multiplicativity a_mn = a_m·a_n (336 relations) passes; T₃ charpoly
+# moments Tr(a₄), Tr(a₉) match Newton identities.
+
+# Per-orbit traces at primes: p → (a_p(f₁), Tr_f₂(a_p), Tr_f₃(a_p))
+ORBIT_TRACES_VERIFIED = {
+    2:  ( 0,  3,   0),   3:  (-1,  0,   3),   5:  (-1,  0,   1),
+    7:  (-2,  6,   4),  11:  (-1,  4,  -6),  13: (-1, -4,   6),
+    17: (-4,  6,   0),  19: ( 2,  8, -10),  23: ( 7, -4,  11),
+}
+
+# Full per-orbit traces Tr_i(a_n), n = 1..50 (index 0 ↔ n = 1)
+ORBIT_TRACE_F1 = [1, 0, -1, -2, -1, 0, -2, 0, -2, 0, -1, 2, -1, 0, 1, 4, -4, 0,
+                  2, 2, 2, 0, 7, 0, -4, 0, 5, 4, -2, 0, -3, 0, 1, 0, 2, 4, -11,
+                  0, 1, 0, 10, 0, -4, 2, 2, 0, -4, -4, -3, 0]
+ORBIT_TRACE_F2 = [4, 3, 0, 3, 0, -1, 6, 9, 2, -8, 4, 4, -4, -4, -10, 5, 6, -15,
+                  8, -24, -2, 3, -4, 2, 12, -3, -12, -1, -10, 8, 2, -4, 0, 6,
+                  -6, -28, 12, -5, 0, -30, 8, -13, 26, 3, 26, 6, -18, -21, 6, 29]
+ORBIT_TRACE_F3 = [6, 0, 3, 8, 1, -3, 4, -6, 13, 6, -6, -6, 6, -12, 3, 8, 0, 6,
+                  -10, 4, -12, 0, 11, -38, 23, 0, 9, 9, 2, -56, -9, -17, -3,
+                  -40, -24, 11, 15, -9, 3, 16, -4, 19, -2, -8, -26, -6, 6, 19,
+                  20, -4]
+# Trace form Tr(T_n) on S₂^new, n = 1..50 — equals F1+F2+F3 at every n
+TRACE_TOTALS_50 = [11, 3, 2, 9, 0, -4, 8, 3, 13, -2, -3, 0, 1, -16, -6, 17, 2,
+                   -9, 0, -18, -12, 3, 14, -36, 31, -3, 2, 12, -10, -48, -10,
+                   -21, -2, -34, -28, -13, 16, -14, 4, -14, 14, 6, 20, -3, 2,
+                   0, -16, -6, 23, 25]
+
+# Coefficient fields (PARI mfparams; Galois structure by Chebotarev census)
+FIELD_POLY_F2 = [1, 0, -4, -1, 1]          # y⁴ − 4y² − y + 1; disc = 1957 = 19·103
+FIELD_POLY_F3 = [1, 0, -10, -2, 24, 7, -12]  # y⁶−10y⁴−2y³+24y²+7y−12; disc = 194616205 = 5·7·5560463
+FIELD_DISCRIMINANTS = {"f2": 1957, "f3": 194616205}
+GALOIS_GROUPS = {"f2": "S4", "f3": "S6"}   # both totally real, unramified at 11, 13
+
+# Root numbers re-derived without PARI: for p ‖ N the U_p eigenvalue is
+# rational ±1 (visible: Tr(a_p) = ±dim), ε = −w₁₁·w₁₃:
+#   f₁: (a₁₁,a₁₃) = (−1,−1) → ε = −1; f₂: (+1,−1) → +1; f₃: (−1,+1) → +1
+ROOT_NUMBERS_LIST = (-1, +1, +1)
+
+# Frob₁₁ on the f₃ coefficient field: P₃ ≡ (y²−2y−5)(y⁴+2y³−y²−5y−2) (mod 11),
+# cycle type [2,4]; the quadratic factor has Hensel roots 1+3296i, 1+11345i
+# (mod 11⁴, i²=−1).  NOTE (canonicity): Gal = S₆ acts transitively on the 15
+# pair-partitions, so no arithmetic structure canonically selects a Q₂ pair;
+# Paper 32's Q₂/Q₄ split is an analytic datum (period phases), not algebraic.
+FROB_11_CYCLE_TYPE_F3 = (2, 4)
+
+# Rankin–Selberg coupling matrix at s = 3 (Correction Session 4 definitions):
+#   D_ij = Σ_{n≤N} Tr_i(a_n)Tr_j(a_n)/n³,  ε_ij = D_ij/(d_i d_j) − 1,
+#   Q = ⟨ε, R⟩_F with R = ε⃗ε⃗ᵀ,  Q_corr = Q/(‖ε‖_F‖R‖_F).
+# Independently reproduced from the raw traces above:
+RS_COUPLING = {
+    "s": 3,
+    "eps_matrix_N50": [
+        [+0.149686, -0.037330, -0.071683],
+        [-0.037330, +0.118562, +0.009885],
+        [-0.071683, +0.009885, +0.064248],
+    ],
+    "Q_N50": +0.570292,           # → +0.580690 (N=500 exact subset)
+    "Q_corr_N50": +0.819186,      # → +0.816328 (N=500 exact subset)
+    "Q_N1500": +0.587882,         # Session 4 value (NMAX = 1500)
+    "Q_corr_N1500": +0.813978,
+    "strict_sign_rule": True,     # sign(ε_ij) = ε_i·ε_j for all i ≤ j (6/6)
+}
+
+
+def rankin_selberg_epsilon(n_max: int = 50) -> list:
+    """
+    Recompute the ε-matrix at s = 3 from the verified trace tables
+    (self-certifying: no external data needed).  Valid for n_max ≤ 50.
+    """
+    if n_max > 50:
+        raise ValueError("verified tables extend to n = 50 only")
+    dims = ORBIT_DIMENSIONS
+    traces = (ORBIT_TRACE_F1, ORBIT_TRACE_F2, ORBIT_TRACE_F3)
+    eps = [[0.0] * 3 for _ in range(3)]
+    for i in range(3):
+        for j in range(3):
+            D = sum(traces[i][n - 1] * traces[j][n - 1] / n ** 3
+                    for n in range(1, n_max + 1))
+            eps[i][j] = D / (dims[i] * dims[j]) - 1.0
+    return eps
+
+
+def rankin_selberg_Q(n_max: int = 50) -> dict:
+    """Q and Q_corr at s = 3 with R = outer(ROOT_NUMBERS_LIST)."""
+    eps = rankin_selberg_epsilon(n_max)
+    R = [[ROOT_NUMBERS_LIST[i] * ROOT_NUMBERS_LIST[j] for j in range(3)]
+         for i in range(3)]
+    Q = sum(eps[i][j] * R[i][j] for i in range(3) for j in range(3))
+    eps_norm = math.sqrt(sum(eps[i][j] ** 2 for i in range(3) for j in range(3)))
+    R_norm = 3.0
+    strict = all(
+        (eps[i][j] > 0) == (R[i][j] > 0)
+        for i in range(3) for j in range(i, 3)
+    )
+    return {"Q": Q, "Q_corr": Q / (eps_norm * R_norm), "strict": strict,
+            "eps_matrix": eps, "n_max": n_max, "s": 3}
