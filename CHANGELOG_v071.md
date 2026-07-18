@@ -53,3 +53,40 @@ consistent with Berndt's count. 22 new regression tests
 - Remaining v0.7.1-scope items from the earlier ledger are unchanged
   (trivial tower T(X), `predictions.lock`, pytest tier markers,
   paper-side y_c propagation).
+
+## Third leg added: `critical_ensemble.py` (July 18, 2026, same-day)
+
+The Critical ensemble (Li coefficients) completes the three-ensemble
+triad as runnable API — Laplace (`filtered_moment_identity`,
+`mass_gap_stiffness`), Dirichlet (`dirichlet_curvature`,
+`hadamard_zetaprime_check`, `ZETAPRIME_ZEROS`), Critical (this module).
+
+- **`li_lambda(n)`** — primary method: exact series algebra. log ξ at
+  s = 1 assembled from five closed-form Taylor series (log½ + log s
+  − (s/2)lnπ + logΓ(s/2) + log[(s−1)ζ(s)]) with Stieltjes constants and
+  the polygamma closed form ψ^(m)(½) = (−1)^{m+1}m!(2^{m+1}−1)ζ(m+1).
+  Built-in exactness anchor: λ₁ collapses to 1 + γ/2 − ½ln(4π).
+- **`li_lambda_cauchy(n)`** — independent method: Cauchy-integral
+  coefficients of ξ′/ξ on |s−1| = r (radius guard (0.05, 2.99), r ≠ 1).
+- **`li_lambda_zero_sum(n)`** — diagnostic: truncated sum over
+  `mpmath.zetazero` with the smooth-density tail model; terms ≥ 0 on
+  the line, so partials are monotone lower bounds.
+- **`certify()`** — the three-leg certification (closed form, two
+  independent algorithms at two radii, zero-sum bracketing).
+- **`li_criterion_report(n_max)`** — the on-the-fly table with the
+  Bombieri–Lagarias caveat attached to every report object: finite
+  positivity carries no logical force; the criterion's content is ALL n.
+
+Audit status (Addendum K): independently verified beyond the module's
+own 21 tests — polygamma identity to 1e-36; series coefficients vs
+direct Cauchy differentiation of log ξ to 2e-37 (a₁..a₁₀); a fourth
+method (FFT of log ξ contour samples at r = 0.7 and r = 2.8) reproduces
+λ₁..λ₁₂ to the float64 noise floor; the tail model's 0.1% accuracy is
+uniform in n and traces to the zero ordinates hugging the
+Riemann–von Mangoldt density (Σ_{236<γ<542} 1/γ² vs density integral:
+ratio 0.99999). 21 module tests + this audit: **386/386 suite green**.
+
+Self-computed anchors (certified by multi-leg agreement):
+λ₁ = 0.02309570896612103, λ₂ = 0.09234573522804667,
+λ₃ = 0.20763892055432480, λ₄ = 0.36879047949224164,
+λ₅ = 0.57554271446117745 … λ₁₂ = 3.2632553206246199.

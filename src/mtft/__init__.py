@@ -114,3 +114,12 @@ from mtft.busy_beaver import (
 )
 from mtft.jacobian import JacobianStiffness
 from mtft.music import VacuumSonifier, ModularScale, MonsterComposer, spectral_fingerprint
+
+# ── Tier 10: Critical Ensemble (Li coefficients) ─────────────
+from mtft.critical_ensemble import (
+    lambda_1_closed_form, li_lambda, li_lambda_batch,
+    logxi_taylor, logxi_taylor_cauchy, li_lambda_cauchy,
+    li_lambda_zero_sum, certify, li_criterion_report,
+    BOMBIERI_LAGARIAS_CAVEAT, XI_ANALYTICITY_RADIUS,
+    THREE_ENSEMBLE_TABLE,
+)
