@@ -1,16 +1,16 @@
 """
-MTFT — Modular Time Field Theory  (v0.6.0)
+MTFT — Modular Time Field Theory  (v0.7.0)
 ============================================
 
-28 modules covering the complete MTFT framework from arithmetic
+33 modules covering the complete MTFT framework from arithmetic
 weights through lattice gauge theory, materials science, LHC
-confrontation, and experimental verification.
+confrontation, computation theory, and sonification.
 
 Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.6.1"
+__version__ = "0.7.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -94,3 +94,18 @@ try:
     from mtft.lhcb_analysis import LHCbNtuple
 except ImportError:
     pass  # uproot not installed
+
+# ── Tier 9: Computation, Jacobian Engine & Sonification ──────
+from mtft.arithmetic_machine import (
+    Primitive, PrimitiveLevel, classify_computation, computational_stiffness,
+    search_space_compression, arithmetic_entropy, analyze_halting_surface,
+)
+from mtft.arithmetic_wick import (
+    dirichlet_ensemble, laplace_ensemble, wick_rotate, wick_at_critical_depths,
+)
+from mtft.busy_beaver import (
+    HeckeSign, hecke_sign, bb_genus, bb_fatou, bb_sample,
+    faulhaber_decompose, verify_telescoping,
+)
+from mtft.jacobian import JacobianStiffness
+from mtft.music import VacuumSonifier, ModularScale, MonsterComposer, spectral_fingerprint

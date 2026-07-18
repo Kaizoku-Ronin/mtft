@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mtft"
-version = "0.6.1"
-description = "Modular Time Field Theory — falsifiability engine, modular geometry, gauge-Higgs unification, dark sector, LHC confrontation, and information geometry"
+version = "0.7.0"
+description = "Modular Time Field Theory — falsifiability engine, modular geometry, gauge-Higgs unification, dark sector, LHC confrontation, information geometry, arithmetic computation, and sonification"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
@@ -22,7 +22,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-keywords = ["physics", "modular-forms", "gauge-theory", "dark-matter", "information-geometry", "falsifiability"]
+keywords = ["physics", "modular-forms", "gauge-theory", "dark-matter", "information-geometry", "falsifiability", "busy-beaver", "computability", "sonification"]
 
 dependencies = [
     "numpy>=1.22",
@@ -33,6 +33,7 @@ dependencies = [
 full = ["scipy>=1.9", "matplotlib>=3.5"]
 viz = ["matplotlib>=3.5", "plotly>=5.0"]
 dev = ["pytest>=7.0", "pytest-cov", "ruff"]
+lhc = ["uproot>=5.0", "awkward>=2.0"]
 
 [project.urls]
 Homepage = "https://github.com/Kaizoku-Ronin/mtft"

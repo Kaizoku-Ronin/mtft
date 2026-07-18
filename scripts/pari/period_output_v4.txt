@@ -1,0 +1,278 @@
+  ***   Warning: new maximum stack size = 2000000000 (1907.349 Mbytes).
+================================================================
+  MTFT PAPER 32: PERIOD MATRIX OF X0(143) - v4
+================================================================
+
+--- 1. Modular form space ---
+  Level 143 = 11 x 13, Weight 2
+  Cuspidal dim = 16
+  New dim = 16
+  Orbits: 3
+  f1 poly: t - 1  dim = 1
+  f2 poly: y^4 - 4*y^2 - y + 1  dim = 4
+  f3 poly: y^6 - 10*y^4 - 2*y^3 + 24*y^2 + 7*y - 12  dim = 6
+
+--- 2. q-expansion verification ---
+  f1: [0, 1, 0, -1, -2, -1, 0, -2, 0, -2, 0, -1, 2, -1, 0, 1, 4, -4, 0, 2, 2]
+  Elliptic curve 143.a1:
+    Conductor: 143
+    a2=0 a3=-1 a5=-1 a7=-2
+
+--- 3. Modular symbols ---
+  *** mfsymbol: Warning: increasing stack size to 16000000.
+  *** mfsymbol: Warning: increasing stack size to 32000000.
+  *** mfsymbol: Warning: increasing stack size to 64000000.
+  *** mfsymbol: Warning: increasing stack size to 128000000.
+  *** mfsymbol: Warning: increasing stack size to 256000000.
+  f1 done.
+  *** mfsymbol: Warning: increasing stack size to 16000000.
+  *** mfsymbol: Warning: increasing stack size to 32000000.
+  *** mfsymbol: Warning: increasing stack size to 64000000.
+  *** mfsymbol: Warning: increasing stack size to 128000000.
+  *** mfsymbol: Warning: increasing stack size to 256000000.
+  *** mfsymbol: Warning: increasing stack size to 512000000.
+  *** mfsymbol: Warning: increasing stack size to 1024000000.
+  *** mfsymbol: Warning: increasing stack size to 2000000000.
+  f2 done.
+  *** mfsymbol: Warning: increasing stack size to 16000000.
+  *** mfsymbol: Warning: increasing stack size to 32000000.
+  *** mfsymbol: Warning: increasing stack size to 64000000.
+  *** mfsymbol: Warning: increasing stack size to 128000000.
+  *** mfsymbol: Warning: increasing stack size to 256000000.
+  *** mfsymbol: Warning: increasing stack size to 512000000.
+  *** mfsymbol: Warning: increasing stack size to 1024000000.
+  *** mfsymbol: Warning: increasing stack size to 2000000000.
+  f3 done.
+
+--- 4. Petersson norms ---
+  <f1,f1> = 0.0023948688665501861527219484292858433518440053378346
+
+--- 5. Basic periods {0,inf} ---
+  f1: 0
+  f2: [0.11802609082396967132805540241495530177702244878158*I, 0.31907650107501814237234534773151038228285157177865*I, 0.16503959270856378442470871410425711515538042982411*I, 0.35644704278746053001683181841598954690322565793849*I]
+  f3: [0.31315827248077964855985424484232023022740002871963*I, 0.32810695924033040397624355029876484123146149945197*I, 0.26870032763908895056664065825859584510545679861654*I, 0.20052481928862197730570686894195851997843589621626*I, 0.047262033500914929515489410128103264747242022877387*I, 0.11829252221138374904058495462069722424412065900480*I]
+
+================================================================
+  MASS CYCLE: {inf, 2/77}
+================================================================
+  Target d3/d2 = 1.5293718964221339452661683326583539684485063811000
+
+  f1 period: (0.32082012949187626141765594659353593589657145341926 - 0.15676150457643711751607787791357055547708976915598*I)
+  type(f1) = t_POL
+  f2 period: [(-0.42936940899178192730642514225180204043192411047518 + 0.33282050512932942330809863274382323018921968610215*I), (-0.24476993502706524453791568087031615901860058426474 + 0.13864424604563830901206076829882114159839563729706*I), (-0.17277052465387460912279604341591385888360955988678 - 0.13496878732127312922005173738711258364345011245882*I), (-0.39296740277868974338773049790206749195735169263458 - 0.15562837721304381901721148652502878155475906554938*I)]
+  type(f2) = t_VEC  #components = 4
+  f3 period: [(-0.21750679058129481102714069804616914361963308268876 + 0.77062409077638317447703935842982805802246655203199*I), (0.24632985127582526133720446307993132905947735673981 + 0.87744158311947455335536914116212355435630402049265*I), (0.15587321324334724408369306064140190432543048438231 + 0.58331982989251778997520050331522008353019592892030*I), (-0.10629473822405233554738322442613299272672218619218 + 0.40450710959308395332440455489420829566665586203832*I), (-0.044365201702669848908802642772985087051694210016671 - 0.16212322745776348986432032042054107525628861541680*I), (-0.35147925332332264984151152119944872082693960407704 - 0.13519630087673565028953552278788727457168405325094*I)]
+  type(f3) = t_VEC  #components = 6
+
+  |Omega_1| = 0.35707103607581022597288631471025379701624954889098
+
+  f2 per-embedding:
+  ***   at top-level: ...cabs(p2[k])," phase = ",myphase(p2[k])," deg"
+  ***                                            ^---------------------
+  ***   in function myphase: ...i/2,-Pi/2),atan(i/r)+if(r<0,if(i>=0,Pi,-Pi),0)
+  ***                                                    ^---------------------
+  *** _<_: forbidden comparison t_POL , t_INT.
+
+  f3 per-embedding:
+  ***   at top-level: ...cabs(p3[k])," phase = ",myphase(p3[k])," deg"
+  ***                                            ^---------------------
+  ***   in function myphase: ...i/2,-Pi/2),atan(i/r)+if(r<0,if(i>=0,Pi,-Pi),0)
+  ***                                                    ^---------------------
+  *** _<_: forbidden comparison t_POL , t_INT.
+
+--- Norms ---
+  Tr(Om2) = (-1.2398772714514115243548673644400995502914859472613 + 0.18086758664065078408289617713050300658940614539100*I)
+  |Tr(Om2)| = 1.2529998931201113781747411234494535226115005780882
+  Tr(Om3) = (-0.31744291931216713990394056272340271084008124185253 + 2.3385730850469603309781577145929516417476496948155*I)
+  |Tr(Om3)| = 2.3600199323580910414026587242653338419626228458718
+  L2(Om2) = 0.77522379042954810205143754988369747016519791615413
+  L2(Om3) = 1.4769237602461776836524066267425731110728364632814
+  L1(Om2) = 1.4664676855075477524604277600825042756049712651024
+  L1(Om3) = 3.2787889755007834799779185505268838082928986347622
+
+--- Depth ratios ---
+  Trace:  d3/d2 = 1.5043405126070666972503457575600704001038480863978  delta = -0.025031383815067248015822575098283568344658294702197
+  L2:     d3/d2 = 1.8314638455419761513244907502626818437703278777391  delta = 0.30209194911984220605832241760432787532182149663917
+  L1:     d3/d2 = 1.5695693371036014079227094123012334610298363641860  delta = 0.040197440681467462656541079642879492581329983086013
+
+================================================================
+  Q2/Q4 HECKE FACTORIZATION
+================================================================
+
+  Phase structure of f3:
+  ***   at top-level: ... sigma_",k,": phase = ",myphase(p3[k])," deg 
+  ***                                            ^---------------------
+  ***   in function myphase: ...i/2,-Pi/2),atan(i/r)+if(r<0,if(i>=0,Pi,-Pi),0)
+  ***                                                    ^---------------------
+  *** _<_: forbidden comparison t_POL , t_INT.
+
+  Q2 (barrier fold, dropped):
+    sigma_1 + sigma_4
+    |Tr_Q2| = 1.2189260716460472675942882643405376381373890695443 + O(x^16)
+    L2_Q2 = 0.90337991250601401508137457431581314086356908330928
+
+  Q4 (attractor + reflected, kept):
+    sigma_2 + sigma_3 + sigma_5 + sigma_6
+    |Tr_Q4| = 1.1634592605401377580125871378713735450725408754725 + O(x^16)
+    L2_Q4 = 1.1684213825757963264399846646225236686762467653007
+
+  --- Q4-restricted depth ratios ---
+  Q4_L2 / f2_Trace:  d3/d2 = 0.94432916790650652615252173042627598598688541764175  delta = -0.58504272851562741911364660223207798246162096345822
+  Q4_L2 / f2_L2:     d3/d2 = 1.5292158426608067241284697834077792308637579868277  delta = -0.00015605376132722113769854925057473758474839427223887  <-- PAPER 32
+  Q4_Tr / f2_Trace:  d3/d2 = 0.94093898524568388094544084654273943013749499664658 + O(x^16)  delta = -0.58843291117645006432072748611561453831101138445339 + O(x^16)
+
+  Dimension equalization: dim_eff(f3) = 4 = dim(f2) = 4
+
+================================================================
+  STIFFNESS-PERIOD FORMULA
+================================================================
+  ln(m_mu/m_e) = 5.3315931516964225881660022223813443442688287110604
+  ln(m_tau/m_e) = 8.1539887293612198817603615507129303480673865249116
+  ln(lam2/lam1) = 1.4375445646446673319967530585992274606269928749716
+  ln(lam3/lam1) = 3.3939962006213597399629787992374556871776768454428
+  dp2 = ln(|Tr(Om2)|/|Om1|) = 1.2553611270067370941874375161886586927810377251187
+  dp3 = ln(|Tr(Om3)|/|Om1|) = 1.8884906013082998409477736939389660489598252994779
+  alpha = 0.10837490249362009208617578499400594074492052822091
+  beta = 4.1229565647089265606622632178769510945392988110397
+  m_mu predicted = 105.65800000000000000000000000000000000000000000000 MeV (obs: 105.65800000000000000000000000000000000000000000000)
+  m_tau predicted = 1776.8600000000000000000000000000000000000000000000 MeV (obs: 1776.8600000000000000000000000000000000000000000000)
+
+================================================================
+  MASS CYCLE SCAN: a=2, c=k*11 for k=1..13
+================================================================
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/11  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=1.2529998931201113781747411234494535226115005780882  |Tr(f3)|=0.38256950209402074162342551184655936138582432272976  d3/d2=0.054944826239416756468746362705875718734628022422740  delta=-1.4744270701827171887974219699524782497138783586772
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/22  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.89843177904608660680783238813211802134202959243404  |Tr(f3)|=0.90460611674212757864362310680773231370785823228392  d3/d2=1.0065054958879200510089970487150580683349671218856  delta=-0.52286640053421389425717128394329590011353925921436
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/33  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.87198887799628739530515917036323819136445548680822  |Tr(f3)|=0.60223723872262427742983776998797953944054899947334  d3/d2=0.63816228387170658485902298057046284480828763238041  delta=-0.89120961255042736040714535208789112364021874871956
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/44  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=0.77683661645433452228798839385756144503811931233319  |Tr(f3)|=1.9148982769825636648507849108394124636837808783128  d3/d2=2.1606782070311158395561787052790381005604334282854  delta=0.63130631060898189429001037262068413211192704718547
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/55  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=1.7125302542552801552481566728108721792517159367898  |Tr(f3)|=1.5334772043398365459897085933133062392910835562294  d3/d2=0.92956075578303939612791138577690546506939204869491  delta=-0.59981114063909454913825694688144850337911433240506
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/66  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=0.77683661645433452228798839385756144503811931233319  |Tr(f3)|=1.7466778720119913169818804749643370053266359959158  d3/d2=2.0423848429096621346314131027798445213100259358350  delta=0.51301294648752818936524477012149055286151955473499
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/77  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=1.2529998931201113781747411234494535226115005780882  |Tr(f3)|=2.3600199323580910414026587242653338419626228458718  d3/d2=1.5043405126070666972503457575600704001038480863978  delta=-0.025031383815067248015822575098283568344658294702197
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/88: SKIP (near zero)
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/99  |f1|=0.35707103607581022597288631471025379701624954889098  |Tr(f2)|=1.7125302542552801552481566728108721792517159367898  |Tr(f3)|=2.7167845029965373357989158123517754348751274889844  d3/d2=1.2943482999170170744692020299818173664235920827293  delta=-0.23502359650511687079696630267653660202491429837064
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/110: SKIP (near zero)
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/121  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.87198887799628739530515917036323819136445548680822  |Tr(f3)|=2.7286174810811892686553423877508664198991772871911  d3/d2=2.1152305256105161531746199047163470460176271146085  delta=0.58585862918838220790845157205799307756912073350853
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/132  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.89843177904608660680783238813211802134202959243404  |Tr(f3)|=2.8270160595306165941769046758810354613848850250359  d3/d2=2.0888584646104882071398858186567094685654561158360  delta=0.55948656818835426187371748599835550011694973473604
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  2/143: SKIP (near zero)
+
+  --- a=1 comparison ---
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  1/11  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.89843177904608660680783238813211802134202959243404  |Tr(f3)|=0.90460611674212757864362310680773231370785823228392  d3/d2=1.0065054958879200510089970487150580683349671218856  delta=-0.52286640053421389425717128394329590011353925921436
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  1/77  |f1|=0.31352300915287423503215575582714111095417953831197  |Tr(f2)|=0.89843177904608660680783238813211802134202959243404  |Tr(f3)|=2.8270160595306165941769046758810354613848850250359  d3/d2=2.0888584646104882071398858186567094685654561158360  delta=0.55948656818835426187371748599835550011694973473604
+  ***   Warning: increasing stack size to 16000000.
+  ***   Warning: increasing stack size to 32000000.
+  ***   Warning: increasing stack size to 64000000.
+  ***   Warning: increasing stack size to 128000000.
+  ***   Warning: increasing stack size to 256000000.
+  ***   Warning: increasing stack size to 512000000.
+  ***   Warning: increasing stack size to 1024000000.
+  1/143: SKIP (near zero)
+
+================================================================
+  COMPUTATION COMPLETE
+================================================================
+(10:32) gp > \l
+   log = 0 (off)

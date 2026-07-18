@@ -85,6 +85,11 @@ print(f"R\_core (Feigenbaum) = {R:.4f}")
 # ── Cosmology ─────────────────────────────────────────
 cosmo = mtft.FriedmannMTFT(Omega\_tau=0.25)
 hist = cosmo.expansion\_history()
+
+# ── Computation & Jacobian engine (v0.7.0) ────────────
+mtft.bb_genus(2).bb_value        # 0 — the Hecke constraint forces write-0
+eng = mtft.JacobianStiffness()   # Paper 30 engine on verified X₀(143) data
+M, evals, evecs = eng.jacobian_matrix(0.18174)
 ```
 
 ## Package Structure
@@ -98,8 +103,17 @@ mtft/
 ├── particles.py       # SM particle database with κ-couplings
 ├── dark\_sector.py     # τ-vortex halos, rotation curves, Tully-Fisher
 ├── info\_geometry.py   # Fisher-Rao metric, Ricci curvature, logistic map
-└── cosmology.py       # Modified Friedmann, perturbations, G(t) oscillation
+├── cosmology.py       # Modified Friedmann, perturbations, G(t) oscillation
+├── jacobian.py        # 3×3 Jacobian stiffness engine on J₀(143) (Paper 30)
+├── arithmetic\_machine.py  # five-primitive decomposition of computation
+├── arithmetic\_wick.py  # Laplace ↔ Dirichlet arithmetic Wick rotation
+├── busy\_beaver.py     # Hecke-constrained Busy Beaver hierarchy (CLI)
+└── music.py           # sonification — modular scales, vacuum tones, composer
 ```
+
+Repo extras (not shipped in the wheel): `viz/` — four React visualizations
+of the modular geometry; `scripts/pari/` — PARI/GP provenance scripts with
+their verified output logs; `examples/` — 15 runnable walkthroughs.
 
 ## Key Equations
 
@@ -117,7 +131,7 @@ mtft/
 ## Testing
 
 ```bash
-pytest tests/ -v
+pytest tests/ -q          # 343 tests, ~6 s
 ```
 
 ## License

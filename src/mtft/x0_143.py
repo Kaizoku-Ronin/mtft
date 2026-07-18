@@ -88,7 +88,7 @@ class EllipticCurve143a1:
     a_invariants: tuple = (0, -1, 1, -1, -2)     # y² + y = x³ − x² − x − 2
     conductor: int = 143
     j_invariant: str = "-1/15"
-    analytic_rank: int = 0
+    analytic_rank: int = 1     # ε = −1 forces odd rank; L′(1) ≠ 0 → exactly 1 (PARI MW rank 1)
     root_number: int = -1
 
     # First Hecke eigenvalues aₚ(f₁) — verified by direct point counting
@@ -327,7 +327,7 @@ def tano_mass_predictions(m_e_MeV: float = 0.51099895) -> dict:
 
 # Numerically computed central L-values
 L_VALUES = {
-    "L'(f1, 1)": 0.791,        # derivative (forced vanishing, ε = −1)
+    "L'(f1, 1)": 0.945696,     # derivative (forced vanishing of L, ε = −1); AFE + PARI ellL1 agree
     "sum_L(f2, 1)": 6.023,     # sum over 4 conjugates
     "sum_L(f3, 1)": 8.210,     # sum over 6 conjugates
 }

@@ -40,13 +40,15 @@ Write-Host "-- Verify ----------------------------------------------" -Foregroun
 py -m twine check dist\*
 Write-Host ""
 
-# Step 5: Upload to PyPI
-Write-Host "-- Upload to PyPI --------------------------------------" -ForegroundColor Yellow
-py -m twine upload dist\*
+# Step 5: PyPI publish is handled by GitHub Actions (trusted publishing)
+Write-Host "-- PyPI ------------------------------------------------" -ForegroundColor Yellow
+Write-Host "GitHub Actions is re-running the full test suite on a clean machine" -ForegroundColor Gray
+Write-Host "and publishing to PyPI. Nothing is published if any test fails." -ForegroundColor Gray
+Write-Host "Watch: https://github.com/Kaizoku-Ronin/mtft/actions/workflows/publish.yml" -ForegroundColor Gray
 Write-Host ""
 
 Write-Host "========================================================" -ForegroundColor Cyan
-Write-Host "  mtft v$version is live everywhere" -ForegroundColor Green
-Write-Host "  PyPI:   https://pypi.org/project/mtft/$version/" -ForegroundColor Gray
+Write-Host "  mtft v$version released" -ForegroundColor Green
+Write-Host "  PyPI:   https://pypi.org/project/mtft/$version/  (live when the workflow finishes)" -ForegroundColor Gray
 Write-Host "  GitHub: https://github.com/Kaizoku-Ronin/mtft/releases/tag/v$version" -ForegroundColor Gray
 Write-Host "========================================================" -ForegroundColor Cyan

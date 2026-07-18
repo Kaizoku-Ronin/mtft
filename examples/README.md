@@ -25,6 +25,8 @@ python examples/01_quick_start.py
 | 11 | `11_info_geometry_particles.py` | Fisher-Rao metric, Hosotani mechanism, SM catalog |
 | 12 | `12_visualization.py` | Matplotlib plots (needs `pip install mtft[full]`) |
 | 13 | `13_decay.py` | Nuclear decay in modular time, neutron lifetime anomaly |
+| 14 | `14_computation.py` | Five primitives, Hecke Busy Beaver, Wick rotation (v0.7.0) |
+| 15 | `15_sonification.py` | Modular scales, vacuum tones, MonsterHash composer (v0.7.0) |
 
 ## Quick verification
 
