@@ -10,7 +10,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.7.0"
+__version__ = "0.7.1"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -71,6 +71,11 @@ from mtft.riemann import (
     rh_diagnostic, tower_rigidity, gamma_suppression_table,
     skeleton_stiffness, normalized_oscillation, envelope_slope,
     corrected_rh_diagnostic,
+    ZETAPRIME_ZEROS, ZETAPRIME_CENSUS_HEIGHT,
+    zetaprime_zero_count_berndt, zetaprime_negative_zero,
+    zetaprime_refine, zetaprime_logcurvature, hadamard_zetaprime_check,
+    dirichlet_curvature, von_mangoldt_curvature, divisor_log_weights,
+    weighted_theta, filtered_moment_identity, weighted_theta_cusp_fit,
 )
 
 # ── Tier 5e: Materials Science ───────────────────────────────

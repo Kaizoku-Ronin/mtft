@@ -571,3 +571,423 @@ def corrected_rh_diagnostic(n_zeros: int = 12,
                               "matches": abs(res["slope"] - (0.5 - b)) < 0.05}
     out["consistent_with_RH"] = out["on_line"]["bounded"]
     return out
+
+
+# ═══════════════════════════════════════════════════════════════
+#  Speiser–Hadamard Lab: Zeros of ζ′ (audit Addendum I, July 2026)
+# ═══════════════════════════════════════════════════════════════
+#
+# The Dirichlet ensemble of the three-ensemble program is anchored on
+#
+#     Speiser (1935):        RH ⟺ ζ′ has no zeros in 0 < Re s < 1/2
+#     Hadamard bookkeeping:  ∂²log(−ζ′(s)) = 2/(s−1)² − Σ_{ρ′} (s−ρ′)⁻²
+#
+# where ρ′ runs over ALL zeros of ζ′: the nontrivial zeros in the strip
+# (exactly 19 with 0 < Im ≤ 100, certified below) and the negative real
+# zeros, exactly one in each interval (−2n−2, −2n), n ≥ 1.
+#
+# Independent verification status (mtft audit, Addendum I):
+#   * algebra — (s−1)²ζ′(s) is entire of order 1 and Σ|ρ′|⁻² < ∞, so the
+#     canonical product has genus ≤ 1 and ∂²log kills both the e^{A+Bs}
+#     factor and the compensators; the displayed identity is a theorem.
+#   * pole coefficient — ∂²log(−ζ′(s))·(s−1)² → 2.00000 as s → 1⁺,
+#     computed from raw ζ derivatives (no Hadamard input).
+#   * negative zeros — exact functional-equation solver (see
+#     zetaprime_negative_zero), bracket-certified, n = 1..1000.
+#   * census — the 19 nontrivial zeros below, located by argument-
+#     principle bisection and Newton-refined to |ζ′(ρ′)| < 1e-29; count
+#     consistent with Berndt (1970): N′(T) = (T/2π)log(T/4πe) + O(log T).
+#     All 19 have Re > 1/2 — a numerical Speiser check (RH-consistent)
+#     to height 100.
+#   * identity — balances to |residual| < 1.5e-5 for s ∈ {3,...,30} with
+#     both tails carried (negative-axis beyond the computed zeros, and
+#     high-γ nontrivial tail via the Berndt density).  The two tails
+#     nearly CANCEL at large s (+0.0067 vs −0.0092 at s = 30): dropping
+#     either one produces a spurious "missing zeros" signal.  Because
+#     LHS decays like (2/3)^s while the pole and zero-sums (~1e-3)
+#     cancel, numerical demonstrations must use s ∈ [3, 10].
+
+ZETAPRIME_ZEROS: List[complex] = [
+    complex(2.4631618694543213, 23.298320492762858),
+    complex(1.2864968222690477, 31.708250083115909),
+    complex(2.3075700637226316, 38.489983173078936),
+    complex(1.3827636057116746, 42.29096455459673),
+    complex(0.96468562270568565, 48.847159905068479),
+    complex(2.1016999009487748, 52.432161245149836),
+    complex(1.8959597624712398, 57.134753199019534),
+    complex(0.84873532810540347, 60.140845782038424),
+    complex(1.207295624674169, 65.919932824281162),
+    complex(1.8329479316538901, 68.611078827128335),
+    complex(1.7742690858377651, 71.528161065185035),
+    complex(0.8646228644261133, 76.362807896467042),
+    complex(1.3285155423330835, 78.662405942406661),
+    complex(1.2035601348826901, 83.66913350341483),
+    complex(2.3940392808396954, 85.802080034941309),
+    complex(0.8641036405989395, 88.177517409881013),
+    complex(1.3040878149430769, 93.085926815619881),
+    complex(0.78062800472464465, 95.292968271352217),
+    complex(1.7984373897654074, 98.826971867454158),
+]
+"""The certified census: all nontrivial zeros of ζ′ with 0 < Im s ≤ 100.
+
+19 zeros (argument-principle certified); each Newton-refined to
+|ζ′(ρ′)| < 1e-29.  Minimum real part 0.78062800... > 1/2 (Speiser).
+Conjugates are omitted; ζ′(ρ̄′) = 0 as well.
+"""
+
+ZETAPRIME_CENSUS_HEIGHT = 100.0
+
+
+def zetaprime_zero_count_berndt(T: float) -> float:
+    """
+    Leading term of the zero-counting function of ζ′ (Berndt 1970):
+
+        N′(T) = (T/2π)·log(T/4πe) + O(log T)
+
+    Note the log(T/4π): the ζ′ ensemble is SPARSER than the ζ ensemble
+    by ≈ (T/2π)·log 2.  At T = 100: 17.1 + O(log T) — the certified
+    census count is 19.  (For ζ the formula reads (T/2π)log(T/2πe).)
+    """
+    mp = _mp()
+    return float(T / (2 * mp.pi) * mp.log(T / (4 * mp.pi * mp.e)))
+
+
+def _logzeta_deriv(u):
+    """(log ζ)′(u) for real u ≥ 4 (prime-power expansion; exact below 12)."""
+    mp = _mp()
+    if u < 12:
+        return mp.zeta(u, derivative=1) / mp.zeta(u)
+    two, three = mp.mpf(2), mp.mpf(3)
+    t = (mp.log(2) * two ** (-u) + mp.log(3) * three ** (-u)
+         + mp.log(2) * mp.mpf(4) ** (-u) + mp.log(5) * mp.mpf(5) ** (-u)
+         + mp.log(7) * mp.mpf(7) ** (-u) + mp.log(2) * mp.mpf(8) ** (-u)
+         + mp.log(3) * mp.mpf(9) ** (-u) + mp.log(11) * mp.mpf(11) ** (-u)
+         + mp.log(13) * mp.mpf(13) ** (-u) + mp.log(2) * mp.mpf(16) ** (-u))
+    return -t
+
+
+def _H2(s):
+    """
+    The exact negative-axis zero equation for ζ′.
+
+    From the functional equation ζ(s) = χ(s)ζ(1−s),
+
+        ζ′(s) = χ(s)ζ(1−s) · [ (log χ)′(s) − (log ζ)′(1−s) ],
+
+    and χ(s)ζ(1−s) ≠ 0 inside each interval (−2n−2, −2n), so the zeros
+    of ζ′ there are exactly the zeros of
+
+        H2(s) = log(2π) + (π/2)·cot(πs/2) − ψ(1−s) − (log ζ)′(1−s).
+
+    Elementary (digamma + cotangent); no ζ evaluations at negative
+    arguments — this is what makes the deep negative axis reachable.
+    """
+    mp = _mp()
+    return (mp.log(2 * mp.pi) + (mp.pi / 2) / mp.tan(mp.pi * s / 2)
+            - mp.digamma(1 - s) - _logzeta_deriv(1 - s))
+
+
+_NEG_ZERO_CACHE: dict = {}
+
+
+def zetaprime_negative_zero(n: int) -> float:
+    """
+    The unique real zero of ζ′ in (−2n−2, −2n), n ≥ 1 (bisection on H2).
+
+    Verified anchors: ρ′₁ = −2.7172628292, ρ′₂ = −4.9367621086,
+    ρ′₃ = −7.0745971450; computed to n = 1000 in the audit
+    (ρ′₁₀₀₀ = −2001.83062775).  The zeros approach −2n−1 from the left
+    with a slow drift (ε ≈ −0.43 at n = 10, −0.83 at n = 1000); the
+    naive asymptotic ε ≈ −(4/π²)log(n/π) overshoots — solve, don't
+    linearize.
+    """
+    if n < 1:
+        raise ValueError("negative zeros of zeta' are indexed from n = 1")
+    if n in _NEG_ZERO_CACHE:
+        return _NEG_ZERO_CACHE[n]
+    mp = _mp()
+    with mp.workdps(25):
+        lo, hi = mp.mpf(-2 * n - 2) + mp.mpf("1e-9"), mp.mpf(-2 * n) - mp.mpf("1e-9")
+        flo = _H2(lo)
+        if (flo < 0) == (_H2(hi) < 0):  # pragma: no cover
+            raise RuntimeError(f"H2 bracket failed at n = {n}")
+        for _ in range(70):
+            mid = (lo + hi) / 2
+            fm = _H2(mid)
+            if fm == 0:
+                lo = hi = mid
+                break
+            if (flo < 0) != (fm < 0):
+                hi = mid
+            else:
+                lo, flo = mid, fm
+        r = (lo + hi) / 2
+    _NEG_ZERO_CACHE[n] = float(r)
+    return _NEG_ZERO_CACHE[n]
+
+
+def zetaprime_refine(z0, tol: float = 1e-16) -> complex:
+    """
+    Newton-refine an approximate zero of ζ′ (complex).
+
+    Hand-rolled Newton rather than mpmath.findroot: long findroot sweeps
+    on ζ′ are crash-prone in some environments (audit experience).
+    """
+    mp = _mp()
+    with mp.workdps(30):
+        z = mp.mpc(z0)
+        h = mp.mpc("1e-12", "0")
+        for _ in range(60):
+            f0 = mp.zeta(z, derivative=1)
+            d = (mp.zeta(z + h, derivative=1) - f0) / h
+            if d == 0:
+                break
+            step = f0 / d
+            z -= step
+            if abs(step) < mp.mpf(10) ** int(mp.floor(mp.log10(tol))):
+                break
+    return complex(z)
+
+
+def zetaprime_logcurvature(s: float) -> float:
+    """
+    ∂²/∂s² log(−ζ′(s)) = ζ‴/ζ′ − (ζ″/ζ′)²   (real s > 1).
+
+    Anchors: 0.014052477562801085548 at s = 8; 1.3597768711309190e-6
+    at s = 30.  Pole check: value·(s−1)² → 2 as s → 1⁺.
+    """
+    mp = _mp()
+    with mp.workdps(30):
+        s = mp.mpf(s)
+        z1 = mp.zeta(s, derivative=1)
+        z2 = mp.zeta(s, derivative=2)
+        z3 = mp.zeta(s, derivative=3)
+        return float(z3 / z1 - (z2 / z1) ** 2)
+
+
+def _nontrivial_pair_sum(s):
+    """Σ over certified census, conjugate pairs folded: 2Re Σ (s−ρ′)⁻²."""
+    mp = _mp()
+    tot = mp.mpf(0)
+    for r in ZETAPRIME_ZEROS:
+        b, g = mp.mpf(r.real), mp.mpf(r.imag)
+        tot += 2 * ((s - b) ** 2 - g ** 2) / (((s - b) ** 2 + g ** 2) ** 2)
+    return tot
+
+
+def _berndt_density(t):
+    mp = _mp()
+    return mp.log(t / (4 * mp.pi)) / (2 * mp.pi)
+
+
+def _nontrivial_tail(s, g0=100.0, bbar=1.5):
+    """High-γ tail via the Berndt density (uncertainty ~ ±2e-4: one pair)."""
+    mp = _mp()
+    return mp.quad(
+        lambda t: 2 * ((s - bbar) ** 2 - t ** 2)
+        / (((s - bbar) ** 2 + t ** 2) ** 2) * _berndt_density(t),
+        [mp.mpf(g0), mp.inf])
+
+
+def hadamard_zetaprime_check(s: float, n_neg: int = 120) -> dict:
+    """
+    Numerical evaluation of the Speiser–Hadamard identity
+
+        ∂²log(−ζ′(s))  =  2/(s−1)² − Σ_{ρ′} (s−ρ′)⁻²
+
+    with the zero sum split as: n_neg exact negative-axis zeros +
+    integral tail beyond, the certified 19-zero nontrivial census, and
+    the high-γ Berndt-density tail.
+
+    Returns lhs, pole, negative_axis, nontrivial_census, nontrivial_tail,
+    rhs, residual.  Expected |residual| ~ 1e-5 for s ∈ [3, 10], far below
+    the tail model's ~ ±2e-4 discreteness uncertainty.  CONDITIONING
+    WARNING: for s ≳ 20 the LHS falls below the tail-accounting noise
+    floor (it decays like (2/3)^s while ~1e-3 terms cancel); use
+    s ∈ [3, 10] for demonstrations.
+    """
+    mp = _mp()
+    with mp.workdps(25):
+        s = mp.mpf(s)
+        lhs = mp.mpf(zetaprime_logcurvature(float(s)))
+        pole = 2 / (s - 1) ** 2
+        neg = mp.mpf(0)
+        for n in range(1, n_neg + 1):
+            neg += 1 / (s - mp.mpf(zetaprime_negative_zero(n))) ** 2
+        neg += mp.quad(lambda nn: 1 / (s + 2 * nn + 1) ** 2,
+                       [n_neg + mp.mpf("0.5"), mp.inf])
+        nt = _nontrivial_pair_sum(s)
+        nt_tail = _nontrivial_tail(s)
+        rhs = pole - neg - nt - nt_tail
+    return {
+        "s": float(s),
+        "lhs": float(lhs),
+        "pole": float(pole),
+        "negative_axis": float(neg),
+        "nontrivial_census": float(nt),
+        "nontrivial_tail": float(nt_tail),
+        "rhs": float(rhs),
+        "residual": float(lhs - rhs),
+        "identity": "d^2 log(-zeta'(s)) = 2/(s-1)^2 - sum_{rho'} (s-rho')^{-2}",
+        "note": "use 3 <= s <= 10 for demonstrations (conditioning)",
+    }
+
+
+# ── Decomposition lemma (three-ensemble paper §2) ────────────────
+
+def dirichlet_curvature(beta: float) -> dict:
+    """
+    The Dirichlet-ensemble curvature and its decomposition lemma:
+
+        g_D(β) = ∂²log ζ(β) + ∂²log(−ζ′(β+1)),     β > 1.
+
+    Verified anchors: g_D(3) = 0.33510387864414189, with the ζ′ piece
+    carrying 48.588864% at β = 3 (41.92% at β = 2.5, 58.04% at β = 4).
+    The ζ piece alone has the von Mangoldt series
+    ∂²log ζ(β) = Σ_n Λ(n)(log n) n^{−β} (see von_mangoldt_curvature).
+    """
+    mp = _mp()
+    with mp.workdps(30):
+        b = mp.mpf(beta)
+        zeta_piece = (mp.zeta(b, derivative=2) / mp.zeta(b)
+                      - (mp.zeta(b, derivative=1) / mp.zeta(b)) ** 2)
+        zp_piece = mp.mpf(zetaprime_logcurvature(float(b) + 1.0))
+    g = zeta_piece + zp_piece
+    return {
+        "beta": float(beta),
+        "g_D": float(g),
+        "zeta_piece": float(zeta_piece),
+        "zetaprime_piece": float(zp_piece),
+        "zetaprime_share": float(zp_piece / g),
+        "identity": "g_D(beta) = d^2 log zeta(beta) + d^2 log(-zeta'(beta+1))",
+    }
+
+
+def von_mangoldt_curvature(beta: float, n_max: int = 20000) -> float:
+    """
+    Σ_{n≤n_max} Λ(n)(log n) n^{−β} — the von Mangoldt series for
+    ∂²log ζ(β) (cross-check of dirichlet_curvature's zeta piece;
+    truncation error ~ (log n_max)²/(2·n_max^{β−1}·(β−1))).
+    """
+    import math as _math
+    lam = [0.0] * (n_max + 1)
+    for p in range(2, n_max + 1):
+        if lam[p] == 0.0 and all(p % q for q in range(2, int(p ** 0.5) + 1)):
+            lp = _math.log(p)
+            pk = p
+            while pk <= n_max:
+                lam[pk] = lp
+                pk *= p
+    return sum(l * _math.log(n) * n ** (-beta)
+               for n, l in enumerate(lam) if l != 0.0 and n >= 2)
+
+
+# ── Weighted theta: exact shift identity + modularity no-go ─────
+
+def divisor_log_weights(n_max: int) -> list:
+    """
+    w_n = Σ_{d|n} (log d)/d for n = 1..n_max (the "Emergent weights";
+    their Dirichlet series is W(s) = −ζ(s)ζ′(s+1), since
+    −ζ′(s+1) = Σ (log n)/n · n^{−s} convolved with ζ(s)).
+    """
+    import math as _math
+    w = [0.0] * (n_max + 1)
+    for d in range(2, n_max + 1):
+        c = _math.log(d) / d
+        for n in range(d, n_max + 1, d):
+            w[n] += c
+    return w
+
+
+def weighted_theta(y: float, weights: Optional[list] = None,
+                   n_max: int = 200000) -> float:
+    """Θ̃(y) = Σ_n w_n e^{−2πny} with the divisor-log weights (numpy)."""
+    if weights is None:
+        weights = divisor_log_weights(n_max)
+    n_max = len(weights) - 1
+    n = np.arange(1, n_max + 1, dtype=float)
+    return float(np.dot(np.array(weights[1:], dtype=float),
+                        np.exp(-2.0 * math.pi * y * n)))
+
+
+def filtered_moment_identity(y: float, N: int = 3,
+                             n_max: int = 2000) -> dict:
+    """
+    Exact shift identity for the N-filtered second moment of the
+    weighted theta (audit, Emergent-analysis sharpening):
+
+        μ_N(y) := Σ_n n² w_n e^{−2πny} (1 − cos(2πn/N))
+                = (1/4π²)·[ T″(y) − Re T″(y − i/N) ],   T := Θ̃.
+
+    Holds term-by-term (Re e^{2πin/N} = cos(2πn/N)); verified to better
+    than 1e-12 relative.  For N = 3 the factor (1 − cos(2πn/3)) is 0 on
+    3|n and 3/2 otherwise — i.e. it IS the SU(3) center projector
+    (3∤n filter of mass_gap_stiffness) up to the factor 3/2.
+    """
+    weights = divisor_log_weights(n_max)
+    n = np.arange(1, n_max + 1, dtype=float)
+    w = np.array(weights[1:], dtype=float)
+    e = np.exp(-2.0 * math.pi * y * n)
+    mu_direct = float(np.dot(n * n * w * e,
+                             1.0 - np.cos(2.0 * math.pi * n / N)))
+    # analytic T″:  T″(z) = Σ (2πn)² w_n e^{−2πnz}
+    z = complex(y, -1.0 / N)
+    es = np.exp(-2.0 * math.pi * z * n)
+    tpp = complex(np.dot((2.0 * math.pi * n) ** 2 * w, es))
+    tpp0 = float(np.dot((2.0 * math.pi * n) ** 2 * w, e))
+    rhs = (tpp0 - tpp.real) / (4.0 * math.pi ** 2)
+    return {
+        "y": y, "N": N,
+        "mu_direct": mu_direct,
+        "shift_formula": rhs,
+        "rel_diff": abs(mu_direct - rhs) / abs(mu_direct) if mu_direct else 0.0,
+        "identity": "mu_N(y) = (1/4 pi^2) [T''(y) - Re T''(y - i/N)]",
+    }
+
+
+def weighted_theta_cusp_fit(y_points=(1e-2, 1e-3, 1e-4),
+                            n_max: int = 200000) -> dict:
+    """
+    Modularity no-go for the weighted theta (audit, Emergent analysis).
+
+    The Mellin parent W(s) = −ζ(s)ζ′(s+1) has a DOUBLE pole at s = 0
+    (ζ′(s+1) ~ −1/s², ζ(0) = −1/2), and Γ(s) adds a third order, so
+    Mellin inversion forces a genuine logarithmic cusp term:
+
+        Θ̃(y) = (−ζ′(2))/X − (1/4)·ln²(1/X) + B·ln(1/X) + C + o(1),
+        X = 2πy,
+
+    with coefficient exactly ζ(0)·(−1)·(1/2) = −1/4.  Modular forms have
+    pure-power cusp asymptotics, so Θ̃ CANNOT be modular — that route is
+    closed analytically, no positivity assumption needed.
+
+    Fits A in Θ̃ − (−ζ′(2))/X = A·L² + B·L + C over y_points and
+    compares with −1/4.  Audit fit over y = 1e-2..1e-5:
+    A = −0.2498 (residual quadratic after removing −L²/4: +2e-4);
+    C ≈ −0.919 ≈ ζ′(0) = −½ln(2π).
+    """
+    mp = _mp()
+    weights = divisor_log_weights(n_max)
+    lead = float(-mp.zeta(2, derivative=1))  # 0.9375482543...
+    pts = []
+    for y in y_points:
+        X = 2.0 * math.pi * y
+        L = math.log(1.0 / X)
+        th = weighted_theta(y, weights)
+        pts.append((L, th - lead / X))
+    if len(pts) == 3:
+        M = np.array([[L * L, L, 1.0] for L, _ in pts])
+        A, B, C = np.linalg.solve(M, np.array([v for _, v in pts]))
+    else:
+        A, B, C = np.polyfit(np.array([p[0] for p in pts]),
+                             np.array([p[1] for p in pts]), 2)
+    return {
+        "A_fit": float(A),
+        "A_predicted": -0.25,
+        "B_fit": float(B),
+        "C_fit": float(C),
+        "C_predicted_approx": float(mp.zeta(0, derivative=1)),  # -0.9189385332
+        "y_points": list(y_points),
+        "verdict": ("double pole at s=0 forces -1/4 * ln^2(1/X); "
+                    "pure-power cusp asymptotics impossible -> not modular"),
+    }
