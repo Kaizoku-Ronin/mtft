@@ -234,9 +234,11 @@ def _xi_log_derivative(s):
 
     Analytic in |s-1| < 14.13 (xi has no zeros there); the displayed
     pieces have poles/cancellations INSIDE the disk (s = 0, 1) but every
-    evaluation point on our contours (r <= 3.5) keeps clear of s = 0, 1
-    and of the trivial zero s = -2 (distance 3 from center) provided
-    r < 3 or the contour is checked; default r = 2 is safe.
+    evaluation point on our contours keeps clear of s = 0, 1 and of
+    s = -2. Note (audit v0.7.2, Addendum K): G is genuinely ANALYTIC at
+    s = -2 — the Gamma pole cancels the trivial zero (G(-2+1e-6) = -0.114,
+    finite) — so the contour restriction is a numerical-conditioning
+    standard for this piecewise formula, not an analyticity requirement.
     """
     return (1 / s + 1 / (s - 1) - log(pi) / 2 + psi(0, s / 2) / 2
             + zeta(s, derivative=1) / zeta(s))
@@ -251,9 +253,12 @@ def logxi_taylor_cauchy(n_max: int, r: float = 2.0,
       g_m = (1/2 pi i) \oint G(s) / (s-1)^{m+1} ds
           = (1/2 pi r^m) \int_0^{2 pi} G(1 + r e^{i t}) e^{-i m t} dt.
 
-    r must satisfy 0 < r < 2.99 (keep the trivial zero s = -2 and the
-    pole of zeta'/zeta there strictly outside the contour) and r != 1
-    (avoid s = 0 on the contour). Independent of Method 1's ingredients.
+    r must satisfy 0 < r < 2.99 and r != 1 (avoid s = 0 on the contour).
+    The r < 2.99 bound is a CONDITIONING guard: xi'/xi is analytic at
+    s = -2 (Gamma pole cancels the trivial zero), but the piecewise
+    formula evaluates two individually-divergent pieces there, so we
+    keep the contour away from the cancellation. Independent of
+    Method 1's ingredients.
     """
     if not (0.05 < r < 2.99):
         raise ValueError("radius r must lie in (0.05, 2.99)")

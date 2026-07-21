@@ -9,6 +9,16 @@ param(
 $ErrorActionPreference = "Stop"
 
 $version = (Select-String -Path "pyproject.toml" -Pattern 'version = "(.+)"').Matches.Groups[1].Value
+# Preflight: all version files must agree before anything ships (v0.7.2 lesson)
+$initV = (Select-String -Path "src/mtft/__init__.py" -Pattern '__version__ = "(.+)"').Matches.Groups[1].Value
+$cffV  = (Select-String -Path "CITATION.cff" -Pattern '^version:\s*(\S+)').Matches.Groups[1].Value
+if (($initV -ne $version) -or ($cffV -ne $version)) {
+    Write-Host "VERSION MISMATCH — fix before releasing:" -ForegroundColor Red
+    Write-Host "  pyproject.toml : $version"  -ForegroundColor Red
+    Write-Host "  __init__.py    : $initV"    -ForegroundColor Red
+    Write-Host "  CITATION.cff   : $cffV"     -ForegroundColor Red
+    exit 1
+}
 Write-Host "Releasing mtft v$version" -ForegroundColor Cyan
 Write-Host "Message: $Message" -ForegroundColor Gray
 Write-Host ""

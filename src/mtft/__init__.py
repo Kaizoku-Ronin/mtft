@@ -1,8 +1,8 @@
 """
-MTFT — Modular Time Field Theory  (v0.7.2)
+MTFT — Modular Time Field Theory  (v0.8.0)
 ============================================
 
-33 modules covering the complete MTFT framework from arithmetic
+35 modules covering the complete MTFT framework from arithmetic
 weights through lattice gauge theory, materials science, LHC
 confrontation, computation theory, and sonification.
 
@@ -10,7 +10,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.7.2"
+__version__ = "0.8.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -123,3 +123,22 @@ from mtft.critical_ensemble import (
     BOMBIERI_LAGARIAS_CAVEAT, XI_ANALYTICITY_RADIUS,
     THREE_ENSEMBLE_TABLE,
 )
+
+# ── Tier 11: Certificates & Standards ────────────────────────
+from mtft.jc_counterexample import (
+    verify_all as jc_verify_all, JCCertificate, apply_F as jc_apply,
+    COLLISION_FIBER, COLLISION_TARGET,
+)
+from mtft.estimator_standards import (
+    binned_log_slope, stride_resonance_check, recommended_samples_per_decade,
+)
+
+# ── The Legend (lazy: keeps `python -m mtft.legend` warning-free) ──
+def __getattr__(name):
+    _LEGEND_EXPORTS = {"legend": "legend", "what": "what", "card": "card",
+                       "trace": "trace", "legend_status": "status"}
+    if name in _LEGEND_EXPORTS:
+        import importlib
+        return getattr(importlib.import_module("mtft.legend"),
+                       _LEGEND_EXPORTS[name])
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

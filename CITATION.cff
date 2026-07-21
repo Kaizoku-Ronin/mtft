@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "MTFT: Modular Time Field Theory"
-version: 0.7.0
-date-released: 2026-07-17
+version: 0.8.0
+date-released: 2026-07-21
 authors:
   - family-names: "Tano"
     given-names: "Roger"
@@ -16,13 +16,19 @@ keywords:
   - information-geometry
   - Yang-Mills
   - mass-gap
+  - Riemann-hypothesis
+  - Li-coefficients
   - Feigenbaum
   - Koide-formula
   - falsifiability
 abstract: >-
-  Python implementation of Modular Time Field Theory (MTFT),
-  deriving fundamental constants (α, α_s, sin²θ_W, particle masses)
-  from arithmetic weights wₙ = Σ_{d|n} (log d)/d and the Feigenbaum
-  constant. Includes a falsifiability engine with 23 zero-parameter
-  predictions, lattice gauge theory, the Tano Mass Formula for lepton
-  masses from X₀(143), and 21/23 predictions matching experiment to <1%.
+  Python implementation of Modular Time Field Theory (MTFT), deriving
+  fundamental constants (alpha, alpha_s, sin^2 theta_W) from the
+  arithmetic weights w_n = sum_{d|n} (log d)/d and the modular curve
+  X_0(143). Ships a falsifiability engine with 23 zero-parameter,
+  pre-registered predictions (run mtft.falsify.honest_report() for the
+  live scorecard), a lattice gauge sector, and the three-ensemble
+  Riemann toolkit: Laplace stiffness with the exact filtered moment
+  identity, the Dirichlet ensemble Z_D(beta) = -zeta(beta) zeta'(beta+1)
+  with its Speiser-Hadamard lab, and the critical ensemble computing
+  Li coefficients by three cross-certified methods.

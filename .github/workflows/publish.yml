@@ -23,6 +23,18 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Verify version matches release tag (guards the v0.7.2 failure mode)
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG=$(python3 -c "import tomllib;print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          INIT=$(python3 -c "import re;print(re.search(r'__version__\s*=\s*\"([^\"]+)\"',open('src/mtft/__init__.py').read()).group(1))")
+          CFF=$(python3 -c "import re;print(re.search(r'^version:\s*(\S+)',open('CITATION.cff').read(),re.M).group(1))")
+          echo "tag=$TAG pyproject=$PKG __init__=$INIT CITATION=$CFF"
+          if [ "$TAG" != "$PKG" ] || [ "$TAG" != "$INIT" ] || [ "$TAG" != "$CFF" ]; then
+            echo "::error::Version mismatch — bump pyproject.toml, __init__.py, CITATION.cff to $TAG before releasing"
+            exit 1
+          fi
+
       - name: Install package and test dependencies
         run: |
           python -m pip install --upgrade pip
@@ -63,4 +75,5 @@ jobs:
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          skip-existing: true   # never fail on an already-uploaded version
+          skip-existing: false  # duplicates must FAIL LOUDLY (v0.7.2 lesson:
+                                # true + unbumped version = silent green no-op)
