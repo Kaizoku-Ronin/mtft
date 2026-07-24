@@ -247,11 +247,10 @@ def test_edge_mass_convention_is_per_level():
     while math.log1p(math.log(2) / math.log(m0)) >= 0.2:
         m0 += 1
     assert m0 == r.detail["m0"] == 23
-    mp.dps = 30
-    ref = float((-mp.zeta(3, m0, derivative=1)
-                 + mp.zeta(3, 2_000_001, derivative=1))
-                / (-mp.zeta(3, derivative=1)))
-    mp.dps = 15
+    with mp.workdps(30):   # context form: newer mpmath guards module.dps
+        ref = float((-mp.zeta(3, m0, derivative=1)
+                     + mp.zeta(3, 2_000_001, derivative=1))
+                    / (-mp.zeta(3, derivative=1)))
     assert abs(r.value - ref) < 1e-12
 
 
