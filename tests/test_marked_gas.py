@@ -112,16 +112,29 @@ def test_flow_phase_unit_modulus():
             assert abs(abs(flow_phase(p, 7, t)) - 1.0) < 1e-14
 
 
-def test_flow_phase_closed_form():
-    p, n0, t, beta = 3, 11, 1.7, 2.0
-    expect = np.exp(1j * t * ((beta + 1) * math.log(p)
-                              - math.log(math.log(p * n0) / math.log(n0))))
-    assert abs(flow_phase(p, n0, t, beta) - expect) < 1e-14
+def test_flow_phase_vs_matrix():
+    """G4's real leg (v0.9.1, audit R2): the closed form against the
+    DEFINITION path — literal matrix conjugation U mu U† with
+    K = −log ρ̂ from the Gibbs weights (no spectral-formula input).
+    v0.9.0's version of this test re-typed the closed form and compared
+    it to itself."""
+    from mtft.marked_gas import flow_phase_matrix
+    for p in (2, 3, 5):
+        for t in (0.7, 1.9, math.pi):
+            lev, ph = flow_phase_matrix(p, t, beta=2.0, Nb=400)
+            worst = float(np.max(np.abs(ph - flow_phase(p, lev, t,
+                                                         beta=2.0))))
+            assert worst < 1e-12
 
 
 def test_kms_termwise_identity():
+    """All four KMS legs (matrix, spectral, restricted spectral, and
+    the apples-to-apples cross-check) at the 1e-12 bound."""
     r = kms_check(2, 2, 0.7, nbasis=2000)
     assert r.value < r.bound
+    for leg in ("matrix_residual", "spectral_residual",
+                "spectral_residual_sub", "cross_residual"):
+        assert r.detail[leg] < 1e-12, leg
 
 
 def test_kms_wrong_sign_fails():
@@ -197,17 +210,19 @@ def test_correlator_bound():
 
 
 def test_correlator_kms_consistency():
-    """F(t+i) equals the damped correlator (termwise; same content as G5)."""
+    """F(t+i) equals the damped correlator (termwise; same content as
+    G5) — evaluated through the module API at the KMS point (v0.9.1:
+    correlator accepts complex t with Im t ≥ 0; audit R3)."""
     p, t, beta = 2, 0.9, 2.0
-    rF = correlator(p, t + 1j, beta, N=2000)  # noqa: F841 — see below
-    # correlator() expects real t; evaluate the identity directly:
+    rF = correlator(p, t + 1j, beta, N=2000)
     n = np.arange(2, 2001, dtype=np.float64)
     rho = np.log(n) * n ** (-(beta + 1.0))
-    rho /= rho.sum()
     dE = (beta + 1.0) * math.log(p) - np.log(np.log(p * n) / np.log(n))
-    Fpi = np.sum(rho * np.exp(1j * (t + 1j) * dE))
-    Gt = np.sum(rho * np.exp(-dE) * np.exp(1j * t * dE))
-    assert abs(Fpi - Gt) < 1e-12
+    Z2 = float(-mp.zeta(3, derivative=1))
+    Gt = np.sum(rho / Z2 * np.exp(-dE) * np.exp(1j * t * dE))
+    assert abs(rF.value - Gt) < 1e-12
+    with pytest.raises(ValueError, match="Im t"):
+        correlator(p, t - 1j, beta, N=100)
 
 
 def test_spectral_function_monotone_to_edge():
@@ -223,13 +238,44 @@ def test_edge_mass_pinned_convention():
 
 
 def test_edge_mass_convention_is_per_level():
-    """The pinned convention must NOT round M (the ε = 0.2 artifact)."""
+    """The pinned convention must NOT round M (the ε = 0.2 artifact).
+    v0.9.1: the reference is now genuinely independent — the exact
+    Hurwitz-zeta tail Σ_{n≥a} (log n) n^{-3} = −ζ′(3, a), not a
+    transcription of the function's numpy internals (audit R2)."""
     r = edge_mass(p=2, beta=2, eps=0.2, nmax=2_000_000)
-    n = np.arange(2, 2_000_001, dtype=np.float64)
-    rho = np.log(n) * n ** -3.0
-    gaps = np.log1p(math.log(2) / np.log(n))
-    brute = float(rho[gaps < 0.2].sum() / (-float(mp.zeta(3, derivative=1))))
-    assert abs(r.value - brute) < 1e-15
+    m0 = 2
+    while math.log1p(math.log(2) / math.log(m0)) >= 0.2:
+        m0 += 1
+    assert m0 == r.detail["m0"] == 23
+    mp.dps = 30
+    ref = float((-mp.zeta(3, m0, derivative=1)
+                 + mp.zeta(3, 2_000_001, derivative=1))
+                / (-mp.zeta(3, derivative=1)))
+    mp.dps = 15
+    assert abs(r.value - ref) < 1e-12
+
+
+def test_edge_mass_em_predictor_subppm():
+    """Audit R1: the m₀-anchored EM predictor is deterministic and
+    sub-ppm where the bare law oscillates ±f(M)/2 (5.5% at ε = 0.3).
+    Shipped deviations from 1 (mass_plus_tail/pred_em): −4.6e-9,
+    −1.8e-12, +1.1e-15 at ε = 0.3, 0.2, 0.1 — sub-ppm throughout,
+    deterministic in m₀ (Addendum X)."""
+    for eps, tol in ((0.3, 1e-5), (0.2, 1e-6), (0.1, 1e-6)):
+        d = edge_mass(p=2, beta=2, eps=eps, nmax=2_000_000).detail
+        assert abs(d["ratio_em_corrected"] - 1.0) < tol, eps
+    # and the bare law must show the old scatter (guard against a
+    # future regression that re-inflates the predictor)
+    d03 = edge_mass(p=2, beta=2, eps=0.3).detail
+    assert abs(d03["ratio"] - 1.0) > 0.01
+
+
+def test_edge_mass_tail_correction():
+    """At ε = 0.07 the nmax = 2×10⁶ truncation is 7.5e-5 of the mass
+    (audit R1); mass_plus_tail must cancel it to sub-ppm."""
+    d = edge_mass(p=2, beta=2, eps=0.07, nmax=2_000_000).detail
+    assert abs(d["ratio_em"] - 0.999925) < 2e-6          # truncation visible
+    assert abs(d["ratio_em_corrected"] - 1.0) < 1e-6     # and corrected
 
 
 # ── the gate suite ──────────────────────────────────────────────

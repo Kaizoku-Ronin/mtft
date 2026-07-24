@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.9.0)
+MTFT — Modular Time Field Theory  (v0.9.1)
 ============================================
 
 35 modules covering the complete MTFT framework from arithmetic
@@ -10,7 +10,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.9.0"
+__version__ = "0.9.1"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (

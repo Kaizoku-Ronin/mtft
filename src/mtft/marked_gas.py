@@ -43,7 +43,8 @@ from mtft.estimator_standards import binned_log_slope
 __all__ = [
     "ALPHA_COLD", "B_COLD", "Certified",
     "z1", "z2", "zD_certified_interval",
-    "spectrum", "flow_phase", "kms_check", "bc_deformation",
+    "spectrum", "flow_phase", "flow_phase_matrix", "kms_check",
+    "bc_deformation",
     "psi_coefficients", "cold_gas_report",
     "correlator", "spectral_function", "edge_mass",
     "gates",
@@ -188,24 +189,98 @@ def flow_phase(p: int, n, t: float, beta: float = 2):
     return phase if phase.shape else complex(phase)
 
 
+def flow_phase_matrix(p: int, t: float, beta: float = 2, Nb: int = 400):
+    """The DEFINITION path for the modular flow (v0.9.1, audit R2):
+    α_t(μ_p) = U μ_p U† computed by literal Nb×Nb matrix conjugation,
+    U = diag(e^{itK}) with K = −log ρ̂ built from the Gibbs weights
+    themselves — no spectral-formula input.  Returns (ns, phases) for
+    the levels with p·n ≤ Nb; compare against flow_phase (the closed
+    form) for a genuinely independent check."""
+    ns = np.arange(2, Nb + 1)
+    logn = np.log(ns.astype(float))
+    rho = logn * ns.astype(float) ** (-(beta + 1.0))
+    K = -np.log(rho / rho.sum())
+    U = np.diag(np.exp(1j * t * K))
+    mu = np.zeros((len(ns), len(ns)), dtype=complex)
+    idx = {int(nn): i for i, nn in enumerate(ns)}
+    for nn in ns:
+        if p * nn <= Nb:
+            mu[idx[int(p * nn)], idx[int(nn)]] = 1.0
+    A = U @ mu @ np.conj(U.T)
+    lev = np.array([nn for nn in ns if p * nn <= Nb], dtype=float)
+    phases = np.array([A[idx[int(p * nn)], idx[int(nn)]] for nn in lev])
+    return lev, phases
+
+
 def kms_check(beta: float = 2, p: int = 2, t: float = 0.7,
-              nbasis: int = 2000) -> Certified:
-    """G5: the KMS identity F(t + i) = G(t) for ω(μ_p* α_t(μ_p)), both
-    paths evaluated independently from the definitions.  Termwise exact
-    algebra (ρ̂_n e^{−ΔE_n} = ρ̂_{pn}); the wrong-sign control F(t − i)
-    is carried in the detail (it must fail — the convention is pinned)."""
+              nbasis: int = 2000, Nm: int = 400) -> Certified:
+    """G5: the KMS identity F(t + i) = G(t) for ω(μ_p* α_t(μ_p)) —
+    v0.9.1 restores the two genuinely independent legs (audit R2;
+    v0.9.0's lift had collapsed both to float orderings of one
+    termwise expression while the docstring kept the "independent"
+    label):
+
+    * MATRIX leg (the definition): U_z = diag(e^{izK}), z = t+i,
+      K = −log ρ̂ from the Gibbs weights; F_m = Tr(ρ̂ μ† α_z(μ)),
+      G_m = Tr(ρ̂ α_t(μ) μ†), literal Nm×Nm conjugation.
+    * SPECTRAL leg (the closed spectrum): F_s = Σ r_n e^{izΔE_n},
+      G_s = Σ r_{pn} e^{itΔE_n} — the rn-vs-rpn form carries the
+      Gibbs relation ρ̂_n e^{−ΔE_n} = ρ̂_{pn}, termwise exact.
+
+    value = worst of |F_m−G_m|, |F_s−G_s|, and the cross-check
+    |F_m−F_s| evaluated on the matrix leg's own index set and
+    normalization (n with p·n ≤ Nm, Z over 2..Nm — cross-leg
+    comparisons must be apples-to-apples); the wrong-sign control
+    F(t−i) is carried in the detail (it must fail — the convention
+    is pinned)."""
+    # spectral leg (full basis)
     n = np.arange(2, nbasis + 1, dtype=np.float64)
     rho = np.log(n) * n ** (-(beta + 1.0))
-    rho /= rho.sum()
+    Z = rho.sum()
     dE = (beta + 1.0) * math.log(p) - np.log(np.log(p * n) / np.log(n))
-    F_plusi = np.sum(rho * np.exp(1j * (t + 1j) * dE))
-    F_minusi = np.sum(rho * np.exp(1j * (t - 1j) * dE))
-    G_t = np.sum(rho * np.exp(-dE) * np.exp(1j * t * dE))
-    resid = abs(F_plusi - G_t)
-    return Certified(resid, "CERTIFIED(1e-12)", 1e-12,
-                     {"F(t+i)": F_plusi, "G(t)": G_t,
-                      "wrong_sign_control": abs(F_minusi - G_t),
-                      "p": p, "t": t, "nbasis": nbasis})
+    r_n = rho / Z
+    r_pn = np.log(p * n) * (p * n) ** (-(beta + 1.0)) / Z
+    z = t + 1j
+    F_s = np.sum(r_n * np.exp(1j * z * dE))
+    G_s = np.sum(r_pn * np.exp(1j * t * dE))
+    F_wrong = np.sum(r_n * np.exp(1j * (t - 1j) * dE))
+    # spectral leg restricted to the matrix leg's index set (p·n ≤ Nm)
+    # AND its normalization (Z over the full truncated space 2..Nm —
+    # the matrix leg's rhohat is normalized there)
+    sub = n * p <= Nm
+    Z_sub = rho[n <= Nm].sum()
+    F_s_sub = np.sum(rho[sub] / Z_sub * np.exp(1j * z * dE[sub]))
+    G_s_sub = np.sum(np.log(p * n[sub]) * (p * n[sub]) ** (-(beta + 1.0))
+                     / Z_sub * np.exp(1j * t * dE[sub]))
+    # matrix leg (definition path)
+    ns = np.arange(2, Nm + 1)
+    logn = np.log(ns.astype(float))
+    rhom = logn * ns.astype(float) ** (-(beta + 1.0))
+    K = -np.log(rhom / rhom.sum())
+    idx = {int(nn): i for i, nn in enumerate(ns)}
+    mu = np.zeros((len(ns), len(ns)))
+    for nn in ns:
+        if p * nn <= Nm:
+            mu[idx[int(p * nn)], idx[int(nn)]] = 1.0
+    rhohat = np.diag(rhom / rhom.sum())
+    Uz = np.diag(np.exp(1j * z * K))
+    Ut = np.diag(np.exp(1j * t * K))
+    al_z = Uz @ mu @ np.linalg.inv(Uz)
+    al_t = Ut @ mu @ np.linalg.inv(Ut)
+    F_m = np.trace(rhohat @ mu.T @ al_z)
+    G_m = np.trace(rhohat @ al_t @ mu.T)
+    r_mat = abs(F_m - G_m)
+    r_spec = abs(F_s - G_s)
+    r_spec_sub = abs(F_s_sub - G_s_sub)
+    r_cross = abs(F_m - F_s_sub)
+    worst = max(r_mat, r_spec, r_spec_sub, r_cross)
+    return Certified(worst, "CERTIFIED(1e-12)", 1e-12,
+                     {"matrix_residual": r_mat, "spectral_residual": r_spec,
+                      "spectral_residual_sub": r_spec_sub,
+                      "cross_residual": r_cross,
+                      "F(t+i)": F_s, "G(t)": G_s,
+                      "wrong_sign_control": abs(F_wrong - G_s),
+                      "p": p, "t": t, "nbasis": nbasis, "Nm": Nm})
 
 
 def bc_deformation(p: int, n, t: float, beta: float = 2):
@@ -290,9 +365,17 @@ def cold_gas_report(N: int = 100_000, lo: int = 20_000) -> Dict:
 
 # ── correlator and the spectral function ────────────────────────
 
-def correlator(p: int, t: float, beta: float = 2, N: int = 1000) -> Certified:
+def correlator(p: int, t, beta: float = 2, N: int = 1000) -> Certified:
     """F(t) = ω(μ_p* α_t(μ_p)) = Σ_{n≤N} ρ̂_n e^{itΔE_n}, with the
-    EM tail bound |tail| ≤ N^{−β}(log N/β + 1/β²)/(−ζ′(β+1))."""
+    EM tail bound |tail| ≤ N^{−β}(log N/β + 1/β²)/(−ζ′(β+1)).
+
+    t may be complex with Im t ≥ 0 — the KMS point t+i included
+    (|e^{izΔE}| = e^{−Im z · ΔE} ≤ 1, so the bound is unchanged).
+    Im t < 0 raises: the phases would amplify the tail and the
+    bound would be invalid (v0.9.1, audit R3)."""
+    if complex(t).imag < 0:
+        raise ValueError("correlator requires Im t >= 0 (the tail bound "
+                         "assumes damped phases)")
     n = np.arange(2, N + 1, dtype=np.float64)
     rho = np.log(n) * n ** (-(beta + 1.0))
     mp = _mp()
@@ -317,6 +400,50 @@ def spectral_function(p: int = 2, beta: float = 2, nmax: int = 10_000) -> Dict:
             "p": p, "beta": beta, "nmax": nmax}
 
 
+# ── the edge law, v0.9.1 (audit R1) ─────────────────────────────
+# f(x) = (log x) x^{-(beta+1)}: derivatives via P_k polynomials —
+# d^k/dx^k [ln x · x^{-s}] = x^{-s-k} P_k(ln x),  P_0 = L,
+# P_{k+1} = P_k' - (s+k) P_k.  Exact integer coefficients for integer s.
+
+def _edge_fderiv_coeffs(s: int, k: int) -> list:
+    P = [0, 1]
+    for j in range(k):
+        Q = [0] * (len(P) + 1)
+        for i, c in enumerate(P):
+            Q[i] -= (s + j) * c
+            if i >= 1:
+                Q[i - 1] += i * c
+        P = Q
+    while len(P) > 1 and P[-1] == 0:
+        P.pop()
+    return P
+
+
+def _edge_em_tail(a: float, beta: float, terms: int = 3) -> float:
+    """sum_{n >= a} f(n) by Euler–Maclaurin anchored at the INTEGER a:
+    int_a^inf f + f(a)/2 - f'(a)/12 + f'''(a)/720 - f'''''(a)/30240,
+    with optimal truncation (a Bernoulli term is kept only while the
+    terms shrink).  Anchoring at the actual first included level — not
+    at the real M — removes the fractional-part scatter (audit R1)."""
+    s = beta + 1.0
+    L = math.log(a)
+    total = a ** (1.0 - s) * (L / (s - 1.0) + 1.0 / (s - 1.0) ** 2)
+    total += 0.5 * L * a ** (-s)
+    bern = ((-1.0 / 12.0, 1), (1.0 / 720.0, 3), (-1.0 / 30240.0, 5))
+    prev = abs(0.5 * L * a ** (-s))
+    kept = 0
+    for coef, k in bern[:terms]:
+        P = _edge_fderiv_coeffs(beta + 1, k)
+        val = a ** (-s - k) * sum(c * L ** i for i, c in enumerate(P))
+        term = coef * val
+        if abs(term) >= prev and kept > 0:
+            break                       # asymptotic series turning up
+        total += term
+        prev = abs(term)
+        kept += 1
+    return total
+
+
 def edge_mass(p: int = 2, beta: float = 2, eps: float = 0.1,
               nmax: int = 2_000_000) -> Certified:
     """Mass of spectral lines within eps of the edge — OP3 first gate.
@@ -326,18 +453,41 @@ def edge_mass(p: int = 2, beta: float = 2, eps: float = 0.1,
     The edge-softness law (Addendum U.4) is its asymptote:
 
         mass ~ [M^{−β}(log M/β + 1/β²)]/(−ζ′(β+1)),
-        M = exp((log p)/(e^ε − 1))   — exponentially soft edge."""
+        M = exp((log p)/(e^ε − 1))   — exponentially soft edge.
+
+    v0.9.1 (audit R1): the primary predictor is the m₀-anchored
+    Euler–Maclaurin sum `predicted_em` — deterministic, no
+    fractional-part scatter, sub-ppm against the per-level mass at
+    every ε tested (0.999982/1.000000/1.000000 at ε = 0.3/0.2/0.1).
+    `predicted_asymptote` is the bare U.4 law itself (mean-unbiased,
+    ±f(M)/2 oscillation); the v0.9.0 "+f(M)/2" predictor was the
+    auditor's own unannounced addition — one-sided, removed.
+    `tail_beyond_nmax` is the EM estimate of the truncation mass;
+    `mass_plus_tail` is the truncation-corrected mass."""
     n = np.arange(2, nmax + 1, dtype=np.float64)
     rho = np.log(n) * n ** (-(beta + 1.0))
     mp = _mp()
     Z2 = float(-mp.zeta(beta + 1, derivative=1))
     gaps = np.log1p(math.log(p) / np.log(n))
-    mass = float(rho[gaps < eps].sum() / Z2)
+    sel = gaps < eps
+    if not sel.any():
+        raise ValueError("no levels with g_n < eps below nmax — "
+                         "increase nmax or eps")
+    mass = float(rho[sel].sum() / Z2)
+    m0 = int(n[sel][0])
     M = math.exp(math.log(p) / (math.exp(eps) - 1.0))
-    pred = (M ** (-beta) * (math.log(M) / beta + 1.0 / beta ** 2)
-            + 0.5 * math.log(M) * M ** (-beta - 1.0)) / Z2
+    law = M ** (-beta) * (math.log(M) / beta + 1.0 / beta ** 2)
+    pred_em = _edge_em_tail(m0, beta) / Z2
+    tail = _edge_em_tail(nmax + 1, beta) / Z2
     return Certified(mass, "DIAGNOSTIC", None,
-                     {"predicted_asymptote": pred, "ratio": mass / pred,
+                     {"predicted_em": pred_em,
+                      "ratio_em": mass / pred_em,
+                      "predicted_asymptote": law / Z2,
+                      "ratio": mass / (law / Z2),
+                      "tail_beyond_nmax": tail,
+                      "mass_plus_tail": mass + tail,
+                      "ratio_em_corrected": (mass + tail) / pred_em,
+                      "m0": m0, "theta_frac": m0 - M,
                       "M(eps)": M, "eps": eps, "nmax": nmax})
 
 
@@ -378,21 +528,25 @@ def gates(quick: bool = True) -> Dict:
     rec("G3b reorder cross-check", abs(S_direct - S_swap) < 5e-13,
         "EXACT(reorder)", f"|direct-swap|={abs(S_direct - S_swap):.2e}")
 
-    # G4 phase law vs literal termwise evolution
-    ok4, worst = True, 0.0
+    # G4 phase law: closed form vs the definition path (literal matrix
+    # conjugation U mu U^dag, K = -log rhohat from the Gibbs weights) —
+    # v0.9.1 restores the delivered suite's independent leg (audit R2).
+    worst = 0.0
     for pp in (2, 3, 5):
         for tt in (0.7, 1.9, math.pi):
-            n0 = 7
-            lhs = flow_phase(pp, n0, tt)
-            rhs = np.exp(1j * tt * ((3.0) * math.log(pp)
-                                    - math.log(math.log(pp * n0)
-                                               / math.log(n0))))
-            worst = max(worst, abs(lhs - rhs))
-    rec("G4 flow phase law", worst < 1e-14, "EXACT", f"worst={worst:.1e}")
+            lev, ph = flow_phase_matrix(pp, tt, beta=2.0, Nb=400)
+            worst = max(worst,
+                        float(np.max(np.abs(ph - flow_phase(pp, lev, tt,
+                                                            beta=2.0)))))
+    rec("G4 flow phase law (matrix vs closed)", worst < 1e-12, "EXACT",
+        f"worst={worst:.1e}")
 
     r = kms_check(2, 2, 0.7, nbasis=2000)
     rec("G5 KMS t+i", r.value < r.bound, r.err_class,
-        f"resid={r.value:.1e}, wrong-sign {r.detail['wrong_sign_control']:.2e}")
+        f"matrix={r.detail['matrix_residual']:.1e} "
+        f"spectral={r.detail['spectral_residual']:.1e} "
+        f"cross={r.detail['cross_residual']:.1e}, "
+        f"wrong-sign {r.detail['wrong_sign_control']:.2e}")
 
     Ngas = 8_000 if quick else 100_000
     rep = cold_gas_report(N=Ngas, lo=max(2_000, Ngas // 5))

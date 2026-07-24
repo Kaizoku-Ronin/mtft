@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/mtft.svg?color=blue)](https://pypi.org/project/mtft/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-440%2F440-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
+[![Tests](https://img.shields.io/badge/tests-442%2F442-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
 
 Fundamental constants from the integers. **Zero free parameters.**
 
@@ -155,7 +155,7 @@ Z_D(β)     = −ζ(β)·ζ′(β+1)                            Dirichlet ensemb
 ## Testing
 
 ```bash
-pytest          # 440 tests: LMFDB anchors, exact identities, audit regressions
+pytest          # 442 tests: LMFDB anchors, exact identities, audit regressions
 ```
 
 Every numerical claim above is a test. The suite gates PyPI publication —
