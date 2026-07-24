@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.8.0)
+MTFT — Modular Time Field Theory  (v0.9.0)
 ============================================
 
 35 modules covering the complete MTFT framework from arithmetic
@@ -10,7 +10,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.8.0"
+__version__ = "0.9.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -76,6 +76,14 @@ from mtft.riemann import (
     zetaprime_refine, zetaprime_logcurvature, hadamard_zetaprime_check,
     dirichlet_curvature, von_mangoldt_curvature, divisor_log_weights,
     weighted_theta, filtered_moment_identity, weighted_theta_cusp_fit,
+)
+from mtft.marked_gas import (  # the marked primon gas (note v0.1.1)
+    ALPHA_COLD, B_COLD, Certified,
+    z1, z2, zD_certified_interval,
+    spectrum, flow_phase, kms_check, bc_deformation,
+    weights_sieve, psi_coefficients, cold_gas_report,
+    correlator, spectral_function, edge_mass,
+    gates as marked_gas_gates,  # aliased: bare "gates" is too generic flat
 )
 
 # ── Tier 5e: Materials Science ───────────────────────────────

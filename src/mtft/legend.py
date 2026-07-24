@@ -194,6 +194,39 @@ _reg(LegendEntry("dirichlet_curvature", "5d", "identity", ("IV", "V"),
                  example="mtft.dirichlet_curvature(3.0)",
                  upstream=("Z_D_closed_form",),
                  ref="Speiser (1935) lives in the zeta' piece"))
+_reg(LegendEntry("marked_gas", "5d", "ensemble", ("IV", "V"), "Pr", "EXACT",
+                 "Marked primon gas: Gibbs state rho_n = (log n) n^-(beta+1) / "
+                 "(-zeta'(beta+1)) on l2(N>=2); H = log Q; spectrum "
+                 "E_n = (beta+1) log n - log log n; prime-shift isometries.",
+                 example="mtft.marked_gas.gates()",
+                 upstream=("Z_D_closed_form",),
+                 ref="Marked Primon Gas note v0.1.1 (July 2026)"))
+_reg(LegendEntry("kms_flow", "5d", "identity", ("IV", "V"), "Pr",
+                 "CERTIFIED(1e-12)",
+                 "Modular flow alpha_t = Ad e^{itK} satisfies KMS at t+i "
+                 "termwise: rho_n e^{-Delta E_n} = rho_{pn}; the wrong-sign "
+                 "control (t-i) fails by 4.574, as it must.",
+                 example="mtft.marked_gas.kms_check(p=2, beta=2.0, t=1.0)",
+                 upstream=("marked_gas",),
+                 ref="note v0.1.1 sec.5; BC twist vanishes in the UV"))
+_reg(LegendEntry("cold_gas_amplitude", "5d", "identity", ("III", "IV"), "Pr",
+                 "EXACT",
+                 "Cold gas: A_n ~ B n^alpha / Gamma(alpha+1) with "
+                 "alpha = -zeta'(2), B = e^{-zeta''(2)} (gamma-cancellation); "
+                 "certified 0.14040 vs closed form 0.14027492... (0.09%) at "
+                 "N=1e5, converging from above.",
+                 example="mtft.marked_gas.cold_gas_report(100_000)",
+                 upstream=("Z_D_closed_form",),
+                 ref="note v0.1.1 sec.6; Karamata Tauberian"))
+_reg(LegendEntry("spectral_edge_soft", "5d", "diagnostic", ("IV", "V"), "Pr",
+                 "DIAGNOSTIC",
+                 "Edge softness at (beta+1) log p: mass(gap<eps) = "
+                 "[M^-beta (log M/beta + 1/beta^2) + O(log M M^-beta-1)] / "
+                 "(-zeta'(beta+1)), M = exp(log p/(e^eps-1)); per-level "
+                 "convention pinned.",
+                 example="mtft.marked_gas.edge_mass(p=2, beta=2.0, eps=0.1)",
+                 upstream=("marked_gas",),
+                 ref="note v0.1.1; audit Addendum U.4 (the auditor's law)"))
 _reg(LegendEntry("hadamard_zetaprime_check", "5d", "identity", ("III", "IV", "V"),
                  "Pr", "CERTIFIED(1e-5)",
                  "d2 log(-zeta'(s)) = 2/(s-1)^2 - sum_{rho'}(s-rho')^-2 over "

@@ -255,7 +255,11 @@ def bakry_emery_curvature(
 
         κ(y) = d²/d(ln y)² ln μ_N(y)
 
-    RH ⟺ κ(y) ≥ 0 for all y > 0.
+    LEGACY FRAMING — the criterion "RH ⟺ κ(y) ≥ 0 for all y > 0" once
+    attached to this quantity is FALSE (κ^Λ(y) < 0 unconditionally;
+    audit B4, June 2026 verification).  The corrected RH equivalence is
+    the boundedness diagnostic of corrected_rh_diagnostic() (Th 1, July
+    2026).  This function remains valid as a curvature evaluator.
 
     Computed numerically via central differences.
     """
@@ -340,7 +344,10 @@ def tower_rigidity(
     Off the line (β>0.5): |Φ| ~ y^{-(β+1)} — dominates at small y.
 
     A single off-line zero creates exponentially growing oscillations
-    that violate curvature positivity — the tower rigidity principle.
+    (the tower rigidity principle).  Note: the "curvature positivity"
+    phrasing below is legacy framing — κ ≥ 0 is not an RH criterion
+    (audit B4); the live statement is the envelope-slope divergence of
+    corrected_rh_diagnostic().
     """
     if beta_values is None:
         beta_values = [0.5, 0.6, 0.75, 0.9]
@@ -364,9 +371,10 @@ def tower_rigidity(
         "beta_envelopes": results,
         "conclusion": (
             "On-line (β=0.5): balanced oscillations. "
-            "Off-line (β>0.5): envelope grows as y^{-(β+1)}, "
-            "violating curvature positivity. A single off-line zero "
-            "would break the entire N-tower."
+            "Off-line (β>0.5): envelope grows as y^{-(β+1)} — an "
+            "unbounded normalized oscillation (the live Th 1 form; the "
+            "older 'curvature positivity' phrasing is legacy, audit B4). "
+            "A single off-line zero would break the entire N-tower."
         ),
     }
 
@@ -498,28 +506,51 @@ def normalized_oscillation(y: float, zeros) -> float:
     return delta_kappa_stable(y, zeros) * X ** (-mp.mpf(3) / 2)
 
 
-def envelope_slope(zeros, y_min_pow=-7.0, y_max_pow=-1.8, n_points=91) -> dict:
+def envelope_slope(zeros, y_min_pow=-7.0, y_max_pow=-1.8, n_points=None,
+                   min_bin=10, samples_per_period=10) -> dict:
     """
     Binned-RMS envelope slope of log₁₀|𝒟| vs log₁₀ y over
     y ∈ [10^y_min_pow, 10^y_max_pow].  Predicted: 0 (true zeros),
     1/2 − β₀ (synthetic off-line quadruplet at Re β₀).
+
+    A.7 discipline (v0.9.0, audit S.4/T-E4): the grid density defaults to
+    `samples_per_period` samples per γ₁ oscillation period in ln X
+    (estimator_standards.recommended_samples_per_decade: γ₁ ≈ 5.18
+    periods/decade → 52 samples/decade at the default 10/period), and
+    the fit drops every half-decade bin with fewer than
+    `min_bin` samples (terminal-bin leverage guard, same rule as
+    estimator_standards.binned_log_slope).  At the legacy 91-point grid
+    (≈8.8 samples per half-decade bin) a bare min_bin guard discards all
+    eleven bins — guard and density therefore ship together.
+
+    Returns: slope, n_bins (used), n_bins_dropped, points (usable bins
+    only), n_points, samples_per_decade.
     """
+    from mtft.estimator_standards import (binned_log_slope,
+                                          recommended_samples_per_decade)
     mp = _mp()
-    bins = {}
+    if n_points is None:
+        gamma1 = abs(float(mp.im(zeros[0][0]))) if zeros else 14.134725
+        spd = recommended_samples_per_decade(gamma1,
+                                             per_period=samples_per_period)
+        n_points = int(math.ceil((y_max_pow - y_min_pow) * spd)) + 1
+    ys, ds = [], []
     for i in range(n_points):
         ly = y_min_pow + (y_max_pow - y_min_pow) * i / (n_points - 1)
         y = mp.mpf(10) ** ly
-        d = abs(normalized_oscillation(y, zeros))
+        ys.append(y)
+        ds.append(abs(normalized_oscillation(y, zeros)))
+    slope, n_used, dropped = binned_log_slope(ys, ds, bin_width=0.5,
+                                              min_bin=min_bin)
+    bins = {}
+    for y, d in zip(ys, ds):
         b = math.floor(float(mp.log10(y)) * 2) / 2
         bins.setdefault(b, []).append(float(d * d))
-    pts = sorted((b, math.log10(math.sqrt(sum(v) / len(v)))) for b, v in bins.items())
-    n = len(pts)
-    sx = sum(p[0] for p in pts)
-    sy = sum(p[1] for p in pts)
-    sxx = sum(p[0] * p[0] for p in pts)
-    sxy = sum(p[0] * p[1] for p in pts)
-    slope = (n * sxy - sx * sy) / (n * sxx - sx * sx)
-    return {"slope": slope, "n_bins": n, "points": pts}
+    pts = sorted((b, math.log10(math.sqrt(sum(v) / len(v))))
+                 for b, v in bins.items() if len(v) >= min_bin)
+    return {"slope": slope, "n_bins": n_used, "n_bins_dropped": dropped,
+            "points": pts, "n_points": n_points,
+            "samples_per_decade": n_points / (y_max_pow - y_min_pow)}
 
 
 def on_line_zeros(n_zeros: int = 12) -> list:

@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/mtft.svg?color=blue)](https://pypi.org/project/mtft/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-401%2F401-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
+[![Tests](https://img.shields.io/badge/tests-440%2F440-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
 
 Fundamental constants from the integers. **Zero free parameters.**
 
@@ -114,7 +114,7 @@ decompose_turing_machine()           # a TM as a five-primitive AG object
 
 CLI: `python -m mtft verify | report | tower | screen | info`
 
-## Package Structure — 35 modules in 16 tiers
+## Package Structure — 36 modules in 16 tiers
 
 | Tier | Modules | What lives here |
 |---|---|---|
@@ -126,7 +126,7 @@ CLI: `python -m mtft verify | report | tower | screen | info`
 | 5 | `dimensional_bridge` `cosmology` `dark_sector` | Bridges & the dark sector |
 | 5b | `falsify` | 23 pre-registered predictions, honest scorecard |
 | 5c | `tower` | SU(N) landscape |
-| 5d | `riemann` | Explicit formula, corrected RH diagnostic, **Speiser–Hadamard lab** |
+| 5d | `riemann` `marked_gas` | Explicit formula, corrected RH diagnostic, **Speiser–Hadamard lab**, the marked primon gas |
 | 5e | `lhcb_analysis` | ROOT-bridge confrontation (uproot) |
 | 6 | `quantum` | Topological qudits |
 | 7 | `crypto` `monster_hash` | SL(2,ℤ)-sponge hashing |
@@ -155,7 +155,7 @@ Z_D(β)     = −ζ(β)·ζ′(β+1)                            Dirichlet ensemb
 ## Testing
 
 ```bash
-pytest          # 401 tests: LMFDB anchors, exact identities, audit regressions
+pytest          # 440 tests: LMFDB anchors, exact identities, audit regressions
 ```
 
 Every numerical claim above is a test. The suite gates PyPI publication —
