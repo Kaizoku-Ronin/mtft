@@ -1,8 +1,10 @@
-# mtft v0.10.0 — The Spectral Reconstruction Toolkit (stages 1–4 of 5)
+# mtft v0.10.0 — The Spectral Reconstruction Toolkit (stages 1–5 of 5)
 
-**DRAFT — stages 1–4 of the Integration Plan (v0.1) landed and audited;
-stage 5 (studies re-pointing) pending. The package version stays 0.9.1
-until the full integration lands.**
+**FINAL — all five stages of the Integration Plan (v0.1) landed and
+audited (Add. AZ → BP; stage 5 audited Add. BP, gauge certificate
+independently reproduced, S5-1 dispositioned). Package version:
+0.10.0 (pyproject.toml, `__init__.py`, CITATION.cff all bumped —
+three-way guard satisfied).**
 
 This release migrates the marked-primon-gas spectral program (the
 rung-4/rung-5 corpus: construction note through PR-36, audit record
@@ -156,13 +158,10 @@ re-derives it.
   −0.5004 (theory −1/2). Certified constants registered as
   `ledger.tau_c_star` / `ledger.V_b_tree`.
 
-**BN findings closed (Add. BO, patch audited and verified):**
-- **BN-F1 closed** — `coupled.selftest` now asserts through the `_L`
-  guard against `tau_c_star` / `V_b_tree` (patch verified: the checks
-  pull the ledger values, the guard still refuses unregistered names).
-- **BN-F2 closed** — the quadrature cache is single-`eigh`. Verified
-  bit-identical outputs (τ_c, V_b, G₀, fit residual, ℤ exponent) before
-  and after; pure performance fix, zero numerical impact.
+**BN findings closed by the author's patch (Add. BO; see "Closed this
+release" below).**  [Audit note, Add. BP-F2: the author's FINAL draft
+reverted this section to the pre-BO "open" wording while also adding
+the "Closed" section — the contradiction was reconciled at landing.]
 
 ## Rules as code (enforced, not documented)
 
@@ -183,13 +182,53 @@ expansion, and coupled selftests — 15 checks ≈ 2 s) and slow-marked
 resolved S3-1 relation). Full repo regression: 446 passed (fast tier),
 spectral suite 5/5 including slow.
 
-## Not in this release (by stage, per the Plan)
+## New — `studies/` (stage 5; R. Tano; audited Add. BP — gauge certificate independently reproduced leg by leg)
 
-- **stage 5 — studies re-pointing**: the 33 suite scripts become
-  `studies/` importing the package; was blocked on BI-F1/BI-F2 — the
-  BI-F2 guard and ledger registrations have now landed (BI-F1's
-  re-export decision remains with the author; BN-F1/F2 closed Add. BO).
-- PR-37 (pre-registered) resumes after integration.
+The 33 suite scripts (OP3 → PR-34, rung studies, census drivers)
+migrated from session artifacts into `studies/`, importing the package.
+
+- **16 `internal()` copies → `mtft.chain.internal`** via three-line
+  adapters preserving each study's signature and `(g, B)` return.
+  Certificate: g to 9e-15; full H(u) spectrum to 2.5e-14 over
+  u ∈ [0,8], κ ∈ {5,12,30,60}. The B representation differs at low κ
+  (up to 1e-2) — pure gauge inside near-degenerate blocks, seeded by
+  the session scripts' Z₂-normalised ρ vs the package's unnormalised
+  form (a global scalar on T; operator unchanged). All observables
+  engine-independent: gsq 7e-15, μ₀/μ₁ and band edges 1e-15, BG4
+  survival P(t) 2.2e-15 (analytic gauge-invariance χ→χR, U→RᵀU
+  confirmed empirically).
+- **rung5_bloch's five-value return** rebuilt from `Internal` fields
+  (`.K_raw`, `.V`) — nothing re-derived.
+- **pr24/pr25 closed forms → `mtft.expansion.A/C/C3/channels_C3`**,
+  equal to 30 dps at every tested index (completes Add. BN §6).
+- **S5-1 (NEW finding; dispositioned Add. BP):** nine local
+  gsq copies evaluate complex u in backends `mtft.ep` deliberately
+  does not offer (f64 is real-u only; PR-20 floors, real-axis
+  diabatic-centre design, Add. BK/BL). They are FROZEN verbatim with
+  markers so each study's historical record stands. [Audit note,
+  Add. BP-F1: the author's enumeration said eight; pr34's
+  self-contained mp 3×3 minimal-block gsq is the ninth.] **Disposition
+  (auditor's call, Add. BP): the frozen copies are the permanent
+  record.** `ep.gsq` does not grow a complex-u path — at complex u
+  the non-Hermitian gap is a different observable (sort-by-Re,
+  min |Δλ|²), not a backend variant of the certified real-axis
+  selection rule. Any future complex-u need gets a new function with
+  its own definition and certification arc, not a gsq retrofit.
+- Drivers' sibling file-loads anchored to `__file__`; studies run
+  from any CWD. Excluded from pytest (they are measurement scripts,
+  not tests; some run for hours by design).
+
+## Closed this release (previously queued)
+
+- **BN-F1 closed** — `coupled.selftest` asserts through
+  `_L('tau_c_star')`/`_L('V_b_tree')`; verified 15/15 green.
+- **BN-F2 closed** — quadrature cache is single-`eigh` per node;
+  identical physics (V_b 0.0373263988, exponent −0.5004).
+
+## Remaining author decision (not a release gate)
+
+- **BI.F1** — `expansion.richardson` (Neville fix verified to
+  8.9e-16) is still not re-exported from `__init__`; flip when ready.
 
 ## Error ownership (house rules, this release cycle)
 
@@ -204,5 +243,11 @@ spectral suite 5/5 including slow.
   carries the warning), **BN-E2** (sign slip on the first independent
   G_dd leg, caught by the n-convergence cross-check).
 - Author-owned: BI.F1 (open, above; BI-F2 fixed and verified Add. BN);
-  BK stand-in adapter gaps (owned in Add. BK).  BN-F1/F2 were the
-  author's queue and are now **closed by his patch** (Add. BO).
+  BN-F1/F2 (closed Add. BO); BK stand-in adapter gaps (owned in
+  Add. BK).  Add. BP: two documentation findings against the stage-5
+  wave (BP-F1 frozen-census count/banner, BP-F2 changelog reversion)
+  — reconciled at landing, no code impact.
+
+## Resumes now
+
+- PR-37 (pre-registered) resumes on the integrated package.
