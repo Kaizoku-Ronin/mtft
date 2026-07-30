@@ -156,12 +156,13 @@ re-derives it.
   −0.5004 (theory −1/2). Certified constants registered as
   `ledger.tau_c_star` / `ledger.V_b_tree`.
 
-**One finding remains with the author (Add. BN):**
-- **BN-F1** — `coupled.selftest` asserts two literals where the
-  ledger now registers the numbers (the BI-F2 class). The registration
-  is done (auditor's module); the `_L` switch is queued for the author.
-- **BN-F2 (low)** — the quadrature cache diagonalizes each H twice
-  (eigvalsh + eigh); single-`eigh` cleanup queued. Not a gate.
+**BN findings closed (Add. BO, patch audited and verified):**
+- **BN-F1 closed** — `coupled.selftest` now asserts through the `_L`
+  guard against `tau_c_star` / `V_b_tree` (patch verified: the checks
+  pull the ledger values, the guard still refuses unregistered names).
+- **BN-F2 closed** — the quadrature cache is single-`eigh`. Verified
+  bit-identical outputs (τ_c, V_b, G₀, fit residual, ℤ exponent) before
+  and after; pure performance fix, zero numerical impact.
 
 ## Rules as code (enforced, not documented)
 
@@ -187,7 +188,7 @@ spectral suite 5/5 including slow.
 - **stage 5 — studies re-pointing**: the 33 suite scripts become
   `studies/` importing the package; was blocked on BI-F1/BI-F2 — the
   BI-F2 guard and ledger registrations have now landed (BI-F1's
-  re-export decision remains with the author).
+  re-export decision remains with the author; BN-F1/F2 closed Add. BO).
 - PR-37 (pre-registered) resumes after integration.
 
 ## Error ownership (house rules, this release cycle)
@@ -203,4 +204,5 @@ spectral suite 5/5 including slow.
   carries the warning), **BN-E2** (sign slip on the first independent
   G_dd leg, caught by the n-convergence cross-check).
 - Author-owned: BI.F1 (open, above; BI-F2 fixed and verified Add. BN);
-  BN-F1/F2 (open, above); BK stand-in adapter gaps (owned in Add. BK).
+  BK stand-in adapter gaps (owned in Add. BK).  BN-F1/F2 were the
+  author's queue and are now **closed by his patch** (Add. BO).

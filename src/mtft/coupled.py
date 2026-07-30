@@ -183,8 +183,8 @@ def binding_threshold(ic: Internal, tau: float, meas: Measure,
     threshold needs EXTRAPOLATION in sqrt(delta) (quadratic), not a
     saturation assertion."""
     xs, ws = meas.nodes(nquad)
-    cache = [(np.linalg.eigvalsh(H_of(ic, tau, float(x))),
-              np.linalg.eigh(H_of(ic, tau, float(x)))[1]) for x in xs]
+    cache = [np.linalg.eigh(H_of(ic, tau, float(x))) for x in xs]  # BN-F2:
+    # one eigh per node; eigh's eigenvalues == eigvalsh's (same LAPACK path)
     e_min = min(float(np.min(ev)) for ev, _ in cache)
     seq = []
     for dd in deltas:
@@ -284,13 +284,14 @@ def selftest(verbose: bool = True):
         1.0 if np.all(np.diff(b["widths"][:6]) < 0) else 0.0, 1.0, 0.0)
 
     tc_Z = tau_c(ic, BLOCH)
-    chk("tau_c (bloch)", tc_Z, 0.230032, 5e-5)
+    chk("tau_c (bloch)", tc_Z, _L("tau_c_star"), 5e-5)      # BN-F1: ledger
     tc_T = tau_c(ic, K2)
     chk("tau_c ratio tree/Z = 2/x_max = 1/sqrt2",
         tc_T / tc_Z, 2.0 / K2.x_max, 2e-4)
 
     bt_T = binding_threshold(ic, 0.05, K2)
-    chk("tree binding threshold finite", bt_T["V_b"], 0.03733, 5e-4)
+    chk("tree binding threshold finite", bt_T["V_b"],
+        _L("V_b_tree"), 5e-4)                                # BN-F1: ledger
     chk("tree sqrt-extrapolation fits", bt_T["fit_resid"], 0.0, 1e-3)
     bt_Z = binding_threshold(ic, 0.05, BLOCH)
     chk("Z divergent: V_b = 0", bt_Z["V_b"], 0.0, 0.0)

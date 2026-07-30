@@ -155,7 +155,9 @@ from mtft.estimator_standards import (
 # expansion.richardson is deliberately NOT part of the public surface
 # pending BI.F1 (the audited Neville fix landed in chain(1)/expansion(1)
 # and is verified, Add. BN §4; the re-export decision is the author's).
-# coupled.selftest still asserts two literals pending its switch to the
+# coupled.selftest now asserts through the _L guard (BN-F1 closed; the
+# quadrature cache is single-eigh, BN-F2 closed).  Historical note: it
+# previously asserted two literals pending its switch to the
 # _L guard (BN-F1; the numbers are registered as tau_c_star / V_b_tree
 # in the ledger, Add. BN §7).
 from mtft import ledger, chain, expansion, ep, coupled  # noqa: F401
