@@ -1,10 +1,14 @@
 """
-MTFT — Modular Time Field Theory  (v0.9.1)
-============================================
+MTFT — Modular Time Field Theory  (v0.9.1 + v0.10.0 integration stages 1–3)
+============================================================================
 
-35 modules covering the complete MTFT framework from arithmetic
+39 modules covering the complete MTFT framework from arithmetic
 weights through lattice gauge theory, materials science, LHC
-confrontation, computation theory, and sonification.
+confrontation, computation theory, and sonification — plus the
+primon-gas spectral reconstruction toolkit (ledger, chain, expansion,
+ep; Integration Plan v0.1 stages 1–3, Add. AZ–BL).  coupled.py
+(stage 4) and the studies re-pointing (stage 5) are pending; the
+version stays 0.9.1 until stage 4 lands.
 
 Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
@@ -140,6 +144,26 @@ from mtft.jc_counterexample import (
 from mtft.estimator_standards import (
     binned_log_slope, stride_resonance_check, recommended_samples_per_decade,
 )
+
+# ── Tier 5f: Primon-Gas Spectral Reconstruction (v0.10.0, stages 1–4) ──
+# The rung-4/rung-5 spectral toolkit: the T = DKD kernel chain,
+# exceptional points, the remainder expansion, the coupled (Bloch /
+# Kesten) model, and the certified ledger of constants (Integration
+# Plan v0.1 §3; audited Add. BI/BK/BN, dispositioned Add. BL).
+# Exposed AS MODULES, not flattened — the function names (gap,
+# newton, census) are too generic for this namespace.
+# expansion.richardson is deliberately NOT part of the public surface
+# pending BI.F1 (the audited Neville fix landed in chain(1)/expansion(1)
+# and is verified, Add. BN §4; the re-export decision is the author's).
+# coupled.selftest still asserts two literals pending its switch to the
+# _L guard (BN-F1; the numbers are registered as tau_c_star / V_b_tree
+# in the ledger, Add. BN §7).
+from mtft import ledger, chain, expansion, ep, coupled  # noqa: F401
+from mtft.ledger import verify as spectral_ledger_verify
+from mtft.chain import selftest as spectral_chain_selftest
+from mtft.expansion import selftest as spectral_expansion_selftest
+from mtft.ep import selftest as spectral_ep_selftest
+from mtft.coupled import selftest as spectral_coupled_selftest
 
 # ── The Legend (lazy: keeps `python -m mtft.legend` warning-free) ──
 def __getattr__(name):

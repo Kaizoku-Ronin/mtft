@@ -42,5 +42,13 @@ Documentation = "https://github.com/Kaizoku-Ronin/mtft#readme"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+mtft = ["mtft_legend.md"]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: opt-in slow certifications (mp-tier suites, > 60 s)",
+]
+
 [tool.ruff]
 line-length = 100
