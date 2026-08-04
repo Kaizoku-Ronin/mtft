@@ -21,7 +21,6 @@ import sys
 
 import numpy as np
 import pytest
-import sympy as sp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STUDIES = os.path.join(HERE, "..", "studies")
@@ -55,16 +54,27 @@ def test_combinatorics(engine):
 
 
 def test_T2_cuspidal_charpoly(engine):
+    """Cuspidal T2 eigenvalue multiset == roots of the certified factorization
+    x^2 (x+2)^4 q4(x)^2 q6(x)^2  [Add. BQ leg 2: exact charpoly match].
+
+    sympy-free (the publish workflow's test env has no sympy): compare the
+    sorted eigenvalues of A2s against the expected multiset, each factor's
+    roots taken twice."""
     v02, p1, tris, edges, ms = engine
     T2 = ms.hecke_on_quotient(2)
     assert T2.shape == (29, 29)
     A2s, _ = ms.restrict_to_cuspidal(T2)
     assert A2s.shape == (26, 26)
-    x = sp.symbols("x")
-    cp = sp.factor(sp.Matrix(A2s.tolist()).charpoly(x).as_expr())
-    expect = ("x**2*(x + 2)**4*(x**4 - 3*x**3 - x**2 + 5*x + 1)**2*"
-              "(x**6 - 10*x**4 + 2*x**3 + 24*x**2 - 7*x - 12)**2")
-    assert str(cp) == expect
+    q4 = np.roots([1, -3, -1, 5, 1])                # x^4-3x^3-x^2+5x+1
+    q6 = np.roots([1, 0, -10, 2, 24, -7, -12])      # x^6-10x^4+2x^3+24x^2-7x-12
+    expect = np.concatenate([[0, 0], [-2] * 4,
+                             np.repeat(q4, 2), np.repeat(q6, 2)])
+    got = np.linalg.eigvals(np.array(A2s, dtype=float))
+    key = lambda zs: sorted(zs, key=lambda z: (round(z.real, 9), round(z.imag, 9)))
+    e_, g_ = key(expect), key(got)
+    assert len(e_) == len(g_) == 26
+    for a, b in zip(e_, g_):
+        assert abs(a - b) < 1e-6, (a, b)
 
 
 def test_f1_hecke_eigenvalues(engine):
