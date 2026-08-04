@@ -87,7 +87,9 @@ class EllipticCurve143a1:
     label: str = "143a1"
     a_invariants: tuple = (0, -1, 1, -1, -2)     # y² + y = x³ − x² − x − 2
     conductor: int = 143
-    j_invariant: str = "-1/15"
+    j_invariant: str = "-262144/1859"   # c4^3/Delta, c4=64, Delta=-1859=-11*13^2
+                                        # (Add. BQ sec.5: previous '-1/15' was a corpus error;
+                                        #  auditor-certified exact from a-invariants)
     analytic_rank: int = 1     # ε = −1 forces odd rank; L′(1) ≠ 0 → exactly 1 (PARI MW rank 1)
     root_number: int = -1
 

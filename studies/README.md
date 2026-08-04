@@ -50,6 +50,17 @@ definition and its own certification arc, not a gsq retrofit.
 file path; the paths are now anchored to `__file__` so they run from
 any working directory.
 
+## The X₀(143) particle box (v0.11.0)
+
+`x0143_particle_box.py`, `x0143_particle_box_v02.py`,
+`x0143_particle_box_v03.py` — the three-generation spectral atom on
+X₀(143): tessellation + exact Manin-symbol engine (v01); float Hecke,
+periods, aₚ extraction (v02); cusp nuclei + Lindblad capture +
+Petersson-metric Zeno + falsifiability battery (v03).  Audited
+end-to-end in Addendum BQ; gates in `tests/test_x0143_particle_box.py`
+(fast tier runs in ~2 s).  Outputs (certificates, figures, period
+cache) are written next to the scripts.
+
 ## Running
 
 Studies are scripts, not tests: many run for minutes to hours by

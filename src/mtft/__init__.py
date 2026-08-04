@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.10.0 — spectral reconstruction toolkit)
+MTFT — Modular Time Field Theory  (v0.11.0 — spectral reconstruction toolkit)
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic
@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.10.0"
+__version__ = "0.11.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -145,7 +145,7 @@ from mtft.estimator_standards import (
     binned_log_slope, stride_resonance_check, recommended_samples_per_decade,
 )
 
-# ── Tier 5f: Primon-Gas Spectral Reconstruction (v0.10.0, stages 1–5) ──
+# ── Tier 5f: Primon-Gas Spectral Reconstruction (v0.11.0, stages 1–5) ──
 # The rung-4/rung-5 spectral toolkit: the T = DKD kernel chain,
 # exceptional points, the remainder expansion, the coupled (Bloch /
 # Kesten) model, and the certified ledger of constants (Integration
