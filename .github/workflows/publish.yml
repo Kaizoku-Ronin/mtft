@@ -38,11 +38,14 @@ jobs:
       - name: Install package and test dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e . pytest sympy
+          pip install -e . pytest sympy scipy
           # sympy: exact rational algebra in the studies engines
           # (x0143_particle_box Manin-symbol internals) exercised by
           # tests/test_x0143_particle_box.py — a test dependency of the
           # publish gate, not of the wheel itself.
+          # scipy (v0.11.1): quadrature in
+          # test_pet_f1_modular_degree_certification — likewise a
+          # publish-gate test dependency only (wheel deps unchanged).
 
       - name: Run test suite (publish is blocked if this fails)
         run: python -m pytest tests/ -q

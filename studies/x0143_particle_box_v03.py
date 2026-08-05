@@ -23,9 +23,13 @@ STAGE G — capture requires dissipation.
           gamma0 = 0 (an eigenstate overlap cannot change) -> capture is
           impossible without dissipation. This is the theorem the stage exists
           to demonstrate, and it is exact, not numerical.
-        - PHOTON LEDGER (E2): energy emitted, computed by integrating the jump
-          flux, must equal the drop in <H> computed from the populations.
-          Two routes, neither passing through the other.
+        - PHOTON LEDGER: the identity f + M^T w = 0 (all energy the state
+          loses is carried by the jump flux) holds to machine precision.
+          v0.11.1 relabel (owned error, caught by the Kimi BQ audit): the
+          identity is FORCED by the vanishing column sums of the master
+          generator, so it is one route written twice — a construction
+          certificate, not an E2 pair. The honest numerical figure is the
+          trajectory quadrature residual (~7e-3, time-grid limited).
   G5  Emission spectrum: discrete lines, one set per cusp-nucleus.
 
 STAGE H — orbit-dependent Zeno on the 26-dim cuspidal homology.
@@ -212,12 +216,13 @@ def stage_G(verbose=True):
     Eexp = P @ w
     mono = bool(np.all(np.diff(Eexp) <= 1e-12))
 
-    # PHOTON LEDGER (E2). Route 1: energy lost by the state, d<H>/dt = w.Mp.
-    # Route 2: energy carried off by photons, flux = f.p with
-    #          f_b = sum_a gamma_{ab}(E_b - E_a).
-    # The two agree for EVERY state iff  f + M^T w = 0  identically — an
-    # exact algebraic identity, checked here instead of comparing two
-    # quadratures (which would only ever be as good as the time grid).
+    # PHOTON LEDGER. Energy balance: d<H>/dt = w.Mp; photon flux = f.p,
+    # f_b = sum_a gamma_{ab}(E_b - E_a). The identity f + M^T w = 0 holds
+    # for EVERY state — but it is FORCED by M's vanishing column sums
+    # (the adjoint identity), so it is a construction certificate that
+    # catches indexing bugs at 1e-16, NOT two independent routes. (E2
+    # mislabel corrected in v0.11.1; the independent numerical check is
+    # the trajectory quadrature comparison below, time-grid limited.)
     dE = w[None, :] - w[:, None]              # dE[m, n] = E_n - E_m
     fvec = (Gj * dE).sum(axis=0)
     identity_res = float(np.abs(fvec + M.T @ w).max())
@@ -243,9 +248,9 @@ def stage_G(verbose=True):
               f"{p_bound0:.4f} -> {Ebound[-1]:.4f}  = CAPTURE")
         print(f"     <H> monotone decreasing: "
               f"{'PASS' if mono else 'FAIL'} (EXACT)")
-        print(f"     PHOTON LEDGER (E2), exact identity f + M^T w = 0 "
-              f"(all energy lost by the state is carried by photons, for "
-              f"every state): residual {identity_res:.2e} "
+        print(f"     PHOTON LEDGER, construction identity f + M^T w = 0 "
+              f"(forced by vanishing column sums; catches indexing bugs, "
+              f"not an E2 pair): residual {identity_res:.2e} "
               f"{'PASS' if identity_res < 1e-12 else 'FAIL'} (EXACT)")
         print(f"     integrated check on this trajectory: "
               f"|drop in <H> - integrated flux| = {quad_err:.2e} "
@@ -582,8 +587,8 @@ def figures(gd, hd):
             lw=2, label="initial energy minus integrated photon flux")
     ax.set_xlabel("time")
     ax.set_ylabel("energy")
-    ax.set_title("Photon ledger (E2): two independent routes\n"
-                 "agree by construction (telescoping identity exact);\n"
+    ax.set_title("Photon ledger: energy bookkeeping of the capture\n"
+                 "identity check is construction-forced (not an E2 pair);\n"
                  "quadrature residual 7.2e-3 (Add. BQ sec.8)", fontsize=11)
     ax.legend(fontsize=9)
     fig.tight_layout()

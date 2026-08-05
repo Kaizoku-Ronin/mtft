@@ -73,3 +73,17 @@ Audit trail: Addendum BQ (this wave, full independent audit, 8 legs,
 conditional GO). Open items unchanged: BI.F1 (PARI mfpetersson diagonal
 certification — now optional rather than motivated by suspicion);
 PR-37 resumes on the integrated package.
+
+
+---
+
+### Corrections applied in v0.11.1 (annotation appended per corpus protocol)
+
+- The "Documented" section above states the PET normalization as
+  per-unit-volume (V_N = 56pi) and PET_F1 as "+4.7% above" the
+  modular-degree value. Both are superseded: mfpetersson normalizes by
+  the INDEX 168; the ratio 56pi/168 = pi/3 accounts for the whole 4.7%;
+  the modular-degree route matches PET_F1 to 7.8e-14 (all published
+  digits). See CHANGELOG_v0111.md.
+- The photon-ledger relabel recorded above was documented but not landed
+  in the v0.11.0 source; it is landed in v0.11.1.

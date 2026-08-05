@@ -151,3 +151,26 @@ def test_capture_ceiling_smoke(engine):
     (Add. BQ leg 6)."""
     pytest.skip("slow tier: run studies/x0143_particle_box_v03.py stage G "
                 "end-to-end for the full ceiling certificate")
+
+
+def test_pet_f1_modular_degree_certification():
+    """v0.11.1: <f1,f1> certified EXACTLY by the modular-degree route.
+
+    mfpetersson normalizes by the index [PSL2(Z):Gamma_0(143)] = 168, not
+    the hyperbolic volume 56*pi; the ratio pi/3 = 1.0472 was the entire
+    "+4.7%" of Add. BQ leg 3. With deg(143.a1) = 4 (LMFDB) and the 143a1
+    lattice covolume by quadrature, 4*covol/(4 pi^2 * 168) reproduces
+    PET_F1 to all published digits (7.8e-14 at 40-digit precision; the
+    scipy tolerance here is 1e-8)."""
+    from scipy.integrate import quad
+    v02 = _load("x0143_particle_box_v02")
+    cubic = np.poly1d([1, -1, -1, -7 / 4])
+    rts = np.roots(cubic)
+    e1 = float(np.max(rts[np.abs(rts.imag) < 1e-9].real))
+    om_re, _ = quad(lambda x: 1.0 / np.sqrt(cubic(x)), e1, np.inf,
+                    limit=400)
+    om_im2, _ = quad(lambda x: 1.0 / np.sqrt(-cubic(x)), -np.inf, e1,
+                     limit=400)
+    covol = om_re * (om_im2 / 2.0)
+    pet = 4.0 * covol / (4.0 * np.pi ** 2 * 168.0)
+    assert abs(pet - v02.PET_F1) / v02.PET_F1 < 1e-8

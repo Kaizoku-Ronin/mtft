@@ -53,13 +53,24 @@ N = 143
 P_MAX = 700                       # primes for a_p extraction
 N_MAX = 700                       # q-expansion length for periods
 
-# ----- corpus constants (Cert-corpus: Paper 36 SS6.3 / Paper 32 SS4.3,
-#       computed by mfpetersson in PARI/GP, 28-digit precision) ----------
-# Petersson norms, PER-UNIT-VOLUME normalization (Add. BQ sec.3):
-#   <f,f>_raw = PET * V_N with V_N = 56*pi (volume of X_0(143)).
-#   Auditor certification: PET_F1 sits 4.7% above the exact modular-degree
-#   value 0.002287 (deg(143.a1)=4); the f2/f3 diagonals match the auditor's
-#   independent Rankin-Selberg residues to a uniform 2-3% (Add. BQ sec.4.4).
+# ----- corpus constants (Paper 36 SS6.3 / Paper 32 SS4.3, computed by
+#       mfpetersson in PARI/GP, 28-digit precision) ----------------------
+# Petersson norms, INDEX normalization (v0.11.1 correction of Add. BQ
+# sec.3, which stated per-unit-volume V_N = 56*pi):
+#   <f,f>_raw = PET * [PSL2(Z):Gamma_0(143)] = PET * 168.
+#   The volume/index ratio 56*pi/168 = pi/3 = 1.0472 was the entire
+#   "+4.7%" of Add. BQ leg 3 — a normalization mismatch, not a gap.
+#   PET_F1 class: Cert — three independent routes agree:
+#     (1) mfpetersson (this value, 28-digit corpus);
+#     (2) Rankin-Selberg residue (Add. BQ leg 3; -0.4% estimator bias);
+#     (3) modular degree: deg(143.a1) = 4 (LMFDB) with lattice covolume
+#         Om_re * Im(om2) = 1.9699231645720704 * 2.0157723238708093
+#         = 3.9709165952963810 (quadrature), giving
+#         4*covol/(4*pi^2*168) = 0.00239486886655019 — matches (1) to
+#         7.8e-14, all published digits.  Locked by
+#         tests/test_x0143_particle_box.py::test_pet_f1_modular_degree_certification.
+#   PET_F2_DIAG / PET_F3_DIAG remain Cert-corpus (2-3%, Add. BQ sec.4.4);
+#   the per-embedding ORDER remains DIAGNOSTIC (Paper 32 sigma-order).
 PET_F1 = 0.002394868866550
 PET_F2_DIAG = [0.00720, 0.00423, 0.00473, 0.01431]   # sigma-order of P32 SS6.1
 PET_F3_DIAG = [0.01369, 0.01085, 0.00388, 0.00627, 0.01008, 0.01564]
@@ -534,10 +545,21 @@ def main():
           f"{j_lattice.real:+.4f}{j_lattice.imag:+.1e}i ; "
           f"j from a-invariants = -262144/1859 = {j_exact:+.4f} "
           f"{'PASS' if abs(j_lattice - j_exact) < 5e-3 else 'FAIL'} (Cert)")
-    print(f"     NOTE (corpus): mtft CURVE_143A1.j_invariant string '-1/15' "
-          f"and Paper 32's tau ~ 0.039+0.980i / 'nearly square' remark "
-          f"both disagree with the a-invariants and with this lattice; "
-          f"flag for corpus correction (receipts in ledger).")
+    # v0.11.1: the j-invariant flag was dispositioned in v0.11.0 (oracle
+    # corrected to -262144/1859). A runtime guard replaces the stale
+    # complaint: this study now fails loudly if the oracle ever regresses.
+    from fractions import Fraction as _Fr
+    import mtft.x0_143 as _ox
+    j_oracle = float(_Fr(_ox.CURVE_143A1.j_invariant))
+    j_guard = (abs(j_oracle - j_exact) < 1e-12
+               and abs(j_lattice - j_oracle) < 5e-3)
+    print(f"     oracle guard: CURVE_143A1.j_invariant = "
+          f"{_ox.CURVE_143A1.j_invariant} agrees with the a-invariants "
+          f"and this lattice {'PASS' if j_guard else 'FAIL'} (Cert)")
+    print(f"     NOTE (corpus, still open): Paper 32's tau ~ 0.039+0.980i "
+          f"/ 'nearly square' remark disagrees with this lattice "
+          f"(Delta = -1859 < 0 forces tau = 1/2 + it; engine tau = "
+          f"{tau:.6f}); paper-side erratum pending.")
     ledger["f1 lattice"] = {"absw1": float(abs(w1)),
                             "absw2": float(abs(w2)),
                             "tau": [float(tau.real), float(tau.imag)],
@@ -549,9 +571,10 @@ def main():
                             "j_lattice (Cert)": [float(j_lattice.real),
                                                  float(j_lattice.imag)],
                             "j_from_a_invariants (EXACT)": "-262144/1859",
-                            "corpus_flags": ["CURVE_143A1.j_invariant '-1/15'",
-                                             "Paper32 tau~0.039+0.980i "
-                                             "'nearly square'"]}
+                            "j_oracle_guard (Cert)": bool(j_guard),
+                            "corpus_flags": ["Paper32 tau~0.039+0.980i "
+                                             "'nearly square' (open, "
+                                             "paper-side)"]}
 
     # orbit blocks (reuse exact route from v0.1 idea, float here)
     from x0143_particle_box import orbit_blocks
