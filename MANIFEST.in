@@ -1,0 +1,4 @@
+include LICENSE README.md CITATION.cff PUBLISHING.md TRUSTED_PUBLISHING_SETUP.md
+include CHANGELOG_*.md
+recursive-include studies *.py *.md
+recursive-include tests *.py
