@@ -63,7 +63,7 @@ jobs:
       - name: Verify the sdist reproduces the release gate (v0.11.2 lesson)
         run: |
           python -c "import tarfile, glob; tarfile.open(glob.glob('dist/*.tar.gz')[0]).extractall('/tmp/sdist_repro')"
-          cd /tmp/sdist_repro/mtft-* && python -m pytest tests/test_x0143_particle_box.py -q
+          cd /tmp/sdist_repro/mtft-* && python -m pytest tests/test_x0143_particle_box.py tests/test_dynamical_units.py -q
 
       - uses: actions/upload-artifact@v4
         with:

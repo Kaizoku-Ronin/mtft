@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/mtft.svg?color=blue)](https://pypi.org/project/mtft/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-442%2F442-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
+[![Tests](https://img.shields.io/badge/tests-465%2F465-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
 
 Fundamental constants from the integers. **Zero free parameters.**
 
@@ -15,6 +15,16 @@ w<sub>n</sub> = Σ<sub>d|n</sub> (log d)/d. The wall at small y is confinement;
 uniform positivity <em>is</em> the mass-gap statement.
 <a href="https://raw.githack.com/Kaizoku-Ronin/mtft/main/viz/stiffness_navigator.html">
 <b>Open the interactive 3D navigator →</b></a>
+</sub></p>
+
+![Unitary wavepacket on the dual graph of X₀(143)](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.gif)
+
+<p align="center"><sub>
+Unitary wavepacket evolution on the 56-node Farey dual of X₀(143) —
+the graph clock (CURVE) of <code>studies/du01_two_clock_ledger.py</code>:
+Laplacian Cayley steps, pure a.c. propagation, ‖ψ‖ = 1 throughout.
+<a href="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.mp4">Full-resolution mp4</a>
+· draw your own loops with <code>viz/MTFT_DrawnLoop.jsx</code>.
 </sub></p>
 
 MTFT proposes a modular time field **τ(x) = t_R / t_U** mapping spacetime to
@@ -148,14 +158,16 @@ Z_D(β)     = −ζ(β)·ζ′(β+1)                            Dirichlet ensemb
 ## Visuals
 
 `viz/` ships the gallery: `hero_stiffness.png` + `stiffness_navigator.html`
-(regenerate with `python viz/make_hero.py`), plus React components —
+(regenerate with `python viz/make_hero.py`), the auto-looping
+`wavepacket_X0143.gif` / `wavepacket_X0143.mp4` (graph-clock unitary
+evolution), plus React components —
 `X0_143_BurningMandelbrot.jsx`, `MTFT_HyperbolicTiling.jsx`,
-`MTFT_MonsterFingerprint.jsx`, `mtft_enneper.jsx`.
+`MTFT_MonsterFingerprint.jsx`, `mtft_enneper.jsx`, `MTFT_DrawnLoop.jsx`.
 
 ## Testing
 
 ```bash
-pytest          # 442 tests: LMFDB anchors, exact identities, audit regressions
+pytest          # 465 tests: LMFDB anchors, exact identities, audit regressions
 ```
 
 Every numerical claim above is a test. The suite gates PyPI publication —
