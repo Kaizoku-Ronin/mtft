@@ -1,0 +1,13 @@
+{
+ "A4 lines_vs_distinct (EXACT)": {
+  "lines": 13,
+  "distinct_eigenvalues": 12
+ },
+ "B1 transported_well_nogo (Cert)": 1.075366884136067e-15,
+ "C1 uniform commutator_rel (Cert)": 0.12892690515602995,
+ "C1 cusp_depth commutator_rel (Cert)": 0.12827271704109797,
+ "E uniform verdict (Cert)": "ILL-POSED (no common eigenbasis)",
+ "E uniform best_cv (Cert)": 3.84221286,
+ "E cusp_depth verdict (Cert)": "ILL-POSED (no common eigenbasis)",
+ "E cusp_depth best_cv (Cert)": 2.87165227
+}

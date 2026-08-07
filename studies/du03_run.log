@@ -1,0 +1,91 @@
+======================================================================
+STAGE A — closing the free channels
+======================================================================
+  A1 cusp-well action on the harmonic stage: max |B2 B2^T h| = 7.2e-16  PASS (Cert) — the link-form interaction annihilates homology; the cusp-well route to a harmonic dispersion is CLOSED.
+  A2 exact commutator [G, T2*] on cycle space: 249 nonzero entries, Frobenius 37.4433  (EXACT, reported) — noncommuting, but by A1 any noncommutation acts through the Eisenstein sector only and cannot split the harmonic level.
+======================================================================
+STAGE B — the canonical interaction: minimal coupling
+======================================================================
+  B0 vertex mode: Fiedler u1 (lambda_1 = 0.272637127, simple by du01 A3). Sign convention: largest-|component| positive; the dispersion's GLOBAL sign is convention, its magnitudes are not.
+  B1 null control f = const: max |V_h - Id| = 1.3e-15  PASS (Cert) — the module structure is exact on homology at zero coupling profile.
+  B2 trace E2: tr V_h = 0.000000000000 (direct) vs 0.000000000000 (edge-weight route), diff 1.3e-16  PASS (Cert)
+======================================================================
+STAGE C — the dispersion relation omega(a)
+======================================================================
+  C1 transported Hecke on the harmonic stage: eigenvalues match the cuspidal lines at 6.7e-15  PASS (Cert; THIRD independent route to the 13 lines: engine restriction, cycle transport, harmonic compression)
+  C2 dispersion (omega = line mean, delta = fine structure), DIAGNOSTIC compression onto Hecke lines (worst null-space residual 4.3e-07):
+             a2  orbit  m         omega       delta
+      -2.708990     f3  2    0.00000000    2.82e-02
+      -2.000000    old  4    0.00000000    1.42e-01
+      -1.701261     f3  2    0.00000000    2.55e-03
+      -1.126757     f2  2    0.00000000    9.36e-03
+      -0.633036     f3  2    0.00000000    3.20e-02
+      -0.197126     f2  2    0.00000000    3.98e-03
+       0.000000     f1  2    0.00000000    1.14e-01
+       1.231271     f3  2    0.00000000    5.56e-02
+       1.365364     f3  2   -0.00000000    8.00e-03
+       1.747468     f2  2   -0.00000000    9.17e-02
+       2.446651     f3  2    0.00000000    9.15e-03
+       2.576415     f2  2    0.00000000    7.34e-02
+  C2b line means: max |omega(a)| = 1.9e-16; level symmetry max |e_k + e_(m-k)| = 3.9e-16  PASS (Cert) — every line splits SYMMETRICALLY about zero.
+  C2c mechanism: per-line vertex weights W_a(i) — max deviation from constancy over all 12 lines = 7.34e-02  nonconstant — the vanishing is profile-specific (parity/selection); see C5.
+  C3 strongest inter-line couplings |Q_a^T V Q_b|_F (DIAGNOSTIC): (-2.000,0.000):0.1559, (-0.197,1.365):0.1352, (-2.000,-0.633):0.1065, (-2.709,-0.197):0.1024
+  C4 transported eta on harmonics: eta^2 = Id at 2.0e-15  PASS (Cert)
+  C5 first-order operator vs parity: |[V,eta]|/|V| = 2.0000, |{V,eta}|/|V| = 0.0000  (Cert, reported) — V is eta-ODD: within each line V is purely parity-off-diagonal, the split eigenstates are equal parity mixtures, and delta(a) is a PARITY-FLIP matrix element (a form factor), consistent with C2b/C2c.
+======================================================================
+STAGE C7 — the SECOND-ORDER dispersion (the real one)
+======================================================================
+  C7a [H_eff, eta] / |H_eff| = 9.53e-15  PASS (Cert) — the second-order operator is eta-EVEN (odd x odd), so parity is a good quantum number and each line resolves into parity branches.
+             a2 orbit  m       w2_mean     w2(eta=+)     w2(eta=-)
+      -2.708990    f3  2   -0.00221882  ['-0.001981']  ['-0.002457']
+      -2.000000   old  4   -0.00491488  ['-0.002450', '-0.000125']  ['-0.013671', '-0.003413']
+      -1.701261    f3  2   -0.00212188  ['-0.000846']  ['-0.003398']
+      -1.126757    f2  2   -0.00363686  ['-0.003786']  ['-0.003488']
+      -0.633036    f3  2   -0.00280833  ['-0.004473']  ['-0.001144']
+      -0.197126    f2  2   -0.00211958  ['-0.003379']  ['-0.000861']
+       0.000000    f1  2   -0.00693959  ['-0.013515']  ['-0.000364']
+       1.231271    f3  2   -0.00457335  ['-0.006783']  ['-0.002364']
+       1.365364    f3  2   -0.00060100  ['-0.000647']  ['-0.000555']
+       1.747468    f2  2   -0.00505219  ['-0.008957']  ['-0.001148']
+       2.446651    f3  2   -0.00819032  ['-0.015215']  ['-0.001165']
+       2.576415    f2  2   -0.00743127  ['-0.013044']  ['-0.001819']
+  C8 slope of w2_mean(a) at the massless (f1) point — estimator battery (A.7 standards, DIAGNOSTIC):
+          fd_left: -0.024451
+         fd_right: +0.001922
+             lin5: -0.000722
+             lin7: -0.000001
+       cubic_at_0: +0.000464
+       spread 0.026373 — the discrete 13-point dispersion does not pin a unique slope; the sign consistency across estimators is the readout.
+======================================================================
+STAGE D — robustness battery over the vertex profile f
+======================================================================
+           f   max|om1|  rho(w2,a)  rho(w2,a^2)  corr(w2,u1)
+          u1    1.9e-16    -0.5035      -0.2867       1.0000
+          u2    4.0e-02    -0.8671      -0.1329       0.8302
+          u3    4.6e-02     0.2587       0.3497       0.1382
+       u_top    4.9e-03    -0.2448       0.3636      -0.1821
+      random    2.6e-01    -0.4266      -0.3916       0.2487
+       const    1.0e+00     0.4615       0.3986       0.0000
+     readout: first-order vanishing is SPECIFIC to the eta-odd Fiedler profile (parity selection rule), not universal equidistribution; for second order, structure is a correlation shared by u1/u2/u3 that clears the random row's noise floor — anything below that bar is reported, not claimed.
+======================================================================
+STAGE E — the first ruler: the systole of X0(143)
+======================================================================
+  E1 residue scan mod 143: trace-3 solutions [] (disc 5 is a non-residue mod 13); trace-4 solutions [19, 63, 84, 128]  PASS (EXACT)
+  E2 explicit trace-4 element of Gamma0(143): [[-15, -2], [143, 19]], det = 1  PASS (EXACT). Primitive: a square root would need trace sqrt(6), not an integer.
+  E3 systole ell_sys = 2 arccosh(2) = 2.633915793849633 (curvature-radius units, EXACT closed form). No shorter closed geodesic exists: hyperbolic traces are integers >= 3 and 3 is excluded.
+  E4 homogeneity note (Pr): every Farey triangle is an SL2(Z)-image of {0,1,oo} and the standard Farey quadrilateral (0, oo; 1, -1) has cross-ratio -1, shear 0 — the tessellation carries no local metric ruler; the canonical global lengths are area = 56 pi and ell_sys.
+======================================================================
+STAGE F — census of graph ratios vs the hydrogen pure number
+======================================================================
+  F0 band statement: direct ratios span [4.7732e-02, 20.9503]. Targets 1.7361669e6 and 4.3175501e-7 are OUT OF BAND — untestable by direct ratios; powers/products are declined (AG-D5).
+  F1 census: 2 ratios within 1e-03 of t0 = 0.749598747594 out of 2970; spacing-shuffle null gives 2.4 +- 1.5, p = 0.696  (DIAGNOSTIC census, not a search) — no anomaly.
+======================================================================
+STAGE G — PHENO bookkeeping (no claims)
+======================================================================
+  G1 Route A reproduction: chi_g = lambda_1 / (2 pi f_21cm) = 3.054870e-11 s  (PHENO; Grok memo value 3.056e-11 s confirmed)
+  G2 curvature radius that makes the systolic velocity equal c: R = c chi_g / ell_sys = 3.477055e-03 m  (PHENO)
+  G3 pure ratios: R/lambda_C = 1.4331e+09, R/a_0 = 6.5707e+07  (PHENO; reported, no resonance claimed)
+  G4 dimensionless light-cone slope candidates from C8: fd_left=-0.0245, fd_right=+0.0019, lin5=-0.0007, lin7=-0.0000, cubic_at_0=+0.0005  (DIAGNOSTIC)
+======================================================================
+ledger written: /home/claude/mtft-0.11.4/studies/du03_dispersion.json
+du03 complete — the interaction exists, the dispersion is on the table, the box has its first ruler.

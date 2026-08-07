@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.11.0 — spectral reconstruction toolkit)
+MTFT — Modular Time Field Theory  (v0.12.0 — peel wave)
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic
@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.11.4"
+__version__ = "0.12.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (

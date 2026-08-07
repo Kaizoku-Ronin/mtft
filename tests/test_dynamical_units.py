@@ -123,3 +123,63 @@ def test_du02_interface(du02_ledger):
     assert L["F1 basis_cond (Cert)"] < 1e3
     gram = sorted(L["D4 link_gram_levels (Cert)"])
     assert len(gram) == 3 and abs(gram[0] - 1.30564596) < 1e-6
+
+
+# ----------------------------------------------------------------------
+# du03 — the dispersion (v0.11.5 candidate wave)
+# ----------------------------------------------------------------------
+
+@pytest.fixture(scope="module")
+def du03_ledger(tmp_path_factory):
+    mod = _load("du03_dispersion")
+    mod._HERE = str(tmp_path_factory.mktemp("du03"))
+    mod.main()
+    return mod.LEDGER
+
+
+def test_du03_free_channels_closed(du03_ledger):
+    L = du03_ledger
+    assert float(L["A1 cusp_well_closed (Cert)"]) < 1e-10
+    assert L["A2 commutator_nnz (EXACT)"] == 249          # noncommuting
+
+
+def test_du03_minimal_coupling(du03_ledger):
+    L = du03_ledger
+    assert abs(L["B2 trace_Vh (Cert)"]) < 1e-9            # traceless
+    # mechanism regression: NOT equidistribution (profile-specific)
+    assert float(L["C2c equidistribution_dev (Cert)"]) > 1e-3
+
+
+def test_du03_parity_selection_rule(du03_ledger):
+    P = du03_ledger["C5 parity"]
+    assert P["anti_rel"] < 1e-6                           # V eta-ODD
+    assert abs(P["comm_rel"] - 2.0) < 1e-3
+    disp = du03_ledger["C2 dispersion"]
+    assert len(disp) == 12
+    assert all(abs(d["omega"]) < 1e-10 for d in disp)     # means vanish
+    assert {d["m"] for d in disp} == {2, 4}
+    f1 = next(d for d in disp if abs(d["a"]) < 1e-9)
+    assert abs(f1["delta"] - 0.1141) < 5e-4               # form factor
+
+
+def test_du03_second_order_dispersion(du03_ledger):
+    rows = du03_ledger["C7 second_order_dispersion"]
+    assert all(r["parity_pure"] for r in rows)            # eta resolved
+    assert all(r["w2_mean"] < 0 for r in rows)            # neg. semidef.
+    f1 = next(r for r in rows if abs(r["a"]) < 1e-9)
+    assert abs(f1["w2_mean"] + 0.00693959) < 1e-6
+    assert abs(f1["w2_plus"][0] + 0.013515) < 1e-5        # 37x asymmetry
+    assert abs(f1["w2_minus"][0] + 0.000364) < 1e-5
+
+
+def test_du03_systole(du03_ledger):
+    E = du03_ledger["E systole (EXACT)"]
+    assert E["trace"] == 4 and E["trace3_excluded"] is True
+    assert abs(E["ell"] - 2.633915793849633) < 1e-11
+
+
+def test_du03_census_and_pheno(du03_ledger):
+    F = du03_ledger["F1 census"]
+    assert F["hits"] == 2 and F["p"] > 0.05               # seeded rng
+    G = du03_ledger["G"]
+    assert abs(G["chi_g_s"] / 3.054870e-11 - 1) < 1e-5

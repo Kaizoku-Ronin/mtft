@@ -1,0 +1,22 @@
+{
+ "S1 nonnormality (Cert)": 0.13611080457111183,
+ "S1 retracted_prediction": "sum t(t+1)/2 = 43 assumed normality",
+ "S2 dims (Cert)": {
+  "full": 60,
+  "sym": 5,
+  "anti": 1
+ },
+ "S3 jordan (Cert)": {
+  "identity_in_span": true,
+  "mutually_commute": false,
+  "lie": false,
+  "jordan": true
+ },
+ "S4 common_blocks (Cert)": [
+  1,
+  12,
+  12,
+  1
+ ],
+ "S4 verdict (Cert)": "anchor stays 2; finest split is 1|12|12|1"
+}
