@@ -449,6 +449,13 @@ def legend() -> None:
     print(legend_map())
 
 
+
+# ── Tier 0b ancestry registrations (combinatorial, v0.13.0) ──
+from mtft.combinatorial import ANCESTRY_LEGEND as _ANCESTRY_LEGEND
+for _d in _ANCESTRY_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
 # ═══════════════════════════════════════════════════════════════
 #  CLI
 # ═══════════════════════════════════════════════════════════════

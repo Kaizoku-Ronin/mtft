@@ -20,6 +20,10 @@ Security foundation:
     - Curve 143a1 has conductor 143 = 11 × 13 and analytic rank 0.
 
 ⚠️  EDUCATIONAL / RESEARCH USE ONLY.  Not audited for production crypto.
+
+v0.13.0: crypto.py became the mtft.crypto package (this file is its
+__init__); the Jacobian-order toolkit lives in the submodule
+mtft.crypto.jacobian_order (not flattened — import it explicitly).
 """
 
 from __future__ import annotations
@@ -443,3 +447,7 @@ def crypto_demo():
     print("\n" + "=" * 70)
     print("⚠️  These are RESEARCH primitives, not production crypto.")
     print("=" * 70)
+
+
+# ── v0.13.0: Jacobian-order submodule (E2-certified |A_i(F_q)| table) ──
+from mtft.crypto import jacobian_order  # noqa: F401

@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.12.0 — peel wave)
+MTFT — Modular Time Field Theory  (v0.13.0 — ancestry + crypto wave)
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic
@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.12.0"
+__version__ = "0.13.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -26,6 +26,12 @@ from mtft.arithmetic import (
     weight, weight_array, damped_weights,
     S1, stiffness_S, center_stiffness, mass_gap_stiffness,
     su3_hessian_eigenvalues, find_confinement_depth,
+)
+
+# ── Tier 0b: Combinatorial Ancestry (2024 lineage, v0.13.0) ──
+from mtft import combinatorial  # noqa: F401
+from mtft.combinatorial import (
+    figurate_decomposition, sigma_parity_check, mean_tano_weight_exact,
 )
 
 # ── Tier 1: Modular Geometry & Forms ─────────────────────────
@@ -104,6 +110,7 @@ from mtft.quantum import (
 
 # ── Tier 7: Cryptography ────────────────────────────────────
 from mtft.monster_hash import MonsterHash
+from mtft import crypto  # noqa: F401  (package: primitives + jacobian_order)
 
 # ── Tier 8: LHC Confrontation ───────────────────────────────
 # (optional — requires uproot)
