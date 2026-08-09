@@ -456,6 +456,71 @@ for _d in _ANCESTRY_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 
+# ── Tier 12 promotion registrations (v0.14.0) ─────────────────
+# Constants nominated by INTEGRATION v0.14.0 (auditor-composed entries;
+# values certified in mtft.moments / mtft.curvature / mtft.eisenstein).
+PROMOTION_LEGEND: Tuple[Dict[str, object], ...] = (
+    dict(name="tano_second_moment_closed_form", tier="0", kind="constant",
+         primitives=("I", "IV"), tag="Pr", exactness="EXACT",
+         nature="<w^2>_beta = zeta''(v)C0 − 2 zeta'(v)C1 + zeta(v)C2, "
+                "v = beta+2, C-blocks in zeta(beta+1), zeta(2beta+2). "
+                "chi_w = T − zeta'(beta+1)^2; Cov(log n, w) = zeta''(beta+1). "
+                "Cold values T(1) = 1.70276979154901697001, "
+                "chi_w(1) = 0.82377306237833093427.",
+         example="mtft.moments.weight_second_moment(1)",
+         upstream=("w_n",), ref="studies/promotion_2026aug/w2_susceptibility.py"),
+    dict(name="hessian_cancellation_theorem", tier="0", kind="identity",
+         primitives=("IV",), tag="Pr", exactness="EXACT",
+         nature="For a Hessian metric the Brioschi second-derivative block "
+                "is −1/2 k4 + k4 − 1/2 k4 = 0: the fourth cumulant "
+                "contributes NOTHING to the curvature of any exponential "
+                "family. Gaussian convention lock K = −1/2.",
+         example="mtft.curvature.gaussian_family_curvature()",
+         upstream=("tano_second_moment_closed_form",),
+         ref="studies/promotion_2026aug/curvature_tano_manifold.py (11 gates)"),
+    dict(name="hagedorn_slope_A", tier="0", kind="constant",
+         primitives=("IV",), tag="Pr", exactness="CERTIFIED(1e-28)",
+         nature="dK/dbeta at the Hagedorn edge: A = (zeta''(2) kappa3_cold − "
+                "kappa_wwl_cold chi_cold) / (2 chi_cold^2) = "
+                "0.423657463797093480081718158187. The wall is approached "
+                "FLAT, linearly from positive curvature.",
+         example="mtft.curvature.hagedorn_slope()",
+         upstream=("hessian_cancellation_theorem",),
+         ref="studies/promotion_2026aug/curvature_tano_manifold.py G5"),
+    dict(name="curvature_profile_milestones", tier="0", kind="constant",
+         primitives=("IV",), tag="Pr", exactness="CERTIFIED(1e-9)",
+         nature="The (beta, lambda=0) profile: positive dome, summit "
+                "beta* = 4.593591164956, K* = 1.19569598199193852905; "
+                "flat temperature beta_0 = 8.8565170425 (sign change).",
+         example="mtft.curvature.gaussian_curvature(4.593591164956)",
+         upstream=("hessian_cancellation_theorem",),
+         ref="studies/promotion_2026aug/curvature_tano_manifold.py G6"),
+    dict(name="cold_dive_law", tier="0", kind="constant",
+         primitives=("IV",), tag="Pr", exactness="CERTIFIED(1e-15)",
+         nature="Cold tail K ~ −c (6/5)^beta, c = 0.270126465305424759517602; "
+                "rate 6/5 = Boltzmann ratio of the first new prime (5) to "
+                "the first mixed composite (6). Rigidity locks: K = 1/4 "
+                "identically on {1,2,3} and {1,2,3,4} (atom 4 inert); "
+                "atom 5 flips the sign. Deep-cold geometry = geometry of "
+                "the first six integers.",
+         example="mtft.curvature.finite_atom_curvature(60, (1,2,3,4,5,6))",
+         upstream=("hessian_cancellation_theorem",),
+         ref="studies/promotion_2026aug/curvature_tano_manifold.py G7"),
+    dict(name="congruence_primes_X0143", tier="1", kind="constant",
+         primitives=("II", "III"), tag="Pr", exactness="CERTIFIED(Sturm for 5; census E2-sampled)",
+         nature="Eisenstein congruence norm-moduli of the four Hecke "
+                "blocks of X0(143): 143a1 → 1 (no congruence), 11a1 ghost "
+                "→ 5 (= Mazur numerator((11−1)/12), Sturm-certified), "
+                "f2 quartic → 7, f3 sextic → 12 = 2^2·3.",
+         example="mtft.eisenstein.congruence_census()",
+         upstream=("X0_143_engine",),
+         ref="studies/promotion_2026aug/x0143_hecke_particles.py; "
+             "eisenstein_congruences.py (pending drop)"),
+)
+for _d in PROMOTION_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
 # ═══════════════════════════════════════════════════════════════
 #  CLI
 # ═══════════════════════════════════════════════════════════════

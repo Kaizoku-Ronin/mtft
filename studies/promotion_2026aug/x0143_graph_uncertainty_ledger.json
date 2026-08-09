@@ -1,0 +1,83 @@
+{
+  "study": "x0143_graph_uncertainty",
+  "gates": {
+    "G1_flags": {
+      "passed": true,
+      "n_flags": 168,
+      "widths": [
+        1,
+        11,
+        13,
+        143
+      ]
+    },
+    "G2_skeleton": {
+      "passed": true,
+      "V": 56,
+      "proper_edges": 83,
+      "loops": 1,
+      "b1": 29,
+      "trL": 166
+    },
+    "G3_spanning_trees": {
+      "passed": true,
+      "kappa": 3518081582959364640,
+      "archived": 3518081582959364640
+    },
+    "G4_defect_edge": {
+      "passed": true,
+      "nonzero": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          -2
+        ]
+      ],
+      "loop_vertex": 0,
+      "loop_degree": 1
+    },
+    "G5_multigraph_commutes": {
+      "passed": true
+    },
+    "G6_cusp_at_infinity": {
+      "passed": true,
+      "loop_triangle_flags": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "corner_widths": [
+        1,
+        143,
+        143
+      ],
+      "neighbor_corner_widths": [
+        143,
+        143,
+        143
+      ]
+    },
+    "G7_capacity_one": {
+      "passed": true,
+      "maximizer_bound": "1.000000000000",
+      "worst_margin": "1.44e-02",
+      "max_random_bound": "0.1205"
+    }
+  },
+  "spanning_trees": 3518081582959364640,
+  "all_passed": true
+}

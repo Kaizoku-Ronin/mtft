@@ -1,0 +1,116 @@
+{
+  "study": "triangular_layers",
+  "gates": {
+    "G1_two_engines": {
+      "passed": true,
+      "package": "mtft.combinatorial to_T_basis",
+      "independent": "fresh reduction",
+      "identity_p": "3..59"
+    },
+    "G2_PR1_PR2_closed_forms": {
+      "passed": true,
+      "PR1": "a_p3 = -4 a_p2 exact, p<=99",
+      "PR2": "a_p4 = (2/3)p(p-1)(p-2)B_{p-3} + 40p B_{p-1} exact"
+    },
+    "G3_triangular_reencoding": {
+      "passed": true,
+      "claim": "a_{p,j} fixed by [n^2]..[n^j] i.e. B_{p-1}..B_{p+1-j}",
+      "routes": "bottom-up recursion == top-down reduction, p<=61"
+    },
+    "G4_layer2_control": {
+      "passed": true,
+      "irregular_primes": 14,
+      "false_positives": 0,
+      "i_157": 2,
+      "rays": "4 deep, decoys clean"
+    },
+    "G5_PR3_falsified_flags_are_noise": {
+      "passed": true,
+      "PR3_as_stated": "FALSIFIED (higher layers flag MORE pairs)",
+      "PR3_prime": "every extra flag is a false positive",
+      "extra_flags": "{'l=59,layer5': [53], 'l=67,layer5': [45], 'l=67,layer6': [27], 'l=67,layer7': [23], 'l=101,layer7': [39], 'l=103,layer7': [43]}",
+      "genuine_irregular_among_them": 0
+    },
+    "G6_PR4_ray_period_and_quadratic": {
+      "passed": true,
+      "verdict": "exact l(l-1) propagation; forced roots p=0,1 mod l plus <=2 quadratic roots => <=4 residues per class; structure is a shadow of layer 2, not new arithmetic",
+      "l7": "{'hits': 28, 'period_l(l-1)': '25/25', 'max_residues_per_class': 3, 'forced_roots_0_and_1_all_hit': True}",
+      "l11": "{'hits': 29, 'period_l(l-1)': '21/21', 'max_residues_per_class': 3, 'forced_roots_0_and_1_all_hit': True}",
+      "l13": "{'hits': 22, 'period_l(l-1)': '13/13', 'max_residues_per_class': 3, 'forced_roots_0_and_1_all_hit': True}",
+      "l17": "{'hits': 27, 'period_l(l-1)': '8/8', 'max_residues_per_class': 4, 'forced_roots_0_and_1_all_hit': True}",
+      "l19": "{'hits': 22, 'period_l(l-1)': '1/1', 'max_residues_per_class': 4, 'forced_roots_0_and_1_all_hit': True}"
+    },
+    "G7_PR5_decoy_band": {
+      "passed": true,
+      "observed": 37,
+      "null_mean": 11.5,
+      "decoy_p99": 38,
+      "decoy_range": "13-40",
+      "verdict": "layer-4 rate indistinguishable from 1/l null"
+    }
+  },
+  "prereg": [
+    "PR-1 a_p3 = -4 a_p2",
+    "PR-2 a_p4 closed form",
+    "PR-3 no layer beats layer 2",
+    "PR-4 no (l-1) rays in layer 4; l(l-1) instead",
+    "PR-5 layer-4 rate inside decoy band"
+  ],
+  "PR3_extra_flags": {
+    "l=59,layer5": [
+      53
+    ],
+    "l=67,layer5": [
+      45
+    ],
+    "l=67,layer6": [
+      27
+    ],
+    "l=67,layer7": [
+      23
+    ],
+    "l=101,layer7": [
+      39
+    ],
+    "l=103,layer7": [
+      43
+    ]
+  },
+  "a_p3_law": "a_{p,3} = -4 a_{p,2} = -8 p B_{p-1}",
+  "a_p4_law": "a_{p,4} = (2/3) p(p-1)(p-2) B_{p-3} + 40 p B_{p-1}",
+  "verdict": "HONEST NEGATIVE: triangular layers are a triangular re-encoding of the Bernoulli tail; layer 2 carries all arithmetic content.",
+  "layer4_rays": {
+    "7": {
+      "hits": 28,
+      "period_l(l-1)": "25/25",
+      "max_residues_per_class": 3,
+      "forced_roots_0_and_1_all_hit": true
+    },
+    "11": {
+      "hits": 29,
+      "period_l(l-1)": "21/21",
+      "max_residues_per_class": 3,
+      "forced_roots_0_and_1_all_hit": true
+    },
+    "13": {
+      "hits": 22,
+      "period_l(l-1)": "13/13",
+      "max_residues_per_class": 3,
+      "forced_roots_0_and_1_all_hit": true
+    },
+    "17": {
+      "hits": 27,
+      "period_l(l-1)": "8/8",
+      "max_residues_per_class": 4,
+      "forced_roots_0_and_1_all_hit": true
+    },
+    "19": {
+      "hits": 22,
+      "period_l(l-1)": "1/1",
+      "max_residues_per_class": 4,
+      "forced_roots_0_and_1_all_hit": true
+    }
+  },
+  "all_passed": true,
+  "runtime_s": 3.1
+}

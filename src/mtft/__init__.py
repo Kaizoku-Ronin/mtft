@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.13.0 — ancestry + crypto wave)
+MTFT — Modular Time Field Theory  (v0.14.0 — promotion wave)
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic
@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.13.0"
+__version__ = "0.14.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -173,6 +173,13 @@ from mtft.chain import selftest as spectral_chain_selftest
 from mtft.expansion import selftest as spectral_expansion_selftest
 from mtft.ep import selftest as spectral_ep_selftest
 from mtft.coupled import selftest as spectral_coupled_selftest
+
+# ── Tier 12: Promotion Wave (v0.14.0) ─────────────────────────
+# moments (Tano weight closed forms), curvature (Brioschi machinery
+# of the (beta, lambda) manifold), hecke (Manin/Merel engine for
+# X0(143)), eisenstein (congruence moduli).  Exposed AS MODULES
+# (tier-5f precedent): the names are generic, the engines exact.
+from mtft import moments, curvature, hecke, eisenstein  # noqa: F401
 
 # ── The Legend (lazy: keeps `python -m mtft.legend` warning-free) ──
 def __getattr__(name):

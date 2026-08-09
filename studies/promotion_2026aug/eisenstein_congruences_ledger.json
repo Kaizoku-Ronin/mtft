@@ -1,0 +1,94 @@
+{
+  "study": "eisenstein_congruences",
+  "gates": {
+    "C1_model_and_operators": {
+      "passed": true,
+      "good": "[2, 3, 5, 7, 17, 19, 23, 29, 31, 37, 41, 43]",
+      "bad": "[11, 13]",
+      "U_matrices": "Merel, invalid images dropped",
+      "commuting": true
+    },
+    "C2_bad_prime_operators": {
+      "passed": true,
+      "U11_143a1": "-1",
+      "U13_143a1": "-1",
+      "U11_old": "scalar 1 = a_11(11a1)",
+      "U13_old": "charpoly (x^2 - 4 x + 13)^2 exact"
+    },
+    "C3_eisenstein_system": {
+      "passed": true,
+      "dim": 3,
+      "good": "charpoly (x-(p+1))^3 exact",
+      "bad_eigenvalues": {
+        "11": [
+          1,
+          11
+        ],
+        "13": [
+          1,
+          13
+        ]
+      }
+    },
+    "C4_congruence_census": {
+      "passed": true,
+      "143a1": "1",
+      "11a1_ghost": "625",
+      "f2_quartic": "49",
+      "f3_sextic": "144"
+    },
+    "C5_point_count_E2": {
+      "passed": true,
+      "gcd_11a1": 5,
+      "gcd_143a1": 1,
+      "mazur": "numerator((11-1)/12) = 5"
+    },
+    "C6_sturm_certificate": {
+      "passed": true,
+      "sturm_bound": 28,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "U13_roots_mod5": "[1, 3]",
+      "verdict": "11a1 ghost = Eisenstein mod 5 CERTIFIED to Sturm"
+    },
+    "C7_new_orbit_congruences": {
+      "passed": true,
+      "f2_norm_modulus": 7,
+      "f3_norm_modulus": 12,
+      "note": "homology doubles each newform, hence perfect squares"
+    }
+  },
+  "a11_143a1": "-1",
+  "a13_143a1": "-1",
+  "U13_old_charpoly": "(x^2 - 4 x + 13)^2",
+  "eisenstein_bad_eigenvalues": {
+    "11": [
+      1,
+      11
+    ],
+    "13": [
+      1,
+      13
+    ]
+  },
+  "congruence_moduli": {
+    "143a1": 1,
+    "11a1_ghost": 625,
+    "f2_quartic": 49,
+    "f3_sextic": 144
+  },
+  "sturm_bound": 28,
+  "f2_norm_modulus": 7,
+  "f3_norm_modulus": 12,
+  "all_passed": true,
+  "runtime_s": 13.3
+}

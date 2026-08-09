@@ -1,0 +1,99 @@
+{
+  "study": "m7_graph_channel",
+  "gates": {
+    "P1_harmonic_embedding": {
+      "passed": true,
+      "dim": 26,
+      "gram": "invertible",
+      "orthogonal_to_im_d2": true
+    },
+    "P2_M7A_non_hecke": {
+      "passed": true,
+      "nonzero_commutator_entries": "{2: 676, 3: 676, 5: 676}",
+      "verdict": "graph coupling is NOT in the Hecke algebra"
+    },
+    "P3_M7B_flavor_changing": {
+      "passed": true,
+      "off_block_norm": "561.042783",
+      "transmission": {
+        "ell->ell": 498.4708,
+        "ell->old": 85.9504,
+        "ell->q4": 42.3873,
+        "ell->q6": 45.3622,
+        "old->ell": 32.3892,
+        "old->old": 779.649,
+        "old->q4": 73.6006,
+        "old->q6": 81.7649,
+        "q4->ell": 100.8335,
+        "q4->old": 150.9732,
+        "q4->q4": 1108.9594,
+        "q4->q6": 288.5433,
+        "q6->ell": 91.569,
+        "q6->old": 241.9741,
+        "q6->q4": 327.4472,
+        "q6->q6": 1376.9465
+      },
+      "verdict": "the channel MOVES BETWEEN LINES"
+    },
+    "P4_M7C_real_and_self_adjoint": {
+      "passed": true,
+      "M_symmetric": true,
+      "G_self_adjoint": true,
+      "entries": "rational",
+      "verdict": "mixing is a REAL orthogonal rotation => CP-EVEN"
+    },
+    "P5_M7D_star_selection_rule": {
+      "passed": true,
+      "commutes": true,
+      "anticommutes": false,
+      "verdict": "iota*-EVEN: the channel preserves the real Hodge split"
+    },
+    "P6_M7E_elliptic_echo": {
+      "passed": true,
+      "per_dim_offblock": {
+        "ell": 74.973,
+        "old": 57.3402,
+        "q4": 120.5288,
+        "q6": 120.4706
+      },
+      "ell_rank_from_quietest": 1,
+      "note": "no prediction was registered; reported as measured"
+    },
+    "P7a_null_control_constant_potential": {
+      "passed": true,
+      "degree_is_constant": true,
+      "V_equals_scalar": true,
+      "verdict": "constant potential gives the TRIVIAL channel \u2014 the pipeline reports no spurious transmission"
+    },
+    "P7b_second_potential": {
+      "passed": true,
+      "potential": "graph distance from the base triangle",
+      "distinct_values": 8,
+      "off_block_norm": "16.772862",
+      "nonzero_commutator": 676,
+      "still_self_adjoint": true,
+      "verdict": "non-Hecke, flavor-changing, and still real"
+    }
+  },
+  "transmission_table": {
+    "ell->ell": 498.470794,
+    "ell->old": 85.950445,
+    "ell->q4": 42.387316,
+    "ell->q6": 45.362184,
+    "old->ell": 32.389155,
+    "old->old": 779.649044,
+    "old->q4": 73.600557,
+    "old->q6": 81.764858,
+    "q4->ell": 100.833454,
+    "q4->old": 150.973171,
+    "q4->q4": 1108.95941,
+    "q4->q6": 288.54331,
+    "q6->ell": 91.568984,
+    "q6->old": 241.974107,
+    "q6->q4": 327.447169,
+    "q6->q6": 1376.946457
+  },
+  "verdict": "M7-A and M7-B CONFIRMED: a canonical, zero-parameter graph-side coupling exists that is NOT in the Hecke algebra and DOES move between newform lines. M7-C CONFIRMED: it is exactly real and G-self-adjoint, so the mixing it induces is a real orthogonal rotation carrying no phase. The M6 tension is therefore SHARPENED, not resolved: the obstruction is not the absence of a non-Hecke channel but the REALITY of the arithmetic. CP-odd mixing requires a genuinely complex dressing; the successor object is the twisted homology H_1(X_0(143); L_theta) for a character theta of the 29-dimensional cycle space, together with the question of whether the arithmetic supplies a canonical nontrivial theta or whether it would be a new free input.",
+  "all_passed": true,
+  "runtime_s": 247.5
+}
