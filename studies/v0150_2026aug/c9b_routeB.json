@@ -1,0 +1,31 @@
+{
+  "route_B_qexpansion": {
+    "method": "q-expansion slash-integrals, own ap sieve (LMFDB-anchored, corrected bad-prime powers), 60000 terms, Gauss-Legendre",
+    "per11_B": {
+      "value": "-0.3135230091528742 i",
+      "method": "fold gamma0=[[1,0],[11,1]]",
+      "matches": "both engines printed per11 = -0.31352300915287423503215575582714111095417953831197 i"
+    },
+    "per_1_38_2_77_B": {
+      "value": "+0.3135230091528708 i",
+      "method": "slash gamma2''=[[6,1],[11,2]], M-symbol (11:2)=(77:-38)",
+      "note": "= -per11 to 4e-15: integral period multiple, lp=+1"
+    },
+    "per_0_1_38_B": {
+      "value": "-0.32082002864701 - 0.15676145704387298 i",
+      "method": "slash gamma=[[7,3],[9,4]], M-symbol (9:4)=(38:1)",
+      "accuracy": "~1e-7 (wide-cusp tail clamp/garbage budget)"
+    },
+    "per277_B": "-0.32082002864701 + 0.1567615521090012 i",
+    "v6_value": "-0.32082012949187626 + 0.15676150457643712 i",
+    "archive_value": "+0.32082012949187626 - 0.15676150457643712 i",
+    "route_B_verdict": "CONFIRMS Route A: v6 (PARI 2.15.4) sign CORRECT; archive (PARI 2.17) sign WRONG",
+    "validations": [
+      "modularity fq11(g0,y)==fq11(gid,y) to 1e-61",
+      "Fricke w11 to 1e-62",
+      "w143 f|w=+f (root number -1, L(f1,1)=0)",
+      "ghost control per({inf,1/11}) = -L(11a1,1) = -0.25384186085591068 (fold, tail-corrected)"
+    ]
+  },
+  "E2_STATUS": "CERTIFIED (two routes, no shared steps): Re lambda1 = -1/2 exactly; v6 sign correct; Paper 33 v2 archive needs sign-only correction"
+}

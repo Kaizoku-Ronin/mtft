@@ -1,0 +1,101 @@
+[0;31m  ***   Warning: new stack size = 512000000 (488.281 Mbytes).[0m
+[0;31m  ***   Warning: new maximum stack size = 4000002048 (3814.699 Mbytes).[0m
+==============================================================
+ X0(143) PERIOD MATRIX IN THE MANIN BASIS - v6
+ PARI/GP [2, 15, 4]   realprecision 50
+==============================================================
+
+--- 1. msinit(143,2), generators, relations ---
+  dim H1(X, cusps; Q) = 29  (expect 29 = 2g + c - 1)
+  mspathgens: 29 generators, 1 relation(s)
+  [PASS] C1 weight-2 relations trivial (exact)
+
+--- 2. Boundary map and cuspidal integer kernel ---
+  boundary rank = 3   integer kernel dim = 26
+  [PASS] C2 boundary rank 3 and cuspidal kernel dim 26
+
+--- 3. Hecke on homology from Merel cosets + mspathlog ---
+  T2 built (29x29 integer).
+  T3 built (29x29 integer).
+  [PASS] C5 charpoly(T2|cusp) == x^2 (x+2)^4 g4^2 h6^2 (exact)
+
+--- 4. Eigenforms and modular symbols ---
+  newform orbits: 3  degrees: [1, 4, 6]
+  mfsymbol 11a done.
+  mfsymbol f1 done  t=4.7340000000000000000000000000000000000000000000000s
+[0;31m  *** mfsymbol: Warning: increasing stack size to 1024000000.[0m
+[0;31m  *** mfsymbol: Warning: increasing stack size to 2048000000.[0m
+  mfsymbol f2 done  t=7.8210000000000000000000000000000000000000000000000s
+  mfsymbol f3 done  t=8.4040000000000000000000000000000000000000000000000s
+  diag: type(eval f2 [0,oo]) = t_VEC len 4
+
+--- 5. Period matrix over the 29 Manin generators ---
+  Omega (13 x 29) complete  t=0.0030000000000000000000000000000000000000000000000000s
+  Omega_cusp (13 x 26) complete.
+
+--- 6. Certificates ---
+  [PASS] C5b charpoly(T3|cusp) == (x+1)^6 g43^2 h63^2 (exact)
+  orientation: Omega*T   residual p=2: 4.358089206720692234 E-56   p=3: 5.391482069120469590 E-56
+  [PASS] C4 Hecke equivariance p=2,3 (< 1e-40, one orientation)
+  per-row L residuals: [0.E-77, 7.965459555662261385 E-59, 7.965459555662261385 E-59, 3.982729777831130693 E-59, 2.3896378666986784155 E-58, 7.965459555662261385 E-59, 1.5930919111324522770 E-58, 0.E-58, 7.965459555662261385 E-59, 1.991364888915565346 E-59, 2.3896378666986784155 E-58, 9.956824444577826731 E-60, 6.223015277861141707 E-61]
+  L-route max residual over 13 rows: 2.3896378666986784155 E-58
+  [PASS] C3 L-values match Manin route, all 13 rows (< 1e-40)
+  f1[oo,1/11] vs archive: 4.689995357895289714 E-51   lambda1 = -0.50000000000000000000000000000000000000000000000000 - 1.0232745926964612055995663292242128158327958623152*I
+  [PASS] C6 Paper 33 regression: per11 to 1e-45; |Re lam1|=1/2, |Im lam1|=archive to 1e-40
+
+--- C9. Sign adjudication of [oo,2/77] via ellperiods (AGM route) ---
+  curve conductor: 143  (143a1)   rootno: -1
+  all 26 cuspidal f1-periods integral in Lambda(143a1)/(2 Pi I): max residual 1.2744735289059618216 E-57
+  [PASS] C9a f1 period lattice == Lambda(143a1)/(2 Pi I), Manin constant 1 (< 1e-40)
+  candidate v5 sign:      [oo,2/77]-[oo,1/11] lattice residual 0.E-57  coords [-2.0000000000000000000000000000000000000000000000000, 1.0000000000000000000000000000000000000000000000000]
+  candidate paper33 sign: lattice residual 6.372367644529809108 E-58  coords [1.5930919111324522770 E-58, -1.0000000000000000000000000000000000000000000000000]
+  [FAIL] C9b exactly one sign candidate is a lattice point (< 1e-40)
+  Gram eigenvalue range: [0.0072519528824696770450336899859204230388519999123675, 17.940792109287310595333912488443052607334176267587]  ratio 0.00040421586952761125397399792704717531858849279017936
+  [PASS] C7 rank 13: min/max Gram eigenvalue > 1e-20
+  decomposition consistency max residual (f1, 4 paths): 0
+  [PASS] C8 direct eval == Omega * pathlog coords (< 1e-40)
+
+--- 7. Full P^1(Z/143) Manin-symbol table (168 symbols) ---
+  P^1 size: 168  (expect 168)
+  all 168 symbol paths decomposed on the 29-generator basis.
+
+--- 7.5 Riemann matrix: symplectic normalization ---
+  PRE-REGISTERED (declared before any of this was computed):
+   R1  E = Q^-1 on cuspidal homology: integral, antisymmetric, det = 1
+   R2  first Riemann bilinear relation  Omega_cusp * Q * Omega_cusp^T = 0   (< 1e-40)
+   R3  exact symplectic reduction over Z:  S^T E S = J  and  |det S| = 1
+   R4  tau = A^-1 B is symmetric                                            (< 1e-40)
+   R5  Im(tau) definite; orientation fixed positive; min eigenvalue reported
+   R6  Hecke integral in the symplectic basis and equivariant, p = 2, 3     (< 1e-40)
+   R7  genus-1 validation of the identical pipeline at level 11: j(tau) = j(11a1)  (< 1e-25)
+   R8  radical of the mspetersson pairing on the 29-dim symbol space has dim exactly 3
+
+  mspetersson pairing 29x29: antisym 1  rank 26
+  [PASS] R8 pairing radical dim exactly 3 (= 29 - 26)
+  dual lift L (29x26), L^T K = I: 1
+  Q = L^T P L: integral 1  antisym 1  det 1
+  [PASS] R1 E integral, antisymmetric, det 1
+  max |Omega_cusp Q Omega_cusp^T| = 2.728806478889634950 E-56
+  [PASS] R2 first Riemann bilinear relation (< 1e-40)
+  orientation fixed by positivity: E = +Q^-1
+  |det S| = 1   S^T E S == J : 1
+  [PASS] R3 exact symplectic reduction S^T E S = J, |det S| = 1
+  max |tau_ij - tau_ji| = 6.977056016212172736 E-57
+  [PASS] R4 tau symmetric (< 1e-40)
+  Im(tau) eigenvalues: min 0.092848085814694943893682475471366243928558784899986  max 4.1143928656146962674644932510885607410383814147179
+  [PASS] R5 Im(tau) positive definite
+  Hecke in symplectic basis: integral 1   equivariance residuals 6.825748187227201442 E-56 , 6.539443398238774374 E-56
+  [PASS] R6 Hecke integral + equivariant in symplectic basis (< 1e-40)
+  [PASS] R6b charpoly invariant under symplectic conjugation (exact)
+
+  R7 genus-1 replay of the identical pipeline at level 11:
+    dim 3  cuspidal 2  orientation +  tau_11 = -0.68175115607660131443605144684653420191515259251068 + 0.73158414498143519749050361309310365068567196803205*I
+    j(tau_11) = -757.67263786005675220892760678294453309821112566827 + 6.3511287638405237365055305678069061012365654039326 E-57*I   j(11a1) = -122023936/161051   |diff| = 2.6560819982524353107 E-55
+  [PASS] R7 genus-1 validation j(tau) = j(11a1) (< 1e-25)
+
+--- 8. Writing outputs ---
+  wrote period_matrix_manin_v6.txt
+
+==============================================================
+ SUMMARY: 19 PASS / 1 FAIL
+==============================================================

@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/mtft.svg?color=blue)](https://pypi.org/project/mtft/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-592%2F592-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
+[![Tests](https://img.shields.io/badge/tests-612%2F612-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
 
 Fundamental constants from the integers. **Zero free parameters.**
 
@@ -124,7 +124,7 @@ decompose_turing_machine()           # a TM as a five-primitive AG object
 
 CLI: `python -m mtft verify | report | tower | screen | info`
 
-## Package Structure — 36 modules in 16 tiers
+## Package Structure — 41 modules in 18 tiers
 
 | Tier | Modules | What lives here |
 |---|---|---|
@@ -144,6 +144,8 @@ CLI: `python -m mtft verify | report | tower | screen | info`
 | 9 | `arithmetic_machine` `arithmetic_wick` `busy_beaver` `music` `viz` | Computation as arithmetic, Wick bridge, sonification |
 | 10 | `critical_ensemble` | Li coefficients λₙ — three cross-certified methods |
 | 11 | `jc_counterexample` `estimator_standards` `legend` | Machine certificates, A.7 estimator standards, the Legend |
+| 12 | `moments` `curvature` `hecke` `eisenstein` | Promotion wave: Tano-weight closed forms, Brioschi curvature, Manin/Merel engine, Eisenstein congruences |
+| 13 | `weil` | Compressed Weil form — the fourth ensemble (v0.15.0) |
 
 ## Key Identities
 

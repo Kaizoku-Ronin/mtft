@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.14.0 — promotion wave)
+MTFT — Modular Time Field Theory  (v0.15.0 — certification wave)
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic
@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.14.0"
+__version__ = "0.15.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -180,6 +180,13 @@ from mtft.coupled import selftest as spectral_coupled_selftest
 # X0(143)), eisenstein (congruence moduli).  Exposed AS MODULES
 # (tier-5f precedent): the names are generic, the engines exact.
 from mtft import moments, curvature, hecke, eisenstein  # noqa: F401
+
+# ── Tier 13: v0.15.0 wave ─────────────────────────────────────
+# weil (Gabor-compressed Weil explicit-formula form, W1): prime-side
+# vs zero-side identity of the compressed matrix G, E2-certified at
+# 3.472e-09 by the independent Kimi implementation.  Module-level
+# import, same tier-5f precedent.
+from mtft import weil  # noqa: F401
 
 # ── The Legend (lazy: keeps `python -m mtft.legend` warning-free) ──
 def __getattr__(name):

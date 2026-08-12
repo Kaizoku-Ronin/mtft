@@ -15,10 +15,25 @@ well-defined only up to rational lattice normalization; second-path E2 pending.
 f1 anchor EXACT from elliptic curve 143a1: tau = 0.5 - 1.0232745927 i,
 analytic rank 1 (L(f1,1) = 0) — independently re-certified by mtft.gl2_peel.
 
+CORPUS CORRECTION LEDGER (append-only; every id unique, never reused):
 CC-01: Paper 26 sec.8 complex eigenvalue retracted (totally real fields).
-CC-02: du03 "5-dim commutant" was edge-metric-specific; joint (graph-local AND
+CC-02: w-series shift chain: sum w_n n^-s = F(s+1) with F(s) = -zeta(s) zeta'(s+1);
+       Paper 1 Prop 1.5's -zeta'(s+1) is the summand series, not the weight
+       series (AG Pr 4.1.4 mistranscription). E2 three-route (W1 study sec.1).
+CC-03: finite_atom_curvature fixed precision floor silently wrong at beta=80;
+       adaptive doubling now, rtol 1e-20 (curvature.py, test_area_geometry.py).
+CC-04: cold amplitude closed form c = (9 L5^2)/(25 L2 L3) [1 - (9/5) L5/L3
+       + (4/5) L5/L2] = 0.27012646530542495706433719670365; retracts the
+       six-atom beta=200 extraction 0.270126465305424759517602 (atom-6
+       contamination (5/6)^200 = 1.46e-16 vs observed 1.98e-16).
+CC-05: MTFT_Chapter5 Table 1 misstates w_6, w_8, w_9, w_10; corrected in
+       studies/v0150_2026aug/CC-05_chapter5_weight_table.md.
+CC-06: M8 study mixed-basis bug: true dim commutant({Hecke, V}) = 2 = span{I, Z}
+       (study claimed 1); canonical M8b amplitude 0.20610964892935077.
+CC-07: du03 "5-dim commutant" was edge-metric-specific; joint (graph-local AND
 Hodge-natural) admissible space is 1-dim (scalars), metric-independent
 across the 43-dim invariant cone (8 sampled metrics, cond 201-425).
+       (Renumbered from CC-02 on 2026-08-12; see CC-07_du03_metric_correction.md.)
 """
 ETA_CERT = {'eta_sq_minus_I': 6.7e-16, 'commutator_Th': 7.8e-16,
             'split': (13, 13)}

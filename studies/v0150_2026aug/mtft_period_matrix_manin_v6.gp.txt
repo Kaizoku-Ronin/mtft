@@ -1,0 +1,419 @@
+\\ ============================================================================
+\\ MTFT: PERIOD MATRIX OF X0(143) IN THE MANIN-SYMBOL BASIS  (v5)
+\\ Completes Paper 32 Open Problem 3 at the Manin level.
+\\ Roger Tano / MTFT program - August 2026.  PARI/GP 2.15.4.
+\\ Run:  gp -q mtft_period_matrix_manin_v5.gp     (Windows: cmd /c gp -q ...)
+\\ All multi-line constructs braced (GP file parser is line-based).
+\\
+\\ OBJECT. Omega = 13 x 29: rows = [f1 | f2 emb 1..4 | f3 emb 1..6 | 11a(q) |
+\\ 11a(q^13)]; columns = the 29 mspathgens unimodular paths (Manin symbols),
+\\ a free basis of H1(X0(143), cusps; Q) since weight-2 relations are trivial
+\\ (C1). Entry = int_{path} f dz.  Omega_cusp = Omega * K, K = matkerint of
+\\ the boundary: 13 x 26 over an integer basis of cuspidal H1.
+\\
+\\ PRE-REGISTERED CHECKS (tolerances fixed before computation, realprec 50):
+\\  C1  all mspathgens relation degrees = 0 (exact integer).
+\\  C2  boundary rank = 3; integer kernel dim = 26 (exact).
+\\  C3  all 13 rows: Omega(row, [0,oo]) - (I/2Pi) L(row,1) < 1e-40
+\\      (old d=13 target = (1/13)(I/2Pi)L(11a,1)).
+\\  C4  one orientation, both p=2,3: |diag(a_p) Omega - Omega T_p| < 1e-40,
+\\      T_p from Merel cosets + mspathlog only.
+\\  C5  charpoly(T2|cusp) == x^2 (x+2)^4 g4^2 h6^2 exactly
+\\      [third-route pin: mtft Python Manin engine, session 2026-08].
+\\  C5b charpoly(T3|cusp) == (x+1)^6 g43^2 h63^2 exactly, g43/h63 from
+\\      q-expansion charpolys of a3 on the quartic/sextic orbits.
+\\  C6  regression vs Paper 33 v2: f1[oo,1/11] archive value to 1e-45;
+\\      Re(lambda1) = 1/2 to 1e-40.
+\\  C7  min/max eigenvalue of Omega_cusp Gram > 1e-20 (rank 13).
+\\  C8  4 test paths: direct mfsymboleval == Omega * pathlog coords < 1e-40.
+\\ ============================================================================
+default(realprecision, 50);
+default(parisize, 512000000);
+default(parisizemax, 4000000000);
+TOL = 1e-40;
+NPASS = 0; NFAIL = 0;
+chk(name, ok) = { if(ok, NPASS++; print("  [PASS] ", name), NFAIL++; print("  [FAIL] ", name)); }
+cabs(z) = sqrt(norml2([z]));
+maxabsmat(A) = { my(mx = 0); for(i=1, matsize(A)[1], for(j=1, matsize(A)[2], mx = max(mx, cabs(A[i,j])))); mx; }
+print("==============================================================");
+print(" X0(143) PERIOD MATRIX IN THE MANIN BASIS - v6");
+print(" PARI/GP ", version(), "   realprecision 50");
+print("==============================================================");
+print("");
+print("--- 1. msinit(143,2), generators, relations ---");
+MM = msinit(143, 2);
+print("  dim H1(X, cusps; Q) = ", msdim(MM), "  (expect 29 = 2g + c - 1)");
+pg = mspathgens(MM);
+gensP = pg[1]; relsP = pg[2]; ng = #gensP;
+print("  mspathgens: ", ng, " generators, ", #relsP, " relation(s)");
+degzg(z) = { my(s = 0); if(type(z) == "t_INT", return(z)); for(r = 1, matsize(z)[1], s += z[r, 2]); s; }
+c1ok = 1;
+{ for(r = 1, #relsP,
+    my(rel = relsP[r]);
+    for(t = 1, #rel, if(degzg(rel[t][1]) != 0, c1ok = 0))); }
+chk("C1 weight-2 relations trivial (exact)", c1ok);
+pathvec(pp) = { my(pl = mspathlog(MM, pp), v = vector(ng)); for(j = 1, ng, v[j] = degzg(pl[j])); v; }
+cred(u) = { my(g = gcd(u[1], u[2]), w); if(g == 0, return([1, 0])); w = [u[1]/g, u[2]/g]; if(w[2] < 0, w = [-w[1], -w[2]]); if(w[2] == 0, w = [1, 0]); w; }
+c2r(u) = if(u[2] == 0, oo, u[1]/u[2]);
+r2c(q) = if(q == oo, [1, 0], cred([numerator(q), denominator(q)]));
+cuspclass(u) = if(u[2] == 0, 143, gcd(u[2], 143));
+genends = vector(ng, j, [r2c(gensP[j][1]), r2c(gensP[j][2])]);
+mansym(j) = { my(e1 = genends[j][1], e2 = genends[j][2]); [lift(Mod(e2[2], 143)), lift(Mod(e1[2], 143))]; }
+print("");
+print("--- 2. Boundary map and cuspidal integer kernel ---");
+divs = [1, 11, 13, 143];
+dix(v) = { for(t = 1, 4, if(divs[t] == v, return(t))); 0; }
+D4 = matrix(4, ng);
+{ for(j = 1, ng,
+    my(a = dix(cuspclass(genends[j][1])), b = dix(cuspclass(genends[j][2])));
+    D4[b, j] += 1; D4[a, j] -= 1); }
+rk = matrank(D4);
+KK = matkerint(D4);
+print("  boundary rank = ", rk, "   integer kernel dim = ", matsize(KK)[2]);
+chk("C2 boundary rank 3 and cuspidal kernel dim 26", (rk == 3) && (matsize(KK)[2] == 26));
+print("");
+print("--- 3. Hecke on homology from Merel cosets + mspathlog ---");
+heckepathvec(p, e1, e2) = {
+  my(v = vector(ng));
+  for(u = 0, p - 1,
+    my(a1 = cred([e1[1] + u * e1[2], p * e1[2]]), a2 = cred([e2[1] + u * e2[2], p * e2[2]]));
+    v += pathvec([c2r(a1), c2r(a2)]));
+  my(b1 = cred([p * e1[1], e1[2]]), b2 = cred([p * e2[1], e2[2]]));
+  v += pathvec([c2r(b1), c2r(b2)]);
+  return(v); }
+heckemat(p) = { my(T = matrix(ng, ng)); for(j = 1, ng, my(w = heckepathvec(p, genends[j][1], genends[j][2])); for(i = 1, ng, T[i, j] = w[i])); return(T); }
+T2h = heckemat(2); print("  T2 built (29x29 integer).");
+T3h = heckemat(3); print("  T3 built (29x29 integer).");
+T2c = matinverseimage(KK, T2h * KK);
+T3c = matinverseimage(KK, T3h * KK);
+cp2 = charpoly(T2c); cp3 = charpoly(T3c);
+g4 = x^4 - 3*x^3 - x^2 + 5*x + 1;
+h6 = x^6 - 10*x^4 + 2*x^3 + 24*x^2 - 7*x - 12;
+target2 = x^2 * (x + 2)^4 * g4^2 * h6^2;
+chk("C5 charpoly(T2|cusp) == x^2 (x+2)^4 g4^2 h6^2 (exact)", cp2 == target2);
+print("");
+print("--- 4. Eigenforms and modular symbols ---");
+mfnew = mfinit([143, 2], 0);
+BB = mfeigenbasis(mfnew);
+dims = vector(#BB, t, poldegree(BB[t].mod));
+print("  newform orbits: ", #BB, "  degrees: ", dims);
+ordv = vecsort(vector(#BB, t, t), (a, b) -> dims[a] - dims[b]);
+F1 = BB[ordv[1]]; F2 = BB[ordv[2]]; F3 = BB[ordv[3]];
+mf11 = mfinit([11, 2], 0);
+F11 = mfeigenbasis(mf11)[1];
+FS11 = mfsymbol(mf11, F11); print("  mfsymbol 11a done.");
+gettime();
+FS1 = mfsymbol(mfnew, F1); print("  mfsymbol f1 done  t=", gettime()/1000., "s");
+FS2 = mfsymbol(mfnew, F2); print("  mfsymbol f2 done  t=", gettime()/1000., "s");
+FS3 = mfsymbol(mfnew, F3); print("  mfsymbol f3 done  t=", gettime()/1000., "s");
+myval(v) = { if(type(v) == "t_POL" && poldegree(v) <= 0, v = polcoef(v, 0)); return(v); }
+iscplxvec(v) = { my(ok = 1); if(type(v) != "t_VEC", return(0)); for(t = 1, #v, my(ty = type(myval(v[t]))); if(ty != "t_COMPLEX" && ty != "t_REAL" && ty != "t_INT" && ty != "t_FRAC", ok = 0)); return(ok); }
+embrow(F, v, d) = {
+  my(r);
+  v = myval(v);
+  if(iscplxvec(v) && #v == d, return(vector(d, t, myval(v[t]))));
+  if(d == 1 && type(v) != "t_POLMOD", return([v]));
+  r = mfembed(F, v);
+  if(type(r) != "t_VEC", r = [r]);
+  return(vector(d, t, myval(r[t]))); }
+dv = mfsymboleval(FS2, [0, oo]);
+print("  diag: type(eval f2 [0,oo]) = ", type(dv), if(type(dv)=="t_VEC", concat(" len ", Str(#dv)), ""));
+print("");
+print("--- 5. Period matrix over the 29 Manin generators ---");
+Om29 = matrix(13, ng);
+{ for(j = 1, ng,
+    my(e1 = genends[j][1], e2 = genends[j][2], pth = [c2r(e1), c2r(e2)]);
+    my(r1 = embrow(F1, mfsymboleval(FS1, pth), 1));
+    my(r2 = embrow(F2, mfsymboleval(FS2, pth), 4));
+    my(r3 = embrow(F3, mfsymboleval(FS3, pth), 6));
+    my(o1 = myval(mfsymboleval(FS11, pth)));
+    my(p13 = [c2r(cred([13 * e1[1], e1[2]])), c2r(cred([13 * e2[1], e2[2]]))]);
+    my(o13 = myval(mfsymboleval(FS11, p13)) / 13);
+    Om29[1, j] = r1[1];
+    for(t = 1, 4, Om29[1 + t, j] = r2[t]);
+    for(t = 1, 6, Om29[5 + t, j] = r3[t]);
+    Om29[12, j] = o1;
+    Om29[13, j] = o13); }
+print("  Omega (13 x 29) complete  t=", gettime()/1000., "s");
+Omc = Om29 * KK;
+print("  Omega_cusp (13 x 26) complete.");
+print("");
+print("--- 6. Certificates ---");
+a2v = concat([embrow(F1, mfcoefs(F1, 2)[3], 1), embrow(F2, mfcoefs(F2, 2)[3], 4), embrow(F3, mfcoefs(F3, 2)[3], 6), [-2, -2]]);
+a3v = concat([embrow(F1, mfcoefs(F1, 3)[4], 1), embrow(F2, mfcoefs(F2, 3)[4], 4), embrow(F3, mfcoefs(F3, 3)[4], 6), [-1, -1]]);
+g43 = charpoly(mfcoefs(F2, 3)[4]);
+h63 = charpoly(mfcoefs(F3, 3)[4]);
+target3 = (x + 1)^2 * (x + 1)^4 * g43^2 * h63^2;
+chk("C5b charpoly(T3|cusp) == (x+1)^6 g43^2 h63^2 (exact)", cp3 == target3);
+DA2 = matdiagonal(a2v); DA3 = matdiagonal(a3v);
+rA2 = maxabsmat(DA2 * Om29 - Om29 * T2h);
+rB2 = maxabsmat(DA2 * Om29 - Om29 * mattranspose(T2h));
+orient = if(rA2 < rB2, 0, 1);
+res2 = min(rA2, rB2);
+res3 = if(orient == 0, maxabsmat(DA3 * Om29 - Om29 * T3h), maxabsmat(DA3 * Om29 - Om29 * mattranspose(T3h)));
+print("  orientation: ", if(orient == 0, "Omega*T", "Omega*T^t"), "   residual p=2: ", res2, "   p=3: ", res3);
+chk("C4 Hecke equivariance p=2,3 (< 1e-40, one orientation)", (res2 < TOL) && (res3 < TOL));
+v0 = pathvec([0, oo]);
+lhs = vector(13);
+{ for(i = 1, 13, my(s = 0); for(j = 1, ng, s += Om29[i, j] * v0[j]); lhs[i] = s); }
+L1 = [lfunmf(mfnew, F1)];
+L2 = lfunmf(mfnew, F2); L3 = lfunmf(mfnew, F3);
+L11 = [lfunmf(mf11, F11)];
+rhs = vector(13);
+rhs[1] = (I/(2*Pi)) * lfun(L1[1], 1);
+{ for(t = 1, 4, rhs[1 + t] = (I/(2*Pi)) * lfun(L2[t], 1)); }
+{ for(t = 1, 6, rhs[5 + t] = (I/(2*Pi)) * lfun(L3[t], 1)); }
+rhs[12] = (I/(2*Pi)) * lfun(L11[1], 1);
+rhs[13] = rhs[12] / 13;
+c3vec = vector(13, i, cabs(lhs[i] - rhs[i]));
+c3res = vecmax(c3vec);
+print("  per-row L residuals: ", c3vec);
+print("  L-route max residual over 13 rows: ", c3res);
+chk("C3 L-values match Manin route, all 13 rows (< 1e-40)", c3res < TOL);
+p33 = -0.31352300915287423503215575582714111095417953831197*I;
+per11 = myval(mfsymboleval(FS1, [oo, 1/11]));
+per277 = myval(mfsymboleval(FS1, [oo, 2/77]));
+c6a = cabs(per11 - p33);
+lam1 = per277 / per11;
+lam1arch = 1.0232745926964612055995663292242128158327958623152;
+c6b = cabs(cabs(real(lam1)) - 1/2);
+c6c = cabs(cabs(imag(lam1)) - lam1arch);
+print("  f1[oo,1/11] vs archive: ", c6a, "   lambda1 = ", lam1);
+chk("C6 Paper 33 regression: per11 to 1e-45; |Re lam1|=1/2, |Im lam1|=archive to 1e-40", (c6a < 1e-45) && (c6b < TOL) && (c6c < TOL));
+print("");
+print("--- C9. Sign adjudication of [oo,2/77] via ellperiods (AGM route) ---");
+EE = ellinit([0, -1, 1, -1, -2]);
+print("  curve conductor: ", ellglobalred(EE)[1], "  (143a1)   rootno: ", ellrootno(EE));
+wE = EE.omega;
+b1 = wE[1] / (2*Pi*I); b2 = wE[2] / (2*Pi*I);
+BB2 = [real(b1), real(b2); imag(b1), imag(b2)];
+coordf(z) = { my(s = matsolve(BB2, [real(z); imag(z)])); [s[1,1], s[2,1]]; }
+intres(z) = { my(cc = coordf(z)); max(cabs(cc[1] - round(cc[1])), cabs(cc[2] - round(cc[2]))); }
+c9lat = 0;
+{ for(j = 1, 26, c9lat = max(c9lat, intres(Omc[1, j]))); }
+print("  all 26 cuspidal f1-periods integral in Lambda(143a1)/(2 Pi I): max residual ", c9lat);
+chk("C9a f1 period lattice == Lambda(143a1)/(2 Pi I), Manin constant 1 (< 1e-40)", c9lat < TOL);
+candA = per277 - per11;
+candB = (-per277) - per11;
+resA = intres(candA); resB = intres(candB);
+print("  candidate v5 sign:      [oo,2/77]-[oo,1/11] lattice residual ", resA, "  coords ", coordf(candA));
+print("  candidate paper33 sign: lattice residual ", resB, "  coords ", coordf(candB));
+chk("C9b exactly one sign candidate is a lattice point (< 1e-40)", ((resA < TOL) && (resB > 1e-6)) || ((resB < TOL) && (resA > 1e-6)));
+GG = Omc * conj(mattranspose(Omc));
+RR = real(GG); II = imag(GG);
+Msym = matconcat([RR, -II; II, RR]);
+lamv = qfjacobi(Msym)[1];
+mn = vecmin(lamv); mx = vecmax(lamv);
+print("  Gram eigenvalue range: [", mn, ", ", mx, "]  ratio ", mn/mx);
+chk("C7 rank 13: min/max Gram eigenvalue > 1e-20", mn/mx > 1e-20);
+tpaths = [[0, 1/11], [1/13, oo], [2/77, 0], [1/7, 1/6]];
+c8m = 0;
+{ for(t = 1, #tpaths,
+    my(pv = pathvec(tpaths[t]), dvv = myval(mfsymboleval(FS1, tpaths[t])), sv = 0);
+    for(j = 1, ng, sv += Om29[1, j] * pv[j]);
+    c8m = max(c8m, cabs(sv - dvv))); }
+print("  decomposition consistency max residual (f1, 4 paths): ", c8m);
+chk("C8 direct eval == Omega * pathlog coords (< 1e-40)", c8m < TOL);
+print("");
+print("--- 7. Full P^1(Z/143) Manin-symbol table (168 symbols) ---");
+p1reps = List();
+{ for(c1 = 0, 11, for(c2 = 0, 13,
+    my(u1 = if(c1 == 11, [0, 1], [1, c1]), u2 = if(c2 == 13, [0, 1], [1, c2]));
+    my(cc = lift(chinese(Mod(u1[1], 11), Mod(u2[1], 13))), dd = lift(chinese(Mod(u1[2], 11), Mod(u2[2], 13))));
+    listput(p1reps, [cc, dd]))); }
+print("  P^1 size: ", #p1reps, "  (expect 168)");
+liftcop(cc, dd) = { my(c0 = cc, d0 = dd); if(c0 == 0, return([0, 1])); if(d0 == 0, return([1, 0])); while(gcd(c0, d0) != 1, d0 += 143); return([c0, d0]); }
+p1coords = matrix(168, ng);
+p1info = vector(168);
+{ for(s = 1, 168,
+    my(cd = p1reps[s], ld = liftcop(cd[1], cd[2]), gg, aa, bb, pth);
+    if(ld[1] == 0, pth = [0, oo],
+      if(ld[2] == 0, pth = [oo, 0],
+        gg = gcdext(ld[2], -ld[1]); aa = gg[2]; bb = gg[3];
+        pth = [bb/ld[2], aa/ld[1]]));
+    my(pv = pathvec(pth));
+    for(j = 1, ng, p1coords[s, j] = pv[j]);
+    p1info[s] = [cd, pth]); }
+print("  all 168 symbol paths decomposed on the 29-generator basis.");
+print("");
+print("--- 7.5 Riemann matrix: symplectic normalization ---");
+print("  PRE-REGISTERED (declared before any of this was computed):");
+print("   R1  E = Q^-1 on cuspidal homology: integral, antisymmetric, det = 1");
+print("   R2  first Riemann bilinear relation  Omega_cusp * Q * Omega_cusp^T = 0   (< 1e-40)");
+print("   R3  exact symplectic reduction over Z:  S^T E S = J  and  |det S| = 1");
+print("   R4  tau = A^-1 B is symmetric                                            (< 1e-40)");
+print("   R5  Im(tau) definite; orientation fixed positive; min eigenvalue reported");
+print("   R6  Hecke integral in the symplectic basis and equivariant, p = 2, 3     (< 1e-40)");
+print("   R7  genus-1 validation of the identical pipeline at level 11: j(tau) = j(11a1)  (< 1e-25)");
+print("   R8  radical of the mspetersson pairing on the 29-dim symbol space has dim exactly 3");
+print("");
+Pint = mspetersson(MM);
+print("  mspetersson pairing 29x29: antisym ", Pint == -mattranspose(Pint), "  rank ", matrank(Pint));
+chk("R8 pairing radical dim exactly 3 (= 29 - 26)", (matrank(Pint) == 26) && (Pint == -mattranspose(Pint)));
+LL = KK * (mattranspose(KK) * KK)^(-1);
+print("  dual lift L (29x26), L^T K = I: ", mattranspose(LL) * KK == matid(26));
+QQ = mattranspose(LL) * Pint * LL;
+QQint = (QQ == matrix(26, 26, i, j, round(QQ[i,j])));
+print("  Q = L^T P L: integral ", QQint, "  antisym ", QQ == -mattranspose(QQ), "  det ", matdet(QQ));
+EE = QQ^(-1);
+EEint = (EE == matrix(26, 26, i, j, round(EE[i,j])));
+chk("R1 E integral, antisymmetric, det 1", QQint && EEint && (matdet(QQ) == 1) && (EE == -mattranspose(EE)));
+R2m = Omc * QQ * mattranspose(Omc);
+r2res = maxabsmat(R2m);
+print("  max |Omega_cusp Q Omega_cusp^T| = ", r2res);
+chk("R2 first Riemann bilinear relation (< 1e-40)", r2res < TOL);
+{
+sympl(E0) =
+  my(n, S, E, p, bi, bj, bv, e, l, q, red, tmp, al, be, perm, i, j);
+  n = matsize(E0)[1]; S = matid(n); E = E0; p = 1;
+  while(p < n,
+    red = 1;
+    while(red,
+      bv = 0; bi = 0; bj = 0;
+      for(i = p, n, for(j = i + 1, n,
+        if(E[i,j] != 0 && (bv == 0 || abs(E[i,j]) < bv), bv = abs(E[i,j]); bi = i; bj = j)));
+      if(bi == 0, error("degenerate symplectic block at p=", p));
+      if(bi != p,
+        tmp = S[,p]; S[,p] = S[,bi]; S[,bi] = tmp;
+        if(bj == p, bj = bi);
+        E = mattranspose(S) * E0 * S);
+      if(bj != p + 1,
+        tmp = S[,p+1]; S[,p+1] = S[,bj]; S[,bj] = tmp;
+        E = mattranspose(S) * E0 * S);
+      e = E[p, p+1]; red = 0;
+      for(l = p + 2, n,
+        if(E[p,l] % e != 0,
+          q = round(E[p,l] / e); S[,l] = S[,l] - q * S[,p+1];
+          E = mattranspose(S) * E0 * S; red = 1; break);
+        if(E[p+1,l] % e != 0,
+          q = round(E[p+1,l] / e); S[,l] = S[,l] + q * S[,p];
+          E = mattranspose(S) * E0 * S; red = 1; break)));
+    e = E[p, p+1];
+    al = vector(n, l, if(l > p + 1, E[p+1,l] / e, 0));
+    be = vector(n, l, if(l > p + 1, -E[p,l] / e, 0));
+    for(l = p + 2, n, S[,l] = S[,l] + al[l] * S[,p] + be[l] * S[,p+1]);
+    E = mattranspose(S) * E0 * S;
+    if(E[p,p+1] < 0, tmp = S[,p]; S[,p] = S[,p+1]; S[,p+1] = tmp; E = mattranspose(S) * E0 * S);
+    if(E[p,p+1] != 1, error("non-unimodular elementary divisor ", E[p,p+1]));
+    p = p + 2);
+  perm = concat(vector(n/2, k, 2*k - 1), vector(n/2, k, 2*k));
+  matrix(n, n, i, j, S[i, perm[j]]);
+}
+{
+riemannize(E0, Om, g) =
+  my(S, Osym, A, B, tau, Im0, ev);
+  S = sympl(E0);
+  Osym = Om * S;
+  A = matrix(g, g, i, j, Osym[i, j]);
+  B = matrix(g, g, i, j, Osym[i, j + g]);
+  tau = A^(-1) * B;
+  Im0 = matrix(g, g, i, j, (imag(tau[i,j]) + imag(tau[j,i])) / 2);
+  ev = if(g == 1, [Im0[1,1]], qfjacobi(Im0)[1]);
+  [S, Osym, tau, vecmin(ev), vecmax(ev)];
+}
+JJ = matrix(26, 26, i, j, if(i <= 13 && j == i + 13, 1, if(j <= 13 && i == j + 13, -1, 0)));
+rr = riemannize(EE, Omc, 13);
+ORIENT = "E = +Q^-1";
+{ if(rr[4] <= 0, EE = -EE; rr = riemannize(EE, Omc, 13); ORIENT = "E = -Q^-1"); }
+SS = rr[1]; Omsym = rr[2]; tau = rr[3];
+print("  orientation fixed by positivity: ", ORIENT);
+print("  |det S| = ", abs(matdet(SS)), "   S^T E S == J : ", mattranspose(SS) * EE * SS == JJ);
+chk("R3 exact symplectic reduction S^T E S = J, |det S| = 1", (mattranspose(SS) * EE * SS == JJ) && (abs(matdet(SS)) == 1));
+r4res = 0;
+{ for(i = 1, 13, for(j = 1, 13, r4res = max(r4res, cabs(tau[i,j] - tau[j,i])))); }
+print("  max |tau_ij - tau_ji| = ", r4res);
+chk("R4 tau symmetric (< 1e-40)", r4res < TOL);
+print("  Im(tau) eigenvalues: min ", rr[4], "  max ", rr[5]);
+chk("R5 Im(tau) positive definite", rr[4] > 1e-20);
+T2s = SS^(-1) * T2c * SS; T3s = SS^(-1) * T3c * SS;
+t2int = (T2s == matrix(26, 26, i, j, round(T2s[i,j])));
+t3int = (T3s == matrix(26, 26, i, j, round(T3s[i,j])));
+r6a = maxabsmat(matdiagonal(a2v) * Omsym - Omsym * T2s);
+r6b = maxabsmat(matdiagonal(a3v) * Omsym - Omsym * T3s);
+print("  Hecke in symplectic basis: integral ", t2int && t3int, "   equivariance residuals ", r6a, " , ", r6b);
+chk("R6 Hecke integral + equivariant in symplectic basis (< 1e-40)", t2int && t3int && (r6a < TOL) && (r6b < TOL));
+chk("R6b charpoly invariant under symplectic conjugation (exact)", (charpoly(T2s) == cp2) && (charpoly(T3s) == cp3));
+print("");
+print("  R7 genus-1 replay of the identical pipeline at level 11:");
+M11 = msinit(11, 2);
+pg11 = mspathgens(M11); g11 = pg11[1]; n11 = #g11;
+ge11 = vector(n11, j, [r2c(g11[j][1]), r2c(g11[j][2])]);
+cc11(u) = if(u[2] == 0, 2, if(gcd(u[2], 11) == 1, 1, 2));
+D11 = matrix(2, n11);
+{ for(j = 1, n11, my(a = cc11(ge11[j][1]), b = cc11(ge11[j][2])); D11[b,j] += 1; D11[a,j] -= 1); }
+K11 = matkerint(D11);
+P11 = mspetersson(M11);
+L11 = K11 * (mattranspose(K11) * K11)^(-1);
+Q11 = mattranspose(L11) * P11 * L11;
+E11 = Q11^(-1);
+Om11 = matrix(1, n11, i, j, myval(mfsymboleval(FS11, g11[j])));
+rr11 = riemannize(E11, Om11 * K11, 1);
+ORI11 = "+";
+{ if(rr11[4] <= 0, E11 = -E11; rr11 = riemannize(E11, Om11 * K11, 1); ORI11 = "-"); }
+tau11 = rr11[3][1,1];
+EC = ellinit("11a1");
+r7res = cabs(ellj(tau11) - EC.j);
+print("    dim ", msdim(M11), "  cuspidal ", matsize(K11)[2], "  orientation ", ORI11, "  tau_11 = ", tau11);
+print("    j(tau_11) = ", ellj(tau11), "   j(11a1) = ", EC.j, "   |diff| = ", r7res);
+chk("R7 genus-1 validation j(tau) = j(11a1) (< 1e-25)", r7res < 1e-25);
+print("");
+print("--- 8. Writing outputs ---");
+outtxt = "period_matrix_manin_v6.txt";
+system(concat("rm -f ", outtxt));
+write(outtxt, "X0(143) PERIOD MATRIX IN THE MANIN BASIS - v6");
+write(outtxt, "Convention: entry = int_path f dz ; certified via L(11a,1) and all 13 L-values.");
+write(outtxt, "Rows: 1=f1(143a) | 2-5=f2 quartic emb | 6-11=f3 sextic emb | 12=11a(q) | 13=11a(q^13)");
+write(outtxt, "a2 per row: ", a2v);
+write(outtxt, "a3 per row: ", a3v);
+write(outtxt, "");
+write(outtxt, "GENERATOR MANIFEST (29 Manin-symbol paths, free basis of H1(X,cusps))");
+{ for(j = 1, ng, write(outtxt, "  g", j, ": path ", gensP[j], "  (c:d) mod 143 = ", mansym(j), "  bd ", cuspclass(genends[j][1]), "->", cuspclass(genends[j][2]))); }
+write(outtxt, "");
+write(outtxt, "CUSPIDAL INTEGER BASIS K (29 x 26), columns = integer combos of generators; Omega_cusp = Omega*K");
+write(outtxt, KK);
+write(outtxt, "");
+write(outtxt, "T2_29 (Merel route, integer): "); write(outtxt, T2h);
+write(outtxt, "T3_29: "); write(outtxt, T3h);
+write(outtxt, "charpoly T2 cuspidal: ", cp2);
+write(outtxt, "charpoly T3 cuspidal: ", cp3);
+write(outtxt, "");
+write(outtxt, "OMEGA (13 x 29): lines  i j Re Im");
+{ for(i = 1, 13, for(j = 1, ng, write(outtxt, i, " ", j, " ", real(Om29[i, j]), " ", imag(Om29[i, j])))); }
+write(outtxt, "");
+write(outtxt, "OMEGA_CUSP (13 x 26): lines  i j Re Im");
+{ for(i = 1, 13, for(j = 1, 26, write(outtxt, i, " ", j, " ", real(Omc[i, j]), " ", imag(Omc[i, j])))); }
+write(outtxt, "");
+write(outtxt, "P1(Z/143) TABLE: (c,d) ; path ; coords on 29 generators");
+{ for(s = 1, 168, write(outtxt, "  ", p1info[s][1], " ; ", p1info[s][2], " ; ", vector(ng, j, p1coords[s, j]))); }
+write(outtxt, "");
+write(outtxt, "lambda1 (v5) = ", lam1);
+write(outtxt, "f1 lattice basis (dz-normalized) = Lambda(143a1)/(2 Pi I): b1=", b1, " b2=", b2);
+write(outtxt, "");
+write(outtxt, "INTERSECTION FORM Q = E^-1 on cuspidal homology in the K basis (26 x 26, integral, antisym, det 1):");
+write(outtxt, QQ);
+write(outtxt, "");
+write(outtxt, "INTERSECTION FORM E (orientation ", ORIENT, "):");
+write(outtxt, EE);
+write(outtxt, "");
+write(outtxt, "SYMPLECTIC BASE CHANGE S (26 x 26, S^T E S = J = [[0,I13],[-I13,0]], det S = ", matdet(SS), "):");
+write(outtxt, SS);
+write(outtxt, "  symplectic homology basis: column j of K*S, in the 29-generator coordinates:");
+write(outtxt, KK * SS);
+write(outtxt, "");
+write(outtxt, "SYMPLECTIC PERIOD MATRIX Omega_sym = Omega_cusp * S = (A | B), 13 x 26: lines  i j Re Im");
+{ for(i = 1, 13, for(j = 1, 26, write(outtxt, i, " ", j, " ", real(Omsym[i,j]), " ", imag(Omsym[i,j])))); }
+write(outtxt, "");
+write(outtxt, "RIEMANN MATRIX tau = A^-1 B (13 x 13, symmetric, Im tau > 0): lines  i j Re Im");
+{ for(i = 1, 13, for(j = 1, 13, write(outtxt, i, " ", j, " ", real(tau[i,j]), " ", imag(tau[i,j])))); }
+write(outtxt, "Im(tau) eigenvalues: min ", rr[4], "  max ", rr[5]);
+write(outtxt, "");
+write(outtxt, "HECKE IN SYMPLECTIC BASIS T2s: "); write(outtxt, T2s);
+write(outtxt, "HECKE IN SYMPLECTIC BASIS T3s: "); write(outtxt, T3s);
+write(outtxt, "");
+write(outtxt, "CHECKS: PASS=", NPASS, " FAIL=", NFAIL);
+print("  wrote ", outtxt);
+print("");
+print("==============================================================");
+print(" SUMMARY: ", NPASS, " PASS / ", NFAIL, " FAIL");
+print("==============================================================");
+quit;

@@ -1,3 +1,7 @@
+> **RENUMBERING NOTE (2026-08-12):** this correction was originally filed as CC-02 before the corpus correction ledger existed. The corpus ledger's CC-02 slot is the w-series shift-chain correction (W1_weil_compression_study §1). To keep every correction addressable by a unique id, this du03 metric correction is renumbered **CC-07**; its content below is unchanged. The renumbering is recorded in the v0.15.0 integration notes.
+
+---
+
 # Internal Correction CC-02 — the du03 commutant is metric-dependent
 
 **Class:** CORRECTION + STRENGTHENED RESULT

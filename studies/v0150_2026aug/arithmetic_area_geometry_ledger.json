@@ -1,0 +1,80 @@
+{
+  "study": "arithmetic_area_geometry",
+  "gates": {
+    "A1_triangle_determinant_identity": {
+      "passed": true,
+      "max_error": "7.5637e-124",
+      "identity": "det g = sum p_i p_j p_k Delta_ijk^2"
+    },
+    "A2_chirality_identity_vs_brioschi": {
+      "passed": true,
+      "numerator_error": "3.4162e-126",
+      "vs_cumulant_determinant": "6.9639e-116",
+      "vs_independent_brioschi_route": "4.4967e-114"
+    },
+    "A3_rigidity_theorem": {
+      "passed": true,
+      "max_error": "9.527e-116",
+      "synthetic": "5 line points + 1 off-line, arbitrary base weights",
+      "out_of_sample": {
+        "(1, 2, 4, 8)": "8.632e-139",
+        "(1, 2, 4, 16)": "9.527e-116"
+      },
+      "theorem": "K == 1/4"
+    },
+    "A4_hypothesis_is_sharp": {
+      "passed": true,
+      "zero_off_line": "det g = 0, no 2D metric",
+      "two_off_line": [
+        "11.25",
+        "476.4"
+      ]
+    },
+    "A5_dyadic_collinearity": {
+      "passed": true,
+      "identity": "w_4 = (1/2) log 4  =>  X_4 = 2 X_2 exactly",
+      "consequence": "{1,2,4} collinear, 3 is the lone off-line point"
+    },
+    "A6_prime_boundary_corrected": {
+      "passed": true,
+      "statement": "w_n >= (log n)/n, equality iff n = 1 OR n prime",
+      "correction": "the n = 1 case was omitted upstream; X_1 = (0,0) lies ON the curve and 1 is not prime",
+      "checked": "1 <= n < 500"
+    },
+    "A7_cold_core_and_CC02": {
+      "passed": true,
+      "c_closed": "0.27012646530542495706433719670365",
+      "rate_from_1235": "1.200000000000029",
+      "repo_value_reproduced_by_six_atom": true,
+      "contamination": "1.975e-16",
+      "predicted_scale_five_sixths_200": "1.458e-16",
+      "verdict": "CC-02: the ledgered amplitude is contaminated by atom 6; the closed form supersedes it"
+    },
+    "A8_dyadic_shield_and_CC03": {
+      "passed": true,
+      "rate": "1.4999878056135",
+      "amplitude": "0.000273277624804",
+      "linear_prediction": "0.000273071767988",
+      "dps90_at_beta80": "9.97364e+24",
+      "dps200_at_beta80": "1/4",
+      "verdict": "CC-03: a dps override below the safe floor fails silently; the patch floors it"
+    },
+    "A9_arithmetic_area_zeta": {
+      "passed": true,
+      "identity": "A(s) = zeta(s)^3 det g(s, 0)",
+      "wall_order": 5,
+      "wall_coefficient": "0.82377306237833093427",
+      "ladder": [
+        "0.81365972441",
+        "0.822783697358",
+        "0.823674358705"
+      ],
+      "cold_ratio_at_40": "1.0000000093",
+      "cold_leading": "Delta_123^2 6^-s"
+    }
+  },
+  "cold_amplitude_corrected": "0.27012646530542495706433719670365",
+  "cold_amplitude_retracted": "0.270126465305424759517602",
+  "all_passed": true,
+  "runtime_s": 5.0
+}

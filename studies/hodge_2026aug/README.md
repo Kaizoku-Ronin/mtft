@@ -9,7 +9,7 @@ superseded by studies/du03_dispersion.py, kept here as the session record
 and because du03_grok_triage / du03_metric import its `geometric_well`)
 -> du03_grok_triage (three candidate escapes tested and closed)
 -> du03_commutant (60/5/1 dims, Jordan structure, 1|12|12|1 blocks)
--> du03_metric + CC-02_du03_metric_correction (the two-metrics result:
+-> du03_metric + CC-07_du03_metric_correction (the two-metrics result:
 Euclidean 5 vs polarization 43, joint admissible space = scalars only;
 the du03 obstruction is metric-independent; anchor count stays 2).
 

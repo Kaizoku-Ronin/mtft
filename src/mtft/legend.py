@@ -497,7 +497,10 @@ PROMOTION_LEGEND: Tuple[Dict[str, object], ...] = (
          ref="studies/promotion_2026aug/curvature_tano_manifold.py G6"),
     dict(name="cold_dive_law", tier="0", kind="constant",
          primitives=("IV",), tag="Pr", exactness="CERTIFIED(1e-15)",
-         nature="Cold tail K ~ −c (6/5)^beta, c = 0.270126465305424759517602; "
+         nature="Cold tail K ~ −c (6/5)^beta, c = 0.270126465305424759517602 "
+                "[RETRACTED by CC-04: six-atom beta=200 extraction carried "
+                "atom-6 contamination (5/6)^200 = 1.46e-16; correct closed "
+                "form in cold_amplitude_closed_form_CC04]; "
                 "rate 6/5 = Boltzmann ratio of the first new prime (5) to "
                 "the first mixed composite (6). Rigidity locks: K = 1/4 "
                 "identically on {1,2,3} and {1,2,3,4} (atom 4 inert); "
@@ -518,6 +521,63 @@ PROMOTION_LEGEND: Tuple[Dict[str, object], ...] = (
              "eisenstein_congruences.py (pending drop)"),
 )
 for _d in PROMOTION_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+# ── Tier 13 v0.15.0 registrations (certification wave) ─────────
+V0150_LEGEND: Tuple[Dict[str, object], ...] = (
+    dict(name="wseries_shift_chain_CC02", tier="0", kind="identity",
+         primitives=("I",), tag="Pr", exactness="EXACT",
+         nature="sum w_n n^-s = F(s+1) = −zeta(s)·zeta'(s+1) (CC-02; "
+                "Paper 1 Prop 1.5's −zeta'(s+1) is the summand series, "
+                "AG Pr 4.1.4 mistranscribes). Three-route E2: sieve "
+                "7.1e-15, s=3 numeric 5.2e-12, F-consistency.",
+         example="mtft.weil.w_series_check(3)",
+         upstream=("w_n",),
+         ref="studies/v0150_2026aug/CC-02_wseries_shift_chain.md"),
+    dict(name="curvature_rigidity_theorem", tier="0", kind="identity",
+         primitives=("IV",), tag="Pr", exactness="EXACT",
+         nature="A 2-dim discrete exponential family supported on one "
+                "affine line plus exactly one off-line point has K = 1/4 "
+                "identically (warped form ds^2 = dy^2 + cos^2(y/2) drho^2). "
+                "{1,2,3,4} is in the class: X_4 = 2 X_2 exactly. Out-of-"
+                "sample {1,2,4,8}, {1,2,4,16} to 1e-115; sharpness gated "
+                "both directions. Classify with rigidity_class().",
+         example="mtft.curvature.rigidity_class([(0,0),(1,0),(0,1)])  # -> 1",
+         upstream=("hessian_cancellation_theorem",),
+         ref="studies/v0150_2026aug/arithmetic_area_geometry.py A1-A6"),
+    dict(name="cold_amplitude_closed_form_CC04", tier="0", kind="constant",
+         primitives=("IV",), tag="Pr", exactness="EXACT",
+         nature="c = (9 L5^2)/(25 L2 L3) [1 − (9/5) L5/L3 + (4/5) L5/L2] "
+                "= 0.27012646530542495706433719670365 (CC-04; supersedes "
+                "cold_dive_law's retracted 16th digit). Cold core "
+                "{1,2,3,5}, rate 6/5 = 36/30.",
+         example="mtft.curvature.cold_amplitude()",
+         upstream=("cold_dive_law",),
+         ref="studies/v0150_2026aug/CC-04_cold_amplitude.md"),
+    dict(name="weil_compressed_form_W1", tier="5d", kind="identity",
+         primitives=("I", "V"), tag="Cert", exactness="E2(3.472e-09)",
+         nature="Gabor-compressed Weil form: prime side vs zero side of "
+                "the band-limited kernel agree to 3.472e-09 (W1-P1, "
+                "pre-registered <= 1e-5); C/N = 0.73398 in [0.729, 0.739] "
+                "(W1-P2, anchor 0.734). Lemma 3.2 re-proved independently. "
+                "Fourth column of the Three Ensembles table.",
+         example="python -m pytest tests/test_weil.py",
+         upstream=("hadamard_zetaprime_check",),
+         ref="studies/v0150_2026aug/W1_weil_compression_study.md"),
+    dict(name="c9b_period_sign_adjudication", tier="1", kind="identity",
+         primitives=("II", "III"), tag="Cert", exactness="EXACT + E2(1e-7)",
+         nature="Re lambda_1 = −1/2 EXACTLY for the 143a1 period lattice "
+                "(Route A: exact rational Manin symbols). Route B "
+                "(q-expansion slash-integrals, own a_n sieve, no PARI "
+                "mfsymboleval) reproduces v6 per_277 to 1e-7; {1/38,2/77} "
+                "= −per_11 to 4e-15 by Manin integrality. v6 sign "
+                "CORRECT; Paper 33 v2 archive needs sign-only correction.",
+         example="studies/v0150_2026aug/c9b_exact_symbol.py",
+         upstream=("X0_143_engine",),
+         ref="studies/v0150_2026aug/c9b_exact_symbol.json; c9b_routeB.json"),
+)
+for _d in V0150_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 

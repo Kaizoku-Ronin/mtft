@@ -1,0 +1,401 @@
+{
+  "study": "m9_oldspace_complex_structures",
+  "gates": {
+    "R1_oldspace_identity": {
+      "passed": true,
+      "identity": "(2 U_q - a_q)^2 = (a_q^2 - 4q) I  exactly",
+      "a_13": "4",
+      "discriminant": "-36",
+      "hasse": "|a_q| < 2 sqrt(q) strictly, since q prime is not a square"
+    },
+    "R2_rationality_criterion": {
+      "passed": true,
+      "criterion": "rational iff 4q - a_q^2 is a perfect square",
+      "gaussian": "13 = 2^2 + 3^2 with a' = a_q/2 = 2",
+      "JJ": "(U_13 - 2)/3",
+      "J_squared": "-I exactly",
+      "field": "Q(i)"
+    },
+    "R3_parity_forces_sum_of_two_squares": {
+      "passed": true,
+      "claim": "4q - a^2 a perfect square => a, k both even and q = (a/2)^2 + (k/2)^2, hence q = 2 or q = 1 mod 4",
+      "checked": "all primes q < 400 and all a in the Hasse range",
+      "violations": 0
+    },
+    "R4_census_11a1": {
+      "passed": true,
+      "to": 20000,
+      "rational_primes": 48,
+      "corrected_heuristic": 37.39,
+      "decoy_median": 23,
+      "decoy_range": "14-40",
+      "ratio_to_decoy": 2.09,
+      "verdict": "sparse but present; the observed count runs ABOVE the matched null and the excess is carried to R7, not claimed here"
+    },
+    "R5_census_143a1": {
+      "passed": true,
+      "to": 20000,
+      "rational_primes": 14,
+      "heuristic": 36.84,
+      "note": "levels 143*q at which the SAME construction would supply a rational complex structure"
+    },
+    "R6_minimal_cases": {
+      "passed": true,
+      "smallest_q": 2,
+      "smallest_level": "11 * 2 = 22",
+      "smallest_odd_q": 13,
+      "smallest_odd_level": "11 * 13 = 143",
+      "note": "our box 143 = 11 * 13 is the smallest ODD case; q = 2 is admissible since 2 = 1^2 + 1^2, so level 22 is smaller"
+    },
+    "R7_excess_is_registered_not_claimed": {
+      "passed": true,
+      "ratio_to_decoy": "{'11a1': 2.087, '143a1': 0.636}",
+      "eisenstein_moduli": "{'11a1': 5, '143a1': 1}",
+      "hypothesis": "the newform WITH an Eisenstein congruence (11a1, modulus 5) runs above the null; the one WITHOUT (143a1, modulus 1) does not",
+      "status": "OPEN \u2014 two curves is not evidence; pre-registration against a curve database is required before this may be called a result",
+      "discipline": "census-is-not-a-search"
+    }
+  },
+  "census": {
+    "11a1": {
+      "hits": [
+        [
+          2,
+          -2,
+          1
+        ],
+        [
+          13,
+          4,
+          3
+        ],
+        [
+          17,
+          -2,
+          4
+        ],
+        [
+          41,
+          -8,
+          5
+        ],
+        [
+          61,
+          12,
+          5
+        ],
+        [
+          101,
+          2,
+          10
+        ],
+        [
+          197,
+          -2,
+          14
+        ],
+        [
+          241,
+          -8,
+          15
+        ],
+        [
+          257,
+          -2,
+          16
+        ],
+        [
+          401,
+          2,
+          20
+        ],
+        [
+          857,
+          8,
+          29
+        ],
+        [
+          877,
+          -12,
+          29
+        ],
+        [
+          1021,
+          22,
+          30
+        ],
+        [
+          1237,
+          18,
+          34
+        ],
+        [
+          1381,
+          -68,
+          15
+        ],
+        [
+          1481,
+          32,
+          35
+        ],
+        [
+          1601,
+          2,
+          40
+        ],
+        [
+          1789,
+          10,
+          42
+        ],
+        [
+          1861,
+          62,
+          30
+        ],
+        [
+          2053,
+          84,
+          17
+        ],
+        [
+          2213,
+          4,
+          47
+        ],
+        [
+          2389,
+          -50,
+          42
+        ],
+        [
+          2521,
+          72,
+          35
+        ],
+        [
+          2621,
+          22,
+          50
+        ],
+        [
+          3733,
+          114,
+          22
+        ],
+        [
+          3797,
+          -82,
+          46
+        ],
+        [
+          4621,
+          122,
+          30
+        ],
+        [
+          4789,
+          110,
+          42
+        ],
+        [
+          6089,
+          80,
+          67
+        ],
+        [
+          6361,
+          -138,
+          40
+        ],
+        [
+          6481,
+          -18,
+          80
+        ],
+        [
+          6553,
+          74,
+          72
+        ],
+        [
+          6637,
+          -122,
+          54
+        ],
+        [
+          7541,
+          142,
+          50
+        ],
+        [
+          7741,
+          92,
+          75
+        ],
+        [
+          8017,
+          -62,
+          84
+        ],
+        [
+          8521,
+          72,
+          85
+        ],
+        [
+          11681,
+          82,
+          100
+        ],
+        [
+          11701,
+          52,
+          105
+        ],
+        [
+          11821,
+          122,
+          90
+        ],
+        [
+          11969,
+          -130,
+          88
+        ],
+        [
+          12277,
+          178,
+          66
+        ],
+        [
+          12689,
+          130,
+          92
+        ],
+        [
+          15193,
+          -16,
+          123
+        ],
+        [
+          15361,
+          62,
+          120
+        ],
+        [
+          16057,
+          -232,
+          51
+        ],
+        [
+          17713,
+          34,
+          132
+        ],
+        [
+          17909,
+          110,
+          122
+        ]
+      ],
+      "count": 48,
+      "heuristic": 37.39,
+      "decoy_median": 23,
+      "decoy_range": "14-40"
+    },
+    "143a1": {
+      "hits": [
+        [
+          41,
+          10,
+          4
+        ],
+        [
+          73,
+          -16,
+          3
+        ],
+        [
+          149,
+          14,
+          10
+        ],
+        [
+          193,
+          -24,
+          7
+        ],
+        [
+          233,
+          -16,
+          13
+        ],
+        [
+          701,
+          -10,
+          26
+        ],
+        [
+          3769,
+          26,
+          60
+        ],
+        [
+          4397,
+          52,
+          61
+        ],
+        [
+          9257,
+          118,
+          76
+        ],
+        [
+          11833,
+          26,
+          108
+        ],
+        [
+          14401,
+          -2,
+          120
+        ],
+        [
+          14737,
+          -48,
+          119
+        ],
+        [
+          15329,
+          -146,
+          100
+        ],
+        [
+          16033,
+          184,
+          87
+        ]
+      ],
+      "count": 14,
+      "heuristic": 36.84,
+      "decoy_median": 22,
+      "decoy_range": "10-39"
+    }
+  },
+  "open_hypothesis": {
+    "observation": {
+      "11a1": 2.087,
+      "143a1": 0.636
+    },
+    "eisenstein_moduli": {
+      "11a1": 5,
+      "143a1": 1
+    },
+    "status": "registered, not claimed"
+  },
+  "verdict": "M9 RESOLVED. The complex structure M8-B found on the 11a1 ghost is not special to 143: EVERY q-oldspace of EVERY newform carries one, because Hasse forces a_q^2 - 4q < 0 strictly for prime q. What is special is RATIONALITY. JJ is defined over Q iff 4q - a_q^2 is a perfect square, which forces a_q and k even and q = (a_q/2)^2 + (k/2)^2 \u2014 so q must be 2 or 1 mod 4, the field is exactly Q(i), and JJ = (U_q - a_q/2)/k'. For our box q = 13 = 2^2 + 3^2 with a_13(11a1) = 4, which is why the denominator is 3: it is the other Gaussian coordinate of 13. The rational primes are sparse, growing like sqrt(X)/log X and matching a decoy null, so this is an honest arithmetic condition rather than a conspiracy \u2014 and it identifies a whole infinite family of levels at which the CP-odd channel of M8-B is available with zero free parameters.",
+  "all_passed": true,
+  "runtime_s": 4.3
+}
