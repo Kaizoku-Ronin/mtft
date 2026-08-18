@@ -1,0 +1,12 @@
+# mtft.canonical frozen data — provenance
+# Byte-identical copies of the wave artifacts staged in
+# studies/ci_2026aug/ (v0.16.1). SHA-1s below match that bundle's
+# sha1_manifest.txt entry for the same filename. Do not edit:
+# these files are the certified inputs to mtft.canonical.gates.
+#
+5e4537c805a48e76027d4d12bdf0cea300cd1472  X0_143_AL_adapted_basis.txt
+e71eaabe5cd23f3a3a35c204373ad6dfd5115358  X0_143_AL_adapted_qexpansions.txt
+0900a407acb6ab731ddc9b35f7e96302c55865e0  X0_143_CI_A_quadric.txt
+776f10796a2729af25ebbf681b7cb66f0b4464be  X0_143_I2_by_AL_sector.txt
+83156e97b7c6bdf5515117fb343e7d37d9027abf  X0_143_I2_quadric_basis.txt
+479316a0952d72dbd4731f50389003263cbfc4e1  X0_143_S2_qexpansions.txt
