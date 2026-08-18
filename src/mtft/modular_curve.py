@@ -208,7 +208,14 @@ class HomologyData:
         self.euler_char = 2 - 2 * g
         self.monodromy_cycles = 2 * g
         self.surplus_cycles = self.monodromy_cycles - self.sm_generators_needed
-        # Standard symplectic form J = ((0, I_g), (-I_g, 0))
+        # API-HYGIENE NOTE (v0.16.0): this builds the *template* standard
+        # symplectic form J = ((0, I_g), (-I_g, 0)) for an abstract genus-g
+        # surface.  It is NOT the computed intersection pairing of
+        # H_1(X_0(N), Z) in any particular basis (e.g. the Manin-symbol
+        # basis of mtft.hecke).  A caller asking for "the intersection
+        # matrix of X_0(143)" receives this template silently.  The field
+        # has no internal consumers; pass a basis-aware pairing explicitly
+        # if you need the computed one.
         I_g = np.eye(g, dtype=int)
         Z = np.zeros((g, g), dtype=int)
         self.intersection_matrix = np.block([

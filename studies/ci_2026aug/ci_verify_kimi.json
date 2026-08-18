@@ -1,0 +1,248 @@
+{
+  "auditor": "Kimi K3",
+  "date": "2026-08-18",
+  "scope": "CI arc 2026-08-16 exact replay",
+  "adapted_basis_QE_eq_FB": true,
+  "det_B": -1078272,
+  "sectors_CC08": {
+    "calibration_star_involution_exact": true,
+    "W11_sq_I": true,
+    "W13_sq_I": true,
+    "W143_sq_I": true,
+    "klein_W11W13_eq_W143": true,
+    "commute_T2": true,
+    "commute_iota": true,
+    "traces": {
+      "W11": "2",
+      "W13": "-2",
+      "W143": "-18"
+    },
+    "eigenspace_dims": {
+      "W11": [
+        14,
+        12
+      ],
+      "W13": [
+        12,
+        14
+      ],
+      "W143": [
+        4,
+        22
+      ]
+    },
+    "quotient_genera": {
+      "W11": 7,
+      "W13": 6,
+      "W143": 2
+    },
+    "genus_X_star": 1,
+    "block_purity": {
+      "ell": {
+        "(+1,+1)": 2
+      },
+      "old": {
+        "(-1,+1)": 2,
+        "(-1,-1)": 2
+      },
+      "q4": {
+        "(-1,+1)": 8
+      },
+      "q6": {
+        "(+1,-1)": 12
+      }
+    },
+    "S2_joint_sectors": {
+      "(+,+)": 1,
+      "(-,+)": 5,
+      "(+,-)": 6,
+      "(-,-)": 1
+    }
+  },
+  "ranks": {
+    "ten_bundle_rank_tests": {
+      "L++^2": {
+        "claimed": 1,
+        "computed": 1
+      },
+      "L+-^2": {
+        "claimed": 12,
+        "computed": 12
+      },
+      "L-+^2": {
+        "claimed": 10,
+        "computed": 10
+      },
+      "L--^2": {
+        "claimed": 1,
+        "computed": 1
+      },
+      "L++*L+-": {
+        "claimed": 6,
+        "computed": 6
+      },
+      "L++*L-+": {
+        "claimed": 5,
+        "computed": 5
+      },
+      "L++*L--": {
+        "claimed": 1,
+        "computed": 1
+      },
+      "L+-*L-+": {
+        "claimed": 11,
+        "computed": 11
+      },
+      "L+-*L--": {
+        "claimed": 6,
+        "computed": 6
+      },
+      "L-+*L--": {
+        "claimed": 5,
+        "computed": 5
+      }
+    },
+    "H0_2K_class_dims": {
+      "(+,+)": 12,
+      "(+,-)": 6,
+      "(-,+)": 7,
+      "(-,-)": 11
+    },
+    "projection_table": {
+      "f3": {
+        "claimed_quadrics": 9,
+        "computed_quadrics": 9
+      },
+      "f2": {
+        "claimed_quadrics": 0,
+        "computed_quadrics": 0
+      },
+      "old": {
+        "claimed_quadrics": 0,
+        "computed_quadrics": 0
+      },
+      "f1+f3": {
+        "claimed_quadrics": 10,
+        "computed_quadrics": 10
+      },
+      "f1+f2": {
+        "claimed_quadrics": 1,
+        "computed_quadrics": 1
+      },
+      "f2+f3": {
+        "claimed_quadrics": 32,
+        "computed_quadrics": 32
+      },
+      "newspace": {
+        "claimed_quadrics": 33,
+        "computed_quadrics": 33
+      },
+      "f2+f3+old": {
+        "claimed_quadrics": 44,
+        "computed_quadrics": 44
+      },
+      "all_13": {
+        "claimed_quadrics": 55,
+        "computed_quadrics": 55
+      }
+    },
+    "CI_B_ghost_table": {
+      "e1*f2": 4,
+      "+y1*y8": 5,
+      "+y13*f3": 7,
+      "+both": 7
+    },
+    "newspace_deficiency": {
+      "(+,+)": 0,
+      "(+,-)": 0,
+      "(-,+)": 3,
+      "(-,-)": 0
+    }
+  },
+  "sector_file": {
+    "(+,+)": {
+      "support_confined": true,
+      "rank": 26,
+      "claimed_rank": 26,
+      "max_coeff": 55,
+      "claimed_max_coeff": 55,
+      "residuals_exactly_zero": true
+    },
+    "(+,-)": {
+      "support_confined": true,
+      "rank": 5,
+      "claimed_rank": 5,
+      "max_coeff": 4684,
+      "claimed_max_coeff": 4684,
+      "residuals_exactly_zero": true
+    },
+    "(-,+)": {
+      "support_confined": true,
+      "rank": 4,
+      "claimed_rank": 4,
+      "max_coeff": 10008,
+      "claimed_max_coeff": 10008,
+      "residuals_exactly_zero": true
+    },
+    "(-,-)": {
+      "support_confined": true,
+      "rank": 20,
+      "claimed_rank": 20,
+      "max_coeff": 72,
+      "claimed_max_coeff": 72,
+      "residuals_exactly_zero": true
+    },
+    "ideal_agreement": "ranks sum 26+5+4+20 = 55 = dim I_2 (Route A), residuals 0 -> same ideal"
+  },
+  "ci_a": {
+    "Qstar_residual_zero": true,
+    "a_value": -2439613813,
+    "a_factorization_check": true,
+    "disc_g4": 1957,
+    "a_equals_-7^2*13*disc^2": true,
+    "decoy_replay": "20/20 (claimed 20/20: relation not f2-specific)"
+  },
+  "ci_d": {
+    "points_on_curve": true,
+    "Q1+Q2_eq_(2,0)": true,
+    "2P_eq_Q1+Q2": true,
+    "P_eq_-G": true,
+    "2G_eq_R": true,
+    "tangent_slope_P": "-3",
+    "l1_cubic": "x^3-2x^2+4x-8 = (x-2)(x^2+4)",
+    "l2_cubic": "x^3-10x^2+32x-32 = (x-4)^2(x-2)",
+    "special_fibre_identity": "s(11-6x)+s^2 = (x-4)^2(x-2) mod E (exact)",
+    "h(R)": "2",
+    "torsion_trivial": true,
+    "route2_primes_tested": 32,
+    "route2_matches": 32,
+    "route2_mismatches": [],
+    "class_numbers": {
+      "-11": 1,
+      "-44": 3,
+      "-52": 2,
+      "-143": 10,
+      "-572": 10
+    },
+    "fixed_points_classnumber": {
+      "W11": 0,
+      "W13": 4,
+      "W143": 20
+    },
+    "fixed_points_RH": {
+      "W11": 0,
+      "W13": 4,
+      "W143": 20
+    },
+    "branch_degrees_E": [
+      0,
+      2,
+      10
+    ],
+    "deg_L_bidouble": {
+      "L+-": 6,
+      "L-+": 5,
+      "L--": 1
+    }
+  }
+}

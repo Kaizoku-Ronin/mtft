@@ -1,0 +1,21 @@
+# Q* — the unique quadric on the f1+f2 projection of X0(143).
+# Coordinates are the AL-adapted basis (X0_143_AL_adapted_basis.txt):
+#   y1 = f1 = 143a1, sector (+,+);  y9..y12 = f2 orbit, sector (-,+).
+# Primitive integral; residual on q-expansions is exactly 0.
+# NOTE: this quadric is NOT specific to f2 — see the report. Any
+# 4-dimensional subspace of the (-,+) sector yields the same relation.
+#
+# a * y1^2 + q(y9,y10,y11,y12) = 0   with a = -2439613813 = 7^2 * 13 * 1957^2
+#
+monomial,coefficient
+y1^2,-2439613813
+y9^2,13055816124
+y9y10,-76425792048
+y9y11,18214989360
+y9y12,-34341827832
+y10^2,-2150613036
+y10y11,22493208
+y10y12,-123750144
+y11^2,14721700
+y11y12,-8187524112
+y12^2,2220844860

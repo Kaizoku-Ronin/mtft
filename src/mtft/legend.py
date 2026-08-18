@@ -518,7 +518,7 @@ PROMOTION_LEGEND: Tuple[Dict[str, object], ...] = (
          example="mtft.eisenstein.congruence_census()",
          upstream=("X0_143_engine",),
          ref="studies/promotion_2026aug/x0143_hecke_particles.py; "
-             "eisenstein_congruences.py (pending drop)"),
+             "studies/promotion_2026aug/eisenstein_congruences.py"),
 )
 for _d in PROMOTION_LEGEND:
     if _d["name"] not in REGISTRY:

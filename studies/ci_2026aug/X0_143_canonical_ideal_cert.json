@@ -1,0 +1,499 @@
+{
+  "object": "canonical ideal of X0(143) in P^12",
+  "date": "2026-08-16",
+  "engine": "PARI/GP 2.15.4 + exact Fraction linear algebra in Python",
+  "prereg": "PREREG_canonical_ideal.md, filed before computation",
+  "predictions_and_results": {
+    "P1_dim_S2": {
+      "predicted": 13,
+      "computed": 13,
+      "class": "EXACT"
+    },
+    "P2_dim_Sym2": {
+      "predicted": 91,
+      "computed": 91,
+      "class": "EXACT"
+    },
+    "P3_h0_2K": {
+      "predicted": 36,
+      "computed": 36,
+      "class": "EXACT"
+    },
+    "P4_dim_I2": {
+      "predicted": 55,
+      "computed": 55,
+      "class": "EXACT"
+    },
+    "P5_dim_Sym3": {
+      "predicted": 455,
+      "computed": 455,
+      "class": "EXACT"
+    },
+    "P6_h0_3K": {
+      "predicted": 60,
+      "computed": 60,
+      "class": "EXACT"
+    },
+    "P7_dim_I3": {
+      "predicted": 395,
+      "computed": 395,
+      "class": "EXACT"
+    },
+    "P8_rank_V_I2": {
+      "predicted": 395,
+      "computed": 395,
+      "class": "CERTIFIED(mod p, two primes)"
+    },
+    "P9_sturm_weight4": {
+      "predicted": 56,
+      "used": 140,
+      "class": "EXACT"
+    }
+  },
+  "routes": {
+    "A_exact_nullspace": {
+      "dim": 55,
+      "max_residual": 0,
+      "arithmetic": "exact rationals, matkerint",
+      "max_abs_entry": 676
+    },
+    "B_cubic_generation": {
+      "rank": 395,
+      "primes": [
+        2147483647,
+        1000003
+      ],
+      "conclusion": "quadrics generate I_3"
+    },
+    "C_point_evaluation": {
+      "worst_relative_residual": "2.34e-41",
+      "dps": 40,
+      "points": 5,
+      "decoy_relative_value": "0.132"
+    }
+  },
+  "corollaries": {
+    "hyperelliptic": false,
+    "reason_hyperelliptic": "hyperelliptic would force dim I_2 = C(12,2) = 66",
+    "trigonal_or_plane_quintic": false,
+    "reason_trigonal": "Enriques-Babbage: quadrics fail to generate; rank would be < 395",
+    "canonical_curve_degree": 24,
+    "ideal_generated_by_quadrics": true
+  },
+  "atkin_lehner": {
+    "traces_on_S2": {
+      "W11": 1,
+      "W13": -1,
+      "W143": -9
+    },
+    "sector_dims_S2": {
+      "(+,+)": 1,
+      "(+,-)": 6,
+      "(-,+)": 5,
+      "(-,-)": 1
+    },
+    "sector_dims_I2": {
+      "(+,+)": 26,
+      "(+,-)": 5,
+      "(-,+)": 4,
+      "(-,-)": 20
+    },
+    "sector_dims_h0_2K": {
+      "(+,+)": 12,
+      "(+,-)": 6,
+      "(-,+)": 7,
+      "(-,-)": 11
+    },
+    "quotient_genera": {
+      "W11": 7,
+      "W13": 6,
+      "W143": 2,
+      "full": 1
+    },
+    "E2": "projector-rank route == character-trace route on all four sectors"
+  },
+  "galois_block_x_AL": {
+    "f1_143a1_dim1": {
+      "(+,+)": 1
+    },
+    "old_ghost_11a1_dim2": {
+      "(-,+)": 1,
+      "(-,-)": 1
+    },
+    "f2_orbit_dim4": {
+      "(-,+)": 4
+    },
+    "f3_orbit_dim6": {
+      "(+,-)": 6
+    },
+    "charpoly_T2_on_S2": "z (z+2)^2 (z^4-3z^3-z^2+5z+1) (z^6-10z^4+2z^3+24z^2-7z-12)"
+  },
+  "ledger_crosschecks": {
+    "AL_DECOMPOSITION_package": "{(1,1):1,(-1,1):4,(1,-1):6,(-1,-1):0} reproduced exactly after removing the oldspace",
+    "FIELD_DISCRIMINANTS_f2": 1957,
+    "FIELD_DISCRIMINANTS_f3": 194616205,
+    "FIELD_POLY_F2": "package value is polredabs(charpoly(T2|f2)), not charpoly itself; same field",
+    "FIELD_POLY_F3": "package value equals h6(-z) exactly, as recorded",
+    "root_numbers": "f1 alone has eps = -1; reproduced from W143 = +1 on f1"
+  },
+  "not_claimed": [
+    "no physics reading of the quadrics",
+    "Schottky problem untouched",
+    "no claim about the ideal in a Hecke-eigenbasis over number fields"
+  ],
+  "adapted_basis": {
+    "construction": "simultaneous (Galois block, AL sector) eigenlattice, matkerint per piece, rebalanced by qflll on the first 25 q-coefficients",
+    "coordinate_labels": [
+      {
+        "y": 1,
+        "block": "f1",
+        "sector": "(+,+)"
+      },
+      {
+        "y": 2,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 3,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 4,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 5,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 6,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 7,
+        "block": "f3",
+        "sector": "(+,-)"
+      },
+      {
+        "y": 8,
+        "block": "old+",
+        "sector": "(-,+)"
+      },
+      {
+        "y": 9,
+        "block": "f2",
+        "sector": "(-,+)"
+      },
+      {
+        "y": 10,
+        "block": "f2",
+        "sector": "(-,+)"
+      },
+      {
+        "y": 11,
+        "block": "f2",
+        "sector": "(-,+)"
+      },
+      {
+        "y": 12,
+        "block": "f2",
+        "sector": "(-,+)"
+      },
+      {
+        "y": 13,
+        "block": "old-",
+        "sector": "(-,-)"
+      }
+    ],
+    "W11_diagonal": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "W13_diagonal": [
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    "det_B": -1078272,
+    "monomials_per_class": {
+      "(+,+)": 38,
+      "(+,-)": 11,
+      "(-,+)": 11,
+      "(-,-)": 31
+    },
+    "dim_I2_per_class": {
+      "(+,+)": 26,
+      "(+,-)": 5,
+      "(-,+)": 4,
+      "(-,-)": 20
+    },
+    "sparsity_tradeoff": {
+      "LLL": {
+        "max_support": [
+          38,
+          11,
+          11,
+          31
+        ],
+        "max_coefficient": [
+          55,
+          4684,
+          10008,
+          72
+        ]
+      },
+      "HNF_best_of_300_orderings": {
+        "max_support": [
+          15,
+          8,
+          9,
+          13
+        ],
+        "max_coefficient": [
+          "4.98e31",
+          "1.99e9",
+          "3.76e10",
+          "7.69e29"
+        ]
+      },
+      "echelon_lower_bound_on_support": [
+        13,
+        7,
+        8,
+        12
+      ],
+      "finding": "AL grading forces support 91 -> 38/11/11/31; beyond that, support and coefficient size are in genuine tension, unchanged by rebalancing the adapted basis"
+    },
+    "route_C_adapted": "4.51945e-41"
+  },
+  "projection_table": [
+    {
+      "subset": "f3",
+      "H": "<W11,W13,W143>",
+      "genus_quotient": 1,
+      "degree": 6,
+      "h0_2H": 12,
+      "dim_Sym2": 21,
+      "predicted": 9,
+      "computed": 9,
+      "excess": 0
+    },
+    {
+      "subset": "f2",
+      "H": "<W11,W13,W143>",
+      "genus_quotient": 1,
+      "degree": 6,
+      "h0_2H": 12,
+      "dim_Sym2": 10,
+      "predicted": 0,
+      "computed": 0,
+      "excess": 0
+    },
+    {
+      "subset": "old",
+      "H": "<W11>",
+      "genus_quotient": 7,
+      "degree": 12,
+      "h0_2H": 18,
+      "dim_Sym2": 3,
+      "predicted": 0,
+      "computed": 0,
+      "excess": 0
+    },
+    {
+      "subset": "f1+f3",
+      "H": "<W11>",
+      "genus_quotient": 7,
+      "degree": 12,
+      "h0_2H": 18,
+      "dim_Sym2": 28,
+      "predicted": 10,
+      "computed": 10,
+      "excess": 0
+    },
+    {
+      "subset": "f1+f2",
+      "H": "<W13>",
+      "genus_quotient": 6,
+      "degree": 12,
+      "h0_2H": 19,
+      "dim_Sym2": 15,
+      "predicted": 0,
+      "computed": 1,
+      "excess": 1
+    },
+    {
+      "subset": "f2+f3",
+      "H": "<W143>",
+      "genus_quotient": 2,
+      "degree": 12,
+      "h0_2H": 23,
+      "dim_Sym2": 55,
+      "predicted": 32,
+      "computed": 32,
+      "excess": 0
+    },
+    {
+      "subset": "newspace f1+f2+f3",
+      "H": "1",
+      "genus_quotient": 13,
+      "degree": 24,
+      "h0_2H": 36,
+      "dim_Sym2": 66,
+      "predicted": 30,
+      "computed": 33,
+      "excess": 3
+    },
+    {
+      "subset": "f2+f3+old",
+      "H": "1",
+      "genus_quotient": 13,
+      "degree": 24,
+      "h0_2H": 36,
+      "dim_Sym2": 78,
+      "predicted": 42,
+      "computed": 44,
+      "excess": 2
+    },
+    {
+      "subset": "all 13",
+      "H": "1",
+      "genus_quotient": 13,
+      "degree": 24,
+      "h0_2H": 36,
+      "dim_Sym2": 91,
+      "predicted": 55,
+      "computed": 55,
+      "excess": 0
+    }
+  ],
+  "CI_A_anomalous_quadric": {
+    "identity": "a*e1^2 + q(e9..e12) = 0 in weight 4, residual exactly 0",
+    "a": -2439613813,
+    "a_factored": "7^2 * 13 * 1957^2",
+    "disc_K_f2": 1957,
+    "a_invariant_under_unimodular_f2_change": true,
+    "AL_class": "(+,+)",
+    "graded_restatement": "11 products into a 12-dim target, rank 10",
+    "hecke_self_adjoint": false,
+    "decoy": "20 of 20 random 4-dim subspaces of the (-,+) sector reproduce the relation",
+    "true_content": "e1^2 lies in H^0(L_-+^2) (dim 10) inside H^0(M_++) (dim 12)",
+    "status": "interpretation as an f2-specific fact REFUTED by decoy"
+  },
+  "CI_B_newspace_deficiency": {
+    "per_class_deficiency": {
+      "(+,+)": 0,
+      "(+,-)": 0,
+      "(-,+)": 3,
+      "(-,-)": 0
+    },
+    "predicted_in_advance": true,
+    "cause": "newspace has no (-,-) coordinate; class (-,+) needs the degree-7 channel L_+- x L_--",
+    "ranks": {
+      "e1.f2": 4,
+      "plus old+ (y1y8)": 5,
+      "plus old- (y13.f3)": 7,
+      "plus both": 7
+    },
+    "answer": "the (-,-) ghost alone supplies all three; the (-,+) ghost supplies one"
+  },
+  "descent_structure": {
+    "quotient": "E = X0(143)* , genus 1, degree 4",
+    "deg_L_chi": {
+      "(+,+)": 0,
+      "(+,-)": 6,
+      "(-,+)": 5,
+      "(-,-)": 1
+    },
+    "sum_of_degrees": 12,
+    "tests_passed": "10 of 10 product-bundle rank predictions",
+    "explains": "the 12/6/7/11 grading of H^0(2K), CI-A and CI-B"
+  },
+  "CI_C_descent_named": {
+    "fix_counts": {
+      "W11": 0,
+      "W13": 4,
+      "W143": 20,
+      "routes": [
+        "Riemann-Hurwitz from genera",
+        "class-number formula"
+      ]
+    },
+    "W11_acts_freely": true,
+    "branch_degrees_on_E": {
+      "W11": 0,
+      "W13": 2,
+      "W143": 10
+    },
+    "deg_L_second_derivation": {
+      "(+,-)": 6,
+      "(-,+)": 5,
+      "(-,-)": 1,
+      "via": "2L_chi = D_j + D_k"
+    },
+    "E_identified": "143a1 (conductor 143, rank 1, trivial torsion); e1 = 72 * f_143a1 exact on 30 coefficients",
+    "origin": "the four cusps form a single free AL orbit; their common image is O in E(Q)",
+    "L_minusminus_section": "g(q) - 13*g(q^13) with g = 11a1 = eta(t)^2 eta(11t)^2",
+    "L_minusplus_partner": "e8 = g(q) + 13*g(q^13)",
+    "L_minusminus_as_covering": "defines C2 = X0(143)/W143 -> E, branched over pi(Fix(W13)) = image of the four disc -52 CM points; 2P ~ D_W13",
+    "jacobian_of_C2": "~ 143a1 x 11a1",
+    "CI_A_status": "FORCED \u2014 e1 is (+,+) so vanishes on Fix(W13), which is exactly the degree-2 separating divisor",
+    "C9_companion": "confirmed retroactively: class (-,-) 31 monomials rank 11, the 30 cross products alone rank 11",
+    "failed_prediction_C3": "h(-572) = 13 predicted, actual 10; failure traced to the corpus error below"
+  },
+  "CC_09_proposed": {
+    "claim_in_AG_Pr_7_8_1": "h(-143) = 7; j(tau_0) of degree 7 over Q",
+    "correct": {
+      "h(-143)": 10,
+      "h(-572)": 10,
+      "class_group_disc_-143": "cyclic Z/10"
+    },
+    "mechanism": "Minkowski bound for imaginary quadratic is (2/pi)sqrt|d| = 7.61, not sqrt|d|/pi = 3.81; only p = 2,3 were tested",
+    "downstream": "degree of j(tau_0) is 10, not 7; #Fix(W143) = 20 is unaffected",
+    "AG_D5_note": "kills the reading of the 7 in a = 7^2*13*1957^2 as h(-143)"
+  },
+  "CI_D_P_located": {
+    "result": "L_-- = O_E(P) with P = (4,-7), a generator of E(Q) = 143a1(Q) = Z",
+    "modular_degree_143a1": 4,
+    "branch_points": {
+      "Q1": "(2i, -3+2i)",
+      "Q2": "(-2i, -3-2i)",
+      "field": "Q(i)",
+      "discriminant": -52
+    },
+    "Q1_plus_Q2": "(2,0) = -2G with G=(4,6)",
+    "P": "(4,-7)",
+    "P_unique": "trivial torsion and irreducible 2-division polynomial 4x^3-4x^2-4x-7 => no rational 2-torsion",
+    "canonical_height_P": "0.2400338318285875365 = height of the ellheegner generator",
+    "route1": "modular parametrisation of the disc -52 CM points at 90 digits; two matrix families (c=1,2) give the same pair",
+    "route2": "C2 : w^2 = (y-x+3)/(y+3x-5) over 143a1; a_p(C2) = a_p(143a1) + a_p(11a1) for 32/32 primes in [3,149]",
+    "E2": "complex-analytic period evaluation vs mod-p point counting; no shared step",
+    "C2_jacobian": "~ 143a1 x 11a1"
+  }
+}

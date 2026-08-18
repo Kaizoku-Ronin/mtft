@@ -34,6 +34,15 @@ CC-07: du03 "5-dim commutant" was edge-metric-specific; joint (graph-local AND
 Hodge-natural) admissible space is 1-dim (scalars), metric-independent
 across the 43-dim invariant cone (8 sampled metrics, cond 201-425).
        (Renumbered from CC-02 on 2026-08-12; see CC-07_du03_metric_correction.md.)
+CC-08: AG Pr 3.7.5's Atkin-Lehner split of the f2/f3 Galois orbits is false:
+       W_p eigenvalue = -a_p in {+-1} is rational, hence constant on orbits.
+       Exact auditor replay on the hecke.py Manin model: q4 uniform (-,+),
+       q6 uniform (+,-); S_2 joint sectors (1,5,6,1); quotient genera
+       7/6/2, X* = 1.  studies/ci_2026aug/CC-08_AL_orbit_purity.md.
+CC-09: AG Pr 7.8.1's h(-143) = 7 is false: h(-143) = h(-572) = 10 (cyclic
+       order 10).  Mechanism: Minkowski bound is (2/pi)sqrt|d| = 7.61, not
+       sqrt|d|/pi = 3.81.  j(tau_0) has degree 10, not 7.
+       studies/ci_2026aug/CC-09_class_number_143.md.
 """
 ETA_CERT = {'eta_sq_minus_I': 6.7e-16, 'commutator_Th': 7.8e-16,
             'split': (13, 13)}
