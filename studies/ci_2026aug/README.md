@@ -83,6 +83,14 @@ SHA-1 manifest: see `sha1_manifest.txt` (generated at staging).
   Hom(J0(143), E) = Z (certified charpoly factorization), deg pi = 4,
   deg phi_0 = 1 excluded by genus, so pi = ±phi_0 and deg phi_0 = 4.
 
+## Convention note (sector ordering)
+
+Two orderings of the AL joint sectors are in circulation, both correct
+and internally consistent: the CI reports use (+,+), (+,−), (−,+), (−,−)
+→ sector dims (1, 6, 5, 1); this README and the v0.16.0 changelog use
+(+,+), (−,+), (+,−), (−,−) → (1, 5, 6, 1). Same data, different order.
+The convention will be pinned explicitly in `mtft.canonical`.
+
 ## Honest miss recorded (wave's own)
 
 C3 (h(-572) = 13) **failed** in the wave's CI-C session; tracing it

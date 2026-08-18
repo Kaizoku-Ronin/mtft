@@ -1,6 +1,6 @@
 include LICENSE README.md CITATION.cff PUBLISHING.md TRUSTED_PUBLISHING_SETUP.md
 include CHANGELOG_*.md
-recursive-include studies *.py *.md
-recursive-include tests *.py
+recursive-include studies *.py *.md *.json *.txt *.log
+recursive-include tests *.py *.npy
 recursive-include src/mtft/crypto/_data *.csv
 include src/mtft/crypto/_compute_orders.gp
