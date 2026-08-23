@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mtft"
-version = "0.17.0"
+version = "0.18.0"
 description = "Modular Time Field Theory — falsifiability engine, modular geometry, gauge-Higgs unification, dark sector, LHC confrontation, information geometry, arithmetic computation, and sonification."
 readme = "README.md"
 license = {text = "MIT"}
@@ -45,6 +45,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 mtft = ["mtft_legend.md"]
 "mtft.canonical" = ["_data/*.txt"]
+"mtft.boundary" = ["_data/*.txt"]
 
 [tool.pytest.ini_options]
 markers = [

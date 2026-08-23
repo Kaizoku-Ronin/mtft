@@ -1,0 +1,9 @@
+# mtft.boundary frozen data -- provenance
+# Generated 2026-08-18, PARI/GP 2.15.4: mfinit([143,4],1), mfcoefs,
+# mfatkininit, mfheckemat. Do not edit -- certified inputs to gates.
+#
+a17b36e13aaab7e54bcc97f96787504390f78883  s4_143_cusp_functionals.txt
+c85634b7ad8772c028428b006b84fa745ff9c6bb  s4_143_op_T2.txt
+d6ec204eef3fab478934dad14b9233184ad667d7  s4_143_op_U11.txt
+b277cd913251448ed9b9ca5be87a32ffec1acc76  s4_143_op_U13.txt
+9453cd5760df8c27cd16efb979988d0d4994b878  s4_143_qexpansions.txt
