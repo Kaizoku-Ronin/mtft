@@ -51,10 +51,20 @@ __all__ = [
     "ideal_by_sector",
     "ci_a_quadric",
     "data_path",
+    "IDEAL_BASIS_FRAME",
+    "ideal_basis_adapted",
 ]
 
 LEVEL = 143
 GENUS = 13
+
+#: FRAME NOTE (v0.19.0).  `ideal_basis()` loads X0_143_I2_quadric_basis.txt,
+#: whose coordinates are the *s2* basis (as that file's header states);
+#: COORDINATE_LABELS describes the *adapted* basis.  Mixing them was the
+#: v0.18.0 pitfall documented in certificate v6.  For adapted-frame
+#: quadrics use `ideal_basis_adapted()`; for mod-p geometry use
+#: `mtft.canonical.integral`.
+IDEAL_BASIS_FRAME = "s2"
 
 #: Pinned sector ordering for this module.  S_2 dims (1, 6, 5, 1).
 SECTOR_ORDER = ("(+,+)", "(+,-)", "(-,+)", "(-,-)")
@@ -257,3 +267,17 @@ def reorder_sectors(values, frm=SECTOR_ORDER, to=SECTOR_ORDER_CHANGELOG):
     """
     lookup = dict(zip(frm, values))
     return tuple(lookup[s] for s in to)
+
+
+def ideal_basis_adapted():
+    """The 55 quadrics in the ADAPTED frame, integrally saturated.
+
+    91 x 55 rows-by-columns like `ideal_basis()`, but expressed in the
+    coordinates that COORDINATE_LABELS describes, and saturated as an
+    integer lattice.  See the data-file header for the mixed-model
+    warning; use `mtft.canonical.integral.count_points_modp` for counts.
+    """
+    out = []
+    for _label, vals in _rows("X0_143_I2_adapted_saturated.txt"):
+        out.append(vals)
+    return out
