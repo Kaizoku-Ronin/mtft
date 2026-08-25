@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.19.0"
+__version__ = "0.20.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -197,3 +197,16 @@ def __getattr__(name):
         return getattr(importlib.import_module("mtft.legend"),
                        _LEGEND_EXPORTS[name])
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+# ── Tier 6: Origami / dimers / insertion calculus (v0.20.0) ──
+from mtft import origami  # noqa: F401
+from mtft.origami import (
+    DimerGraph, ensemble_conservation, fisher_metric, cubic_tensor,
+    brioschi_curvature, cumulant_curvature, path_independence,
+    Theta, solve_perfect_branches, orbit_structure,
+    galashin_24, prism_36, PRISM_C, PRISM_LAMBDA0,
+)
+from mtft import hardy_ramanujan  # noqa: F401
+from mtft.hardy_ramanujan import (
+    psi_direct, psi_modular, saddle_partition, hardy_ramanujan_asymptotic,
+)
