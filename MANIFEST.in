@@ -6,3 +6,4 @@ recursive-include src/mtft/crypto/_data *.csv
 recursive-include src/mtft/canonical/_data *.txt
 recursive-include src/mtft/boundary/_data *.txt
 include src/mtft/crypto/_compute_orders.gp
+recursive-include src/mtft/periods/_data *.json *.txt
