@@ -21,6 +21,7 @@ import sys
 
 import numpy as np
 import pytest
+scipy = pytest.importorskip("scipy")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STUDIES = os.path.join(HERE, "..", "studies")

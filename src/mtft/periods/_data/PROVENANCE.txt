@@ -16,3 +16,6 @@ X0_143_m7_harmonic_basis.json  sha1=46043045fa55ecda57302ba76d566fb740ca9d47
   regenerated exactly (Fractions) via the harmonic() algorithm of
   studies/promotion_2026aug/m7_graph_channel.py from the live H.model();
   no pickle cache used. Orthogonality to im(d2) asserted at build.
+
+X0_143_atkin_lehner_v022.json  sha1=6a2febaedd9ccb8b7e31110f54a950f9b3f1e1f1
+  frozen integer W11,W13 from x0143_atkin_hodge_probe ledger; see json provenance field.

@@ -85,6 +85,11 @@ def p_saturate(B, p):
 def saturate(B, primes):
     """Saturate at each prime in order.  Returns (B_sat, {p: steps})."""
     B = _as_obj(B)
+    for x in B.flat:
+        if getattr(x, "denominator", 1) != 1:
+            raise TypeError(
+                "saturate expects an integer matrix; clear denominators first "
+                "(rational_kernel returns Fraction vectors)")
     log = {}
     for p in primes:
         B, s = p_saturate(B, p)

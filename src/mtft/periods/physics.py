@@ -133,7 +133,9 @@ def cp_channel_report(potential: str = "width", dps: int = 60):
         "commutator_norm_H":metric_hs_norm(C,G),
         "J_square_residual":float(np.linalg.norm(J@J+np.eye(26))),
         "V_star_commutator_rel":float(np.linalg.norm(V@I-I@V)/np.linalg.norm(V)),
-        "commutator_star_odd_rel":float(np.linalg.norm(I@C+C@I)/np.linalg.norm(C)),
+        "commutator_star_odd_abs":float(np.linalg.norm(I@C+C@I)/max(np.linalg.norm(V),1e-300)),
+        "commutator_star_odd_rel":(float(np.linalg.norm(I@C+C@I)/np.linalg.norm(C))
+            if np.linalg.norm(C)>1e-9*np.linalg.norm(V) else float("nan")),
         "epistemic":"CERTIFIED(tol) mathematical diagnostic; physical CP interpretation is PHENO",
     }
 

@@ -15,7 +15,7 @@ from mtft import hardy_ramanujan as HR
 # ------------------------------------------------------------------ fast
 def test_version_triple():
     import mtft
-    assert mtft.__version__ == "0.21.0"
+    assert mtft.__version__ == "0.22.0"
 
 
 def test_boundary_measurement_24():

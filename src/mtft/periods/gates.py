@@ -129,10 +129,134 @@ def run_all(dps=50):
         ("hodge_bridge",lambda:gate_hodge_bridge(dps)),
         ("qexpansion_span",lambda:gate_qexpansion_span(min(dps,45))),
         ("quantitative_m8",lambda:gate_quantitative_m8(dps)),
+        ("involutions",gate_involutions),
+        ("oldtorus",gate_oldtorus),
+        ("hamiltonian",lambda:gate_hamiltonian(dps)),
+        ("bergman_channels",lambda:gate_bergman_channels(min(dps,40))),
     ]:
         out[name]=fn()
     return out
 
 
 __all__=["gate_integral_symplectic","gate_period_reconstruction","gate_basis_bridge",
-         "gate_hodge_bridge","gate_qexpansion_span","gate_quantitative_m8","run_all"]
+         "gate_hodge_bridge","gate_qexpansion_span","gate_quantitative_m8",
+         "gate_involutions","gate_oldtorus","gate_hamiltonian",
+         "gate_bergman_channels","run_all"]
+
+
+# ---------------------------------------------------------------- v0.22 gates
+def gate_involutions():
+    """EXACT: AL involutions, Hecke commutation, decode, census, star."""
+    from fractions import Fraction as Fr
+    from . import involutions as IV
+    Ws={q:[[Fr(x) for x in r] for r in IV.al_matrix(q)] for q in (11,13,143)}
+    I=IV._eye()
+    for q,W in Ws.items():
+        assert IV._mul(W,W)==I and _det_int(IV.al_matrix(q))==1
+    assert IV._mul(Ws[11],Ws[13])==IV._mul(Ws[13],Ws[11])==Ws[143]
+    EH=[[Fr(x) for x in r] for r in IV.transported_intersection()]
+    for W in Ws.values():
+        Wt=[[W[j][i] for j in range(26)] for i in range(26)]
+        assert IV._mul(IV._mul(Wt,EH),W)==EH
+    for p in (2,3,5,7):
+        T=[[Fr(x.numerator,x.denominator) for x in r] for r in H.cuspidal_hecke(p)]
+        for W in Ws.values():
+            assert IV._mul(W,T)==IV._mul(T,W)
+    d=IV.al_signs()
+    dims={q:(IV._rank(IV._add(Ws[q],I,1)),IV._rank(IV._add(Ws[q],I,-1)))
+          for q in (11,13,143)}
+    assert dims=={11:(14,12),13:(12,14),143:(4,22)}
+    census=IV.sector_census(); assert census==(1,6,5,1)
+    r2=IV.route2_fixed_intersections()
+    assert r2=={"ell":2,"ghost":2,"q4":0,"q6":0}
+    U11=[[Fr(x.numerator,x.denominator) for x in r] for r in H.cuspidal_hecke(11)]
+    assert IV._add(U11,Ws[11],1)==[[Fr(0)]*26 for _ in range(26)]
+    U13=[[Fr(x.numerator,x.denominator) for x in r] for r in H.cuspidal_hecke(13)]
+    comm=IV._add(IV._mul(U13,Ws[13]),IV._mul(Ws[13],U13),-1)
+    assert IV._rank(comm)==4
+    IV.oldspace_projector()
+    S=[[Fr(x) for x in r] for r in IV.star_symplectic()]
+    assert IV._mul(S,S)==I
+    Jf=mp.matrix(symplectic_form()); Jl=[[Fr(int(Jf[i,j])) for j in range(26)] for i in range(26)]
+    St=[[S[j][i] for j in range(26)] for i in range(26)]
+    assert IV._mul(IV._mul(St,Jl),S)==[[-x for x in r] for r in Jl]
+    IV.star_charge_orbit()
+    from .core import charge_energy
+    with mp.workdps(40):
+        Ea=charge_energy([0,0,1]+[0]*10,[0]*13,40)
+        Eb=charge_energy([0,0,0,0,1,-1]+[0]*7,[0]*13,40)
+        assert abs(Ea-Eb)<mp.mpf('1e-30') and abs(Ea-mp.mpf('0.881330420747955'))<mp.mpf('1e-12')
+    return {"eps":d["eps"],"census":census,"eigen_dims":dims,
+            "route2":r2,"min_shell_energy":str(Ea),
+            "star":"integral, star^2=I, anti-symplectic (EXACT)"}
+
+
+def gate_oldtorus():
+    """EXACT: oldspace abelian-surface chain and dynamics."""
+    from . import oldtorus as OT
+    pol=OT.polarization_type()
+    assert pol["smith"]==(2,2,18,18) and pol["type"]==(2,18)
+    assert OT.l9_index()==9 and OT.mod3_rank()==2
+    OT.principal_form()
+    pc=OT.product_charpoly()
+    assert pc["j_arith_preserves_principal_form"] is False
+    ent=OT.entropy()
+    assert abs(ent-2.8872709503576206)<1e-12
+    return {"polarization":pol,"l9_index":9,"mod3_rank":2,
+            "product_charpoly":pc["charpoly"],"entropy":ent}
+
+
+def gate_hamiltonian(dps=50):
+    """CERTIFIED: Hamiltonian layer anchors; degree EXACT null control."""
+    from fractions import Fraction as Fr
+    from . import hamiltonian as HM
+    m=H.model(); E,tri_of,sS,erep=m["E"],m["tri_of"],m["sS"],m["erep"]
+    deg=[0]*56
+    for k in range(E):
+        a,b=tri_of[erep[k]],tri_of[sS[erep[k]]]; deg[a]+=1; deg[b]+=1
+    assert set(deg)=={3}
+    rec=json.loads(__import__('mtft.periods.core',fromlist=['data_path'])
+                   .data_path('X0_143_m7_harmonic_basis.json').read_text())
+    W=[[Fr(a,b) for a,b in row] for row in rec["basis_26x84"]]
+    for i in range(26):
+        assert sum(W[i][e]*3*W[0][e] for e in range(E))==3*sum(W[i][e]*W[0][e] for e in range(E))
+    anchors={"width":(0.1234286299,0.061913789292,(283.554358,442.494053)),
+             "distance":(0.4248813827,0.129978482489,(2.510021,6.440043))}
+    out={"degree":"EXACT: V=3I, A_-=0"}
+    for pot,(rho0,frac0,(flo,fhi)) in anchors.items():
+        rho=HM.pairing_stability(pot,dps)
+        rep=HM.channel_report(pot,dps)
+        fr=HM.symplectic_frequencies(pot,dps)
+        assert abs(rho-rho0)<1e-8 and rho<1
+        assert abs(rep["hamiltonian_antilinear_fraction"]-frac0)<1e-9
+        assert rep["pairing_inertia"]==(13,13)
+        assert flo-1e-4<fr.min() and fr.max()<fhi+1e-4 and len(fr)==13
+        r=HM.oldspace_routing(pot,dps)
+        assert r["closure_residual"]<1e-9 and r["new_new"]>0.8
+        b=HM.hecke_block_routing(pot,dps)
+        assert b["closure_residual"]<1e-8
+        out[pot]={"rho":rho,"antilinear_fraction":rep["hamiltonian_antilinear_fraction"],
+                  "new_new":r["new_new"],"intra_block":b["intra_block"]}
+    assert out["width"]["intra_block"]>0.7>0.5>out["distance"]["intra_block"]
+    return out
+
+
+def gate_bergman_channels(dps=40):
+    """CERTIFIED: bilinear coefficients, 4->1 crossover, channel identity."""
+    from . import channels as CH
+    from .forms import bergman_density
+    with mp.workdps(dps):
+        for (n,m),ref in [((2,1),'-0.3002284706133925'),((3,2),'2.3014958069029296'),
+                          ((5,1),'3.9496541257933906'),((6,2),'-0.1760062907393')]:
+            v=CH.bergman_bilinear(n,m,140,dps)
+            assert abs(mp.re(v)-mp.mpf(ref))<mp.mpf('1e-12')
+            assert abs(mp.im(v))<mp.mpf(10)**(-(dps-8))
+        r=CH.mode_crossover(4,1,dps=dps)
+        assert abs(r-mp.mpf(CH.CROSSOVER_RATIO_41))<mp.mpf('1e-15')
+        y0=1/mp.sqrt(143); x=mp.mpf('0.3'); y=mp.mpf('1.4')*y0
+        ch=CH.channel_density(mp.mpc(x,y),139,140,dps)
+        bd=bergman_density(mp.mpc(x,y),140,dps)
+        assert abs(ch-bd)<mp.mpf('1e-30')
+        return {"crossover_ratio":str(r),
+                "B21":str(mp.re(CH.bergman_bilinear(2,1,140,dps))),
+                "channel_identity_residual":str(abs(ch-bd))}
