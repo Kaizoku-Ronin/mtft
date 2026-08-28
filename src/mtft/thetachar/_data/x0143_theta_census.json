@@ -1,0 +1,73 @@
+{
+ "element_fixed": {
+  "I": {
+   "affine_dim": 26,
+   "even": 33558528,
+   "odd": 33550336
+  },
+  "STAR": {
+   "affine_dim": 14,
+   "even": 8192,
+   "odd": 8192
+  },
+  "W13": {
+   "affine_dim": 14,
+   "even": 12288,
+   "odd": 4096
+  },
+  "W13*STAR": {
+   "affine_dim": 14,
+   "even": 12288,
+   "odd": 4096
+  },
+  "W11": {
+   "affine_dim": 14,
+   "even": 12288,
+   "odd": 4096
+  },
+  "W11*STAR": {
+   "affine_dim": 14,
+   "even": 12288,
+   "odd": 4096
+  },
+  "W11*W13": {
+   "affine_dim": 22,
+   "even": 2101248,
+   "odd": 2093056
+  },
+  "W11*W13*STAR": {
+   "affine_dim": 14,
+   "even": 8192,
+   "odd": 8192
+  }
+ },
+ "joint": {
+  "affine_dim": 7,
+  "even": 96,
+  "odd": 32,
+  "parity_quadratic_rank": 2,
+  "parity_radical_dim": 5
+ },
+ "burnside": {
+  "even_orbits": 4465664,
+  "odd_orbits": 4459520
+ },
+ "orbit_sizes": {
+  "1": {
+   "even_orbits": 96,
+   "odd_orbits": 32
+  },
+  "2": {
+   "even_orbits": 4144,
+   "odd_orbits": 2064
+  },
+  "4": {
+   "even_orbits": 535312,
+   "odd_orbits": 528304
+  },
+  "8": {
+   "even_orbits": 3926112,
+   "odd_orbits": 3929120
+  }
+ }
+}
