@@ -9,7 +9,7 @@ from mtft.periods import gates as G
 
 
 def test_version_and_data_ship():
-    assert mtft.__version__ == "0.22.0"
+    assert mtft.__version__ == "0.23.0"
     for name in ("X0_143_period_data_v6.json","X0_143_period_basis_v6.json",
                  "X0_143_m7_harmonic_basis.json","PROVENANCE.txt"):
         assert P.data_path(name).exists()

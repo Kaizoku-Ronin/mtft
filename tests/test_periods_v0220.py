@@ -8,7 +8,7 @@ from mtft.periods import gates as G
 
 
 def test_version_and_data_ship():
-    assert mtft.__version__ == "0.22.0"
+    assert mtft.__version__ == "0.23.0"
     assert P.data_path("X0_143_atkin_lehner_v022.json").exists()
 
 
