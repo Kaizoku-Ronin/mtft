@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.23.0"
+__version__ = "0.24.0"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (
@@ -209,4 +209,26 @@ from mtft.origami import (
 from mtft import hardy_ramanujan  # noqa: F401
 from mtft.hardy_ramanujan import (
     psi_direct, psi_modular, saddle_partition, hardy_ramanujan_asymptotic,
+)
+
+# ── Tier 7: Eisenstein / cuspidal arithmetic (v0.24.0) ───────
+from mtft import levels  # noqa: F401
+from mtft.levels import (
+    UnsupportedLevelError, level_data, is_supported, supported_levels,
+    manin_model, cusp_labels, genus,
+)
+from mtft import cuspidal  # noqa: F401
+from mtft.cuspidal import (
+    cuspidal_group, eisenstein_subspace, eisenstein_kernel_mod2,
+    two_torsion_image, cross_level_control, lambda2_congruence_scan,
+    charpoly,
+)
+from mtft import al_morphology  # noqa: F401
+from mtft.al_morphology import al_traces, morphology, cusp_torsor
+
+from mtft import kakeya  # noqa: F401
+from mtft.kakeya import (
+    arf_direction_theorem, direction_set, radical_of_parity,
+    dvir_bound, besicovitch_set, is_kakeya_set, kakeya_report,
+    p1_points, crt_direction_bridge,
 )

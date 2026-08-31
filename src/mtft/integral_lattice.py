@@ -23,11 +23,85 @@ __all__ = [
     "smith_invariants", "hnf", "quotient_invariants",
     "solve_in_lattice", "class_order", "rational_kernel",
     "operator_matrix",
+    # v0.24.0 additions
+    "snf_transform", "int_kernel", "clear_denominators",
 ]
 
 
+class InexactInputError(TypeError):
+    """Raised when an exact-integer routine is handed a non-integral value.
+
+    Corrections CC-11..CC-14 (2026-08-24 / 2026-08-29).  The v0.23.0 tree
+    coerced inputs with ``int(x)``, which *truncates* Fractions silently:
+    ``int(Fraction(1, 2)) == 0``.  A rational vector fed to ``saturate``,
+    ``solve_in_lattice``, ``rational_kernel`` or ``class_order`` was
+    therefore zeroed without warning, and the guard inside ``saturate``
+    was dead because ``_as_obj`` had already destroyed the evidence.
+    Every coercion path now raises instead of truncating.
+    """
+
+
+def _exact(x):
+    """Coerce to Fraction without ever truncating.  Floats must be integral."""
+    if isinstance(x, Fraction):
+        return x
+    if isinstance(x, (int, np.integer)):
+        return Fraction(int(x))
+    if isinstance(x, float):
+        if x != int(x):
+            raise InexactInputError(
+                f"non-integral float {x!r}; exact routines take int or Fraction")
+        return Fraction(int(x))
+    num, den = getattr(x, "numerator", None), getattr(x, "denominator", None)
+    if num is not None and den is not None:
+        return Fraction(int(num), int(den))
+    raise InexactInputError(f"cannot exactly coerce {type(x).__name__}: {x!r}")
+
+
+def _as_int(x):
+    """Exact integer coercion; raises on anything with a denominator > 1."""
+    f = _exact(x)
+    if f.denominator != 1:
+        raise InexactInputError(
+            f"expected an integer, got {f}; clear denominators first "
+            "(see integral_lattice.clear_denominators)")
+    return int(f)
+
+
 def _as_obj(B):
-    return np.array([[int(x) for x in row] for row in B], dtype=object)
+    """Integer object array.  Raises (never truncates) on rational input."""
+    return np.array([[_as_int(x) for x in row] for row in B], dtype=object)
+
+
+def _as_frac(B):
+    return [[_exact(x) for x in row] for row in B]
+
+
+def clear_denominators(vectors, by_column=False):
+    """Scale Fraction vectors to primitive integer vectors.
+
+    Companion to CC-11: ``rational_kernel`` returns Fraction vectors and
+    ``saturate`` requires integers, so this is the sanctioned bridge.
+    Returns ``(integer_array, multipliers)`` where multiplier[i] is the
+    factor applied to vector i.
+    """
+    rows = [[_exact(x) for x in v] for v in vectors]
+    mults, out = [], []
+    for v in rows:
+        den = 1
+        for x in v:
+            den = den * x.denominator // gcd(den, x.denominator)
+        w = [int(x * den) for x in v]
+        g = 0
+        for t in w:
+            g = gcd(g, abs(t))
+        if g > 1:
+            w = [t // g for t in w]
+            den = Fraction(den, g)
+        mults.append(den)
+        out.append(w)
+    arr = np.array(out, dtype=object)
+    return (arr.T if by_column else arr), mults
 
 
 def kernel_modp(B, p):
@@ -83,13 +157,20 @@ def p_saturate(B, p):
 
 
 def saturate(B, primes):
-    """Saturate at each prime in order.  Returns (B_sat, {p: steps})."""
+    """Saturate at each prime in order.  Returns (B_sat, {p: steps}).
+
+    CC-11: the denominator check runs on the *caller's* matrix, before any
+    coercion.  In v0.23.0 it ran after ``_as_obj`` had already truncated,
+    so it could never fire.
+    """
+    for row in B:
+        for x in row:
+            if getattr(x, "denominator", 1) != 1:
+                raise InexactInputError(
+                    "saturate expects an integer matrix; clear denominators "
+                    "first (rational_kernel returns Fraction vectors; use "
+                    "integral_lattice.clear_denominators)")
     B = _as_obj(B)
-    for x in B.flat:
-        if getattr(x, "denominator", 1) != 1:
-            raise TypeError(
-                "saturate expects an integer matrix; clear denominators first "
-                "(rational_kernel returns Fraction vectors)")
     log = {}
     for p in primes:
         B, s = p_saturate(B, p)
@@ -169,7 +250,7 @@ def solve_in_lattice(H, v):
     outside the Q-span; otherwise the Fraction vector x (integral iff
     v lies in the lattice)."""
     m, r = H.shape
-    v = [Fraction(int(t)) for t in v]
+    v = [_exact(t) for t in v]          # CC-12: was Fraction(int(t)) — truncating
     x = [Fraction(0)] * r
     row = 0
     for j in range(r):
@@ -191,7 +272,8 @@ def solve_in_lattice(H, v):
 def class_order(H, v, divisors):
     """Smallest d in sorted(divisors) with d*v in the lattice, else None."""
     for d in sorted(divisors):
-        x = solve_in_lattice(H, [d * int(t) for t in v])
+        # CC-14: was d * int(t) — truncating on Fraction input
+        x = solve_in_lattice(H, [d * _exact(t) for t in v])
         if x is not None and all(t.denominator == 1 for t in x):
             return d
     return None
@@ -200,7 +282,7 @@ def class_order(H, v, divisors):
 def rational_kernel(M):
     """Basis of the rational kernel of the columns of M (list of Fraction
     vectors), by exact Gauss elimination.  For the 141 x 15 CI-A systems."""
-    A = [[Fraction(int(x)) for x in row] for row in M]
+    A = _as_frac(M)                    # CC-13: was Fraction(int(x)) — truncating
     m, n = len(A), len(A[0])
     piv, r = [], 0
     for c in range(n):
@@ -225,6 +307,110 @@ def rational_kernel(M):
             v[pc] = -A[ri][fc]
         ker.append(v)
     return ker
+
+
+def snf_transform(A):
+    """Smith normal form *with* transforms: returns (U, S, V), U A V = S.
+
+    U and V are unimodular; S is diagonal with the divisibility chain
+    s_1 | s_2 | ... .  Unlike :func:`smith_invariants` this keeps the
+    change-of-basis data, which is what quotient-group *generators*
+    (as opposed to orders) require.  Promoted from the Wave-8 toolkit.
+    """
+    M = [[_as_int(x) for x in row] for row in A]
+    m, n = len(M), (len(M[0]) if M else 0)
+    U = [[int(i == j) for j in range(m)] for i in range(m)]
+    V = [[int(i == j) for j in range(n)] for i in range(n)]
+
+    def swap_rows(X, i, j):
+        X[i], X[j] = X[j], X[i]
+
+    def swap_cols(X, i, j):
+        for r in X:
+            r[i], r[j] = r[j], r[i]
+
+    def addrow(X, d, s, c):
+        X[d] = [a + c * b for a, b in zip(X[d], X[s])]
+
+    def addcol(X, d, s, c):
+        for r in X:
+            r[d] = r[d] + c * r[s]
+
+    t = 0
+    while t < min(m, n):
+        piv = None
+        for i in range(t, m):
+            for j in range(t, n):
+                if M[i][j] != 0 and (piv is None
+                                     or abs(M[i][j]) < abs(M[piv[0]][piv[1]])):
+                    piv = (i, j)
+        if piv is None:
+            break
+        i, j = piv
+        if i != t:
+            swap_rows(M, t, i), swap_rows(U, t, i)
+        if j != t:
+            swap_cols(M, t, j), swap_cols(V, t, j)
+        prog = True
+        while prog:
+            prog = False
+            for i in range(t + 1, m):
+                if M[i][t]:
+                    q = M[i][t] // M[t][t]
+                    addrow(M, i, t, -q), addrow(U, i, t, -q)
+                    if M[i][t]:
+                        swap_rows(M, t, i), swap_rows(U, t, i)
+                        prog = True
+            for j in range(t + 1, n):
+                if M[t][j]:
+                    q = M[t][j] // M[t][t]
+                    addcol(M, j, t, -q), addcol(V, j, t, -q)
+                    if M[t][j]:
+                        swap_cols(M, t, j), swap_cols(V, t, j)
+                        prog = True
+        fixed = False
+        while not fixed:
+            fixed = True
+            for i in range(t + 1, m):
+                if any(M[i][j] % M[t][t] for j in range(t + 1, n)):
+                    addrow(M, t, i, 1), addrow(U, t, i, 1)
+                    fixed = False
+                    prog = True
+                    while prog:
+                        prog = False
+                        for ii in range(t + 1, m):
+                            if M[ii][t]:
+                                q = M[ii][t] // M[t][t]
+                                addrow(M, ii, t, -q), addrow(U, ii, t, -q)
+                                if M[ii][t]:
+                                    swap_rows(M, t, ii), swap_rows(U, t, ii)
+                                    prog = True
+                        for jj in range(t + 1, n):
+                            if M[t][jj]:
+                                q = M[t][jj] // M[t][t]
+                                addcol(M, jj, t, -q), addcol(V, jj, t, -q)
+                                if M[t][jj]:
+                                    swap_cols(M, t, jj), swap_cols(V, t, jj)
+                                    prog = True
+                    break
+        if M[t][t] < 0:
+            M[t] = [-x for x in M[t]]
+            U[t] = [-x for x in U[t]]
+        t += 1
+    return (np.array(U, dtype=object), np.array(M, dtype=object),
+            np.array(V, dtype=object))
+
+
+def int_kernel(A):
+    """Basis (as columns) of the integer kernel {x in Z^n : A x = 0}.
+
+    Saturated by construction: obtained from the trailing columns of the
+    SNF right transform, so the returned lattice is primitive.
+    """
+    _, S, V = snf_transform(A)
+    m, n = S.shape
+    r = sum(1 for i in range(min(m, n)) if S[i][i] != 0)
+    return V[:, r:].copy()
 
 
 def quotient_invariants(ambient, sub):

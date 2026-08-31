@@ -14,8 +14,33 @@ from mtft import hardy_ramanujan as HR
 
 # ------------------------------------------------------------------ fast
 def test_version_triple():
+    """Genuinely three-way: __init__, pyproject.toml and CITATION.cff.
+
+    Through v0.23.0 this gate only read ``mtft.__version__``, so a stale
+    pyproject or CITATION could ship undetected.  It now compares all three
+    sources when they are present (they are in a source tree / sdist, and
+    absent from a wheel install, which is skipped).
+    """
+    import pathlib
+    import re
+
     import mtft
-    assert mtft.__version__ == "0.23.0"
+
+    expected = "0.24.0"
+    assert mtft.__version__ == expected
+
+    root = pathlib.Path(__file__).resolve().parents[1]
+    pyproject = root / "pyproject.toml"
+    citation = root / "CITATION.cff"
+    if not (pyproject.exists() and citation.exists()):
+        import pytest as _pytest
+        _pytest.skip("not a source tree; version triple not checkable")
+
+    pv = re.search(r'^version\s*=\s*"([^"]+)"', pyproject.read_text(),
+                   re.M).group(1)
+    cv = re.search(r'^version:\s*(\S+)', citation.read_text(), re.M).group(1)
+    assert pv == expected, f"pyproject.toml says {pv}"
+    assert cv == expected, f"CITATION.cff says {cv}"
 
 
 def test_boundary_measurement_24():
