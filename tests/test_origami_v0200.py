@@ -26,7 +26,7 @@ def test_version_triple():
 
     import mtft
 
-    expected = "0.24.0"
+    expected = "0.25.0"
     assert mtft.__version__ == expected
 
     root = pathlib.Path(__file__).resolve().parents[1]
