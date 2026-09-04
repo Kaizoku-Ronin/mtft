@@ -1,4 +1,4 @@
-"""mtft.surface — the Modular Surface Laboratory as an mtft subpackage (v0.25.0).
+"""mtft.surface — the Modular Surface Laboratory as an mtft subpackage (v0.26.0).
 
 Layers, in the order the computation runs, each with its claim class:
 
@@ -11,6 +11,16 @@ Layers, in the order the computation runs, each with its claim class:
                               distance of the Whitney family; elliptic-block j E2  [needs gp]
   gauge            EXACT      gauge theory ON the surface: flux, YM, cusp holonomy,
                    /OVERLAY   AST line-operator census (theorem-gated), Riemann-Roch
+  ising            EXACT      Ising model on the dual Manin graph: Fisher decoration +
+                              Cimasoni-Reshetikhin spin-structure Pfaffian sum; brute-force
+                              two-route gate through genus 5; 4^13 job checkpointed at 143
+  frozen           EXACT      N=143 transport + periods frozen with SHA-1 provenance,
+                              all gates re-verified at call time without PARI/GP
+  dynamics         CERTIFIED  Hamiltonian flows on H_1(R), Lie closure with mandatory
+                   /DIAGNOSTIC genericity controls (351 generic / 4 abelian / 127 block)
+  bimodule         EXACT      doubled-space (real spectral triple) census: order-zero,
+                   /CERTIFIED first-order, one-forms with absolute scales, sector support;
+                              AF-09 result at 143 (AL twist fixes order-zero, calculus zero)
 
 Provenance: Modular Surface Laboratory v0.3.0 (Sol) audited and extended to
 v0.4.0 (Claude, 2026-09-02); CC-MSL-01 (nu3 at p=2) and CC-MSL-02 (nu2 guard)
@@ -28,7 +38,8 @@ from .cycles import CycleBasis, tree_cotree
 from .manin import Invariants, ManinComplex, cell_complex, invariants, complex_gates, assert_gates
 
 __all__ = ["invariants", "cell_complex", "tree_cotree", "report", "Invariants", "ManinComplex",
-           "CycleBasis", "manin", "cycles", "hodge", "gauge", "transport", "hodge_structure"]
+           "CycleBasis", "manin", "cycles", "hodge", "gauge", "transport", "hodge_structure",
+           "ising", "frozen", "dynamics", "bimodule"]
 
 
 def report(N: int, max_refinement: int = 2, gp_layers: bool = True, primes=(2, 3)) -> Dict:

@@ -9,3 +9,4 @@ include src/mtft/crypto/_compute_orders.gp
 recursive-include src/mtft/periods/_data *.json *.txt
 recursive-include src/mtft/homology/_data *.json
 recursive-include src/mtft/thetachar/_data *.json
+recursive-include src/mtft/surface/_data *.json

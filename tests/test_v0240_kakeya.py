@@ -128,4 +128,4 @@ def test_c2_identity_FAILS_at_three_prime_factors():
 
 
 def test_version_triple_is_current():
-    assert mtft.__version__ == "0.25.0"
+    assert mtft.__version__ == "0.26.0"

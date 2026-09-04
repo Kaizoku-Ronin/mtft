@@ -21,6 +21,7 @@ Reference: Papers 1, 7; Complete Mathematical Dictionary (March 2026).
 
 from __future__ import annotations
 
+from .constants import ALPHA_INV_CODATA2022, ALPHA_INV_CODATA2022_ERR
 import math
 from dataclasses import dataclass, field
 from typing import List, Optional
@@ -212,11 +213,11 @@ def prediction_table() -> List[Prediction]:
     v_ew = PDG.v_ew
 
     # 1. α⁻¹ ≈ 2πδ²  (leading term — correction terms complete it)
-    preds.append(_make_pred(1, "α⁻¹ ≈ 2πδ² (leading)", 2*PI*d**2, 137.035999084, 0.1, "gauge", "Paper 7", "★★"))
+    preds.append(_make_pred(1, "α⁻¹ ≈ 2πδ² (leading)", 2*PI*d**2, ALPHA_INV_CODATA2022, 0.1, "gauge", "Paper 7", "★★"))
 
     # 2. α⁻¹ (full 3-term)
     alpha_inv_full = 2*PI*d**2 + 1/(4*d) - xi*t/d**6
-    preds.append(_make_pred(2, "α⁻¹ = 2πδ² + 1/(4δ) − ξT∞/δ⁶", alpha_inv_full, 137.035999084, 2.1e-8, "gauge", "Paper 7"))
+    preds.append(_make_pred(2, "α⁻¹ = 2πδ² + 1/(4δ) − ξT∞/δ⁶", alpha_inv_full, ALPHA_INV_CODATA2022, 2.1e-8, "gauge", "Paper 7"))
 
     # 3. α_s(M_Z) = T∞/4
     preds.append(_make_pred(3, "α_s = T∞/4", t/4, 0.1180, 0.0010, "gauge", "Paper 7"))

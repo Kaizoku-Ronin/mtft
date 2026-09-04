@@ -48,7 +48,22 @@ ZETA_PRIME_2    = -0.9375482543988
 T_INF           = -ZETA_PRIME_2 / 2.0      # vacuum torque ≈0.4688 (defined)
 TORQUE_FULL    = -ZETA_PRIME_2                  # full torque = −ζ'(2) ≈ 0.9375 (Cesàro limit)
 # ln|M| of the Monster group (audit B2: AG Df 10.2.1 misprints 124.01348).
-LN_MONSTER      = 124.126423366            # ln(8.08017...×10⁵³)
+# CC-20 (2026-09-03): LN_MONSTER was hard-coded to 9 decimals (124.126423366);
+# it is now evaluated from the exact factorisation of |M| at full double
+# precision (124.12642336632464).  The truncated value stays exposed.
+MONSTER_ORDER_FACTORIZATION = {2: 46, 3: 20, 5: 9, 7: 6, 11: 2, 13: 3, 17: 1, 19: 1,
+                               23: 1, 29: 1, 31: 1, 41: 1, 47: 1, 59: 1, 71: 1}
+MONSTER_ORDER   = 808017424794512875886459904961710757005754368000000000
+LN_MONSTER      = sum(e * math.log(p) for p, e in MONSTER_ORDER_FACTORIZATION.items())
+LN_MONSTER_TRUNCATED_RETIRED = 124.126423366   # v0.25.0 and earlier
+# CC-19 (2026-09-03): the alpha^-1 comparison target was CODATA 2018
+# (137.035999084(21)); the current recommended value is CODATA 2022,
+# 137.035999177(21) (NIST wallet card 2022).  The 2018 target is retired but
+# kept so that historical verdicts can be re-derived.
+ALPHA_INV_CODATA2022        = 137.035999177
+ALPHA_INV_CODATA2022_ERR    = 2.1e-8
+ALPHA_INV_CODATA2018_RETIRED = 137.035999084
+ALPHA_INV_CODATA2018_ERR_RETIRED = 2.1e-8
 MEISSEL_MERTENS = 0.2614972128476427837554268386086958590516
 LAMBERT_OMEGA   = 0.5671432904097838729999686622103555497538
 ZETA_2 = PI**2 / 6.0
