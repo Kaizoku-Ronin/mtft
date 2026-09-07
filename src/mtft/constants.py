@@ -151,8 +151,21 @@ class _MTFTHiggs:
 
     @property
     def lambda_quartic(self) -> float:
-        """λ = (γ/Ω)²/2 (0.074%)"""
+        """λ = (γ/Ω)²/2 (0.074%).
+
+        Convention (CC-22, documentation only, no numeric change): this λ satisfies
+        m_H² = λ v²/2, i.e. V = (λ/4)(φ†φ − v²/2)²; the 0.074% is measured against
+        2 m_H²/v² = 0.5176 in that convention.  The PDG convention m_H² = 2λv²
+        (V = λ(φ†φ)² + ...) is ``lambda_quartic_pdg`` = λ/4 ≈ 0.1295.  Astra's
+        SM-AUDIT-01 proposed replacing the formula by (γ/Ω)²/8; that is a change of
+        convention, not a correction, and the stated formula is kept.
+        """
         return (EULER_GAMMA / LAMBERT_OMEGA)**2 / 2.0
+
+    @property
+    def lambda_quartic_pdg(self) -> float:
+        """Same prediction in the m_H² = 2λv² convention: (γ/Ω)²/8."""
+        return self.lambda_quartic / 4.0
 
 HIGGS = _MTFTHiggs()
 

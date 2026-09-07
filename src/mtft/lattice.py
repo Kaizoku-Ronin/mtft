@@ -50,6 +50,23 @@ def random_su_n(N: int, rng: np.random.Generator | None = None) -> np.ndarray:
     ph = d / np.abs(d)
     Q = Q @ np.diag(ph.conj())
     det = np.linalg.det(Q)
+    # CC-21 (2026-09-07): dividing one row by det**(1/N) rescales det by det**(-1/N), not to 1;
+    # every draw failed SU(N) membership.  One row divided by the full determinant (|det| = 1 on
+    # U(N)) gives det = 1 and keeps unitarity.  The defective initializer is kept for reproduction.
+    Q[0, :] /= det
+    return Q
+
+
+def random_su_n_defective_v0261(N: int, rng: np.random.Generator | None = None) -> np.ndarray:
+    """The pre-CC-21 initializer (det != 1); retained only to reproduce earlier hot-start runs."""
+    if rng is None:
+        rng = np.random.default_rng()
+    Z = (rng.standard_normal((N, N)) + 1j * rng.standard_normal((N, N))) / math.sqrt(2)
+    Q, R = np.linalg.qr(Z)
+    d = np.diag(R)
+    ph = d / np.abs(d)
+    Q = Q @ np.diag(ph.conj())
+    det = np.linalg.det(Q)
     Q[0, :] /= det ** (1.0 / N)
     return Q
 
