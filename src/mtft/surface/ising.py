@@ -560,3 +560,119 @@ def full_sum_job(N: int, t: float, checkpoint: str, chunk: int = 1 << 16) -> flo
         with open(checkpoint, "a") as fh:
             fh.write(json.dumps({"total": total, "done": done}) + "\n")
     return total / 2 ** S.genus
+
+
+# ------------------------------------------------ exact density of states (route C)
+def _bits(k: int, w: int) -> Tuple[int, ...]:
+    return tuple((k >> i) & 1 for i in range(w))
+
+
+def density_of_states(N: int, negative_edges: Sequence[int] = (), max_width: int = 14) -> List[int]:
+    """D_k = #{spin configurations with k disagreeing edges} on the dual Manin graph, by variable
+    elimination with polynomials packed into Python integers (base 2^(n+1)); independent of the
+    Pfaffian route (no orientation, no spin structures) and of brute force.  ``negative_edges``
+    reverse couplings (Z/2 twist).  Refuses elimination orders wider than ``max_width``."""
+    cx = cell_complex(N)
+    n, E = len(cx.faces), len(cx.edges)
+    B = 1 << (n + 1)
+    neg = set(negative_edges)
+    factors: List[Tuple[Tuple[int, ...], Dict[Tuple[int, ...], int]]] = []
+    for e, d in enumerate(cx.edges):
+        u, v = cx.face_of[d], cx.face_of[cx.S(d)]
+        dis = B if e not in neg else 1
+        agr = 1 if e not in neg else B
+        if u == v:
+            factors.append(((u,), {(0,): agr, (1,): agr}))
+        else:
+            factors.append(((min(u, v), max(u, v)), {(a, b): (agr if a == b else dis) for a in (0, 1) for b in (0, 1)}))
+    alive = set(range(n))
+    width = 0
+    while alive:
+        # min-fill / min-degree choice
+        nbrs = {v: set() for v in alive}
+        for scope, _ in factors:
+            for v in scope:
+                nbrs[v] |= set(scope) - {v}
+        v = min(alive, key=lambda x: (len(nbrs[x]), x))
+        inv = [f for f in factors if v in f[0]]
+        rest = [f for f in factors if v not in f[0]]
+        scope = sorted(set().union(*[set(s) for s, _ in inv]) - {v})
+        width = max(width, len(scope))
+        if len(scope) > max_width:
+            raise RuntimeError(f"elimination width {len(scope)} exceeds max_width={max_width}")
+        pos = {x: i for i, x in enumerate(scope)}
+        table: Dict[Tuple[int, ...], int] = {}
+        for k in range(1 << len(scope)):
+            asg = _bits(k, len(scope))
+            tot = 0
+            for sv in (0, 1):
+                prod = 1
+                for s, tab in inv:
+                    key = tuple(sv if x == v else asg[pos[x]] for x in s)
+                    prod *= tab[key]
+                    if prod == 0:
+                        break
+                tot += prod
+            table[asg] = tot
+        factors = rest + [(tuple(scope), table)]
+        alive.remove(v)
+    total = 1
+    for s, tab in factors:
+        total *= tab[()]
+    D = []
+    while total:
+        D.append(total % B)
+        total //= B
+    D += [0] * (E + 1 - len(D))
+    density_of_states.last_width = width
+    return D
+
+
+def even_subgraph_polynomial(D: Sequence[int], n: int, E: int) -> List[int]:
+    """A(t) = 2^-n sum_k D_k (1+t)^(E-k) (1-t)^k, exact integers (cut/cycle transform)."""
+    from math import comb
+    acc = [0] * (E + 1)
+    for k, Dk in enumerate(D):
+        if not Dk:
+            continue
+        # (1+t)^(E-k) (1-t)^k coefficients
+        p = [comb(E - k, j) for j in range(E - k + 1)]
+        q = [comb(k, j) * (-1) ** j for j in range(k + 1)]
+        conv = [0] * (E + 1)
+        for i, a in enumerate(p):
+            for j, b in enumerate(q):
+                conv[i + j] += a * b
+        for j in range(E + 1):
+            acc[j] += Dk * conv[j]
+    out = []
+    for c in acc:
+        if c % (1 << n):
+            raise ArithmeticError("cut/cycle transform not integral")
+        out.append(c // (1 << n))
+    return out
+
+
+def sum_rule_gate(N: int, t: float = T_CRITICAL_HONEYCOMB, pfaffian_max_genus: int = 7) -> dict:
+    """Route C (elimination) vs route A (spin-structure Pfaffian sum) vs route B (brute force, F<=24).
+    The signed sum over all 4^g Kasteleyn Pfaffians must equal the even-subgraph polynomial A(t)."""
+    cx = cell_complex(N)
+    n, E = len(cx.faces), len(cx.edges)
+    D = density_of_states(N)
+    A = even_subgraph_polynomial(D, n, E)
+    At = sum(a * t ** j for j, a in enumerate(A))
+    out = {"N": N, "genus": cx.inv.genus, "A_at_t": At, "A": A, "D": D, "elimination_width": density_of_states.last_width,
+           "gates": [{"name": "sum_D_is_2^n", "status": "PASS" if sum(D) == 1 << n else "FAIL"},
+                     {"name": "A(1)_is_2^cycle_rank", "status": "PASS" if sum(A) == 1 << (E - n + 1) else "FAIL"},
+                     {"name": "A(0)_is_1", "status": "PASS" if A[0] == 1 else "FAIL"}]}
+    if cx.inv.genus <= pfaffian_max_genus:
+        S = IsingSurface(N)
+        z = S.dimer_sum(t)
+        out["pfaffian_sum"] = z
+        out["gates"].append({"name": "pfaffian_sum_equals_A(t)", "status": "PASS" if abs(z - At) < 1e-10 * At else "FAIL",
+                             "evidence": f"rel {abs(z - At) / At:.2e}"})
+        if n <= 24:
+            beta = math.atanh(t)
+            zb = S.brute_force(beta) / (2 ** n * math.cosh(beta) ** E)
+            out["gates"].append({"name": "brute_force_equals_A(t)", "status": "PASS" if abs(zb - At) < 1e-10 * At else "FAIL"})
+    out["status"] = "PASS" if all(g["status"] == "PASS" for g in out["gates"]) else "FAIL"
+    return out

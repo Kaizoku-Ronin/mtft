@@ -26,7 +26,8 @@ def test_version_triple():
 
     import mtft
 
-    expected = "0.26.0"
+    from _release_pin import RELEASE_VERSION
+    expected = RELEASE_VERSION
     assert mtft.__version__ == expected
 
     root = pathlib.Path(__file__).resolve().parents[1]
