@@ -9,4 +9,6 @@ recursive-include src/mtft/periods/_data *.json *.txt
 recursive-include src/mtft/homology/_data *.json
 recursive-include src/mtft/thetachar/_data *.json
 recursive-include src/mtft/surface/_data *.json
-prune studies
+recursive-include studies *.py *.md *.json *.txt *.log *.gp *.csv *.npz
+# v0.27.0: the 54 MB mtft_v0270 research archive is GitHub-only (publish-gate fix)
+prune studies/mtft_v0270

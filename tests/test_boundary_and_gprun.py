@@ -203,19 +203,24 @@ def test_manifest_covers_every_studies_extension():
     if not manifest.exists() or not studies.exists():
         pytest.skip("running from an installed package, not a source tree")
     lines = manifest.read_text().splitlines()
-    # v0.27.0 policy change (Kimi audit integration fix, disclosed): studies/ is
-    # pruned from the sdist and ships GitHub-only; the exclusion must be deliberate
-    # and uncontradicted.  Without a prune rule, the old coverage check applies.
-    if any(l.strip() == "prune studies" for l in lines):
-        assert not any(l.startswith("recursive-include studies") for l in lines), \
-            "contradictory MANIFEST.in: both prune and recursive-include for studies/"
-        return
+    # v0.27.0 policy change (Kimi audit integration fixes, disclosed): the sdist
+    # ships the legacy studies engines that tests import (publish-gate coverage),
+    # while subtrees named in prune rules (studies/mtft_v0270, 54 MB) are
+    # GitHub-only by design.  Pruned content is exempt from the coverage check.
+    pruned = [l.split()[1] for l in lines if l.startswith("prune ")]
     rule = [l for l in lines if l.startswith("recursive-include studies")]
     assert rule, "no studies rule in MANIFEST.in"
     covered = {tok.lstrip("*") for tok in rule[0].split()[2:]}
-    # __pycache__ is a build artifact, not source; everything else must ship
+
+    def under_prune(p):
+        rel = p.relative_to(root)
+        return any(rel == pathlib.Path(d) or pathlib.Path(d) in rel.parents
+                   for d in pruned)
+
+    # __pycache__ is a build artifact, not source; everything non-pruned must ship
     present = {p.suffix for p in studies.rglob("*")
-               if p.is_file() and p.suffix and "__pycache__" not in p.parts}
+               if p.is_file() and p.suffix and "__pycache__" not in p.parts
+               and not under_prune(p)}
     missing = present - covered
     assert not missing, (
         f"file types under studies/ not shipped by MANIFEST.in: {sorted(missing)}")
