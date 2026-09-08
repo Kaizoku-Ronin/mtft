@@ -1,0 +1,47 @@
+{
+  "date_utc": "2026-09-08",
+  "release": "0.26.2",
+  "python": "3.12.13",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "source_integrity": {
+    "files_compared": 395,
+    "mismatches": [],
+    "source_unchanged": true
+  },
+  "previous_study": "MTFT_Active_Module_v0.1.0",
+  "frozen_previous_inputs_sha256": {
+    "coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b"
+  },
+  "protocol_sha256": "ab392f040c4156b1950f9cb5ece58475aa6921fe56bcebfd190269b87c530587",
+  "reproduction": "python run_study.py --source /path/to/mtft-0.26.2",
+  "evidence_classes": {
+    "arithmetic_projectors_and_identities": "EXACT rational arithmetic on packaged matrices",
+    "general_W143_rank_bound": "EXACT linear algebra",
+    "period_dependent_geometry_and_saturation": "DIAGNOSTIC float64"
+  },
+  "validation": {
+    "checks": {
+      "release_is_0_26_2": true,
+      "exact_projector_partition": true,
+      "exact_independent_CRT_and_basis_agreement": true,
+      "all_ten_operators_preserve_every_block_exactly": true,
+      "exact_W143_positive_projector_rank_four": true,
+      "independent_route_checks_passed": true,
+      "independent_geometry_agreement": true,
+      "all_coupling_ranks_decided": true,
+      "W143_coupling_rank_saturates_bound": true,
+      "STAR_coupling_rank_zero": true,
+      "W143_q4_q6_commutator_component_zero_to_tolerance": true,
+      "W11_diagonal_commutator_components_zero_to_tolerance": true,
+      "commutator_attribution_reconstructs": true,
+      "signed_Gram_reconstructs_in_absolute_error": true,
+      "active_fixed_overlap_sums": true
+    },
+    "all_checks_passed": true,
+    "independent_check_count": 14,
+    "scope": "Exact rational packaged-matrix controls plus numerical study consistency checks. Not a full package test suite or an interval certificate.",
+    "known_prior_closure_ambiguities": "Not rerun or repaired; no current endpoint depends on numerical Lie closure."
+  },
+  "notes": "No source modification, full package test suite, Lie-closure rerun, theta evaluation, Clifford construction, or physical identification."
+}

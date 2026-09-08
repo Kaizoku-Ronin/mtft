@@ -1,0 +1,56 @@
+{
+  "experiment": "Structure-preserving approximation of T2 complementary memory",
+  "companion_version": "0.1.0",
+  "date_utc": "2026-09-08",
+  "parent_study": "MTFT_T2_Effective_Operator_v0.1.0",
+  "source_package_version": "MTFT 0.26.2",
+  "source_archive": "inputs/mtft-0.26.2.tar.gz",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "replay_scope": "Recomputes reduced-model selection and held-out assessment from frozen parent geometry; does not rebuild Hodge geometry or install another MTFT version.",
+  "input_sha256": {
+    "EXTRACTION_PROVENANCE.json": "4e1ebf2783cba3508e9171bc52bfa5dc34bd139df81f946458a67c855f2b9e45",
+    "T2_independent_geometry.npz": "2990bd3f4ec917f8ae1a264da3688bc235388a716124d9e371ce1026a232237f",
+    "T2_blocks.npz": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b",
+    "T2_PARENT_PROVENANCE.json": "7439f613031ac29b1b1c3302b5ad90efe4bed2cfd34c2c5070385cae8a38d567",
+    "T2_PARENT_VALIDATION.json": "484fb26fbdd0312edc77780aba4cb25ed707b37ad98d9159734d9e215e3f1db7",
+    "mtft-0.26.2.tar.gz": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38"
+  },
+  "protocol_sha256": "f784e5be3f6620f3bd9d21f6e5ba7501990f1f32035ab66340ec6fce226b5f8e",
+  "selection_sha256": "7b963a1c41f91bd31647243c00ce6c844c654aa342fe7d7996b72cd4c050780f",
+  "independent_selection_sha256": "d05b5994223a64ba1634eec4fa1849f4674db461663c42205507f88d9142cc61",
+  "scripts_sha256": {
+    "truncation_identities.py": "38716fd2e692a0bebf4857ffc5ce453ee19d6ef401abd2b84df69ebe15a4c5c4",
+    "run_study.py": "cdca2db7b6369618629c9b1c1e04ca819f108ad6671b7dbcc09155b6805ca47c",
+    "render_memory_approximation.py": "4308565384e27398f4568923be673e9dd9a55c9b02d396ff7f2a8948dc3320b1",
+    "memory_approximation.py": "65cec43eb1cf778e4109cfc7c42e0a2e095a6d4f4c36bc892327014cfa5ebd42",
+    "independent_approximation.py": "6443585479311e5c66ae62756c7560d1d7822ad4d8e87e2cf43a462b55315c39"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "replay_command": "python run_study.py",
+  "validation_file": "VALIDATION.json",
+  "scientific_outcome": "No tested reduction below five coordinates passes any of the three joint budgets.",
+  "primary_budget": {
+    "spectral_relative_Frobenius": 0.01,
+    "active_propagator_relative_Frobenius": 0.01
+  },
+  "secondary_joint_budgets": [
+    0.05,
+    0.1
+  ],
+  "training_points": 183,
+  "heldout_spectral_points": 1800,
+  "heldout_time_points": 261,
+  "epistemic": {
+    "exact": "Conditional finite-dimensional identities and 44 exact symbolic synthetic controls.",
+    "diagnostic": "T2 matrix geometry, candidate ranks, held-out errors and measured norm bounds.",
+    "scope": "Prescribed model families and finite grids; no global approximation impossibility, physical Hamiltonian, clock, or measured speedup."
+  },
+  "independence": "Primary spectral route and independent Schur route use different frozen projectors/sector reconstructions but share upstream arithmetic/Hodge data."
+}

@@ -1,0 +1,26 @@
+{
+  "CLI_cases_passed": 4,
+  "cases": [
+    [
+      "--prime",
+      "1093"
+    ],
+    [
+      "--prime",
+      "3511"
+    ],
+    [
+      "--interval",
+      "9"
+    ],
+    [
+      "--interval",
+      "1"
+    ]
+  ],
+  "figures_visually_inspected": [
+    "Irregular_Legendre_Census.png",
+    "Irregular_Legendre_Null_Comparisons.png"
+  ],
+  "layout_status": "No text clipping or overlapping labels after correction."
+}

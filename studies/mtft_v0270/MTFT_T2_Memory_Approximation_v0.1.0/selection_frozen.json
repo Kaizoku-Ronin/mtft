@@ -1,0 +1,568 @@
+{
+  "status": "FROZEN_BEFORE_HELDOUT_EVALUATION",
+  "selection_uses": "183 training spectral points only; no held-out spectral or time errors",
+  "raw_checks": {
+    "selfadjoint": 0.0,
+    "frame_orthonormal": 3.0599090959424634e-15,
+    "block_reconstruction": 1.206804580395788e-15
+  },
+  "budgets": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "training_count": 183,
+  "B_singular_values": [
+    1.9183577035234354,
+    1.35007479218811,
+    0.9888337348198482,
+    0.9012020687305395,
+    0.08997359448320616
+  ],
+  "D_eigenvalues": [
+    -1.411342784681829,
+    -1.2950257910532013,
+    0.08865986849130213,
+    1.330991721558554,
+    1.6599375752129453
+  ],
+  "snapshot_gram_eigenvalues_descending": [
+    13.711014392532121,
+    6.8462356950950385,
+    5.8735730355286675,
+    3.9231662008465094,
+    2.9366051285378196
+  ],
+  "pole_subset_training_scores": [
+    {
+      "rank": 0,
+      "pole_indices": [],
+      "training_maximum_relative_error": 6.347951572743856
+    },
+    {
+      "rank": 1,
+      "pole_indices": [
+        0
+      ],
+      "training_maximum_relative_error": 6.43220645083709
+    },
+    {
+      "rank": 1,
+      "pole_indices": [
+        1
+      ],
+      "training_maximum_relative_error": 7.25400558393612
+    },
+    {
+      "rank": 1,
+      "pole_indices": [
+        2
+      ],
+      "training_maximum_relative_error": 6.11391831337082
+    },
+    {
+      "rank": 1,
+      "pole_indices": [
+        3
+      ],
+      "training_maximum_relative_error": 6.025944699871388
+    },
+    {
+      "rank": 1,
+      "pole_indices": [
+        4
+      ],
+      "training_maximum_relative_error": 5.784460886741374
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        0,
+        1
+      ],
+      "training_maximum_relative_error": 5.400770833336328
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        0,
+        2
+      ],
+      "training_maximum_relative_error": 5.707220021940127
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        0,
+        3
+      ],
+      "training_maximum_relative_error": 5.926146082371531
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        0,
+        4
+      ],
+      "training_maximum_relative_error": 5.134996717633034
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        1,
+        2
+      ],
+      "training_maximum_relative_error": 4.569750557951216
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        1,
+        3
+      ],
+      "training_maximum_relative_error": 7.042633953716578
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        1,
+        4
+      ],
+      "training_maximum_relative_error": 7.090591716325586
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        2,
+        3
+      ],
+      "training_maximum_relative_error": 5.128007230970479
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 5.809372767466765
+    },
+    {
+      "rank": 2,
+      "pole_indices": [
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 5.475751965636235
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        1,
+        2
+      ],
+      "training_maximum_relative_error": 4.5224509721084845
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        1,
+        3
+      ],
+      "training_maximum_relative_error": 5.872927819420323
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        1,
+        4
+      ],
+      "training_maximum_relative_error": 6.52852218975139
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        2,
+        3
+      ],
+      "training_maximum_relative_error": 4.929530081116194
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 4.923484927033362
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        0,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 4.789670021140192
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        1,
+        2,
+        3
+      ],
+      "training_maximum_relative_error": 3.8770784869443338
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        1,
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 3.202456145092801
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        1,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 6.095441640438388
+    },
+    {
+      "rank": 3,
+      "pole_indices": [
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 2.538112958466866
+    },
+    {
+      "rank": 4,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_maximum_relative_error": 3.8720460875951415
+    },
+    {
+      "rank": 4,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 2.6689316461759938
+    },
+    {
+      "rank": 4,
+      "pole_indices": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 6.362328911584143
+    },
+    {
+      "rank": 4,
+      "pole_indices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 2.831712499427717
+    },
+    {
+      "rank": 4,
+      "pole_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 2.7638407065157984
+    },
+    {
+      "rank": 5,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 3.322907439148965e-14
+    }
+  ],
+  "models": {
+    "svd_r0": {
+      "family": "svd",
+      "rank": 0,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "svd_r1": {
+      "family": "svd",
+      "rank": 1,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.182534790911462,
+      "cutoff_relative_gap": 0.2962340705758701,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 6.661338147750939e-16,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "svd_r2": {
+      "family": "svd",
+      "rank": 2,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.030161411889622,
+      "cutoff_relative_gap": 0.18830745522838244,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.2456735471175978e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "svd_r3": {
+      "family": "svd",
+      "rank": 3,
+      "pole_indices": null,
+      "training_maximum_relative_error": 3.1167937978543847,
+      "cutoff_relative_gap": 0.04568056620950102,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.3228982195996732e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "svd_r4": {
+      "family": "svd",
+      "rank": 4,
+      "pole_indices": null,
+      "training_maximum_relative_error": 1.0440874020381843,
+      "cutoff_relative_gap": 0.4228765431792805,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.337974572789872e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "svd_r5": {
+      "family": "svd",
+      "rank": 5,
+      "pole_indices": null,
+      "training_maximum_relative_error": 4.431178621929729e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.5632162443732548e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r0": {
+      "family": "poles",
+      "rank": 0,
+      "pole_indices": [],
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r1": {
+      "family": "poles",
+      "rank": 1,
+      "pole_indices": [
+        4
+      ],
+      "training_maximum_relative_error": 5.784460886741374,
+      "cutoff_relative_gap": 0.19816760495477811,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.220446049250313e-16,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r2": {
+      "family": "poles",
+      "rank": 2,
+      "pole_indices": [
+        1,
+        2
+      ],
+      "training_maximum_relative_error": 4.569750557951216,
+      "cutoff_relative_gap": 0.0700731132095169,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.0010437191481177e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r3": {
+      "family": "poles",
+      "rank": 3,
+      "pole_indices": [
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 2.538112958466866,
+      "cutoff_relative_gap": 0.8335769249436967,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.1866088818309442e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r4": {
+      "family": "poles",
+      "rank": 4,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 2.6689316461759938,
+      "cutoff_relative_gap": 0.19816760495477811,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.223899354549384e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "poles_r5": {
+      "family": "poles",
+      "rank": 5,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 3.322907439148965e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.389996852145466e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r0": {
+      "family": "snapshots",
+      "rank": 0,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r1": {
+      "family": "snapshots",
+      "rank": 1,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.067503196718225,
+      "cutoff_relative_gap": 0.5006762082589653,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.220446049250313e-16,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r2": {
+      "family": "snapshots",
+      "rank": 2,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.885700156547742,
+      "cutoff_relative_gap": 0.07094024057739624,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.502262006590522e-16,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r3": {
+      "family": "snapshots",
+      "rank": 3,
+      "pole_indices": null,
+      "training_maximum_relative_error": 4.438422546740853,
+      "cutoff_relative_gap": 0.1422510967346422,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 8.932383453640362e-16,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r4": {
+      "family": "snapshots",
+      "rank": 4,
+      "pole_indices": null,
+      "training_maximum_relative_error": 2.8617037108077046,
+      "cutoff_relative_gap": 0.07195390830061653,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.0425096362825728e-15,
+      "reduced_Hermitian_residual": 0.0
+    },
+    "snapshots_r5": {
+      "family": "snapshots",
+      "rank": 5,
+      "pole_indices": null,
+      "training_maximum_relative_error": 3.101023764073477e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.3134902022418635e-15,
+      "reduced_Hermitian_residual": 0.0
+    }
+  },
+  "training_choices": {
+    "0.01": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    },
+    "0.05": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    },
+    "0.1": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    }
+  },
+  "protocol_sha256": "f784e5be3f6620f3bd9d21f6e5ba7501990f1f32035ab66340ec6fce226b5f8e",
+  "input_sha256": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b",
+  "selected_bases_sha256": "0fb9ff114d7a6e099217f0ffeac3ca03b6239af6f309b310036332022bc21a26",
+  "script_sha256": "65cec43eb1cf778e4109cfc7c42e0a2e095a6d4f4c36bc892327014cfa5ebd42"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "domain": "odd primes; prime 2 is an explicit unclassified exception",
+  "families": [
+    {
+      "id": "bernoulli_irregular",
+      "label": "Irregular primes",
+      "infinitude_status": "PROVED_INFINITE",
+      "criterion": "There exists even k, 2 <= k <= p-3, with B_k congruent to 0 modulo p.",
+      "finite_membership_status": "EXACT",
+      "stored_witness": "Every qualifying Bernoulli index k.",
+      "source": "https://math.dartmouth.edu/~carlp/irreg.pdf"
+    },
+    {
+      "id": "bernoulli_regular",
+      "label": "Regular primes",
+      "infinitude_status": "OPEN",
+      "criterion": "Every even k, 2 <= k <= p-3, has B_k nonzero modulo p.",
+      "finite_membership_status": "EXACT",
+      "stored_witness": "Empty zero-index list; the complete nonzero residue sequence is retained and its series identity checked.",
+      "source": "https://math.dartmouth.edu/~carlp/irreg.pdf"
+    }
+  ],
+  "relationships": {
+    "partition_of_odd_primes": true,
+    "intersections_with_other_marks": "Overlapping finite classifications; no infinitude status is inherited.",
+    "prime_web_background": "The eight coprime residue classes modulo 30 from the earlier census."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "study": "MTFT electron\u2013photon investigation v0.1.0",
+  "date": "2026-09-07",
+  "base_package_version": "0.26.0",
+  "variant": "Local SM-AUDIT-01/02 corrections; not a published release",
+  "original_archive_sha256": "758f29a7a0c2ca08896a15964b3a607c7143ac1fd335bcc8f4d84a4880e53cdf",
+  "corrected_archive_sha256": "c0ce747b3f433de9e67ce8f05d0b887f16b439fd8940a792642ec2da812992cf",
+  "patch_sha256": "9b0586fcf3ffb5ec7ad7e4b1cba08cf4633fb8afb868f9935b40d413bbeeae14",
+  "source_hashes": {
+    "src/mtft/constants.py": "7f31cd9fc3b4ef39200a33c5e7a177aa008565c2fd68a6975f1013631a612686",
+    "src/mtft/lattice.py": "1d4721e320f20ef1bbc9ceafdb872c7d4fd4f7e391672398a448f1a1b33af499",
+    "tests/test_sm_audit_corrections.py": "670cd52d5547e7426090546b2623e55c3f49d0ffd02fcc108b72675a9ea635cb"
+  },
+  "frozen_input_sha256": "53cd676946568e0ce989537f65f5d0ccc282ef7bde88f83323803b41c7c46bb8",
+  "previous_sector_certificate_sha256": "1d711a98107612627bcc9e7c36d77c61739536b31afb976f0c91b06a4f416761",
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "matplotlib": "3.10.8",
+    "mpmath": "1.3.0",
+    "pytest": "9.1.1",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "OPENBLAS_NUM_THREADS": 1
+  },
+  "validation": {
+    "targeted_pytest_cases": 10,
+    "exact_projector_checks": "passed",
+    "charge_scan_points": 256,
+    "local_fermion_configurations": 12,
+    "SU_group_draws": 48,
+    "Maxwell_nonzero_mode_samples": 12,
+    "Coulomb_levels": 6,
+    "Coulomb_primary_spacings": 4,
+    "Pauli_random_momenta": 32,
+    "clean_archive_full_companion_rerun": "passed",
+    "patch_applied_to_original_and_changed_files_match_archive": true,
+    "full_MTFT_test_suite_run": false
+  },
+  "physical_reference": {
+    "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "accessed": "2026-09-07",
+    "edition": "CODATA 2022",
+    "alpha_inv": 137.035999177,
+    "alpha_inv_uncertainty": 2.1e-08,
+    "electron_rest_energy_eV": 510998.95069
+  },
+  "scope": "Finite internal algebra and diagnostics; supplied QED and spacetime; no SM derivation or precision spectroscopy result."
+}

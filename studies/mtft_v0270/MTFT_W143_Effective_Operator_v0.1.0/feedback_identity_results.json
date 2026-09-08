@@ -1,0 +1,53 @@
+{
+  "status": "EXACT_SYMBOLIC_CONTROL",
+  "scope": "Synthetic canonical 2x2 Hermitian involution; no MTFT measurements",
+  "parameter_domain": "r > 0, d=(1-r^2)/(1+r^2), b=2r/(1+r^2), a=-d",
+  "domain_caveats": [
+    "Full resolvent identities require z != -1,+1.",
+    "Literal Schur-complement evaluation additionally requires z != d.",
+    "At z=d the projected full resolvent is regular and zero in this channel; the Schur expression only has a meromorphic continuation there.",
+    "Unitary evolution uses W as a dimensionless toy generator; no physical time, mass, or QFT interpretation is inferred."
+  ],
+  "checks": {
+    "involution": true,
+    "hermitian": true,
+    "block_a_defect": true,
+    "block_d_defect": true,
+    "block_intertwining": true,
+    "full_resolvent_closed_form": true,
+    "schur_projected_resolvent": true,
+    "effective_operator_closed_form": true,
+    "self_energy_pushthrough": true,
+    "schur_polynomial_identity": true,
+    "full_characteristic_polynomial": true,
+    "compression_pole_projected_zero": true,
+    "compression_pole_effective_residue": true,
+    "projected_resolvent_positive_pole_residue": true,
+    "projected_resolvent_negative_pole_residue": true,
+    "unitary_evolution": true,
+    "unitary_evolution_equation": true,
+    "active_amplitude": true,
+    "complement_amplitude": true,
+    "active_norm_loss": true,
+    "complement_norm_gain": true,
+    "norm_conservation": true,
+    "compressed_semigroup_defect": true,
+    "memory_integral_antiderivative": true,
+    "memory_equation": true,
+    "complete_revival_at_pi": true,
+    "no_transfer_at_zero": true
+  },
+  "checks_passed": 27,
+  "checks_total": 27,
+  "formulas": {
+    "H_eff": "(1-d*z)/(z-d)",
+    "G_PP": "(z-d)/(z^2-1)",
+    "self_energy": "(1-d^2)/(z-d)",
+    "U_PP": "cos(t)+i*d*sin(t)",
+    "norm_loss": "(1-d^2)*sin(t)^2",
+    "semigroup_defect": "(1-d^2)*sin(t)*sin(s)",
+    "memory_kernel": "(1-d^2)*exp(-i*d*t)"
+  },
+  "sympy_version": "1.14.0",
+  "script_sha256": "5a4accc041a4dbd3a6bc9a5c323cddfa2dde2e357ce3520de981467c2d610e3e"
+}

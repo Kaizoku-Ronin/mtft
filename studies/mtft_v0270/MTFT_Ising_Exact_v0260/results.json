@@ -1,0 +1,3518 @@
+{
+  "mtft_version": "0.26.0",
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "count_class": "Cert / EXACT integer finite-graph enumeration",
+  "thermal_curve_class": "DIAGNOSTIC float evaluation of exact finite sums",
+  "levels": [
+    {
+      "N": 6,
+      "genus": 0,
+      "spins": 4,
+      "edges_count": 6,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        6,
+        4,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        1,
+        3,
+        2,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 2,
+        "peak_spin_table_entries": 8,
+        "packing_base_power_of_two": 5,
+        "seconds": 0.0002485669999714446
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 2,
+        "peak_spin_table_entries": 8,
+        "packing_base_power_of_two": 5,
+        "seconds": 7.407900000089285e-05
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "exact_brute_force_histogram": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "5/2",
+      "infinite_temperature_cut_variance_exact": "7/4",
+      "min_cut": 0,
+      "max_cut": 4,
+      "max_cut_degeneracy": 4,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 3.129633819657468,
+          "energy_per_spin": 0.3366277030095559,
+          "heat_capacity_per_spin": 0.1522792886682473,
+          "mean_disagreeing_edges": 3.673255406019112,
+          "energy_variance": 1.2430962340265088,
+          "floating_contraction_relative_difference": 4.440892098500627e-16
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 2.772588722239781,
+          "energy_per_spin": -0.2500000000000001,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 2.5,
+          "energy_variance": 7.000000000000002,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 3.124839625608792,
+          "energy_per_spin": -0.6399393683086316,
+          "heat_capacity_per_spin": 0.08077711021493501,
+          "mean_disagreeing_edges": 1.7201212633827365,
+          "energy_variance": 8.0777110214935,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 4.986027176598018,
+          "energy_per_spin": -1.2776901459219812,
+          "heat_capacity_per_spin": 0.2960552711485768,
+          "mean_disagreeing_edges": 0.4446197081560376,
+          "energy_variance": 2.7311716702201596,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 7.41311721723258,
+          "energy_per_spin": -1.434008031277949,
+          "heat_capacity_per_spin": 0.19513649454198784,
+          "mean_disagreeing_edges": 0.13198393744410153,
+          "energy_variance": 0.6450793207999597,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 11,
+      "genus": 1,
+      "spins": 4,
+      "edges_count": 6,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        6,
+        4,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        1,
+        3,
+        2,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 2,
+        "peak_spin_table_entries": 8,
+        "packing_base_power_of_two": 5,
+        "seconds": 8.965300003183074e-05
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 2,
+        "peak_spin_table_entries": 8,
+        "packing_base_power_of_two": 5,
+        "seconds": 6.150100000468228e-05
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "exact_brute_force_histogram": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "5/2",
+      "infinite_temperature_cut_variance_exact": "7/4",
+      "min_cut": 0,
+      "max_cut": 4,
+      "max_cut_degeneracy": 4,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 3.129633819657468,
+          "energy_per_spin": 0.3366277030095559,
+          "heat_capacity_per_spin": 0.1522792886682473,
+          "mean_disagreeing_edges": 3.673255406019112,
+          "energy_variance": 1.2430962340265088,
+          "floating_contraction_relative_difference": 8.881784197001256e-16
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 2.772588722239781,
+          "energy_per_spin": -0.2500000000000001,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 2.5,
+          "energy_variance": 7.000000000000002,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 3.124839625608792,
+          "energy_per_spin": -0.6399393683086316,
+          "heat_capacity_per_spin": 0.08077711021493501,
+          "mean_disagreeing_edges": 1.7201212633827365,
+          "energy_variance": 8.0777110214935,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 4.986027176598018,
+          "energy_per_spin": -1.2776901459219812,
+          "heat_capacity_per_spin": 0.2960552711485768,
+          "mean_disagreeing_edges": 0.4446197081560376,
+          "energy_variance": 2.7311716702201596,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 7.41311721723258,
+          "energy_per_spin": -1.434008031277949,
+          "heat_capacity_per_spin": 0.19513649454198784,
+          "mean_disagreeing_edges": 0.13198393744410153,
+          "energy_variance": 0.6450793207999597,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 15,
+      "genus": 1,
+      "spins": 8,
+      "edges_count": 12,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        20,
+        44,
+        56,
+        60,
+        44,
+        18,
+        6,
+        2,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        0,
+        1,
+        4,
+        7,
+        8,
+        7,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 3,
+        "peak_spin_table_entries": 16,
+        "packing_base_power_of_two": 9,
+        "seconds": 0.00021618899995701213
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          1,
+          7,
+          5,
+          6,
+          4,
+          3,
+          2
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 3,
+        "peak_spin_table_entries": 16,
+        "packing_base_power_of_two": 9,
+        "seconds": 0.0002534139999852414
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "exact_brute_force_histogram": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "11/2",
+      "infinite_temperature_cut_variance_exact": "11/4",
+      "min_cut": 0,
+      "max_cut": 10,
+      "max_cut_degeneracy": 2,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 7.308005409379288,
+          "energy_per_spin": 0.6892684046709872,
+          "heat_capacity_per_spin": 0.3779045022781738,
+          "mean_disagreeing_edges": 8.757073618683949,
+          "energy_variance": 6.169869424949777,
+          "floating_contraction_relative_difference": 1.776356839400252e-15
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 5.545177444479562,
+          "energy_per_spin": -0.12500000000000003,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 5.5,
+          "energy_variance": 11.0,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 5.97734486660888,
+          "energy_per_spin": -0.4257714795130633,
+          "heat_capacity_per_spin": 0.06770494550808664,
+          "mean_disagreeing_edges": 4.2969140819477465,
+          "energy_variance": 13.540989101617328,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 9.1241989866855,
+          "energy_per_spin": -1.2467703299147241,
+          "heat_capacity_per_spin": 0.49160848768844606,
+          "mean_disagreeing_edges": 1.0129186803411026,
+          "energy_variance": 9.070381818945124,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 14.024638664978855,
+          "energy_per_spin": -1.457883982676958,
+          "heat_capacity_per_spin": 0.1681332972340658,
+          "mean_disagreeing_edges": 0.16846406929216773,
+          "energy_variance": 1.1116251056797737,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 35,
+      "genus": 3,
+      "spins": 16,
+      "edges_count": 24,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          14,
+          12
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        34,
+        90,
+        228,
+        752,
+        1900,
+        3780,
+        6392,
+        9012,
+        10592,
+        10612,
+        8988,
+        6336,
+        3764,
+        1882,
+        774,
+        282,
+        94,
+        18,
+        0,
+        0,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        0,
+        0,
+        2,
+        5,
+        9,
+        20,
+        25,
+        35,
+        58,
+        72,
+        88,
+        87,
+        61,
+        36,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          9,
+          3,
+          5,
+          7,
+          11,
+          13,
+          14,
+          15
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 5,
+        "peak_spin_table_entries": 64,
+        "packing_base_power_of_two": 17,
+        "seconds": 0.0005090099999733866
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          1,
+          15,
+          13,
+          11,
+          9,
+          7,
+          14,
+          5,
+          8,
+          12,
+          10,
+          6,
+          4,
+          3,
+          2
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 5,
+        "peak_spin_table_entries": 64,
+        "packing_base_power_of_two": 17,
+        "seconds": 0.0004540789999509798
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "exact_brute_force_histogram": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "23/2",
+      "infinite_temperature_cut_variance_exact": "23/4",
+      "min_cut": 0,
+      "max_cut": 20,
+      "max_cut_degeneracy": 18,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 15.612068803358433,
+          "energy_per_spin": 0.7711853718087391,
+          "heat_capacity_per_spin": 0.3060803109247435,
+          "mean_disagreeing_edges": 18.169482974469915,
+          "energy_variance": 9.994459132236525,
+          "floating_contraction_relative_difference": 1.776356839400252e-15
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 11.090354888959125,
+          "energy_per_spin": -0.06250000000000003,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 11.5,
+          "energy_variance": 22.999999999999996,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 11.75180270387075,
+          "energy_per_spin": -0.3523612389427395,
+          "heat_capacity_per_spin": 0.05953381735909179,
+          "mean_disagreeing_edges": 9.181110088458086,
+          "energy_variance": 23.81352694363671,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 17.361549480585026,
+          "energy_per_spin": -1.219136945506092,
+          "heat_capacity_per_spin": 0.6923268369393474,
+          "mean_disagreeing_edges": 2.246904435951263,
+          "energy_variance": 25.54743830428796,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 27.237971756843372,
+          "energy_per_spin": -1.4732490729974785,
+          "heat_capacity_per_spin": 0.13331337112235805,
+          "mean_disagreeing_edges": 0.21400741602017082,
+          "energy_variance": 1.7628214363287014,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 55,
+      "genus": 5,
+      "spins": 24,
+      "edges_count": 36,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          21,
+          20
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          20,
+          16
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          4,
+          21
+        ],
+        [
+          22,
+          18
+        ],
+        [
+          23,
+          22
+        ],
+        [
+          7,
+          23
+        ],
+        [
+          12,
+          23
+        ],
+        [
+          22,
+          8
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        4,
+        56,
+        136,
+        358,
+        1500,
+        4820,
+        14270,
+        40982,
+        102764,
+        224156,
+        435084,
+        750514,
+        1150548,
+        1578304,
+        1943038,
+        2149598,
+        2145212,
+        1933808,
+        1570864,
+        1147962,
+        752484,
+        438932,
+        226690,
+        103754,
+        41556,
+        14204,
+        4220,
+        1134,
+        236,
+        24,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        3,
+        10,
+        18,
+        29,
+        58,
+        89,
+        134,
+        205,
+        310,
+        483,
+        632,
+        800,
+        981,
+        1042,
+        1073,
+        975,
+        695,
+        423,
+        190,
+        38,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          6,
+          7,
+          2,
+          4,
+          8,
+          23,
+          10,
+          13,
+          16,
+          18,
+          19,
+          20,
+          9,
+          21,
+          12,
+          3,
+          5,
+          11,
+          14,
+          15,
+          17,
+          22
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          5,
+          5,
+          6,
+          5,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 6,
+        "peak_spin_table_entries": 128,
+        "packing_base_power_of_two": 25,
+        "seconds": 0.0009031509999886111
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          7,
+          6,
+          1,
+          23,
+          8,
+          21,
+          19,
+          18,
+          16,
+          13,
+          3,
+          11,
+          15,
+          9,
+          22,
+          5,
+          20,
+          17,
+          14,
+          12,
+          10,
+          4,
+          2
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          5,
+          4,
+          5,
+          5,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 6,
+        "peak_spin_table_entries": 128,
+        "packing_base_power_of_two": 25,
+        "seconds": 0.0008627619999970193
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "exact_brute_force_histogram": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "35/2",
+      "infinite_temperature_cut_variance_exact": "37/4",
+      "min_cut": 0,
+      "max_cut": 31,
+      "max_cut_degeneracy": 24,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 24.059947512621505,
+          "energy_per_spin": 0.8221724155083748,
+          "heat_capacity_per_spin": 0.33698070943068914,
+          "mean_disagreeing_edges": 27.866068986100498,
+          "energy_variance": 16.50517760476845,
+          "floating_contraction_relative_difference": 3.552713678800507e-15
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 16.63553233343869,
+          "energy_per_spin": -0.04166666666666671,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 17.5,
+          "energy_variance": 36.99999999999999,
+          "floating_contraction_relative_difference": 3.5527136788004946e-15
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 17.570581643757034,
+          "energy_per_spin": -0.34634348071877613,
+          "heat_capacity_per_spin": 0.06000303123124779,
+          "mean_disagreeing_edges": 13.843878231374688,
+          "energy_variance": 36.00181873874867,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 25.681431267479756,
+          "energy_per_spin": -1.193915922956634,
+          "heat_capacity_per_spin": 0.7942885485265219,
+          "mean_disagreeing_edges": 3.673008924520391,
+          "energy_variance": 43.9648658839903,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 40.46609337017719,
+          "energy_per_spin": -1.4758950929701717,
+          "heat_capacity_per_spin": 0.13262822347970324,
+          "mean_disagreeing_edges": 0.289258884357941,
+          "energy_variance": 2.6306424491841964,
+          "floating_contraction_relative_difference": 7.105427357600977e-15
+        }
+      ]
+    },
+    {
+      "N": 77,
+      "genus": 7,
+      "spins": 32,
+      "edges_count": 48,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          18,
+          15
+        ],
+        [
+          19,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          21,
+          20
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          23,
+          22
+        ],
+        [
+          12,
+          23
+        ],
+        [
+          24,
+          11
+        ],
+        [
+          25,
+          24
+        ],
+        [
+          26,
+          25
+        ],
+        [
+          27,
+          26
+        ],
+        [
+          2,
+          27
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          25,
+          14
+        ],
+        [
+          28,
+          24
+        ],
+        [
+          5,
+          28
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          29,
+          27
+        ],
+        [
+          30,
+          29
+        ],
+        [
+          31,
+          30
+        ],
+        [
+          20,
+          31
+        ],
+        [
+          23,
+          19
+        ],
+        [
+          29,
+          22
+        ],
+        [
+          6,
+          26
+        ],
+        [
+          30,
+          28
+        ],
+        [
+          13,
+          21
+        ],
+        [
+          31,
+          17
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        66,
+        162,
+        366,
+        1806,
+        5990,
+        18154,
+        61474,
+        194952,
+        576652,
+        1631880,
+        4289164,
+        10311672,
+        22687260,
+        45573252,
+        83424440,
+        139409404,
+        213144464,
+        298559452,
+        383691304,
+        453072420,
+        492013832,
+        491572996,
+        451970104,
+        382435048,
+        297686772,
+        212954408,
+        139769236,
+        83978520,
+        46067140,
+        22989370,
+        10390678,
+        4236690,
+        1552302,
+        506578,
+        144970,
+        35774,
+        7346,
+        1106,
+        86,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        4,
+        10,
+        17,
+        28,
+        48,
+        68,
+        128,
+        267,
+        428,
+        700,
+        1150,
+        1789,
+        2713,
+        3932,
+        5568,
+        7618,
+        9900,
+        12166,
+        14109,
+        15326,
+        15134,
+        13600,
+        11176,
+        7907,
+        4540,
+        2036,
+        620,
+        88,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          2,
+          4,
+          6,
+          9,
+          11,
+          13,
+          16,
+          19,
+          22,
+          25,
+          28,
+          31,
+          15,
+          27,
+          7,
+          12,
+          3,
+          30,
+          21,
+          23,
+          5,
+          10,
+          8,
+          14,
+          17,
+          18,
+          20,
+          24,
+          26,
+          29
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 7,
+        "peak_spin_table_entries": 256,
+        "packing_base_power_of_two": 33,
+        "seconds": 0.00172909000002619
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          1,
+          31,
+          29,
+          28,
+          26,
+          23,
+          21,
+          18,
+          16,
+          14,
+          11,
+          9,
+          4,
+          7,
+          2,
+          20,
+          22,
+          25,
+          10,
+          5,
+          19,
+          8,
+          30,
+          27,
+          24,
+          17,
+          15,
+          13,
+          12,
+          6,
+          3
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          5,
+          6,
+          5,
+          5,
+          5,
+          7,
+          7,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 8,
+        "peak_spin_table_entries": 512,
+        "packing_base_power_of_two": 33,
+        "seconds": 0.0017836399999850983
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "47/2",
+      "infinite_temperature_cut_variance_exact": "47/4",
+      "min_cut": 0,
+      "max_cut": 41,
+      "max_cut_degeneracy": 86,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 31.874052382041327,
+          "energy_per_spin": 0.7993912254163533,
+          "heat_capacity_per_spin": 0.3287747455962171,
+          "mean_disagreeing_edges": 36.79025960666166,
+          "energy_variance": 21.471003794038673,
+          "floating_contraction_relative_difference": 3.552713678800507e-15
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 22.18070977791825,
+          "energy_per_spin": -0.031250000000000104,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 23.5,
+          "energy_variance": 47.0,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 23.3162479868886,
+          "energy_per_spin": -0.3225910200875388,
+          "heat_capacity_per_spin": 0.057731718454404474,
+          "mean_disagreeing_edges": 18.838543678599375,
+          "energy_variance": 46.18537476352357,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 33.77497270140885,
+          "energy_per_spin": -1.2034521739801078,
+          "heat_capacity_per_spin": 0.8870148792320909,
+          "mean_disagreeing_edges": 4.74476521631827,
+          "energy_variance": 65.46317921849543,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 53.663604693363325,
+          "energy_per_spin": -1.4814877228257366,
+          "heat_capacity_per_spin": 0.10787569443779338,
+          "mean_disagreeing_edges": 0.29619643478821456,
+          "energy_variance": 2.852910927280486,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 105,
+      "genus": 13,
+      "spins": 64,
+      "edges_count": 96,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          19,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          4,
+          20
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          23,
+          22
+        ],
+        [
+          24,
+          23
+        ],
+        [
+          25,
+          24
+        ],
+        [
+          26,
+          25
+        ],
+        [
+          27,
+          26
+        ],
+        [
+          28,
+          27
+        ],
+        [
+          29,
+          28
+        ],
+        [
+          15,
+          29
+        ],
+        [
+          30,
+          14
+        ],
+        [
+          31,
+          30
+        ],
+        [
+          32,
+          31
+        ],
+        [
+          33,
+          32
+        ],
+        [
+          34,
+          33
+        ],
+        [
+          25,
+          34
+        ],
+        [
+          35,
+          24
+        ],
+        [
+          36,
+          35
+        ],
+        [
+          37,
+          36
+        ],
+        [
+          38,
+          37
+        ],
+        [
+          39,
+          38
+        ],
+        [
+          40,
+          39
+        ],
+        [
+          2,
+          40
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          42,
+          41
+        ],
+        [
+          43,
+          42
+        ],
+        [
+          44,
+          43
+        ],
+        [
+          30,
+          44
+        ],
+        [
+          45,
+          13
+        ],
+        [
+          18,
+          45
+        ],
+        [
+          33,
+          17
+        ],
+        [
+          46,
+          32
+        ],
+        [
+          37,
+          46
+        ],
+        [
+          47,
+          36
+        ],
+        [
+          48,
+          47
+        ],
+        [
+          28,
+          48
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          23,
+          45
+        ],
+        [
+          49,
+          22
+        ],
+        [
+          50,
+          49
+        ],
+        [
+          51,
+          50
+        ],
+        [
+          52,
+          51
+        ],
+        [
+          26,
+          52
+        ],
+        [
+          53,
+          34
+        ],
+        [
+          54,
+          53
+        ],
+        [
+          55,
+          54
+        ],
+        [
+          47,
+          55
+        ],
+        [
+          56,
+          35
+        ],
+        [
+          57,
+          56
+        ],
+        [
+          58,
+          57
+        ],
+        [
+          55,
+          58
+        ],
+        [
+          59,
+          54
+        ],
+        [
+          58,
+          59
+        ],
+        [
+          60,
+          57
+        ],
+        [
+          61,
+          60
+        ],
+        [
+          51,
+          61
+        ],
+        [
+          41,
+          50
+        ],
+        [
+          56,
+          12
+        ],
+        [
+          53,
+          16
+        ],
+        [
+          38,
+          60
+        ],
+        [
+          42,
+          46
+        ],
+        [
+          31,
+          40
+        ],
+        [
+          6,
+          44
+        ],
+        [
+          61,
+          59
+        ],
+        [
+          62,
+          49
+        ],
+        [
+          63,
+          52
+        ],
+        [
+          48,
+          29
+        ],
+        [
+          20,
+          62
+        ],
+        [
+          21,
+          63
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          63,
+          39
+        ],
+        [
+          43,
+          62
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        132,
+        334,
+        756,
+        5742,
+        20388,
+        61182,
+        252234,
+        918344,
+        3050606,
+        10730232,
+        37275954,
+        125868078,
+        426307020,
+        1438077588,
+        4793646066,
+        15803720926,
+        51300293982,
+        162940236346,
+        503966868860,
+        1511036810936,
+        4374143595088,
+        12188054857080,
+        32616325915368,
+        83696785055872,
+        205735025351928,
+        484135031787296,
+        1090290057063048,
+        2349535532123928,
+        4845008634773680,
+        9561523306283596,
+        18061410919091588,
+        32662933611158196,
+        56562958241142160,
+        93816529614777772,
+        149070808319486952,
+        226967398502525476,
+        331190137917211640,
+        463246221113350660,
+        621205589839577996,
+        798741344866302800,
+        984854294931003300,
+        1164580142176373456,
+        1320759108311497852,
+        1436641917890081028,
+        1498809882466953320,
+        1499714532602752240,
+        1439176653769559956,
+        1324435479858789788,
+        1168730849838222932,
+        988800485682205588,
+        801943643127703992,
+        623357122037581656,
+        464290834758779280,
+        331275747598614040,
+        226362320408084488,
+        148075250220256192,
+        92693889545795224,
+        55502253641011232,
+        31771038918575016,
+        17375940616153720,
+        9073062339346672,
+        4519499170241122,
+        2145555171170810,
+        969644441133098,
+        416614011054364,
+        169913227788134,
+        65659120174244,
+        23988090259806,
+        8264425481348,
+        2676804684654,
+        812113965882,
+        229772948776,
+        60303421022,
+        14585224952,
+        3224963362,
+        645463358,
+        115555372,
+        18262988,
+        2513402,
+        295590,
+        28446,
+        2002,
+        76,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        0,
+        1,
+        3,
+        5,
+        5,
+        17,
+        28,
+        47,
+        97,
+        176,
+        367,
+        637,
+        1061,
+        1919,
+        3558,
+        6415,
+        11325,
+        20027,
+        34778,
+        60225,
+        103183,
+        174738,
+        294918,
+        491744,
+        809247,
+        1316402,
+        2120599,
+        3378134,
+        5304886,
+        8215610,
+        12550873,
+        18898499,
+        27996262,
+        40785319,
+        58419619,
+        82113907,
+        113199575,
+        152949589,
+        202120916,
+        260942043,
+        328724595,
+        403310956,
+        481084089,
+        556802957,
+        623848253,
+        675025627,
+        703324096,
+        703269589,
+        672492597,
+        612505757,
+        528736664,
+        430061599,
+        327439773,
+        231527320,
+        150484498,
+        88765678,
+        46764853,
+        21542194,
+        8430889,
+        2692168,
+        656864,
+        107996,
+        8824,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          28,
+          29,
+          48,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          17,
+          19,
+          21,
+          23,
+          25,
+          31,
+          35,
+          37,
+          39,
+          42,
+          49,
+          51,
+          53,
+          55,
+          59,
+          57,
+          9,
+          11,
+          33,
+          60,
+          26,
+          43,
+          45,
+          58,
+          36,
+          50,
+          63,
+          20,
+          30,
+          7,
+          54,
+          41,
+          32,
+          47,
+          62,
+          3,
+          52,
+          22,
+          56,
+          5,
+          13,
+          15,
+          16,
+          18,
+          24,
+          27,
+          34,
+          38,
+          40,
+          44,
+          46,
+          61
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          8,
+          8,
+          9,
+          10,
+          10,
+          11,
+          11,
+          11,
+          12,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 12,
+        "peak_spin_table_entries": 8192,
+        "packing_base_power_of_two": 65,
+        "seconds": 0.07111707599995043
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          1,
+          48,
+          29,
+          28,
+          63,
+          62,
+          61,
+          58,
+          54,
+          56,
+          50,
+          46,
+          45,
+          44,
+          40,
+          38,
+          36,
+          34,
+          26,
+          24,
+          22,
+          19,
+          17,
+          14,
+          11,
+          9,
+          7,
+          4,
+          55,
+          16,
+          42,
+          31,
+          3,
+          59,
+          33,
+          8,
+          13,
+          6,
+          60,
+          52,
+          41,
+          57,
+          35,
+          47,
+          49,
+          5,
+          43,
+          2,
+          30,
+          53,
+          25,
+          51,
+          39,
+          37,
+          32,
+          27,
+          23,
+          21,
+          20,
+          18,
+          15,
+          12,
+          10
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          5,
+          6,
+          7,
+          8,
+          9,
+          8,
+          8,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 11,
+        "peak_spin_table_entries": 4096,
+        "packing_base_power_of_two": 65,
+        "seconds": 0.048211687999923925
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "95/2",
+      "infinite_temperature_cut_variance_exact": "95/4",
+      "min_cut": 0,
+      "max_cut": 85,
+      "max_cut_degeneracy": 76,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 64.77979326615446,
+          "energy_per_spin": 0.8360139777746293,
+          "heat_capacity_per_spin": 0.36327352094976306,
+          "mean_disagreeing_edges": 74.75244728878815,
+          "energy_variance": 47.44797008323437,
+          "floating_contraction_relative_difference": 1.4210854715202105e-14
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 44.3614195558365,
+          "energy_per_spin": -0.015625000000000052,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 47.499999999999986,
+          "energy_variance": 94.99999999999997,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 46.46078602720936,
+          "energy_per_spin": -0.3117698190973959,
+          "heat_capacity_per_spin": 0.05867214822488688,
+          "mean_disagreeing_edges": 38.02336578888333,
+          "energy_variance": 93.87543715981899,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 66.61380140438277,
+          "energy_per_spin": -1.191389699705954,
+          "heat_capacity_per_spin": 1.0688963327726115,
+          "mean_disagreeing_edges": 9.875529609409464,
+          "energy_variance": 157.77266838829928,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 106.51866493332258,
+          "energy_per_spin": -1.4851835053445515,
+          "heat_capacity_per_spin": 0.09862558141681568,
+          "mean_disagreeing_edges": 0.4741278289743457,
+          "energy_variance": 5.216559678244796,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    },
+    {
+      "N": 143,
+      "genus": 13,
+      "spins": 56,
+      "edges_count": 84,
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          19,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          21,
+          20
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          23,
+          22
+        ],
+        [
+          24,
+          23
+        ],
+        [
+          25,
+          24
+        ],
+        [
+          26,
+          25
+        ],
+        [
+          27,
+          26
+        ],
+        [
+          28,
+          27
+        ],
+        [
+          29,
+          28
+        ],
+        [
+          30,
+          29
+        ],
+        [
+          19,
+          30
+        ],
+        [
+          31,
+          18
+        ],
+        [
+          32,
+          31
+        ],
+        [
+          33,
+          32
+        ],
+        [
+          34,
+          33
+        ],
+        [
+          23,
+          34
+        ],
+        [
+          17,
+          22
+        ],
+        [
+          35,
+          16
+        ],
+        [
+          36,
+          35
+        ],
+        [
+          37,
+          36
+        ],
+        [
+          38,
+          37
+        ],
+        [
+          39,
+          38
+        ],
+        [
+          31,
+          39
+        ],
+        [
+          40,
+          13
+        ],
+        [
+          37,
+          40
+        ],
+        [
+          41,
+          36
+        ],
+        [
+          5,
+          41
+        ],
+        [
+          42,
+          4
+        ],
+        [
+          43,
+          42
+        ],
+        [
+          44,
+          43
+        ],
+        [
+          45,
+          44
+        ],
+        [
+          43,
+          45
+        ],
+        [
+          46,
+          42
+        ],
+        [
+          47,
+          46
+        ],
+        [
+          30,
+          47
+        ],
+        [
+          27,
+          29
+        ],
+        [
+          2,
+          26
+        ],
+        [
+          39,
+          1
+        ],
+        [
+          45,
+          38
+        ],
+        [
+          48,
+          44
+        ],
+        [
+          49,
+          48
+        ],
+        [
+          34,
+          49
+        ],
+        [
+          28,
+          33
+        ],
+        [
+          21,
+          32
+        ],
+        [
+          50,
+          20
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          51,
+          24
+        ],
+        [
+          52,
+          51
+        ],
+        [
+          53,
+          52
+        ],
+        [
+          3,
+          53
+        ],
+        [
+          10,
+          50
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          54,
+          6
+        ],
+        [
+          46,
+          54
+        ],
+        [
+          55,
+          53
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          54,
+          40
+        ],
+        [
+          55,
+          41
+        ],
+        [
+          8,
+          52
+        ],
+        [
+          12,
+          51
+        ],
+        [
+          35,
+          11
+        ],
+        [
+          49,
+          47
+        ]
+      ],
+      "self_loops": 1,
+      "density_of_states": [
+        2,
+        2,
+        2,
+        122,
+        314,
+        702,
+        4970,
+        17800,
+        53338,
+        212138,
+        773478,
+        2597688,
+        9109034,
+        31744226,
+        107613138,
+        360822566,
+        1187886560,
+        3801929326,
+        11790167580,
+        35260183150,
+        101186566750,
+        277704942978,
+        727162928974,
+        1813543282822,
+        4304020431548,
+        9716753972118,
+        20867351515600,
+        42639999802918,
+        82935835094634,
+        153617757993562,
+        271092856294146,
+        456001537789182,
+        731408660478220,
+        1119041327802186,
+        1633580840914184,
+        2275767461118922,
+        3025934853170770,
+        3840212739058886,
+        4651611705816370,
+        5377277237066958,
+        5931460076055816,
+        6241695168703810,
+        6264113509091956,
+        5993496766428526,
+        5464937013015758,
+        4746438234155206,
+        3924589916297254,
+        3087467450318450,
+        2309411744559296,
+        1641236750233978,
+        1107292433962708,
+        708590361318938,
+        429695321919546,
+        246671410669462,
+        133905748005098,
+        68659364951314,
+        33211303658132,
+        15135183291250,
+        6489240826768,
+        2613611332786,
+        987169473694,
+        348978274942,
+        115199901702,
+        35409781994,
+        10099428050,
+        2661360460,
+        644550790,
+        142555060,
+        28567516,
+        5135588,
+        817196,
+        112786,
+        13006,
+        1164,
+        70,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "even_subgraph_counts": [
+        1,
+        1,
+        0,
+        4,
+        4,
+        0,
+        10,
+        18,
+        28,
+        76,
+        124,
+        197,
+        384,
+        642,
+        1101,
+        1989,
+        3566,
+        6403,
+        10930,
+        18659,
+        32076,
+        53167,
+        87673,
+        144220,
+        232114,
+        370720,
+        585822,
+        904446,
+        1373726,
+        2060616,
+        3033704,
+        4376274,
+        6196503,
+        8598919,
+        11658146,
+        15417638,
+        19882354,
+        24963466,
+        30418522,
+        35869778,
+        40834634,
+        44739140,
+        47010254,
+        47184445,
+        44982682,
+        40451534,
+        34070355,
+        26652913,
+        19149290,
+        12458053,
+        7211652,
+        3625587,
+        1528582,
+        514991,
+        129435,
+        21560,
+        1784,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elimination": {
+        "order": [
+          0,
+          1,
+          7,
+          8,
+          9,
+          15,
+          16,
+          17,
+          27,
+          28,
+          29,
+          43,
+          44,
+          45,
+          2,
+          4,
+          11,
+          13,
+          18,
+          20,
+          23,
+          25,
+          32,
+          36,
+          46,
+          49,
+          51,
+          53,
+          5,
+          54,
+          55,
+          30,
+          37,
+          39,
+          21,
+          34,
+          10,
+          19,
+          33,
+          22,
+          12,
+          42,
+          41,
+          3,
+          38,
+          6,
+          14,
+          24,
+          26,
+          31,
+          35,
+          40,
+          47,
+          48,
+          50,
+          52
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          7,
+          8,
+          8,
+          7,
+          7,
+          8,
+          9,
+          8,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 10,
+        "peak_spin_table_entries": 2048,
+        "packing_base_power_of_two": 57,
+        "seconds": 0.01148509200004355
+      },
+      "alternate_elimination": {
+        "order": [
+          0,
+          1,
+          45,
+          44,
+          43,
+          29,
+          28,
+          27,
+          17,
+          16,
+          15,
+          9,
+          8,
+          7,
+          55,
+          54,
+          51,
+          50,
+          49,
+          39,
+          37,
+          32,
+          23,
+          19,
+          13,
+          11,
+          5,
+          3,
+          47,
+          42,
+          36,
+          26,
+          21,
+          18,
+          53,
+          4,
+          24,
+          33,
+          48,
+          46,
+          41,
+          38,
+          6,
+          20,
+          12,
+          52,
+          40,
+          35,
+          34,
+          31,
+          30,
+          25,
+          22,
+          14,
+          10,
+          2
+        ],
+        "neighbor_widths": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          7,
+          5,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "width_upper_bound": 10,
+        "peak_spin_table_entries": 2048,
+        "packing_base_power_of_two": 57,
+        "seconds": 0.009088047999966875
+      },
+      "gates": {
+        "distinct_elimination_orders": true,
+        "two_orders_identical_integers": true,
+        "total_spin_states": true,
+        "global_flip_even_counts": true,
+        "connected_ground_degeneracy_two": true,
+        "infinite_temperature_mean_cut": true,
+        "infinite_temperature_cut_variance": true,
+        "cycle_space_total": true,
+        "empty_even_subgraph": true,
+        "single_edge_even_subgraphs_are_loops": true,
+        "independent_float_contraction": true
+      },
+      "infinite_temperature_mean_cut_exact": "83/2",
+      "infinite_temperature_cut_variance_exact": "83/4",
+      "min_cut": 0,
+      "max_cut": 75,
+      "max_cut_degeneracy": 2,
+      "numerical_checks": [
+        {
+          "beta": -0.7,
+          "log_Z": 56.04068953909546,
+          "energy_per_spin": 0.8168473430150112,
+          "heat_capacity_per_spin": 0.3930959625816337,
+          "mean_disagreeing_edges": 64.87172560442032,
+          "energy_variance": 44.92525286647243,
+          "floating_contraction_relative_difference": 7.105427357601027e-15
+        },
+        {
+          "beta": 0.0,
+          "log_Z": 38.816242111356935,
+          "energy_per_spin": -0.0178571428571428,
+          "heat_capacity_per_spin": 0.0,
+          "mean_disagreeing_edges": 41.49999999999999,
+          "energy_variance": 83.0,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.2,
+          "log_Z": 40.696327861655526,
+          "energy_per_spin": -0.31858623144498754,
+          "heat_capacity_per_spin": 0.06017033986758474,
+          "mean_disagreeing_edges": 33.07958551954035,
+          "energy_variance": 84.23847581461862,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 0.6584789484624085,
+          "log_Z": 58.53714453271774,
+          "energy_per_spin": -1.1784100566982114,
+          "heat_capacity_per_spin": 1.0343952669105452,
+          "mean_disagreeing_edges": 9.004518412450086,
+          "energy_variance": 133.59517136681373,
+          "floating_contraction_relative_difference": 0.0
+        },
+        {
+          "beta": 1.1,
+          "log_Z": 93.31072344626793,
+          "energy_per_spin": -1.4839758105779965,
+          "heat_capacity_per_spin": 0.1054592577619073,
+          "mean_disagreeing_edges": 0.44867730381609094,
+          "energy_variance": 4.880759036914717,
+          "floating_contraction_relative_difference": 0.0
+        }
+      ]
+    }
+  ]
+}

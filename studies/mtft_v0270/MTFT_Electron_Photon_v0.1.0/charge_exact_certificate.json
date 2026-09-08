@@ -1,0 +1,155 @@
+{
+  "status": "EXACT finite rational algebra, conditional on the stated mixing pattern",
+  "checks": {
+    "completeness": true,
+    "orthogonal_idempotents": true,
+    "commute_with_T2": true,
+    "ranks": true
+  },
+  "constraints": {
+    "unmixed": {
+      "edges": [],
+      "incidence_matrix": [],
+      "charge_space_dimension": 4,
+      "nullspace_basis": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "old_quartic": {
+      "edges": [
+        [
+          "old",
+          "q4"
+        ]
+      ],
+      "incidence_matrix": [
+        [
+          0,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "charge_space_dimension": 3,
+      "nullspace_basis": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "fully_mixed": {
+      "edges": [
+        [
+          "ell",
+          "old"
+        ],
+        [
+          "ell",
+          "q4"
+        ],
+        [
+          "ell",
+          "q6"
+        ],
+        [
+          "old",
+          "q4"
+        ],
+        [
+          "old",
+          "q6"
+        ],
+        [
+          "q4",
+          "q6"
+        ]
+      ],
+      "incidence_matrix": [
+        [
+          1,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          -1
+        ]
+      ],
+      "charge_space_dimension": 1,
+      "nullspace_basis": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "scope": "Four scalar sector charges only; not the full commutant or a charge quantization theorem."
+}

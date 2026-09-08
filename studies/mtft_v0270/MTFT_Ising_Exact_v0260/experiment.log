@@ -1,0 +1,8 @@
+N=6: 4 spins, width<=2, exact DOS in 0.000s, max cut=4, degeneracy=4, 12 gates PASS
+N=11: 4 spins, width<=2, exact DOS in 0.000s, max cut=4, degeneracy=4, 12 gates PASS
+N=15: 8 spins, width<=3, exact DOS in 0.000s, max cut=10, degeneracy=2, 12 gates PASS
+N=35: 16 spins, width<=5, exact DOS in 0.001s, max cut=20, degeneracy=18, 12 gates PASS
+N=55: 24 spins, width<=6, exact DOS in 0.001s, max cut=31, degeneracy=24, 12 gates PASS
+N=77: 32 spins, width<=7, exact DOS in 0.002s, max cut=41, degeneracy=86, 11 gates PASS
+N=105: 64 spins, width<=12, exact DOS in 0.071s, max cut=85, degeneracy=76, 11 gates PASS
+N=143: 56 spins, width<=10, exact DOS in 0.011s, max cut=75, degeneracy=2, 11 gates PASS

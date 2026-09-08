@@ -1,0 +1,21 @@
+{
+  "date_utc": "2026-09-07",
+  "release": "0.26.2",
+  "input_original_name": "mtft-0.26.2.tar (1).gz",
+  "input_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "source_changes": false,
+  "python": "3.12.13",
+  "execution": "python run_audit.py --source /path/to/mtft-0.26.2",
+  "result": "Five bounded scripts and three targeted release tests passed.",
+  "scope": "Audit of supplied review text and attached source. Full atlas not supplied in this message. No theta-gradient evaluation, full genus-13 Pfaffian sum, or full test suite run.",
+  "classifications": {
+    "release_regressions": "targeted automated checks",
+    "D4_fingerprint": "numerical diagnostic, not exact reconstruction",
+    "standard_triality_control": "exact rational arithmetic; not MTFT-derived",
+    "synthetic_bimodule_control": "exact integer arithmetic; not X0(143)",
+    "Ising_DOS": "exact integer coefficients",
+    "finite_heat_trace": "numerical finite-graph diagnostic",
+    "Mellin_checks": "finite-weight numerical quadrature",
+    "TH2_input_census": "finite combinatorial input checks, no theta functions"
+  }
+}

@@ -1,0 +1,138 @@
+Command: release_mellin_accounting.py
+Version 0.26.2 convention and SU checks passed.
+Mellin max relative error: 3.3141164258773356e-51
+Accounting: raw 23 metadata 17 without definition 16 with additional exact Higgs dependency 15
+
+Exit code: 0
+
+Command: d4_check.py --source /workspace/scratch/a8262a41ed96/work/mtft-0.26.2
+{
+  "output": "/workspace/scratch/a8262a41ed96/deliverables/MTFT_v0262_Claim_Audit_v0.1.0/d4_results.json",
+  "dimension": 28,
+  "elapsed_seconds": 2.353152874999978,
+  "exact_triality_checks": {
+    "orthogonal": true,
+    "order_three": true,
+    "preserves_all_24_D4_roots": true,
+    "three_distinct_8_weight_sets": true,
+    "cycles_three_representations": true
+  }
+}
+
+Exit code: 0
+
+Command: bimodule_control.py --source /workspace/scratch/a8262a41ed96/work/mtft-0.26.2 --verify-theta
+{
+  "output": "/workspace/scratch/a8262a41ed96/deliverables/MTFT_v0262_Claim_Audit_v0.1.0/bimodule_control_results.json",
+  "control_cases": 3,
+  "three_cycle_one_form_norms_squared": [
+    4,
+    4,
+    4
+  ],
+  "theta_functions_evaluated": 0
+}
+
+Exit code: 0
+
+Command: finite_graph_check.py
+{
+  "output": "/workspace/scratch/a8262a41ed96/deliverables/MTFT_v0262_Claim_Audit_v0.1.0/finite_graph_results.json",
+  "negative_control": {
+    "levels": [
+      6,
+      11
+    ],
+    "genera": [
+      0,
+      1
+    ],
+    "adjacency_isomorphism_permutation": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "identical_exact_DOS": [
+      2,
+      2,
+      2,
+      6,
+      4,
+      0,
+      0
+    ],
+    "conclusion": "Distinct surface genera, isomorphic dual multigraphs: identical scalar zero-field Ising thermodynamics at every beta."
+  },
+  "N143_gap": 0.2726371272717788,
+  "N143_named_eigenvalues": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "4": 1,
+    "5": 1
+  },
+  "N143_heat_capacity_peak": {
+    "beta": 0.641427454810036,
+    "energy_per_spin": -1.1362624981683438,
+    "heat_capacity_per_spin": 1.0487788898635244
+  },
+  "N143_heat_samples": [
+    {
+      "t": 0.001,
+      "K": 55.83433050891202,
+      "P": 0.9970416162305717,
+      "d_eff": 0.005922502201738827,
+      "d_eff_without_zero": 0.006030509396260446
+    },
+    {
+      "t": 0.01,
+      "K": 54.37261406979536,
+      "P": 0.9709395369606314,
+      "d_eff": 0.058678514432963735,
+      "d_eff_without_zero": 0.0597779268461581
+    },
+    {
+      "t": 0.1,
+      "K": 42.27104616279937,
+      "P": 0.7548401100499887,
+      "d_eff": 0.5322296781507865,
+      "d_eff_without_zero": 0.5451256361560995
+    },
+    {
+      "t": 1.0,
+      "K": 9.784860616983945,
+      "P": 0.17472965387471331,
+      "d_eff": 1.9033043501201456,
+      "d_eff_without_zero": 2.11996166924032
+    },
+    {
+      "t": 10.0,
+      "K": 1.1518626485622458,
+      "P": 0.02056897586718296,
+      "d_eff": 0.8502054184123738,
+      "d_eff_without_zero": 6.448721093344051
+    },
+    {
+      "t": 100.0,
+      "K": 1.0000000000015052,
+      "P": 0.017857142857169737,
+      "d_eff": 8.247064644014558e-11,
+      "d_eff_without_zero": 54.78540529963832
+    },
+    {
+      "t": 1000.0,
+      "K": 1.0,
+      "P": 0.017857142857142856,
+      "d_eff": 2.1469160197422769e-116,
+      "d_eff_without_zero": 545.2742545435589
+    }
+  ]
+}
+
+Exit code: 0
+
+Command: render_finite_controls.py
+Rendered Finite_Geometry_Controls.png and .svg
+
+Exit code: 0

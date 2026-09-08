@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "scope": "Replay validation. Registered response gate is the regular grid only; raw Schur stress loss is retained.",
+  "checks": {
+    "supplied_mtft_version": true,
+    "raw_input_geometry_gate": true,
+    "block_identity_and_reconstruction_gate": true,
+    "two_unambiguous_complex_couplings": true,
+    "two_independent_canonical_modes": true,
+    "independent_coefficients_agree": true,
+    "independent_active_projectors_agree": true,
+    "independent_route_checks": true,
+    "uncoupled_active_six_negative_directions": true,
+    "uncoupled_complement_three_negative_directions": true,
+    "registered_regular_grid_count": true,
+    "registered_regular_Schur_gate": true,
+    "registered_regular_involution_gate": true,
+    "registered_stress_points_recorded": true,
+    "singular_complement_inverses_skipped": true,
+    "six_exponential_controls_agree": true,
+    "all_symbolic_controls_pass": true,
+    "finite_response_diagnostics": true
+  },
+  "checks_passed": 18,
+  "checks_total": 18,
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "archive_files_verified_unchanged": 395,
+  "protocol_sha256": "d6e08abc6b41e1aab4099653d1a8eb71df1479b103c6b751a007d3812475f18d",
+  "frozen_input_sha256": {
+    "coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b"
+  },
+  "maximum_independent_coefficient_differences": {
+    "a": 3.774758283725532e-15,
+    "b": 1.9095836023552692e-14,
+    "principal_angle_degrees": 4.698463840213662e-13
+  },
+  "independent_projector_difference": 3.464585886549301e-13,
+  "dynamic_control_maximum_errors": {
+    "full_unitarity": 4.0471030673980615e-15,
+    "projected_trig_identity": 2.0784187922374747e-14,
+    "loss_identity": 5.026408989408364e-15,
+    "mode_fraction_error": 7.632783294297951e-17
+  },
+  "response_summary": {
+    "regular_point_count": 907,
+    "pole_stress_point_count": 22,
+    "max_regular_effective_relative_error": 1.445188156306249e-14,
+    "max_regular_involution_relative_error": 2.350855330627044e-14,
+    "max_regular_naive_relative_error": 0.9073753509954773,
+    "max_stress_effective_relative_error": 6.592260287026992e-05,
+    "max_stress_involution_relative_error": 6.542809408961174e-14,
+    "max_stress_Schur_condition": 1982215571469.027
+  },
+  "stress_warning": "Raw Schur evaluation exceeds 1e-9 in the registered pole-conditioning stress test. It is not certified by the regular-grid pass.",
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  }
+}

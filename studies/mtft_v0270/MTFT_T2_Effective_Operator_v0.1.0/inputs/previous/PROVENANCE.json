@@ -1,0 +1,47 @@
+{
+  "date_utc": "2026-09-08",
+  "release": "0.26.2",
+  "python": "3.12.13",
+  "original_uploaded_archive": "mtft-0.26.2.tar (1).gz",
+  "input_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "release_integrity": {
+    "archive_files_compared": 395,
+    "mismatches": [],
+    "source_unchanged": true
+  },
+  "protocol_sha256": "b0db73436424e4a70a807ffbb1cc2df4a953a4b11f4f6824b236a8b01b6f633c",
+  "numerical_precision": "float64/complex128; upstream period dps50 and80",
+  "replay": "python run_study.py --source /path/to/mtft-0.26.2",
+  "validation": {
+    "checks": {
+      "release_is_0_26_2": true,
+      "exact_harmonic_support_rank_four": true,
+      "frame_metric_and_complex_structure_consistent": true,
+      "all_direct_projectors_rank_eight_without_ambiguous_singular_values": true,
+      "projectors_stable_across_registered_frames": true,
+      "block_fractions_stable_across_registered_frames": true,
+      "every_registered_non_STAR_operator_resolves_mixing": true,
+      "STAR_preserves_split_at_diagnostic_threshold": true,
+      "independent_localization_agrees": true,
+      "T2_one_augmentation_fills_real_26_with_large_singular_gap": true,
+      "all_registered_hulls_fill_real_26": true,
+      "identity_and_fullspace_controls": true,
+      "two_exact_fullspace_commutations": true
+    },
+    "all_checks_passed": true,
+    "scope": "Study replay and consistency gates; not full package tests or interval certification.",
+    "unresolved_package_closure_runs": [
+      {
+        "seed": 2026,
+        "dps": 50,
+        "error": "1 residuals in (1e-07, 1e-05]; worst [1.2076478544427825e-07]"
+      },
+      {
+        "seed": 31415,
+        "dps": 50,
+        "error": "1 residuals in (1e-07, 1e-05]; worst [1.5844900252434873e-07]"
+      }
+    ]
+  },
+  "scope": "Source unchanged. No full package tests, theta gradients, interval arithmetic, or Clifford generator search."
+}

@@ -1,0 +1,152 @@
+{
+  "epistemic": "EXACT: integer W143 involution and positive-projector rank; conditional canonical algebra. DIAGNOSTIC: every Hodge-frame coefficient, principal angle, and residual.",
+  "mtft_version": "0.26.2",
+  "route": "Fresh W143 arithmetic matrix, prior localization projector, positive-eigenspace Gram eigenproblem F*PF. No QWP SVD or primary reduction helper is used.",
+  "shared_inputs": "Frozen Hodge frame R,Ri and localization projector from the preceding study; this is an independent computation route, not independent geometric source data.",
+  "tolerance": 1e-09,
+  "input_sha256": {
+    "/workspace/scratch/a8262a41ed96/deliverables/MTFT_W143_Effective_Operator_v0.1.0/inputs/previous/kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b",
+    "/tmp/mtft_w143_replay__ie8ij2z/mtft-0.26.2/src/mtft/periods/_data/X0_143_atkin_lehner_v022.json": "987a0beb518b72c97cfbc72a6994acfeead985606bd281a81eb5d6114fee4dff",
+    "/workspace/scratch/a8262a41ed96/deliverables/MTFT_W143_Effective_Operator_v0.1.0/canonical_check.py": "3689b998aa9d4346e473c107d52bd495fb55a4e2cb5a8b77b7b258f5779bc1e0",
+    "/workspace/scratch/a8262a41ed96/deliverables/MTFT_W143_Effective_Operator_v0.1.0/PROTOCOL.md": "d6e08abc6b41e1aab4099653d1a8eb71df1479b103c6b751a007d3812475f18d"
+  },
+  "exact_checks": {
+    "involution": true,
+    "positive_projector_idempotent": true,
+    "positive_projector_real_rank": 4,
+    "operator_real_trace": -18
+  },
+  "raw_localization_projector_spectrum": [
+    -6.902503007553371e-16,
+    -5.154475915055435e-16,
+    7.884067486291911e-18,
+    1.1011466205068302e-16,
+    1.3067729320111818e-16,
+    0.9999999999999993,
+    0.9999999999999994,
+    0.9999999999999996,
+    0.9999999999999998,
+    1.0000000000000002,
+    1.0000000000000002,
+    1.0000000000000007,
+    1.000000000000001
+  ],
+  "raw_hermitian_W_spectrum": [
+    -1.0000000000000027,
+    -1.0000000000000018,
+    -1.000000000000001,
+    -1.0000000000000007,
+    -1.0,
+    -0.9999999999999996,
+    -0.9999999999999992,
+    -0.9999999999999983,
+    -0.9999999999999981,
+    -0.9999999999999973,
+    -0.9999999999999971,
+    0.9999999999999987,
+    1.0000000000000018
+  ],
+  "canonical_modes": [
+    {
+      "index_in_increasing_rho": 0,
+      "rho_positive_eigenvector_active_overlap": 0.9692403552902362,
+      "positive_eigenvector_fixed_overlap": 0.030759644709763778,
+      "principal_angle_radians": 0.1762960819156033,
+      "principal_angle_degrees": 10.101021438456707,
+      "a": 0.9384807105804724,
+      "b": 0.3453316606805283,
+      "canonical_block": [
+        [
+          0.9384807105804724,
+          0.3453316606805283
+        ],
+        [
+          0.3453316606805283,
+          -0.9384807105804724
+        ]
+      ],
+      "block_eigenvalues": [
+        -1.0,
+        1.0
+      ],
+      "a_squared_plus_b_squared_minus_one": 0.0,
+      "eigenvector_projection_reconstruction": 1.536047995592216e-16,
+      "invariant_block_residual": 8.566426707867717e-15,
+      "compression_active_eigenvalue": 0.9384807105804724,
+      "compression_fixed_eigenvalue": -0.9384807105804724
+    },
+    {
+      "index_in_increasing_rho": 1,
+      "rho_positive_eigenvector_active_overlap": 0.9910104063495537,
+      "positive_eigenvector_fixed_overlap": 0.00898959365044627,
+      "principal_angle_radians": 0.09495610117618629,
+      "principal_angle_degrees": 5.440583836412706,
+      "a": 0.9820208126991075,
+      "b": 0.18877267658690572,
+      "canonical_block": [
+        [
+          0.9820208126991075,
+          0.18877267658690572
+        ],
+        [
+          0.18877267658690572,
+          -0.9820208126991075
+        ]
+      ],
+      "block_eigenvalues": [
+        -1.0,
+        1.0
+      ],
+      "a_squared_plus_b_squared_minus_one": 0.0,
+      "eigenvector_projection_reconstruction": 1.4132711518770684e-16,
+      "invariant_block_residual": 8.174044814091289e-15,
+      "compression_active_eigenvalue": 0.9820208126991075,
+      "compression_fixed_eigenvalue": -0.9820208126991075
+    }
+  ],
+  "coupling_singular_values_predicted_by_canonical_algebra_descending": [
+    0.3453316606805283,
+    0.18877267658690572
+  ],
+  "decoupled_complex_dimensions": {
+    "active": 6,
+    "fixed": 3
+  },
+  "decoupled_eigenvalue": -1,
+  "total_complex_dimension": 13,
+  "residuals": {
+    "frame_inverse": 1.3928655030903329e-14,
+    "localization_projector_complex_linearity": 4.2017014185552046e-14,
+    "localization_complex_extraction_realification": 2.1009722417431986e-14,
+    "localization_hermitian_projection_change": 2.9002334160233395e-15,
+    "W_complex_linearity": 3.2664391808560694e-14,
+    "W_complex_extraction_realification": 1.6334489824211486e-14,
+    "W_hermiticity": 1.5904899350194508e-14,
+    "W_involution": 1.2018989773415765e-14,
+    "positive_projector_eigenspace_reconstruction": 4.82610363513684e-15,
+    "x_orthonormality": 7.310259926565472e-16,
+    "y_orthonormality": 6.9345400700272e-14,
+    "cross_orthogonality": 4.9138965815581875e-15,
+    "canonical_basis_unitarity": 7.087680289431884e-14,
+    "canonical_matrix_reconstruction": 7.142471274340753e-14,
+    "full_operator_reconstruction": 7.114236016030872e-14,
+    "active_decoupled_eigenvalue_minus_one": 6.1392051917417874e-15,
+    "fixed_decoupled_eigenvalue_minus_one": 4.59344442075711e-15,
+    "coupling_reconstruction_without_SVD": 4.975934719414979e-15,
+    "positive_eigenvectors_reconstruction": 2.0872898201952694e-16
+  },
+  "checks": {
+    "exact_W_is_involution": true,
+    "exact_Rplus_is_projector": true,
+    "exact_positive_rank_four_real": true,
+    "positive_eigenspace_two_complex": true,
+    "active_rank_eight_complex": true,
+    "two_strictly_mixed_principal_angles": true,
+    "active_decoupled_six_complex": true,
+    "fixed_decoupled_three_complex": true,
+    "all_geometry_residuals_within_tolerance": true,
+    "all_block_residuals_within_tolerance": true
+  },
+  "all_checks_passed": true,
+  "scope": "The dimensionless W143 spectral parameter is not physical energy, mass, or time. This canonical involution decomposition does not establish a new Clifford or gauge representation."
+}

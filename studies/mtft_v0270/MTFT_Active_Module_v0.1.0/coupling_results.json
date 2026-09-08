@@ -1,0 +1,1962 @@
+{
+  "status": "DIAGNOSTIC float64, not exact or interval-certified",
+  "package_version": "0.26.2",
+  "numpy_version": "2.3.5",
+  "source": "/workspace/scratch/a8262a41ed96/work/mtft-0.26.2",
+  "primary": [
+    "T2",
+    "T3",
+    "T5",
+    "T7",
+    "W11",
+    "W13",
+    "W143",
+    "STAR"
+  ],
+  "replication": [
+    "T17",
+    "T19"
+  ],
+  "protocol_sha256": "b0db73436424e4a70a807ffbb1cc2df4a953a4b11f4f6824b236a8b01b6f633c",
+  "rank_bands": {
+    "small_max": 1e-09,
+    "large_min": 1e-07
+  },
+  "runs": [
+    {
+      "dps_period_inputs": 50,
+      "frame_seed": 143,
+      "complex_active_rank": 8,
+      "real_active_rank": 16,
+      "direct_seed_spectrum": {
+        "rank": 8,
+        "ambiguous": false,
+        "singular_values": [
+          0.012304247268526476,
+          0.009346859323526309,
+          0.008426889747764054,
+          0.002544680161991699,
+          0.0007095249487447763,
+          0.0004821680909475143,
+          0.00014488156276457702,
+          1.3966117643689107e-05,
+          1.4046886282766282e-17,
+          2.904831615942262e-18,
+          2.0119670344175068e-18,
+          1.0830392703446997e-18,
+          7.715789960359736e-19
+        ],
+        "normalized_singular_values": [
+          1.0,
+          0.7596449518236692,
+          0.6848764953967993,
+          0.20681315211381013,
+          0.057665043074979355,
+          0.039187126235740666,
+          0.011774922886601551,
+          0.0011350647738861356,
+          1.1416290632176559e-15,
+          2.360836508359716e-16,
+          1.6351809180265723e-16,
+          8.802157878564818e-17,
+          6.270834608547134e-17
+        ]
+      },
+      "checks": {
+        "R_Ri": 1.3928655030903329e-14,
+        "metric_whitening": 5.808029182313498e-15,
+        "P_idempotence": 3.0102182805250305e-15,
+        "P_symmetry": 1.8160902640507202e-16,
+        "P_J_commutator": 0.0,
+        "closure_status": "passed_package_gate",
+        "direct_vs_closure_projector": 8.559089904553565e-12,
+        "closure_dimension": 28,
+        "closure_growth": [
+          3,
+          6,
+          17,
+          28,
+          28
+        ],
+        "seed_fixed_annihilation": 1.3479822236741247e-15
+      },
+      "operators": {
+        "T2": {
+          "operator_norm": 8.831760866327848,
+          "block_norms": {
+            "active_to_active": 5.691137999827465,
+            "fixed_to_active": 3.8212172915644786,
+            "active_to_fixed": 3.821217291564473,
+            "fixed_to_fixed": 4.050622802510388
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.4152442529882071,
+            "fixed_to_active": 0.18720130242758162,
+            "active_to_fixed": 0.18720130242758107,
+            "fixed_to_fixed": 0.2103531421566295
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 0.4326676581714666,
+          "fixed_to_active_over_operator": 0.43266765817146724,
+          "active_to_fixed_over_active_input": 0.557436664880214,
+          "fixed_to_active_over_fixed_input": 0.6862085522752356,
+          "commutator_over_operator": 0.6118844701862948,
+          "cross_block_adjoint_residual": 3.62436527319407e-15,
+          "classification": "resolved_mixing"
+        },
+        "T3": {
+          "operator_norm": 9.797958971132715,
+          "block_norms": {
+            "active_to_active": 5.61448142376454,
+            "fixed_to_active": 4.545258347567207,
+            "active_to_fixed": 4.545258347567203,
+            "fixed_to_fixed": 4.812364434448429
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.32835835060205293,
+            "fixed_to_active": 0.21520180673051417,
+            "active_to_fixed": 0.21520180673051384,
+            "fixed_to_fixed": 0.24123803593691806
+          },
+          "fraction_sum_error": 9.992007221626409e-16,
+          "active_to_fixed_over_operator": 0.4638984875277283,
+          "fixed_to_active_over_operator": 0.4638984875277286,
+          "active_to_fixed_over_active_input": 0.629215117949777,
+          "fixed_to_active_over_fixed_input": 0.6866432942021533,
+          "commutator_over_operator": 0.6560515326260796,
+          "cross_block_adjoint_residual": 3.1723828954748185e-15,
+          "classification": "resolved_mixing"
+        },
+        "T5": {
+          "operator_norm": 13.266499161421605,
+          "block_norms": {
+            "active_to_active": 6.677992938802637,
+            "fixed_to_active": 7.215687246799905,
+            "active_to_fixed": 7.215687246799905,
+            "fixed_to_fixed": 5.2222720555367985
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.2533840323335105,
+            "fixed_to_active": 0.29583035479335656,
+            "active_to_fixed": 0.29583035479335656,
+            "fixed_to_fixed": 0.15495525807977567
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 0.5439028909588149,
+          "fixed_to_active_over_operator": 0.5439028909588149,
+          "active_to_fixed_over_active_input": 0.73392285881698,
+          "fixed_to_active_over_fixed_input": 0.8100957314394333,
+          "commutator_over_operator": 0.7691948450078908,
+          "cross_block_adjoint_residual": 3.959501937136368e-15,
+          "classification": "resolved_mixing"
+        },
+        "T7": {
+          "operator_norm": 14.69693845669907,
+          "block_norms": {
+            "active_to_active": 8.499558805465329,
+            "fixed_to_active": 7.611852153987929,
+            "active_to_fixed": 7.611852153987929,
+            "fixed_to_fixed": 5.279859248511781
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3344560179979777,
+            "fixed_to_active": 0.26824209821375306,
+            "active_to_fixed": 0.26824209821375306,
+            "fixed_to_fixed": 0.12905978557451564
+          },
+          "fraction_sum_error": 5.551115123125783e-16,
+          "active_to_fixed_over_operator": 0.5179209381882075,
+          "fixed_to_active_over_operator": 0.5179209381882075,
+          "active_to_fixed_over_active_input": 0.667134732768362,
+          "fixed_to_active_over_fixed_input": 0.8216808332835691,
+          "commutator_over_operator": 0.7324508150227605,
+          "cross_block_adjoint_residual": 3.6947115149098326e-15,
+          "classification": "resolved_mixing"
+        },
+        "W11": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.197758642031323,
+            "fixed_to_active": 2.402985573679954,
+            "active_to_fixed": 2.4029855736799526,
+            "fixed_to_fixed": 2.0556411001646238
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.393294628180231,
+            "fixed_to_active": 0.2220899872043836,
+            "active_to_fixed": 0.22208998720438336,
+            "fixed_to_fixed": 0.16252539741100086
+          },
+          "fraction_sum_error": 1.2212453270876722e-15,
+          "active_to_fixed_over_operator": 0.4712642435029241,
+          "fixed_to_active_over_operator": 0.4712642435029244,
+          "active_to_fixed_over_active_input": 0.6007463934199883,
+          "fixed_to_active_over_fixed_input": 0.7598907597355014,
+          "commutator_over_operator": 0.6664682846233323,
+          "cross_block_adjoint_residual": 3.540418303974992e-15,
+          "classification": "resolved_mixing"
+        },
+        "W13": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.190467205111359,
+            "fixed_to_active": 2.41265808043927,
+            "active_to_fixed": 2.4126580804392685,
+            "fixed_to_fixed": 2.0442800656688638
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3915031148804262,
+            "fixed_to_active": 0.22388150050418842,
+            "active_to_fixed": 0.2238815005041882,
+            "fixed_to_fixed": 0.16073388411119585
+          },
+          "fraction_sum_error": 1.3322676295501878e-15,
+          "active_to_fixed_over_operator": 0.4731611781456591,
+          "fixed_to_active_over_operator": 0.4731611781456594,
+          "active_to_fixed_over_active_input": 0.6031645201098174,
+          "fixed_to_active_over_fixed_input": 0.7629494749397827,
+          "commutator_over_operator": 0.6691509553220235,
+          "cross_block_adjoint_residual": 3.294458736534257e-15,
+          "classification": "resolved_mixing"
+        },
+        "W143": {
+          "operator_norm": 5.099019513592785,
+          "block_norms": {
+            "active_to_active": 3.9610884667489623,
+            "fixed_to_active": 0.5565771811602955,
+            "active_to_fixed": 0.5565771811602959,
+            "fixed_to_fixed": 3.112912115915202
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6034700708235247,
+            "fixed_to_active": 0.011914544561090014,
+            "active_to_fixed": 0.011914544561090028,
+            "fixed_to_fixed": 0.3727008400542945
+          },
+          "fraction_sum_error": 7.771561172376096e-16,
+          "active_to_fixed_over_operator": 0.10915376567526211,
+          "fixed_to_active_over_operator": 0.10915376567526204,
+          "active_to_fixed_over_active_input": 0.139144295290074,
+          "fixed_to_active_over_fixed_input": 0.17600515861426913,
+          "commutator_over_operator": 0.15436673580205046,
+          "cross_block_adjoint_residual": 2.819788288696149e-15,
+          "classification": "resolved_mixing"
+        },
+        "STAR": {
+          "operator_norm": 5.0990195135927845,
+          "block_norms": {
+            "active_to_active": 3.999999999999997,
+            "fixed_to_active": 4.335349067947129e-13,
+            "active_to_fixed": 4.339400172885787e-13,
+            "fixed_to_fixed": 3.1622776601683795
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6153846153846145,
+            "fixed_to_active": 7.2289429003654e-27,
+            "active_to_fixed": 7.24245917709277e-27,
+            "fixed_to_fixed": 0.38461538461538475
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 8.510263907243281e-14,
+          "fixed_to_active_over_operator": 8.502319036807194e-14,
+          "active_to_fixed_over_active_input": 1.0848500432214471e-13,
+          "fixed_to_active_over_fixed_input": 1.3709577506601011e-13,
+          "commutator_over_operator": 1.2029128784654894e-13,
+          "cross_block_adjoint_residual": 3.4891833012880113e-15,
+          "classification": "consistent_with_preservation"
+        },
+        "T17": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 13.533345962213083,
+            "fixed_to_active": 8.351461632956873,
+            "active_to_fixed": 8.351461632956875,
+            "fixed_to_fixed": 10.067508343852968
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.43196097389846494,
+            "fixed_to_active": 0.1644974325630912,
+            "active_to_fixed": 0.16449743256309127,
+            "fixed_to_fixed": 0.23904416097535167
+          },
+          "fraction_sum_error": 8.881784197001252e-16,
+          "active_to_fixed_over_operator": 0.40558283070550616,
+          "fixed_to_active_over_operator": 0.4055828307055061,
+          "active_to_fixed_over_active_input": 0.525157388545604,
+          "fixed_to_active_over_fixed_input": 0.6384625228439901,
+          "commutator_over_operator": 0.5735807398493976,
+          "cross_block_adjoint_residual": 3.3246068211299785e-15,
+          "classification": "resolved_mixing"
+        },
+        "T19": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 11.966648620106756,
+            "fixed_to_active": 10.74008605210449,
+            "active_to_fixed": 10.74008605210449,
+            "fixed_to_fixed": 7.078165298273142
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3377374509365635,
+            "fixed_to_active": 0.27205058586464476,
+            "active_to_fixed": 0.27205058586464476,
+            "fixed_to_fixed": 0.11816137733414647
+          },
+          "fraction_sum_error": 5.551115123125783e-16,
+          "active_to_fixed_over_operator": 0.5215846871454767,
+          "fixed_to_active_over_operator": 0.5215846871454767,
+          "active_to_fixed_over_active_input": 0.6679368172726144,
+          "fixed_to_active_over_fixed_input": 0.8349770577906207,
+          "commutator_over_operator": 0.7376321384872608,
+          "cross_block_adjoint_residual": 2.669473495848208e-15,
+          "classification": "resolved_mixing"
+        }
+      },
+      "STAR": {
+        "square_identity": 4.636119563844442e-15,
+        "J_anticommutator": 7.839917365742821e-15,
+        "isometry": 8.240882762307805e-15,
+        "active_restriction_eigenvalues": [
+          -1.0000000000000036,
+          -1.0000000000000013,
+          -1.0000000000000009,
+          -0.9999999999999996,
+          -0.9999999999999988,
+          -0.9999999999999978,
+          -0.9999999999999971,
+          -0.9999999999999957,
+          0.9999999999999963,
+          0.9999999999999967,
+          0.9999999999999981,
+          0.9999999999999987,
+          0.9999999999999998,
+          1.0000000000000009,
+          1.0000000000000013,
+          1.0000000000000042
+        ],
+        "fixed_restriction_eigenvalues": [
+          -1.0000000000000029,
+          -1.0000000000000016,
+          -1.000000000000001,
+          -1.0000000000000004,
+          -0.9999999999999963,
+          0.9999999999999973,
+          0.9999999999999987,
+          0.9999999999999999,
+          1.0000000000000002,
+          1.0000000000000022
+        ]
+      }
+    },
+    {
+      "dps_period_inputs": 50,
+      "frame_seed": 2026,
+      "complex_active_rank": 8,
+      "real_active_rank": 16,
+      "direct_seed_spectrum": {
+        "rank": 8,
+        "ambiguous": false,
+        "singular_values": [
+          0.01230424726852645,
+          0.009346859323526293,
+          0.00842688974776404,
+          0.0025446801619917006,
+          0.0007095249487447806,
+          0.0004821680909475184,
+          0.00014488156276458404,
+          1.3966117643688873e-05,
+          5.29498478673071e-18,
+          3.769108213767522e-18,
+          1.7463144568460906e-18,
+          1.0664308505661175e-18,
+          7.73427649458202e-19
+        ],
+        "normalized_singular_values": [
+          1.0,
+          0.7596449518236695,
+          0.6848764953967996,
+          0.2068131521138107,
+          0.05766504307497982,
+          0.03918712623574108,
+          0.011774922886602146,
+          0.0011350647738861191,
+          4.3033796957860015e-16,
+          3.063257858454033e-16,
+          1.4192777654209385e-16,
+          8.667176685354704e-17,
+          6.285859123106092e-17
+        ]
+      },
+      "checks": {
+        "R_Ri": 1.3669441196590227e-14,
+        "metric_whitening": 5.5869012694734234e-15,
+        "P_idempotence": 2.361276679262294e-15,
+        "P_symmetry": 1.928671943164459e-16,
+        "P_J_commutator": 0.0,
+        "closure_status": "ambiguous_package_gate",
+        "closure_error": "1 residuals in (1e-07, 1e-05]; worst [1.2076478544427825e-07]",
+        "direct_vs_closure_projector": null,
+        "closure_dimension": null,
+        "closure_growth": null,
+        "seed_fixed_annihilation": 9.06158061834516e-16
+      },
+      "operators": {
+        "T2": {
+          "operator_norm": 8.831760866327848,
+          "block_norms": {
+            "active_to_active": 5.691137999827556,
+            "fixed_to_active": 3.8212172915644538,
+            "active_to_fixed": 3.821217291564448,
+            "fixed_to_fixed": 4.050622802510313
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.4152442529882204,
+            "fixed_to_active": 0.18720130242757918,
+            "active_to_fixed": 0.18720130242757863,
+            "fixed_to_fixed": 0.21035314215662176
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.4326676581714638,
+          "fixed_to_active_over_operator": 0.4326676581714644,
+          "active_to_fixed_over_active_input": 0.5574366648802055,
+          "fixed_to_active_over_fixed_input": 0.6862085522752398,
+          "commutator_over_operator": 0.6118844701862908,
+          "cross_block_adjoint_residual": 3.606398558945009e-15,
+          "classification": "resolved_mixing"
+        },
+        "T3": {
+          "operator_norm": 9.797958971132715,
+          "block_norms": {
+            "active_to_active": 5.614481423764454,
+            "fixed_to_active": 4.545258347567188,
+            "active_to_fixed": 4.5452583475671835,
+            "fixed_to_fixed": 4.8123644344485745
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3283583506020429,
+            "fixed_to_active": 0.21520180673051242,
+            "active_to_fixed": 0.21520180673051198,
+            "fixed_to_fixed": 0.24123803593693266
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.4638984875277263,
+          "fixed_to_active_over_operator": 0.4638984875277267,
+          "active_to_fixed_over_active_input": 0.6292151179497815,
+          "fixed_to_active_over_fixed_input": 0.686643294202141,
+          "commutator_over_operator": 0.656051532626077,
+          "cross_block_adjoint_residual": 3.0704458725682873e-15,
+          "classification": "resolved_mixing"
+        },
+        "T5": {
+          "operator_norm": 13.266499161421605,
+          "block_norms": {
+            "active_to_active": 6.677992938802714,
+            "fixed_to_active": 7.2156872467998525,
+            "active_to_fixed": 7.21568724679985,
+            "fixed_to_fixed": 5.222272055536859
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.25338403233351636,
+            "fixed_to_active": 0.29583035479335223,
+            "active_to_fixed": 0.295830354793352,
+            "fixed_to_fixed": 0.15495525807977925
+          },
+          "fraction_sum_error": 1.1102230246251565e-16,
+          "active_to_fixed_over_operator": 0.5439028909588108,
+          "fixed_to_active_over_operator": 0.543902890958811,
+          "active_to_fixed_over_active_input": 0.7339228588169736,
+          "fixed_to_active_over_fixed_input": 0.8100957314394283,
+          "commutator_over_operator": 0.7691948450078852,
+          "cross_block_adjoint_residual": 4.027805572397086e-15,
+          "classification": "resolved_mixing"
+        },
+        "T7": {
+          "operator_norm": 14.696938456699073,
+          "block_norms": {
+            "active_to_active": 8.499558805465373,
+            "fixed_to_active": 7.611852153987857,
+            "active_to_fixed": 7.611852153987855,
+            "fixed_to_fixed": 5.279859248511935
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3344560179979811,
+            "fixed_to_active": 0.2682420982137479,
+            "active_to_fixed": 0.2682420982137478,
+            "fixed_to_fixed": 0.12905978557452313
+          },
+          "fraction_sum_error": 1.1102230246251565e-16,
+          "active_to_fixed_over_operator": 0.5179209381882024,
+          "fixed_to_active_over_operator": 0.5179209381882025,
+          "active_to_fixed_over_active_input": 0.6671347327683567,
+          "fixed_to_active_over_fixed_input": 0.8216808332835589,
+          "commutator_over_operator": 0.7324508150227534,
+          "cross_block_adjoint_residual": 3.6370567220779785e-15,
+          "classification": "resolved_mixing"
+        },
+        "W11": {
+          "operator_norm": 5.099019513592785,
+          "block_norms": {
+            "active_to_active": 3.197758642031332,
+            "fixed_to_active": 2.4029855736799464,
+            "active_to_fixed": 2.402985573679944,
+            "fixed_to_fixed": 2.0556411001646335
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3932946281802333,
+            "fixed_to_active": 0.2220899872043823,
+            "active_to_fixed": 0.2220899872043819,
+            "fixed_to_fixed": 0.16252539741100244
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.47126424350292256,
+          "fixed_to_active_over_operator": 0.471264243502923,
+          "active_to_fixed_over_active_input": 0.600746393419986,
+          "fixed_to_active_over_fixed_input": 0.759890759735499,
+          "commutator_over_operator": 0.6664682846233301,
+          "cross_block_adjoint_residual": 3.5179613241959368e-15,
+          "classification": "resolved_mixing"
+        },
+        "W13": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.1904672051113643,
+            "fixed_to_active": 2.412658080439267,
+            "active_to_fixed": 2.412658080439266,
+            "fixed_to_fixed": 2.0442800656688687
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3915031148804275,
+            "fixed_to_active": 0.22388150050418795,
+            "active_to_fixed": 0.22388150050418767,
+            "fixed_to_fixed": 0.1607338841111966
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.4731611781456586,
+          "fixed_to_active_over_operator": 0.4731611781456589,
+          "active_to_fixed_over_active_input": 0.6031645201098164,
+          "fixed_to_active_over_fixed_input": 0.7629494749397817,
+          "commutator_over_operator": 0.6691509553220227,
+          "cross_block_adjoint_residual": 3.2547991980366488e-15,
+          "classification": "resolved_mixing"
+        },
+        "W143": {
+          "operator_norm": 5.099019513592785,
+          "block_norms": {
+            "active_to_active": 3.961088466748966,
+            "fixed_to_active": 0.5565771811602948,
+            "active_to_fixed": 0.5565771811602953,
+            "fixed_to_fixed": 3.112912115915202
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6034700708235258,
+            "fixed_to_active": 0.011914544561089981,
+            "active_to_fixed": 0.011914544561090003,
+            "fixed_to_fixed": 0.3727008400542945
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.109153765675262,
+          "fixed_to_active_over_operator": 0.10915376567526189,
+          "active_to_fixed_over_active_input": 0.13914429529007377,
+          "fixed_to_active_over_fixed_input": 0.1760051586142689,
+          "commutator_over_operator": 0.15436673580205026,
+          "cross_block_adjoint_residual": 2.706914694163457e-15,
+          "classification": "resolved_mixing"
+        },
+        "STAR": {
+          "operator_norm": 5.0990195135927845,
+          "block_norms": {
+            "active_to_active": 4.000000000000001,
+            "fixed_to_active": 4.0644000465930733e-13,
+            "active_to_fixed": 4.0693558440847603e-13,
+            "fixed_to_fixed": 3.1622776601683786
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6153846153846158,
+            "fixed_to_active": 6.353595284132992e-27,
+            "active_to_fixed": 6.3690988406872286e-27,
+            "fixed_to_fixed": 0.3846153846153845
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 7.980663406438858e-14,
+          "fixed_to_active_over_operator": 7.970944287932887e-14,
+          "active_to_fixed_over_active_input": 1.0173389610211898e-13,
+          "fixed_to_active_over_fixed_input": 1.28527614693286e-13,
+          "commutator_over_operator": 1.1278028232440235e-13,
+          "cross_block_adjoint_residual": 3.5181797073125165e-15,
+          "classification": "consistent_with_preservation"
+        },
+        "T17": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 13.533345962213232,
+            "fixed_to_active": 8.351461632956818,
+            "active_to_fixed": 8.351461632956818,
+            "fixed_to_fixed": 10.067508343852882
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.43196097389847443,
+            "fixed_to_active": 0.16449743256308905,
+            "active_to_fixed": 0.16449743256308905,
+            "fixed_to_fixed": 0.2390441609753476
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.40558283070550344,
+          "fixed_to_active_over_operator": 0.40558283070550344,
+          "active_to_fixed_over_active_input": 0.5251573885455973,
+          "fixed_to_active_over_fixed_input": 0.6384625228439907,
+          "commutator_over_operator": 0.5735807398493938,
+          "cross_block_adjoint_residual": 3.362257908192972e-15,
+          "classification": "resolved_mixing"
+        },
+        "T19": {
+          "operator_norm": 20.591260281974005,
+          "block_norms": {
+            "active_to_active": 11.966648620106719,
+            "fixed_to_active": 10.74008605210438,
+            "active_to_fixed": 10.740086052104376,
+            "fixed_to_fixed": 7.0781652982735705
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.33773745093656127,
+            "fixed_to_active": 0.27205058586463915,
+            "active_to_fixed": 0.2720505858646389,
+            "fixed_to_fixed": 0.11816137733416075
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.521584687145471,
+          "fixed_to_active_over_operator": 0.5215846871454712,
+          "active_to_fixed_over_active_input": 0.6679368172726118,
+          "fixed_to_active_over_fixed_input": 0.8349770577906029,
+          "commutator_over_operator": 0.737632138487253,
+          "cross_block_adjoint_residual": 2.8661335011281698e-15,
+          "classification": "resolved_mixing"
+        }
+      },
+      "STAR": {
+        "square_identity": 4.5698992702241806e-15,
+        "J_anticommutator": 7.682484785612994e-15,
+        "isometry": 8.254734404406246e-15,
+        "active_restriction_eigenvalues": [
+          -1.000000000000006,
+          -1.0000000000000033,
+          -1.0000000000000013,
+          -1.0000000000000007,
+          -0.9999999999999994,
+          -0.999999999999998,
+          -0.9999999999999971,
+          -0.9999999999999933,
+          0.9999999999999959,
+          0.9999999999999974,
+          0.9999999999999979,
+          0.9999999999999996,
+          1.0000000000000022,
+          1.0000000000000027,
+          1.000000000000004,
+          1.000000000000004
+        ],
+        "fixed_restriction_eigenvalues": [
+          -1.0000000000000016,
+          -1.0000000000000009,
+          -1.0000000000000009,
+          -0.9999999999999997,
+          -0.9999999999999978,
+          0.9999999999999964,
+          0.9999999999999988,
+          0.9999999999999996,
+          1.0000000000000013,
+          1.000000000000002
+        ]
+      },
+      "baseline_comparison": {
+        "transported_P_difference": 4.970383018942421e-13,
+        "transition_isometry": 2.5130994857137306e-14,
+        "max_operator_transport_difference": 4.806959683375798e-15,
+        "max_block_fraction_difference": 1.459943277382081e-14
+      }
+    },
+    {
+      "dps_period_inputs": 50,
+      "frame_seed": 31415,
+      "complex_active_rank": 8,
+      "real_active_rank": 16,
+      "direct_seed_spectrum": {
+        "rank": 8,
+        "ambiguous": false,
+        "singular_values": [
+          0.012304247268526462,
+          0.009346859323526307,
+          0.008426889747764066,
+          0.0025446801619916997,
+          0.000709524948744772,
+          0.0004821680909475124,
+          0.0001448815627645799,
+          1.3966117643687706e-05,
+          1.302176385758297e-17,
+          2.8866134245451194e-18,
+          1.6698746599687157e-18,
+          1.4068610155048639e-18,
+          9.597694802524913e-19
+        ],
+        "normalized_singular_values": [
+          1.0,
+          0.75964495182367,
+          0.6848764953968011,
+          0.20681315211381043,
+          0.05766504307497907,
+          0.039187126235740555,
+          0.011774922886601797,
+          0.001135064773886023,
+          1.0583145456522054e-15,
+          2.346030083391534e-16,
+          1.3571530411617754e-16,
+          1.1433946220371654e-16,
+          7.800310407508836e-17
+        ]
+      },
+      "checks": {
+        "R_Ri": 1.4968561019148834e-14,
+        "metric_whitening": 5.772684586209195e-15,
+        "P_idempotence": 2.1578668978650192e-15,
+        "P_symmetry": 1.906385634897206e-16,
+        "P_J_commutator": 0.0,
+        "closure_status": "ambiguous_package_gate",
+        "closure_error": "1 residuals in (1e-07, 1e-05]; worst [1.5844900252434873e-07]",
+        "direct_vs_closure_projector": null,
+        "closure_dimension": null,
+        "closure_growth": null,
+        "seed_fixed_annihilation": 1.1627025025282914e-15
+      },
+      "operators": {
+        "T2": {
+          "operator_norm": 8.83176086632785,
+          "block_norms": {
+            "active_to_active": 5.691137999827626,
+            "fixed_to_active": 3.82121729156442,
+            "active_to_fixed": 3.8212172915644147,
+            "fixed_to_fixed": 4.050622802510283
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.41524425298823053,
+            "fixed_to_active": 0.18720130242757582,
+            "active_to_fixed": 0.1872013024275753,
+            "fixed_to_fixed": 0.21035314215661854
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.4326676581714599,
+          "fixed_to_active_over_operator": 0.4326676581714605,
+          "active_to_fixed_over_active_input": 0.5574366648801975,
+          "fixed_to_active_over_fixed_input": 0.6862085522752395,
+          "commutator_over_operator": 0.6118844701862853,
+          "cross_block_adjoint_residual": 3.720505640756693e-15,
+          "classification": "resolved_mixing"
+        },
+        "T3": {
+          "operator_norm": 9.797958971132713,
+          "block_norms": {
+            "active_to_active": 5.614481423764595,
+            "fixed_to_active": 4.545258347567132,
+            "active_to_fixed": 4.5452583475671275,
+            "fixed_to_fixed": 4.812364434448518
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3283583506020594,
+            "fixed_to_active": 0.2152018067305072,
+            "active_to_fixed": 0.2152018067305068,
+            "fixed_to_fixed": 0.24123803593692705
+          },
+          "fraction_sum_error": 4.440892098500626e-16,
+          "active_to_fixed_over_operator": 0.4638984875277206,
+          "fixed_to_active_over_operator": 0.4638984875277211,
+          "active_to_fixed_over_active_input": 0.6292151179497671,
+          "fixed_to_active_over_fixed_input": 0.6866432942021409,
+          "commutator_over_operator": 0.6560515326260689,
+          "cross_block_adjoint_residual": 3.260426247256376e-15,
+          "classification": "resolved_mixing"
+        },
+        "T5": {
+          "operator_norm": 13.266499161421606,
+          "block_norms": {
+            "active_to_active": 6.677992938803038,
+            "fixed_to_active": 7.2156872467997,
+            "active_to_fixed": 7.2156872467997,
+            "fixed_to_fixed": 5.222272055536868
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.25338403233354084,
+            "fixed_to_active": 0.2958303547933397,
+            "active_to_fixed": 0.2958303547933397,
+            "fixed_to_fixed": 0.15495525807977975
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.5439028909587994,
+          "fixed_to_active_over_operator": 0.5439028909587994,
+          "active_to_fixed_over_active_input": 0.7339228588169503,
+          "fixed_to_active_over_fixed_input": 0.8100957314394219,
+          "commutator_over_operator": 0.7691948450078688,
+          "cross_block_adjoint_residual": 4.114813889191019e-15,
+          "classification": "resolved_mixing"
+        },
+        "T7": {
+          "operator_norm": 14.696938456699074,
+          "block_norms": {
+            "active_to_active": 8.499558805465185,
+            "fixed_to_active": 7.611852153987915,
+            "active_to_fixed": 7.611852153987915,
+            "fixed_to_fixed": 5.2798592485120714
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3344560179979662,
+            "fixed_to_active": 0.2682420982137519,
+            "active_to_fixed": 0.2682420982137519,
+            "fixed_to_fixed": 0.12905978557452977
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.5179209381882064,
+          "fixed_to_active_over_operator": 0.5179209381882064,
+          "active_to_fixed_over_active_input": 0.6671347327683679,
+          "fixed_to_active_over_fixed_input": 0.8216808332835541,
+          "commutator_over_operator": 0.732450815022759,
+          "cross_block_adjoint_residual": 3.739579394300014e-15,
+          "classification": "resolved_mixing"
+        },
+        "W11": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.197758642031346,
+            "fixed_to_active": 2.402985573679928,
+            "active_to_fixed": 2.4029855736799264,
+            "fixed_to_fixed": 2.0556411001646557
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3932946281802367,
+            "fixed_to_active": 0.22208998720437886,
+            "active_to_fixed": 0.2220899872043785,
+            "fixed_to_fixed": 0.1625253974110059
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.471264243502919,
+          "fixed_to_active_over_operator": 0.47126424350291934,
+          "active_to_fixed_over_active_input": 0.6007463934199815,
+          "fixed_to_active_over_fixed_input": 0.759890759735493,
+          "commutator_over_operator": 0.6664682846233251,
+          "cross_block_adjoint_residual": 3.587256681006705e-15,
+          "classification": "resolved_mixing"
+        },
+        "W13": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.1904672051113767,
+            "fixed_to_active": 2.412658080439251,
+            "active_to_fixed": 2.4126580804392495,
+            "fixed_to_fixed": 2.0442800656688895
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3915031148804305,
+            "fixed_to_active": 0.22388150050418487,
+            "active_to_fixed": 0.22388150050418465,
+            "fixed_to_fixed": 0.16073388411119988
+          },
+          "fraction_sum_error": 1.1102230246251565e-16,
+          "active_to_fixed_over_operator": 0.4731611781456554,
+          "fixed_to_active_over_operator": 0.47316117814565567,
+          "active_to_fixed_over_active_input": 0.6031645201098123,
+          "fixed_to_active_over_fixed_input": 0.7629494749397764,
+          "commutator_over_operator": 0.6691509553220182,
+          "cross_block_adjoint_residual": 3.3100938269511767e-15,
+          "classification": "resolved_mixing"
+        },
+        "W143": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.9610884667489663,
+            "fixed_to_active": 0.5565771811602919,
+            "active_to_fixed": 0.5565771811602925,
+            "fixed_to_fixed": 3.112912115915203
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6034700708235258,
+            "fixed_to_active": 0.011914544561089853,
+            "active_to_fixed": 0.01191454456108988,
+            "fixed_to_fixed": 0.3727008400542946
+          },
+          "fraction_sum_error": 0.0,
+          "active_to_fixed_over_operator": 0.10915376567526143,
+          "fixed_to_active_over_operator": 0.1091537656752613,
+          "active_to_fixed_over_active_input": 0.1391442952900731,
+          "fixed_to_active_over_fixed_input": 0.176005158614268,
+          "commutator_over_operator": 0.15436673580204946,
+          "cross_block_adjoint_residual": 2.804947653942197e-15,
+          "classification": "resolved_mixing"
+        },
+        "STAR": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 4.000000000000001,
+            "fixed_to_active": 3.776601489574594e-13,
+            "active_to_fixed": 3.764664651821174e-13,
+            "fixed_to_fixed": 3.1622776601683795
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6153846153846153,
+            "fixed_to_active": 5.485661081175783e-27,
+            "active_to_fixed": 5.4510384387199365e-27,
+            "fixed_to_fixed": 0.38461538461538447
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 7.383114816065057e-14,
+          "fixed_to_active_over_operator": 7.40652488092478e-14,
+          "active_to_fixed_over_active_input": 9.411661629552936e-14,
+          "fixed_to_active_over_fixed_input": 1.1942662521840362e-13,
+          "commutator_over_operator": 1.0457297215683235e-13,
+          "cross_block_adjoint_residual": 3.5207840435026714e-15,
+          "classification": "consistent_with_preservation"
+        },
+        "T17": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 13.533345962213,
+            "fixed_to_active": 8.351461632957061,
+            "active_to_fixed": 8.351461632957058,
+            "fixed_to_fixed": 10.067508343852797
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.4319609738984596,
+            "fixed_to_active": 0.16449743256309862,
+            "active_to_fixed": 0.16449743256309848,
+            "fixed_to_fixed": 0.23904416097534356
+          },
+          "fraction_sum_error": 2.220446049250313e-16,
+          "active_to_fixed_over_operator": 0.40558283070551504,
+          "fixed_to_active_over_operator": 0.40558283070551526,
+          "active_to_fixed_over_active_input": 0.5251573885456148,
+          "fixed_to_active_over_fixed_input": 0.6384625228440052,
+          "commutator_over_operator": 0.5735807398494105,
+          "cross_block_adjoint_residual": 3.4259693241850034e-15,
+          "classification": "resolved_mixing"
+        },
+        "T19": {
+          "operator_norm": 20.591260281974005,
+          "block_norms": {
+            "active_to_active": 11.966648620106747,
+            "fixed_to_active": 10.740086052104452,
+            "active_to_fixed": 10.740086052104449,
+            "fixed_to_fixed": 7.078165298273297
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3377374509365629,
+            "fixed_to_active": 0.2720505858646428,
+            "active_to_fixed": 0.2720505858646426,
+            "fixed_to_fixed": 0.11816137733415162
+          },
+          "fraction_sum_error": 1.1102230246251565e-16,
+          "active_to_fixed_over_operator": 0.5215846871454746,
+          "fixed_to_active_over_operator": 0.5215846871454748,
+          "active_to_fixed_over_active_input": 0.6679368172726136,
+          "fixed_to_active_over_fixed_input": 0.8349770577906144,
+          "commutator_over_operator": 0.7376321384872581,
+          "cross_block_adjoint_residual": 2.7481725671724225e-15,
+          "classification": "resolved_mixing"
+        }
+      },
+      "STAR": {
+        "square_identity": 4.907977093821505e-15,
+        "J_anticommutator": 8.215943769125344e-15,
+        "isometry": 8.424907000138324e-15,
+        "active_restriction_eigenvalues": [
+          -1.0000000000000049,
+          -1.0000000000000029,
+          -1.000000000000001,
+          -0.9999999999999997,
+          -0.9999999999999996,
+          -0.9999999999999981,
+          -0.9999999999999974,
+          -0.9999999999999939,
+          0.9999999999999946,
+          0.9999999999999977,
+          0.9999999999999981,
+          0.9999999999999996,
+          1.000000000000001,
+          1.0000000000000018,
+          1.000000000000003,
+          1.0000000000000053
+        ],
+        "fixed_restriction_eigenvalues": [
+          -1.0000000000000036,
+          -1.0000000000000013,
+          -0.9999999999999999,
+          -0.9999999999999976,
+          -0.9999999999999966,
+          0.9999999999999976,
+          0.9999999999999982,
+          0.999999999999999,
+          0.9999999999999999,
+          1.0000000000000009
+        ]
+      },
+      "baseline_comparison": {
+        "transported_P_difference": 5.087057739104297e-13,
+        "transition_isometry": 2.5797686241329948e-14,
+        "max_operator_transport_difference": 5.007499950854233e-15,
+        "max_block_fraction_difference": 3.036459972349803e-14
+      }
+    },
+    {
+      "dps_period_inputs": 80,
+      "frame_seed": 143,
+      "complex_active_rank": 8,
+      "real_active_rank": 16,
+      "direct_seed_spectrum": {
+        "rank": 8,
+        "ambiguous": false,
+        "singular_values": [
+          0.012304247268526476,
+          0.009346859323526309,
+          0.008426889747764054,
+          0.002544680161991699,
+          0.0007095249487447763,
+          0.0004821680909475143,
+          0.00014488156276457702,
+          1.3966117643689107e-05,
+          1.4046886282766282e-17,
+          2.904831615942262e-18,
+          2.0119670344175068e-18,
+          1.0830392703446997e-18,
+          7.715789960359736e-19
+        ],
+        "normalized_singular_values": [
+          1.0,
+          0.7596449518236692,
+          0.6848764953967993,
+          0.20681315211381013,
+          0.057665043074979355,
+          0.039187126235740666,
+          0.011774922886601551,
+          0.0011350647738861356,
+          1.1416290632176559e-15,
+          2.360836508359716e-16,
+          1.6351809180265723e-16,
+          8.802157878564818e-17,
+          6.270834608547134e-17
+        ]
+      },
+      "checks": {
+        "R_Ri": 1.3928655030903329e-14,
+        "metric_whitening": 5.808029182313498e-15,
+        "P_idempotence": 3.0102182805250305e-15,
+        "P_symmetry": 1.8160902640507202e-16,
+        "P_J_commutator": 0.0,
+        "closure_status": "passed_package_gate",
+        "direct_vs_closure_projector": 8.559089904553565e-12,
+        "closure_dimension": 28,
+        "closure_growth": [
+          3,
+          6,
+          17,
+          28,
+          28
+        ],
+        "seed_fixed_annihilation": 1.3479822236741247e-15
+      },
+      "operators": {
+        "T2": {
+          "operator_norm": 8.831760866327848,
+          "block_norms": {
+            "active_to_active": 5.691137999827465,
+            "fixed_to_active": 3.8212172915644786,
+            "active_to_fixed": 3.821217291564473,
+            "fixed_to_fixed": 4.050622802510388
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.4152442529882071,
+            "fixed_to_active": 0.18720130242758162,
+            "active_to_fixed": 0.18720130242758107,
+            "fixed_to_fixed": 0.2103531421566295
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 0.4326676581714666,
+          "fixed_to_active_over_operator": 0.43266765817146724,
+          "active_to_fixed_over_active_input": 0.557436664880214,
+          "fixed_to_active_over_fixed_input": 0.6862085522752356,
+          "commutator_over_operator": 0.6118844701862948,
+          "cross_block_adjoint_residual": 3.62436527319407e-15,
+          "classification": "resolved_mixing"
+        },
+        "T3": {
+          "operator_norm": 9.797958971132715,
+          "block_norms": {
+            "active_to_active": 5.61448142376454,
+            "fixed_to_active": 4.545258347567207,
+            "active_to_fixed": 4.545258347567203,
+            "fixed_to_fixed": 4.812364434448429
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.32835835060205293,
+            "fixed_to_active": 0.21520180673051417,
+            "active_to_fixed": 0.21520180673051384,
+            "fixed_to_fixed": 0.24123803593691806
+          },
+          "fraction_sum_error": 9.992007221626409e-16,
+          "active_to_fixed_over_operator": 0.4638984875277283,
+          "fixed_to_active_over_operator": 0.4638984875277286,
+          "active_to_fixed_over_active_input": 0.629215117949777,
+          "fixed_to_active_over_fixed_input": 0.6866432942021533,
+          "commutator_over_operator": 0.6560515326260796,
+          "cross_block_adjoint_residual": 3.1723828954748185e-15,
+          "classification": "resolved_mixing"
+        },
+        "T5": {
+          "operator_norm": 13.266499161421605,
+          "block_norms": {
+            "active_to_active": 6.677992938802637,
+            "fixed_to_active": 7.215687246799905,
+            "active_to_fixed": 7.215687246799905,
+            "fixed_to_fixed": 5.2222720555367985
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.2533840323335105,
+            "fixed_to_active": 0.29583035479335656,
+            "active_to_fixed": 0.29583035479335656,
+            "fixed_to_fixed": 0.15495525807977567
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 0.5439028909588149,
+          "fixed_to_active_over_operator": 0.5439028909588149,
+          "active_to_fixed_over_active_input": 0.73392285881698,
+          "fixed_to_active_over_fixed_input": 0.8100957314394333,
+          "commutator_over_operator": 0.7691948450078908,
+          "cross_block_adjoint_residual": 3.959501937136368e-15,
+          "classification": "resolved_mixing"
+        },
+        "T7": {
+          "operator_norm": 14.69693845669907,
+          "block_norms": {
+            "active_to_active": 8.499558805465329,
+            "fixed_to_active": 7.611852153987929,
+            "active_to_fixed": 7.611852153987929,
+            "fixed_to_fixed": 5.279859248511781
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3344560179979777,
+            "fixed_to_active": 0.26824209821375306,
+            "active_to_fixed": 0.26824209821375306,
+            "fixed_to_fixed": 0.12905978557451564
+          },
+          "fraction_sum_error": 5.551115123125783e-16,
+          "active_to_fixed_over_operator": 0.5179209381882075,
+          "fixed_to_active_over_operator": 0.5179209381882075,
+          "active_to_fixed_over_active_input": 0.667134732768362,
+          "fixed_to_active_over_fixed_input": 0.8216808332835691,
+          "commutator_over_operator": 0.7324508150227605,
+          "cross_block_adjoint_residual": 3.6947115149098326e-15,
+          "classification": "resolved_mixing"
+        },
+        "W11": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.197758642031323,
+            "fixed_to_active": 2.402985573679954,
+            "active_to_fixed": 2.4029855736799526,
+            "fixed_to_fixed": 2.0556411001646238
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.393294628180231,
+            "fixed_to_active": 0.2220899872043836,
+            "active_to_fixed": 0.22208998720438336,
+            "fixed_to_fixed": 0.16252539741100086
+          },
+          "fraction_sum_error": 1.2212453270876722e-15,
+          "active_to_fixed_over_operator": 0.4712642435029241,
+          "fixed_to_active_over_operator": 0.4712642435029244,
+          "active_to_fixed_over_active_input": 0.6007463934199883,
+          "fixed_to_active_over_fixed_input": 0.7598907597355014,
+          "commutator_over_operator": 0.6664682846233323,
+          "cross_block_adjoint_residual": 3.540418303974992e-15,
+          "classification": "resolved_mixing"
+        },
+        "W13": {
+          "operator_norm": 5.099019513592786,
+          "block_norms": {
+            "active_to_active": 3.190467205111359,
+            "fixed_to_active": 2.41265808043927,
+            "active_to_fixed": 2.4126580804392685,
+            "fixed_to_fixed": 2.0442800656688638
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3915031148804262,
+            "fixed_to_active": 0.22388150050418842,
+            "active_to_fixed": 0.2238815005041882,
+            "fixed_to_fixed": 0.16073388411119585
+          },
+          "fraction_sum_error": 1.3322676295501878e-15,
+          "active_to_fixed_over_operator": 0.4731611781456591,
+          "fixed_to_active_over_operator": 0.4731611781456594,
+          "active_to_fixed_over_active_input": 0.6031645201098174,
+          "fixed_to_active_over_fixed_input": 0.7629494749397827,
+          "commutator_over_operator": 0.6691509553220235,
+          "cross_block_adjoint_residual": 3.294458736534257e-15,
+          "classification": "resolved_mixing"
+        },
+        "W143": {
+          "operator_norm": 5.099019513592785,
+          "block_norms": {
+            "active_to_active": 3.9610884667489623,
+            "fixed_to_active": 0.5565771811602955,
+            "active_to_fixed": 0.5565771811602959,
+            "fixed_to_fixed": 3.112912115915202
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6034700708235247,
+            "fixed_to_active": 0.011914544561090014,
+            "active_to_fixed": 0.011914544561090028,
+            "fixed_to_fixed": 0.3727008400542945
+          },
+          "fraction_sum_error": 7.771561172376096e-16,
+          "active_to_fixed_over_operator": 0.10915376567526211,
+          "fixed_to_active_over_operator": 0.10915376567526204,
+          "active_to_fixed_over_active_input": 0.139144295290074,
+          "fixed_to_active_over_fixed_input": 0.17600515861426913,
+          "commutator_over_operator": 0.15436673580205046,
+          "cross_block_adjoint_residual": 2.819788288696149e-15,
+          "classification": "resolved_mixing"
+        },
+        "STAR": {
+          "operator_norm": 5.0990195135927845,
+          "block_norms": {
+            "active_to_active": 3.999999999999997,
+            "fixed_to_active": 4.335349067947129e-13,
+            "active_to_fixed": 4.339400172885787e-13,
+            "fixed_to_fixed": 3.1622776601683795
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.6153846153846145,
+            "fixed_to_active": 7.2289429003654e-27,
+            "active_to_fixed": 7.24245917709277e-27,
+            "fixed_to_fixed": 0.38461538461538475
+          },
+          "fraction_sum_error": 6.661338147750939e-16,
+          "active_to_fixed_over_operator": 8.510263907243281e-14,
+          "fixed_to_active_over_operator": 8.502319036807194e-14,
+          "active_to_fixed_over_active_input": 1.0848500432214471e-13,
+          "fixed_to_active_over_fixed_input": 1.3709577506601011e-13,
+          "commutator_over_operator": 1.2029128784654894e-13,
+          "cross_block_adjoint_residual": 3.4891833012880113e-15,
+          "classification": "consistent_with_preservation"
+        },
+        "T17": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 13.533345962213083,
+            "fixed_to_active": 8.351461632956873,
+            "active_to_fixed": 8.351461632956875,
+            "fixed_to_fixed": 10.067508343852968
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.43196097389846494,
+            "fixed_to_active": 0.1644974325630912,
+            "active_to_fixed": 0.16449743256309127,
+            "fixed_to_fixed": 0.23904416097535167
+          },
+          "fraction_sum_error": 8.881784197001252e-16,
+          "active_to_fixed_over_operator": 0.40558283070550616,
+          "fixed_to_active_over_operator": 0.4055828307055061,
+          "active_to_fixed_over_active_input": 0.525157388545604,
+          "fixed_to_active_over_fixed_input": 0.6384625228439901,
+          "commutator_over_operator": 0.5735807398493976,
+          "cross_block_adjoint_residual": 3.3246068211299785e-15,
+          "classification": "resolved_mixing"
+        },
+        "T19": {
+          "operator_norm": 20.591260281974,
+          "block_norms": {
+            "active_to_active": 11.966648620106756,
+            "fixed_to_active": 10.74008605210449,
+            "active_to_fixed": 10.74008605210449,
+            "fixed_to_fixed": 7.078165298273142
+          },
+          "block_squared_fractions": {
+            "active_to_active": 0.3377374509365635,
+            "fixed_to_active": 0.27205058586464476,
+            "active_to_fixed": 0.27205058586464476,
+            "fixed_to_fixed": 0.11816137733414647
+          },
+          "fraction_sum_error": 5.551115123125783e-16,
+          "active_to_fixed_over_operator": 0.5215846871454767,
+          "fixed_to_active_over_operator": 0.5215846871454767,
+          "active_to_fixed_over_active_input": 0.6679368172726144,
+          "fixed_to_active_over_fixed_input": 0.8349770577906207,
+          "commutator_over_operator": 0.7376321384872608,
+          "cross_block_adjoint_residual": 2.669473495848208e-15,
+          "classification": "resolved_mixing"
+        }
+      },
+      "STAR": {
+        "square_identity": 4.636119563844442e-15,
+        "J_anticommutator": 7.839917365742821e-15,
+        "isometry": 8.240882762307805e-15,
+        "active_restriction_eigenvalues": [
+          -1.0000000000000036,
+          -1.0000000000000013,
+          -1.0000000000000009,
+          -0.9999999999999996,
+          -0.9999999999999988,
+          -0.9999999999999978,
+          -0.9999999999999971,
+          -0.9999999999999957,
+          0.9999999999999963,
+          0.9999999999999967,
+          0.9999999999999981,
+          0.9999999999999987,
+          0.9999999999999998,
+          1.0000000000000009,
+          1.0000000000000013,
+          1.0000000000000042
+        ],
+        "fixed_restriction_eigenvalues": [
+          -1.0000000000000029,
+          -1.0000000000000016,
+          -1.000000000000001,
+          -1.0000000000000004,
+          -0.9999999999999963,
+          0.9999999999999973,
+          0.9999999999999987,
+          0.9999999999999999,
+          1.0000000000000002,
+          1.0000000000000022
+        ]
+      },
+      "baseline_comparison": {
+        "transported_P_difference": 1.9647185841066122e-14,
+        "transition_isometry": 2.554484816244424e-14,
+        "max_operator_transport_difference": 4.786102923100525e-15,
+        "max_block_fraction_difference": 0.0
+      }
+    }
+  ],
+  "hulls": {
+    "T2_only": {
+      "status": "resolved_numerically",
+      "growth": [
+        16,
+        26,
+        26
+      ],
+      "real_dimension": 26,
+      "step_spectra": [
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.030434186296948,
+            1.0304341862969473,
+            1.0249168126847727,
+            1.0249168126847719,
+            1.0198926251550484,
+            1.0198926251550482,
+            1.012442509306802,
+            1.0124425093068017,
+            1.0077696409546626,
+            1.0077696409546626,
+            1.0046079647777773,
+            1.004607964777777,
+            1.0036323496205388,
+            1.0036323496205386,
+            1.0000007398407533,
+            1.0000007398407529,
+            0.21586015517833096,
+            0.21586015517833063,
+            0.15067264745341447,
+            0.15067264745341422,
+            0.10976924884340022,
+            0.1097692488433995,
+            0.10094277737874496,
+            0.10094277737874459,
+            0.01000601843237552,
+            0.010006018432375096
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999993,
+            0.994645583691276,
+            0.9946455836912751,
+            0.9897697870644387,
+            0.9897697870644385,
+            0.9825397126479253,
+            0.9825397126479251,
+            0.9780048588801828,
+            0.9780048588801828,
+            0.9749365637683451,
+            0.9749365637683449,
+            0.9739897637007499,
+            0.9739897637007496,
+            0.9704654146175383,
+            0.9704654146175379,
+            0.20948466000925645,
+            0.2094846600092561,
+            0.14622248510104652,
+            0.14622248510104627,
+            0.10652718077791647,
+            0.10652718077791576,
+            0.09796140182567228,
+            0.09796140182567191,
+            0.009710487642431547,
+            0.009710487642431136
+          ]
+        },
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.0459851606819228,
+            1.0459851606819228,
+            1.0416820332445678,
+            1.0416820332445678,
+            1.037663185392275,
+            1.0376631853922746,
+            1.025320462724729,
+            1.025320462724729,
+            1.0253204627247274,
+            1.0253204627247265,
+            1.0193867311570322,
+            1.0193867311570315,
+            1.0183841397406943,
+            1.0183841397406936,
+            1.0118795674750718,
+            1.0118795674750714,
+            1.0096713683804268,
+            1.0096713683804261,
+            1.0081054932549143,
+            1.0081054932549138,
+            1.0025655222721808,
+            1.0025655222721799,
+            1.0002490637093104,
+            1.00024906370931,
+            1.0000000000000007,
+            0.9999999999999999
+          ],
+          "normalized_singular_values": [
+            1.0,
+            1.0,
+            0.9958860530731146,
+            0.9958860530731146,
+            0.992043887807909,
+            0.9920438878079085,
+            0.9802437943347861,
+            0.9802437943347861,
+            0.9802437943347847,
+            0.9802437943347838,
+            0.9745709303298815,
+            0.974570930329881,
+            0.9736124163336751,
+            0.9736124163336745,
+            0.9673938077815405,
+            0.96739380778154,
+            0.9652826888310524,
+            0.9652826888310517,
+            0.9637856550447492,
+            0.9637856550447488,
+            0.9584892405343161,
+            0.9584892405343152,
+            0.9562746215799132,
+            0.9562746215799127,
+            0.9560365075810995,
+            0.9560365075810987
+          ]
+        }
+      ],
+      "terminal_leakage": {
+        "T2": 1.0077275501897015e-15
+      },
+      "J_leakage": 1.0416430405925751e-15,
+      "replication_leakage": {
+        "T17": 1.01749229158484e-15,
+        "T19": 1.0937008720489191e-15
+      }
+    },
+    "good_Hecke": {
+      "status": "resolved_numerically",
+      "growth": [
+        16,
+        26,
+        26
+      ],
+      "real_dimension": 26,
+      "step_spectra": [
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.0663983117672304,
+            1.0663983117672298,
+            1.0579935364770716,
+            1.057993536477071,
+            1.047378939128538,
+            1.0473789391285377,
+            1.0428240056791083,
+            1.0428240056791076,
+            1.0412109214783614,
+            1.0412109214783611,
+            1.0349201870791946,
+            1.0349201870791938,
+            1.0214860365169063,
+            1.021486036516906,
+            1.0169831740289696,
+            1.0169831740289696,
+            0.37717819976729533,
+            0.37717819976729533,
+            0.32101897196153745,
+            0.32101897196153667,
+            0.30446916257041484,
+            0.30446916257041434,
+            0.2951265694336674,
+            0.2951265694336666,
+            0.22345617726460543,
+            0.22345617726460465
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999993,
+            0.9921185403264279,
+            0.9921185403264272,
+            0.9821648511359947,
+            0.9821648511359945,
+            0.9778935264356758,
+            0.9778935264356753,
+            0.9763808794416332,
+            0.976380879441633,
+            0.9704818318439848,
+            0.970481831843984,
+            0.957884146331875,
+            0.9578841463318749,
+            0.9536616504424409,
+            0.9536616504424409,
+            0.353693545465425,
+            0.353693545465425,
+            0.3010310204163267,
+            0.30103102041632596,
+            0.28551166971171393,
+            0.2855116697117135,
+            0.2767507845587124,
+            0.27675078455871166,
+            0.20954288355379602,
+            0.2095428835537953
+          ]
+        },
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.1267636392218663,
+            1.126763639221866,
+            1.1019322473557769,
+            1.1019322473557747,
+            1.09709867928702,
+            1.0970986792870185,
+            1.0957382774137945,
+            1.095738277413793,
+            1.0943774016456664,
+            1.094377401645666,
+            1.0918670116687899,
+            1.0918670116687894,
+            1.072595300803811,
+            1.0725953008038107,
+            1.0673213222364517,
+            1.0673213222364513,
+            1.065309531632187,
+            1.0653095316321861,
+            1.0445624325142766,
+            1.0445624325142757,
+            1.0420648034786786,
+            1.0420648034786775,
+            1.042064803478677,
+            1.0420648034786766,
+            1.017161247476035,
+            1.0171612474760348
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999998,
+            0.9779621998778397,
+            0.9779621998778377,
+            0.9736724199270997,
+            0.9736724199270984,
+            0.9724650665604566,
+            0.9724650665604552,
+            0.9712572926132356,
+            0.9712572926132352,
+            0.9690293275906775,
+            0.9690293275906772,
+            0.9519257308875679,
+            0.9519257308875677,
+            0.9472450876863004,
+            0.9472450876863,
+            0.945459628398979,
+            0.9454596283989782,
+            0.9270466281958147,
+            0.927046628195814,
+            0.9248299884777255,
+            0.9248299884777245,
+            0.924829988477724,
+            0.9248299884777237,
+            0.9027281428592053,
+            0.9027281428592051
+          ]
+        }
+      ],
+      "terminal_leakage": {
+        "T2": 9.548683565314717e-16,
+        "T3": 1.0230377400468126e-15,
+        "T5": 9.903510931021103e-16,
+        "T7": 1.0094070640127918e-15
+      },
+      "J_leakage": 9.889872697865982e-16,
+      "replication_leakage": {
+        "T17": 9.89894359021576e-16,
+        "T19": 1.027527317700554e-15
+      }
+    },
+    "Atkin_Lehner": {
+      "status": "resolved_numerically",
+      "growth": [
+        16,
+        26,
+        26
+      ],
+      "real_dimension": 26,
+      "step_spectra": [
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.0561177090573834,
+            1.0561177090573828,
+            1.0560482877826305,
+            1.0560482877826305,
+            1.0550535759822366,
+            1.055053575982236,
+            1.0529676726950479,
+            1.0529676726950479,
+            1.0430719581429073,
+            1.043071958142907,
+            1.033617513780583,
+            1.033617513780582,
+            1.0244601706624457,
+            1.0244601706624452,
+            1.0194877956127033,
+            1.019487795612703,
+            0.28107501967788406,
+            0.2810750196778835,
+            0.26203506347642186,
+            0.26203506347642125,
+            0.2173723826457363,
+            0.21737238264573594,
+            0.1712137008000695,
+            0.1712137008000685,
+            0.03326630484724577,
+            0.03326630484724497
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999993,
+            0.9999342674834845,
+            0.9999342674834845,
+            0.9989924105371771,
+            0.9989924105371765,
+            0.9970173434880217,
+            0.9970173434880217,
+            0.987647446110794,
+            0.9876474461107938,
+            0.9786953716580677,
+            0.978695371658067,
+            0.9700246117232585,
+            0.970024611723258,
+            0.9653164480336445,
+            0.9653164480336442,
+            0.26613986042214166,
+            0.26613986042214116,
+            0.2481116084212772,
+            0.2481116084212766,
+            0.2058221169681433,
+            0.20582211696814295,
+            0.16211611578114984,
+            0.1621161157811489,
+            0.03149867156089726,
+            0.0314986715608965
+          ]
+        },
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.0561177090573841,
+            1.056117709057384,
+            1.0561177090573834,
+            1.0561177090573834,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.0561177090573832,
+            1.056117709057383,
+            1.056117709057383,
+            1.056117709057383,
+            1.056117709057383,
+            1.056117709057383,
+            1.056117709057383,
+            1.0561177090573828,
+            1.0561177090573828,
+            1.0561177090573828,
+            1.0561177090573828,
+            1.0561177090573826,
+            1.0561177090573826
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999998,
+            0.9999999999999993,
+            0.9999999999999993,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.9999999999999988,
+            0.9999999999999988,
+            0.9999999999999988,
+            0.9999999999999988,
+            0.9999999999999986,
+            0.9999999999999986
+          ]
+        }
+      ],
+      "terminal_leakage": {
+        "W11": 5.316977492619157e-16,
+        "W13": 5.316977492619158e-16,
+        "W143": 5.31697749261916e-16
+      },
+      "J_leakage": 5.316977492619158e-16,
+      "replication_leakage": {
+        "T17": 5.650500494072995e-16,
+        "T19": 4.893771534753635e-16
+      }
+    },
+    "all_primary": {
+      "status": "resolved_numerically",
+      "growth": [
+        16,
+        26,
+        26
+      ],
+      "real_dimension": 26,
+      "step_spectra": [
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.1289381160832301,
+            1.1289381160832284,
+            1.110919107937697,
+            1.1109191079376954,
+            1.1102447821067867,
+            1.1102447821067847,
+            1.1077500760735894,
+            1.1077500760735888,
+            1.0953763727115997,
+            1.095376372711599,
+            1.088672275465166,
+            1.0886722754651652,
+            1.084007947810972,
+            1.0840079478109717,
+            1.0730130961726594,
+            1.073013096172659,
+            0.44600060288279075,
+            0.4460006028827893,
+            0.40827060223235084,
+            0.40827060223234984,
+            0.37047696165598465,
+            0.3704769616559838,
+            0.33554747025824605,
+            0.33554747025824483,
+            0.29051391391709386,
+            0.2905139139170934
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999984,
+            0.984038976194684,
+            0.9840389761946825,
+            0.9834416663675962,
+            0.9834416663675944,
+            0.9812318853373903,
+            0.9812318853373897,
+            0.9702714055859231,
+            0.9702714055859225,
+            0.9643329957201167,
+            0.9643329957201159,
+            0.9602013895782525,
+            0.9602013895782521,
+            0.9504622803377402,
+            0.9504622803377398,
+            0.3950620468287118,
+            0.39506204682871054,
+            0.3616412595305192,
+            0.36164125953051834,
+            0.32816410074037355,
+            0.3281641007403728,
+            0.2972239713390172,
+            0.2972239713390161,
+            0.25733378099147813,
+            0.25733378099147775
+          ]
+        },
+        {
+          "rank": 26,
+          "ambiguous": false,
+          "singular_values": [
+            1.1930810754171988,
+            1.1930810754171979,
+            1.1696584251860473,
+            1.1696584251860467,
+            1.165105860400451,
+            1.1651058604004503,
+            1.163824955238502,
+            1.1638249552385014,
+            1.1625437845857138,
+            1.1625437845857132,
+            1.1601809018496587,
+            1.1601809018496583,
+            1.1420625346943876,
+            1.1420625346943873,
+            1.1371107944025172,
+            1.1371107944025156,
+            1.1352226883006442,
+            1.1352226883006435,
+            1.1157763347850214,
+            1.1157763347850205,
+            1.113438461925583,
+            1.113438461925583,
+            1.1134384619255822,
+            1.113438461925582,
+            1.090166573149791,
+            1.0901665731497907
+          ],
+          "normalized_singular_values": [
+            1.0,
+            0.9999999999999992,
+            0.9803679308022206,
+            0.9803679308022201,
+            0.9765521257581213,
+            0.9765521257581208,
+            0.9754785145942689,
+            0.9754785145942684,
+            0.9744046809050202,
+            0.9744046809050196,
+            0.9724241929191313,
+            0.972424192919131,
+            0.9572379934825712,
+            0.957237993482571,
+            0.9530876130986238,
+            0.9530876130986226,
+            0.9515050667480225,
+            0.9515050667480219,
+            0.9352057942875799,
+            0.9352057942875791,
+            0.9332462687300893,
+            0.9332462687300893,
+            0.9332462687300885,
+            0.9332462687300884,
+            0.9137405626592304,
+            0.9137405626592302
+          ]
+        }
+      ],
+      "terminal_leakage": {
+        "T2": 9.877180083459783e-16,
+        "T3": 1.0466321527896074e-15,
+        "T5": 9.722781392132472e-16,
+        "T7": 9.877289330209324e-16,
+        "W11": 9.855942681926977e-16,
+        "W13": 9.855942681926979e-16,
+        "W143": 9.855942681926985e-16,
+        "STAR": 9.85594268192698e-16
+      },
+      "J_leakage": 9.855942681926979e-16,
+      "replication_leakage": {
+        "T17": 1.0105800003937827e-15,
+        "T19": 1.1594816274142226e-15
+      }
+    }
+  },
+  "controls": {
+    "identity": {
+      "operator_norm": 5.0990195135927845,
+      "block_norms": {
+        "active_to_active": 3.999999999999997,
+        "fixed_to_active": 2.927398411895362e-15,
+        "active_to_fixed": 2.9300005047188648e-15,
+        "fixed_to_fixed": 3.1622776601683795
+      },
+      "block_squared_fractions": {
+        "active_to_active": 0.6153846153846145,
+        "fixed_to_active": 3.2960236392182647e-31,
+        "active_to_fixed": 3.3018857529433856e-31,
+        "fixed_to_fixed": 0.38461538461538475
+      },
+      "fraction_sum_error": 6.661338147750939e-16,
+      "active_to_fixed_over_operator": 5.746203749383923e-16,
+      "fixed_to_active_over_operator": 5.741100625505761e-16,
+      "active_to_fixed_over_active_input": 7.325001261797165e-16,
+      "fixed_to_active_over_fixed_input": 9.257246600349094e-16,
+      "commutator_over_operator": 0.0,
+      "cross_block_adjoint_residual": 3.630438909868481e-17,
+      "classification": "consistent_with_preservation"
+    },
+    "full_space_T2": {
+      "operator_norm": 8.831760866327848,
+      "block_norms": {
+        "active_to_active": 8.831760866327848,
+        "fixed_to_active": 0.0,
+        "active_to_fixed": 0.0,
+        "fixed_to_fixed": 0.0
+      },
+      "block_squared_fractions": {
+        "active_to_active": 1.0,
+        "fixed_to_active": 0.0,
+        "active_to_fixed": 0.0,
+        "fixed_to_fixed": 0.0
+      },
+      "fraction_sum_error": 0.0,
+      "active_to_fixed_over_operator": 0.0,
+      "fixed_to_active_over_operator": 0.0,
+      "active_to_fixed_over_active_input": 0.0,
+      "fixed_to_active_over_fixed_input": null,
+      "commutator_over_operator": 0.0,
+      "cross_block_adjoint_residual": 0.0,
+      "classification": "consistent_with_preservation"
+    }
+  },
+  "source_sha256": {
+    "src/mtft/liealg.py": "57e898bbee886475f5dae66942a1f210c9f7836ecb091cc384f5e312943cfc22",
+    "src/mtft/hecke.py": "6cef89c438be081e6878691f0b57fc36ab2329887901de019a3b60237423fd9d",
+    "src/mtft/periods/physics.py": "b580de4ddcbaf5ffb6823a9d27d197f6c24ec9e2ef05c4a7b8c36d6b1af640fd",
+    "src/mtft/periods/hamiltonian.py": "413888de891d2deb672b0b3f1704765ea78f0c629c4185c3be310cca27b1a2f0",
+    "src/mtft/periods/involutions.py": "c37b1ac1ecdccb7fd66c317c9537e736726019c52cfaebff22e8bee1602e293b"
+  },
+  "script_sha256": "8ae6cbac888d527958eba35dd89714a9ebac040686470ccc1a0112b20262675c",
+  "elapsed_seconds": 3.593262156000037
+}

@@ -1,0 +1,81 @@
+{
+  "coordinates": "Natural parameters beta and eta=beta*h; full Fisher metric, not divided by n.",
+  "curvature_convention": "Gaussian K; scalar R=2K; categorical simplex gate K=+1/4.",
+  "claim_class": "Numerical/DIAGNOSTIC finite-ensemble geometry; selected points cross-checked at 60 digits via three curvature assemblies.",
+  "categorical_gate": {
+    "beta": "0.0",
+    "eta": "0.0",
+    "dps": 60,
+    "K_determinant": "0.25",
+    "K_Brioschi": "0.25",
+    "K_Christoffel_Riemann": "0.25",
+    "max_absolute_disagreement": "0.0",
+    "fisher_determinant": "0.037037037037037037037037037037037037"
+  },
+  "cross_checks": [
+    {
+      "beta": "0.3",
+      "eta": "0.0",
+      "dps": 60,
+      "K_determinant": "0.06696722393578158376962169359130999983896885452263",
+      "K_Brioschi": "0.06696722393578158376962169359130999983896885452263",
+      "K_Christoffel_Riemann": "0.06696722393578158376962169359130999983896885452263",
+      "max_absolute_disagreement": "0.0",
+      "fisher_determinant": "13971.554175606558553556510911295755",
+      "double_absolute_error": 1.3877787807814457e-17
+    },
+    {
+      "beta": "0.64",
+      "eta": "0.0",
+      "dps": 60,
+      "K_determinant": "0.087175686373715554466525453190043760713486206876655",
+      "K_Brioschi": "0.087175686373715554466525453190043760713486206876655",
+      "K_Christoffel_Riemann": "0.087175686373715554466525453190043760713486206876655",
+      "max_absolute_disagreement": "1.9446923e-62",
+      "fisher_determinant": "251850.31544224773747184632874427254",
+      "double_absolute_error": 9.992007221626409e-16
+    },
+    {
+      "beta": "0.64",
+      "eta": "0.03",
+      "dps": 60,
+      "K_determinant": "-0.055307893621000476045298520001880779621124736129219",
+      "K_Brioschi": "-0.055307893621000476045298520001880779621124736129219",
+      "K_Christoffel_Riemann": "-0.055307893621000476045298520001880779621124736129219",
+      "max_absolute_disagreement": "2.9170384e-62",
+      "fisher_determinant": "60502.137947932784570065632118796535",
+      "double_absolute_error": 3.2751579226442118e-15
+    },
+    {
+      "beta": "1.0",
+      "eta": "0.08",
+      "dps": 60,
+      "K_determinant": "-0.71623369622442712183614394746364362952422236072518",
+      "K_Brioschi": "-0.71623369622442712183614394746364362952422236072518",
+      "K_Christoffel_Riemann": "-0.71623369622442712183614394746364362952422236072518",
+      "max_absolute_disagreement": "1.1745941e-59",
+      "fisher_determinant": "15.944487046086332210261855926890076",
+      "double_absolute_error": 3.008704396734174e-13
+    }
+  ],
+  "grid_shape": [
+    96,
+    81
+  ],
+  "beta_domain": [
+    0.05,
+    1.0
+  ],
+  "eta_domain": [
+    -0.08,
+    0.08
+  ],
+  "grid_K_range": [
+    -1.9753652157405697,
+    0.09436924674418795
+  ],
+  "spin_flip_symmetry_errors": {
+    "magnetization": 2.4424906541753444e-15,
+    "curvature": 7.553957459549565e-13
+  }
+}

@@ -1,0 +1,3643 @@
+{
+  "status": "DIAGNOSTIC numerical realization of exact conditional identities",
+  "seed_count": 16,
+  "scan_count": 256,
+  "complex_dimensions": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "minimum_trial_mass_eigenvalue": 0.5871088574597437,
+  "mass_units": "dimensionless; affine T2 baseline is a chosen positive trial operator",
+  "gauge_identity_examples": [
+    {
+      "case": "common_charge",
+      "charges": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "mass_commutator_norm": 1.7944782634450138e-15,
+      "stripped_Ward_residual": 3.969104306567664e-15,
+      "finite_mass_covariance_defect": 7.076321759369217e-16
+    },
+    {
+      "case": "equal_mixed_charges",
+      "charges": [
+        0,
+        -1,
+        -1,
+        2
+      ],
+      "mass_commutator_norm": 2.6090932678769905e-15,
+      "stripped_Ward_residual": 6.703080859956145e-15,
+      "finite_mass_covariance_defect": 1.2032348063811635e-15
+    },
+    {
+      "case": "different_mixed_charges",
+      "charges": [
+        0,
+        -1,
+        0,
+        2
+      ],
+      "mass_commutator_norm": 0.2,
+      "stripped_Ward_residual": 0.4000000000000002,
+      "finite_mass_covariance_defect": 0.07357861341121644
+    }
+  ],
+  "residuals": {
+    "J_squared_plus_identity": 3.084501188499227e-14,
+    "J_skew": 2.970317671069429e-14,
+    "complex_basis_isometry": 2.504291583456158e-15,
+    "J_eigenspace": 1.4116769196183236e-14,
+    "complex_subspace_invariance": 1.890348571243508e-14,
+    "projector_hermiticity": 7.256465078641644e-15,
+    "projector_completeness": 7.869961574468661e-15,
+    "T2_hermiticity": 2.378889934314479e-14,
+    "charge_commutator_norm_formula": 3.319950028004027e-15,
+    "equal_charge_commutator": 3.319950028004027e-15,
+    "balanced_diagonal_blocks": 1.2336335560207614e-15,
+    "AL_commutator": 8.036526102741205e-15,
+    "Ward_identity_mass_defect": 4.7300159058896294e-15
+  },
+  "trial_charge_dimensions": {
+    "unmixed": 4,
+    "old_quartic": 3,
+    "fully_mixed": 1
+  },
+  "scans": [
+    {
+      "seed": 2026090700,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.4669564728572996e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.02499999999999996,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.049999999999999954,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.1000000000000001,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6090932678769905e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999978,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.2,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.02804291553395e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999973,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090700,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.8,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6634509459504647e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.02500000000000012,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.05000000000000003,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.10000000000000002,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.7440400910031348e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999992,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.4,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.31854906091997e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.1999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090701,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999998,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.487582232484672e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999873,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.049999999999999954,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.10000000000000021,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.650767575157002e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999978,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.1999999999999999,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.40000000000000013,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.8591960907395716e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999965,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090702,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.8000000000000002,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5469294577792116e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999818,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.050000000000000065,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999998,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.7254367936689776e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999985,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999984,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.2662511542333987e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.1999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090703,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999998,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6739563273157714e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.025000000000000158,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.050000000000000086,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999981,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.765491530096977e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.10000000000000006,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.2,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.093227009882554e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999993,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090704,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999997,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5057667245967176e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999873,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.049999999999999906,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999987,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.797241957119554e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999985,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.1999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.2203637546468075e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.1999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090705,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999994,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5791454577581442e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.025000000000000053,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.05000000000000008,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999992,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.97346286984293e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999998,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999987,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.2424763371545283e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999982,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090706,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999997,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.571535028140935e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.02500000000000004,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.050000000000000024,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999998,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.7031660295029084e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.10000000000000002,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999996,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.319950028004027e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999987,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.3999999999999999,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090707,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999998,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.557470303318168e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.025000000000000147,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.050000000000000024,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.10000000000000012,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6857901670974184e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.1,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999996,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.3999999999999999,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.203894213230317e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999982,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090708,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.8,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5654123312591506e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.02500000000000008,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.04999999999999989,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.0999999999999999,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.883163846152598e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999999,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999987,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.0917953780113818e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999987,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090709,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999997,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5930473594352634e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.025000000000000067,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.04999999999999999,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999987,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.7311610877103712e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999987,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999982,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.1608455976326668e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999965,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090710,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.8,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6617930618595124e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999994,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.049999999999999996,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.1000000000000001,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.567963915874281e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999969,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999984,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.1932928401101945e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999982,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090711,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999999,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5269962048847337e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999835,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.0499999999999999,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999995,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.7402609079432735e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999978,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.1999999999999998,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.116142542371465e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999968,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.3999999999999997,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090712,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999997,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6262537575774178e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999908,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.050000000000000065,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.10000000000000007,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.707230328037922e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.0999999999999998,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.2,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.4,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.0416128354842032e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999973,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090713,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999999,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6086383411381413e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999828,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.04999999999999998,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.1000000000000001,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.5902092447864243e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999976,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999982,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.3999999999999999,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.0113741360281957e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999954,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999986,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090714,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.8,
+      "exact_pattern_prediction": 0.8
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.0,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6429238479760145e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.0,
+      "charge_difference": 0.5,
+      "commutator_norm": 2.3931787694117135e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.0,
+      "charge_difference": 1.0,
+      "commutator_norm": 2.481572911415016e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.0,
+      "charge_difference": 2.0,
+      "commutator_norm": 2.847262469737889e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.05,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.570554140423484e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.05,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.024999999999999804,
+      "exact_pattern_prediction": 0.025
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.05,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.04999999999999992,
+      "exact_pattern_prediction": 0.05
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.05,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.09999999999999991,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.2,
+      "charge_difference": 0.0,
+      "commutator_norm": 2.6197958081224164e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.2,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.09999999999999978,
+      "exact_pattern_prediction": 0.1
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.2,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.19999999999999987,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.2,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.4,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.4,
+      "charge_difference": 0.0,
+      "commutator_norm": 3.0473992524494576e-15,
+      "exact_pattern_prediction": 0.0
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.4,
+      "charge_difference": 0.5,
+      "commutator_norm": 0.19999999999999968,
+      "exact_pattern_prediction": 0.2
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.4,
+      "charge_difference": 1.0,
+      "commutator_norm": 0.39999999999999974,
+      "exact_pattern_prediction": 0.4
+    },
+    {
+      "seed": 2026090715,
+      "epsilon": 0.4,
+      "charge_difference": 2.0,
+      "commutator_norm": 0.7999999999999999,
+      "exact_pattern_prediction": 0.8
+    }
+  ],
+  "models": [
+    {
+      "seed": 2026090700,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090700,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.2828427124746189,
+        1.2020912995357437e-15,
+        8.526157250389145e-16,
+        6.436030275674904e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.1646246150812575e-16,
+          1.1915253267201362e-15,
+          1.7237550744384832e-15
+        ],
+        [
+          8.296413134197437e-16,
+          1.1531912655194108,
+          0.14142135623730956,
+          1.5350759519977467e-15
+        ],
+        [
+          1.1662016856151486e-15,
+          0.1414213562373096,
+          2.1557815955445716,
+          3.2052031905665397e-15
+        ],
+        [
+          1.7519103429809046e-15,
+          1.51299263805365e-15,
+          3.227869729896701e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090700,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.1773514162790396,
+        0.12566085108261937,
+        0.08363946738471838,
+        9.281695887579394e-16
+      ],
+      "block_norms": [
+        [
+          0.9885017351422045,
+          0.014662477172889873,
+          0.04053849247448832,
+          0.03155418383745753
+        ],
+        [
+          0.014662477172889902,
+          1.15362893319503,
+          0.04103594440763362,
+          0.0555159355636553
+        ],
+        [
+          0.04053849247448832,
+          0.04103594440763362,
+          2.1816462563190333,
+          0.07707101758972139
+        ],
+        [
+          0.03155418383745752,
+          0.05551593556365524,
+          0.0770710175897214,
+          2.5045330234065224
+        ]
+      ]
+    },
+    {
+      "seed": 2026090701,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090701,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.2864906587410811e-15,
+        8.553555188404229e-16,
+        6.05652121701364e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.231346397362305e-16,
+          1.1738754484008844e-15,
+          1.7446135105713561e-15
+        ],
+        [
+          8.151849884158152e-16,
+          1.1531912655194108,
+          0.14142135623730961,
+          1.4846358088179954e-15
+        ],
+        [
+          1.171316272793779e-15,
+          0.14142135623730964,
+          2.1557815955445725,
+          3.2242333429833356e-15
+        ],
+        [
+          1.7483984509285771e-15,
+          1.4785278807582878e-15,
+          3.193283236101663e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090701,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.15497118673338467,
+        0.12771819918026092,
+        0.07123599721401759,
+        9.323525811577133e-16
+      ],
+      "block_norms": [
+        [
+          1.0068440320266272,
+          0.012322881130762811,
+          0.026686610775434744,
+          0.0333565333971867
+        ],
+        [
+          0.012322881130762795,
+          1.161623513511867,
+          0.04817699201734269,
+          0.05339898575595968
+        ],
+        [
+          0.02668661077543474,
+          0.04817699201734271,
+          2.142965966573825,
+          0.06481884333043218
+        ],
+        [
+          0.03335653339718671,
+          0.0533989857559597,
+          0.06481884333043221,
+          2.477119316785907
+        ]
+      ]
+    },
+    {
+      "seed": 2026090702,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090702,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.282842712474619,
+        1.270768337959058e-15,
+        7.808803754775442e-16,
+        5.357183580610267e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999984,
+          9.186644609081071e-16,
+          1.2448488315486918e-15,
+          1.7261458451476462e-15
+        ],
+        [
+          9.193680654483368e-16,
+          1.1531912655194108,
+          0.1414213562373091,
+          1.477368269798148e-15
+        ],
+        [
+          1.2452373879230211e-15,
+          0.14142135623730911,
+          2.155781595544572,
+          3.171329557383864e-15
+        ],
+        [
+          1.7199356418192634e-15,
+          1.4816470138211388e-15,
+          3.215737422393818e-15,
+          2.484015217070323
+        ]
+      ]
+    },
+    {
+      "seed": 2026090702,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17941818672198961,
+        0.11711221921680515,
+        0.07456054413743565,
+        9.368531123596244e-16
+      ],
+      "block_norms": [
+        [
+          1.0138059343453376,
+          0.02210331509799397,
+          0.026942917458563205,
+          0.02979382647361915
+        ],
+        [
+          0.022103315097993983,
+          1.1507922190142315,
+          0.04474497184027284,
+          0.046488071420469644
+        ],
+        [
+          0.0269429174585632,
+          0.04474497184027281,
+          2.145143217028439,
+          0.08124626369759279
+        ],
+        [
+          0.029793826473619136,
+          0.04648807142046961,
+          0.08124626369759277,
+          2.477905620546431
+        ]
+      ]
+    },
+    {
+      "seed": 2026090703,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090703,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.2828427124746189,
+        1.2629421152932576e-15,
+        7.475188726729503e-16,
+        6.02974069602715e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999984,
+          9.647905843971662e-16,
+          1.3503306278090494e-15,
+          1.7460020004326028e-15
+        ],
+        [
+          9.685537819334687e-16,
+          1.1531912655194108,
+          0.14142135623730936,
+          1.4884569904395983e-15
+        ],
+        [
+          1.3202868274164782e-15,
+          0.14142135623730936,
+          2.155781595544572,
+          3.196760762400076e-15
+        ],
+        [
+          1.7200050465143485e-15,
+          1.4742161675113235e-15,
+          3.187443915096103e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090703,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.168260648942328,
+        0.14135711216717012,
+        0.07172986133550588,
+        9.356693064658333e-16
+      ],
+      "block_norms": [
+        [
+          0.9827467248005797,
+          0.015924374095531824,
+          0.028474663056295802,
+          0.02996223813043261
+        ],
+        [
+          0.015924374095531827,
+          1.171759176626603,
+          0.05498095782762066,
+          0.057614651320243335
+        ],
+        [
+          0.02847466305629579,
+          0.05498095782762069,
+          2.1879048930025538,
+          0.07109979906302052
+        ],
+        [
+          0.029962238130432632,
+          0.057614651320243314,
+          0.07109979906302058,
+          2.4598628244518665
+        ]
+      ]
+    },
+    {
+      "seed": 2026090704,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090704,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461884,
+        1.2410496428576e-15,
+        8.616325988610978e-16,
+        5.782014176530062e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.694889336232452e-16,
+          1.197734642063657e-15,
+          1.7203406152345121e-15
+        ],
+        [
+          8.742063372113698e-16,
+          1.153191265519411,
+          0.14142135623730978,
+          1.538007240967137e-15
+        ],
+        [
+          1.2083117710755205e-15,
+          0.14142135623730975,
+          2.1557815955445716,
+          3.2193163379876445e-15
+        ],
+        [
+          1.7562907366455809e-15,
+          1.5139484795680148e-15,
+          3.244653562586099e-15,
+          2.484015217070323
+        ]
+      ]
+    },
+    {
+      "seed": 2026090704,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.1702128211989422,
+        0.1384221359909505,
+        0.07935445391664377,
+        9.831535244042283e-16
+      ],
+      "block_norms": [
+        [
+          1.0059914017711187,
+          0.014206959368074897,
+          0.021779130250858644,
+          0.04319575328998829
+        ],
+        [
+          0.014206959368074895,
+          1.1411263116414332,
+          0.05559864011568136,
+          0.053626784951422035
+        ],
+        [
+          0.02177913025085865,
+          0.05559864011568136,
+          2.1806780171082023,
+          0.07140359402091521
+        ],
+        [
+          0.04319575328998829,
+          0.05362678495142204,
+          0.0714035940209152,
+          2.498825316524364
+        ]
+      ]
+    },
+    {
+      "seed": 2026090705,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090705,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.2828427124746188,
+        1.3401035785728796e-15,
+        7.657233031176064e-16,
+        5.773467001131082e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.760583852055786e-16,
+          1.3095600040312298e-15,
+          1.7027819361186244e-15
+        ],
+        [
+          9.658853651350933e-16,
+          1.153191265519411,
+          0.1414213562373093,
+          1.4520389503076163e-15
+        ],
+        [
+          1.294263604841218e-15,
+          0.1414213562373093,
+          2.155781595544572,
+          3.1824489448167784e-15
+        ],
+        [
+          1.6764232566397162e-15,
+          1.4435271099533353e-15,
+          3.105188290346174e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090705,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17937254814023942,
+        0.1327642400268556,
+        0.0840824278282695,
+        9.407612252869388e-16
+      ],
+      "block_norms": [
+        [
+          1.006008158143604,
+          0.03132339119295529,
+          0.024186485504495158,
+          0.03316815855025853
+        ],
+        [
+          0.03132339119295532,
+          1.1577796906596998,
+          0.045144125467909975,
+          0.058048325112556344
+        ],
+        [
+          0.024186485504495155,
+          0.045144125467909954,
+          2.157352961060899,
+          0.07838245664876342
+        ],
+        [
+          0.0331681585502585,
+          0.058048325112556344,
+          0.07838245664876343,
+          2.4820249620863457
+        ]
+      ]
+    },
+    {
+      "seed": 2026090706,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090706,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.2828427124746188,
+        1.2889063258356155e-15,
+        8.562591413250389e-16,
+        6.035430359044304e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.591162078199405e-16,
+          1.1901801501082551e-15,
+          1.7388299216230942e-15
+        ],
+        [
+          8.475171499991938e-16,
+          1.1531912655194108,
+          0.14142135623730942,
+          1.5112899913087214e-15
+        ],
+        [
+          1.2005313862398775e-15,
+          0.14142135623730942,
+          2.155781595544572,
+          3.224087257749022e-15
+        ],
+        [
+          1.7423783570523033e-15,
+          1.4909543524905598e-15,
+          3.187629636483389e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090706,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.18031879254886565,
+        0.12078737176291059,
+        0.081297129254029,
+        9.39505253961659e-16
+      ],
+      "block_norms": [
+        [
+          1.0145708570825362,
+          0.01082724284411176,
+          0.03374592181624464,
+          0.03825807526750337
+        ],
+        [
+          0.010827242844111764,
+          1.1685487177534368,
+          0.03862568293501128,
+          0.05443579019725507
+        ],
+        [
+          0.03374592181624463,
+          0.03862568293501124,
+          2.153128670657974,
+          0.07907922894510093
+        ],
+        [
+          0.03825807526750336,
+          0.05443579019725504,
+          0.07907922894510093,
+          2.4875972091994933
+        ]
+      ]
+    },
+    {
+      "seed": 2026090707,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090707,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.2670268911010648e-15,
+        8.314082487315564e-16,
+        6.020040532073904e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.131140718331572e-16,
+          1.184874988990322e-15,
+          1.7233714218707177e-15
+        ],
+        [
+          8.416404699280878e-16,
+          1.1531912655194108,
+          0.14142135623730956,
+          1.5491662922077142e-15
+        ],
+        [
+          1.1819680938632417e-15,
+          0.14142135623730961,
+          2.155781595544572,
+          3.2199818046674675e-15
+        ],
+        [
+          1.7652464247798596e-15,
+          1.5720016149458745e-15,
+          3.2068652977000847e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090707,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.18234891262277172,
+        0.13397553303947027,
+        0.08386760875520756,
+        9.940301930792742e-16
+      ],
+      "block_norms": [
+        [
+          1.0035180491702655,
+          0.025482920575064866,
+          0.016525727341293463,
+          0.042643070729734896
+        ],
+        [
+          0.025482920575064853,
+          1.159508450835186,
+          0.04948655771749275,
+          0.055682665868968084
+        ],
+        [
+          0.016525727341293484,
+          0.04948655771749278,
+          2.1788422754037104,
+          0.07917194728628048
+        ],
+        [
+          0.04264307072973488,
+          0.05568266586896811,
+          0.07917194728628046,
+          2.5005359332751627
+        ]
+      ]
+    },
+    {
+      "seed": 2026090708,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090708,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.2596167607009667e-15,
+        7.949214439720459e-16,
+        5.776562729730099e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.302048703873307e-16,
+          1.1824957000058555e-15,
+          1.7216219273381496e-15
+        ],
+        [
+          8.239363059682066e-16,
+          1.1531912655194108,
+          0.1414213562373093,
+          1.533961981591289e-15
+        ],
+        [
+          1.1847512851394522e-15,
+          0.1414213562373093,
+          2.155781595544572,
+          3.2482346458414648e-15
+        ],
+        [
+          1.7642686884328483e-15,
+          1.5521424046371455e-15,
+          3.2589095847451415e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090708,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17610855495039715,
+        0.12358658254866753,
+        0.06205301940590811,
+        9.076771583457278e-16
+      ],
+      "block_norms": [
+        [
+          1.0165485557391845,
+          0.02007267539661854,
+          0.024310356520572264,
+          0.021278808259342065
+        ],
+        [
+          0.020072675396618552,
+          1.1772364442097842,
+          0.040025804096438675,
+          0.058250893995207755
+        ],
+        [
+          0.024310356520572254,
+          0.04002580409643871,
+          2.1626157424759542,
+          0.07805565882792
+        ],
+        [
+          0.021278808259342058,
+          0.058250893995207775,
+          0.07805565882792,
+          2.471948955598302
+        ]
+      ]
+    },
+    {
+      "seed": 2026090709,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090709,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461884,
+        1.2126238127760308e-15,
+        7.948670288412359e-16,
+        5.951990114704055e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.66128206418281e-16,
+          1.2156244368835403e-15,
+          1.7495121344862373e-15
+        ],
+        [
+          8.549786011509932e-16,
+          1.153191265519411,
+          0.1414213562373097,
+          1.5631082814711735e-15
+        ],
+        [
+          1.2421145669656603e-15,
+          0.14142135623730967,
+          2.155781595544572,
+          3.1864472070656138e-15
+        ],
+        [
+          1.7437166037618776e-15,
+          1.5257111526306889e-15,
+          3.219908177170286e-15,
+          2.484015217070323
+        ]
+      ]
+    },
+    {
+      "seed": 2026090709,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17337099168138864,
+        0.10756194067444272,
+        0.06171768027556682,
+        9.110187109097582e-16
+      ],
+      "block_norms": [
+        [
+          1.0000843358929055,
+          0.004010444734663459,
+          0.028201740603091982,
+          0.026738436739038085
+        ],
+        [
+          0.004010444734663474,
+          1.1463953041517847,
+          0.03694708431263921,
+          0.04765384885046592
+        ],
+        [
+          0.028201740603092003,
+          0.036947084312639204,
+          2.145771652162919,
+          0.07871908145729199
+        ],
+        [
+          0.026738436739038116,
+          0.047653848850465884,
+          0.07871908145729195,
+          2.4636509693296125
+        ]
+      ]
+    },
+    {
+      "seed": 2026090710,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090710,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.2893286993414649e-15,
+        8.494325599308471e-16,
+        5.431043807033397e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.986294882579538e-16,
+          1.1924714797230098e-15,
+          1.693889480328229e-15
+        ],
+        [
+          8.692639610290789e-16,
+          1.153191265519411,
+          0.14142135623730998,
+          1.4832794313416173e-15
+        ],
+        [
+          1.200269558498059e-15,
+          0.14142135623730995,
+          2.155781595544572,
+          3.1927574589925366e-15
+        ],
+        [
+          1.7021570145121838e-15,
+          1.4494755321329241e-15,
+          3.155893883133491e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090710,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.16274634345624922,
+        0.12449311972983865,
+        0.09497019322637205,
+        9.417377444421294e-16
+      ],
+      "block_norms": [
+        [
+          0.9998373582719439,
+          0.024560336713281925,
+          0.048744943145910165,
+          0.04505009428043908
+        ],
+        [
+          0.02456033671328191,
+          1.1724426889287918,
+          0.03301116408324651,
+          0.043684169451069885
+        ],
+        [
+          0.0487449431459102,
+          0.03301116408324651,
+          2.1201845440379126,
+          0.06887835263179821
+        ],
+        [
+          0.04505009428043906,
+          0.04368416945106985,
+          0.06887835263179823,
+          2.503922682286437
+        ]
+      ]
+    },
+    {
+      "seed": 2026090711,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090711,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461895,
+        1.2288602442246834e-15,
+        7.655063370660333e-16,
+        5.871268443693193e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.09191575934882e-16,
+          1.2467658170609071e-15,
+          1.7285096059598525e-15
+        ],
+        [
+          9.06107850106897e-16,
+          1.1531912655194108,
+          0.14142135623730961,
+          1.4737664769076648e-15
+        ],
+        [
+          1.2443793942955776e-15,
+          0.1414213562373096,
+          2.155781595544572,
+          3.1717713939993205e-15
+        ],
+        [
+          1.7001710249051943e-15,
+          1.4624204416231e-15,
+          3.159077732452052e-15,
+          2.484015217070323
+        ]
+      ]
+    },
+    {
+      "seed": 2026090711,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17930061251659504,
+        0.12277148592284627,
+        0.0662170911653565,
+        1.0031323813405931e-15
+      ],
+      "block_norms": [
+        [
+          1.0045988112655198,
+          0.013051341703773058,
+          0.019651214353124887,
+          0.03395045526237144
+        ],
+        [
+          0.013051341703773067,
+          1.1628205055818805,
+          0.048717132876068055,
+          0.04868398613439505
+        ],
+        [
+          0.019651214353124866,
+          0.048717132876068055,
+          2.147763086692425,
+          0.08030524230578649
+        ],
+        [
+          0.03395045526237145,
+          0.048683986134395056,
+          0.08030524230578649,
+          2.5069434290235724
+        ]
+      ]
+    },
+    {
+      "seed": 2026090712,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090712,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461884,
+        1.270681333828895e-15,
+        8.517667046316952e-16,
+        5.357013420609179e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999984,
+          9.213698151534043e-16,
+          1.1928594479494797e-15,
+          1.6821287314566398e-15
+        ],
+        [
+          9.020024578896652e-16,
+          1.1531912655194108,
+          0.14142135623730942,
+          1.542473093004279e-15
+        ],
+        [
+          1.2214076287831595e-15,
+          0.1414213562373094,
+          2.155781595544572,
+          3.231824783196812e-15
+        ],
+        [
+          1.7158756994322676e-15,
+          1.5504289307855335e-15,
+          3.2208046263020636e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090712,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.16663728466379943,
+        0.11729653408503625,
+        0.09321069047871443,
+        8.742776048744385e-16
+      ],
+      "block_norms": [
+        [
+          1.0098536538669747,
+          0.028139756096256484,
+          0.03605031003402163,
+          0.035041641147819755
+        ],
+        [
+          0.028139756096256456,
+          1.1545147545108039,
+          0.04147960843057888,
+          0.046825637723365204
+        ],
+        [
+          0.036050310034021614,
+          0.041479608430578865,
+          2.1724083531756877,
+          0.07294578800183553
+        ],
+        [
+          0.03504164114781979,
+          0.046825637723365204,
+          0.07294578800183553,
+          2.4843389253421484
+        ]
+      ]
+    },
+    {
+      "seed": 2026090713,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090713,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.258906047521346e-15,
+        7.683134555265683e-16,
+        6.06154760321105e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.168158017224432e-16,
+          1.2812066877465515e-15,
+          1.7242075589578849e-15
+        ],
+        [
+          9.22257172823562e-16,
+          1.1531912655194108,
+          0.14142135623730903,
+          1.4554568517933066e-15
+        ],
+        [
+          1.2779702225670018e-15,
+          0.14142135623730906,
+          2.155781595544572,
+          3.1800437670114237e-15
+        ],
+        [
+          1.7386707631350598e-15,
+          1.4318738864267354e-15,
+          3.1426127600516076e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090713,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.17237404558019934,
+        0.10759303936192322,
+        0.07678547604898783,
+        9.302216944549676e-16
+      ],
+      "block_norms": [
+        [
+          0.9974660079184654,
+          0.014390222519440622,
+          0.0373407761284878,
+          0.029101437258323277
+        ],
+        [
+          0.014390222519440606,
+          1.1399993304650664,
+          0.037392718600784934,
+          0.043875628902098604
+        ],
+        [
+          0.037340776128487775,
+          0.03739271860078492,
+          2.1704517634634337,
+          0.07761880460154998
+        ],
+        [
+          0.029101437258323305,
+          0.04387562890209855,
+          0.07761880460154998,
+          2.469698847151099
+        ]
+      ]
+    },
+    {
+      "seed": 2026090714,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090714,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461895,
+        1.2341171331267933e-15,
+        7.813448322524572e-16,
+        5.90147476053183e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999984,
+          9.281093121570979e-16,
+          1.2809231350147102e-15,
+          1.7321385517547712e-15
+        ],
+        [
+          9.251282430455859e-16,
+          1.1531912655194105,
+          0.14142135623730898,
+          1.5079021640945085e-15
+        ],
+        [
+          1.3056774550478123e-15,
+          0.141421356237309,
+          2.155781595544572,
+          3.233665645614237e-15
+        ],
+        [
+          1.7727720842078596e-15,
+          1.5074034790727671e-15,
+          3.186651811887996e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090714,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.1773778668096239,
+        0.10139888214406151,
+        0.07873545644423666,
+        9.05704041748863e-16
+      ],
+      "block_norms": [
+        [
+          0.9817086313203565,
+          0.01912188722646528,
+          0.02420540457411211,
+          0.03950541328054253
+        ],
+        [
+          0.019121887226465278,
+          1.1560945816528847,
+          0.033333585676369855,
+          0.042889940949484735
+        ],
+        [
+          0.0242054045741121,
+          0.03333358567636986,
+          2.1677480843527,
+          0.0807655708208095
+        ],
+        [
+          0.03950541328054253,
+          0.04288994094948475,
+          0.08076557082080951,
+          2.4760832624808886
+        ]
+      ]
+    },
+    {
+      "seed": 2026090715,
+      "mixing": "unmixed",
+      "charge_space_dimension": 4,
+      "singular_values": [
+        1.201916700840284e-15,
+        9.203456212718422e-16,
+        5.518833338532702e-16,
+        5.216649740721291e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          9.0572032550035e-16,
+          1.2325743424225445e-15,
+          1.7270882204421092e-15
+        ],
+        [
+          8.668037506539405e-16,
+          1.1531912655194108,
+          1.2387819915322217e-15,
+          1.4750634560872114e-15
+        ],
+        [
+          1.229140054969194e-15,
+          1.2917687008405427e-15,
+          2.155781595544572,
+          3.2309331771997063e-15
+        ],
+        [
+          1.7236975391305215e-15,
+          1.4721857121098899e-15,
+          3.1939655587168224e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090715,
+      "mixing": "old_quartic",
+      "charge_space_dimension": 3,
+      "singular_values": [
+        0.28284271247461906,
+        1.2641304686363208e-15,
+        8.335532095690618e-16,
+        5.794726170368048e-16
+      ],
+      "block_norms": [
+        [
+          0.9999999999999986,
+          8.70313188961479e-16,
+          1.1933027719366803e-15,
+          1.7386929365808906e-15
+        ],
+        [
+          8.752869133727432e-16,
+          1.1531912655194108,
+          0.14142135623730914,
+          1.4407633781196366e-15
+        ],
+        [
+          1.176560921335899e-15,
+          0.14142135623730911,
+          2.155781595544572,
+          3.221786813112162e-15
+        ],
+        [
+          1.7547183908754275e-15,
+          1.4331795682201866e-15,
+          3.1955800041061355e-15,
+          2.4840152170703234
+        ]
+      ]
+    },
+    {
+      "seed": 2026090715,
+      "mixing": "fully_mixed",
+      "charge_space_dimension": 1,
+      "singular_values": [
+        0.19853501464048956,
+        0.1067783634911599,
+        0.07187171440936047,
+        9.745501876346092e-16
+      ],
+      "block_norms": [
+        [
+          0.9911473358303403,
+          0.016469063761256814,
+          0.021465507586373726,
+          0.036103978084380955
+        ],
+        [
+          0.016469063761256827,
+          1.1691704860750205,
+          0.04010918473383617,
+          0.042611297683532876
+        ],
+        [
+          0.021465507586373715,
+          0.04010918473383623,
+          2.1562431101693784,
+          0.09238973898195868
+        ],
+        [
+          0.03610397808438092,
+          0.0426112976835329,
+          0.09238973898195868,
+          2.5063969172090155
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+
+$ python exact_blocks.py --source /workspace/scratch/a8262a41ed96/work/mtft-0.26.2
+{
+  "all_exact_checks_passed": true,
+  "block_ranks": {
+    "ell": 2,
+    "old": 4,
+    "q4": 8,
+    "q6": 12
+  },
+  "operators_checked": [
+    "T2",
+    "T3",
+    "T5",
+    "T7",
+    "T17",
+    "T19",
+    "W11",
+    "W13",
+    "W143",
+    "STAR"
+  ],
+  "elapsed_seconds": 2.6062191060009354
+}
+
+$ python block_coupling_study.py --source /workspace/scratch/a8262a41ed96/work/mtft-0.26.2 --prior /workspace/scratch/a8262a41ed96/deliverables/MTFT_Hecke_Block_Coupling_v0.1.0/inputs/previous
+frame 143 completed
+frame 2026 completed
+frame 31415 completed
+{
+  "overlaps_complex": {
+    "ell": 0.9904595054362103,
+    "old": 1.4143810993838752,
+    "q4": 2.4765873598970454,
+    "q6": 3.118572035282868
+  },
+  "operators": {
+    "T2": {
+      "rank_real": 10,
+      "between_block_share": 0.7826549135178111,
+      "Gram_diagonal_sum": 0.1785473550043561,
+      "Gram_offdiagonal_sum": 0.008653947423225172
+    },
+    "T3": {
+      "rank_real": 10,
+      "between_block_share": 0.6274776588387256,
+      "Gram_diagonal_sum": 0.217877574540093,
+      "Gram_offdiagonal_sum": -0.0026757678095790105
+    },
+    "T5": {
+      "rank_real": 10,
+      "between_block_share": 0.5572780988204163,
+      "Gram_diagonal_sum": 0.2659225687645518,
+      "Gram_offdiagonal_sum": 0.029907786028805117
+    },
+    "T7": {
+      "rank_real": 10,
+      "between_block_share": 0.48010882085379,
+      "Gram_diagonal_sum": 0.26743732638292467,
+      "Gram_offdiagonal_sum": 0.0008047718308286655
+    },
+    "W11": {
+      "rank_real": 10,
+      "between_block_share": 1.0,
+      "Gram_diagonal_sum": 0.12463180499822765,
+      "Gram_offdiagonal_sum": 0.09745818220615576
+    },
+    "W13": {
+      "rank_real": 10,
+      "between_block_share": 0.9907056883445764,
+      "Gram_diagonal_sum": 0.12671262943779743,
+      "Gram_offdiagonal_sum": 0.09716887106639088
+    },
+    "W143": {
+      "rank_real": 4,
+      "between_block_share": 0.8253542610126058,
+      "Gram_diagonal_sum": 0.12671262943779746,
+      "Gram_offdiagonal_sum": -0.11479808487670742
+    },
+    "STAR": {
+      "rank_real": 0,
+      "between_block_share": null,
+      "Gram_diagonal_sum": 0.12463180499822768,
+      "Gram_offdiagonal_sum": -0.1246318049982277
+    },
+    "T17": {
+      "rank_real": 10,
+      "between_block_share": 0.5594022034507623,
+      "Gram_diagonal_sum": 0.22148832025440196,
+      "Gram_offdiagonal_sum": -0.05699088769131075
+    },
+    "T19": {
+      "rank_real": 10,
+      "between_block_share": 0.6266661392977007,
+      "Gram_diagonal_sum": 0.23994780306963004,
+      "Gram_offdiagonal_sum": 0.03210278279501477
+    }
+  }
+}
+
+$ python independent_block_geometry.py --source /workspace/scratch/a8262a41ed96/work/mtft-0.26.2 --previous /workspace/scratch/a8262a41ed96/deliverables/MTFT_Hecke_Block_Coupling_v0.1.0/inputs/previous
+{
+  "all_checks_passed": true,
+  "blocks": {
+    "ell": {
+      "real_dimension": 2,
+      "complex_dimension": 1,
+      "transported_basis_singular_values": [
+        2.5551179091935303,
+        1.5654854852716016
+      ],
+      "transported_basis_condition_number": 1.632156882470382,
+      "basis_orthonormality_residual": 2.2218707262428726e-16,
+      "active_trace_overlap_real": 1.9809190108724213,
+      "active_trace_overlap_complex": 0.9904595054362106,
+      "fixed_trace_overlap_real": 0.019080989127578718,
+      "active_fraction_of_block": 0.9904595054362106,
+      "squared_principal_cosines_real": [
+        0.9904595054362102,
+        0.9904595054362111
+      ],
+      "squared_principal_cosine_pairing_max_difference": 8.881784197001252e-16,
+      "active_intersection_dimension_real_at_frozen_tolerance": 0,
+      "fixed_intersection_dimension_real_at_frozen_tolerance": 0,
+      "ambiguous_endpoint_eigenvalue_count": 0,
+      "mixed_eigenvalue_count": 2,
+      "block_projector_J_commutator": 1.3100774694175906e-14,
+      "compressed_projector_idempotence_residual": 0.013363573619547453
+    },
+    "old": {
+      "real_dimension": 4,
+      "complex_dimension": 2,
+      "transported_basis_singular_values": [
+        10.19720242590286,
+        2.6294359238058114,
+        1.7825018237014847,
+        0.7532322135380577
+      ],
+      "transported_basis_condition_number": 13.537926608322943,
+      "basis_orthonormality_residual": 5.641188061909481e-16,
+      "active_trace_overlap_real": 2.82876219876776,
+      "active_trace_overlap_complex": 1.41438109938388,
+      "fixed_trace_overlap_real": 1.1712378012322402,
+      "active_fraction_of_block": 0.70719054969194,
+      "squared_principal_cosines_real": [
+        0.43201458691718214,
+        0.43201458691718614,
+        0.9823665124666957,
+        0.9823665124666962
+      ],
+      "squared_principal_cosine_pairing_max_difference": 3.9968028886505635e-15,
+      "active_intersection_dimension_real_at_frozen_tolerance": 0,
+      "fixed_intersection_dimension_real_at_frozen_tolerance": 0,
+      "ambiguous_endpoint_eigenvalue_count": 0,
+      "mixed_eigenvalue_count": 4,
+      "block_projector_J_commutator": 1.198373848541084e-14,
+      "compressed_projector_idempotence_residual": 0.3478805125229612
+    },
+    "q4": {
+      "real_dimension": 8,
+      "complex_dimension": 4,
+      "transported_basis_singular_values": [
+        8.615083423316817,
+        3.6700709116683923,
+        2.47317634003217,
+        1.7207685236510426,
+        1.3359279293186783,
+        1.082987348124197,
+        0.7632250838076889,
+        0.48457607667614305
+      ],
+      "transported_basis_condition_number": 17.77859832125914,
+      "basis_orthonormality_residual": 9.782296480169346e-16,
+      "active_trace_overlap_real": 4.95317471979426,
+      "active_trace_overlap_complex": 2.47658735989713,
+      "fixed_trace_overlap_real": 3.0468252802057396,
+      "active_fraction_of_block": 0.6191468399742825,
+      "squared_principal_cosines_real": [
+        0.2171219457475831,
+        0.21712194574758556,
+        0.4868364749730129,
+        0.486836474973018,
+        0.8735886143499534,
+        0.8735886143499542,
+        0.8990403248265753,
+        0.8990403248265773
+      ],
+      "squared_principal_cosine_pairing_max_difference": 5.10702591327572e-15,
+      "active_intersection_dimension_real_at_frozen_tolerance": 0,
+      "fixed_intersection_dimension_real_at_frozen_tolerance": 0,
+      "ambiguous_endpoint_eigenvalue_count": 0,
+      "mixed_eigenvalue_count": 8,
+      "block_projector_J_commutator": 1.7902965212666576e-14,
+      "compressed_projector_idempotence_residual": 0.4727374228833816
+    },
+    "q6": {
+      "real_dimension": 12,
+      "complex_dimension": 6,
+      "transported_basis_singular_values": [
+        5.1129247796894814,
+        3.7877777426309454,
+        3.005979558813219,
+        1.6629531191938391,
+        1.560810268645985,
+        1.5425903261131524,
+        1.295571923061564,
+        1.2152645322467415,
+        0.8717125112386535,
+        0.7883247253168797,
+        0.5688809587828401,
+        0.44609479996974205
+      ],
+      "transported_basis_condition_number": 11.461520690302338,
+      "basis_orthonormality_residual": 1.2379465684167328e-15,
+      "active_trace_overlap_real": 6.237144070565558,
+      "active_trace_overlap_complex": 3.118572035282779,
+      "fixed_trace_overlap_real": 5.762855929434442,
+      "active_fraction_of_block": 0.5197620058804632,
+      "squared_principal_cosines_real": [
+        0.003925458350667372,
+        0.00392545835066787,
+        0.11139300095675082,
+        0.11139300095675106,
+        0.5177975691241686,
+        0.5177975691241715,
+        0.6807370246786874,
+        0.6807370246786904,
+        0.8047189821725006,
+        0.8047189821725017,
+        0.9999999999999993,
+        0.9999999999999998
+      ],
+      "squared_principal_cosine_pairing_max_difference": 2.9976021664879227e-15,
+      "active_intersection_dimension_real_at_frozen_tolerance": 2,
+      "fixed_intersection_dimension_real_at_frozen_tolerance": 0,
+      "ambiguous_endpoint_eigenvalue_count": 0,
+      "mixed_eigenvalue_count": 10,
+      "block_projector_J_commutator": 1.7928042339236226e-14,
+      "compressed_projector_idempotence_residual": 0.5368129266463592
+    }
+  },
+  "block_diagonal_truncation": {
+    "formula": "P_diag = sum_b E_b P E_b, E_b = U_b U_b^T",
+    "trace": 15.999999999999996,
+    "idempotence_residual": 0.7955175832765571,
+    "discarded_off_block_norm": 1.800118587747418,
+    "discarded_norm_squared": 3.2404269299537583,
+    "trace_defect_trace_Pdiag_minus_Pdiag_squared": 3.240426929953764,
+    "discarded_energy_trace_identity_difference": -5.773159728050814e-15,
+    "interpretation": "Block-diagonal truncation is generally a positive contraction rather than a projector; its failure of idempotence measures lost cross-block coherence, not failure of the original projector."
+  }
+}
+
+$ python render_block_map.py

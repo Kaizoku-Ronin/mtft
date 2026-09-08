@@ -1,0 +1,911 @@
+{
+  "epistemic": "DIAGNOSTIC; floating point maxima on finite deterministic grids",
+  "route": "real26 complex branch, independent localization bases, Schur solves",
+  "input_sha256": "2990bd3f4ec917f8ae1a264da3688bc235388a716124d9e371ce1026a232237f",
+  "protocol_sha256": "f784e5be3f6620f3bd9d21f6e5ba7501990f1f32035ab66340ec6fce226b5f8e",
+  "selection_sha256": "d05b5994223a64ba1634eec4fa1849f4674db461663c42205507f88d9142cc61",
+  "selection_unchanged_after_holdout": true,
+  "script_sha256": "6443585479311e5c66ae62756c7560d1d7822ad4d8e87e2cf43a462b55315c39",
+  "training_point_count": 183,
+  "heldout_response_point_count": 1800,
+  "heldout_time_point_count": 261,
+  "raw_geometry_defects": {
+    "H_real_hermitian": 0.0,
+    "P_real_hermitian": 0.0,
+    "H_complex_linearity": 2.3455759549033516e-14,
+    "P_complex_linearity": 2.110777804130233e-14,
+    "H_hermitian_cleanup": 0.0,
+    "P_hermitian_cleanup": 0.0,
+    "projector_idempotency": 1.7540938060746835e-15,
+    "sector_orthonormality": 2.3668903194935285e-15,
+    "projector_reconstruction": 3.035287596528706e-15,
+    "block_reconstruction": 6.288276142733338e-15
+  },
+  "selected_pole_indices": {
+    "0": [],
+    "1": [
+      4
+    ],
+    "2": [
+      1,
+      2
+    ],
+    "3": [
+      2,
+      3,
+      4
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "5": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "training_selected_rank_by_budget": {
+    "svd": {
+      "0.01": 5,
+      "0.05": 5,
+      "0.1": 5
+    },
+    "poles": {
+      "0.01": 5,
+      "0.05": 5,
+      "0.1": 5
+    },
+    "snapshots": {
+      "0.01": 5,
+      "0.05": 5,
+      "0.1": 5
+    }
+  },
+  "models": {
+    "svd_r0": {
+      "rank": 0,
+      "training_maximum_relative": 6.347951572754429,
+      "response_maximum_relative": 8.326891225385813,
+      "response_maximum_absolute_operator": 19.944718423603852,
+      "time_maximum_relative": 1.412951451426694,
+      "time_maximum_absolute_operator": 1.9640888627610136,
+      "transfer_maximum_absolute_difference": 0.37147391254276296,
+      "per_eta_response_maximum_relative": {
+        "0.05": 8.326891225385813,
+        "0.2": 2.112060601914785,
+        "0.7": 0.6725891084927889
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.944718423603852,
+        "0.2": 4.8554037557278935,
+        "0.7": 1.1406672791329575
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.047737853834586376,
+        "1": 0.6474229650084276,
+        "6.283185307179586": 1.412951451426694
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.05329448423193739,
+        "1": 0.32148790358630375,
+        "6.283185307179586": 0.37147391254276296
+      },
+      "discarded_direct_coupling_operator_norm": 1.9183577035234405,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 1.9183577035234405,
+      "spectral_bound_maximum_excess": -2.7743484423434523,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 0.0,
+      "reduced_H_hermitian_defect": 9.31208868869038e-16,
+      "raw_average_transfer_range": [
+        -6.661338147750939e-16,
+        1.1102230246251565e-15
+      ]
+    },
+    "svd_r1": {
+      "rank": 1,
+      "training_maximum_relative": 5.182534790905329,
+      "response_maximum_relative": 6.794337671967981,
+      "response_maximum_absolute_operator": 19.290730403649906,
+      "time_maximum_relative": 1.1571201349202045,
+      "time_maximum_absolute_operator": 1.9358533628328094,
+      "transfer_maximum_absolute_difference": 0.2901901257488768,
+      "per_eta_response_maximum_relative": {
+        "0.05": 6.794337671967981,
+        "0.2": 1.6230396197425816,
+        "0.7": 0.5150650792448536
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.290730403649906,
+        "0.2": 4.224893249378697,
+        "0.7": 0.9908188954418867
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.02479979007090383,
+        "1": 0.36709030782097896,
+        "6.283185307179586": 1.1571201349202045
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.026796537094716744,
+        "1": 0.20766620245891965,
+        "6.283185307179586": 0.2901901257488768
+      },
+      "discarded_direct_coupling_operator_norm": 1.350074792188201,
+      "retained_discarded_mixing_operator_norm": 0.6460396643270546,
+      "embedding_C_operator_norm": 1.350159625938196,
+      "spectral_bound_maximum_excess": -1.7646089125952482,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 0.0,
+      "reduced_H_hermitian_defect": 9.39547758237914e-16,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.12497081646027519
+      ]
+    },
+    "svd_r2": {
+      "rank": 2,
+      "training_maximum_relative": 5.03016141189693,
+      "response_maximum_relative": 6.574798029826114,
+      "response_maximum_absolute_operator": 18.777873899560678,
+      "time_maximum_relative": 1.0940105812266234,
+      "time_maximum_absolute_operator": 1.8068035137383824,
+      "transfer_maximum_absolute_difference": 0.24534839332104008,
+      "per_eta_response_maximum_relative": {
+        "0.05": 6.574798029826114,
+        "0.2": 1.5853946536321082,
+        "0.7": 0.3723607172313572
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 18.777873899560678,
+        "0.2": 4.1896939296273725,
+        "0.7": 0.6390219234921146
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.014328363573320136,
+        "1": 0.24088131777970304,
+        "6.283185307179586": 1.0940105812266234
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.013184530145577633,
+        "1": 0.09679621301036401,
+        "6.283185307179586": 0.24534839332104008
+      },
+      "discarded_direct_coupling_operator_norm": 0.9888337348196814,
+      "retained_discarded_mixing_operator_norm": 1.3597715271126518,
+      "embedding_C_operator_norm": 1.5784087281550605,
+      "spectral_bound_maximum_excess": -2.582220378865152,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 2.841663962675099e-16,
+      "reduced_H_hermitian_defect": 9.967077685334194e-16,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.23671025734701245
+      ]
+    },
+    "svd_r3": {
+      "rank": 3,
+      "training_maximum_relative": 3.11679379786097,
+      "response_maximum_relative": 3.436811801137549,
+      "response_maximum_absolute_operator": 16.545460019875662,
+      "time_maximum_relative": 0.9547880949552121,
+      "time_maximum_absolute_operator": 1.3379030578561597,
+      "transfer_maximum_absolute_difference": 0.14964760155120294,
+      "per_eta_response_maximum_relative": {
+        "0.05": 3.436811801137549,
+        "0.2": 0.9069096177068863,
+        "0.7": 0.30081996972131536
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 16.545460019875662,
+        "0.2": 3.3012506950197333,
+        "0.7": 0.6137348397624526
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.009256948317908872,
+        "1": 0.17538797448631221,
+        "6.283185307179586": 0.9547880949552121
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.006019791234972094,
+        "1": 0.046686295359418595,
+        "6.283185307179586": 0.14964760155120294
+      },
+      "discarded_direct_coupling_operator_norm": 0.9012020687304717,
+      "retained_discarded_mixing_operator_norm": 1.4662794805499964,
+      "embedding_C_operator_norm": 1.6676101204861882,
+      "spectral_bound_maximum_excess": -2.789551120413442,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 4.4145672609754e-16,
+      "reduced_H_hermitian_defect": 1.0757503384257883e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.27486905571371045
+      ]
+    },
+    "svd_r4": {
+      "rank": 4,
+      "training_maximum_relative": 1.0440874020384943,
+      "response_maximum_relative": 1.372851874327874,
+      "response_maximum_absolute_operator": 11.186517196482017,
+      "time_maximum_relative": 0.3984442843533574,
+      "time_maximum_absolute_operator": 0.8170435812105168,
+      "transfer_maximum_absolute_difference": 0.05359761375767935,
+      "per_eta_response_maximum_relative": {
+        "0.05": 1.372851874327874,
+        "0.2": 0.4599830481751805,
+        "0.7": 0.11333145315105393
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 11.186517196482017,
+        "0.2": 2.4253164195727885,
+        "0.7": 0.2432051282554581
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.00019836247943890543,
+        "1": 0.02387864917106468,
+        "6.283185307179586": 0.3984442843533574
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 1.410890881436977e-05,
+        "1": 0.0017075627433940088,
+        "6.283185307179586": 0.05359761375767935
+      },
+      "discarded_direct_coupling_operator_norm": 0.08997359448320838,
+      "retained_discarded_mixing_operator_norm": 0.9401935987019259,
+      "embedding_C_operator_norm": 0.9444888833354826,
+      "spectral_bound_maximum_excess": -1.6843232050822619,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 5.277438242961249e-16,
+      "reduced_H_hermitian_defect": 1.1724805920399623e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.35266476032236826
+      ]
+    },
+    "svd_r5": {
+      "rank": 5,
+      "training_maximum_relative": 2.2614067703829636e-14,
+      "response_maximum_relative": 2.7581514522532716e-14,
+      "response_maximum_absolute_operator": 3.852081935481464e-13,
+      "time_maximum_relative": 5.3206805822913706e-15,
+      "time_maximum_absolute_operator": 8.213529415848666e-15,
+      "transfer_maximum_absolute_difference": 1.5543122344752192e-15,
+      "per_eta_response_maximum_relative": {
+        "0.05": 2.7581514522532716e-14,
+        "0.2": 5.993809080394499e-15,
+        "0.7": 1.5577390535436834e-15
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 3.852081935481464e-13,
+        "0.2": 2.5306764940261978e-14,
+        "0.7": 2.5153168792818607e-15
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 7.41334394351369e-16,
+        "1": 1.3724427922169955e-15,
+        "6.283185307179586": 5.3206805822913706e-15
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 6.661338147750939e-16,
+        "1": 7.771561172376096e-16,
+        "6.283185307179586": 1.5543122344752192e-15
+      },
+      "discarded_direct_coupling_operator_norm": 0.0,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 0.0,
+      "spectral_bound_maximum_excess": 3.852081935481464e-13,
+      "time_bound_maximum_excess": 8.213529415848666e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 6.748329592826865e-16,
+      "reduced_H_hermitian_defect": 1.3317407928485713e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.37147391254276396
+      ]
+    },
+    "poles_r0": {
+      "rank": 0,
+      "training_maximum_relative": 6.347951572754429,
+      "response_maximum_relative": 8.326891225385813,
+      "response_maximum_absolute_operator": 19.944718423603852,
+      "time_maximum_relative": 1.412951451426694,
+      "time_maximum_absolute_operator": 1.9640888627610136,
+      "transfer_maximum_absolute_difference": 0.37147391254276296,
+      "per_eta_response_maximum_relative": {
+        "0.05": 8.326891225385813,
+        "0.2": 2.112060601914785,
+        "0.7": 0.6725891084927889
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.944718423603852,
+        "0.2": 4.8554037557278935,
+        "0.7": 1.1406672791329575
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.047737853834586376,
+        "1": 0.6474229650084276,
+        "6.283185307179586": 1.412951451426694
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.05329448423193739,
+        "1": 0.32148790358630375,
+        "6.283185307179586": 0.37147391254276296
+      },
+      "discarded_direct_coupling_operator_norm": 1.9183577035234405,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 1.9183577035234405,
+      "spectral_bound_maximum_excess": -2.7743484423434523,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 0.0,
+      "reduced_H_hermitian_defect": 9.31208868869038e-16,
+      "raw_average_transfer_range": [
+        -6.661338147750939e-16,
+        1.1102230246251565e-15
+      ]
+    },
+    "poles_r1": {
+      "rank": 1,
+      "training_maximum_relative": 5.784460886746409,
+      "response_maximum_relative": 7.6610895509919965,
+      "response_maximum_absolute_operator": 19.851633093013923,
+      "time_maximum_relative": 1.3009031612182225,
+      "time_maximum_absolute_operator": 1.9494367223514013,
+      "transfer_maximum_absolute_difference": 0.2693875936189012,
+      "per_eta_response_maximum_relative": {
+        "0.05": 7.6610895509919965,
+        "0.2": 1.9499791959739603,
+        "0.7": 0.628102860163485
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.851633093013923,
+        "0.2": 4.748472162220282,
+        "0.7": 1.0717542514972371
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.0452741123650838,
+        "1": 0.6118182221548265,
+        "6.283185307179586": 1.3009031612182225
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.04663477072057953,
+        "1": 0.2639549985199867,
+        "6.283185307179586": 0.2693875936189012
+      },
+      "discarded_direct_coupling_operator_norm": 1.9124339517689688,
+      "retained_discarded_mixing_operator_norm": 3.636066892502008e-16,
+      "embedding_C_operator_norm": 1.9124339517689692,
+      "spectral_bound_maximum_excess": -2.8311721806843333,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 1.1102230246251565e-16,
+      "reduced_H_hermitian_defect": 9.889810525268204e-16,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.12491603704918974
+      ]
+    },
+    "poles_r2": {
+      "rank": 2,
+      "training_maximum_relative": 4.569750557950969,
+      "response_maximum_relative": 4.595301058118197,
+      "response_maximum_absolute_operator": 18.924032009070896,
+      "time_maximum_relative": 1.1799136302183502,
+      "time_maximum_absolute_operator": 1.7522853282946833,
+      "transfer_maximum_absolute_difference": 0.22333596599811023,
+      "per_eta_response_maximum_relative": {
+        "0.05": 4.595301058118197,
+        "0.2": 1.3492161269902827,
+        "0.7": 0.4411132154725508
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 18.924032009070896,
+        "0.2": 4.006754163311395,
+        "0.7": 0.8574347730183691
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.02195129075205323,
+        "1": 0.3128071297746622,
+        "6.283185307179586": 1.1799136302183502
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.02201291389763127,
+        "1": 0.14674940236223788,
+        "6.283185307179586": 0.22333596599811023
+      },
+      "discarded_direct_coupling_operator_norm": 1.3102611550803596,
+      "retained_discarded_mixing_operator_norm": 6.814424802088069e-16,
+      "embedding_C_operator_norm": 1.3102611550803596,
+      "spectral_bound_maximum_excess": -1.8165675842884876,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 5.743106541515273e-16,
+      "reduced_H_hermitian_defect": 1.0109161772950586e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.23909626377634907
+      ]
+    },
+    "poles_r3": {
+      "rank": 3,
+      "training_maximum_relative": 2.538112958466012,
+      "response_maximum_relative": 2.5301218054269823,
+      "response_maximum_absolute_operator": 15.668857410026188,
+      "time_maximum_relative": 0.9457743491496965,
+      "time_maximum_absolute_operator": 1.898323109717584,
+      "transfer_maximum_absolute_difference": 0.17482931405466762,
+      "per_eta_response_maximum_relative": {
+        "0.05": 2.5301218054269823,
+        "0.2": 1.0589166372954146,
+        "0.7": 0.47545072207292716
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 15.668857410026188,
+        "0.2": 4.294027651889768,
+        "0.7": 0.9671026883033058
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.02162675554965564,
+        "1": 0.3114222900603207,
+        "6.283185307179586": 0.9457743491496965
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.019975020087206752,
+        "1": 0.13624593271235708,
+        "6.283185307179586": 0.17482931405466762
+      },
+      "discarded_direct_coupling_operator_norm": 1.229688812181048,
+      "retained_discarded_mixing_operator_norm": 7.724811410267154e-16,
+      "embedding_C_operator_norm": 1.229688812181048,
+      "spectral_bound_maximum_excess": -1.5424663161478132,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 5.31195973954521e-16,
+      "reduced_H_hermitian_defect": 1.0257242550379806e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.24966261634555564
+      ]
+    },
+    "poles_r4": {
+      "rank": 4,
+      "training_maximum_relative": 2.668931646177362,
+      "response_maximum_relative": 2.772194594892872,
+      "response_maximum_absolute_operator": 14.455806369411778,
+      "time_maximum_relative": 0.435929659377385,
+      "time_maximum_absolute_operator": 0.7740985387049933,
+      "transfer_maximum_absolute_difference": 0.08879906492042744,
+      "per_eta_response_maximum_relative": {
+        "0.05": 2.772194594892872,
+        "0.2": 0.6289990239844085,
+        "0.7": 0.1255190002124883
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 14.455806369411778,
+        "0.2": 2.1577138059674614,
+        "0.7": 0.22320224864765537
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.008267775940861513,
+        "1": 0.09610110021251282,
+        "6.283185307179586": 0.435929659377385
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.005251369629120539,
+        "1": 0.018282322440320464,
+        "6.283185307179586": 0.08879906492042744
+      },
+      "discarded_direct_coupling_operator_norm": 0.8669598255885522,
+      "retained_discarded_mixing_operator_norm": 8.938759237984757e-16,
+      "embedding_C_operator_norm": 0.8669598255885522,
+      "spectral_bound_maximum_excess": -1.5461035178595943,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 7.969501652809772e-16,
+      "reduced_H_hermitian_defect": 1.1562272453095484e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.3261809167729628
+      ]
+    },
+    "poles_r5": {
+      "rank": 5,
+      "training_maximum_relative": 1.9312193322750308e-14,
+      "response_maximum_relative": 2.51383746421684e-14,
+      "response_maximum_absolute_operator": 3.511642739316377e-13,
+      "time_maximum_relative": 4.308186384231831e-15,
+      "time_maximum_absolute_operator": 7.418052217315245e-15,
+      "transfer_maximum_absolute_difference": 9.992007221626409e-16,
+      "per_eta_response_maximum_relative": {
+        "0.05": 2.51383746421684e-14,
+        "0.2": 4.6809159284695115e-15,
+        "0.7": 1.409447109248345e-15
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 3.511642739316377e-13,
+        "0.2": 2.0444144393217495e-14,
+        "0.7": 2.2447478252574203e-15
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 7.470013122801777e-16,
+        "1": 1.3468991484064742e-15,
+        "6.283185307179586": 4.308186384231831e-15
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 6.661338147750939e-16,
+        "1": 7.771561172376096e-16,
+        "6.283185307179586": 9.992007221626409e-16
+      },
+      "discarded_direct_coupling_operator_norm": 0.0,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 0.0,
+      "spectral_bound_maximum_excess": 3.511642739316377e-13,
+      "time_bound_maximum_excess": 7.418052217315245e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 9.180008081866158e-16,
+      "reduced_H_hermitian_defect": 1.2030658229895225e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.37147391254276363
+      ]
+    },
+    "snapshots_r0": {
+      "rank": 0,
+      "training_maximum_relative": 6.347951572754429,
+      "response_maximum_relative": 8.326891225385813,
+      "response_maximum_absolute_operator": 19.944718423603852,
+      "time_maximum_relative": 1.412951451426694,
+      "time_maximum_absolute_operator": 1.9640888627610136,
+      "transfer_maximum_absolute_difference": 0.37147391254276296,
+      "per_eta_response_maximum_relative": {
+        "0.05": 8.326891225385813,
+        "0.2": 2.112060601914785,
+        "0.7": 0.6725891084927889
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.944718423603852,
+        "0.2": 4.8554037557278935,
+        "0.7": 1.1406672791329575
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.047737853834586376,
+        "1": 0.6474229650084276,
+        "6.283185307179586": 1.412951451426694
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.05329448423193739,
+        "1": 0.32148790358630375,
+        "6.283185307179586": 0.37147391254276296
+      },
+      "discarded_direct_coupling_operator_norm": 1.9183577035234405,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 1.9183577035234405,
+      "spectral_bound_maximum_excess": -2.7743484423434523,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 0.0,
+      "reduced_H_hermitian_defect": 9.31208868869038e-16,
+      "raw_average_transfer_range": [
+        -6.661338147750939e-16,
+        1.1102230246251565e-15
+      ]
+    },
+    "snapshots_r1": {
+      "rank": 1,
+      "training_maximum_relative": 6.067503196716738,
+      "response_maximum_relative": 6.16880827590322,
+      "response_maximum_absolute_operator": 19.190606483366235,
+      "time_maximum_relative": 1.1923309234691908,
+      "time_maximum_absolute_operator": 1.9579805562759036,
+      "transfer_maximum_absolute_difference": 0.31417870896749256,
+      "per_eta_response_maximum_relative": {
+        "0.05": 6.16880827590322,
+        "0.2": 1.8459705910186142,
+        "0.7": 0.5115099649724903
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 19.190606483366235,
+        "0.2": 4.459541138191348,
+        "0.7": 1.0003014576088278
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.027322488545835355,
+        "1": 0.3754034824338466,
+        "6.283185307179586": 1.1923309234691908
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.03170620186652251,
+        "1": 0.19940994062569595,
+        "6.283185307179586": 0.31417870896749256
+      },
+      "discarded_direct_coupling_operator_norm": 1.3566054239665761,
+      "retained_discarded_mixing_operator_norm": 0.12775386084431176,
+      "embedding_C_operator_norm": 1.356881921484453,
+      "spectral_bound_maximum_excess": -1.7688453209308725,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 4.440892098500626e-16,
+      "reduced_H_hermitian_defect": 9.425408930636496e-16,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.12451927451568667
+      ]
+    },
+    "snapshots_r2": {
+      "rank": 2,
+      "training_maximum_relative": 5.88570015654801,
+      "response_maximum_relative": 5.98383185876603,
+      "response_maximum_absolute_operator": 18.70133495933655,
+      "time_maximum_relative": 1.0759349698171572,
+      "time_maximum_absolute_operator": 1.6784402907056575,
+      "transfer_maximum_absolute_difference": 0.2189052469632511,
+      "per_eta_response_maximum_relative": {
+        "0.05": 5.98383185876603,
+        "0.2": 1.6927815769266394,
+        "0.7": 0.33459276182602843
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 18.70133495933655,
+        "0.2": 4.145607263030333,
+        "0.7": 0.5886482697198873
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.019906763538032026,
+        "1": 0.26118586055435317,
+        "6.283185307179586": 1.0759349698171572
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.020861076169016224,
+        "1": 0.10832764639276848,
+        "6.283185307179586": 0.2189052469632511
+      },
+      "discarded_direct_coupling_operator_norm": 1.2166005249307896,
+      "retained_discarded_mixing_operator_norm": 0.18293619510595824,
+      "embedding_C_operator_norm": 1.222491004729981,
+      "spectral_bound_maximum_excess": -1.9062313317698703,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 4.532376929692342e-16,
+      "reduced_H_hermitian_defect": 9.552296568348775e-16,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.2156223275893807
+      ]
+    },
+    "snapshots_r3": {
+      "rank": 3,
+      "training_maximum_relative": 4.4384225467403695,
+      "response_maximum_relative": 4.503853937390019,
+      "response_maximum_absolute_operator": 17.313341434890237,
+      "time_maximum_relative": 0.868250382356646,
+      "time_maximum_absolute_operator": 1.4655773734258717,
+      "transfer_maximum_absolute_difference": 0.15714451908344185,
+      "per_eta_response_maximum_relative": {
+        "0.05": 4.503853937390019,
+        "0.2": 1.3053685009736293,
+        "0.7": 0.27892986006963666
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 17.313341434890237,
+        "0.2": 3.5722622739734002,
+        "0.7": 0.4453852465275036
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.013553814844711767,
+        "1": 0.17952348697123302,
+        "6.283185307179586": 0.868250382356646
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.011812097095537766,
+        "1": 0.05630329591664962,
+        "6.283185307179586": 0.15714451908344185
+      },
+      "discarded_direct_coupling_operator_norm": 1.042546844728459,
+      "retained_discarded_mixing_operator_norm": 0.20214665318898817,
+      "embedding_C_operator_norm": 1.0562024915906567,
+      "spectral_bound_maximum_excess": -1.7101300424330206,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 6.060689977590925e-16,
+      "reduced_H_hermitian_defect": 1.03012011424103e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.27175046841672434
+      ]
+    },
+    "snapshots_r4": {
+      "rank": 4,
+      "training_maximum_relative": 2.8617037108080883,
+      "response_maximum_relative": 3.2354865570191116,
+      "response_maximum_absolute_operator": 13.445384367836024,
+      "time_maximum_relative": 0.41889199847488623,
+      "time_maximum_absolute_operator": 0.860194711916359,
+      "transfer_maximum_absolute_difference": 0.0645763596071035,
+      "per_eta_response_maximum_relative": {
+        "0.05": 3.2354865570191116,
+        "0.2": 0.7464668784042058,
+        "0.7": 0.1408025142547324
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 13.445384367836024,
+        "0.2": 2.4520121027855515,
+        "0.7": 0.24668291344806065
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 0.007210823175621336,
+        "1": 0.07980293508944698,
+        "6.283185307179586": 0.41889199847488623
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 0.004557716233876463,
+        "1": 0.014661480755919443,
+        "6.283185307179586": 0.0645763596071035
+      },
+      "discarded_direct_coupling_operator_norm": 0.8107472666831075,
+      "retained_discarded_mixing_operator_norm": 0.19368301979380592,
+      "embedding_C_operator_norm": 0.833561181072258,
+      "spectral_bound_maximum_excess": -1.4544623540463437,
+      "time_bound_maximum_excess": 1.219372066651314e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 7.508126895052746e-16,
+      "reduced_H_hermitian_defect": 1.0960295375665338e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.3286956203525906
+      ]
+    },
+    "snapshots_r5": {
+      "rank": 5,
+      "training_maximum_relative": 2.229215638170292e-14,
+      "response_maximum_relative": 2.978500700811854e-14,
+      "response_maximum_absolute_operator": 4.1565429355005474e-13,
+      "time_maximum_relative": 5.239201132134592e-15,
+      "time_maximum_absolute_operator": 9.323413216907532e-15,
+      "transfer_maximum_absolute_difference": 1.2212453270876722e-15,
+      "per_eta_response_maximum_relative": {
+        "0.05": 2.978500700811854e-14,
+        "0.2": 6.215551762040041e-15,
+        "0.7": 1.6316075418356657e-15
+      },
+      "per_eta_response_maximum_absolute_operator": {
+        "0.05": 4.1565429355005474e-13,
+        "0.2": 2.7121086029413246e-14,
+        "0.7": 2.607128250141757e-15
+      },
+      "time_prefix_maximum_relative": {
+        "0.25": 7.489372133639157e-16,
+        "1": 1.3674649285869007e-15,
+        "6.283185307179586": 5.239201132134592e-15
+      },
+      "time_prefix_transfer_maximum_absolute_difference": {
+        "0.25": 6.661338147750939e-16,
+        "1": 7.771561172376096e-16,
+        "6.283185307179586": 1.2212453270876722e-15
+      },
+      "discarded_direct_coupling_operator_norm": 0.0,
+      "retained_discarded_mixing_operator_norm": 0.0,
+      "embedding_C_operator_norm": 0.0,
+      "spectral_bound_maximum_excess": 4.1565429355005474e-13,
+      "time_bound_maximum_excess": 9.323413216907532e-15,
+      "bounds_pass_at_tolerance": true,
+      "retained_basis_orthonormality": 8.949060165730517e-16,
+      "reduced_H_hermitian_defect": 1.1853522427910597e-15,
+      "raw_average_transfer_range": [
+        -2.220446049250313e-16,
+        0.37147391254276363
+      ]
+    }
+  },
+  "heldout_verdicts": {
+    "svd": {
+      "0.01": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.7581514522532716e-14,
+        "time_maximum_relative": 5.3206805822913706e-15
+      },
+      "0.05": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.7581514522532716e-14,
+        "time_maximum_relative": 5.3206805822913706e-15
+      },
+      "0.1": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.7581514522532716e-14,
+        "time_maximum_relative": 5.3206805822913706e-15
+      }
+    },
+    "poles": {
+      "0.01": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.51383746421684e-14,
+        "time_maximum_relative": 4.308186384231831e-15
+      },
+      "0.05": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.51383746421684e-14,
+        "time_maximum_relative": 4.308186384231831e-15
+      },
+      "0.1": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.51383746421684e-14,
+        "time_maximum_relative": 4.308186384231831e-15
+      }
+    },
+    "snapshots": {
+      "0.01": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.978500700811854e-14,
+        "time_maximum_relative": 5.239201132134592e-15
+      },
+      "0.05": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.978500700811854e-14,
+        "time_maximum_relative": 5.239201132134592e-15
+      },
+      "0.1": {
+        "training_selected_rank": 5,
+        "heldout_response_pass": true,
+        "heldout_time_pass": true,
+        "joint_validated": true,
+        "response_maximum_relative": 2.978500700811854e-14,
+        "time_maximum_relative": 5.239201132134592e-15
+      }
+    }
+  },
+  "full_rank_controls": {
+    "svd": {
+      "response": true,
+      "dynamics": true
+    },
+    "poles": {
+      "response": true,
+      "dynamics": true
+    },
+    "snapshots": {
+      "response": true,
+      "dynamics": true
+    }
+  },
+  "all_identity_and_bound_checks_passed": true,
+  "elapsed_seconds": 1.5616813809974701,
+  "limitations": [
+    "Independent implementation shares the frozen upstream numerical geometry.",
+    "Coordinate phases and within-sector bases may differ from the primary route.",
+    "A failed reduced-rank budget remains a failure; r=5 is an exactness control.",
+    "No continuous-domain, all-time, physical, interval-certified, or probabilistic error claim."
+  ]
+}

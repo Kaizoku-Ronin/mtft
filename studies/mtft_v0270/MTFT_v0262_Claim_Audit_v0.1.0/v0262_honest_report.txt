@@ -1,0 +1,37 @@
+====================================================================================================
+MTFT FALSIFIABILITY ENGINE — HONEST REPORT (σ-status vs theory-tolerance status)
+====================================================================================================
+ # relation                                 dev(ppm)  tol(ppm)      σ  σ-status thy-status  group / multiplicity
+----------------------------------------------------------------------------------------------------
+ 1 α⁻¹ ≈ 2πδ² (leading)                      390.326         —    0.5      PASS       PASS  alpha_inv / leading term only — incomplete by design; see #2
+ 2 α⁻¹ = 2πδ² + 1/(4δ) − ξT∞/δ⁶                0.001         1    7.7      FAIL       PASS  alpha_inv / one-shot; judged vs pre-registered 1 ppm band. R
+ 3 α_s = T∞/4                               6834.476         —    0.8      PASS       PASS  alpha_s / same observable as #4
+ 4 α_s = 13^(−5/6)                           387.068         —    0.0      PASS       PASS  alpha_s / one-shot
+ 5 sin²θ_W = 3/13 (tree)                    1949.525         —    0.5      PASS       PASS  tree-level formula vs MS-bar running value — comparison band
+ 6 m_H/m_W = √π·T∞²                          289.839         —    1.8      PASS       PASS  higgs_family / one m_H family with #8, #21
+ 7 M_W/M_Z = 1/(2Ω)                          284.055       500    2.3   TENSION       PASS  2.3σ in the σ-table; within pre-registered 500 ppm band
+ 8 m_H = v·γ/(2Ω)                            370.571         —    0.3      PASS       PASS  higgs_family / one m_H family with #6, #21
+ 9 m_b/m_τ = ∛13                             514.002         —    0.1      PASS       PASS  
+10 m_d/m_u = √δ                              556.647         —    0.0      PASS       PASS  
+11 m_c/m_μ = φ(13) = 12                     1637.795         —    0.1      PASS       PASS  
+12 m_s/m_μ = T∞²                            5623.186         —    0.5      PASS       PASS  
+13 m_τ from Koide                             61.359         —    0.9      PASS       PASS  koide_family / Koide-derived; correlated with #16
+14 T∞ ≈ 15/16                                 51.469         —    0.5      PASS       PASS  
+15 y_c = (γ+Ω)/(2π)                         2148.038         —    0.4      PASS       PASS  
+16 Koide Q = 2/3                              16.452         —    1.1      PASS       PASS  koide_family / correlated with #13
+17 λ = γ²/(8Ω²)                              741.279         —    0.1      PASS       PASS  
+18 N_generations = 3                           0.000         —    0.0      PASS       PASS  exact by construction (definition-level)
+19 ρ_Λ/M_P⁴ = δ⁻⁶ e^(−2α⁻¹)               303943.586         —    0.8      PASS       PASS  
+20 m_t/m_τ = π⁴                             2237.958         —    1.3      PASS       PASS  
+21 m_H/m_t = T∞⁵                            1248.136         —    0.9      PASS       PASS  higgs_family / one m_H family with #6, #8
+22 e = √(2/δ) [Gaussian]                     195.220         —    0.6      PASS       PASS  charge / Gaussian-unit restatement of #2
+23 e from Feigenbaum product                 195.221         —    0.1      PASS       PASS  charge / near-duplicate of #22 (identical numbers)
+----------------------------------------------------------------------------------------------------
+Correlated-duplicate groups (count once when scoring):
+  alpha_inv: predictions [1, 2]
+  alpha_s: predictions [3, 4]
+  charge: predictions [22, 23]
+  higgs_family: predictions [6, 8, 21]
+  koide_family: predictions [13, 16]
+Effective independent predictions: 17 of 23
+Theory-tolerance registered on 2 predictions: all theory_status = ['PASS']

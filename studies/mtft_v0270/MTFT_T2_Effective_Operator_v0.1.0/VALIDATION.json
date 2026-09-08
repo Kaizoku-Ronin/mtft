@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "scope": "Replay and identity consistency. Structural hypotheses and raw Schur stress accuracy are separately reported outcomes, not assumed to pass.",
+  "checks": {
+    "pinned_mtft_version": true,
+    "raw_primary_geometry_gates": true,
+    "independent_real_frame_checks": true,
+    "forty_symbolic_controls": true,
+    "regular_grid_1807_without_skips": true,
+    "registered_regular_Schur_gate": true,
+    "registered_regular_spectral_gate": true,
+    "independent_response_agrees": true,
+    "independent_grid_agrees": true,
+    "independent_coupling_singular_values_agree": true,
+    "independent_complement_spectrum_agrees": true,
+    "independent_full_spectrum_agrees": true,
+    "independent_active_projectors_agree": true,
+    "coupling_rank_routes_agree": true,
+    "six_exponential_controls_agree": true,
+    "memory_residues_sum_correctly": true,
+    "memory_residues_positive_to_roundoff": true,
+    "every_selected_pole_has_eleven_stress_points": true,
+    "singular_complement_inverses_skipped": true,
+    "projected_pole_null_identity": true,
+    "instantaneous_dark_directions_annihilated": true,
+    "registered_dynamics_and_short_time_counts": true,
+    "sampled_transfer_respects_unitarity_bounds": true,
+    "finite_response_diagnostics": true
+  },
+  "checks_passed": 24,
+  "checks_total": 24,
+  "independent_agreement": {
+    "ambient_projected_response_maximum_relative_error": 2.6412628060695187e-13,
+    "spectral_grid_maximum_difference": 0.0,
+    "coupling_singular_values_maximum_difference": 1.6719958750854857e-13,
+    "complement_eigenvalues_maximum_difference": 7.549516567451064e-14,
+    "full_eigenvalues_maximum_difference": 1.3322676295501878e-15,
+    "active_projector_Frobenius_difference": 3.4651703335836304e-13
+  },
+  "exponential_control_maximum_errors": {
+    "spectral_full_relative_error": 5.4050916200759146e-15,
+    "full_unitarity": 4.648986769163143e-15,
+    "projected_spectral_relative_error": 6.08261035838342e-15,
+    "norm_balance_residual": 4.320622832271058e-15,
+    "memory_spectral_relative_error": 3.1190793816018064e-15
+  },
+  "response_summary": {
+    "regular_count": 1807,
+    "skipped_regular_count": 0,
+    "stress_count": 55,
+    "compression_poles_tested": 5,
+    "max_regular_effective_relative_error": 2.781605507230565e-14,
+    "max_regular_spectral_relative_error": 2.7217015197367932e-14,
+    "max_regular_naive_relative_error": 8.333652533344495,
+    "max_stress_effective_relative_error": 0.0001639292688811831,
+    "max_stress_spectral_relative_error": 1.4876332178059828e-14,
+    "max_stress_Schur_condition": 32722606588048.758,
+    "max_real_pole_null_residual": 1.0994985887759414e-15,
+    "sampled_max_average_transfer": {
+      "value": 0.37150852929594513,
+      "t": 2.2334760271614935
+    },
+    "sampled_max_worst_input_transfer": {
+      "value": 0.9981234018496973,
+      "t": 4.859651136021712
+    },
+    "sampled_max_dark_average_transfer": {
+      "value": 0.2580457575887017,
+      "t": 1.6935147898257479
+    },
+    "sampled_max_dark_worst_input_transfer": {
+      "value": 0.5848274593414322,
+      "t": 2.8961557275280905
+    }
+  },
+  "structural_outcomes": {
+    "coupling_complex_rank": {
+      "normalized_singular_values": [
+        0.30718307740297435,
+        0.2161849839718687,
+        0.15834012037689135,
+        0.1443078234711465,
+        0.014407305575803372
+      ],
+      "resolved_rank": 5,
+      "ambiguous": false
+    },
+    "pair_decomposition_relative_residual": 0.6316759041715531,
+    "instantaneous_dark_dimension": 3,
+    "delayed_dark_rank": {
+      "normalized_singular_values": [
+        0.03507366355669912,
+        0.030505120521881778,
+        0.0012445363706137164
+      ],
+      "resolved_rank": 3,
+      "ambiguous": false
+    },
+    "complement_reachable_rank": {
+      "normalized_singular_values": [
+        0.7162162306516311,
+        0.48875929209940316,
+        0.3843776397113537,
+        0.2889701650293778,
+        0.12999515048832444
+      ],
+      "resolved_rank": 5,
+      "ambiguous": false
+    }
+  },
+  "short_time_observations": {
+    "ordinary_derived_coefficient": 0.9126063493344602,
+    "dark_derived_coefficient": 0.27406811848231627,
+    "smallest_time_record": {
+      "t": 0.003125,
+      "ordinary_amplitude_scaled_error": 0.0026160536446007683,
+      "ordinary_average_over_t_squared": 0.9125966652019235,
+      "dark_amplitude_scaled_error": 0.0021037694937974948,
+      "dark_average_over_t_fourth": 0.2740660949953708
+    },
+    "interpretation": "Taylor coefficients are derived. Finite-time convergence is reported without fitting an exponent or treating its nonzero remainder as an identity failure."
+  },
+  "stress_note": "Raw Schur evaluation loses the regular-grid accuracy near compression poles. All stress points are retained; no stress accuracy gate was substituted.",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "source_files_verified_unchanged": 395,
+  "protocol_sha256": "82a766f60ef267b7246bb09469274f12e67b69c25ee0c3b05f9b14353c61f2cc",
+  "frozen_input_sha256": {
+    "coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  }
+}

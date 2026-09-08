@@ -1,0 +1,371 @@
+{
+  "epistemic_status": "EXACT rational arithmetic on the packaged matrices",
+  "mtft_version": "0.26.2",
+  "matrix_basis": "mtft.hecke cuspidal homology, column action, dimension 26 over Q",
+  "minimal_polynomial": "x**12 - x**11 - 17*x**10 + 15*x**9 + 103*x**8 - 73*x**7 - 277*x**6 + 135*x**5 + 331*x**4 - 65*x**3 - 146*x**2 - 24*x",
+  "minimal_polynomial_annihilates_exact": true,
+  "minimal_polynomial_squarefree_exact": true,
+  "charpoly_factorization_exact": "x**26 + 2*x**25 - 37*x**24 - 76*x**23 + 589*x**22 + 1254*x**21 - 5273*x**20 - 11792*x**19 + 29073*x**18 + 69770*x**17 - 101103*x**16 - 270680*x**15 + 214415*x**14 + 695542*x**13 - 233667*x**12 - 1164348*x**11 - 2413*x**10 + 1203450*x**9 + 330073*x**8 - 669152*x**7 - 358824*x**6 + 117120*x**5 + 126352*x**4 + 30336*x**3 + 2304*x**2",
+  "projectors_sum_to_identity_exact": true,
+  "projectors_pairwise_algebraically_orthogonal_exact": true,
+  "orthogonality_scope": "E_i E_j = 0; this check alone does not claim Euclidean orthogonal projectors in raw coordinates.",
+  "blocks": {
+    "ell": {
+      "dimension_real": 2,
+      "dimension_complex": 1,
+      "factor": "x",
+      "crt_polynomial": "-x**11/24 + x**10/24 + 17*x**9/24 - 5*x**8/8 - 103*x**7/24 + 73*x**6/24 + 277*x**5/24 - 45*x**4/8 - 331*x**3/24 + 65*x**2/24 + 73*x/12 + 1",
+      "crt_residues": {
+        "ell": "1",
+        "old": "0",
+        "q4": "0",
+        "q6": "0"
+      },
+      "idempotent_exact": true,
+      "rank_exact": 2,
+      "trace_exact": "2",
+      "matches_package_nullspace_projector_exact": true
+    },
+    "old": {
+      "dimension_real": 4,
+      "dimension_complex": 2,
+      "factor": "x + 2",
+      "crt_polynomial": "x**11/756 - x**10/252 - 11*x**9/756 + 37*x**8/756 + 29*x**7/756 - 131*x**6/756 - 5*x**5/252 + 55*x**4/252 + x**3/756 - 67*x**2/756 - x/63",
+      "crt_residues": {
+        "ell": "0",
+        "old": "1",
+        "q4": "0",
+        "q6": "0"
+      },
+      "idempotent_exact": true,
+      "rank_exact": 4,
+      "trace_exact": "4",
+      "matches_package_nullspace_projector_exact": true
+    },
+    "q4": {
+      "dimension_real": 8,
+      "dimension_complex": 4,
+      "factor": "x**4 - 3*x**3 - x**2 + 5*x + 1",
+      "crt_polynomial": "907*x**11/11961 - 689*x**10/7974 - 14810*x**9/11961 + 15631*x**8/11961 + 84245*x**7/11961 - 77453*x**6/11961 - 137257*x**5/7974 + 50146*x**4/3987 + 215962*x**3/11961 - 91792*x**2/11961 - 28576*x/3987",
+      "crt_residues": {
+        "ell": "0",
+        "old": "0",
+        "q4": "1",
+        "q6": "0"
+      },
+      "idempotent_exact": true,
+      "rank_exact": 8,
+      "trace_exact": "8",
+      "matches_package_nullspace_projector_exact": true
+    },
+    "q6": {
+      "dimension_real": 12,
+      "dimension_complex": 6,
+      "factor": "x**6 - 10*x**4 + 2*x**3 + 24*x**2 - 7*x - 12",
+      "crt_polynomial": "-2641*x**11/74424 + 3625*x**10/74424 + 40517*x**9/74424 - 18129*x**8/24808 - 207643*x**7/74424 + 268453*x**6/74424 + 423565*x**5/74424 - 177889*x**4/24808 - 317431*x**3/74424 + 376181*x**2/74424 + 40927*x/37212",
+      "crt_residues": {
+        "ell": "0",
+        "old": "0",
+        "q4": "0",
+        "q6": "1"
+      },
+      "idempotent_exact": true,
+      "rank_exact": 12,
+      "trace_exact": "12",
+      "matches_package_nullspace_projector_exact": true
+    }
+  },
+  "operators": {
+    "T2": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "0"
+        },
+        "old": {
+          "trace_exact": "-8"
+        },
+        "q4": {
+          "trace_exact": "6"
+        },
+        "q6": {
+          "trace_exact": "0"
+        }
+      }
+    },
+    "T3": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "-2"
+        },
+        "old": {
+          "trace_exact": "-4"
+        },
+        "q4": {
+          "trace_exact": "0"
+        },
+        "q6": {
+          "trace_exact": "6"
+        }
+      }
+    },
+    "T5": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "-2"
+        },
+        "old": {
+          "trace_exact": "4"
+        },
+        "q4": {
+          "trace_exact": "0"
+        },
+        "q6": {
+          "trace_exact": "2"
+        }
+      }
+    },
+    "T7": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "-4"
+        },
+        "old": {
+          "trace_exact": "-8"
+        },
+        "q4": {
+          "trace_exact": "12"
+        },
+        "q6": {
+          "trace_exact": "8"
+        }
+      }
+    },
+    "T17": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "-8"
+        },
+        "old": {
+          "trace_exact": "-8"
+        },
+        "q4": {
+          "trace_exact": "12"
+        },
+        "q6": {
+          "trace_exact": "0"
+        }
+      }
+    },
+    "T19": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "4"
+        },
+        "old": {
+          "trace_exact": "0"
+        },
+        "q4": {
+          "trace_exact": "16"
+        },
+        "q6": {
+          "trace_exact": "-20"
+        }
+      }
+    },
+    "W11": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "2",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 0
+        },
+        "old": {
+          "trace_exact": "-4",
+          "plus_eigenspace_dimension": 0,
+          "minus_eigenspace_dimension": 4
+        },
+        "q4": {
+          "trace_exact": "-8",
+          "plus_eigenspace_dimension": 0,
+          "minus_eigenspace_dimension": 8
+        },
+        "q6": {
+          "trace_exact": "12",
+          "plus_eigenspace_dimension": 12,
+          "minus_eigenspace_dimension": 0
+        }
+      }
+    },
+    "W13": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "2",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 0
+        },
+        "old": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 2
+        },
+        "q4": {
+          "trace_exact": "8",
+          "plus_eigenspace_dimension": 8,
+          "minus_eigenspace_dimension": 0
+        },
+        "q6": {
+          "trace_exact": "-12",
+          "plus_eigenspace_dimension": 0,
+          "minus_eigenspace_dimension": 12
+        }
+      }
+    },
+    "W143": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "2",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 0
+        },
+        "old": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 2
+        },
+        "q4": {
+          "trace_exact": "-8",
+          "plus_eigenspace_dimension": 0,
+          "minus_eigenspace_dimension": 8
+        },
+        "q6": {
+          "trace_exact": "-12",
+          "plus_eigenspace_dimension": 0,
+          "minus_eigenspace_dimension": 12
+        }
+      }
+    },
+    "STAR": {
+      "commutes_with_each_projector_exact": {
+        "ell": true,
+        "old": true,
+        "q4": true,
+        "q6": true
+      },
+      "all_cross_hecke_blocks_zero_exact": true,
+      "block_data": {
+        "ell": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 1,
+          "minus_eigenspace_dimension": 1
+        },
+        "old": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 2,
+          "minus_eigenspace_dimension": 2
+        },
+        "q4": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 4,
+          "minus_eigenspace_dimension": 4
+        },
+        "q6": {
+          "trace_exact": "0",
+          "plus_eigenspace_dimension": 6,
+          "minus_eigenspace_dimension": 6
+        }
+      }
+    }
+  },
+  "W143_rank_explanation": {
+    "status": "EXACT explanatory follow-up, not a preregistered endpoint",
+    "plus_projector_definition": "R_plus=(I+W143)/2",
+    "plus_projector_idempotent_exact": true,
+    "reflection_identity_exact": "W143=2 R_plus-I",
+    "plus_projector_rank_exact": 4,
+    "plus_projector_rank_by_hecke_block_exact": {
+      "ell": 2,
+      "old": 2,
+      "q4": 0,
+      "q6": 0
+    },
+    "plus_projector_supported_in_ell_plus_old_exact": true,
+    "q4_and_q6_W143_scalar_exact": -1,
+    "universal_coupling_identity": "For any P^2=P and Q=I-P: Q W143 P = 2 Q R_plus P.",
+    "universal_coupling_rank_bound": 4,
+    "proof": "QP=0 cancels the identity part of W143. Rank of a product cannot exceed rank(R_plus)=4. Orthogonality of P is not required.",
+    "cross_q4_q6_commutator_identity": "For every matrix P, E_q4 [P,W143] E_q6 = E_q6 [P,W143] E_q4 = 0, since W143 acts as -I on both blocks.",
+    "limitation": "This certifies the rank upper bound and exact zero commutator blocks for packaged W143; saturation at rank four for the selected active projector remains a numerical result."
+  },
+  "interpretation": "Every tested arithmetic operator preserves the four Hecke blocks. Active/fixed mixing under these operators is caused by a different, incompatible decomposition; it is not transition between distinct Hecke blocks.",
+  "source_caveat": "The packaged W matrices were originally integer-recognized from high-precision periods. Here their algebraic block-preservation properties are checked exactly; geometric identification is inherited from the package.",
+  "source_sha256": {
+    "hecke.py": "6cef89c438be081e6878691f0b57fc36ab2329887901de019a3b60237423fd9d",
+    "periods/involutions.py": "c37b1ac1ecdccb7fd66c317c9537e736726019c52cfaebff22e8bee1602e293b",
+    "X0_143_atkin_lehner_v022.json": "987a0beb518b72c97cfbc72a6994acfeead985606bd281a81eb5d6114fee4dff",
+    "exact_blocks.py": "31bdbdf116474494911534be8e0af0229e60a0dc7f6d57baff8600e5dcc2b74d"
+  },
+  "elapsed_seconds": 2.6062191060009354
+}

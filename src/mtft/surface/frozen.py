@@ -85,7 +85,23 @@ def verify_gates(d: dict, tol: float = 1e-11) -> dict:
             ok_cov = ok_cov and abs(cov * cov - abs(round(np.linalg.det(P.astype(float))))) < 1e-6 * cov * cov
         gates["hecke_block_lattices_annihilated_and_full_rank"] = ok_blocks
         gates["hodge_covolume_squared_equals_polarization_det"] = ok_cov
+    if "Pi_canonical" in d:                          # v0.27.0: canonical-frame intertwiner
+        for k, v in canonical_frame_gates_from(d).items():
+            gates["intertwiner_" + k] = v
     return gates
+
+
+def canonical_frame_gates_from(d: dict) -> dict:
+    import mtft.homology as H
+    Pi = d["Pi_canonical"].astype(np.int64)
+    Jint = d["intersection_cycles"].astype(np.int64)
+    m = H.matrices()
+    can = {k: np.array(m[k], dtype=object).astype(np.int64) for k in ("W11", "W13", "P")}
+    Ji = np.rint(np.linalg.inv(Jint.astype(float))).astype(np.int64)
+    return {"Pi_unimodular": abs(int(round(np.linalg.det(Pi.astype(float))))) == 1,
+            "Pi_intertwines_W11": bool(np.array_equal(Pi @ d["W11"].astype(np.int64), can["W11"].T @ Pi)),
+            "Pi_intertwines_W13": bool(np.array_equal(Pi @ d["W13"].astype(np.int64), can["W13"].T @ Pi)),
+            "poincare_duality": bool(np.array_equal(-Pi @ Ji @ Pi.T, can["P"]))}
 
 
 def block_invariants() -> dict:

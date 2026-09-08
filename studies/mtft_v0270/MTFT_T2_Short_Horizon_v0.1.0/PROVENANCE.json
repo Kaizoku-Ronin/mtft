@@ -1,0 +1,25 @@
+{
+  "study": "MTFT_T2_Short_Horizon_v0.1.0",
+  "created_utc": "2026-09-08",
+  "source_baseline": "mtft 0.26.2 (unchanged research lineage)",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "parent_study": "MTFT_T2_Memory_Approximation_v0.1.0",
+  "parent_zip_sha256": "42051b8a7a98576fbab2c15ff6b3551c265e53f0e324997ca46b3219f1035f82",
+  "python": "3.12.13",
+  "exact_replay_dependencies": "Python standard library only",
+  "input_sha256": {
+    "frozen_models.npz": "1238a41eb40862d25daa3eb17cfa09d7850d6a5d4a8fe35ec780c1b8eb08a342",
+    "selected_models.npz": "0fb9ff114d7a6e099217f0ffeac3ca03b6239af6f309b310036332022bc21a26",
+    "T2_blocks.npz": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b"
+  },
+  "protocol_sha256": "7f53a51368c655d657e85484e0eb038f2abf8c32a8bccfd15cddd8c718a6200f",
+  "code_sha256": {
+    "run_study.py": "fd53d8c6557bf68938b920944eba23e0013316d4d3869e31a8f8e147b64a2a87",
+    "test_integer_input.py": "41d79bc46393f53d9b06e3b5a30548f66cc453efa460188c87ca5f4a00b85f8c",
+    "dyadic_bounds.py": "dfd04258d3e4bfbb6da7f37475e3cf8897d0f608c01a9566026ddd9b380255f5",
+    "verify_exact_certificate.py": "9273db8d1780f0cf5046123efd2c01512a977929aeeb03c8f5b07220d31157f5",
+    "review_controls.py": "6e27964028baa08e4ae02e76899ac9c822d4027abf1fb4f1b87147f390e4bc92",
+    "render_results.py": "dde9f93472a71e428493fddfe809720d7879b6cf03cf39b0db328e132ced77fe",
+    "verify_certificate.py": "5b3d0c0b047d3421c801b37d6cb086298ae1a5ad048cef5c65fbca45fd90631e"
+  }
+}

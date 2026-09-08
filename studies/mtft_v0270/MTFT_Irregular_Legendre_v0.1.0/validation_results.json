@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "integers_checked_by_trial_division": 10201,
+  "full_modular_series_product_certificates": 1251,
+  "bernoulli_residues_checked_against_exact_rationals_below_1024": 39837,
+  "all_positive_witnesses_checked_by_independent_power_sums": 639,
+  "negative_entries_checked_by_independent_power_sums": 128,
+  "known_prime_witness_anchors": 9,
+  "count_partition_all_intervals": true,
+  "exhaustively_enumerated_toy_null_assignments": 24,
+  "monte_carlo_expectation_and_tail_checks": [
+    "n6_global",
+    "n6_stratified",
+    "n32_global",
+    "n32_stratified"
+  ],
+  "elapsed_seconds": 28.580570651000016,
+  "limit": "Finite exact computation and independent checks; not a Lean kernel proof."
+}

@@ -1,0 +1,207 @@
+{
+  "epistemic": "DIAGNOSTIC except exact Fraction arithmetic commutator identities",
+  "route": "independent localization projector and fresh eigendecomposition; no coupling_study helpers or main projector used",
+  "shared_inputs": "frozen periods, frame matrices, package arithmetic operators",
+  "localization_input_sha256": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b",
+  "active_projector_rank": 16,
+  "projector_spectrum": [
+    -2.0586153422302955e-16,
+    -7.828299174407297e-17,
+    -7.546977179051332e-17,
+    1.7187532651298002e-16,
+    2.2533621840657677e-16,
+    2.7537217214202634e-16,
+    3.8535459175765734e-16,
+    4.620369327845148e-16,
+    6.763223447415209e-16,
+    7.708556818348519e-16,
+    0.9999999999999982,
+    0.9999999999999984,
+    0.9999999999999988,
+    0.9999999999999991,
+    0.9999999999999993,
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999997,
+    0.9999999999999998,
+    0.9999999999999998,
+    1.0,
+    1.000000000000001,
+    1.000000000000001,
+    1.000000000000001,
+    1.0000000000000018
+  ],
+  "projector_reconstruction_error": 5.273309460639519e-15,
+  "operators": {
+    "T2": {
+      "active_to_fixed_over_operator": 0.43266765817146113,
+      "fixed_to_active_over_operator": 0.4326676581714617,
+      "commutator_over_operator": 0.611884470186287,
+      "difference_from_main_active_to_fixed": 5.440092820663267e-15,
+      "difference_from_main_fixed_to_active": 5.551115123125783e-15,
+      "difference_from_main_commutator": 7.771561172376096e-15
+    },
+    "T3": {
+      "active_to_fixed_over_operator": 0.46389848752771656,
+      "fixed_to_active_over_operator": 0.46389848752771695,
+      "commutator_over_operator": 0.6560515326260632,
+      "difference_from_main_active_to_fixed": 1.1712852909795402e-14,
+      "difference_from_main_fixed_to_active": 1.1657341758564144e-14,
+      "difference_from_main_commutator": 1.6431300764452317e-14
+    },
+    "T5": {
+      "active_to_fixed_over_operator": 0.5439028909588107,
+      "fixed_to_active_over_operator": 0.5439028909588107,
+      "commutator_over_operator": 0.7691948450078848,
+      "difference_from_main_active_to_fixed": 4.218847493575595e-15,
+      "difference_from_main_fixed_to_active": 4.218847493575595e-15,
+      "difference_from_main_commutator": 5.995204332975845e-15
+    },
+    "T7": {
+      "active_to_fixed_over_operator": 0.5179209381881957,
+      "fixed_to_active_over_operator": 0.5179209381881957,
+      "commutator_over_operator": 0.7324508150227439,
+      "difference_from_main_active_to_fixed": 1.176836406102666e-14,
+      "difference_from_main_fixed_to_active": 1.176836406102666e-14,
+      "difference_from_main_commutator": 1.6653345369377348e-14
+    },
+    "T17": {
+      "active_to_fixed_over_operator": 0.40558283070551293,
+      "fixed_to_active_over_operator": 0.40558283070551293,
+      "commutator_over_operator": 0.5735807398494072,
+      "difference_from_main_active_to_fixed": 6.772360450213455e-15,
+      "difference_from_main_fixed_to_active": 6.827871601444713e-15,
+      "difference_from_main_commutator": 9.547918011776346e-15
+    },
+    "T19": {
+      "active_to_fixed_over_operator": 0.521584687145475,
+      "fixed_to_active_over_operator": 0.5215846871454751,
+      "commutator_over_operator": 0.7376321384872585,
+      "difference_from_main_active_to_fixed": 1.6653345369377348e-15,
+      "difference_from_main_fixed_to_active": 1.5543122344752192e-15,
+      "difference_from_main_commutator": 2.3314683517128287e-15
+    },
+    "W11": {
+      "active_to_fixed_over_operator": 0.47126424350291213,
+      "fixed_to_active_over_operator": 0.47126424350291246,
+      "commutator_over_operator": 0.6664682846233153,
+      "difference_from_main_active_to_fixed": 1.199040866595169e-14,
+      "difference_from_main_fixed_to_active": 1.1934897514720433e-14,
+      "difference_from_main_commutator": 1.6986412276764895e-14
+    },
+    "W13": {
+      "active_to_fixed_over_operator": 0.47316117814564823,
+      "fixed_to_active_over_operator": 0.4731611781456484,
+      "commutator_over_operator": 0.669150955322008,
+      "difference_from_main_active_to_fixed": 1.0880185641326534e-14,
+      "difference_from_main_fixed_to_active": 1.099120794378905e-14,
+      "difference_from_main_commutator": 1.554312234475219e-14
+    },
+    "W143": {
+      "active_to_fixed_over_operator": 0.10915376567525718,
+      "fixed_to_active_over_operator": 0.10915376567525714,
+      "commutator_over_operator": 0.15436673580204346,
+      "difference_from_main_active_to_fixed": 4.926614671774132e-15,
+      "difference_from_main_fixed_to_active": 4.898859096158503e-15,
+      "difference_from_main_commutator": 6.994405055138486e-15
+    },
+    "STAR": {
+      "active_to_fixed_over_operator": 8.436707212750508e-15,
+      "fixed_to_active_over_operator": 8.783093755197695e-15,
+      "commutator_over_operator": 1.2180498479440784e-14,
+      "difference_from_main_active_to_fixed": 7.666593185968231e-14,
+      "difference_from_main_fixed_to_active": 7.624009661287425e-14,
+      "difference_from_main_commutator": 1.0811078936710816e-13
+    }
+  },
+  "maximum_absolute_difference_from_main": 1.0811078936710816e-13,
+  "T2_one_augmentation": {
+    "construction": "column_stack(E, T2_adapted E / ||T2_adapted||_F)",
+    "T2_scale": 8.831760866327848,
+    "singular_values": [
+      1.0304341862969495,
+      1.0304341862969493,
+      1.0249168126847732,
+      1.0249168126847723,
+      1.01989262515505,
+      1.0198926251550493,
+      1.012442509306803,
+      1.0124425093068026,
+      1.007769640954663,
+      1.0077696409546628,
+      1.0046079647777781,
+      1.0046079647777777,
+      1.0036323496205368,
+      1.0036323496205364,
+      1.0000007398407533,
+      1.0000007398407529,
+      0.21586015517833163,
+      0.21586015517833135,
+      0.15067264745342468,
+      0.15067264745342407,
+      0.1097692488433831,
+      0.10976924884338134,
+      0.10094277737873676,
+      0.10094277737873661,
+      0.010006018432375627,
+      0.010006018432375354
+    ],
+    "smallest_normalized_singular_value": 0.009710487642431372,
+    "rank_at_relative_1e_9": 26,
+    "real_dimension": 26
+  },
+  "exact_full_commutators": {
+    "T2_T3": {
+      "all_entries_exactly_zero": true,
+      "nonzero_entries": 0
+    },
+    "T2_W11": {
+      "all_entries_exactly_zero": true,
+      "nonzero_entries": 0
+    }
+  },
+  "exploratory_compression": {
+    "status": "EXPLORATORY follow-up; not a preregistered primary endpoint",
+    "identity": "For [A,B]=0, [E^T A E,E^T B E]=E^T(B Q A-A Q B)E, Q=I-EE^T",
+    "interpretation": "Compression to a noninvariant space can make commuting operators fail to commute. This is a leakage identity, not a new exact representation of the Hecke algebra.",
+    "pairs": {
+      "T2_T3": {
+        "compressed_commutator_norm": 5.698352168617702,
+        "compressed_commutator_over_product_norms": 0.17833661542030213,
+        "off_sector_identity_residual_relative_to_commutator": 6.4465329369889216e-15
+      },
+      "T2_W11": {
+        "compressed_commutator_norm": 2.592171209233272,
+        "compressed_commutator_over_product_norms": 0.14243571001206998,
+        "off_sector_identity_residual_relative_to_commutator": 8.202685292414538e-15
+      }
+    }
+  },
+  "closure_scope": {
+    "note": "Main study reports ambiguous package Lie-closure gates at frame seeds 2026 and 31415. This independent localization calculation does not use Lie closure and cannot repair or upgrade that closure claim.",
+    "reported_runs": [
+      {
+        "seed": 143,
+        "dps": 50,
+        "closure_status": "passed_package_gate"
+      },
+      {
+        "seed": 2026,
+        "dps": 50,
+        "closure_status": "ambiguous_package_gate"
+      },
+      {
+        "seed": 31415,
+        "dps": 50,
+        "closure_status": "ambiguous_package_gate"
+      },
+      {
+        "seed": 143,
+        "dps": 80,
+        "closure_status": "passed_package_gate"
+      }
+    ]
+  },
+  "checks_passed": true
+}

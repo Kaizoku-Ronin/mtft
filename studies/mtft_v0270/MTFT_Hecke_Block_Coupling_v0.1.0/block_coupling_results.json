@@ -1,0 +1,5738 @@
+{
+  "status": "DIAGNOSTIC float64 for all period-dependent quantities",
+  "release": "0.26.2",
+  "block_order": [
+    "ell",
+    "old",
+    "q4",
+    "q6"
+  ],
+  "operator_order": [
+    "T2",
+    "T3",
+    "T5",
+    "T7",
+    "W11",
+    "W13",
+    "W143",
+    "STAR",
+    "T17",
+    "T19"
+  ],
+  "protocol_sha256": "ab392f040c4156b1950f9cb5ece58475aa6921fe56bcebfd190269b87c530587",
+  "inputs_sha256": {
+    "/workspace/scratch/a8262a41ed96/deliverables/MTFT_Hecke_Block_Coupling_v0.1.0/inputs/previous/coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "/workspace/scratch/a8262a41ed96/deliverables/MTFT_Hecke_Block_Coupling_v0.1.0/exact_projectors.json": "660012a978fb99cd88c7b7ea64bfffb874a50e79aeb8aa8ed4b32c8674cf8eaa"
+  },
+  "runs": [
+    {
+      "frame_seed": 143,
+      "period_input_dps": 50,
+      "geometry": {
+        "blocks": {
+          "ell": {
+            "real_dimension": 2,
+            "active_overlap_real": 1.9809190108724206,
+            "active_overlap_complex": 0.9904595054362103,
+            "active_fraction_of_block": 0.9904595054362103,
+            "fixed_overlap_real": 0.019080989127579384,
+            "principal_cosines_squared": [
+              0.9904595054362092,
+              0.9904595054362093
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.1102230246251565e-16,
+            "projector_idempotence": 1.512518637464631e-15,
+            "projector_symmetry": 1.1225507343267207e-14
+          },
+          "old": {
+            "real_dimension": 4,
+            "active_overlap_real": 2.8287621987677505,
+            "active_overlap_complex": 1.4143810993838752,
+            "active_fraction_of_block": 0.7071905496919376,
+            "fixed_overlap_real": 1.1712378012322495,
+            "principal_cosines_squared": [
+              0.43201458691718303,
+              0.4320145869171835,
+              0.9823665124666925,
+              0.9823665124666929
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 4.440892098500626e-16,
+            "projector_idempotence": 2.611240405393118e-15,
+            "projector_symmetry": 1.2960684350865e-14
+          },
+          "q4": {
+            "real_dimension": 8,
+            "active_overlap_real": 4.953174719794091,
+            "active_overlap_complex": 2.4765873598970454,
+            "active_fraction_of_block": 0.6191468399742613,
+            "fixed_overlap_real": 3.0468252802059093,
+            "principal_cosines_squared": [
+              0.21712194574757196,
+              0.2171219457475734,
+              0.4868364749730012,
+              0.4868364749730023,
+              0.8735886143499416,
+              0.873588614349943,
+              0.8990403248265264,
+              0.8990403248265277
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.4432899320127035e-15,
+            "projector_idempotence": 5.560312980844402e-15,
+            "projector_symmetry": 1.7581527772994557e-14
+          },
+          "q6": {
+            "real_dimension": 12,
+            "active_overlap_real": 6.237144070565736,
+            "active_overlap_complex": 3.118572035282868,
+            "active_fraction_of_block": 0.519762005880478,
+            "fixed_overlap_real": 5.762855929434264,
+            "principal_cosines_squared": [
+              0.00392545835066682,
+              0.003925458350667072,
+              0.11139300095681096,
+              0.11139300095681176,
+              0.5177975691241767,
+              0.517797569124178,
+              0.6807370246787012,
+              0.6807370246787025,
+              0.8047189821725083,
+              0.8047189821725085,
+              0.9999999999999993,
+              0.9999999999999998
+            ],
+            "active_intersection_real_diagnostic": 2,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.2212453270876722e-15,
+            "projector_idempotence": 5.757074666869564e-15,
+            "projector_symmetry": 1.7396923958153884e-14
+          }
+        },
+        "active_overlap_sum_real": 15.999999999999998,
+        "fixed_overlap_sum_real": 10.000000000000002,
+        "P_block_squared_norms": [
+          [
+            1.9620200638178866,
+            0.0005521420066651976,
+            0.003631424165488416,
+            0.014715380882382745
+          ],
+          [
+            0.0005521420066651665,
+            2.303361136250391,
+            0.1619131672660846,
+            0.36293575324460614
+          ],
+          [
+            0.003631424165488286,
+            0.1619131672660844,
+            3.7111645309507857,
+            1.076465597411733
+          ],
+          [
+            0.014715380882383111,
+            0.3629357532446072,
+            1.0764655974117343,
+            4.7830273390270195
+          ]
+        ],
+        "P_block_norm_sum": 16.000000000000007,
+        "block_diagonal_truncation_idempotence_defect": 0.7955175832765716,
+        "discarded_offdiagonal_P_norm_squared": 3.24042692995392,
+        "truncation_trace_defect": 9.43689570931383e-15,
+        "orthogonal_projectors_sum_identity": 1.407867489877132e-14
+      },
+      "operators": {
+        "T2": {
+          "coupling_singular_values": [
+            1.9183577035234356,
+            1.9183577035234343,
+            1.3500747921881087,
+            1.3500747921881056,
+            0.9888337348198516,
+            0.988833734819846,
+            0.9012020687305409,
+            0.9012020687305373,
+            0.08997359448320781,
+            0.08997359448320442
+          ],
+          "singular_values_over_operator_norm": [
+            0.21721123709739532,
+            0.21721123709739518,
+            0.15286586815721329,
+            0.15286586815721295,
+            0.11196337285239451,
+            0.11196337285239388,
+            0.10204104055471909,
+            0.10204104055471869,
+            0.010187503471277509,
+            0.010187503471277125
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4326676581714666,
+          "commutator_norm_squared_over_operator_squared": 0.3744026048551627,
+          "commutator_block_squared_fractions": [
+            [
+              6.2427567982777975e-34,
+              2.8314974700778826e-05,
+              0.000255831839646175,
+              0.0004706850559229038
+            ],
+            [
+              2.831497470077683e-05,
+              1.000959351653483e-31,
+              0.008512645151151159,
+              0.063853034431848
+            ],
+            [
+              0.0002558318396461705,
+              0.00851264515115116,
+              0.02110041401183253,
+              0.07339350770861125
+            ],
+            [
+              0.0004706850559229088,
+              0.06385303443184802,
+              0.07339350770861143,
+              0.06027415251956958
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.08137456653140211,
+          "between_block_commutator_squared_fraction": 0.2930280383237607,
+          "between_block_share_of_commutator": 0.7826549135178111,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 6.2427567982777975e-34,
+              "fraction_of_commutator": 1.667391390263645e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.662994940155565e-05,
+              "fraction_of_commutator": 0.00015125415439741103
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0005116636792923456,
+              "fraction_of_commutator": 0.001366613566938943
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0009413701118458126,
+              "fraction_of_commutator": 0.00251432575425051
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.000959351653483e-31,
+              "fraction_of_commutator": 2.673483941279477e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.01702529030230232,
+              "fraction_of_commutator": 0.045473215414429446
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.127706068863696,
+              "fraction_of_commutator": 0.3410928962769877
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.02110041401183253,
+              "fraction_of_commutator": 0.056357551304952076
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.14678701541722267,
+              "fraction_of_commutator": 0.3920566083508075
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.06027415251956958,
+              "fraction_of_commutator": 0.16098753517723677
+            }
+          ],
+          "commutator_attribution_sum_error": 1.1102230246251565e-16,
+          "block_commutator_identity_error": 2.2303626815689987e-15,
+          "selfadjoint_cross_norm_identity_error": 5.551115123125783e-16,
+          "full_operator_offblock_squared_fraction": 9.076002561163546e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              2.6855117098976825e-35,
+              1.2343832906424676e-23,
+              3.9383741945215313e-22,
+              1.711761250606732e-20
+            ],
+            [
+              1.2343832906424676e-23,
+              0.026943644231659174,
+              -0.001481132496721428,
+              0.011166695190375723
+            ],
+            [
+              3.9383741945215313e-22,
+              -0.001481132496721428,
+              0.04764703465207398,
+              -0.005358588982041702
+            ],
+            [
+              1.711761250606732e-20,
+              0.011166695190375723,
+              -0.005358588982041702,
+              0.10395667612062293
+            ]
+          ],
+          "coupling_Gram_sum": 0.18720130242758126,
+          "coupling_Gram_sum_error": 1.942890293094024e-16,
+          "Gram_diagonal_sum": 0.1785473550043561,
+          "Gram_offdiagonal_sum": 0.008653947423225172,
+          "component_coupling_reconstruction_error": 1.3291987896061255e-15,
+          "normalized_attribution_defined": true
+        },
+        "T3": {
+          "coupling_singular_values": [
+            2.03328129179256,
+            2.0332812917925596,
+            1.774690354924358,
+            1.7746903549243525,
+            1.3158601971142787,
+            1.3158601971142712,
+            0.9590288984710476,
+            0.9590288984710422,
+            0.6282543825532196,
+            0.6282543825532171
+          ],
+          "singular_values_over_operator_norm": [
+            0.20752090285161687,
+            0.2075209028516168,
+            0.1811285758751438,
+            0.18112857587514325,
+            0.13429941899033648,
+            0.1342994189903357,
+            0.09788047707656168,
+            0.09788047707656114,
+            0.06412094441344542,
+            0.06412094441344515
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4638984875277282,
+          "commutator_norm_squared_over_operator_squared": 0.430403613461028,
+          "commutator_block_squared_fractions": [
+            [
+              5.101048560851653e-34,
+              2.4108698556377823e-32,
+              6.1993083138402e-05,
+              0.0012794349568432926
+            ],
+            [
+              1.0169264506554694e-32,
+              9.772892143725533e-32,
+              0.013387202557484485,
+              0.010348949667690479
+            ],
+            [
+              6.199308313840006e-05,
+              0.013387202557484459,
+              0.03294977263102082,
+              0.10995674559997023
+            ],
+            [
+              0.001279434956843328,
+              0.010348949667690496,
+              0.10995674559997022,
+              0.12738518909975358
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.16033496173077438,
+          "between_block_commutator_squared_fraction": 0.2700686517302538,
+          "between_block_share_of_commutator": 0.6274776588387256,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 5.101048560851653e-34,
+              "fraction_of_commutator": 1.185177912386077e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 3.427796306293252e-32,
+              "fraction_of_commutator": 7.964143885152652e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00012398616627680203,
+              "fraction_of_commutator": 0.00028806952915609916
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0025588699136866204,
+              "fraction_of_commutator": 0.005945279810989133
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 9.772892143725533e-32,
+              "fraction_of_commutator": 2.2706343158084208e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.026774405114968945,
+              "fraction_of_commutator": 0.06220766805293865
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.020697899335380975,
+              "fraction_of_commutator": 0.048089511072971325
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03294977263102082,
+              "fraction_of_commutator": 0.07655552044756321
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.21991349119994047,
+              "fraction_of_commutator": 0.5109471303726708
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.12738518909975358,
+              "fraction_of_commutator": 0.2959668207137113
+            }
+          ],
+          "commutator_attribution_sum_error": 1.6653345369377348e-16,
+          "block_commutator_identity_error": 2.0176205042500277e-15,
+          "selfadjoint_cross_norm_identity_error": 3.3306690738754696e-16,
+          "full_operator_offblock_squared_fraction": 8.33072256260072e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0001968640318180887,
+              -5.751479236095065e-06,
+              -3.8167388684273e-06,
+              0.00023599682187599587
+            ],
+            [
+              -5.751479236095065e-06,
+              0.0054729277345557685,
+              0.0020642094497680154,
+              -0.007557719836374507
+            ],
+            [
+              -3.8167388684273e-06,
+              0.0020642094497680154,
+              0.06913228861247518,
+              0.003929197878045524
+            ],
+            [
+              0.00023599682187599587,
+              -0.007557719836374507,
+              0.003929197878045524,
+              0.14307549416124393
+            ]
+          ],
+          "coupling_Gram_sum": 0.21520180673051398,
+          "coupling_Gram_sum_error": 1.3877787807814457e-16,
+          "Gram_diagonal_sum": 0.217877574540093,
+          "Gram_offdiagonal_sum": -0.0026757678095790105,
+          "component_coupling_reconstruction_error": 1.2749912486152215e-15,
+          "normalized_attribution_defined": true
+        },
+        "T5": {
+          "coupling_singular_values": [
+            3.5573474043784135,
+            3.5573474043784072,
+            2.5692741120424234,
+            2.5692741120424123,
+            2.0569655188721607,
+            2.0569655188721545,
+            1.4514847113685072,
+            1.4514847113685063,
+            0.6627715974607872,
+            0.6627715974607827
+          ],
+          "singular_values_over_operator_norm": [
+            0.2681451497560881,
+            0.26814514975608766,
+            0.19366632302768763,
+            0.19366632302768677,
+            0.15504960983631053,
+            0.15504960983631008,
+            0.1094097767396964,
+            0.10940977673969633,
+            0.049958288874588544,
+            0.04995828887458821
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5439028909588149,
+          "commutator_norm_squared_over_operator_squared": 0.5916607095867131,
+          "commutator_block_squared_fractions": [
+            [
+              9.028819791215104e-34,
+              1.2548681969663222e-05,
+              0.00019402525690267753,
+              0.0013007200244504757
+            ],
+            [
+              1.254868196966238e-05,
+              4.462693345796193e-32,
+              0.0029272006654293076,
+              0.01985745074383751
+            ],
+            [
+              0.00019402525690267295,
+              0.0029272006654293024,
+              0.07937601935478521,
+              0.1405678323200214
+            ],
+            [
+              0.0013007200244505067,
+              0.019857450743837546,
+              0.14056783232002146,
+              0.18256513484670614
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.26194115420149133,
+          "between_block_commutator_squared_fraction": 0.32971955538522224,
+          "between_block_share_of_commutator": 0.5572780988204163,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 9.028819791215104e-34,
+              "fraction_of_commutator": 1.5260130755550618e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 2.5097363939325603e-05,
+              "fraction_of_commutator": 4.241850697988145e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003880505138053505,
+              "fraction_of_commutator": 0.0006558666267976652
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0026014400489009822,
+              "fraction_of_commutator": 0.004396844351415764
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 4.462693345796193e-32,
+              "fraction_of_commutator": 7.542656244511274e-32
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00585440133085861,
+              "fraction_of_commutator": 0.009894862437203287
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.03971490148767506,
+              "fraction_of_commutator": 0.06712445299167612
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.07937601935478521,
+              "fraction_of_commutator": 0.13415800317420257
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.28113566464004286,
+              "fraction_of_commutator": 0.47516365390634396
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.18256513484670614,
+              "fraction_of_commutator": 0.3085638980053814
+            }
+          ],
+          "commutator_attribution_sum_error": 4.440892098500626e-16,
+          "block_commutator_identity_error": 2.1775069024846866e-15,
+          "selfadjoint_cross_norm_identity_error": 0.0,
+          "full_operator_offblock_squared_fraction": 7.696685248645955e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0001073803809916848,
+              3.1371704924154857e-06,
+              -5.6325387741905126e-05,
+              0.00019304021518769853
+            ],
+            [
+              3.1371704924154857e-06,
+              0.002985233309757693,
+              -0.00021218005620494846,
+              -0.0012240438999568226
+            ],
+            [
+              -5.6325387741905126e-05,
+              -0.00021218005620494846,
+              0.09745640041861033,
+              0.016250264972626115
+            ],
+            [
+              0.00019304021518769853,
+              -0.0012240438999568226,
+              0.016250264972626115,
+              0.16537355465519207
+            ]
+          ],
+          "coupling_Gram_sum": 0.2958303547933569,
+          "coupling_Gram_sum_error": 3.3306690738754696e-16,
+          "Gram_diagonal_sum": 0.2659225687645518,
+          "Gram_offdiagonal_sum": 0.029907786028805117,
+          "component_coupling_reconstruction_error": 1.383626614400612e-15,
+          "normalized_attribution_defined": true
+        },
+        "T7": {
+          "coupling_singular_values": [
+            3.372011515532745,
+            3.3720115155327424,
+            3.1681891254081207,
+            3.1681891254081123,
+            1.926558341098652,
+            1.9265583410986502,
+            1.6152701250413948,
+            1.6152701250413872,
+            1.1142432379591471,
+            1.1142432379591412
+          ],
+          "singular_values_over_operator_norm": [
+            0.22943632277345047,
+            0.2294363227734503,
+            0.21556796571901107,
+            0.2155679657190105,
+            0.13108569153873673,
+            0.13108569153873662,
+            0.10990521119758326,
+            0.10990521119758274,
+            0.07581464950962351,
+            0.0758146495096231
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5179209381882075,
+          "commutator_norm_squared_over_operator_squared": 0.5364841964275062,
+          "commutator_block_squared_fractions": [
+            [
+              1.4016498691885928e-33,
+              5.188756709830307e-33,
+              0.0002676634799339442,
+              0.0008393956730458215
+            ],
+            [
+              1.0833781028091157e-32,
+              1.5323389466727875e-31,
+              0.01871998584045403,
+              0.0180987614230936
+            ],
+            [
+              0.00026766347993394335,
+              0.018719985840454006,
+              0.04208753745398191,
+              0.09085959106022413
+            ],
+            [
+              0.0008393956730458309,
+              0.018098761423093593,
+              0.09085959106022436,
+              0.23682586402002148
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.2789134014740034,
+          "between_block_commutator_squared_fraction": 0.25757079495350327,
+          "between_block_share_of_commutator": 0.48010882085379,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.4016498691885928e-33,
+              "fraction_of_commutator": 2.612658263789126e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.6022537737921463e-32,
+              "fraction_of_commutator": 2.986581495711691e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0005353269598678876,
+              "fraction_of_commutator": 0.0009978429251647583
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0016787913460916525,
+              "fraction_of_commutator": 0.0031292465971427797
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.5323389466727875e-31,
+              "fraction_of_commutator": 2.856261110535525e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03743997168090804,
+              "fraction_of_commutator": 0.06978765065257092
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.03619752284618719,
+              "fraction_of_commutator": 0.06747174117565731
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.04208753745398191,
+              "fraction_of_commutator": 0.07845065657897547
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1817191821204485,
+              "fraction_of_commutator": 0.3387223395032546
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.23682586402002148,
+              "fraction_of_commutator": 0.441440522567235
+            }
+          ],
+          "commutator_attribution_sum_error": 4.440892098500626e-16,
+          "block_commutator_identity_error": 2.241821382565472e-15,
+          "selfadjoint_cross_norm_identity_error": 1.1102230246251565e-16,
+          "full_operator_offblock_squared_fraction": 9.450435853568768e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00034998050100993613,
+              -1.0224851975280346e-05,
+              5.280690361235984e-05,
+              -7.853497919556616e-05
+            ],
+            [
+              -1.0224851975280346e-05,
+              0.009729649305876923,
+              0.0033866670321548494,
+              -0.0011061373181698447
+            ],
+            [
+              5.280690361235984e-05,
+              0.0033866670321548494,
+              0.06901716859947368,
+              -0.0018421908710121852
+            ],
+            [
+              -7.853497919556616e-05,
+              -0.0011061373181698447,
+              -0.0018421908710121852,
+              0.18834052797656411
+            ]
+          ],
+          "coupling_Gram_sum": 0.26824209821375333,
+          "coupling_Gram_sum_error": 2.7755575615628914e-16,
+          "Gram_diagonal_sum": 0.26743732638292467,
+          "Gram_offdiagonal_sum": 0.0008047718308286655,
+          "component_coupling_reconstruction_error": 1.2842107023235287e-15,
+          "normalized_attribution_defined": true
+        },
+        "W11": {
+          "coupling_singular_values": [
+            0.9993878122225665,
+            0.9993878122225662,
+            0.9332893775787229,
+            0.9332893775787222,
+            0.7940770973170388,
+            0.7940770973170369,
+            0.6172109247730035,
+            0.6172109247730002,
+            0.07653110474901526,
+            0.076531104749014
+          ],
+          "singular_values_over_operator_norm": [
+            0.19599607523729487,
+            0.19599607523729484,
+            0.18303310569626044,
+            0.1830331056962603,
+            0.15573133132756525,
+            0.1557313313275649,
+            0.12104502113154587,
+            0.12104502113154521,
+            0.015008984481232389,
+            0.015008984481232144
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4712642435029241,
+          "commutator_norm_squared_over_operator_squared": 0.444179974408767,
+          "commutator_block_squared_fractions": [
+            [
+              1.2363296295430032e-33,
+              8.494492410233649e-05,
+              0.0005586806408443582,
+              1.1426345603403316e-31
+            ],
+            [
+              8.494492410233168e-05,
+              4.7756844717829324e-32,
+              2.2555802246206515e-31,
+              0.05583626972993954
+            ],
+            [
+              0.0005586806408443507,
+              3.3611026067281404e-31,
+              4.513344178340495e-31,
+              0.16561009190949721
+            ],
+            [
+              1.3048003544616013e-31,
+              0.055836269729939554,
+              0.16561009190949735,
+              5.595447007288772e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 1.059872292910299e-30,
+          "between_block_commutator_squared_fraction": 0.44417997440876705,
+          "between_block_share_of_commutator": 1.0,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.2363296295430032e-33,
+              "fraction_of_commutator": 2.7833979485199437e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.00016988984820466818,
+              "fraction_of_commutator": 0.0003824797559385761
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.001117361281688709,
+              "fraction_of_commutator": 0.0025155597867193157
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 2.447434914801933e-31,
+              "fraction_of_commutator": 5.510007329933393e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 4.7756844717829324e-32,
+              "fraction_of_commutator": 1.0751687934918015e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 5.616682831348792e-31,
+              "fraction_of_commutator": 1.2645060909882236e-30
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1116725394598791,
+              "fraction_of_commutator": 0.2514128188883856
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.513344178340495e-31,
+              "fraction_of_commutator": 1.0161070823483331e-30
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.33122018381899454,
+              "fraction_of_commutator": 0.7456891415689565
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.595447007288772e-31,
+              "fraction_of_commutator": 1.2597251856607634e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-17,
+          "block_commutator_identity_error": 1.6024095685388087e-15,
+          "selfadjoint_cross_norm_identity_error": 2.7755575615628914e-16,
+          "full_operator_offblock_squared_fraction": 6.06803355383555e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206354,
+              2.123623102558218e-05,
+              0.00013967016021108777,
+              -0.000565976187783966
+            ],
+            [
+              2.123623102558218e-05,
+              0.02020773317374437,
+              -0.00622742951023401,
+              0.013959067432484866
+            ],
+            [
+              0.00013967016021108777,
+              -0.00622742951023401,
+              0.04776962264781937,
+              0.04140252297737432
+            ],
+            [
+              -0.000565976187783966,
+              0.013959067432484866,
+              0.04140252297737432,
+              0.05592756659764328
+            ]
+          ],
+          "coupling_Gram_sum": 0.22208998720438342,
+          "coupling_Gram_sum_error": 5.551115123125783e-17,
+          "Gram_diagonal_sum": 0.12463180499822765,
+          "Gram_offdiagonal_sum": 0.09745818220615576,
+          "component_coupling_reconstruction_error": 1.4681889780776827e-15,
+          "normalized_attribution_defined": true
+        },
+        "W13": {
+          "coupling_singular_values": [
+            0.9999306848943436,
+            0.9999306848943429,
+            0.9418495445112717,
+            0.9418495445112712,
+            0.7932891507335176,
+            0.793289150733516,
+            0.6185398165545989,
+            0.6185398165545947,
+            0.10778861781372949,
+            0.10778861781372778
+          ],
+          "singular_values_over_operator_norm": [
+            0.19610254132755595,
+            0.1961025413275558,
+            0.18471189255120957,
+            0.18471189255120948,
+            0.15557680228890974,
+            0.15557680228890944,
+            0.12130563825176924,
+            0.12130563825176842,
+            0.021139087137515437,
+            0.0211390871375151
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.47316117814565917,
+          "commutator_norm_squared_over_operator_squared": 0.4477630010083768,
+          "commutator_block_squared_fractions": [
+            [
+              2.415300450807619e-33,
+              3.5968151371560567e-06,
+              2.3912565555151415e-32,
+              0.0022639047511358156
+            ],
+            [
+              3.5968151371560016e-06,
+              0.00416164887913962,
+              0.0025082997397418254,
+              0.051414782849106486
+            ],
+            [
+              5.670774842163369e-32,
+              0.002508299739741809,
+              4.159536947470808e-31,
+              0.16561009190949716
+            ],
+            [
+              0.0022639047511358594,
+              0.051414782849106506,
+              0.16561009190949735,
+              5.6884267132825255e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.00416164887913962,
+          "between_block_commutator_squared_fraction": 0.4436013521292371,
+          "between_block_share_of_commutator": 0.9907056883445764,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 2.415300450807619e-33,
+              "fraction_of_commutator": 5.3941492382539064e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.193630274312058e-06,
+              "fraction_of_commutator": 1.6065709444754858e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 8.062031397678511e-32,
+              "fraction_of_commutator": 1.8005130793572839e-31
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.004527809502271675,
+              "fraction_of_commutator": 0.010112067080296721
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.00416164887913962,
+              "fraction_of_commutator": 0.009294311655423632
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005016599479483634,
+              "fraction_of_commutator": 0.011203693624051317
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.102829565698213,
+              "fraction_of_commutator": 0.22965176994668493
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.159536947470808e-31,
+              "fraction_of_commutator": 9.28959502706431e-31
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.33122018381899454,
+              "fraction_of_commutator": 0.7397220919840987
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.6884267132825255e-31,
+              "fraction_of_commutator": 1.270410172451052e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-17,
+          "block_commutator_identity_error": 1.590823819061872e-15,
+          "selfadjoint_cross_norm_identity_error": 3.885780586188048e-16,
+          "full_operator_offblock_squared_fraction": 5.70963809183521e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206359,
+              -1.9437823457003686e-05,
+              -0.00013967016021108777,
+              0.0005659761877839667
+            ],
+            [
+              -1.9437823457003686e-05,
+              0.022288557613314157,
+              -0.004973279640363101,
+              0.011748323992068349
+            ],
+            [
+              -0.00013967016021108777,
+              -0.004973279640363101,
+              0.04776962264781938,
+              0.04140252297737432
+            ],
+            [
+              0.0005659761877839667,
+              0.011748323992068349,
+              0.04140252297737432,
+              0.055927566597643266
+            ]
+          ],
+          "coupling_Gram_sum": 0.2238815005041883,
+          "coupling_Gram_sum_error": 1.1102230246251565e-16,
+          "Gram_diagonal_sum": 0.12671262943779743,
+          "Gram_offdiagonal_sum": 0.09716887106639088,
+          "component_coupling_reconstruction_error": 1.3677219169034726e-15,
+          "normalized_attribution_defined": true
+        },
+        "W143": {
+          "coupling_singular_values": [
+            0.3453316606805391,
+            0.345331660680538,
+            0.18877267658692667,
+            0.18877267658692407,
+            3.2910341273298358e-15,
+            2.001549649183848e-15,
+            1.5155836402906262e-15,
+            1.3297306573680672e-15,
+            1.1108735458588411e-15,
+            9.814636314459557e-16
+          ],
+          "singular_values_over_operator_norm": [
+            0.06772511063351812,
+            0.0677251106335179,
+            0.037021367751918416,
+            0.0370213677519179,
+            6.454248936597936e-16,
+            3.9253618148512434e-16,
+            2.972304060124573e-16,
+            2.6078163729778213e-16,
+            2.1786022644108613e-16,
+            1.9248085417786787e-16
+          ],
+          "coupling_rank_real": 4,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.10915376567526211,
+          "commutator_norm_squared_over_operator_squared": 0.023829089122180045,
+          "commutator_block_squared_fractions": [
+            [
+              1.0916034978895017e-33,
+              8.134810896517924e-05,
+              0.00055868064084436,
+              0.002263904751135823
+            ],
+            [
+              8.134810896517604e-05,
+              0.004161648879139614,
+              0.0025082997397418085,
+              0.004421486880833045
+            ],
+            [
+              0.0005586806408443538,
+              0.002508299739741799,
+              3.7249765952148955e-31,
+              6.909303818796633e-31
+            ],
+            [
+              0.002263904751135858,
+              0.004421486880833029,
+              5.819670685956406e-31,
+              5.5998076846517615e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.004161648879139614,
+          "between_block_commutator_squared_fraction": 0.019667440243040436,
+          "between_block_share_of_commutator": 0.8253542610126058,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.0916034978895017e-33,
+              "fraction_of_commutator": 4.580970310247572e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.00016269621793035528,
+              "fraction_of_commutator": 0.006827630594529026
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.001117361281688714,
+              "fraction_of_commutator": 0.0468906417681185
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0045278095022716815,
+              "fraction_of_commutator": 0.19001185815605556
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.004161648879139614,
+              "fraction_of_commutator": 0.17464573898739436
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005016599479483607,
+              "fraction_of_commutator": 0.21052418133826908
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.008842973761666074,
+              "fraction_of_commutator": 0.3710999491556335
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 3.7249765952148955e-31,
+              "fraction_of_commutator": 1.5632056165116688e-29
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 1.272897450475304e-30,
+              "fraction_of_commutator": 5.341779721200064e-29
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.5998076846517615e-31,
+              "fraction_of_commutator": 2.3499881409396708e-29
+            }
+          ],
+          "commutator_attribution_sum_error": 3.469446951953614e-18,
+          "block_commutator_identity_error": 1.1410542344496562e-15,
+          "selfadjoint_cross_norm_identity_error": 1.0408340855860843e-17,
+          "full_operator_offblock_squared_fraction": 1.3508164614780307e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.000726882579020636,
+              1.9437823457003537e-05,
+              0.0001396701602110879,
+              0.0005659761877839666
+            ],
+            [
+              1.9437823457003537e-05,
+              0.022288557613314157,
+              -0.0049732796403631,
+              -0.011748323992068353
+            ],
+            [
+              0.0001396701602110879,
+              -0.0049732796403631,
+              0.04776962264781939,
+              -0.04140252297737432
+            ],
+            [
+              0.0005659761877839666,
+              -0.011748323992068353,
+              -0.04140252297737432,
+              0.05592756659764327
+            ]
+          ],
+          "coupling_Gram_sum": 0.011914544561090031,
+          "coupling_Gram_sum_error": 3.469446951953614e-18,
+          "Gram_diagonal_sum": 0.12671262943779746,
+          "Gram_offdiagonal_sum": -0.11479808487670742,
+          "component_coupling_reconstruction_error": 1.4366055351577636e-15,
+          "normalized_attribution_defined": true
+        },
+        "STAR": {
+          "coupling_singular_values": [
+            2.997985163172901e-13,
+            2.989031903616362e-13,
+            6.620421832382277e-14,
+            6.418949525538895e-14,
+            1.670601970216299e-14,
+            1.1472791825119518e-14,
+            7.74827232112683e-15,
+            7.340916659918907e-15,
+            5.169834292703218e-15,
+            3.262708514956665e-15
+          ],
+          "singular_values_over_operator_norm": [
+            5.879532634030873e-14,
+            5.861973847419699e-14,
+            1.2983715427512664e-14,
+            1.258859572595768e-14,
+            3.2763200175305616e-15,
+            2.2499995919873922e-15,
+            1.51956122161756e-15,
+            1.4396722037148028e-15,
+            1.0138879207898022e-15,
+            6.39869784035745e-16
+          ],
+          "coupling_rank_real": 0,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 8.508846932902978e-14,
+          "commutator_norm_squared_over_operator_squared": 1.4466825291988484e-26,
+          "commutator_block_squared_fractions": [
+            [
+              4.092322569865596e-33,
+              1.1868714676545512e-30,
+              7.585727998851783e-30,
+              1.5721019997938042e-29
+            ],
+            [
+              1.248503366588443e-30,
+              1.6685133539583651e-29,
+              2.9239869455091227e-28,
+              3.1824406671444327e-28
+            ],
+            [
+              7.384192919568103e-30,
+              2.8120332652137583e-28,
+              2.231657909726947e-27,
+              4.2063805319831916e-27
+            ],
+            [
+              1.9297680102135444e-29,
+              3.075286057163679e-28,
+              4.218038144709839e-27,
+              2.542260790350517e-27
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 4.7906079259396175e-27,
+          "between_block_commutator_squared_fraction": 9.676217366048867e-27,
+          "between_block_share_of_commutator": null,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 4.092322569865596e-33,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 2.4353748342429942e-30,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 1.4969920918419884e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 3.5018700100073485e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.6685133539583651e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 5.736020210722881e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 6.257726724308111e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 2.231657909726947e-27,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 8.42441867669303e-27,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 2.542260790350517e-27,
+              "fraction_of_commutator": null
+            }
+          ],
+          "commutator_attribution_sum_error": 0.0,
+          "block_commutator_identity_error": 2.0236080631789258e-15,
+          "selfadjoint_cross_norm_identity_error": 1.3269933525998698e-29,
+          "full_operator_offblock_squared_fraction": 8.941879763870498e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206358,
+              -2.123623102558188e-05,
+              -0.00013967016021108745,
+              -0.0005659761877839667
+            ],
+            [
+              -2.123623102558188e-05,
+              0.02020773317374438,
+              -0.006227429510234012,
+              -0.013959067432484871
+            ],
+            [
+              -0.00013967016021108745,
+              -0.006227429510234012,
+              0.047769622647819386,
+              -0.041402522977374324
+            ],
+            [
+              -0.0005659761877839667,
+              -0.013959067432484871,
+              -0.041402522977374324,
+              0.05592756659764327
+            ]
+          ],
+          "coupling_Gram_sum": -1.6479873021779667e-17,
+          "coupling_Gram_sum_error": 1.6479873029019716e-17,
+          "Gram_diagonal_sum": 0.12463180499822768,
+          "Gram_offdiagonal_sum": -0.1246318049982277,
+          "component_coupling_reconstruction_error": 1.1764651183627504e-15,
+          "normalized_attribution_defined": false
+        },
+        "T17": {
+          "coupling_singular_values": [
+            4.25810057790048,
+            4.258100577900463,
+            3.2398937277313955,
+            3.2398937277313813,
+            2.013189073974929,
+            2.0131890739749254,
+            1.3518665651949222,
+            1.3518665651949098,
+            0.6038628546300383,
+            0.6038628546300328
+          ],
+          "singular_values_over_operator_norm": [
+            0.20679164459050164,
+            0.2067916445905008,
+            0.15734314866427399,
+            0.1573431486642733,
+            0.09776910429019804,
+            0.09776910429019788,
+            0.06565244412836513,
+            0.06565244412836453,
+            0.0293261726752428,
+            0.02932617267524253
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.40558283070550616,
+          "commutator_norm_squared_over_operator_squared": 0.3289948651261823,
+          "commutator_block_squared_fractions": [
+            [
+              8.334602437458842e-34,
+              5.208886855331739e-06,
+              0.00019309690114533204,
+              0.001224935691106731
+            ],
+            [
+              5.2088868553312005e-06,
+              5.263801018102847e-32,
+              0.010290590409136118,
+              0.012063422183041525
+            ],
+            [
+              0.00019309690114533055,
+              0.010290590409136175,
+              0.1006017343814924,
+              0.06824297216650126
+            ],
+            [
+              0.0012249356911067629,
+              0.01206342218304153,
+              0.0682429721665014,
+              0.04435267826911724
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.14495441265060965,
+          "between_block_commutator_squared_fraction": 0.18404045247557282,
+          "between_block_share_of_commutator": 0.5594022034507623,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 8.334602437458842e-34,
+              "fraction_of_commutator": 2.533353350138823e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.041777371066294e-05,
+              "fraction_of_commutator": 3.166545990517912e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00038619380229066257,
+              "fraction_of_commutator": 0.0011738596653857872
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0024498713822134937,
+              "fraction_of_commutator": 0.007446533797036233
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.263801018102847e-32,
+              "fraction_of_commutator": 1.599964490656708e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.020581180818272295,
+              "fraction_of_commutator": 0.0625577569740446
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.024126844366083054,
+              "fraction_of_commutator": 0.07333501803084212
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.1006017343814924,
+              "fraction_of_commutator": 0.30578512021124626
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.13648594433300265,
+              "fraction_of_commutator": 0.4148573695235486
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.04435267826911724,
+              "fraction_of_commutator": 0.13481267633799168
+            }
+          ],
+          "commutator_attribution_sum_error": 1.6653345369377348e-16,
+          "block_commutator_identity_error": 2.132643353972525e-15,
+          "selfadjoint_cross_norm_identity_error": 2.220446049250313e-16,
+          "full_operator_offblock_squared_fraction": 9.841080658781265e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007131678133787374,
+              -1.0417773710663065e-05,
+              -4.1091834008267006e-05,
+              0.00016164257248017092
+            ],
+            [
+              -1.0417773710663065e-05,
+              0.004956613797333531,
+              -0.00019264601396287506,
+              -0.0041085010606099395
+            ],
+            [
+              -4.1091834008267006e-05,
+              -0.00019264601396287506,
+              0.13932211659266527,
+              -0.0243044297358438
+            ],
+            [
+              0.00016164257248017092,
+              -0.0041085010606099395,
+              -0.0243044297358438,
+              0.07649642205102442
+            ]
+          ],
+          "coupling_Gram_sum": 0.1644974325630912,
+          "coupling_Gram_sum_error": 5.551115123125783e-17,
+          "Gram_diagonal_sum": 0.22148832025440196,
+          "Gram_offdiagonal_sum": -0.05699088769131075,
+          "component_coupling_reconstruction_error": 1.2066276018288851e-15,
+          "normalized_attribution_defined": true
+        },
+        "T19": {
+          "coupling_singular_values": [
+            5.159786440022614,
+            5.15978644002261,
+            4.1520979199041,
+            4.152097919904087,
+            3.2935363816273275,
+            3.293536381627318,
+            1.344777693194126,
+            1.3447776931941213,
+            1.0749893110986368,
+            1.0749893110986335
+          ],
+          "singular_values_over_operator_norm": [
+            0.25058138109883416,
+            0.25058138109883393,
+            0.20164370043629282,
+            0.20164370043629218,
+            0.1599482662316961,
+            0.15994826623169567,
+            0.06530817807064346,
+            0.06530817807064322,
+            0.05220609600276404,
+            0.05220609600276387
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5215846871454767,
+          "commutator_norm_squared_over_operator_squared": 0.5441011717292896,
+          "commutator_block_squared_fractions": [
+            [
+              4.273830857544742e-34,
+              5.2088868553317825e-06,
+              0.0001865373537142863,
+              0.0009448234603853718
+            ],
+            [
+              5.208886855331575e-06,
+              8.414658650212868e-32,
+              0.018736349251775482,
+              0.02913038881879334
+            ],
+            [
+              0.00018653735371428564,
+              0.01873634925177542,
+              0.09467071758059753,
+              0.12148158256595078
+            ],
+            [
+              0.0009448234603853837,
+              0.0291303888187934,
+              0.1214815825659509,
+              0.10846067347374302
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.20313139105434055,
+          "between_block_commutator_squared_fraction": 0.3409697806749493,
+          "between_block_share_of_commutator": 0.6266661392977007,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 4.273830857544742e-34,
+              "fraction_of_commutator": 7.854845899268032e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.0417773710663357e-05,
+              "fraction_of_commutator": 1.9146758455882507e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003730747074285719,
+              "fraction_of_commutator": 0.0006856715750911677
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0018896469207707555,
+              "fraction_of_commutator": 0.003472969769142354
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 8.414658650212868e-32,
+              "fraction_of_commutator": 1.546524633179704e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0374726985035509,
+              "fraction_of_commutator": 0.068870828534431
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.05826077763758674,
+              "fraction_of_commutator": 0.10707710379012678
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.09467071758059753,
+              "fraction_of_commutator": 0.17399469528747807
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.2429631651319017,
+              "fraction_of_commutator": 0.44654041887045376
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.10846067347374302,
+              "fraction_of_commutator": 0.19933916541482144
+            }
+          ],
+          "commutator_attribution_sum_error": 2.220446049250313e-16,
+          "block_commutator_identity_error": 2.8091118509540165e-15,
+          "selfadjoint_cross_norm_identity_error": 1.1102230246251565e-16,
+          "full_operator_offblock_squared_fraction": 8.539887722045272e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00017829195334468422,
+              -2.1897299823021194e-21,
+              1.7686984460876527e-05,
+              0.00019221766385710235
+            ],
+            [
+              -2.1897299823021194e-21,
+              5.790280661004533e-33,
+              -1.2166381415322243e-18,
+              2.3205980554866734e-18
+            ],
+            [
+              1.7686984460876527e-05,
+              -1.2166381415322243e-18,
+              0.12463683058193327,
+              0.015841486749189386
+            ],
+            [
+              0.00019221766385710235,
+              2.3205980554866734e-18,
+              0.015841486749189386,
+              0.11513268053435208
+            ]
+          ],
+          "coupling_Gram_sum": 0.2720505858646448,
+          "coupling_Gram_sum_error": 5.551115123125783e-17,
+          "Gram_diagonal_sum": 0.23994780306963004,
+          "Gram_offdiagonal_sum": 0.03210278279501477,
+          "component_coupling_reconstruction_error": 1.2510413213467099e-15,
+          "normalized_attribution_defined": true
+        }
+      }
+    },
+    {
+      "frame_seed": 2026,
+      "period_input_dps": 50,
+      "geometry": {
+        "blocks": {
+          "ell": {
+            "real_dimension": 2,
+            "active_overlap_real": 1.980919010872421,
+            "active_overlap_complex": 0.9904595054362105,
+            "active_fraction_of_block": 0.9904595054362105,
+            "fixed_overlap_real": 0.01908098912757894,
+            "principal_cosines_squared": [
+              0.9904595054362099,
+              0.9904595054362101
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 2.220446049250313e-16,
+            "projector_idempotence": 1.6905627868892796e-15,
+            "projector_symmetry": 1.1182812151538116e-14
+          },
+          "old": {
+            "real_dimension": 4,
+            "active_overlap_real": 2.8287621987677674,
+            "active_overlap_complex": 1.4143810993838837,
+            "active_fraction_of_block": 0.7071905496919418,
+            "fixed_overlap_real": 1.1712378012322326,
+            "principal_cosines_squared": [
+              0.4320145869171903,
+              0.43201458691719125,
+              0.9823665124666939,
+              0.9823665124666943
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 9.43689570931383e-16,
+            "projector_idempotence": 2.5587886063811288e-15,
+            "projector_symmetry": 1.2732404143231115e-14
+          },
+          "q4": {
+            "real_dimension": 8,
+            "active_overlap_real": 4.9531747197942595,
+            "active_overlap_complex": 2.4765873598971297,
+            "active_fraction_of_block": 0.6191468399742824,
+            "fixed_overlap_real": 3.0468252802057405,
+            "principal_cosines_squared": [
+              0.217121945747613,
+              0.21712194574761393,
+              0.486836474973007,
+              0.4868364749730077,
+              0.8735886143499476,
+              0.8735886143499483,
+              0.8990403248265607,
+              0.8990403248265617
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 9.992007221626409e-16,
+            "projector_idempotence": 5.555011801211352e-15,
+            "projector_symmetry": 1.7675308355365457e-14
+          },
+          "q6": {
+            "real_dimension": 12,
+            "active_overlap_real": 6.237144070565558,
+            "active_overlap_complex": 3.118572035282779,
+            "active_fraction_of_block": 0.5197620058804632,
+            "fixed_overlap_real": 5.762855929434442,
+            "principal_cosines_squared": [
+              0.003925458350667338,
+              0.003925458350667398,
+              0.1113930009567692,
+              0.11139300095677065,
+              0.517797569124173,
+              0.5177975691241733,
+              0.6807370246787011,
+              0.6807370246787021,
+              0.8047189821724644,
+              0.804718982172465,
+              0.9999999999999997,
+              1.0000000000000004
+            ],
+            "active_intersection_real_diagnostic": 2,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.457167719820518e-15,
+            "projector_idempotence": 5.840172069378604e-15,
+            "projector_symmetry": 1.6949984631830862e-14
+          }
+        },
+        "active_overlap_sum_real": 16.000000000000007,
+        "fixed_overlap_sum_real": 9.999999999999995,
+        "P_block_squared_norms": [
+          [
+            1.9620200638178897,
+            0.0005521420066651351,
+            0.0036314241654876304,
+            0.01471538088238373
+          ],
+          [
+            0.0005521420066651148,
+            2.3033611362504094,
+            0.16191316726608335,
+            0.36293575324460825
+          ],
+          [
+            0.0036314241654875276,
+            0.16191316726608337,
+            3.7111645309509678,
+            1.0764655974117228
+          ],
+          [
+            0.014715380882384077,
+            0.3629357532446091,
+            1.0764655974117248,
+            4.783027339026848
+          ]
+        ],
+        "P_block_norm_sum": 16.00000000000002,
+        "block_diagonal_truncation_idempotence_defect": 0.795517583276578,
+        "discarded_offdiagonal_P_norm_squared": 3.2404269299539017,
+        "truncation_trace_defect": 1.0436096431476471e-14,
+        "orthogonal_projectors_sum_identity": 1.4066796813663616e-14
+      },
+      "operators": {
+        "T2": {
+          "coupling_singular_values": [
+            1.9183577035234314,
+            1.9183577035234305,
+            1.350074792188207,
+            1.3500747921882037,
+            0.988833734819747,
+            0.9888337348197409,
+            0.901202068730459,
+            0.9012020687304555,
+            0.08997359448322058,
+            0.08997359448321718
+          ],
+          "singular_values_over_operator_norm": [
+            0.21721123709739484,
+            0.21721123709739473,
+            0.15286586815722444,
+            0.15286586815722406,
+            0.11196337285238267,
+            0.11196337285238198,
+            0.10204104055470982,
+            0.10204104055470942,
+            0.010187503471278956,
+            0.01018750347127857
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4326676581714638,
+          "commutator_norm_squared_over_operator_squared": 0.3744026048551578,
+          "commutator_block_squared_fractions": [
+            [
+              1.782664432669265e-33,
+              2.831497470077629e-05,
+              0.0002558318396461177,
+              0.000470685055922853
+            ],
+            [
+              2.8314974700774713e-05,
+              1.1288442035345222e-31,
+              0.008512645151150031,
+              0.06385303443184782
+            ],
+            [
+              0.0002558318396461139,
+              0.00851264515115005,
+              0.02110041401182936,
+              0.07339350770861036
+            ],
+            [
+              0.0004706850559228573,
+              0.06385303443184785,
+              0.07339350770861061,
+              0.06027415251957258
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.08137456653140193,
+          "between_block_commutator_squared_fraction": 0.29302803832375623,
+          "between_block_share_of_commutator": 0.782654913517809,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.782664432669265e-33,
+              "fraction_of_commutator": 4.761356917799518e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.6629949401551004e-05,
+              "fraction_of_commutator": 0.0001512541543974006
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0005116636792922316,
+              "fraction_of_commutator": 0.0013666135669386566
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0009413701118457103,
+              "fraction_of_commutator": 0.0025143257542502694
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.1288442035345222e-31,
+              "fraction_of_commutator": 3.015054352977136e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.01702529030230008,
+              "fraction_of_commutator": 0.045473215414424055
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.12770606886369568,
+              "fraction_of_commutator": 0.34109289627699124
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.02110041401182936,
+              "fraction_of_commutator": 0.05635755130494434
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.14678701541722097,
+              "fraction_of_commutator": 0.39205660835080813
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.06027415251957258,
+              "fraction_of_commutator": 0.16098753517724687
+            }
+          ],
+          "commutator_attribution_sum_error": 3.3306690738754696e-16,
+          "block_commutator_identity_error": 2.10628323627439e-15,
+          "selfadjoint_cross_norm_identity_error": 5.551115123125783e-16,
+          "full_operator_offblock_squared_fraction": 8.81174094917049e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              1.7184599966369868e-35,
+              -4.3068668787839755e-21,
+              4.944918654257194e-21,
+              -3.224211656500436e-22
+            ],
+            [
+              -4.3068668787839755e-21,
+              0.02694364423165923,
+              -0.0014811324967218642,
+              0.011166695190375569
+            ],
+            [
+              4.944918654257194e-21,
+              -0.0014811324967218642,
+              0.04764703465207025,
+              -0.005358588982042144
+            ],
+            [
+              -3.224211656500436e-22,
+              0.011166695190375569,
+              -0.005358588982042144,
+              0.10395667612062624
+            ]
+          ],
+          "coupling_Gram_sum": 0.18720130242757885,
+          "coupling_Gram_sum_error": 2.220446049250313e-16,
+          "Gram_diagonal_sum": 0.1785473550043557,
+          "Gram_offdiagonal_sum": 0.008653947423223146,
+          "component_coupling_reconstruction_error": 1.4029737704360828e-15,
+          "normalized_attribution_defined": true
+        },
+        "T3": {
+          "coupling_singular_values": [
+            2.0332812917924756,
+            2.0332812917924743,
+            1.774690354924402,
+            1.7746903549243913,
+            1.3158601971142665,
+            1.3158601971142587,
+            0.9590288984711277,
+            0.9590288984711259,
+            0.6282543825532109,
+            0.6282543825532089
+          ],
+          "singular_values_over_operator_norm": [
+            0.20752090285160824,
+            0.2075209028516081,
+            0.1811285758751483,
+            0.18112857587514722,
+            0.13429941899033523,
+            0.13429941899033446,
+            0.09788047707656986,
+            0.09788047707656967,
+            0.06412094441344451,
+            0.06412094441344432
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4638984875277262,
+          "commutator_norm_squared_over_operator_squared": 0.43040361346102446,
+          "commutator_block_squared_fractions": [
+            [
+              2.675314447140698e-34,
+              2.353127645094616e-32,
+              6.1993083138385e-05,
+              0.001279434956843327
+            ],
+            [
+              1.395779979492151e-32,
+              6.338234249705348e-32,
+              0.013387202557484856,
+              0.01034894966769172
+            ],
+            [
+              6.199308313838389e-05,
+              0.013387202557484814,
+              0.03294977263101773,
+              0.10995674559996335
+            ],
+            [
+              0.0012794349568433518,
+              0.01034894966769174,
+              0.10995674559996334,
+              0.1273851890997638
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.16033496173078152,
+          "between_block_commutator_squared_fraction": 0.2700686517302432,
+          "between_block_share_of_commutator": 0.6274776588387061,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 2.675314447140698e-34,
+              "fraction_of_commutator": 6.215827106161048e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 3.748907624586767e-32,
+              "fraction_of_commutator": 8.710214104478591e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00012398616627676889,
+              "fraction_of_commutator": 0.0002880695291560245
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.002558869913686679,
+              "fraction_of_commutator": 0.005945279810989318
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 6.338234249705348e-32,
+              "fraction_of_commutator": 1.4726257056109293e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.02677440511496967,
+              "fraction_of_commutator": 0.06220766805294084
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.02069789933538346,
+              "fraction_of_commutator": 0.048089511072977494
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03294977263101773,
+              "fraction_of_commutator": 0.07655552044755666
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.2199134911999267,
+              "fraction_of_commutator": 0.5109471303726429
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1273851890997638,
+              "fraction_of_commutator": 0.2959668207137375
+            }
+          ],
+          "commutator_attribution_sum_error": 2.7755575615628914e-16,
+          "block_commutator_identity_error": 2.2094046818125593e-15,
+          "selfadjoint_cross_norm_identity_error": 4.996003610813204e-16,
+          "full_operator_offblock_squared_fraction": 8.287351493300136e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00019686403181809058,
+              -5.751479236094578e-06,
+              -3.8167388684268625e-06,
+              0.00023599682187600354
+            ],
+            [
+              -5.751479236094578e-06,
+              0.005472927734555779,
+              0.0020642094497681034,
+              -0.007557719836374137
+            ],
+            [
+              -3.8167388684268625e-06,
+              0.0020642094497681034,
+              0.06913228861247442,
+              0.003929197878043542
+            ],
+            [
+              0.00023599682187600354,
+              -0.007557719836374137,
+              0.003929197878043542,
+              0.1430754941612459
+            ]
+          ],
+          "coupling_Gram_sum": 0.21520180673051217,
+          "coupling_Gram_sum_error": 1.942890293094024e-16,
+          "Gram_diagonal_sum": 0.2178775745400942,
+          "Gram_offdiagonal_sum": -0.002675767809582036,
+          "component_coupling_reconstruction_error": 1.2527290161946327e-15,
+          "normalized_attribution_defined": true
+        },
+        "T5": {
+          "coupling_singular_values": [
+            3.5573474043783717,
+            3.5573474043783686,
+            2.56927411204239,
+            2.569274112042381,
+            2.0569655188722127,
+            2.0569655188722082,
+            1.4514847113684946,
+            1.451484711368493,
+            0.6627715974606859,
+            0.6627715974606821
+          ],
+          "singular_values_over_operator_norm": [
+            0.26814514975608494,
+            0.2681451497560847,
+            0.1936663230276851,
+            0.19366632302768444,
+            0.15504960983631447,
+            0.1550496098363141,
+            0.10940977673969544,
+            0.10940977673969532,
+            0.04995828887458091,
+            0.04995828887458063
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5439028909588108,
+          "commutator_norm_squared_over_operator_squared": 0.5916607095867045,
+          "commutator_block_squared_fractions": [
+            [
+              1.3207395200562226e-33,
+              1.2548681969661719e-05,
+              0.0001940252569026371,
+              0.0013007200244505599
+            ],
+            [
+              1.2548681969661094e-05,
+              5.905949192297494e-32,
+              0.0029272006654292616,
+              0.01985745074383792
+            ],
+            [
+              0.00019402525690263313,
+              0.0029272006654292478,
+              0.07937601935478208,
+              0.14056783232001552
+            ],
+            [
+              0.0013007200244505857,
+              0.019857450743837973,
+              0.14056783232001552,
+              0.1825651348467116
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.26194115420149366,
+          "between_block_commutator_squared_fraction": 0.32971955538521125,
+          "between_block_share_of_commutator": 0.5572780988204059,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.3207395200562226e-33,
+              "fraction_of_commutator": 2.2322582836010947e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 2.509736393932281e-05,
+              "fraction_of_commutator": 4.2418506979877356e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003880505138052702,
+              "fraction_of_commutator": 0.0006558666267975391
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0026014400489011453,
+              "fraction_of_commutator": 0.004396844351416103
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.905949192297494e-32,
+              "fraction_of_commutator": 9.981986460488485e-32
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005854401330858509,
+              "fraction_of_commutator": 0.00989486243720326
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0397149014876759,
+              "fraction_of_commutator": 0.06712445299167852
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.07937601935478208,
+              "fraction_of_commutator": 0.13415800317419926
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.28113566464003104,
+              "fraction_of_commutator": 0.475163653906331
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1825651348467116,
+              "fraction_of_commutator": 0.3085638980053952
+            }
+          ],
+          "commutator_attribution_sum_error": 4.440892098500626e-16,
+          "block_commutator_identity_error": 2.190635549313006e-15,
+          "selfadjoint_cross_norm_identity_error": 4.440892098500626e-16,
+          "full_operator_offblock_squared_fraction": 6.981093860401439e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00010738038099168576,
+              3.1371704924151867e-06,
+              -5.632538774188845e-05,
+              0.0001930402151877138
+            ],
+            [
+              3.1371704924151867e-06,
+              0.002985233309757698,
+              -0.00021218005620489964,
+              -0.0012240438999566686
+            ],
+            [
+              -5.632538774188845e-05,
+              -0.00021218005620489964,
+              0.0974564004186062,
+              0.016250264972626362
+            ],
+            [
+              0.0001930402151877138,
+              -0.0012240438999566686,
+              0.016250264972626362,
+              0.16537355465519085
+            ]
+          ],
+          "coupling_Gram_sum": 0.2958303547933525,
+          "coupling_Gram_sum_error": 4.996003610813204e-16,
+          "Gram_diagonal_sum": 0.26592256876454645,
+          "Gram_offdiagonal_sum": 0.02990778602880606,
+          "component_coupling_reconstruction_error": 1.4635482638264643e-15,
+          "normalized_attribution_defined": true
+        },
+        "T7": {
+          "coupling_singular_values": [
+            3.372011515532804,
+            3.3720115155328005,
+            3.168189125408142,
+            3.1681891254081327,
+            1.9265583410983464,
+            1.9265583410983416,
+            1.6152701250414214,
+            1.6152701250414148,
+            1.1142432379591336,
+            1.1142432379591278
+          ],
+          "singular_values_over_operator_norm": [
+            0.22943632277345447,
+            0.22943632277345422,
+            0.2155679657190125,
+            0.21556796571901185,
+            0.13108569153871594,
+            0.1310856915387156,
+            0.10990521119758506,
+            0.1099052111975846,
+            0.07581464950962258,
+            0.07581464950962219
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5179209381882024,
+          "commutator_norm_squared_over_operator_squared": 0.5364841964274958,
+          "commutator_block_squared_fractions": [
+            [
+              5.380672354389679e-34,
+              1.295110598751941e-32,
+              0.00026766347993386887,
+              0.0008393956730460488
+            ],
+            [
+              1.1184034814110348e-32,
+              1.3442814896957386e-31,
+              0.018719985840454714,
+              0.018098761423093322
+            ],
+            [
+              0.00026766347993386697,
+              0.01871998584045469,
+              0.04208753745398086,
+              0.09085959106021937
+            ],
+            [
+              0.000839395673046052,
+              0.0180987614230933,
+              0.09085959106021964,
+              0.23682586402002048
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.27891340147400134,
+          "between_block_commutator_squared_fraction": 0.2575707949534948,
+          "between_block_share_of_commutator": 0.4801088208537836,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 5.380672354389679e-34,
+              "fraction_of_commutator": 1.002950765413061e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 2.413514080162976e-32,
+              "fraction_of_commutator": 4.4987608138968825e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0005353269598677359,
+              "fraction_of_commutator": 0.000997842925164495
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.001678791346092101,
+              "fraction_of_commutator": 0.0031292465971436765
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.3442814896957386e-31,
+              "fraction_of_commutator": 2.5057243039915232e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0374399716809094,
+              "fraction_of_commutator": 0.06978765065257482
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.036197522846186624,
+              "fraction_of_commutator": 0.06747174117565756
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.04208753745398086,
+              "fraction_of_commutator": 0.07845065657897504
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.18171918212043903,
+              "fraction_of_commutator": 0.33872233950324354
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.23682586402002048,
+              "fraction_of_commutator": 0.4414405225672417
+            }
+          ],
+          "commutator_attribution_sum_error": 3.3306690738754696e-16,
+          "block_commutator_identity_error": 2.1537095197904227e-15,
+          "selfadjoint_cross_norm_identity_error": 2.220446049250313e-16,
+          "full_operator_offblock_squared_fraction": 9.924063449075021e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.000349980501009939,
+              -1.0224851975278732e-05,
+              5.2806903612338995e-05,
+              -7.85349791955391e-05
+            ],
+            [
+              -1.0224851975278732e-05,
+              0.00972964930587694,
+              0.003386667032155136,
+              -0.0011061373181699078
+            ],
+            [
+              5.2806903612338995e-05,
+              0.003386667032155136,
+              0.06901716859947343,
+              -0.0018421908710147586
+            ],
+            [
+              -7.85349791955391e-05,
+              -0.0011061373181699078,
+              -0.0018421908710147586,
+              0.18834052797656384
+            ]
+          ],
+          "coupling_Gram_sum": 0.2682420982137481,
+          "coupling_Gram_sum_error": 3.3306690738754696e-16,
+          "Gram_diagonal_sum": 0.26743732638292417,
+          "Gram_offdiagonal_sum": 0.0008047718308239471,
+          "component_coupling_reconstruction_error": 1.3665210547865228e-15,
+          "normalized_attribution_defined": true
+        },
+        "W11": {
+          "coupling_singular_values": [
+            0.9993878122225672,
+            0.9993878122225662,
+            0.9332893775787241,
+            0.933289377578723,
+            0.7940770973171046,
+            0.7940770973171037,
+            0.617210924772897,
+            0.6172109247728927,
+            0.07653110474902865,
+            0.07653110474902731
+          ],
+          "singular_values_over_operator_norm": [
+            0.19599607523729506,
+            0.19599607523729487,
+            0.1830331056962607,
+            0.18303310569626047,
+            0.1557313313275782,
+            0.15573133132757802,
+            0.12104502113152499,
+            0.12104502113152416,
+            0.015008984481235018,
+            0.015008984481234756
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.47126424350292256,
+          "commutator_norm_squared_over_operator_squared": 0.4441799744087641,
+          "commutator_block_squared_fractions": [
+            [
+              4.319044673522863e-34,
+              8.494492410232924e-05,
+              0.0005586806408442391,
+              1.2767291658304277e-31
+            ],
+            [
+              8.494492410232357e-05,
+              7.289086479277625e-32,
+              1.9250138941283916e-31,
+              0.05583626972993988
+            ],
+            [
+              0.0005586806408442342,
+              2.734223577681593e-31,
+              4.701614506343592e-31,
+              0.16561009190949555
+            ],
+            [
+              1.4160547023356018e-31,
+              0.0558362697299399,
+              0.16561009190949594,
+              5.0749589479428145e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 1.0509801146887692e-30,
+          "between_block_commutator_squared_fraction": 0.4441799744087644,
+          "between_block_share_of_commutator": 1.0,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 4.319044673522863e-34,
+              "fraction_of_commutator": 9.723636639116443e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.0001698898482046528,
+              "fraction_of_commutator": 0.000382479755938544
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0011173612816884732,
+              "fraction_of_commutator": 0.0025155597867188013
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 2.6927838681660293e-31,
+              "fraction_of_commutator": 6.0623711632887566e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.289086479277625e-32,
+              "fraction_of_commutator": 1.6410209597989937e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.659237471809984e-31,
+              "fraction_of_commutator": 1.0489526183641594e-30
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.11167253945987979,
+              "fraction_of_commutator": 0.2514128188883888
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.701614506343592e-31,
+              "fraction_of_commutator": 1.0584931282869705e-30
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.3312201838189915,
+              "fraction_of_commutator": 0.7456891415689545
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.0749589479428145e-31,
+              "fraction_of_commutator": 1.1425456437332535e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 2.7755575615628914e-16,
+          "block_commutator_identity_error": 1.5720002540963057e-15,
+          "selfadjoint_cross_norm_identity_error": 3.3306690738754696e-16,
+          "full_operator_offblock_squared_fraction": 5.537688770470803e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206424,
+              2.1236231025579778e-05,
+              0.00013967016021105782,
+              -0.0005659761877840053
+            ],
+            [
+              2.1236231025579778e-05,
+              0.020207733173744413,
+              -0.006227429510233971,
+              0.013959067432484948
+            ],
+            [
+              0.00013967016021105782,
+              -0.006227429510233971,
+              0.047769622647818935,
+              0.041402522977373915
+            ],
+            [
+              -0.0005659761877840053,
+              0.013959067432484948,
+              0.041402522977373915,
+              0.05592756659764297
+            ]
+          ],
+          "coupling_Gram_sum": 0.222089987204382,
+          "coupling_Gram_sum_error": 1.1102230246251565e-16,
+          "Gram_diagonal_sum": 0.12463180499822696,
+          "Gram_offdiagonal_sum": 0.09745818220615504,
+          "component_coupling_reconstruction_error": 1.468511947896189e-15,
+          "normalized_attribution_defined": true
+        },
+        "W13": {
+          "coupling_singular_values": [
+            0.9999306848943433,
+            0.9999306848943429,
+            0.9418495445112751,
+            0.9418495445112733,
+            0.7932891507335844,
+            0.793289150733584,
+            0.618539816554497,
+            0.6185398165544962,
+            0.10778861781373354,
+            0.10778861781373263
+          ],
+          "singular_values_over_operator_norm": [
+            0.1961025413275559,
+            0.1961025413275558,
+            0.18471189255121026,
+            0.1847118925512099,
+            0.15557680228892284,
+            0.15557680228892276,
+            0.12130563825174925,
+            0.1213056382517491,
+            0.021139087137516232,
+            0.02113908713751605
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4731611781456586,
+          "commutator_norm_squared_over_operator_squared": 0.4477630010083756,
+          "commutator_block_squared_fractions": [
+            [
+              3.453990524390583e-34,
+              3.596815137157255e-06,
+              4.387504345646734e-32,
+              0.0022639047511359704
+            ],
+            [
+              3.596815137157301e-06,
+              0.0041616488791397736,
+              0.0025082997397420283,
+              0.05141478284910714
+            ],
+            [
+              6.273767759255958e-32,
+              0.0025082997397420097,
+              4.363230477075636e-31,
+              0.16561009190949558
+            ],
+            [
+              0.002263904751136006,
+              0.051414782849107166,
+              0.1656100919094958,
+              5.407989218333549e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.0041616488791397736,
+          "between_block_commutator_squared_fraction": 0.44360135212923596,
+          "between_block_share_of_commutator": 0.990705688344576,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 3.453990524390583e-34,
+              "fraction_of_commutator": 7.713881041113476e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.193630274314556e-06,
+              "fraction_of_commutator": 1.606570944476048e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 1.0661272104902693e-31,
+              "fraction_of_commutator": 2.3810078280012396e-31
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0045278095022719764,
+              "fraction_of_commutator": 0.010112067080297422
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.0041616488791397736,
+              "fraction_of_commutator": 0.009294311655424
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005016599479484038,
+              "fraction_of_commutator": 0.011203693624052246
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1028295656982143,
+              "fraction_of_commutator": 0.22965176994668843
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.363230477075636e-31,
+              "fraction_of_commutator": 9.744508740671987e-31
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.3312201838189914,
+              "fraction_of_commutator": 0.7397220919840934
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.407989218333549e-31,
+              "fraction_of_commutator": 1.2077793846643416e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 1.1102230246251565e-16,
+          "block_commutator_identity_error": 1.5528806248561435e-15,
+          "selfadjoint_cross_norm_identity_error": 2.7755575615628914e-16,
+          "full_operator_offblock_squared_fraction": 5.377751464881394e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.000726882579020642,
+              -1.9437823457001206e-05,
+              -0.0001396701602110576,
+              0.0005659761877840049
+            ],
+            [
+              -1.9437823457001206e-05,
+              0.02228855761331426,
+              -0.004973279640362953,
+              0.011748323992068595
+            ],
+            [
+              -0.0001396701602110576,
+              -0.004973279640362953,
+              0.04776962264781892,
+              0.0414025229773739
+            ],
+            [
+              0.0005659761877840049,
+              0.011748323992068595,
+              0.0414025229773739,
+              0.055927566597642954
+            ]
+          ],
+          "coupling_Gram_sum": 0.22388150050418776,
+          "coupling_Gram_sum_error": 8.326672684688674e-17,
+          "Gram_diagonal_sum": 0.12671262943779676,
+          "Gram_offdiagonal_sum": 0.097168871066391,
+          "component_coupling_reconstruction_error": 1.3815428564456825e-15,
+          "normalized_attribution_defined": true
+        },
+        "W143": {
+          "coupling_singular_values": [
+            0.3453316606805398,
+            0.3453316606805392,
+            0.18877267658692404,
+            0.18877267658692196,
+            2.639095125684132e-15,
+            2.2864685577156636e-15,
+            1.8363713722479243e-15,
+            1.6926819474381203e-15,
+            1.2161484845409048e-15,
+            7.396044905172251e-16
+          ],
+          "singular_values_over_operator_norm": [
+            0.06772511063351824,
+            0.06772511063351813,
+            0.0370213677519179,
+            0.03702136775191749,
+            5.175691363111919e-16,
+            4.484133766541738e-16,
+            3.6014205620366635e-16,
+            3.319622415497389e-16,
+            2.385063405423218e-16,
+            1.4504837421108386e-16
+          ],
+          "coupling_rank_real": 4,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.109153765675262,
+          "commutator_norm_squared_over_operator_squared": 0.023829089122179986,
+          "commutator_block_squared_fractions": [
+            [
+              8.46253841750252e-34,
+              8.134810896516998e-05,
+              0.0005586806408442394,
+              0.002263904751135976
+            ],
+            [
+              8.134810896516563e-05,
+              0.004161648879139773,
+              0.0025082997397420153,
+              0.004421486880832708
+            ],
+            [
+              0.0005586806408442368,
+              0.002508299739742005,
+              3.186711027637562e-31,
+              6.235630076473275e-31
+            ],
+            [
+              0.002263904751136011,
+              0.0044214868808326955,
+              6.16517700203637e-31,
+              5.94925370915277e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.004161648879139773,
+          "between_block_commutator_squared_fraction": 0.019667440243040225,
+          "between_block_share_of_commutator": 0.8253542610125987,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 8.46253841750252e-34,
+              "fraction_of_commutator": 3.551347839656042e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.0001626962179303356,
+              "fraction_of_commutator": 0.006827630594528217
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0011173612816884762,
+              "fraction_of_commutator": 0.04689064176810864
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.004527809502271987,
+              "fraction_of_commutator": 0.19001185815606886
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.004161648879139773,
+              "fraction_of_commutator": 0.17464573898740143
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00501659947948402,
+              "fraction_of_commutator": 0.21052418133828693
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.008842973761665403,
+              "fraction_of_commutator": 0.3710999491556063
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 3.186711027637562e-31,
+              "fraction_of_commutator": 1.3373196983309733e-29
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 1.2400807078509644e-30,
+              "fraction_of_commutator": 5.2040625703007e-29
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.94925370915277e-31,
+              "fraction_of_commutator": 2.4966349652094915e-29
+            }
+          ],
+          "commutator_attribution_sum_error": 1.0408340855860843e-17,
+          "block_commutator_identity_error": 1.1810573006292787e-15,
+          "selfadjoint_cross_norm_identity_error": 2.0816681711721685e-17,
+          "full_operator_offblock_squared_fraction": 1.3428025324175477e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206423,
+              1.943782345700091e-05,
+              0.00013967016021105858,
+              0.0005659761877840045
+            ],
+            [
+              1.943782345700091e-05,
+              0.022288557613314285,
+              -0.004973279640362957,
+              -0.011748323992068597
+            ],
+            [
+              0.00013967016021105858,
+              -0.004973279640362957,
+              0.047769622647818935,
+              -0.041402522977373915
+            ],
+            [
+              0.0005659761877840045,
+              -0.011748323992068597,
+              -0.041402522977373915,
+              0.05592756659764297
+            ]
+          ],
+          "coupling_Gram_sum": 0.011914544561090026,
+          "coupling_Gram_sum_error": 2.2551405187698492e-17,
+          "Gram_diagonal_sum": 0.12671262943779682,
+          "Gram_offdiagonal_sum": -0.1147980848767068,
+          "component_coupling_reconstruction_error": 1.5790857636261648e-15,
+          "normalized_attribution_defined": true
+        },
+        "STAR": {
+          "coupling_singular_values": [
+            2.8151548217586755e-13,
+            2.789578291505679e-13,
+            6.257429212454551e-14,
+            6.203642955767052e-14,
+            1.5491408523809615e-14,
+            1.2701672734625777e-14,
+            9.94709664693194e-15,
+            9.428973297035296e-15,
+            4.730136560501142e-15,
+            3.123506141987129e-15
+          ],
+          "singular_values_over_operator_norm": [
+            5.5209728345893467e-14,
+            5.4708131319547216e-14,
+            1.2271828330473569e-14,
+            1.2166344802622543e-14,
+            3.0381151675362618e-15,
+            2.491002966504856e-15,
+            1.950786150242281e-15,
+            1.849173801335702e-15,
+            9.276561009213066e-16,
+            6.125699526468954e-16
+          ],
+          "coupling_rank_real": 0,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 7.97627753185222e-14,
+          "commutator_norm_squared_over_operator_squared": 1.2712334119375112e-26,
+          "commutator_block_squared_fractions": [
+            [
+              9.451192101169335e-34,
+              2.487976514798571e-30,
+              1.0014820781882136e-29,
+              2.9718068925194775e-29
+            ],
+            [
+              1.900951128153627e-30,
+              6.919952977058158e-30,
+              2.7708163286758926e-28,
+              2.8571154745302834e-28
+            ],
+            [
+              8.505078189412772e-30,
+              2.7665940945797484e-28,
+              6.201697274779654e-28,
+              3.700152253563303e-27
+            ],
+            [
+              3.218798560048489e-29,
+              3.098885422287063e-28,
+              3.6788954306794944e-27,
+              3.472039796410849e-27
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 4.099130421985083e-27,
+          "between_block_commutator_squared_fraction": 8.613203697390023e-27,
+          "between_block_share_of_commutator": null,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 9.451192101169335e-34,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 4.3889276429521984e-30,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 1.8519898971294907e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 6.190605452567967e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 6.919952977058158e-30,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 5.537410423255641e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 5.956000896817346e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 6.201697274779654e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 7.379047684242797e-27,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 3.472039796410849e-27,
+              "fraction_of_commutator": null
+            }
+          ],
+          "commutator_attribution_sum_error": 7.174648137343063e-42,
+          "block_commutator_identity_error": 1.91013075402403e-15,
+          "selfadjoint_cross_norm_identity_error": 1.1866533650995502e-29,
+          "full_operator_offblock_squared_fraction": 8.810309215478275e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206423,
+              -2.1236231025579666e-05,
+              -0.00013967016021105817,
+              -0.0005659761877840049
+            ],
+            [
+              -2.1236231025579666e-05,
+              0.02020773317374441,
+              -0.006227429510233969,
+              -0.013959067432484942
+            ],
+            [
+              -0.00013967016021105817,
+              -0.006227429510233969,
+              0.04776962264781892,
+              -0.041402522977373915
+            ],
+            [
+              -0.0005659761877840049,
+              -0.013959067432484942,
+              -0.041402522977373915,
+              0.055927566597642954
+            ]
+          ],
+          "coupling_Gram_sum": -1.9081958235744878e-17,
+          "coupling_Gram_sum_error": 1.908195824210698e-17,
+          "Gram_diagonal_sum": 0.12463180499822693,
+          "Gram_offdiagonal_sum": -0.12463180499822694,
+          "component_coupling_reconstruction_error": 1.1556110225267557e-15,
+          "normalized_attribution_defined": false
+        },
+        "T17": {
+          "coupling_singular_values": [
+            4.258100577900428,
+            4.258100577900405,
+            3.2398937277314177,
+            3.2398937277314066,
+            2.0131890739748997,
+            2.0131890739748965,
+            1.3518665651949229,
+            1.3518665651949109,
+            0.60386285463,
+            0.6038628546299959
+          ],
+          "singular_values_over_operator_norm": [
+            0.2067916445904991,
+            0.20679164459049795,
+            0.15734314866427507,
+            0.1573431486642745,
+            0.09776910429019663,
+            0.09776910429019647,
+            0.06565244412836517,
+            0.06565244412836459,
+            0.02932617267524094,
+            0.02932617267524074
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.40558283070550344,
+          "commutator_norm_squared_over_operator_squared": 0.3289948651261781,
+          "commutator_block_squared_fractions": [
+            [
+              7.793535433295559e-34,
+              5.208886855331389e-06,
+              0.00019309690114533985,
+              0.0012249356911065875
+            ],
+            [
+              5.208886855331184e-06,
+              5.81740109877028e-32,
+              0.010290590409135287,
+              0.012063422183041668
+            ],
+            [
+              0.00019309690114533866,
+              0.010290590409135339,
+              0.10060173438148756,
+              0.06824297216650119
+            ],
+            [
+              0.0012249356911066102,
+              0.012063422183041673,
+              0.06824297216650137,
+              0.04435267826911946
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.14495441265060702,
+          "between_block_commutator_squared_fraction": 0.18404045247557102,
+          "between_block_share_of_commutator": 0.5594022034507643,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 7.793535433295559e-34,
+              "fraction_of_commutator": 2.3688927273398432e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.0417773710662572e-05,
+              "fraction_of_commutator": 3.1665459905178417e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003861938022906785,
+              "fraction_of_commutator": 0.0011738596653858508
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.002449871382213198,
+              "fraction_of_commutator": 0.007446533797035429
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.81740109877028e-32,
+              "fraction_of_commutator": 1.768234618658609e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.020581180818270626,
+              "fraction_of_commutator": 0.06255775697404033
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.02412684436608334,
+              "fraction_of_commutator": 0.07333501803084394
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.10060173438148756,
+              "fraction_of_commutator": 0.30578512021123544
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.13648594433300254,
+              "fraction_of_commutator": 0.41485736952355357
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.04435267826911946,
+              "fraction_of_commutator": 0.13481267633800015
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-17,
+          "block_commutator_identity_error": 2.166941061116888e-15,
+          "selfadjoint_cross_norm_identity_error": 0.0,
+          "full_operator_offblock_squared_fraction": 9.415800032089821e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007131678133787434,
+              -1.0417773710661752e-05,
+              -4.109183400823952e-05,
+              0.0001616425724800978
+            ],
+            [
+              -1.0417773710661752e-05,
+              0.0049566137973335355,
+              -0.0001926460139631164,
+              -0.004108501060609877
+            ],
+            [
+              -4.109183400823952e-05,
+              -0.0001926460139631164,
+              0.13932211659266322,
+              -0.0243044297358449
+            ],
+            [
+              0.0001616425724800978,
+              -0.004108501060609877,
+              -0.0243044297358449,
+              0.07649642205102687
+            ]
+          ],
+          "coupling_Gram_sum": 0.16449743256308896,
+          "coupling_Gram_sum_error": 8.326672684688674e-17,
+          "Gram_diagonal_sum": 0.22148832025440235,
+          "Gram_offdiagonal_sum": -0.056990887691313385,
+          "component_coupling_reconstruction_error": 1.216125101332145e-15,
+          "normalized_attribution_defined": true
+        },
+        "T19": {
+          "coupling_singular_values": [
+            5.159786440022637,
+            5.159786440022632,
+            4.152097919904073,
+            4.152097919904057,
+            3.293536381627203,
+            3.2935363816271663,
+            1.3447776931940452,
+            1.3447776931940418,
+            1.0749893110985926,
+            1.0749893110985886
+          ],
+          "singular_values_over_operator_norm": [
+            0.2505813810988352,
+            0.250581381098835,
+            0.20164370043629148,
+            0.2016437004362907,
+            0.15994826623169003,
+            0.15994826623168826,
+            0.06530817807063952,
+            0.06530817807063935,
+            0.05220609600276188,
+            0.05220609600276169
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.521584687145471,
+          "commutator_norm_squared_over_operator_squared": 0.544101171729278,
+          "commutator_block_squared_fractions": [
+            [
+              3.932563123823123e-34,
+              5.2088868553311e-06,
+              0.0001865373537142397,
+              0.0009448234603854587
+            ],
+            [
+              5.208886855330863e-06,
+              5.355178198685918e-32,
+              0.018736349251775797,
+              0.029130388818793165
+            ],
+            [
+              0.00018653735371424016,
+              0.01873634925177573,
+              0.0946707175805917,
+              0.12148158256594668
+            ],
+            [
+              0.0009448234603854652,
+              0.029130388818793217,
+              0.12148158256594692,
+              0.10846067347374493
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.20313139105433664,
+          "between_block_commutator_squared_fraction": 0.34096978067494155,
+          "between_block_share_of_commutator": 0.6266661392976999,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 3.932563123823123e-34,
+              "fraction_of_commutator": 7.2276321540064655e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.0417773710661962e-05,
+              "fraction_of_commutator": 1.9146758455880355e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003730747074284799,
+              "fraction_of_commutator": 0.0006856715750910132
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.001889646920770924,
+              "fraction_of_commutator": 0.0034729697691427384
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.355178198685918e-32,
+              "fraction_of_commutator": 9.842247135153075e-32
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03747269850355153,
+              "fraction_of_commutator": 0.06887082853443363
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.058260777637586386,
+              "fraction_of_commutator": 0.10707710379012843
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0946707175805917,
+              "fraction_of_commutator": 0.1739946952874711
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.2429631651318936,
+              "fraction_of_commutator": 0.44654041887044843
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.10846067347374493,
+              "fraction_of_commutator": 0.19933916541482918
+            }
+          ],
+          "commutator_attribution_sum_error": 2.220446049250313e-16,
+          "block_commutator_identity_error": 2.7476566808287567e-15,
+          "selfadjoint_cross_norm_identity_error": 1.1102230246251565e-16,
+          "full_operator_offblock_squared_fraction": 8.345823246467293e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00017829195334468585,
+              1.0210930686299383e-21,
+              1.768698446086917e-05,
+              0.00019221766385711965
+            ],
+            [
+              1.0210930686299383e-21,
+              7.291138789950288e-34,
+              1.0015176314379947e-18,
+              -1.8963310525233212e-18
+            ],
+            [
+              1.768698446086917e-05,
+              1.0015176314379947e-18,
+              0.12463683058193172,
+              0.01584148674918807
+            ],
+            [
+              0.00019221766385711965,
+              -1.8963310525233212e-18,
+              0.01584148674918807,
+              0.11513268053435047
+            ]
+          ],
+          "coupling_Gram_sum": 0.272050585864639,
+          "coupling_Gram_sum_error": 5.551115123125783e-17,
+          "Gram_diagonal_sum": 0.23994780306962687,
+          "Gram_offdiagonal_sum": 0.03210278279501211,
+          "component_coupling_reconstruction_error": 1.2095211869151673e-15,
+          "normalized_attribution_defined": true
+        }
+      },
+      "baseline_difference": {
+        "max_overlap_real": 1.7852386235972517e-13,
+        "max_principal_cosine_squared": 4.3853809472693683e-14,
+        "max_attribution_fraction": 1.021405182655144e-14
+      }
+    },
+    {
+      "frame_seed": 31415,
+      "period_input_dps": 50,
+      "geometry": {
+        "blocks": {
+          "ell": {
+            "real_dimension": 2,
+            "active_overlap_real": 1.9809190108724208,
+            "active_overlap_complex": 0.9904595054362104,
+            "active_fraction_of_block": 0.9904595054362104,
+            "fixed_overlap_real": 0.019080989127579162,
+            "principal_cosines_squared": [
+              0.9904595054362095,
+              0.9904595054362101
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 5.551115123125783e-16,
+            "projector_idempotence": 1.4937687490052995e-15,
+            "projector_symmetry": 1.1618286471854967e-14
+          },
+          "old": {
+            "real_dimension": 4,
+            "active_overlap_real": 2.8287621987677327,
+            "active_overlap_complex": 1.4143810993838664,
+            "active_fraction_of_block": 0.7071905496919332,
+            "fixed_overlap_real": 1.1712378012322673,
+            "principal_cosines_squared": [
+              0.43201458691717215,
+              0.43201458691717287,
+              0.9823665124666936,
+              0.9823665124666953
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.6653345369377348e-15,
+            "projector_idempotence": 3.371283443862651e-15,
+            "projector_symmetry": 1.3030347261815628e-14
+          },
+          "q4": {
+            "real_dimension": 8,
+            "active_overlap_real": 4.953174719794255,
+            "active_overlap_complex": 2.4765873598971275,
+            "active_fraction_of_block": 0.6191468399742819,
+            "fixed_overlap_real": 3.046825280205745,
+            "principal_cosines_squared": [
+              0.21712194574761406,
+              0.21712194574761529,
+              0.48683647497299737,
+              0.4868364749729992,
+              0.8735886143499461,
+              0.8735886143499468,
+              0.8990403248265686,
+              0.8990403248265696
+            ],
+            "active_intersection_real_diagnostic": 0,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 1.8318679906315083e-15,
+            "projector_idempotence": 5.744268184871301e-15,
+            "projector_symmetry": 1.7852961781833175e-14
+          },
+          "q6": {
+            "real_dimension": 12,
+            "active_overlap_real": 6.237144070565595,
+            "active_overlap_complex": 3.1185720352827975,
+            "active_fraction_of_block": 0.5197620058804663,
+            "fixed_overlap_real": 5.762855929434405,
+            "principal_cosines_squared": [
+              0.003925458350670551,
+              0.003925458350670767,
+              0.1113930009567637,
+              0.11139300095676434,
+              0.5177975691241893,
+              0.5177975691241895,
+              0.6807370246786828,
+              0.6807370246786829,
+              0.8047189821724887,
+              0.8047189821724896,
+              0.9999999999999994,
+              0.9999999999999996
+            ],
+            "active_intersection_real_diagnostic": 2,
+            "fixed_intersection_real_diagnostic": 0,
+            "ambiguous_endpoints": false,
+            "J_pairing_max_difference": 8.881784197001252e-16,
+            "projector_idempotence": 6.1069670233564656e-15,
+            "projector_symmetry": 1.7255919178412622e-14
+          }
+        },
+        "active_overlap_sum_real": 16.000000000000004,
+        "fixed_overlap_sum_real": 9.999999999999996,
+        "P_block_squared_norms": [
+          [
+            1.9620200638178884,
+            0.0005521420066651148,
+            0.0036314241654862157,
+            0.014715380882384867
+          ],
+          [
+            0.0005521420066650823,
+            2.3033611362503783,
+            0.161913167266087,
+            0.36293575324459915
+          ],
+          [
+            0.0036314241654860726,
+            0.161913167266087,
+            3.711164530950973,
+            1.0764655974117103
+          ],
+          [
+            0.014715380882385247,
+            0.36293575324460026,
+            1.0764655974117128,
+            4.7830273390269085
+          ]
+        ],
+        "P_block_norm_sum": 16.000000000000018,
+        "block_diagonal_truncation_idempotence_defect": 0.7955175832765722,
+        "discarded_offdiagonal_P_norm_squared": 3.240426929953869,
+        "truncation_trace_defect": 8.770761894538737e-15,
+        "orthogonal_projectors_sum_identity": 1.541803223990811e-14
+      },
+      "operators": {
+        "T2": {
+          "coupling_singular_values": [
+            1.9183577035234392,
+            1.918357703523437,
+            1.3500747921881895,
+            1.3500747921881866,
+            0.9888337348196214,
+            0.9888337348196159,
+            0.9012020687305349,
+            0.9012020687305284,
+            0.08997359448321861,
+            0.08997359448321272
+          ],
+          "singular_values_over_operator_norm": [
+            0.21721123709739568,
+            0.21721123709739543,
+            0.15286586815722242,
+            0.15286586815722208,
+            0.11196337285236843,
+            0.1119633728523678,
+            0.10204104055471838,
+            0.10204104055471766,
+            0.01018750347127873,
+            0.010187503471278064
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4326676581714599,
+          "commutator_norm_squared_over_operator_squared": 0.37440260485515114,
+          "commutator_block_squared_fractions": [
+            [
+              4.140298298409e-34,
+              2.8314974700775742e-05,
+              0.00025583183964600364,
+              0.0004706850559229375
+            ],
+            [
+              2.8314974700773618e-05,
+              1.732542325531532e-31,
+              0.008512645151152326,
+              0.0638530344318461
+            ],
+            [
+              0.00025583183964600017,
+              0.008512645151152324,
+              0.02110041401182673,
+              0.07339350770860263
+            ],
+            [
+              0.0004706850559229425,
+              0.0638530344318462,
+              0.07339350770860285,
+              0.0602741525195827
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.08137456653140943,
+          "between_block_commutator_squared_fraction": 0.2930280383237419,
+          "between_block_share_of_commutator": 0.782654913517785,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 4.140298298409e-34,
+              "fraction_of_commutator": 1.1058412106963835e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 5.6629949401549364e-05,
+              "fraction_of_commutator": 0.00015125415439739892
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0005116636792920038,
+              "fraction_of_commutator": 0.0013666135669380725
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.00094137011184588,
+              "fraction_of_commutator": 0.0025143257542507673
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.732542325531532e-31,
+              "fraction_of_commutator": 4.627484699797476e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.017025290302304652,
+              "fraction_of_commutator": 0.04547321541443707
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1277060688636923,
+              "fraction_of_commutator": 0.34109289627698824
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.02110041401182673,
+              "fraction_of_commutator": 0.056357551304938316
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.14678701541720549,
+              "fraction_of_commutator": 0.3920566083507737
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0602741525195827,
+              "fraction_of_commutator": 0.16098753517727676
+            }
+          ],
+          "commutator_attribution_sum_error": 1.6653345369377348e-16,
+          "block_commutator_identity_error": 2.0439736010399905e-15,
+          "selfadjoint_cross_norm_identity_error": 5.551115123125783e-16,
+          "full_operator_offblock_squared_fraction": 1.0093951961875347e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              3.67450612640287e-35,
+              -1.4441810445819972e-22,
+              -2.0109829763673245e-20,
+              8.321195667550438e-21
+            ],
+            [
+              -1.4441810445819972e-22,
+              0.026943644231659014,
+              -0.0014811324967209294,
+              0.011166695190375324
+            ],
+            [
+              -2.0109829763673245e-20,
+              -0.0014811324967209294,
+              0.047647034652067474,
+              -0.005358588982044876
+            ],
+            [
+              8.321195667550438e-21,
+              0.011166695190375324,
+              -0.005358588982044876,
+              0.10395667612062981
+            ]
+          ],
+          "coupling_Gram_sum": 0.18720130242757532,
+          "coupling_Gram_sum_error": 2.7755575615628914e-17,
+          "Gram_diagonal_sum": 0.1785473550043563,
+          "Gram_offdiagonal_sum": 0.00865394742321901,
+          "component_coupling_reconstruction_error": 1.4154188398544432e-15,
+          "normalized_attribution_defined": true
+        },
+        "T3": {
+          "coupling_singular_values": [
+            2.0332812917924885,
+            2.033281291792488,
+            1.7746903549243966,
+            1.7746903549243898,
+            1.315860197114212,
+            1.3158601971142025,
+            0.9590288984710604,
+            0.9590288984710595,
+            0.6282543825531774,
+            0.6282543825531753
+          ],
+          "singular_values_over_operator_norm": [
+            0.2075209028516096,
+            0.20752090285160954,
+            0.1811285758751478,
+            0.18112857587514708,
+            0.1342994189903297,
+            0.13429941899032874,
+            0.09788047707656301,
+            0.09788047707656292,
+            0.06412094441344111,
+            0.0641209444134409
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.46389848752772067,
+          "commutator_norm_squared_over_operator_squared": 0.43040361346101397,
+          "commutator_block_squared_fractions": [
+            [
+              1.572838533862589e-33,
+              4.090860307861293e-32,
+              6.199308313836704e-05,
+              0.0012794349568434683
+            ],
+            [
+              2.079539767085782e-32,
+              1.3949739403315262e-31,
+              0.013387202557483758,
+              0.010348949667690283
+            ],
+            [
+              6.199308313836517e-05,
+              0.013387202557483716,
+              0.032949772631016214,
+              0.10995674559996349
+            ],
+            [
+              0.0012794349568434986,
+              0.010348949667690309,
+              0.10995674559996345,
+              0.12738518909975943
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.16033496173077566,
+          "between_block_commutator_squared_fraction": 0.2700686517302387,
+          "between_block_share_of_commutator": 0.6274776588387108,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.572838533862589e-33,
+              "fraction_of_commutator": 3.654333943005004e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 6.170400074947075e-32,
+              "fraction_of_commutator": 1.4336311039140453e-31
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0001239861662767322,
+              "fraction_of_commutator": 0.00028806952915594634
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.002558869913686967,
+              "fraction_of_commutator": 0.005945279810990132
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.3949739403315262e-31,
+              "fraction_of_commutator": 3.2410832453614687e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.026774405114967474,
+              "fraction_of_commutator": 0.06220766805293726
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.02069789933538059,
+              "fraction_of_commutator": 0.048089511072972
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.032949772631016214,
+              "fraction_of_commutator": 0.076555520447555
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.21991349119992692,
+              "fraction_of_commutator": 0.5109471303726559
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.12738518909975943,
+              "fraction_of_commutator": 0.29596682071373454
+            }
+          ],
+          "commutator_attribution_sum_error": 3.885780586188048e-16,
+          "block_commutator_identity_error": 2.0367315503690804e-15,
+          "selfadjoint_cross_norm_identity_error": 3.885780586188048e-16,
+          "full_operator_offblock_squared_fraction": 9.893697726189887e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0001968640318180883,
+              -5.751479236094262e-06,
+              -3.816738868429795e-06,
+              0.00023599682187603387
+            ],
+            [
+              -5.751479236094262e-06,
+              0.00547292773455574,
+              0.0020642094497675093,
+              -0.007557719836374402
+            ],
+            [
+              -3.816738868429795e-06,
+              0.0020642094497675093,
+              0.06913228861247443,
+              0.003929197878041806
+            ],
+            [
+              0.00023599682187603387,
+              -0.007557719836374402,
+              0.003929197878041806,
+              0.14307549416124582
+            ]
+          ],
+          "coupling_Gram_sum": 0.21520180673050693,
+          "coupling_Gram_sum_error": 1.3877787807814457e-16,
+          "Gram_diagonal_sum": 0.2178775745400941,
+          "Gram_offdiagonal_sum": -0.0026757678095871706,
+          "component_coupling_reconstruction_error": 1.3384296064172488e-15,
+          "normalized_attribution_defined": true
+        },
+        "T5": {
+          "coupling_singular_values": [
+            3.557347404378311,
+            3.557347404378303,
+            2.569274112042366,
+            2.569274112042357,
+            2.0569655188721097,
+            2.0569655188721017,
+            1.4514847113684541,
+            1.4514847113684484,
+            0.6627715974607153,
+            0.6627715974607121
+          ],
+          "singular_values_over_operator_norm": [
+            0.26814514975608034,
+            0.2681451497560797,
+            0.19366632302768327,
+            0.19366632302768258,
+            0.15504960983630667,
+            0.15504960983630606,
+            0.10940977673969238,
+            0.10940977673969195,
+            0.049958288874583125,
+            0.04995828887458288
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5439028909587994,
+          "commutator_norm_squared_over_operator_squared": 0.5916607095866794,
+          "commutator_block_squared_fractions": [
+            [
+              2.0802275866111374e-33,
+              1.25486819696618e-05,
+              0.00019402525690257236,
+              0.0013007200244506188
+            ],
+            [
+              1.2548681969660626e-05,
+              7.15785854195397e-32,
+              0.002927200665429536,
+              0.019857450743837768
+            ],
+            [
+              0.00019402525690256686,
+              0.0029272006654295327,
+              0.07937601935477814,
+              0.14056783232000508
+            ],
+            [
+              0.0013007200244506518,
+              0.019857450743837848,
+              0.1405678323200051,
+              0.1825651348467112
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.26194115420148933,
+          "between_block_commutator_squared_fraction": 0.3297195553851906,
+          "between_block_share_of_commutator": 0.5572780988203946,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 2.0802275866111374e-33,
+              "fraction_of_commutator": 3.515913010455497e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 2.5097363939322425e-05,
+              "fraction_of_commutator": 4.24185069798785e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0003880505138051392,
+              "fraction_of_commutator": 0.0006558666267973454
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0026014400489012706,
+              "fraction_of_commutator": 0.004396844351416502
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.15785854195397e-32,
+              "fraction_of_commutator": 1.2097910890439702e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005854401330859069,
+              "fraction_of_commutator": 0.009894862437204626
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.03971490148767562,
+              "fraction_of_commutator": 0.06712445299168089
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.07937601935477814,
+              "fraction_of_commutator": 0.1341580031741983
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.28113566464001016,
+              "fraction_of_commutator": 0.4751636539063158
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1825651348467112,
+              "fraction_of_commutator": 0.30856389800540757
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-16,
+          "block_commutator_identity_error": 2.467110927578172e-15,
+          "selfadjoint_cross_norm_identity_error": 0.0,
+          "full_operator_offblock_squared_fraction": 8.646714693208226e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00010738038099168447,
+              3.1371704924151206e-06,
+              -5.63253877418584e-05,
+              0.00019304021518772106
+            ],
+            [
+              3.1371704924151206e-06,
+              0.002985233309757673,
+              -0.0002121800562052039,
+              -0.0012240438999565966
+            ],
+            [
+              -5.63253877418584e-05,
+              -0.0002121800562052039,
+              0.09745640041860379,
+              0.016250264972621782
+            ],
+            [
+              0.00019304021518772106,
+              -0.0012240438999565966,
+              0.016250264972621782,
+              0.1653735546551904
+            ]
+          ],
+          "coupling_Gram_sum": 0.2958303547933401,
+          "coupling_Gram_sum_error": 3.885780586188048e-16,
+          "Gram_diagonal_sum": 0.26592256876454357,
+          "Gram_offdiagonal_sum": 0.029907786028796512,
+          "component_coupling_reconstruction_error": 1.37543744739181e-15,
+          "normalized_attribution_defined": true
+        },
+        "T7": {
+          "coupling_singular_values": [
+            3.3720115155328694,
+            3.372011515532868,
+            3.168189125408113,
+            3.1681891254081034,
+            1.9265583410984133,
+            1.926558341098409,
+            1.6152701250413362,
+            1.615270125041332,
+            1.1142432379592293,
+            1.1142432379592206
+          ],
+          "singular_values_over_operator_norm": [
+            0.22943632277345888,
+            0.2294363227734588,
+            0.2155679657190105,
+            0.21556796571900982,
+            0.13108569153872046,
+            0.13108569153872018,
+            0.10990521119757925,
+            0.10990521119757896,
+            0.07581464950962909,
+            0.07581464950962849
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5179209381882064,
+          "commutator_norm_squared_over_operator_squared": 0.536484196427504,
+          "commutator_block_squared_fractions": [
+            [
+              2.0624024688632535e-33,
+              2.4080602259969923e-32,
+              0.00026766347993376283,
+              0.0008393956730460419
+            ],
+            [
+              2.122093122637888e-32,
+              9.911243032463304e-32,
+              0.018719985840453285,
+              0.018098761423094224
+            ],
+            [
+              0.00026766347993376115,
+              0.018719985840453254,
+              0.042087537453980695,
+              0.0908595910602183
+            ],
+            [
+              0.0008393956730460523,
+              0.018098761423094235,
+              0.09085959106021851,
+              0.2368258640200326
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.27891340147401333,
+          "between_block_commutator_squared_fraction": 0.25757079495349144,
+          "between_block_share_of_commutator": 0.4801088208537696,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 2.0624024688632535e-33,
+              "fraction_of_commutator": 3.844293052054422e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 4.5301533486348804e-32,
+              "fraction_of_commutator": 8.444150599032693e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.000535326959867524,
+              "fraction_of_commutator": 0.0009978429251640848
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0016787913460920942,
+              "fraction_of_commutator": 0.0031292465971436163
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 9.911243032463304e-32,
+              "fraction_of_commutator": 1.8474436150147858e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03743997168090654,
+              "fraction_of_commutator": 0.06978765065256842
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.03619752284618846,
+              "fraction_of_commutator": 0.06747174117565995
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.042087537453980695,
+              "fraction_of_commutator": 0.07845065657897353
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.1817191821204368,
+              "fraction_of_commutator": 0.3387223395032342
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.2368258640200326,
+              "fraction_of_commutator": 0.4414405225672576
+            }
+          ],
+          "commutator_attribution_sum_error": 7.771561172376096e-16,
+          "block_commutator_identity_error": 2.4260739189414525e-15,
+          "selfadjoint_cross_norm_identity_error": 2.220446049250313e-16,
+          "full_operator_offblock_squared_fraction": 1.070386036842512e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00034998050100993466,
+              -1.0224851975278926e-05,
+              5.280690361231594e-05,
+              -7.853497919555203e-05
+            ],
+            [
+              -1.0224851975278926e-05,
+              0.009729649305876864,
+              0.003386667032154601,
+              -0.0011061373181695307
+            ],
+            [
+              5.280690361231594e-05,
+              0.003386667032154601,
+              0.06901716859947285,
+              -0.0018421908710141847
+            ],
+            [
+              -7.853497919555203e-05,
+              -0.0011061373181695307,
+              -0.0018421908710141847,
+              0.18834052797656803
+            ]
+          ],
+          "coupling_Gram_sum": 0.26824209821375244,
+          "coupling_Gram_sum_error": 5.551115123125783e-16,
+          "Gram_diagonal_sum": 0.26743732638292766,
+          "Gram_offdiagonal_sum": 0.0008047718308247798,
+          "component_coupling_reconstruction_error": 1.392957463023845e-15,
+          "normalized_attribution_defined": true
+        },
+        "W11": {
+          "coupling_singular_values": [
+            0.9993878122225662,
+            0.9993878122225642,
+            0.9332893775787376,
+            0.9332893775787376,
+            0.7940770973170671,
+            0.7940770973170665,
+            0.6172109247728851,
+            0.617210924772882,
+            0.07653110474905739,
+            0.07653110474905589
+          ],
+          "singular_values_over_operator_norm": [
+            0.19599607523729484,
+            0.19599607523729443,
+            0.18303310569626333,
+            0.18303310569626333,
+            0.1557313313275708,
+            0.1557313313275707,
+            0.12104502113152263,
+            0.12104502113152203,
+            0.015008984481240653,
+            0.015008984481240358
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.47126424350291896,
+          "commutator_norm_squared_over_operator_squared": 0.4441799744087574,
+          "commutator_block_squared_fractions": [
+            [
+              2.7517427615468783e-33,
+              8.494492410232769e-05,
+              0.0005586806408440264,
+              1.859303411778503e-31
+            ],
+            [
+              8.49449241023201e-05,
+              1.6190908239007107e-31,
+              2.506346512901386e-31,
+              0.05583626972993861
+            ],
+            [
+              0.0005586806408440174,
+              3.6259070092973236e-31,
+              3.768231943435807e-31,
+              0.16561009190949366
+            ],
+            [
+              1.5927926057589787e-31,
+              0.05583626972993863,
+              0.16561009190949405,
+              6.05732778254442e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 1.1472167977496407e-30,
+          "between_block_commutator_squared_fraction": 0.4441799744087576,
+          "between_block_share_of_commutator": 1.0,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 2.7517427615468783e-33,
+              "fraction_of_commutator": 6.195107659253864e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.0001698898482046478,
+              "fraction_of_commutator": 0.00038247975593853846
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0011173612816880439,
+              "fraction_of_commutator": 0.0025155597867178724
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 3.452096017537482e-31,
+              "fraction_of_commutator": 7.7718407321998815e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.6190908239007107e-31,
+              "fraction_of_commutator": 3.6451234120940794e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 6.132253522198709e-31,
+              "fraction_of_commutator": 1.3805785662357422e-30
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.11167253945987723,
+              "fraction_of_commutator": 0.25141281888838685
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 3.768231943435807e-31,
+              "fraction_of_commutator": 8.483570085417864e-31
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.3312201838189877,
+              "fraction_of_commutator": 0.7456891415689573
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 6.05732778254442e-31,
+              "fraction_of_commutator": 1.3637102371864592e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 2.220446049250313e-16,
+          "block_commutator_identity_error": 1.7222134664456371e-15,
+          "selfadjoint_cross_norm_identity_error": 3.885780586188048e-16,
+          "full_operator_offblock_squared_fraction": 7.588017162652638e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206332,
+              2.1236231025578928e-05,
+              0.0001396701602110036,
+              -0.0005659761877840488
+            ],
+            [
+              2.1236231025578928e-05,
+              0.020207733173744264,
+              -0.0062274295102341184,
+              0.013959067432484625
+            ],
+            [
+              0.0001396701602110036,
+              -0.0062274295102341184,
+              0.047769622647818526,
+              0.04140252297737344
+            ],
+            [
+              -0.0005659761877840488,
+              0.013959067432484625,
+              0.04140252297737344,
+              0.05592756659764222
+            ]
+          ],
+          "coupling_Gram_sum": 0.2220899872043786,
+          "coupling_Gram_sum_error": 1.1102230246251565e-16,
+          "Gram_diagonal_sum": 0.12463180499822565,
+          "Gram_offdiagonal_sum": 0.09745818220615296,
+          "component_coupling_reconstruction_error": 1.6521372475183637e-15,
+          "normalized_attribution_defined": true
+        },
+        "W13": {
+          "coupling_singular_values": [
+            0.9999306848943438,
+            0.9999306848943417,
+            0.94184954451129,
+            0.9418495445112897,
+            0.7932891507335466,
+            0.7932891507335462,
+            0.6185398165544818,
+            0.6185398165544783,
+            0.10778861781378166,
+            0.10778861781377994
+          ],
+          "singular_values_over_operator_norm": [
+            0.19610254132755597,
+            0.19610254132755556,
+            0.18471189255121317,
+            0.18471189255121312,
+            0.1555768022889154,
+            0.15557680228891535,
+            0.12130563825174627,
+            0.12130563825174559,
+            0.02113908713752567,
+            0.021139087137525332
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.4731611781456554,
+          "commutator_norm_squared_over_operator_squared": 0.4477630010083696,
+          "commutator_block_squared_fractions": [
+            [
+              1.652163979460439e-33,
+              3.5968151371593334e-06,
+              5.912857242260578e-32,
+              0.0022639047511361487
+            ],
+            [
+              3.5968151371592792e-06,
+              0.004161648879139867,
+              0.002508299739741869,
+              0.05141478284910584
+            ],
+            [
+              8.193106646150022e-32,
+              0.0025082997397418492,
+              4.522997741177312e-31,
+              0.16561009190949366
+            ],
+            [
+              0.002263904751136191,
+              0.05141478284910584,
+              0.16561009190949405,
+              6.292241866730569e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.004161648879139867,
+          "between_block_commutator_squared_fraction": 0.44360135212922974,
+          "between_block_share_of_commutator": 0.9907056883445756,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.652163979460439e-33,
+              "fraction_of_commutator": 3.6898179968861625e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.193630274318613e-06,
+              "fraction_of_commutator": 1.6065709444769756e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 1.41059638884106e-31,
+              "fraction_of_commutator": 3.150319221696241e-31
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.00452780950227234,
+              "fraction_of_commutator": 0.01011206708029837
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.004161648879139867,
+              "fraction_of_commutator": 0.009294311655424334
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005016599479483718,
+              "fraction_of_commutator": 0.011203693624051684
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.10282956569821168,
+              "fraction_of_commutator": 0.22965176994668568
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 4.522997741177312e-31,
+              "fraction_of_commutator": 1.0101320857220108e-30
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.3312201838189877,
+              "fraction_of_commutator": 0.7397220919840953
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 6.292241866730569e-31,
+              "fraction_of_commutator": 1.405261679183036e-30
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-17,
+          "block_commutator_identity_error": 1.762990542228899e-15,
+          "selfadjoint_cross_norm_identity_error": 2.7755575615628914e-16,
+          "full_operator_offblock_squared_fraction": 6.67215758592144e-30,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206329,
+              -1.9437823456999186e-05,
+              -0.00013967016021100383,
+              0.0005659761877840492
+            ],
+            [
+              -1.9437823456999186e-05,
+              0.022288557613314167,
+              -0.004973279640363187,
+              0.01174832399206825
+            ],
+            [
+              -0.00013967016021100383,
+              -0.004973279640363187,
+              0.047769622647818526,
+              0.04140252297737346
+            ],
+            [
+              0.0005659761877840492,
+              0.01174832399206825,
+              0.04140252297737346,
+              0.055927566597642225
+            ]
+          ],
+          "coupling_Gram_sum": 0.22388150050418468,
+          "coupling_Gram_sum_error": 2.7755575615628914e-17,
+          "Gram_diagonal_sum": 0.12671262943779554,
+          "Gram_offdiagonal_sum": 0.09716887106638913,
+          "component_coupling_reconstruction_error": 1.494785130756495e-15,
+          "normalized_attribution_defined": true
+        },
+        "W143": {
+          "coupling_singular_values": [
+            0.3453316606805399,
+            0.3453316606805394,
+            0.18877267658691985,
+            0.1887726765869182,
+            2.685128456388302e-15,
+            2.538936720235609e-15,
+            1.7027516326171147e-15,
+            1.4092290297081735e-15,
+            1.3208357522304882e-15,
+            1.1069460285192958e-15
+          ],
+          "singular_values_over_operator_norm": [
+            0.06772511063351826,
+            0.06772511063351816,
+            0.03702136775191707,
+            0.03702136775191675,
+            5.265970152164315e-16,
+            4.979264569330243e-16,
+            3.3393706928910147e-16,
+            2.763725508309e-16,
+            2.590372028797793e-16,
+            2.1708997691976625e-16
+          ],
+          "coupling_rank_real": 4,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.10915376567526143,
+          "commutator_norm_squared_over_operator_squared": 0.023829089122179736,
+          "commutator_block_squared_fractions": [
+            [
+              1.0538461710695632e-33,
+              8.134810896516605e-05,
+              0.0005586806408440258,
+              0.00226390475113615
+            ],
+            [
+              8.134810896516157e-05,
+              0.004161648879139869,
+              0.002508299739741847,
+              0.0044214868808327415
+            ],
+            [
+              0.0005586806408440206,
+              0.002508299739741843,
+              3.445379144065193e-31,
+              7.25993207794987e-31
+            ],
+            [
+              0.0022639047511361864,
+              0.004421486880832737,
+              6.267547316989025e-31,
+              7.284728184400445e-31
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.004161648879139869,
+          "between_block_commutator_squared_fraction": 0.01966744024303988,
+          "between_block_share_of_commutator": 0.8253542610125928,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 1.0538461710695632e-33,
+              "fraction_of_commutator": 4.4225197432689946e-32
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.00016269621793032764,
+              "fraction_of_commutator": 0.006827630594527954
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.0011173612816880465,
+              "fraction_of_commutator": 0.0468906417680911
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.004527809502272336,
+              "fraction_of_commutator": 0.1900118581560855
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 0.004161648879139869,
+              "fraction_of_commutator": 0.17464573898740732
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.005016599479483691,
+              "fraction_of_commutator": 0.21052418133827533
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.008842973761665478,
+              "fraction_of_commutator": 0.3710999491556133
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 3.445379144065193e-31,
+              "fraction_of_commutator": 1.4458711058570382e-29
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 1.3527479394938894e-30,
+              "fraction_of_commutator": 5.67687641167439e-29
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 7.284728184400445e-31,
+              "fraction_of_commutator": 3.0570737081258956e-29
+            }
+          ],
+          "commutator_attribution_sum_error": 1.3877787807814457e-17,
+          "block_commutator_identity_error": 1.6976070135638384e-15,
+          "selfadjoint_cross_norm_identity_error": 2.42861286636753e-17,
+          "full_operator_offblock_squared_fraction": 1.464727839271747e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206332,
+              1.9437823456999437e-05,
+              0.00013967016021100342,
+              0.0005659761877840497
+            ],
+            [
+              1.9437823456999437e-05,
+              0.022288557613314167,
+              -0.004973279640363185,
+              -0.01174832399206825
+            ],
+            [
+              0.00013967016021100342,
+              -0.004973279640363185,
+              0.04776962264781852,
+              -0.04140252297737344
+            ],
+            [
+              0.0005659761877840497,
+              -0.01174832399206825,
+              -0.04140252297737344,
+              0.05592756659764222
+            ]
+          ],
+          "coupling_Gram_sum": 0.011914544561089885,
+          "coupling_Gram_sum_error": 5.204170427930421e-18,
+          "Gram_diagonal_sum": 0.12671262943779554,
+          "Gram_offdiagonal_sum": -0.11479808487670566,
+          "component_coupling_reconstruction_error": 1.5189966461679713e-15,
+          "normalized_attribution_defined": true
+        },
+        "STAR": {
+          "coupling_singular_values": [
+            2.1003171401223761e-13,
+            2.0794864073797597e-13,
+            1.6383760694504146e-13,
+            1.62535859075881e-13,
+            2.2108503821171378e-14,
+            2.1372421598236837e-14,
+            9.886027461943816e-15,
+            7.383600127765739e-15,
+            3.447163020310667e-15,
+            2.030176378529684e-15
+          ],
+          "singular_values_over_operator_norm": [
+            4.1190608008528404e-14,
+            4.078208372877056e-14,
+            3.213119826435042e-14,
+            3.1875904503326306e-14,
+            4.335834323095903e-15,
+            4.1914767223900575e-15,
+            1.9388094977063713e-15,
+            1.4480431204632181e-15,
+            6.760442887345971e-16,
+            3.9815034500607646e-16
+          ],
+          "coupling_rank_real": 0,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 7.381809495118369e-14,
+          "commutator_norm_squared_over_operator_squared": 1.09345554356499e-26,
+          "commutator_block_squared_fractions": [
+            [
+              9.49713755443105e-34,
+              4.695544099402154e-30,
+              3.982448666965134e-30,
+              8.820782600957545e-30
+            ],
+            [
+              3.509570532553209e-30,
+              8.860165555141504e-32,
+              3.0645783275501857e-28,
+              4.358843861699191e-28
+            ],
+            [
+              2.1186321933063852e-30,
+              3.0425280914728912e-28,
+              1.334152727964441e-27,
+              2.3584705784671093e-27
+            ],
+            [
+              7.649311093440333e-30,
+              4.331697319944129e-28,
+              2.3852158171773728e-27,
+              3.346085711418419e-27
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 4.680327990752166e-27,
+          "between_block_commutator_squared_fraction": 6.2542274448977474e-27,
+          "between_block_share_of_commutator": null,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 9.49713755443105e-34,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 8.205114631955364e-30,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 6.101080860271519e-30,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 1.647009369439788e-29,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 8.860165555141504e-32,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 6.107106419023077e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 8.69054118164332e-28,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 1.334152727964441e-27,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 4.743686395644482e-27,
+              "fraction_of_commutator": null
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 3.346085711418419e-27,
+              "fraction_of_commutator": null
+            }
+          ],
+          "commutator_attribution_sum_error": 1.2914366647217514e-41,
+          "block_commutator_identity_error": 2.3303741806749526e-15,
+          "selfadjoint_cross_norm_identity_error": 3.633315120595894e-29,
+          "full_operator_offblock_squared_fraction": 1.1008712784013307e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007268825790206326,
+              -2.123623102557925e-05,
+              -0.00013967016021100407,
+              -0.0005659761877840486
+            ],
+            [
+              -2.123623102557925e-05,
+              0.020207733173744257,
+              -0.006227429510234117,
+              -0.013959067432484621
+            ],
+            [
+              -0.00013967016021100407,
+              -0.006227429510234117,
+              0.047769622647818526,
+              -0.04140252297737344
+            ],
+            [
+              -0.0005659761877840486,
+              -0.013959067432484621,
+              -0.04140252297737344,
+              0.055927566597642205
+            ]
+          ],
+          "coupling_Gram_sum": -1.0408340855860843e-17,
+          "coupling_Gram_sum_error": 1.0408340861309953e-17,
+          "Gram_diagonal_sum": 0.12463180499822563,
+          "Gram_offdiagonal_sum": -0.12463180499822564,
+          "component_coupling_reconstruction_error": 1.279161153368919e-15,
+          "normalized_attribution_defined": false
+        },
+        "T17": {
+          "coupling_singular_values": [
+            4.25810057790047,
+            4.258100577900466,
+            3.239893727731524,
+            3.23989372773151,
+            2.013189073975089,
+            2.013189073975087,
+            1.351866565194963,
+            1.351866565194955,
+            0.6038628546300019,
+            0.6038628546300004
+          ],
+          "singular_values_over_operator_norm": [
+            0.20679164459050114,
+            0.20679164459050095,
+            0.1573431486642802,
+            0.15734314866427954,
+            0.09776910429020581,
+            0.09776910429020572,
+            0.06565244412836711,
+            0.06565244412836672,
+            0.02932617267524103,
+            0.02932617267524096
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.40558283070551504,
+          "commutator_norm_squared_over_operator_squared": 0.3289948651261972,
+          "commutator_block_squared_fractions": [
+            [
+              9.334560666091771e-34,
+              5.208886855331309e-06,
+              0.00019309690114532082,
+              0.0012249356911067523
+            ],
+            [
+              5.208886855330985e-06,
+              7.883296246222774e-32,
+              0.010290590409138333,
+              0.012063422183041208
+            ],
+            [
+              0.00019309690114531914,
+              0.010290590409138389,
+              0.10060173438148692,
+              0.06824297216650464
+            ],
+            [
+              0.0012249356911067759,
+              0.012063422183041224,
+              0.06824297216650478,
+              0.04435267826912694
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.14495441265061387,
+          "between_block_commutator_squared_fraction": 0.18404045247558337,
+          "between_block_share_of_commutator": 0.5594022034507692,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 9.334560666091771e-34,
+              "fraction_of_commutator": 2.8372967652583825e-33
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.0417773710662294e-05,
+              "fraction_of_commutator": 3.166545990517573e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00038619380229063996,
+              "fraction_of_commutator": 0.0011738596653856654
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0024498713822135284,
+              "fraction_of_commutator": 0.007446533797036001
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.883296246222774e-32,
+              "fraction_of_commutator": 2.396176075027453e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.02058118081827672,
+              "fraction_of_commutator": 0.06255775697405523
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.02412684436608243,
+              "fraction_of_commutator": 0.07333501803083692
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.10060173438148692,
+              "fraction_of_commutator": 0.3057851202112158
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.13648594433300942,
+              "fraction_of_commutator": 0.41485736952355046
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.04435267826912694,
+              "fraction_of_commutator": 0.13481267633801508
+            }
+          ],
+          "commutator_attribution_sum_error": 5.551115123125783e-17,
+          "block_commutator_identity_error": 2.7274290837378032e-15,
+          "selfadjoint_cross_norm_identity_error": 2.220446049250313e-16,
+          "full_operator_offblock_squared_fraction": 1.1385572437711659e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.0007131678133787349,
+              -1.0417773710661476e-05,
+              -4.10918340082042e-05,
+              0.00016164257248012833
+            ],
+            [
+              -1.0417773710661476e-05,
+              0.004956613797333504,
+              -0.00019264601396226796,
+              -0.004108501060609791
+            ],
+            [
+              -4.10918340082042e-05,
+              -0.00019264601396226796,
+              0.1393221165926638,
+              -0.024304429735842705
+            ],
+            [
+              0.00016164257248012833,
+              -0.004108501060609791,
+              -0.024304429735842705,
+              0.0764964220510295
+            ]
+          ],
+          "coupling_Gram_sum": 0.1644974325630985,
+          "coupling_Gram_sum_error": 2.7755575615628914e-17,
+          "Gram_diagonal_sum": 0.22148832025440554,
+          "Gram_offdiagonal_sum": -0.05699088769130703,
+          "component_coupling_reconstruction_error": 1.269477195557172e-15,
+          "normalized_attribution_defined": true
+        },
+        "T19": {
+          "coupling_singular_values": [
+            5.159786440022599,
+            5.1597864400225975,
+            4.152097919904055,
+            4.1520979199040315,
+            3.2935363816273653,
+            3.293536381627361,
+            1.344777693194098,
+            1.344777693194095,
+            1.0749893110986026,
+            1.0749893110985997
+          ],
+          "singular_values_over_operator_norm": [
+            0.2505813810988334,
+            0.25058138109883327,
+            0.20164370043629057,
+            0.20164370043628946,
+            0.15994826623169792,
+            0.1599482662316977,
+            0.06530817807064208,
+            0.06530817807064193,
+            0.05220609600276237,
+            0.05220609600276223
+          ],
+          "coupling_rank_real": 10,
+          "rank_ambiguous": false,
+          "active_to_fixed_norm_fraction": 0.5215846871454746,
+          "commutator_norm_squared_over_operator_squared": 0.5441011717292855,
+          "commutator_block_squared_fractions": [
+            [
+              5.10552449573883e-34,
+              5.208886855330725e-06,
+              0.00018653735371416881,
+              0.0009448234603855111
+            ],
+            [
+              5.2088868553306805e-06,
+              7.539695051368345e-32,
+              0.01873634925177436,
+              0.02913038881879235
+            ],
+            [
+              0.00018653735371416806,
+              0.018736349251774278,
+              0.09467071758058847,
+              0.12148158256595534
+            ],
+            [
+              0.0009448234603855224,
+              0.0291303888187924,
+              0.12148158256595554,
+              0.10846067347374311
+            ]
+          ],
+          "within_block_commutator_squared_fraction": 0.2031313910543316,
+          "between_block_commutator_squared_fraction": 0.34096978067495437,
+          "between_block_share_of_commutator": 0.6266661392977144,
+          "block_pair_attribution": [
+            {
+              "blocks": [
+                "ell",
+                "ell"
+              ],
+              "squared_norm_over_operator_squared": 5.10552449573883e-34,
+              "fraction_of_commutator": 9.383410220404845e-34
+            },
+            {
+              "blocks": [
+                "ell",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 1.0417773710661405e-05,
+              "fraction_of_commutator": 1.9146758455879064e-05
+            },
+            {
+              "blocks": [
+                "ell",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.00037307470742833687,
+              "fraction_of_commutator": 0.0006856715750907409
+            },
+            {
+              "blocks": [
+                "ell",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.0018896469207710335,
+              "fraction_of_commutator": 0.0034729697691428915
+            },
+            {
+              "blocks": [
+                "old",
+                "old"
+              ],
+              "squared_norm_over_operator_squared": 7.539695051368345e-32,
+              "fraction_of_commutator": 1.3857156431781548e-31
+            },
+            {
+              "blocks": [
+                "old",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.03747269850354864,
+              "fraction_of_commutator": 0.06887082853442736
+            },
+            {
+              "blocks": [
+                "old",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.05826077763758475,
+              "fraction_of_commutator": 0.10707710379012393
+            },
+            {
+              "blocks": [
+                "q4",
+                "q4"
+              ],
+              "squared_norm_over_operator_squared": 0.09467071758058847,
+              "fraction_of_commutator": 0.17399469528746273
+            },
+            {
+              "blocks": [
+                "q4",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.24296316513191088,
+              "fraction_of_commutator": 0.446540418870474
+            },
+            {
+              "blocks": [
+                "q6",
+                "q6"
+              ],
+              "squared_norm_over_operator_squared": 0.10846067347374311,
+              "fraction_of_commutator": 0.19933916541482308
+            }
+          ],
+          "commutator_attribution_sum_error": 4.440892098500626e-16,
+          "block_commutator_identity_error": 3.0195450139644935e-15,
+          "selfadjoint_cross_norm_identity_error": 3.3306690738754696e-16,
+          "full_operator_offblock_squared_fraction": 1.0317702402342332e-29,
+          "signed_coupling_Gram_over_operator_squared": [
+            [
+              0.00017829195334468357,
+              4.696564283874315e-22,
+              1.768698446086167e-05,
+              0.0001922176638571233
+            ],
+            [
+              4.696564283874315e-22,
+              3.365985459280654e-33,
+              1.875137011284146e-19,
+              -1.9560673876890946e-19
+            ],
+            [
+              1.768698446086167e-05,
+              1.875137011284146e-19,
+              0.12463683058192866,
+              0.015841486749191214
+            ],
+            [
+              0.0001922176638571233,
+              -1.9560673876890946e-19,
+              0.015841486749191214,
+              0.11513268053435097
+            ]
+          ],
+          "coupling_Gram_sum": 0.2720505858646427,
+          "coupling_Gram_sum_error": 1.1102230246251565e-16,
+          "Gram_diagonal_sum": 0.23994780306962432,
+          "Gram_offdiagonal_sum": 0.03210278279501838,
+          "component_coupling_reconstruction_error": 1.4308038616284247e-15,
+          "normalized_attribution_defined": true
+        }
+      },
+      "baseline_difference": {
+        "max_overlap_real": 1.6431300764452317e-13,
+        "max_principal_cosine_squared": 4.7420400939302e-14,
+        "max_attribution_fraction": 1.634803403760543e-14
+      }
+    }
+  ],
+  "elapsed_seconds": 2.6000201930000912,
+  "script_sha256": "3fc69d547cd91971f11f72865029aebb2c8b7cb04a6002587a5b43ce42fc49fb"
+}

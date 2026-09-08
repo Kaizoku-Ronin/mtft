@@ -1,0 +1,178 @@
+{
+  "p_max_exclusive": 10201,
+  "prime_count": 1252,
+  "joint_unramified_count": 1248,
+  "joint_excluded_primes": [
+    5,
+    7,
+    19,
+    103
+  ],
+  "joint_types": 55,
+  "joint_types_seen": 51,
+  "joint_types_unseen": 4,
+  "wieferich_examples": [
+    {
+      "p": 1093,
+      "square_n": 33,
+      "irregularity_index": 0,
+      "wieferich_base2": true,
+      "residue_mod30": 13,
+      "level_prime": false,
+      "square_position_numerator": 4,
+      "square_position_denominator": 67,
+      "q4": {
+        "ramified": false,
+        "pattern": [
+          1,
+          1,
+          2
+        ],
+        "factors": [
+          {
+            "coefficients_descending": [
+              1,
+              89
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              231
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              770,
+              825
+            ],
+            "multiplicity": 1
+          }
+        ]
+      },
+      "q6": {
+        "ramified": false,
+        "pattern": [
+          1,
+          2,
+          3
+        ],
+        "factors": [
+          {
+            "coefficients_descending": [
+              1,
+              106
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              778,
+              106
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              209,
+              445,
+              300
+            ],
+            "multiplicity": 1
+          }
+        ]
+      },
+      "joint_unramified": true
+    },
+    {
+      "p": 3511,
+      "square_n": 59,
+      "irregularity_index": 2,
+      "wieferich_base2": true,
+      "residue_mod30": 1,
+      "level_prime": false,
+      "square_position_numerator": 30,
+      "square_position_denominator": 119,
+      "q4": {
+        "ramified": false,
+        "pattern": [
+          1,
+          1,
+          2
+        ],
+        "factors": [
+          {
+            "coefficients_descending": [
+              1,
+              1283
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              1610
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              615,
+              3230
+            ],
+            "multiplicity": 1
+          }
+        ]
+      },
+      "q6": {
+        "ramified": false,
+        "pattern": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "factors": [
+          {
+            "coefficients_descending": [
+              1,
+              1716
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              3370
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              83,
+              3066
+            ],
+            "multiplicity": 1
+          },
+          {
+            "coefficients_descending": [
+              1,
+              1853,
+              2676
+            ],
+            "multiplicity": 1
+          }
+        ]
+      },
+      "joint_unramified": true
+    }
+  ],
+  "both_completely_split_primes": []
+}

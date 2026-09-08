@@ -1,0 +1,45 @@
+{
+  "experiment": "MTFT boundary experiments",
+  "bundle_version": "0.1.0",
+  "date_UTC": "2026-09-05",
+  "mtft_version": "0.26.0",
+  "source_archive": "mtft-0.26.0.tar.gz",
+  "source_archive_sha256": "758f29a7a0c2ca08896a15964b3a607c7143ac1fd335bcc8f4d84a4880e53cdf",
+  "python": "3.12.13",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "source_graph": "mtft.surface.manin.cell_complex(143); dual edges in source order",
+  "partition_fixed_before_evaluation": true,
+  "separator_selection": "One connected graph-Laplacian spectral-sweep example; no optimality certificate.",
+  "defect_selection": "First A-B edge in source order; edge 7, endpoints 7 and 6.",
+  "total_spin_assignments": 72057594037927936,
+  "temperature_count": 48,
+  "sensor_masks": 256,
+  "bond_models": 2,
+  "arithmetic": "Exact integer coefficients; double-precision probabilities and information; numerical peak refinements.",
+  "sampling_used": false,
+  "source_archive_modified": false,
+  "inline_explorer_static_checks": {
+    "unique_ids": true,
+    "fragment_contract": true,
+    "bytes": 189363,
+    "embedded_engine_matches_checked_JS": true,
+    "embedded_data_matches_export": true,
+    "network_calls": false
+  },
+  "visual_QA": {
+    "scientific_figures": "Rendered and visually inspected",
+    "interactive_browser": "Blocked by workspace browser URL policy; not verified in browser"
+  },
+  "limits": [
+    "Single chosen cut; no boundary-size scaling study",
+    "No certified floating-point intervals or global peak proof",
+    "No gravitational holography claim",
+    "No full MTFT test-suite rerun in this boundary experiment"
+  ]
+}

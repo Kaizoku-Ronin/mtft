@@ -1,0 +1,34 @@
+Verified source import: /workspace/scratch/a8262a41ed96/verify_electron_photon/mtft-0.26.0-sm-audit-20260907/src/mtft/__init__.py
+Running check_corrections.py
+Corrections: 48 group draws and local SU(3) action invariance passed.
+Running charge_study.py
+Charge study: 256 scan points; max identity residual 3.084501188499227e-14
+Running local_qed_covariance.py
+Finite local gauge covariance: 12 configurations; all gates passed.
+commuting_covariance_max: 8.209674440253689e-16
+different_charge_covariance_min: 0.008393912216183706
+different_charge_covariance_max: 0.009443108836934822
+defect_identity_error_max: 8.148758501063487e-16
+spurion_covariance_max: 9.074631765397545e-16
+gamma5_adjoint_error_max: 3.422242035558837e-17
+link_unitarity_max: 8.174091090711507e-15
+transformed_link_unitarity_max: 2.355670000490504e-14
+omega_unitarity_max: 8.067986401850723e-15
+Running photon_atomic.py
+All photon/Coulomb gates passed: True
+Worst Maxwell algebra relative residual: 9.207566419899634e-16
+Finest Coulomb states:
+n, ell, energy, relative continuum error: 1 0 -0.49998047027609216 3.905944781568138e-05
+n, ell, energy, relative continuum error: 2 0 -0.124998779321442 9.76542846398143e-06
+n, ell, energy, relative continuum error: 3 0 -0.05555531443096977 4.340242544115247e-06
+n, ell, energy, relative continuum error: 2 1 -0.1250004069091953 3.255273562485783e-06
+n, ell, energy, relative continuum error: 3 1 -0.055555743103023955 3.375854431247882e-06
+n, ell, energy, relative continuum error: 3 2 -0.055555571631449106 2.893660839692336e-07
+Running magnetic_and_coupling.py
+Pauli vertex is exactly transverse; numerical residual 2.1726353818624857e-19
+MTFT default: alpha^-1 = 137.03599933773197 E1 = -13.605693090997368 eV
+Same mass and charge; |g| values: [1.982322819461471, 2.002322819461471, 2.022322819461471]
+Running render_results.py
+Rendered Electron_Photon_Results.png and .svg
+
+Exit code: 0

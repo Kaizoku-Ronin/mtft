@@ -1,0 +1,313 @@
+{
+  "status": "PASS",
+  "scope": "Execution/identity/independence checks, not a successful-compression verdict.",
+  "research_outcome": "No tested reduction below five coordinates passes any of the three joint budgets.",
+  "passing_reduced_models_by_budget": {
+    "0.01": [],
+    "0.05": [],
+    "0.1": []
+  },
+  "checks": {
+    "parent_study_validation_passed": true,
+    "primary_raw_geometry": true,
+    "training_selection_precedes_and_survives_holdout": true,
+    "independent_selection_survives_holdout": true,
+    "basis_freeze_matches": true,
+    "protocol_hashes_match": true,
+    "prescribed_point_counts": true,
+    "training_and_holdout_grids_disjoint": true,
+    "independent_grids_agree": true,
+    "all_32_pole_subsets_scored": true,
+    "all_18_family_rank_models_assessed": true,
+    "independent_training_choices_agree": true,
+    "independent_pole_subset_choices_agree": true,
+    "independent_errors_and_subspaces_agree": true,
+    "no_ambiguous_selected_cutoffs": true,
+    "reduced_bases_orthonormal": true,
+    "reduced_generators_Hermitian": true,
+    "full_rank_controls_reproduce_full_model": true,
+    "independent_identity_and_bound_checks": true,
+    "conditional_absolute_bounds_respected_to_roundoff": true,
+    "budget_labels_match_actual_errors": true,
+    "forty_four_symbolic_controls": true,
+    "finite_pointwise_arrays": true,
+    "raw_transfer_within_unitarity_bounds_to_roundoff": true
+  },
+  "checks_passed": 24,
+  "checks_total": 24,
+  "cross_route_maximum_differences": {
+    "response_relative_maximum_difference": 1.488631440338395e-11,
+    "response_absolute_maximum_difference": 5.787548218449956e-11,
+    "time_relative_maximum_difference": 2.772226892489016e-13,
+    "time_absolute_maximum_difference": 7.720490913243339e-13,
+    "transfer_error_maximum_difference": 1.5654144647214707e-13,
+    "ambient_projector_maximum_Frobenius_difference": 1.9204185937890215e-12,
+    "training_error_maximum_difference": 1.4568790618341154e-11
+  },
+  "cross_route_by_model": {
+    "response_relative": {
+      "svd_r0": 1.0805578654071724e-11,
+      "svd_r1": 6.325606705104292e-12,
+      "svd_r2": 9.800160682971182e-12,
+      "svd_r3": 1.488631440338395e-11,
+      "svd_r4": 3.7914116290949096e-13,
+      "svd_r5": 4.918683745563724e-14,
+      "poles_r0": 1.0805578654071724e-11,
+      "poles_r1": 5.156763904778927e-12,
+      "poles_r2": 1.7315038292053941e-12,
+      "poles_r3": 1.6004975122996257e-12,
+      "poles_r4": 1.5281109710940655e-12,
+      "poles_r5": 3.5904297367127226e-14,
+      "snapshots_r0": 1.0805578654071724e-11,
+      "snapshots_r1": 2.3065993559612252e-12,
+      "snapshots_r2": 1.0328182753482906e-11,
+      "snapshots_r3": 1.3287149158713873e-12,
+      "snapshots_r4": 6.269429420058259e-13,
+      "snapshots_r5": 3.2205666236703786e-14
+    },
+    "response_absolute": {
+      "svd_r0": 2.5286439608862565e-11,
+      "svd_r1": 1.7323031897831243e-11,
+      "svd_r2": 2.681410649074678e-11,
+      "svd_r3": 5.630695909530914e-11,
+      "svd_r4": 3.2809310823722626e-12,
+      "svd_r5": 5.360329592609516e-13,
+      "poles_r0": 2.5286439608862565e-11,
+      "poles_r1": 1.2240874980307126e-11,
+      "poles_r2": 7.58504370423907e-12,
+      "poles_r3": 9.036327242029074e-12,
+      "poles_r4": 6.135536523288465e-12,
+      "poles_r5": 3.9919671858069523e-13,
+      "snapshots_r0": 2.5286439608862565e-11,
+      "snapshots_r1": 9.478640095039736e-12,
+      "snapshots_r2": 5.787548218449956e-11,
+      "snapshots_r3": 6.142641950646066e-12,
+      "snapshots_r4": 7.096545573404001e-12,
+      "snapshots_r5": 4.149266058454622e-13
+    },
+    "time_relative": {
+      "svd_r0": 6.17284001691587e-14,
+      "svd_r1": 1.3766765505351941e-14,
+      "svd_r2": 6.17284001691587e-14,
+      "svd_r3": 2.772226892489016e-13,
+      "svd_r4": 2.525757381022231e-14,
+      "svd_r5": 3.8477673868056295e-15,
+      "poles_r0": 6.17284001691587e-14,
+      "poles_r1": 3.1530333899354446e-14,
+      "poles_r2": 3.0309088572266774e-14,
+      "poles_r3": 4.7406523151494184e-14,
+      "poles_r4": 2.958744360626042e-14,
+      "poles_r5": 5.714890209004259e-15,
+      "snapshots_r0": 6.17284001691587e-14,
+      "snapshots_r1": 2.531308496145357e-14,
+      "snapshots_r2": 1.780797731498751e-13,
+      "snapshots_r3": 1.6653345369377348e-14,
+      "snapshots_r4": 6.211697822777751e-14,
+      "snapshots_r5": 3.4563090658352677e-15
+    },
+    "time_absolute": {
+      "svd_r0": 1.0080825063596421e-13,
+      "svd_r1": 1.4876988529977098e-13,
+      "svd_r2": 2.41140440948584e-13,
+      "svd_r3": 7.720490913243339e-13,
+      "svd_r4": 7.4495964952348e-14,
+      "svd_r5": 5.467420746843389e-15,
+      "poles_r0": 1.0080825063596421e-13,
+      "poles_r1": 8.704148513061227e-14,
+      "poles_r2": 1.2145839889399213e-13,
+      "poles_r3": 1.1290968160437842e-13,
+      "poles_r4": 1.191269305422793e-13,
+      "poles_r5": 7.046740624949296e-15,
+      "snapshots_r0": 1.0080825063596421e-13,
+      "snapshots_r1": 1.6053824936079764e-13,
+      "snapshots_r2": 5.248024237403115e-13,
+      "snapshots_r3": 7.926992395823618e-14,
+      "snapshots_r4": 1.6620038678638593e-13,
+      "snapshots_r5": 4.146544061593109e-15
+    },
+    "transfer_error": {
+      "svd_r0": 2.2426505097428162e-14,
+      "svd_r1": 2.4868995751603507e-14,
+      "svd_r2": 2.9753977059954195e-14,
+      "svd_r3": 1.2290168882600483e-13,
+      "svd_r4": 1.7985612998927536e-14,
+      "svd_r5": 2.3314683517128287e-15,
+      "poles_r0": 2.2426505097428162e-14,
+      "poles_r1": 3.0309088572266774e-14,
+      "poles_r2": 3.2085445411667024e-14,
+      "poles_r3": 2.5646151868841116e-14,
+      "poles_r4": 1.2878587085651816e-14,
+      "poles_r5": 1.6653345369377348e-15,
+      "snapshots_r0": 2.2426505097428162e-14,
+      "snapshots_r1": 2.4313884239290928e-14,
+      "snapshots_r2": 1.5654144647214707e-13,
+      "snapshots_r3": 1.709743457922741e-14,
+      "snapshots_r4": 2.142730437526552e-14,
+      "snapshots_r5": 1.4432899320127035e-15
+    }
+  },
+  "training_holdout_minimum_spectral_separation": 0.004999999999999005,
+  "full_rank_controls": {
+    "svd_r5": {
+      "response": 5.377183619096285e-14,
+      "time": 7.467664548085325e-15
+    },
+    "poles_r5": {
+      "response": 4.098776418263212e-14,
+      "time": 9.480280109286218e-15
+    },
+    "snapshots_r5": {
+      "response": 4.145601670128502e-14,
+      "time": 7.709750802882957e-15
+    }
+  },
+  "maximum_absolute_bound_excess": 5.913955704954261e-13,
+  "frozen_choices": {
+    "0.01": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    },
+    "0.05": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    },
+    "0.1": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14
+      }
+    }
+  },
+  "heldout_verdicts": {
+    "0.01": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    },
+    "0.05": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    },
+    "0.1": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    }
+  },
+  "protocol_sha256": "f784e5be3f6620f3bd9d21f6e5ba7501990f1f32035ab66340ec6fce226b5f8e",
+  "input_sha256": {
+    "T2_blocks.npz": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b",
+    "T2_independent_geometry.npz": "2990bd3f4ec917f8ae1a264da3688bc235388a716124d9e371ce1026a232237f",
+    "mtft-0.26.2.tar.gz": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope_limitations": "Frozen upstream T2 geometry, finite numerical grids, prescribed candidate families, dimensionless evolution; no global approximation impossibility or physical identification."
+}

@@ -1,0 +1,9 @@
+.........s.............                                                  [100%]
+============================= slowest 6 durations ==============================
+6.91s call     tests/test_surface.py::test_gauge_exact_formulas_and_ast_census
+3.43s call     tests/test_surface_bimodule.py::test_af09_census_exact_pattern
+3.24s call     tests/test_surface_qft.py::test_dynamics_controls_orthonormal_frame
+1.08s call     tests/test_surface.py::test_certified_hodge_and_whitney_family_143
+0.40s call     tests/test_surface_bimodule.py::test_random_alphabet_control
+0.07s call     tests/test_surface_qft.py::test_ising_143_setup_and_sample
+22 passed, 1 skipped in 16.12s

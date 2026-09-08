@@ -1,0 +1,269 @@
+{
+  "scope": {
+    "n_min": 1,
+    "n_max": 1000,
+    "prime_upper_bound": 1002001,
+    "partner_sieve_bound": 2004004
+  },
+  "prime_count": 78650,
+  "residue_order": [
+    1,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "property_order": [
+    "twin_member",
+    "sophie_germain",
+    "safe",
+    "wieferich_base2"
+  ],
+  "property_labels": [
+    "Twin-prime member",
+    "Sophie Germain",
+    "Safe prime",
+    "Wieferich, base 2"
+  ],
+  "total_primes_by_residue": [
+    9827,
+    9827,
+    9828,
+    9846,
+    9831,
+    9808,
+    9856,
+    9824
+  ],
+  "property_counts": {
+    "twin_member": 16371,
+    "sophie_germain": 7760,
+    "safe": 4333,
+    "wieferich_base2": 2
+  },
+  "residue_property_intersections": [
+    [
+      2702,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      2740,
+      2576,
+      1,
+      0
+    ],
+    [
+      2740,
+      0,
+      0,
+      1
+    ],
+    [
+      2742,
+      0,
+      1423,
+      0
+    ],
+    [
+      2742,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2602,
+      1454,
+      0
+    ],
+    [
+      2702,
+      2579,
+      1453,
+      0
+    ]
+  ],
+  "wieferich_base2": [
+    1093,
+    3511
+  ],
+  "legendre_empty_intervals": [],
+  "examples": [
+    {
+      "p": 2,
+      "square_n": 1,
+      "residue_mod30": 2,
+      "position": [
+        1,
+        3
+      ],
+      "properties": {
+        "twin_member": false,
+        "sophie_germain": true,
+        "safe": false,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": null
+    },
+    {
+      "p": 3,
+      "square_n": 1,
+      "residue_mod30": 3,
+      "position": [
+        2,
+        3
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": true,
+        "safe": false,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 1
+    },
+    {
+      "p": 5,
+      "square_n": 2,
+      "residue_mod30": 5,
+      "position": [
+        1,
+        5
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": true,
+        "safe": true,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 3
+    },
+    {
+      "p": 7,
+      "square_n": 2,
+      "residue_mod30": 7,
+      "position": [
+        3,
+        5
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": false,
+        "safe": true,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 2
+    },
+    {
+      "p": 11,
+      "square_n": 3,
+      "residue_mod30": 11,
+      "position": [
+        2,
+        7
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": true,
+        "safe": true,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 5
+    },
+    {
+      "p": 23,
+      "square_n": 4,
+      "residue_mod30": 23,
+      "position": [
+        7,
+        9
+      ],
+      "properties": {
+        "twin_member": false,
+        "sophie_germain": true,
+        "safe": true,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 17
+    },
+    {
+      "p": 1091,
+      "square_n": 33,
+      "residue_mod30": 11,
+      "position": [
+        2,
+        67
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": false,
+        "safe": false,
+        "wieferich_base2": false
+      },
+      "fermat_quotient_base2": 319
+    },
+    {
+      "p": 1093,
+      "square_n": 33,
+      "residue_mod30": 13,
+      "position": [
+        4,
+        67
+      ],
+      "properties": {
+        "twin_member": true,
+        "sophie_germain": false,
+        "safe": false,
+        "wieferich_base2": true
+      },
+      "fermat_quotient_base2": 0
+    },
+    {
+      "p": 3511,
+      "square_n": 59,
+      "residue_mod30": 1,
+      "position": [
+        30,
+        119
+      ],
+      "properties": {
+        "twin_member": false,
+        "sophie_germain": false,
+        "safe": false,
+        "wieferich_base2": true
+      },
+      "fermat_quotient_base2": 0
+    }
+  ],
+  "gates": {
+    "all_5001_small_integers_checked_by_trial_division": true,
+    "sampled_family_rows_checked_independently": 209,
+    "prime_count_anchors": {
+      "10": 4,
+      "100": 25,
+      "1000": 168,
+      "10000": 1229,
+      "100000": 9592,
+      "1000000": 78498
+    },
+    "residue_partition_conserves_all_counts": true,
+    "Wieferich_positives_two_exact_routes": true,
+    "necessary_congruence_restrictions_checked": true,
+    "SG_safe_cutoff_transport_all_square_endpoints": true,
+    "all_square_intervals_nonempty": true
+  },
+  "arithmetic_class": "EXACT finite integer sieve, modular arithmetic, counts, and positions; no infinitude inferred from data.",
+  "runtime_seconds": 0.5574139909999758,
+  "python": "3.12.13",
+  "numpy": "2.3.5"
+}

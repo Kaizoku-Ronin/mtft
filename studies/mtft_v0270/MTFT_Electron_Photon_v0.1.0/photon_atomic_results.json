@@ -1,0 +1,1036 @@
+{
+  "maxwell": {
+    "classification": "DIAGNOSTIC: imported Maxwell theory and spatial geometry",
+    "units": "c=1; periodic spatial box length 2*pi; continuous time",
+    "operator": "d_i=(exp(i*k_i*a)-1)/a; K=C(d)^dagger C(d)=|d|^2 I-d d^dagger",
+    "mode_selection": "Three fixed physical Fourier momenta; not a scan over every grid momentum.",
+    "zero_momentum": {
+      "K": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kernel_dimension": 3,
+      "interpretation": "Separate homogeneous zero-frequency sector. The nonzero-momentum two-polarization count is not applied to k=0."
+    },
+    "records": [
+      {
+        "mode": [
+          1,
+          0,
+          0
+        ],
+        "points_per_axis": 16,
+        "spacing": 0.39269908169872414,
+        "omega_continuum_c1": 1.0,
+        "omega_discrete": 0.9935868511442058,
+        "phase_speed_over_assumed_c": 0.9935868511442058,
+        "relative_dispersion_error": 0.006413148855794248,
+        "eigenvalues_omega_squared": [
+          0.0,
+          0.9872148307666582,
+          0.9872148307666582
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          0.9872148307666582,
+          0.9872148307666582
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 6.6510581788068656e-18,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 5.430566262547194e-18
+      },
+      {
+        "mode": [
+          1,
+          0,
+          0
+        ],
+        "points_per_axis": 32,
+        "spacing": 0.19634954084936207,
+        "omega_continuum_c1": 1.0,
+        "omega_discrete": 0.9983943930356183,
+        "phase_speed_over_assumed_c": 0.9983943930356183,
+        "relative_dispersion_error": 0.0016056069643817228,
+        "eigenvalues_omega_squared": [
+          0.0,
+          0.9967913640449607,
+          0.9967913640449607
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          0.9967913640449607,
+          0.9967913640449607
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 1.1994819495149572e-17,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 9.793729106634859e-18
+      },
+      {
+        "mode": [
+          1,
+          0,
+          0
+        ],
+        "points_per_axis": 64,
+        "spacing": 0.09817477042468103,
+        "omega_continuum_c1": 1.0,
+        "omega_discrete": 0.9995984531496791,
+        "phase_speed_over_assumed_c": 0.9995984531496791,
+        "relative_dispersion_error": 0.00040154685032089965,
+        "eigenvalues_omega_squared": [
+          0.0,
+          0.9991970675392312,
+          0.9991970675392312
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          0.9991970675392312,
+          0.9991970675392312
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 2.8090295247504517e-18,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 2.293563002683779e-18
+      },
+      {
+        "mode": [
+          1,
+          0,
+          0
+        ],
+        "points_per_axis": 128,
+        "spacing": 0.04908738521234052,
+        "omega_continuum_c1": 1.0,
+        "omega_discrete": 0.9998996042161418,
+        "phase_speed_over_assumed_c": 0.9998996042161418,
+        "relative_dispersion_error": 0.00010039578385823145,
+        "eigenvalues_omega_squared": [
+          0.0,
+          0.999799218511597,
+          0.999799218511597
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          0.999799218511597,
+          0.999799218511597
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 6.368822157770794e-19,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 5.2001215163565955e-19
+      },
+      {
+        "mode": [
+          1,
+          1,
+          0
+        ],
+        "points_per_axis": 16,
+        "spacing": 0.39269908169872414,
+        "omega_continuum_c1": 1.4142135623730951,
+        "omega_discrete": 1.4051440002837134,
+        "phase_speed_over_assumed_c": 0.9935868511442058,
+        "relative_dispersion_error": 0.006413148855794248,
+        "eigenvalues_omega_squared": [
+          0.0,
+          1.9744296615333163,
+          1.9744296615333163
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          1.9744296615333163,
+          1.9744296615333163
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 5.759985344895009e-18,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 1.438846486476821e-17
+      },
+      {
+        "mode": [
+          1,
+          1,
+          0
+        ],
+        "points_per_axis": 32,
+        "spacing": 0.19634954084936207,
+        "omega_continuum_c1": 1.4142135623730951,
+        "omega_discrete": 1.4119428912282257,
+        "phase_speed_over_assumed_c": 0.9983943930356182,
+        "relative_dispersion_error": 0.0016056069643818338,
+        "eigenvalues_omega_squared": [
+          0.0,
+          1.9935827280899214,
+          1.9935827280899214
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          1.9935827280899214,
+          1.9935827280899214
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 1.0387818396608367e-17,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 2.4362262289420545e-17
+      },
+      {
+        "mode": [
+          1,
+          1,
+          0
+        ],
+        "points_per_axis": 64,
+        "spacing": 0.09817477042468103,
+        "omega_continuum_c1": 1.4142135623730951,
+        "omega_discrete": 1.413645689371443,
+        "phase_speed_over_assumed_c": 0.9995984531496791,
+        "relative_dispersion_error": 0.00040154685032089965,
+        "eigenvalues_omega_squared": [
+          0.0,
+          1.9983941350784624,
+          1.9983941350784624
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          1.9983941350784624,
+          1.9983941350784624
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 0.0,
+        "matrix_identity_relative_residual": 2.4326909284144196e-18,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 2.3782821308125178e-17
+      },
+      {
+        "mode": [
+          1,
+          1,
+          0
+        ],
+        "points_per_axis": 128,
+        "spacing": 0.04908738521234052,
+        "omega_continuum_c1": 1.4142135623730951,
+        "omega_discrete": 1.4140715812939577,
+        "phase_speed_over_assumed_c": 0.9998996042161418,
+        "relative_dispersion_error": 0.00010039578385823145,
+        "eigenvalues_omega_squared": [
+          0.0,
+          1.9995984370231938,
+          1.999598437023194
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          1.999598437023194,
+          1.999598437023194
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 1.1104459816221378e-16,
+        "matrix_identity_relative_residual": 1.1104596793771987e-16,
+        "gauge_kernel_relative_residual": 0.0,
+        "transversality_relative_residual": 0.0,
+        "eigenpair_relative_residual": 1.0759107645637459e-17
+      },
+      {
+        "mode": [
+          1,
+          2,
+          3
+        ],
+        "points_per_axis": 16,
+        "spacing": 0.39269908169872414,
+        "omega_continuum_c1": 3.7416573867739413,
+        "omega_discrete": 3.576566376466047,
+        "phase_speed_over_assumed_c": 0.9558775715565353,
+        "relative_dispersion_error": 0.0441224284434647,
+        "eigenvalues_omega_squared": [
+          -4.776266708602927e-28,
+          12.791827045267462,
+          12.791827045267473
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          12.791827045267471,
+          12.791827045267471
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 6.943327302324027e-16,
+        "matrix_identity_relative_residual": 1.9675750972457037e-16,
+        "gauge_kernel_relative_residual": 1.2913916860866126e-16,
+        "transversality_relative_residual": 2.489382524446719e-16,
+        "eigenpair_relative_residual": 9.207566419899634e-16
+      },
+      {
+        "mode": [
+          1,
+          2,
+          3
+        ],
+        "points_per_axis": 32,
+        "spacing": 0.19634954084936207,
+        "omega_continuum_c1": 3.7416573867739413,
+        "omega_discrete": 3.6997848921322696,
+        "phase_speed_over_assumed_c": 0.9888091050800955,
+        "relative_dispersion_error": 0.011190894919904548,
+        "eigenvalues_omega_squared": [
+          8.881784197001252e-16,
+          13.688408248050187,
+          13.688408248050191
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          13.68840824805019,
+          13.68840824805019
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 1.2977088403637283e-16,
+        "matrix_identity_relative_residual": 1.3248881908165285e-16,
+        "gauge_kernel_relative_residual": 1.4476842489292603e-16,
+        "transversality_relative_residual": 9.064632295256016e-17,
+        "eigenpair_relative_residual": 2.0596162802392638e-16
+      },
+      {
+        "mode": [
+          1,
+          2,
+          3
+        ],
+        "points_per_axis": 64,
+        "spacing": 0.09817477042468103,
+        "omega_continuum_c1": 3.7416573867739413,
+        "omega_discrete": 3.7311515542347817,
+        "phase_speed_over_assumed_c": 0.9971921981482602,
+        "relative_dispersion_error": 0.0028078018517397885,
+        "eigenvalues_omega_squared": [
+          8.881784197001252e-16,
+          13.921491920668625,
+          13.921491920668629
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          13.921491920668627,
+          13.921491920668627
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 1.2759816616802195e-16,
+        "matrix_identity_relative_residual": 1.921201922103574e-16,
+        "gauge_kernel_relative_residual": 6.913521149942236e-17,
+        "transversality_relative_residual": 1.365596198311178e-16,
+        "eigenpair_relative_residual": 4.762347878166333e-16
+      },
+      {
+        "mode": [
+          1,
+          2,
+          3
+        ],
+        "points_per_axis": 128,
+        "spacing": 0.04908738521234052,
+        "omega_continuum_c1": 3.7416573867739413,
+        "omega_discrete": 3.739028568288005,
+        "phase_speed_over_assumed_c": 0.9992974187066863,
+        "relative_dispersion_error": 0.0007025812933136866,
+        "eigenvalues_omega_squared": [
+          -2.220446049250313e-16,
+          13.980334634473845,
+          13.980334634473854
+        ],
+        "expected_eigenvalues": [
+          0.0,
+          13.980334634473854,
+          13.980334634473854
+        ],
+        "transverse_mode_count": 2,
+        "gauge_nullity": 1,
+        "spectral_identity_relative_residual": 6.353055509200632e-16,
+        "matrix_identity_relative_residual": 6.359510260035214e-17,
+        "gauge_kernel_relative_residual": 7.614259710080567e-17,
+        "transversality_relative_residual": 2.3766033113783003e-16,
+        "eigenpair_relative_residual": 6.859932349975442e-16
+      }
+    ],
+    "refinement": [
+      {
+        "mode": [
+          1,
+          0,
+          0
+        ],
+        "coarse_to_fine_error_ratios": [
+          3.994220876006093,
+          3.9985544976846117,
+          3.999638579324433
+        ]
+      },
+      {
+        "mode": [
+          1,
+          1,
+          0
+        ],
+        "coarse_to_fine_error_ratios": [
+          3.9942208760058167,
+          3.998554497684888,
+          3.999638579324433
+        ]
+      },
+      {
+        "mode": [
+          1,
+          2,
+          3
+        ],
+        "coarse_to_fine_error_ratios": [
+          3.942707777997887,
+          3.985642688058765,
+          3.9964084988613107
+        ]
+      }
+    ],
+    "worst_relative_algebra_residual": 9.207566419899634e-16,
+    "gates": {
+      "two_transverse_one_gauge_at_each_sampled_nonzero_momentum": true,
+      "relative_algebra_residual_below_1e_minus_10": true,
+      "dispersion_refinement_ratios_between_3_and_5": true,
+      "zero_momentum_curl_exactly_zero_in_float_arithmetic": true
+    },
+    "all_gates_passed": true,
+    "limitations": [
+      "The assumed continuum c=1 is recovered under refinement, not predicted by MTFT.",
+      "No time discretization, matter coupling, photon quantization, or Lorentz restoration theorem is tested.",
+      "Two transverse modes follow from the supplied Maxwell operator in three spatial dimensions."
+    ]
+  },
+  "coulomb": {
+    "classification": "DIAGNOSTIC: imported nonrelativistic Coulomb Hamiltonian",
+    "units": "Bohr radius a0=1/(m_e*alpha), Hartree E_h=m_e*alpha^2, hbar=c=1",
+    "hamiltonian": "-(1/2)u_second_derivative+[ell*(ell+1)/(2*r^2)-1/r]*u",
+    "boundary_conditions": "u(0)=u(R)=0; positive interior grid; point nucleus with infinite mass",
+    "solver": "scipy.linalg.eigh_tridiagonal; selected bottom 3-ell eigenpairs; LAPACK stebz, tol=0",
+    "normalization": "Eigenvectors have unit discrete Euclidean norm; residuals refer to this same norm.",
+    "records": [
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.4987562112089143,
+        "continuum_energy_hartree": -0.5,
+        "signed_continuum_error_hartree": 0.0012437887910857204,
+        "absolute_continuum_error_hartree": 0.0012437887910857204,
+        "relative_continuum_error": 0.0024875775821714408,
+        "eigenpair_l2_residual_hartree": 1.773971489098615e-14,
+        "eigenpair_residual_relative_to_abs_energy": 3.556790771184102e-14
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.12492197250392759,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": 7.802749607241366e-05,
+        "absolute_continuum_error_hartree": 7.802749607241366e-05,
+        "relative_continuum_error": 0.0006242199685793093,
+        "eigenpair_l2_residual_hartree": 1.3592088890248709e-14,
+        "eigenpair_residual_relative_to_abs_energy": 1.0880462914417533e-13
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.055540132024212346,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": 1.5423531343206065e-05,
+        "absolute_continuum_error_hartree": 1.5423531343206065e-05,
+        "relative_continuum_error": 0.00027762356417770917,
+        "eigenpair_l2_residual_hartree": 2.2969845733797523e-14,
+        "eigenpair_residual_relative_to_abs_energy": 4.135720405522978e-13
+      },
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.4996878900156316,
+        "continuum_energy_hartree": -0.5,
+        "signed_continuum_error_hartree": 0.00031210998436842496,
+        "absolute_continuum_error_hartree": 0.00031210998436842496,
+        "relative_continuum_error": 0.0006242199687368499,
+        "eigenpair_l2_residual_hartree": 8.716577268505167e-14,
+        "eigenpair_residual_relative_to_abs_energy": 1.7444043457271877e-13
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.12498047485107816,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": 1.952514892183954e-05,
+        "absolute_continuum_error_hartree": 1.952514892183954e-05,
+        "relative_continuum_error": 0.00015620119137471633,
+        "eigenpair_l2_residual_hartree": 8.330781676693239e-14,
+        "eigenpair_residual_relative_to_abs_energy": 6.665666526407322e-13
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.05555169806652629,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": 3.8574890292644715e-06,
+        "absolute_continuum_error_hartree": 3.8574890292644715e-06,
+        "relative_continuum_error": 6.943480252676049e-05,
+        "eigenpair_l2_residual_hartree": 1.2081742091935318e-13,
+        "eigenpair_residual_relative_to_abs_energy": 2.174864587841537e-12
+      },
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.499921899404438,
+        "continuum_energy_hartree": -0.5,
+        "signed_continuum_error_hartree": 7.810059556201399e-05,
+        "absolute_continuum_error_hartree": 7.810059556201399e-05,
+        "relative_continuum_error": 0.00015620119112402797,
+        "eigenpair_l2_residual_hartree": 2.200129239059161e-13,
+        "eigenpair_residual_relative_to_abs_energy": 4.40094591111171e-13
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.12499511756910221,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": 4.882430897787393e-06,
+        "absolute_continuum_error_hartree": 4.882430897787393e-06,
+        "relative_continuum_error": 3.9059447182299145e-05,
+        "eigenpair_l2_residual_hartree": 5.635928634902735e-13,
+        "eigenpair_residual_relative_to_abs_energy": 4.508919023806648e-12
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.05555459108299024,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": 9.64472565312402e-07,
+        "absolute_continuum_error_hartree": 9.64472565312402e-07,
+        "relative_continuum_error": 1.7360506175623236e-05,
+        "eigenpair_l2_residual_hartree": 4.661402377867043e-13,
+        "eigenpair_residual_relative_to_abs_energy": 8.3906699464381e-12
+      },
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.49998047027609216,
+        "continuum_energy_hartree": -0.5,
+        "signed_continuum_error_hartree": 1.952972390784069e-05,
+        "absolute_continuum_error_hartree": 1.952972390784069e-05,
+        "relative_continuum_error": 3.905944781568138e-05,
+        "eigenpair_l2_residual_hartree": 1.1429133019193602e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.2859158904511547e-12
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.124998779321442,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": 1.2206785579976787e-06,
+        "absolute_continuum_error_hartree": 1.2206785579976787e-06,
+        "relative_continuum_error": 9.76542846398143e-06,
+        "eigenpair_l2_residual_hartree": 1.083986994996043e-12,
+        "eigenpair_residual_relative_to_abs_energy": 8.67198064557498e-12
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.05555531443096977,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": 2.411245857841804e-07,
+        "absolute_continuum_error_hartree": 2.411245857841804e-07,
+        "relative_continuum_error": 4.340242544115247e-06,
+        "eigenpair_l2_residual_hartree": 3.889798196698954e-12,
+        "eigenpair_residual_relative_to_abs_energy": 7.00166714299173e-11
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.12502608148426383,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": -2.608148426383461e-05,
+        "absolute_continuum_error_hartree": 2.608148426383461e-05,
+        "relative_continuum_error": 0.00020865187411067687,
+        "eigenpair_l2_residual_hartree": 2.6366461597334255e-14,
+        "eigenpair_residual_relative_to_abs_energy": 2.1088769066678954e-13
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.05556757451141897,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.2018955863418723e-05,
+        "absolute_continuum_error_hartree": 1.2018955863418723e-05,
+        "relative_continuum_error": 0.00021634120554153702,
+        "eigenpair_l2_residual_hartree": 1.966733876758571e-14,
+        "eigenpair_residual_relative_to_abs_energy": 3.539355269779524e-13
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.12500651290375778,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": -6.512903757777133e-06,
+        "absolute_continuum_error_hartree": 6.512903757777133e-06,
+        "relative_continuum_error": 5.2103230062217065e-05,
+        "eigenpair_l2_residual_hartree": 8.061704288309995e-14,
+        "eigenpair_residual_relative_to_abs_energy": 6.449027415488889e-13
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.05555855725390886,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -3.001698353308213e-06,
+        "absolute_continuum_error_hartree": 3.001698353308213e-06,
+        "relative_continuum_error": 5.4030570359547836e-05,
+        "eigenpair_l2_residual_hartree": 1.579950100888877e-13,
+        "eigenpair_residual_relative_to_abs_energy": 2.843756531812601e-12
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.12500162775922327,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": -1.6277592232716298e-06,
+        "absolute_continuum_error_hartree": 1.6277592232716298e-06,
+        "relative_continuum_error": 1.3022073786173038e-05,
+        "eigenpair_l2_residual_hartree": 4.946124005667926e-13,
+        "eigenpair_residual_relative_to_abs_energy": 3.956847678171915e-12
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.05555630579056049,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -7.502350049398698e-07,
+        "absolute_continuum_error_hartree": 7.502350049398698e-07,
+        "relative_continuum_error": 1.3504230088917657e-05,
+        "eigenpair_l2_residual_hartree": 3.3019448575312737e-13,
+        "eigenpair_residual_relative_to_abs_energy": 5.943420482238586e-12
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.1250004069091953,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": -4.069091953107229e-07,
+        "absolute_continuum_error_hartree": 4.069091953107229e-07,
+        "relative_continuum_error": 3.255273562485783e-06,
+        "eigenpair_l2_residual_hartree": 3.1554446889090012e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.524347533685412e-11
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.055555743103023955,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.8754746840266012e-07,
+        "absolute_continuum_error_hartree": 1.8754746840266012e-07,
+        "relative_continuum_error": 3.375854431247882e-06,
+        "eigenpair_l2_residual_hartree": 1.268699042736543e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.2836505676538894e-11
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.1,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 999,
+        "energy_hartree": -0.05555658433913064,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.0287835750869e-06,
+        "absolute_continuum_error_hartree": 1.0287835750869e-06,
+        "relative_continuum_error": 1.8518104351564202e-05,
+        "eigenpair_l2_residual_hartree": 3.252357389979675e-14,
+        "eigenpair_residual_relative_to_abs_energy": 5.854134894482551e-13
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.05,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 1999,
+        "energy_hartree": -0.05555581275571641,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -2.572001608566743e-07,
+        "absolute_continuum_error_hartree": 2.572001608566743e-07,
+        "relative_continuum_error": 4.629602895420137e-06,
+        "eigenpair_l2_residual_hartree": 7.073186311757825e-14,
+        "eigenpair_residual_relative_to_abs_energy": 1.2731676418558075e-12
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.025,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 3999,
+        "energy_hartree": -0.05555561985604313,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -6.430048758027107e-08,
+        "absolute_continuum_error_hartree": 6.430048758027107e-08,
+        "relative_continuum_error": 1.1574087764448793e-06,
+        "eigenpair_l2_residual_hartree": 5.133920340221517e-13,
+        "eigenpair_residual_relative_to_abs_energy": 9.241045916731083e-12
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.055555571631449106,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.607589355384631e-08,
+        "absolute_continuum_error_hartree": 1.607589355384631e-08,
+        "relative_continuum_error": 2.893660839692336e-07,
+        "eigenpair_l2_residual_hartree": 1.0683321592698173e-12,
+        "eigenpair_residual_relative_to_abs_energy": 1.9229973302354643e-11
+      }
+    ],
+    "finest_grid": [
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.49998047027609216,
+        "continuum_energy_hartree": -0.5,
+        "signed_continuum_error_hartree": 1.952972390784069e-05,
+        "absolute_continuum_error_hartree": 1.952972390784069e-05,
+        "relative_continuum_error": 3.905944781568138e-05,
+        "eigenpair_l2_residual_hartree": 1.1429133019193602e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.2859158904511547e-12
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.124998779321442,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": 1.2206785579976787e-06,
+        "absolute_continuum_error_hartree": 1.2206785579976787e-06,
+        "relative_continuum_error": 9.76542846398143e-06,
+        "eigenpair_l2_residual_hartree": 1.083986994996043e-12,
+        "eigenpair_residual_relative_to_abs_energy": 8.67198064557498e-12
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.05555531443096977,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": 2.411245857841804e-07,
+        "absolute_continuum_error_hartree": 2.411245857841804e-07,
+        "relative_continuum_error": 4.340242544115247e-06,
+        "eigenpair_l2_residual_hartree": 3.889798196698954e-12,
+        "eigenpair_residual_relative_to_abs_energy": 7.00166714299173e-11
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.1250004069091953,
+        "continuum_energy_hartree": -0.125,
+        "signed_continuum_error_hartree": -4.069091953107229e-07,
+        "absolute_continuum_error_hartree": 4.069091953107229e-07,
+        "relative_continuum_error": 3.255273562485783e-06,
+        "eigenpair_l2_residual_hartree": 3.1554446889090012e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.524347533685412e-11
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.055555743103023955,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.8754746840266012e-07,
+        "absolute_continuum_error_hartree": 1.8754746840266012e-07,
+        "relative_continuum_error": 3.375854431247882e-06,
+        "eigenpair_l2_residual_hartree": 1.268699042736543e-12,
+        "eigenpair_residual_relative_to_abs_energy": 2.2836505676538894e-11
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.0125,
+        "box_radius_bohr": 100.0,
+        "interior_grid_points": 7999,
+        "energy_hartree": -0.055555571631449106,
+        "continuum_energy_hartree": -0.05555555555555555,
+        "signed_continuum_error_hartree": -1.607589355384631e-08,
+        "absolute_continuum_error_hartree": 1.607589355384631e-08,
+        "relative_continuum_error": 2.893660839692336e-07,
+        "eigenpair_l2_residual_hartree": 1.0683321592698173e-12,
+        "eigenpair_residual_relative_to_abs_energy": 1.9229973302354643e-11
+      }
+    ],
+    "refinement": [
+      {
+        "n": 1,
+        "ell": 0,
+        "coarse_to_fine_error_ratios": [
+          3.9850977327835526,
+          3.996256137644958,
+          3.999062963233114
+        ]
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "coarse_to_fine_error_ratios": [
+          3.996256130222764,
+          3.999063034499453,
+          3.999767887949317
+        ]
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "coarse_to_fine_error_ratios": [
+          3.998334467369037,
+          3.9995839881821764,
+          3.9998930933391312
+        ]
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "coarse_to_fine_error_ratios": [
+          4.004586162153926,
+          4.001146892405169,
+          4.000300907500123
+        ]
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "coarse_to_fine_error_ratios": [
+          4.004051856234144,
+          4.001010794675989,
+          4.000240639501102
+        ]
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "coarse_to_fine_error_ratios": [
+          3.999933637911655,
+          3.9999721702824145,
+          3.999807996046762
+        ]
+      }
+    ],
+    "boundary_check": [
+      {
+        "n": 1,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.49998047027609216,
+        "energy_R150_hartree": -0.49998047027476544,
+        "signed_boundary_shift_hartree": 1.326716514427062e-12,
+        "absolute_boundary_shift_hartree": 1.326716514427062e-12,
+        "relative_boundary_shift": 2.653433028854124e-12,
+        "R150_eigenpair_l2_residual_hartree": 1.4497775596224658e-12
+      },
+      {
+        "n": 2,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.124998779321442,
+        "energy_R150_hartree": -0.12499877931941326,
+        "signed_boundary_shift_hartree": 2.028738288473164e-12,
+        "absolute_boundary_shift_hartree": 2.028738288473164e-12,
+        "relative_boundary_shift": 1.6229906307785313e-11,
+        "R150_eigenpair_l2_residual_hartree": 2.616354426745076e-12
+      },
+      {
+        "n": 3,
+        "ell": 0,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.05555531443096977,
+        "energy_R150_hartree": -0.055555314430120156,
+        "signed_boundary_shift_hartree": 8.496120473822089e-13,
+        "absolute_boundary_shift_hartree": 8.496120473822089e-13,
+        "relative_boundary_shift": 1.529301685287976e-11,
+        "R150_eigenpair_l2_residual_hartree": 3.658985395302693e-12
+      },
+      {
+        "n": 2,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.1250004069091953,
+        "energy_R150_hartree": -0.12500040691135586,
+        "signed_boundary_shift_hartree": -2.160549517071786e-12,
+        "absolute_boundary_shift_hartree": 2.160549517071786e-12,
+        "relative_boundary_shift": 1.7284396136574287e-11,
+        "R150_eigenpair_l2_residual_hartree": 1.5741804373779524e-12
+      },
+      {
+        "n": 3,
+        "ell": 1,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.055555743103023955,
+        "energy_R150_hartree": -0.05555574310183228,
+        "signed_boundary_shift_hartree": 1.1916717612692196e-12,
+        "absolute_boundary_shift_hartree": 1.1916717612692196e-12,
+        "relative_boundary_shift": 2.1450091702845953e-11,
+        "R150_eigenpair_l2_residual_hartree": 6.025545676293189e-12
+      },
+      {
+        "n": 3,
+        "ell": 2,
+        "spacing_bohr": 0.0125,
+        "energy_R100_hartree": -0.055555571631449106,
+        "energy_R150_hartree": -0.055555571631190064,
+        "signed_boundary_shift_hartree": 2.5904278722066465e-13,
+        "absolute_boundary_shift_hartree": 2.5904278722066465e-13,
+        "relative_boundary_shift": 4.662770169971964e-12,
+        "R150_eigenpair_l2_residual_hartree": 4.668347506288994e-12
+      }
+    ],
+    "independent_ground_control": [
+      {
+        "spacing_bohr": 0.1,
+        "infinite_grid_ground_energy_hartree": -0.4987562112089027,
+        "finite_box_solver_minus_infinite_grid_hartree": -1.1601830607332886e-14
+      },
+      {
+        "spacing_bohr": 0.05,
+        "infinite_grid_ground_energy_hartree": -0.4996878900157145,
+        "finite_box_solver_minus_infinite_grid_hartree": 8.293365993949919e-14
+      },
+      {
+        "spacing_bohr": 0.025,
+        "infinite_grid_ground_energy_hartree": -0.49992189940452997,
+        "finite_box_solver_minus_infinite_grid_hartree": 9.198197759019422e-14
+      },
+      {
+        "spacing_bohr": 0.0125,
+        "infinite_grid_ground_energy_hartree": -0.49998047027572984,
+        "finite_box_solver_minus_infinite_grid_hartree": -3.6232128408641984e-13
+      }
+    ],
+    "independent_ground_derivation": "On the infinite positive radial grid, u_j=j*exp(-j*asinh(h)) solves the ell=0 difference equation: sinh(asinh(h))/h^2=1/h cancels the 1/j Coulomb term. Its eigenvalue is (1-sqrt(1+h^2))/h^2=-1/(1+sqrt(1+h^2)). This verifies the discretized ground state independently of the eigensolver; the continuum value remains -1/2.",
+    "gates": {
+      "finest_ground_relative_continuum_error_below_1e_minus_4": true,
+      "all_refinement_ratios_between_3_and_5": true,
+      "max_relative_boundary_shift_below_1e_minus_8": true,
+      "max_absolute_eigenpair_residual_below_1e_minus_8_hartree": true,
+      "ground_infinite_grid_control_agrees_below_1e_minus_8_hartree": true
+    },
+    "all_gates_passed": true,
+    "limitations": [
+      "Finite-difference convergence is distinct from a small matrix eigensolver residual.",
+      "No reduced-mass correction, relativity, radiative shift, nuclear structure, or hyperfine effects.",
+      "The Coulomb law and electron mass are supplied; this is not an independent MTFT spectrum prediction.",
+      "The boundary comparison is numerical evidence, not a rigorous tail bound."
+    ]
+  },
+  "all_gates_passed": true
+}

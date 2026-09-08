@@ -1,0 +1,113 @@
+{
+  "epistemic": "DIAGNOSTIC: float64, frozen certified period inputs; no interval bounds",
+  "dps": 50,
+  "frame_seed": 143,
+  "definitions": {
+    "frame": "adapted real coordinates a=R h, h=Ri a; z=a[:13]+i a[13:]",
+    "operator": "O_adapted=R O_Hecke Ri",
+    "adjoint": "O_dagger_G=G^-1 O^T G; transported adjoint is O_adapted^T",
+    "complex_parts": "O(z)=L z+B conjugate(z); L=(A+D+i(C-B))/2; B=(A-D+i(C+B))/2",
+    "primitive_channels": "fixed[i] is B in z->B conjugate(z), not a complex-linear action",
+    "antilinear_kernel": "kernel(B conjugate(z))=conjugate(kernel(B)); conjugate its right nullspace/projector"
+  },
+  "frame": {
+    "R_Ri_residual": 1.3928655030903329e-14,
+    "Ri_R_residual": 1.5280200429856647e-14,
+    "R_transpose_R_vs_G_rel": 1.7116858024283501e-15,
+    "Ri_transpose_G_Ri_vs_I_rel": 5.808029182313498e-15,
+    "adapted_J_vs_standard_rel": 5.191639751707963e-15,
+    "J_squared_residual_rel": 7.898493557258298e-15,
+    "G_condition_number": 327.76945708621497,
+    "STAR_bridge_vs_direct_rel": 8.898961183032235e-16,
+    "next_seed_transition_isometry_rel": 4.958763603806327e-15,
+    "next_seed_transition_complex_linear_rel": 4.831600869921512e-15,
+    "next_seed_operator_conjugacy_max_rel": 4.6519145837605554e-15
+  },
+  "primitive_complex_symmetry_residuals": [
+    7.420771912991614e-15,
+    9.745684112034747e-15,
+    1.1099043607816307e-14
+  ],
+  "operators": {
+    "T2": {
+      "complex_linear_commutator_rel": 7.578593033121338e-15,
+      "complex_antilinear_anticommutator_rel": 2.0,
+      "linear_component_fraction": 1.0000000000000002,
+      "antilinear_component_fraction": 3.789296516560669e-15,
+      "complex_reconstruction_rel": 5.253352627870267e-17,
+      "adapted_selfadjoint_defect_rel": 7.399706222591864e-15,
+      "transported_hodge_adjoint_residual_rel": 8.12383175123172e-15,
+      "adapted_isometry_defect_rel": 3.1132471299766262
+    },
+    "T3": {
+      "complex_linear_commutator_rel": 6.731866103214201e-15,
+      "complex_antilinear_anticommutator_rel": 1.9999999999999996,
+      "linear_component_fraction": 1.0000000000000002,
+      "antilinear_component_fraction": 3.3659330516071007e-15,
+      "complex_reconstruction_rel": 6.192257477715778e-17,
+      "adapted_selfadjoint_defect_rel": 6.2969094011023e-15,
+      "transported_hodge_adjoint_residual_rel": 6.841714333356565e-15,
+      "adapted_isometry_defect_rel": 4.269750488116283
+    },
+    "T5": {
+      "complex_linear_commutator_rel": 7.639029564034627e-15,
+      "complex_antilinear_anticommutator_rel": 2.0,
+      "linear_component_fraction": 1.0000000000000002,
+      "antilinear_component_fraction": 3.819514782017315e-15,
+      "complex_reconstruction_rel": 5.512246569048563e-17,
+      "adapted_selfadjoint_defect_rel": 7.465420607525395e-15,
+      "transported_hodge_adjoint_residual_rel": 8.145260408190793e-15,
+      "adapted_isometry_defect_rel": 8.809959399190484
+    },
+    "T7": {
+      "complex_linear_commutator_rel": 6.9876411163422475e-15,
+      "complex_antilinear_anticommutator_rel": 2.0000000000000004,
+      "linear_component_fraction": 1.0000000000000002,
+      "antilinear_component_fraction": 3.4938205581711238e-15,
+      "complex_reconstruction_rel": 5.2969988514538076e-17,
+      "adapted_selfadjoint_defect_rel": 7.013789482158675e-15,
+      "transported_hodge_adjoint_residual_rel": 7.76024443131127e-15,
+      "adapted_isometry_defect_rel": 9.482777911723815
+    },
+    "W11": {
+      "complex_linear_commutator_rel": 7.24295025578746e-15,
+      "complex_antilinear_anticommutator_rel": 2.0,
+      "linear_component_fraction": 0.9999999999999998,
+      "antilinear_component_fraction": 3.62147512789373e-15,
+      "complex_reconstruction_rel": 6.423659282475263e-17,
+      "adapted_selfadjoint_defect_rel": 6.888295701262962e-15,
+      "transported_hodge_adjoint_residual_rel": 7.694605013489522e-15,
+      "adapted_isometry_defect_rel": 7.648388803724902e-15
+    },
+    "W13": {
+      "complex_linear_commutator_rel": 7.248749831563169e-15,
+      "complex_antilinear_anticommutator_rel": 1.9999999999999996,
+      "linear_component_fraction": 1.0,
+      "antilinear_component_fraction": 3.624374915781585e-15,
+      "complex_reconstruction_rel": 6.188114448395574e-17,
+      "adapted_selfadjoint_defect_rel": 6.557851553648217e-15,
+      "transported_hodge_adjoint_residual_rel": 7.854078713548645e-15,
+      "adapted_isometry_defect_rel": 7.319118903588752e-15
+    },
+    "W143": {
+      "complex_linear_commutator_rel": 6.40601427813428e-15,
+      "complex_antilinear_anticommutator_rel": 2.0,
+      "linear_component_fraction": 1.0,
+      "antilinear_component_fraction": 3.20300713906714e-15,
+      "complex_reconstruction_rel": 5.368525133263556e-17,
+      "adapted_selfadjoint_defect_rel": 6.113981328940547e-15,
+      "transported_hodge_adjoint_residual_rel": 7.316236475679992e-15,
+      "adapted_isometry_defect_rel": 7.361642018043837e-15
+    },
+    "STAR": {
+      "complex_linear_commutator_rel": 2.0,
+      "complex_antilinear_anticommutator_rel": 7.839917365742821e-15,
+      "linear_component_fraction": 3.919958682871411e-15,
+      "antilinear_component_fraction": 1.0000000000000002,
+      "complex_reconstruction_rel": 0.0,
+      "adapted_selfadjoint_defect_rel": 7.616543012292527e-15,
+      "transported_hodge_adjoint_residual_rel": 8.356781829450267e-15,
+      "adapted_isometry_defect_rel": 8.240882762307805e-15
+    }
+  }
+}

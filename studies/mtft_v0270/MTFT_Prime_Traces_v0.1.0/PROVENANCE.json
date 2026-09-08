@@ -1,0 +1,15 @@
+{
+  "bundle": "MTFT_Prime_Traces",
+  "version": "0.1.0",
+  "date_UTC": "2026-09-06",
+  "context_mtft_release": "0.26.0",
+  "requires_mtft_import": false,
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "arithmetic": "Exact finite integer sieve and modular arithmetic; plot coordinates may be floating point.",
+  "membership_range": "All primes below 1002001; partner primality sieve through 2004004.",
+  "theorem_status": "Supplied by family_catalogue.json and its mathematical sources, never inferred from finite data.",
+  "validation": "Builder gates and four CLI checks passed; both scientific figures visually inspected.",
+  "scope": "First 1000 consecutive-square intervals; four selected open-infinitude overlays, not an exhaustive prime taxonomy."
+}

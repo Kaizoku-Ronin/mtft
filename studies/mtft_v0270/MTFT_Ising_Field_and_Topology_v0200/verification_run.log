@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "number_of_gates": 165,
+  "class_totals": {
+    "EXACT": 142,
+    "Recorded EXACT construction checks": 9,
+    "DIAGNOSTIC": 7,
+    "Recorded EXACT construction check": 1,
+    "Integration": 6
+  },
+  "independent_cycle_enumeration": {
+    "cycles": 536870912,
+    "coefficient_checks": 340,
+    "log": "Enumerated 536870912 even subgraphs (rank 29) in 4.00153 seconds"
+  }
+}

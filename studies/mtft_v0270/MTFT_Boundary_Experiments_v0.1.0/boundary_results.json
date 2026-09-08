@@ -1,0 +1,2279 @@
+{
+  "beta_grid": [
+    0.0,
+    0.04,
+    0.08,
+    0.12,
+    0.16,
+    0.2,
+    0.24,
+    0.28,
+    0.3,
+    0.32,
+    0.34657359027997264,
+    0.36,
+    0.4,
+    0.44,
+    0.48,
+    0.5,
+    0.52,
+    0.56,
+    0.6,
+    0.64,
+    0.68,
+    0.6931471805599453,
+    0.72,
+    0.76,
+    0.8,
+    0.84,
+    0.88,
+    0.92,
+    0.96,
+    1.0,
+    1.0397207708399179,
+    1.04,
+    1.08,
+    1.12,
+    1.16,
+    1.2,
+    1.24,
+    1.28,
+    1.32,
+    1.36,
+    1.4,
+    1.44,
+    1.48,
+    1.52,
+    1.56,
+    1.6,
+    2.0,
+    3.0
+  ],
+  "temperature_rows": {
+    "ferro": [
+      {
+        "beta": 0.0,
+        "model": "ferro",
+        "H_A": 14.0,
+        "H_contact": 8.0,
+        "H_A_given_contacts": 6.0,
+        "H_B": 8.0,
+        "all_boundary_MI": 0.0,
+        "log_Z": 38.816242111356935,
+        "all_boundary_conditional_entropy": 14.0,
+        "all_boundary_spin_accuracy": 0.5,
+        "all_boundary_full_MAP_accuracy": 6.103515625e-05
+      },
+      {
+        "beta": 0.04,
+        "model": "ferro",
+        "H_A": 13.980026907494945,
+        "H_contact": 7.99768185766212,
+        "H_A_given_contacts": 5.982345049832825,
+        "H_B": 7.999992609861428,
+        "all_boundary_MI": 0.009225861524459589,
+        "log_Z": 38.922880012733884,
+        "all_boundary_conditional_entropy": 13.970801045970486,
+        "all_boundary_spin_accuracy": 0.5117782895897699,
+        "all_boundary_full_MAP_accuracy": 0.0001307094389544296
+      },
+      {
+        "beta": 0.08,
+        "model": "ferro",
+        "H_A": 13.918851966359913,
+        "H_contact": 7.990599790735809,
+        "H_A_given_contacts": 5.928252175624104,
+        "H_B": 7.999881466949638,
+        "all_boundary_MI": 0.03681483777360661,
+        "log_Z": 39.163594962577896,
+        "all_boundary_conditional_entropy": 13.882037128586306,
+        "all_boundary_spin_accuracy": 0.5242817786666802,
+        "all_boundary_full_MAP_accuracy": 0.00027009295036254104
+      },
+      {
+        "beta": 0.12,
+        "model": "ferro",
+        "H_A": 13.814997503177215,
+        "H_contact": 7.978330775746036,
+        "H_A_given_contacts": 5.836666727431179,
+        "H_B": 7.999396095424469,
+        "all_boundary_MI": 0.08250177909990519,
+        "log_Z": 39.53923647648334,
+        "all_boundary_conditional_entropy": 13.73249572407731,
+        "all_boundary_spin_accuracy": 0.5375450906021569,
+        "all_boundary_full_MAP_accuracy": 0.0005386237691625683
+      },
+      {
+        "beta": 0.16,
+        "model": "ferro",
+        "H_A": 13.66760428925405,
+        "H_contact": 7.9600846593741945,
+        "H_A_given_contacts": 5.707519629879857,
+        "H_B": 7.998066828977539,
+        "all_boundary_MI": 0.14584905125222924,
+        "log_Z": 40.05017522856631,
+        "all_boundary_conditional_entropy": 13.521755238001822,
+        "all_boundary_spin_accuracy": 0.5515984212382696,
+        "all_boundary_full_MAP_accuracy": 0.0010372637828689082
+      },
+      {
+        "beta": 0.2,
+        "model": "ferro",
+        "H_A": 13.476449028420387,
+        "H_contact": 7.934627982488864,
+        "H_A_given_contacts": 5.541821045931522,
+        "H_B": 7.995173911939498,
+        "all_boundary_MI": 0.22625846796380422,
+        "log_Z": 40.69632786165552,
+        "all_boundary_conditional_entropy": 13.250190560456582,
+        "all_boundary_spin_accuracy": 0.566471763370541,
+        "all_boundary_full_MAP_accuracy": 0.0019311041964684785
+      },
+      {
+        "beta": 0.24,
+        "model": "ferro",
+        "H_A": 13.24180897883938,
+        "H_contact": 7.900187782635175,
+        "H_A_given_contacts": 5.341621196204205,
+        "H_B": 7.989629866342166,
+        "all_boundary_MI": 0.3229953453195371,
+        "log_Z": 41.477245255948546,
+        "all_boundary_conditional_entropy": 12.918813633519843,
+        "all_boundary_spin_accuracy": 0.582204376803434,
+        "all_boundary_full_MAP_accuracy": 0.0034815525956454927
+      },
+      {
+        "beta": 0.28,
+        "model": "ferro",
+        "H_A": 12.96409630321509,
+        "H_contact": 7.85429190561012,
+        "H_A_given_contacts": 5.10980439760497,
+        "H_B": 7.9797346472869775,
+        "all_boundary_MI": 0.43522518935293775,
+        "log_Z": 42.392294237111955,
+        "all_boundary_conditional_entropy": 12.528871113862152,
+        "all_boundary_spin_accuracy": 0.5988619641827516,
+        "all_boundary_full_MAP_accuracy": 0.006093039025254331
+      },
+      {
+        "beta": 0.3,
+        "model": "ferro",
+        "H_A": 12.809090219677437,
+        "H_contact": 7.826012889063536,
+        "H_A_given_contacts": 4.9830773306139005,
+        "H_B": 7.9723445765978855,
+        "all_boundary_MI": 0.49687212317363816,
+        "log_Z": 42.89994410384869,
+        "all_boundary_conditional_entropy": 12.312218096503798,
+        "all_boundary_spin_accuracy": 0.6075721611261018,
+        "all_boundary_full_MAP_accuracy": 0.007979008727935482
+      },
+      {
+        "beta": 0.32,
+        "model": "ferro",
+        "H_A": 12.643156502943608,
+        "H_contact": 7.79345593546539,
+        "H_A_given_contacts": 4.849700567478218,
+        "H_B": 7.96268716255217,
+        "all_boundary_MI": 0.5620539416465462,
+        "log_Z": 43.4409741802847,
+        "all_boundary_conditional_entropy": 12.081102561297062,
+        "all_boundary_spin_accuracy": 0.6165656040184455,
+        "all_boundary_full_MAP_accuracy": 0.010384821595782398
+      },
+      {
+        "beta": 0.34657359027997264,
+        "model": "ferro",
+        "H_A": 12.405219701165366,
+        "H_contact": 7.742358311004084,
+        "H_A_given_contacts": 4.662861390161282,
+        "H_B": 7.945150287278228,
+        "all_boundary_MI": 0.6539234117435502,
+        "log_Z": 44.211554590261414,
+        "all_boundary_conditional_entropy": 11.751296289421816,
+        "all_boundary_spin_accuracy": 0.6290089725356997,
+        "all_boundary_full_MAP_accuracy": 0.014614074037743872
+      },
+      {
+        "beta": 0.36,
+        "model": "ferro",
+        "H_A": 12.277044481642903,
+        "H_contact": 7.712540528692383,
+        "H_A_given_contacts": 4.564503952950521,
+        "H_B": 7.933617410577661,
+        "all_boundary_MI": 0.7025395024902608,
+        "log_Z": 44.62343255318716,
+        "all_boundary_conditional_entropy": 11.574504979152643,
+        "all_boundary_spin_accuracy": 0.635539750357078,
+        "all_boundary_full_MAP_accuracy": 0.017311004176295837
+      },
+      {
+        "beta": 0.4,
+        "model": "ferro",
+        "H_A": 11.859909207079365,
+        "H_contact": 7.603438115155118,
+        "H_A_given_contacts": 4.256471091924247,
+        "H_B": 7.883658374618264,
+        "all_boundary_MI": 0.8555771511211319,
+        "log_Z": 45.94128757784322,
+        "all_boundary_conditional_entropy": 11.004332055958233,
+        "all_boundary_spin_accuracy": 0.6561941522443615,
+        "all_boundary_full_MAP_accuracy": 0.0283763583783636
+      },
+      {
+        "beta": 0.44,
+        "model": "ferro",
+        "H_A": 11.378343761985565,
+        "H_contact": 7.452484565679821,
+        "H_A_given_contacts": 3.9258591963057445,
+        "H_B": 7.7961604523309544,
+        "all_boundary_MI": 1.0193714351438388,
+        "log_Z": 47.398933721234386,
+        "all_boundary_conditional_entropy": 10.358972326841727,
+        "all_boundary_spin_accuracy": 0.6792513028229309,
+        "all_boundary_full_MAP_accuracy": 0.0460302109897103
+      },
+      {
+        "beta": 0.48,
+        "model": "ferro",
+        "H_A": 10.805643398622504,
+        "H_contact": 7.235897093557343,
+        "H_A_given_contacts": 3.569746305065162,
+        "H_B": 7.639917199674944,
+        "all_boundary_MI": 1.1897390829555956,
+        "log_Z": 49.00552987065154,
+        "all_boundary_conditional_entropy": 9.615904315666908,
+        "all_boundary_spin_accuracy": 0.7058753530171272,
+        "all_boundary_full_MAP_accuracy": 0.07431058788154891
+      },
+      {
+        "beta": 0.5,
+        "model": "ferro",
+        "H_A": 10.471569636767383,
+        "H_contact": 7.09134524029853,
+        "H_A_given_contacts": 3.380224396468852,
+        "H_B": 7.52005856707447,
+        "all_boundary_MI": 1.2744554258511744,
+        "log_Z": 49.86947766610922,
+        "all_boundary_conditional_entropy": 9.197114210916208,
+        "all_boundary_spin_accuracy": 0.7210674067704989,
+        "all_boundary_full_MAP_accuracy": 0.094309836158536
+      },
+      {
+        "beta": 0.52,
+        "model": "ferro",
+        "H_A": 10.096009595926997,
+        "H_contact": 6.91419947758558,
+        "H_A_given_contacts": 3.181810118341417,
+        "H_B": 7.360496280132338,
+        "all_boundary_MI": 1.355879569959388,
+        "log_Z": 50.777523067675084,
+        "all_boundary_conditional_entropy": 8.74013002596761,
+        "all_boundary_spin_accuracy": 0.737959247615939,
+        "all_boundary_full_MAP_accuracy": 0.11950024749782229
+      },
+      {
+        "beta": 0.56,
+        "model": "ferro",
+        "H_A": 9.190765609086586,
+        "H_contact": 6.434317296695629,
+        "H_A_given_contacts": 2.7564483123909573,
+        "H_B": 6.881767205098077,
+        "all_boundary_MI": 1.4937567461049497,
+        "log_Z": 52.73999032735057,
+        "all_boundary_conditional_entropy": 7.697008862981637,
+        "all_boundary_spin_accuracy": 0.7772274367254888,
+        "all_boundary_full_MAP_accuracy": 0.18939075602434524
+      },
+      {
+        "beta": 0.6,
+        "model": "ferro",
+        "H_A": 8.0618136018106,
+        "H_contact": 5.760682942419367,
+        "H_A_given_contacts": 2.3011306593912337,
+        "H_B": 6.148080995144803,
+        "all_boundary_MI": 1.566431004484393,
+        "log_Z": 54.921936153824866,
+        "all_boundary_conditional_entropy": 6.495382597326207,
+        "all_boundary_spin_accuracy": 0.822538016729865,
+        "all_boundary_full_MAP_accuracy": 0.2883146215696589
+      },
+      {
+        "beta": 0.64,
+        "model": "ferro",
+        "H_A": 6.784461483336714,
+        "H_contact": 4.9359430300256815,
+        "H_A_given_contacts": 1.8485184533110324,
+        "H_B": 5.208908351010816,
+        "all_boundary_MI": 1.5486695260411896,
+        "log_Z": 57.341116510772835,
+        "all_boundary_conditional_entropy": 5.2357919572955245,
+        "all_boundary_spin_accuracy": 0.8684894512896023,
+        "all_boundary_full_MAP_accuracy": 0.4089463254093435
+      },
+      {
+        "beta": 0.68,
+        "model": "ferro",
+        "H_A": 5.53538944323814,
+        "H_contact": 4.091191721537051,
+        "H_A_given_contacts": 1.4441977217010886,
+        "H_B": 4.234928922623735,
+        "all_boundary_MI": 1.4587802165264208,
+        "log_Z": 59.987184323225534,
+        "all_boundary_conditional_entropy": 4.076609226711719,
+        "all_boundary_spin_accuracy": 0.9080986509125422,
+        "all_boundary_full_MAP_accuracy": 0.5323227730081497
+      },
+      {
+        "beta": 0.6931471805599453,
+        "model": "ferro",
+        "H_A": 5.16038742727679,
+        "H_contact": 3.832993936458385,
+        "H_A_given_contacts": 1.3273934908184049,
+        "H_B": 3.9385237496080467,
+        "all_boundary_MI": 1.42172320698063,
+        "log_Z": 60.90052121155013,
+        "all_boundary_conditional_entropy": 3.73866422029616,
+        "all_boundary_spin_accuracy": 0.9188985598167088,
+        "all_boundary_full_MAP_accuracy": 0.5701966335005635
+      },
+      {
+        "beta": 0.72,
+        "model": "ferro",
+        "H_A": 4.470564015191483,
+        "H_contact": 3.354889492869865,
+        "H_A_given_contacts": 1.1156745223216187,
+        "H_B": 3.3947739144308935,
+        "all_boundary_MI": 1.3452079450460932,
+        "log_Z": 62.822560116331196,
+        "all_boundary_conditional_entropy": 3.12535607014539,
+        "all_boundary_spin_accuracy": 0.9374208654799071,
+        "all_boundary_full_MAP_accuracy": 0.640821567666944
+      },
+      {
+        "beta": 0.76,
+        "model": "ferro",
+        "H_A": 3.639916000562923,
+        "H_contact": 2.777336463164562,
+        "H_A_given_contacts": 0.8625795373983612,
+        "H_B": 2.7526908766155938,
+        "all_boundary_MI": 1.244914889453641,
+        "log_Z": 65.8004343691549,
+        "all_boundary_conditional_entropy": 2.395001111109282,
+        "all_boundary_spin_accuracy": 0.9573119102569176,
+        "all_boundary_full_MAP_accuracy": 0.7275154887557337
+      },
+      {
+        "beta": 0.8,
+        "model": "ferro",
+        "H_A": 3.0162559279846572,
+        "H_contact": 2.3456479694463863,
+        "H_A_given_contacts": 0.6706079585382712,
+        "H_B": 2.289256025260669,
+        "all_boundary_MI": 1.169763166725446,
+        "log_Z": 68.88018882228025,
+        "all_boundary_conditional_entropy": 1.8464927612592112,
+        "all_boundary_spin_accuracy": 0.9704058849096525,
+        "all_boundary_full_MAP_accuracy": 0.7937303414118757
+      },
+      {
+        "beta": 0.84,
+        "model": "ferro",
+        "H_A": 2.5509850198733828,
+        "H_contact": 2.026534754864527,
+        "H_A_given_contacts": 0.5244502650088555,
+        "H_B": 1.9593114445842184,
+        "all_boundary_MI": 1.1173287991457945,
+        "log_Z": 72.03196241997355,
+        "all_boundary_conditional_entropy": 1.4336562207275882,
+        "all_boundary_spin_accuracy": 0.9790866867359291,
+        "all_boundary_full_MAP_accuracy": 0.84356544402293
+      },
+      {
+        "beta": 0.88,
+        "model": "ferro",
+        "H_A": 2.2013721290206356,
+        "H_contact": 1.7892293923105336,
+        "H_A_given_contacts": 0.4121427367101022,
+        "H_B": 1.722510810079011,
+        "all_boundary_MI": 1.0815826750710222,
+        "log_Z": 75.23510474505423,
+        "all_boundary_conditional_entropy": 1.1197894539496134,
+        "all_boundary_spin_accuracy": 0.9849666546933901,
+        "all_boundary_full_MAP_accuracy": 0.8810194801920045
+      },
+      {
+        "beta": 0.92,
+        "model": "ferro",
+        "H_A": 1.9359196824932996,
+        "H_contact": 1.6108317151453635,
+        "H_A_given_contacts": 0.3250879673479361,
+        "H_B": 1.549924488145697,
+        "all_boundary_MI": 1.057222672133617,
+        "log_Z": 78.4754480120702,
+        "all_boundary_conditional_entropy": 0.8786970103596825,
+        "all_boundary_spin_accuracy": 0.989043092375419,
+        "all_boundary_full_MAP_accuracy": 0.9092484876716653
+      },
+      {
+        "beta": 0.96,
+        "model": "ferro",
+        "H_A": 1.732434918496494,
+        "H_contact": 1.4752911999359277,
+        "H_A_given_contacts": 0.2571437185605664,
+        "H_B": 1.4221470555229727,
+        "all_boundary_MI": 1.0404793312081335,
+        "log_Z": 81.74314099574718,
+        "all_boundary_conditional_entropy": 0.6919555872883605,
+        "all_boundary_spin_accuracy": 0.9919265646027446,
+        "all_boundary_full_MAP_accuracy": 0.9306013409478707
+      },
+      {
+        "beta": 1.0,
+        "model": "ferro",
+        "H_A": 1.5752422158801975,
+        "H_contact": 1.3713999631505485,
+        "H_A_given_contacts": 0.20384225272964906,
+        "H_B": 1.3262552916775954,
+        "all_boundary_MI": 1.0288467482856702,
+        "log_Z": 85.03120602027768,
+        "all_boundary_conditional_entropy": 0.5463954675945273,
+        "all_boundary_spin_accuracy": 0.9939994818969901,
+        "all_boundary_full_MAP_accuracy": 0.9468072091698392
+      },
+      {
+        "beta": 1.0397207708399179,
+        "model": "ferro",
+        "H_A": 1.4538264479769187,
+        "H_contact": 1.2917001595039959,
+        "H_A_given_contacts": 0.16212628847292282,
+        "H_B": 1.2539428757686795,
+        "all_boundary_MI": 1.0207301548430119,
+        "log_Z": 88.31151033254484,
+        "all_boundary_conditional_entropy": 0.43309629313390685,
+        "all_boundary_spin_accuracy": 0.9954998741373241,
+        "all_boundary_full_MAP_accuracy": 0.9590681198266499
+      },
+      {
+        "beta": 1.04,
+        "model": "ferro",
+        "H_A": 1.453074630728605,
+        "H_contact": 1.291208261224682,
+        "H_A_given_contacts": 0.16186636950392308,
+        "H_B": 1.2535000316213676,
+        "all_boundary_MI": 1.0206824428986971,
+        "log_Z": 88.33461461883272,
+        "all_boundary_conditional_entropy": 0.43239218782990796,
+        "all_boundary_spin_accuracy": 0.9955088717398354,
+        "all_boundary_full_MAP_accuracy": 0.9591431616459895
+      },
+      {
+        "beta": 1.08,
+        "model": "ferro",
+        "H_A": 1.3576779039866158,
+        "H_contact": 1.228966541348626,
+        "H_A_given_contacts": 0.12871136263798988,
+        "H_B": 1.1978171288748654,
+        "all_boundary_MI": 1.0149023854088806,
+        "log_Z": 91.64969011127712,
+        "all_boundary_conditional_entropy": 0.34277551857773525,
+        "all_boundary_spin_accuracy": 0.9966191634410004,
+        "all_boundary_full_MAP_accuracy": 0.9685580014452073
+      },
+      {
+        "beta": 1.12,
+        "model": "ferro",
+        "H_A": 1.2829050656103023,
+        "H_contact": 1.180442862254429,
+        "H_A_given_contacts": 0.10246220335587322,
+        "H_B": 1.1549051399416483,
+        "all_boundary_MI": 1.010780970587747,
+        "log_Z": 94.97371208430948,
+        "all_boundary_conditional_entropy": 0.2721240950225552,
+        "all_boundary_spin_accuracy": 0.9974426322032871,
+        "all_boundary_full_MAP_accuracy": 0.9757605145105208
+      },
+      {
+        "beta": 1.16,
+        "model": "ferro",
+        "H_A": 1.224118708884089,
+        "H_contact": 1.142477484467351,
+        "H_A_given_contacts": 0.08164122441673782,
+        "H_B": 1.1216511771276818,
+        "all_boundary_MI": 1.0078251228852055,
+        "log_Z": 98.30464776492185,
+        "all_boundary_conditional_entropy": 0.2162935859988835,
+        "all_boundary_spin_accuracy": 0.9980575358981447,
+        "all_boundary_full_MAP_accuracy": 0.9812825781935361
+      },
+      {
+        "beta": 1.2,
+        "model": "ferro",
+        "H_A": 1.1777848956703454,
+        "H_contact": 1.1126844947344705,
+        "H_A_given_contacts": 0.06510040093587488,
+        "H_B": 1.095765046799689,
+        "all_boundary_MI": 1.0056951683076503,
+        "log_Z": 101.64096544747727,
+        "all_boundary_conditional_entropy": 0.17208972736269512,
+        "all_boundary_spin_accuracy": 0.9985193277254982,
+        "all_boundary_full_MAP_accuracy": 0.9855248120511195
+      },
+      {
+        "beta": 1.24,
+        "model": "ferro",
+        "H_A": 1.1411893439998155,
+        "H_contact": 1.089246237694482,
+        "H_A_given_contacts": 0.05194310630533355,
+        "H_B": 1.0755392520136013,
+        "all_boundary_MI": 1.004154386762031,
+        "log_Z": 104.98150250880042,
+        "all_boundary_conditional_entropy": 0.13703495723778447,
+        "all_boundary_spin_accuracy": 0.998867826205281,
+        "all_boundary_full_MAP_accuracy": 0.988789947247626
+      },
+      {
+        "beta": 1.28,
+        "model": "ferro",
+        "H_A": 1.1122342653609862,
+        "H_contact": 1.0707681273681056,
+        "H_A_given_contacts": 0.041466137992880764,
+        "H_B": 1.0596870095654491,
+        "all_boundary_MI": 1.0030362285303895,
+        "log_Z": 108.3253706439932,
+        "all_boundary_conditional_entropy": 0.1091980368305967,
+        "all_boundary_spin_accuracy": 0.9991319351483386,
+        "all_boundary_full_MAP_accuracy": 0.9913074112621343
+      },
+      {
+        "beta": 1.32,
+        "model": "ferro",
+        "H_A": 1.0892901213133346,
+        "H_contact": 1.0561739937263424,
+        "H_A_given_contacts": 0.033116127586992214,
+        "H_B": 1.047230110537924,
+        "all_boundary_MI": 1.0022225990239892,
+        "log_Z": 111.67188699994678,
+        "all_boundary_conditional_entropy": 0.08706752228934533,
+        "all_boundary_spin_accuracy": 0.9993328258040616,
+        "all_boundary_full_MAP_accuracy": 0.9932515456300999
+      },
+      {
+        "beta": 1.36,
+        "model": "ferro",
+        "H_A": 1.0710858132003869,
+        "H_contact": 1.0446294109395615,
+        "H_A_given_contacts": 0.02645640226082526,
+        "H_B": 1.0374195929144783,
+        "all_boundary_MI": 1.001629227030737,
+        "log_Z": 115.02052362668222,
+        "all_boundary_conditional_entropy": 0.06945658616964989,
+        "all_boundary_spin_accuracy": 0.9994861244329515,
+        "all_boundary_full_MAP_accuracy": 0.9947551661313487
+      },
+      {
+        "beta": 1.4,
+        "model": "ferro",
+        "H_A": 1.0566263686814898,
+        "H_contact": 1.035484793494947,
+        "H_A_given_contacts": 0.021141575186542957,
+        "H_B": 1.0296786075730084,
+        "all_boundary_MI": 1.0011956614152093,
+        "log_Z": 118.37087006031868,
+        "all_boundary_conditional_entropy": 0.05543070726628052,
+        "all_boundary_spin_accuracy": 0.9996034404195964,
+        "all_boundary_full_MAP_accuracy": 0.9959196938142347
+      },
+      {
+        "beta": 1.44,
+        "model": "ferro",
+        "H_A": 1.045130649476066,
+        "H_contact": 1.0282327207547377,
+        "H_A_given_contacts": 0.016897928721328143,
+        "H_B": 1.0235606518310645,
+        "all_boundary_MI": 1.0008783489281385,
+        "log_Z": 121.72260542518826,
+        "all_boundary_conditional_entropy": 0.04425230054792739,
+        "all_boundary_spin_accuracy": 0.9996934480262433,
+        "all_boundary_full_MAP_accuracy": 0.9968227491496873
+      },
+      {
+        "beta": 1.48,
+        "model": "ferro",
+        "H_A": 1.0359838427517534,
+        "H_contact": 1.022475657828478,
+        "H_A_given_contacts": 0.01350818492327537,
+        "H_B": 1.0187186578655227,
+        "all_boundary_MI": 1.0006457960356263,
+        "log_Z": 125.0754775014724,
+        "all_boundary_conditional_entropy": 0.03533804671612706,
+        "all_boundary_spin_accuracy": 0.9997626608135757,
+        "all_boundary_full_MAP_accuracy": 0.9975238621248033
+      },
+      {
+        "beta": 1.52,
+        "model": "ferro",
+        "H_A": 1.0287009929243098,
+        "H_contact": 1.0179013658952172,
+        "H_A_given_contacts": 0.010799627029092684,
+        "H_B": 1.014881877802531,
+        "all_boundary_MI": 1.000475159319056,
+        "log_Z": 128.42928693092313,
+        "all_boundary_conditional_entropy": 0.02822583360525388,
+        "all_boundary_spin_accuracy": 0.9998159913936628,
+        "all_boundary_full_MAP_accuracy": 0.9980687783028273
+      },
+      {
+        "beta": 1.56,
+        "model": "ferro",
+        "H_A": 1.022898855388725,
+        "H_contact": 1.0142640572549193,
+        "H_A_given_contacts": 0.00863479813380573,
+        "H_B": 1.0118384482129623,
+        "all_boundary_MI": 1.0003498260947867,
+        "log_Z": 131.78387523924175,
+        "all_boundary_conditional_entropy": 0.022549029293938316,
+        "all_boundary_spin_accuracy": 0.9998571593994138,
+        "all_boundary_full_MAP_accuracy": 0.9984927152307024
+      },
+      {
+        "beta": 1.6,
+        "model": "ferro",
+        "H_A": 1.0182740719493009,
+        "H_contact": 1.0113698784137881,
+        "H_A_given_contacts": 0.006904193535512679,
+        "H_B": 1.0094221411837139,
+        "all_boundary_MI": 1.0002576877898026,
+        "log_Z": 135.1391157110148,
+        "all_boundary_conditional_entropy": 0.018016384159498244,
+        "all_boundary_spin_accuracy": 0.9998889910001052,
+        "all_boundary_full_MAP_accuracy": 0.9988228317215957
+      },
+      {
+        "beta": 2.0,
+        "model": "ferro",
+        "H_A": 1.0019247978754753,
+        "H_contact": 1.0011892339363364,
+        "H_A_given_contacts": 0.0007355639391387778,
+        "H_B": 1.0009755987272702,
+        "all_boundary_MI": 1.0000123050503378,
+        "log_Z": 168.7120124964499,
+        "all_boundary_conditional_entropy": 0.0019124928251375017,
+        "all_boundary_spin_accuracy": 0.9999906800026247,
+        "all_boundary_full_MAP_accuracy": 0.9998980591953355
+      },
+      {
+        "beta": 3.0,
+        "model": "ferro",
+        "H_A": 1.0000067181863117,
+        "H_contact": 1.000004143431362,
+        "H_A_given_contacts": 2.574754949632251e-06,
+        "H_B": 1.000003365467788,
+        "all_boundary_MI": 1.000000006055289,
+        "log_Z": 252.69562992737005,
+        "all_boundary_conditional_entropy": 6.71213102276802e-06,
+        "all_boundary_spin_accuracy": 0.9999999780690841,
+        "all_boundary_full_MAP_accuracy": 0.999999755143478
+      }
+    ],
+    "one_reversed_bond": [
+      {
+        "beta": 0.0,
+        "model": "one_reversed_bond",
+        "H_A": 14.0,
+        "H_contact": 8.0,
+        "H_A_given_contacts": 6.0,
+        "H_B": 8.0,
+        "all_boundary_MI": 0.0,
+        "log_Z": 38.816242111356935,
+        "all_boundary_conditional_entropy": 14.0,
+        "all_boundary_spin_accuracy": 0.5,
+        "all_boundary_full_MAP_accuracy": 6.103515625e-05
+      },
+      {
+        "beta": 0.04,
+        "model": "one_reversed_bond",
+        "H_A": 13.98002690758593,
+        "H_contact": 7.997681857706871,
+        "H_A_given_contacts": 5.982345049879059,
+        "H_B": 7.99999260990308,
+        "all_boundary_MI": 0.009225861482978104,
+        "log_Z": 38.922880012705065,
+        "all_boundary_conditional_entropy": 13.970801046102952,
+        "all_boundary_spin_accuracy": 0.5117782888175759,
+        "all_boundary_full_MAP_accuracy": 0.00013070616060279234
+      },
+      {
+        "beta": 0.08,
+        "model": "one_reversed_bond",
+        "H_A": 13.918851993614881,
+        "H_contact": 7.990599804011916,
+        "H_A_given_contacts": 5.928252189602965,
+        "H_B": 7.999881478618266,
+        "all_boundary_MI": 0.036814826299362835,
+        "log_Z": 39.163594954548124,
+        "all_boundary_conditional_entropy": 13.882037167315518,
+        "all_boundary_spin_accuracy": 0.5242817212687129,
+        "all_boundary_full_MAP_accuracy": 0.000270030742447087
+      },
+      {
+        "beta": 0.12,
+        "model": "one_reversed_bond",
+        "H_A": 13.814998301370588,
+        "H_contact": 7.978331163325446,
+        "H_A_given_contacts": 5.836667138045142,
+        "H_B": 7.9993964210915065,
+        "all_boundary_MI": 0.08250146622730625,
+        "log_Z": 39.53923625462942,
+        "all_boundary_conditional_entropy": 13.732496835143282,
+        "all_boundary_spin_accuracy": 0.5375443389201997,
+        "all_boundary_full_MAP_accuracy": 0.0005381418292305277
+      },
+      {
+        "beta": 0.16,
+        "model": "one_reversed_bond",
+        "H_A": 13.667613216447704,
+        "H_contact": 7.960089008158098,
+        "H_A_given_contacts": 5.707524208289605,
+        "H_B": 7.998070360505434,
+        "all_boundary_MI": 0.14584577697903178,
+        "log_Z": 40.05017285989888,
+        "all_boundary_conditional_entropy": 13.521767439468672,
+        "all_boundary_spin_accuracy": 0.5515936136212909,
+        "all_boundary_full_MAP_accuracy": 0.0010347322873321325
+      },
+      {
+        "beta": 0.2,
+        "model": "one_reversed_bond",
+        "H_A": 13.476507600057197,
+        "H_contact": 7.934656787420094,
+        "H_A_given_contacts": 5.541850812637103,
+        "H_B": 7.995196746991709,
+        "all_boundary_MI": 0.22623833056509923,
+        "log_Z": 40.696312879138915,
+        "all_boundary_conditional_entropy": 13.250269269492097,
+        "all_boundary_spin_accuracy": 0.5664510813289143,
+        "all_boundary_full_MAP_accuracy": 0.0019205386505255842
+      },
+      {
+        "beta": 0.24,
+        "model": "one_reversed_bond",
+        "H_A": 13.242082462450272,
+        "H_contact": 7.900324396993714,
+        "H_A_given_contacts": 5.341758065456558,
+        "H_B": 7.98973662224496,
+        "all_boundary_MI": 0.3229073464953416,
+        "log_Z": 41.47717726005418,
+        "all_boundary_conditional_entropy": 12.91917511595493,
+        "all_boundary_spin_accuracy": 0.5821353007003587,
+        "all_boundary_full_MAP_accuracy": 0.003443921908990074
+      },
+      {
+        "beta": 0.28,
+        "model": "one_reversed_bond",
+        "H_A": 12.965105727699042,
+        "H_contact": 7.854807111390851,
+        "H_A_given_contacts": 5.1102986163081905,
+        "H_B": 7.980135422119419,
+        "all_boundary_MI": 0.4349228961756548,
+        "log_Z": 42.3920486799292,
+        "all_boundary_conditional_entropy": 12.530182831523387,
+        "all_boundary_spin_accuracy": 0.5986683768481119,
+        "all_boundary_full_MAP_accuracy": 0.005974058420589626
+      },
+      {
+        "beta": 0.3,
+        "model": "one_reversed_bond",
+        "H_A": 12.81090390822844,
+        "H_contact": 7.82695057220694,
+        "H_A_given_contacts": 4.9839533360215,
+        "H_B": 7.973075106953834,
+        "all_boundary_MI": 0.49635004817664985,
+        "log_Z": 42.89950680310753,
+        "all_boundary_conditional_entropy": 12.31455386005179,
+        "all_boundary_spin_accuracy": 0.6072639329706041,
+        "all_boundary_full_MAP_accuracy": 0.007775006111528348
+      },
+      {
+        "beta": 0.32,
+        "model": "one_reversed_bond",
+        "H_A": 12.646298816012152,
+        "H_contact": 7.795103762455112,
+        "H_A_given_contacts": 4.85119505355704,
+        "H_B": 7.963976282432698,
+        "all_boundary_MI": 0.5611875578528682,
+        "log_Z": 43.440222413887284,
+        "all_boundary_conditional_entropy": 12.085111258159284,
+        "all_boundary_spin_accuracy": 0.6160880854852504,
+        "all_boundary_full_MAP_accuracy": 0.010042273991314875
+      },
+      {
+        "beta": 0.34657359027997264,
+        "model": "one_reversed_bond",
+        "H_A": 12.411436755489476,
+        "H_contact": 7.745687215332122,
+        "H_A_given_contacts": 4.665749540157353,
+        "H_B": 7.947779814055206,
+        "all_boundary_MI": 0.6523162949690064,
+        "log_Z": 44.21008048750244,
+        "all_boundary_conditional_entropy": 11.759120460520469,
+        "all_boundary_spin_accuracy": 0.628185017708739,
+        "all_boundary_full_MAP_accuracy": 0.01395138805362163
+      },
+      {
+        "beta": 0.36,
+        "model": "one_reversed_bond",
+        "H_A": 12.285664281720898,
+        "H_contact": 7.717208650725139,
+        "H_A_given_contacts": 4.568455630995759,
+        "H_B": 7.937329614784716,
+        "all_boundary_MI": 0.7003913243786393,
+        "log_Z": 44.62139697016694,
+        "all_boundary_conditional_entropy": 11.585272957342259,
+        "all_boundary_spin_accuracy": 0.6344689995599685,
+        "all_boundary_full_MAP_accuracy": 0.01639641064507516
+      },
+      {
+        "beta": 0.4,
+        "model": "one_reversed_bond",
+        "H_A": 11.881413829659106,
+        "H_contact": 7.615520324460422,
+        "H_A_given_contacts": 4.265893505198683,
+        "H_B": 7.893531261819108,
+        "all_boundary_MI": 0.8508776014317778,
+        "log_Z": 45.93626245033938,
+        "all_boundary_conditional_entropy": 11.030536228227328,
+        "all_boundary_spin_accuracy": 0.6539603808541763,
+        "all_boundary_full_MAP_accuracy": 0.026079902969708163
+      },
+      {
+        "beta": 0.44,
+        "model": "one_reversed_bond",
+        "H_A": 11.42825744825617,
+        "H_contact": 7.481689427386611,
+        "H_A_given_contacts": 3.946568020869559,
+        "H_B": 7.82092438845725,
+        "all_boundary_MI": 1.0102785560176955,
+        "log_Z": 47.387369973432484,
+        "all_boundary_conditional_entropy": 10.417978892238475,
+        "all_boundary_spin_accuracy": 0.6748507682608286,
+        "all_boundary_full_MAP_accuracy": 0.04055464687928309
+      },
+      {
+        "beta": 0.48,
+        "model": "one_reversed_bond",
+        "H_A": 10.914872559657054,
+        "H_contact": 7.302628498647314,
+        "H_A_given_contacts": 3.61224406100974,
+        "H_B": 7.699015665188057,
+        "all_boundary_MI": 1.1745685890939885,
+        "log_Z": 48.98035446853616,
+        "all_boundary_conditional_entropy": 9.740303970563065,
+        "all_boundary_spin_accuracy": 0.6976102421942075,
+        "all_boundary_full_MAP_accuracy": 0.06187447790880387
+      },
+      {
+        "beta": 0.5,
+        "model": "one_reversed_bond",
+        "H_A": 10.629718633073296,
+        "H_contact": 7.190113734873847,
+        "H_A_given_contacts": 3.4396048981994483,
+        "H_B": 7.609495120319709,
+        "all_boundary_MI": 1.2563394916079744,
+        "log_Z": 49.83301584345302,
+        "all_boundary_conditional_entropy": 9.373379141465321,
+        "all_boundary_spin_accuracy": 0.7099206617969964,
+        "all_boundary_full_MAP_accuracy": 0.07594288182478251
+      },
+      {
+        "beta": 0.52,
+        "model": "one_reversed_bond",
+        "H_A": 10.32129561836993,
+        "H_contact": 7.058008924958601,
+        "H_A_given_contacts": 3.2632866934113283,
+        "H_B": 7.493491017933916,
+        "all_boundary_MI": 1.3359115168599516,
+        "log_Z": 50.72538022721078,
+        "all_boundary_conditional_entropy": 8.985384101509979,
+        "all_boundary_spin_accuracy": 0.7230701098602348,
+        "all_boundary_full_MAP_accuracy": 0.09281520400055362
+      },
+      {
+        "beta": 0.56,
+        "model": "one_reversed_bond",
+        "H_A": 9.620267624545548,
+        "H_contact": 6.720172436413234,
+        "H_A_given_contacts": 2.9000951881323136,
+        "H_B": 7.15512728165921,
+        "all_boundary_MI": 1.479164797174267,
+        "log_Z": 52.637940321541535,
+        "all_boundary_conditional_entropy": 8.14110282737128,
+        "all_boundary_spin_accuracy": 0.7520477521685941,
+        "all_boundary_full_MAP_accuracy": 0.1365602359084903
+      },
+      {
+        "beta": 0.6,
+        "model": "one_reversed_bond",
+        "H_A": 8.791665712904043,
+        "H_contact": 6.264295816251106,
+        "H_A_given_contacts": 2.5273698966529365,
+        "H_B": 6.636378997830276,
+        "all_boundary_MI": 1.5803701185768393,
+        "log_Z": 54.73672672966762,
+        "all_boundary_conditional_entropy": 7.211295594327204,
+        "all_boundary_spin_accuracy": 0.784196538023408,
+        "all_boundary_full_MAP_accuracy": 0.19517559055782918
+      },
+      {
+        "beta": 0.64,
+        "model": "one_reversed_bond",
+        "H_A": 7.8534681421675145,
+        "H_contact": 5.694161245037403,
+        "H_A_given_contacts": 2.1593068971301115,
+        "H_B": 5.935153757711102,
+        "all_boundary_MI": 1.6157398173449629,
+        "log_Z": 57.03597339624262,
+        "all_boundary_conditional_entropy": 6.237728324822552,
+        "all_boundary_spin_accuracy": 0.8179285620790383,
+        "all_boundary_full_MAP_accuracy": 0.26686966834303605
+      },
+      {
+        "beta": 0.68,
+        "model": "one_reversed_bond",
+        "H_A": 6.880641535062075,
+        "H_contact": 5.062630067243189,
+        "H_A_given_contacts": 1.8180114678188866,
+        "H_B": 5.130255213268219,
+        "all_boundary_MI": 1.5814375003229966,
+        "log_Z": 59.534535654480614,
+        "all_boundary_conditional_entropy": 5.299204034739079,
+        "all_boundary_spin_accuracy": 0.8503229418567196,
+        "all_boundary_full_MAP_accuracy": 0.34479497048913177
+      },
+      {
+        "beta": 0.6931471805599453,
+        "model": "one_reversed_bond",
+        "H_A": 6.570624098723869,
+        "H_contact": 4.855450505285651,
+        "H_A_given_contacts": 1.715173593438218,
+        "H_B": 4.864510979074691,
+        "all_boundary_MI": 1.5584279424093737,
+        "log_Z": 60.39617978195125,
+        "all_boundary_conditional_entropy": 5.012196156314495,
+        "all_boundary_spin_accuracy": 0.8599707079910727,
+        "all_boundary_full_MAP_accuracy": 0.3702521739138452
+      },
+      {
+        "beta": 0.72,
+        "model": "one_reversed_bond",
+        "H_A": 5.972082825100759,
+        "H_contact": 4.449953108184171,
+        "H_A_given_contacts": 1.522129716916588,
+        "H_B": 4.34655051396459,
+        "all_boundary_MI": 1.5009787858537926,
+        "log_Z": 62.211265890181565,
+        "all_boundary_conditional_entropy": 4.471104039246966,
+        "all_boundary_spin_accuracy": 0.877703935412427,
+        "all_boundary_full_MAP_accuracy": 0.42031324202210196
+      },
+      {
+        "beta": 0.76,
+        "model": "one_reversed_bond",
+        "H_A": 5.1936028952466184,
+        "H_contact": 3.9159458941292034,
+        "H_A_given_contacts": 1.277657001117415,
+        "H_B": 3.676976404801401,
+        "all_boundary_MI": 1.4069377153723472,
+        "log_Z": 65.03221473559121,
+        "all_boundary_conditional_entropy": 3.786665179874271,
+        "all_boundary_spin_accuracy": 0.8990717839609718,
+        "all_boundary_full_MAP_accuracy": 0.4876832914829971
+      },
+      {
+        "beta": 0.8,
+        "model": "one_reversed_bond",
+        "H_A": 4.559609001042836,
+        "H_contact": 3.4797495075025946,
+        "H_A_given_contacts": 1.0798594935402417,
+        "H_B": 3.1498829439683504,
+        "all_boundary_MI": 1.3210782855650471,
+        "log_Z": 67.96231159501366,
+        "all_boundary_conditional_entropy": 3.238530715477789,
+        "all_boundary_spin_accuracy": 0.9152192441024803,
+        "all_boundary_full_MAP_accuracy": 0.5452798624171254
+      },
+      {
+        "beta": 0.84,
+        "model": "one_reversed_bond",
+        "H_A": 4.052963786722918,
+        "H_contact": 3.1329458270235335,
+        "H_A_given_contacts": 0.9200179596993844,
+        "H_B": 2.750472325050691,
+        "all_boundary_MI": 1.2511776471278573,
+        "log_Z": 70.97249609690476,
+        "all_boundary_conditional_entropy": 2.8017861395950607,
+        "all_boundary_spin_accuracy": 0.927433986345039,
+        "all_boundary_full_MAP_accuracy": 0.5939294340397426
+      },
+      {
+        "beta": 0.88,
+        "model": "one_reversed_bond",
+        "H_A": 3.647712628411843,
+        "H_contact": 2.857908525668111,
+        "H_A_given_contacts": 0.789804102743732,
+        "H_B": 2.4503215893339183,
+        "all_boundary_MI": 1.19699956306326,
+        "log_Z": 74.04118137512589,
+        "all_boundary_conditional_entropy": 2.450713065348583,
+        "all_boundary_spin_accuracy": 0.9368812099742865,
+        "all_boundary_full_MAP_accuracy": 0.6351894866598549
+      },
+      {
+        "beta": 0.92,
+        "model": "one_reversed_bond",
+        "H_A": 3.320250526802492,
+        "H_contact": 2.6376419979072683,
+        "H_A_given_contacts": 0.6826085288952239,
+        "H_B": 2.2229131516715555,
+        "all_boundary_MI": 1.155629919542284,
+        "log_Z": 77.15301089881541,
+        "all_boundary_conditional_entropy": 2.164620607260208,
+        "all_boundary_spin_accuracy": 0.9443985316299305,
+        "all_boundary_full_MAP_accuracy": 0.6705355918630987
+      },
+      {
+        "beta": 0.96,
+        "model": "one_reversed_bond",
+        "H_A": 3.052141332223292,
+        "H_contact": 2.458669887242846,
+        "H_A_given_contacts": 0.5934714449804463,
+        "H_B": 2.0479164142769797,
+        "all_boundary_MI": 1.1239865633783945,
+        "log_Z": 80.29713930171309,
+        "all_boundary_conditional_entropy": 1.9281547688448977,
+        "all_boundary_spin_accuracy": 0.9505410885826987,
+        "all_boundary_full_MAP_accuracy": 0.701150539063909
+      },
+      {
+        "beta": 1.0,
+        "model": "one_reversed_bond",
+        "H_A": 2.8296854750004097,
+        "H_contact": 2.31099560613813,
+        "H_A_given_contacts": 0.5186898688622796,
+        "H_B": 1.9108196342967774,
+        "all_boundary_MI": 1.0995726977818316,
+        "log_Z": 83.46583527243355,
+        "all_boundary_conditional_entropy": 1.730112777218578,
+        "all_boundary_spin_accuracy": 0.955675669182124,
+        "all_boundary_full_MAP_accuracy": 0.7279381412691441
+      },
+      {
+        "beta": 1.0397207708399179,
+        "model": "one_reversed_bond",
+        "H_A": 2.6439903154525144,
+        "H_contact": 2.1881204008856487,
+        "H_A_given_contacts": 0.4558699145668658,
+        "H_B": 1.8021601454032488,
+        "all_boundary_MI": 1.0806526188347774,
+        "log_Z": 86.63119528826668,
+        "all_boundary_conditional_entropy": 1.563337696617737,
+        "all_boundary_spin_accuracy": 0.9600194780704766,
+        "all_boundary_full_MAP_accuracy": 0.7514301776482943
+      },
+      {
+        "beta": 1.04,
+        "model": "one_reversed_bond",
+        "H_A": 2.6427904319404547,
+        "H_contact": 2.1873271002844703,
+        "H_A_given_contacts": 0.45546333165598435,
+        "H_B": 1.8014752713355848,
+        "all_boundary_MI": 1.080535026025272,
+        "log_Z": 86.6535031274988,
+        "all_boundary_conditional_entropy": 1.5622554059151827,
+        "all_boundary_spin_accuracy": 0.9600477776697078,
+        "all_boundary_full_MAP_accuracy": 0.7515856625790693
+      },
+      {
+        "beta": 1.08,
+        "model": "one_reversed_bond",
+        "H_A": 2.483962961884159,
+        "H_contact": 2.082324549935506,
+        "H_A_given_contacts": 0.4016384119486529,
+        "H_B": 1.7127701610878017,
+        "all_boundary_MI": 1.0655341146802293,
+        "log_Z": 89.85602761842713,
+        "all_boundary_conditional_entropy": 1.4184288472039297,
+        "all_boundary_spin_accuracy": 0.9638261675616041,
+        "all_boundary_full_MAP_accuracy": 0.7726210077038257
+      },
+      {
+        "beta": 1.12,
+        "model": "one_reversed_bond",
+        "H_A": 2.3475667562704015,
+        "H_contact": 1.9920330048417485,
+        "H_A_given_contacts": 0.3555337514286532,
+        "H_B": 1.6396569131156957,
+        "all_boundary_MI": 1.053602809713433,
+        "log_Z": 93.0703367412639,
+        "all_boundary_conditional_entropy": 1.2939639465569686,
+        "all_boundary_spin_accuracy": 0.9671305291241588,
+        "all_boundary_full_MAP_accuracy": 0.7914553551080628
+      },
+      {
+        "beta": 1.16,
+        "model": "one_reversed_bond",
+        "H_A": 2.229304458071282,
+        "H_contact": 1.9134848043730446,
+        "H_A_given_contacts": 0.31581965369823745,
+        "H_B": 1.5784984596740577,
+        "all_boundary_MI": 1.0440356924859908,
+        "log_Z": 96.29410621084199,
+        "all_boundary_conditional_entropy": 1.1852687655852914,
+        "all_boundary_spin_accuracy": 0.9700481597905152,
+        "all_boundary_full_MAP_accuracy": 0.808413419306281
+      },
+      {
+        "beta": 1.2,
+        "model": "one_reversed_bond",
+        "H_A": 2.1258586874319105,
+        "H_contact": 1.8444253550815688,
+        "H_A_given_contacts": 0.2814333323503416,
+        "H_B": 1.5266332602686101,
+        "all_boundary_MI": 1.0363109562293862,
+        "log_Z": 99.52555603354011,
+        "all_boundary_conditional_entropy": 1.0895477312025243,
+        "all_boundary_spin_accuracy": 0.9726444108386139,
+        "all_boundary_full_MAP_accuracy": 0.8237549318675831
+      },
+      {
+        "beta": 1.24,
+        "model": "one_reversed_bond",
+        "H_A": 2.0346403888276123,
+        "H_contact": 1.7831226783705887,
+        "H_A_given_contacts": 0.25151771045702365,
+        "H_B": 1.4820858661760452,
+        "all_boundary_MI": 1.0300368906119264,
+        "log_Z": 102.76330787703635,
+        "all_boundary_conditional_entropy": 1.004603498215686,
+        "all_boundary_spin_accuracy": 0.9749693534990765,
+        "all_boundary_full_MAP_accuracy": 0.8376901262941487
+      },
+      {
+        "beta": 1.28,
+        "model": "one_reversed_bond",
+        "H_A": 1.9536093204658813,
+        "H_contact": 1.7282331014341774,
+        "H_A_given_contacts": 0.22537621903170396,
+        "H_B": 1.4433715452595162,
+        "all_boundary_MI": 1.0249153363742756,
+        "log_Z": 106.00628338071245,
+        "all_boundary_conditional_entropy": 0.9286939840916058,
+        "all_boundary_spin_accuracy": 0.9770621552551411,
+        "all_boundary_full_MAP_accuracy": 0.8503910998213131
+      },
+      {
+        "beta": 1.32,
+        "model": "one_reversed_bond",
+        "H_A": 1.8811437056671663,
+        "H_contact": 1.6787049103771232,
+        "H_A_given_contacts": 0.20243879529004297,
+        "H_B": 1.4093620213379172,
+        "all_boundary_MI": 1.020716490153868,
+        "log_Z": 109.2536305900951,
+        "all_boundary_conditional_entropy": 0.8604272155132984,
+        "all_boundary_spin_accuracy": 0.9789540304374077,
+        "all_boundary_full_MAP_accuracy": 0.8620002786186856
+      },
+      {
+        "beta": 1.36,
+        "model": "one_reversed_bond",
+        "H_A": 1.8159440516196803,
+        "H_contact": 1.633708120035409,
+        "H_A_given_contacts": 0.18223593158427123,
+        "H_B": 1.379191493887735,
+        "all_boundary_MI": 1.0172612742858615,
+        "log_Z": 112.5046700641245,
+        "all_boundary_conditional_entropy": 0.7986827773338188,
+        "all_boundary_spin_accuracy": 0.9806702777335613,
+        "all_boundary_full_MAP_accuracy": 0.872636801105003
+      },
+      {
+        "beta": 1.4,
+        "model": "one_reversed_bond",
+        "H_A": 1.7569611992587215,
+        "H_contact": 1.5925825618258973,
+        "H_A_given_contacts": 0.16437863743282416,
+        "H_B": 1.3521897032652255,
+        "all_boundary_MI": 1.0144087942084958,
+        "log_Z": 115.75885496299229,
+        "all_boundary_conditional_entropy": 0.7425524050502257,
+        "all_boundary_spin_accuracy": 0.982231717128658,
+        "all_boundary_full_MAP_accuracy": 0.8824013758918536
+      },
+      {
+        "beta": 1.44,
+        "model": "one_reversed_bond",
+        "H_A": 1.7033418774358937,
+        "H_contact": 1.5547990580801792,
+        "H_A_given_contacts": 0.14854281935571448,
+        "H_B": 1.3278335139275699,
+        "all_boundary_MI": 1.0120472675619445,
+        "log_Z": 119.0157412074503,
+        "all_boundary_conditional_entropy": 0.6912946098739492,
+        "all_boundary_spin_accuracy": 0.9836557221994718,
+        "all_boundary_full_MAP_accuracy": 0.8913800056002057
+      },
+      {
+        "beta": 1.48,
+        "model": "one_reversed_bond",
+        "H_A": 1.6543871051483954,
+        "H_contact": 1.5199300988344326,
+        "H_A_given_contacts": 0.13445700631396276,
+        "H_B": 1.305711418139003,
+        "all_boundary_MI": 1.0100873619311406,
+        "log_Z": 122.27496497885298,
+        "all_boundary_conditional_entropy": 0.6442997432172548,
+        "all_boundary_spin_accuracy": 0.9849569739440488,
+        "all_boundary_full_MAP_accuracy": 0.8996468583753421
+      },
+      {
+        "beta": 1.52,
+        "model": "one_reversed_bond",
+        "H_A": 1.6095201519069076,
+        "H_contact": 1.4876275152887404,
+        "H_A_given_contacts": 0.12189263661816721,
+        "H_B": 1.2854972117082242,
+        "all_boundary_MI": 1.0084572319598135,
+        "log_Z": 125.53622562396936,
+        "all_boundary_conditional_entropy": 0.601062919947094,
+        "all_boundary_spin_accuracy": 0.9861480194213791,
+        "all_boundary_full_MAP_accuracy": 0.9072664939241741
+      },
+      {
+        "beta": 1.56,
+        "model": "one_reversed_bond",
+        "H_A": 1.5682616893686274,
+        "H_contact": 1.4576053655714873,
+        "H_A_given_contacts": 0.11065632379714005,
+        "H_B": 1.2669302815336017,
+        "all_boundary_MI": 1.0070987748234144,
+        "log_Z": 128.79927257447233,
+        "all_boundary_conditional_entropy": 0.561162914545213,
+        "all_boundary_spin_accuracy": 0.987239691360153,
+        "all_boundary_full_MAP_accuracy": 0.9142955979264782
+      },
+      {
+        "beta": 1.6,
+        "model": "one_reversed_bond",
+        "H_A": 1.5302104049335616,
+        "H_contact": 1.429626741716354,
+        "H_A_given_contacts": 0.10058366321720769,
+        "H_B": 1.2498007235883017,
+        "all_boundary_MI": 1.0059647723481397,
+        "log_Z": 132.06389527192476,
+        "all_boundary_conditional_entropy": 0.5242456325854219,
+        "all_boundary_spin_accuracy": 0.9882414273307619,
+        "all_boundary_full_MAP_accuracy": 0.9207843403741343
+      },
+      {
+        "beta": 2.0,
+        "model": "one_reversed_bond",
+        "H_A": 1.270782488220825,
+        "H_contact": 1.2300571277170596,
+        "H_A_given_contacts": 0.04072536050376538,
+        "H_B": 1.1311667849027673,
+        "all_boundary_MI": 1.0010902568792084,
+        "log_Z": 164.76746259907173,
+        "all_boundary_conditional_entropy": 0.2696922313416166,
+        "all_boundary_spin_accuracy": 0.9947573427241594,
+        "all_boundary_full_MAP_accuracy": 0.9639476348493101
+      },
+      {
+        "beta": 3.0,
+        "model": "one_reversed_bond",
+        "H_A": 1.0501952469068148,
+        "H_contact": 1.0451361166874884,
+        "H_A_given_contacts": 0.005059130219326341,
+        "H_B": 1.0249792482452986,
+        "all_boundary_MI": 1.0000181798742418,
+        "log_Z": 246.70307540020997,
+        "all_boundary_conditional_entropy": 0.050177067032572964,
+        "all_boundary_spin_accuracy": 0.9992917621196523,
+        "all_boundary_full_MAP_accuracy": 0.9950545556937287
+      }
+    ]
+  },
+  "MI_peaks": {
+    "ferro": {
+      "beta": 0.6120349124652206,
+      "mutual_information_bits": 1.5707387514803486,
+      "H_A": 7.686227299467067,
+      "H_A_given_boundary": 6.115488547986718,
+      "bracket": [
+        0.56,
+        0.64
+      ],
+      "scope": "Numerical refinement of largest sampled MI peak on beta in [0,3]; not a certified global extremum."
+    },
+    "one_reversed_bond": {
+      "beta": 0.6392532833565514,
+      "mutual_information_bits": 1.6157524489997357,
+      "H_A": 7.871607490331935,
+      "H_A_given_boundary": 6.255855041332199,
+      "bracket": [
+        0.6,
+        0.68
+      ],
+      "scope": "Numerical refinement of largest sampled MI peak on beta in [0,3]; not a certified global extremum."
+    }
+  },
+  "sensor_selection_beta064": {
+    "ferro": [
+      {
+        "sensor_count": 0,
+        "best_mask": 0,
+        "best_boundary_vertices": [],
+        "best_MI": 0.0,
+        "worst_MI": 0.0,
+        "near_tied_best_masks": [
+          0
+        ],
+        "greedy_mask": 0,
+        "greedy_MI": 0.0,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 1,
+        "best_mask": 8,
+        "best_boundary_vertices": [
+          24
+        ],
+        "best_MI": 0.5327567039912351,
+        "worst_MI": 0.5074206579429754,
+        "near_tied_best_masks": [
+          8,
+          32
+        ],
+        "greedy_mask": 8,
+        "greedy_MI": 0.5327567039912351,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 2,
+        "best_mask": 5,
+        "best_boundary_vertices": [
+          6,
+          22
+        ],
+        "best_MI": 0.8247112785249344,
+        "worst_MI": 0.7415619324050091,
+        "near_tied_best_masks": [
+          5
+        ],
+        "greedy_mask": 40,
+        "greedy_MI": 0.8184239460242608,
+        "greedy_regret": 0.0062873325006735925
+      },
+      {
+        "sensor_count": 3,
+        "best_mask": 164,
+        "best_boundary_vertices": [
+          22,
+          40,
+          53
+        ],
+        "best_MI": 1.0114865457133613,
+        "worst_MI": 0.9073392850405888,
+        "near_tied_best_masks": [
+          11,
+          164
+        ],
+        "greedy_mask": 168,
+        "greedy_MI": 0.9859818700243785,
+        "greedy_regret": 0.025504675688982736
+      },
+      {
+        "sensor_count": 4,
+        "best_mask": 27,
+        "best_boundary_vertices": [
+          6,
+          18,
+          24,
+          36
+        ],
+        "best_MI": 1.1562274896252767,
+        "worst_MI": 1.052223607289143,
+        "near_tied_best_masks": [
+          27,
+          228
+        ],
+        "greedy_mask": 172,
+        "greedy_MI": 1.1349491050873288,
+        "greedy_regret": 0.021278384537947836
+      },
+      {
+        "sensor_count": 5,
+        "best_mask": 31,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          24,
+          36
+        ],
+        "best_MI": 1.2680867080600233,
+        "worst_MI": 1.2138674942046652,
+        "near_tied_best_masks": [
+          31,
+          229
+        ],
+        "greedy_mask": 173,
+        "greedy_MI": 1.251637136688787,
+        "greedy_regret": 0.01644957137123626
+      },
+      {
+        "sensor_count": 6,
+        "best_mask": 215,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          36,
+          50,
+          53
+        ],
+        "best_MI": 1.3793927887366628,
+        "worst_MI": 1.3290228726774576,
+        "near_tied_best_masks": [
+          215
+        ],
+        "greedy_mask": 175,
+        "greedy_MI": 1.3627680785552796,
+        "greedy_regret": 0.01662471018138323
+      },
+      {
+        "sensor_count": 7,
+        "best_mask": 223,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          24,
+          36,
+          50,
+          53
+        ],
+        "best_MI": 1.4649027068127651,
+        "worst_MI": 1.4461618681785815,
+        "near_tied_best_masks": [
+          223,
+          247
+        ],
+        "greedy_mask": 191,
+        "greedy_MI": 1.4566877182156244,
+        "greedy_regret": 0.00821498859714076
+      },
+      {
+        "sensor_count": 8,
+        "best_mask": 255,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          24,
+          36,
+          40,
+          50,
+          53
+        ],
+        "best_MI": 1.5486695260411896,
+        "worst_MI": 1.5486695260411896,
+        "near_tied_best_masks": [
+          255
+        ],
+        "greedy_mask": 255,
+        "greedy_MI": 1.5486695260411896,
+        "greedy_regret": 0.0
+      }
+    ],
+    "one_reversed_bond": [
+      {
+        "sensor_count": 0,
+        "best_mask": 0,
+        "best_boundary_vertices": [],
+        "best_MI": 0.0,
+        "worst_MI": 0.0,
+        "near_tied_best_masks": [
+          0
+        ],
+        "greedy_mask": 0,
+        "greedy_MI": 0.0,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 1,
+        "best_mask": 8,
+        "best_boundary_vertices": [
+          24
+        ],
+        "best_MI": 0.4864982540304137,
+        "worst_MI": 0.23830291647415436,
+        "near_tied_best_masks": [
+          8
+        ],
+        "greedy_mask": 8,
+        "greedy_MI": 0.4864982540304137,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 2,
+        "best_mask": 24,
+        "best_boundary_vertices": [
+          24,
+          36
+        ],
+        "best_MI": 0.7643945608182428,
+        "worst_MI": 0.586082476384088,
+        "near_tied_best_masks": [
+          24
+        ],
+        "greedy_mask": 24,
+        "greedy_MI": 0.7643945608182428,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 3,
+        "best_mask": 100,
+        "best_boundary_vertices": [
+          22,
+          40,
+          50
+        ],
+        "best_MI": 0.9621547253989622,
+        "worst_MI": 0.7942656222392745,
+        "near_tied_best_masks": [
+          100
+        ],
+        "greedy_mask": 26,
+        "greedy_MI": 0.9602271721593816,
+        "greedy_regret": 0.0019275532395806039
+      },
+      {
+        "sensor_count": 4,
+        "best_mask": 228,
+        "best_boundary_vertices": [
+          22,
+          40,
+          50,
+          53
+        ],
+        "best_MI": 1.1287735304114657,
+        "worst_MI": 1.0001664401399601,
+        "near_tied_best_masks": [
+          228
+        ],
+        "greedy_mask": 27,
+        "greedy_MI": 1.1225263369588951,
+        "greedy_regret": 0.006247193452570521
+      },
+      {
+        "sensor_count": 5,
+        "best_mask": 229,
+        "best_boundary_vertices": [
+          6,
+          22,
+          40,
+          50,
+          53
+        ],
+        "best_MI": 1.2826422365214345,
+        "worst_MI": 1.1940234941213248,
+        "near_tied_best_masks": [
+          229
+        ],
+        "greedy_mask": 155,
+        "greedy_MI": 1.2672950814509036,
+        "greedy_regret": 0.01534715507053086
+      },
+      {
+        "sensor_count": 6,
+        "best_mask": 215,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          36,
+          50,
+          53
+        ],
+        "best_MI": 1.4072832007629117,
+        "worst_MI": 1.3352697883603728,
+        "near_tied_best_masks": [
+          215
+        ],
+        "greedy_mask": 219,
+        "greedy_MI": 1.400075857852677,
+        "greedy_regret": 0.007207342910234615
+      },
+      {
+        "sensor_count": 7,
+        "best_mask": 223,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          24,
+          36,
+          50,
+          53
+        ],
+        "best_MI": 1.513635074546297,
+        "worst_MI": 1.4642276131883118,
+        "near_tied_best_masks": [
+          223
+        ],
+        "greedy_mask": 223,
+        "greedy_MI": 1.513635074546297,
+        "greedy_regret": 0.0
+      },
+      {
+        "sensor_count": 8,
+        "best_mask": 255,
+        "best_boundary_vertices": [
+          6,
+          18,
+          22,
+          24,
+          36,
+          40,
+          50,
+          53
+        ],
+        "best_MI": 1.6157398173449629,
+        "worst_MI": 1.6157398173449629,
+        "near_tied_best_masks": [
+          255
+        ],
+        "greedy_mask": 255,
+        "greedy_MI": 1.6157398173449629,
+        "greedy_regret": 0.0
+      }
+    ]
+  },
+  "misspecified_clean_model_on_defect": [
+    {
+      "beta": 0.0,
+      "conditional_KL_bits": 0.0,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5
+    },
+    {
+      "beta": 0.04,
+      "conditional_KL_bits": 0.004614163465380432,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5087594834551604
+    },
+    {
+      "beta": 0.08,
+      "conditional_KL_bits": 0.018427190841808303,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5179050397973495
+    },
+    {
+      "beta": 0.12,
+      "conditional_KL_bits": 0.04135102312400679,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5274538150015323
+    },
+    {
+      "beta": 0.16,
+      "conditional_KL_bits": 0.07323896785937198,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.53742837487293
+    },
+    {
+      "beta": 0.2,
+      "conditional_KL_bits": 0.11388216231911286,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5478618699419783
+    },
+    {
+      "beta": 0.24,
+      "conditional_KL_bits": 0.1629976823953354,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.558806562799898
+    },
+    {
+      "beta": 0.28,
+      "conditional_KL_bits": 0.22020302735523495,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5703471722481716
+    },
+    {
+      "beta": 0.3,
+      "conditional_KL_bits": 0.25168244602538103,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5763811862760305
+    },
+    {
+      "beta": 0.32,
+      "conditional_KL_bits": 0.2849732277906056,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5826216555585819
+    },
+    {
+      "beta": 0.34657359027997264,
+      "conditional_KL_bits": 0.3318378392668757,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5912869877851074
+    },
+    {
+      "beta": 0.36,
+      "conditional_KL_bits": 0.3565799929249682,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.5958544549865835
+    },
+    {
+      "beta": 0.4,
+      "conditional_KL_bits": 0.4340153615298279,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6104207890983154
+    },
+    {
+      "beta": 0.44,
+      "conditional_KL_bits": 0.5159014043937087,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6270826515364164
+    },
+    {
+      "beta": 0.48,
+      "conditional_KL_bits": 0.6003781926902511,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6466865350336679
+    },
+    {
+      "beta": 0.5,
+      "conditional_KL_bits": 0.6428385506214122,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6577357215393442
+    },
+    {
+      "beta": 0.52,
+      "conditional_KL_bits": 0.6849519373605555,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6696102765317449
+    },
+    {
+      "beta": 0.56,
+      "conditional_KL_bits": 0.7663322009231103,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.6978049572685666
+    },
+    {
+      "beta": 0.6,
+      "conditional_KL_bits": 0.8405132339522805,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.7331112899103768
+    },
+    {
+      "beta": 0.64,
+      "conditional_KL_bits": 0.9036269013628038,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.7797309772768928
+    },
+    {
+      "beta": 0.68,
+      "conditional_KL_bits": 0.9535118562014474,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.8235342927129269
+    },
+    {
+      "beta": 0.6931471805599453,
+      "conditional_KL_bits": 0.9670159968892205,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.8358813028030644
+    },
+    {
+      "beta": 0.72,
+      "conditional_KL_bits": 0.9904929088717351,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.8587356021321411
+    },
+    {
+      "beta": 0.76,
+      "conditional_KL_bits": 1.0163979447111804,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.8869680102289129
+    },
+    {
+      "beta": 0.8,
+      "conditional_KL_bits": 1.0331427981516597,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9072996744540347
+    },
+    {
+      "beta": 0.84,
+      "conditional_KL_bits": 1.0421635806650356,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9222620613969694
+    },
+    {
+      "beta": 0.88,
+      "conditional_KL_bits": 1.0444962040547552,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9334918492018736
+    },
+    {
+      "beta": 0.92,
+      "conditional_KL_bits": 1.040969115880236,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9421659076309228
+    },
+    {
+      "beta": 0.96,
+      "conditional_KL_bits": 1.03231564009003,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.949046713542503
+    },
+    {
+      "beta": 1.0,
+      "conditional_KL_bits": 1.0192148192481367,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9546655724039841
+    },
+    {
+      "beta": 1.0397207708399179,
+      "conditional_KL_bits": 1.0024297775648778,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9593286411901649
+    },
+    {
+      "beta": 1.04,
+      "conditional_KL_bits": 1.002299856855746,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.95935876242648
+    },
+    {
+      "beta": 1.08,
+      "conditional_KL_bits": 0.982156958853003,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9633522946111602
+    },
+    {
+      "beta": 1.12,
+      "conditional_KL_bits": 0.9593233459159085,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9668023196030371
+    },
+    {
+      "beta": 1.16,
+      "conditional_KL_bits": 0.9342867333058277,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9698194781558486
+    },
+    {
+      "beta": 1.2,
+      "conditional_KL_bits": 0.907486348991026,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9724842594020515
+    },
+    {
+      "beta": 1.24,
+      "conditional_KL_bits": 0.8793150331757495,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9748567055001605
+    },
+    {
+      "beta": 1.28,
+      "conditional_KL_bits": 0.8501219719689529,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9769826244295129
+    },
+    {
+      "beta": 1.32,
+      "conditional_KL_bits": 0.8202157425430741,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9788977006502657
+    },
+    {
+      "beta": 1.36,
+      "conditional_KL_bits": 0.7898674619526549,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9806302703512569
+    },
+    {
+      "beta": 1.4,
+      "conditional_KL_bits": 0.7593139130755653,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9822032344143106
+    },
+    {
+      "beta": 1.44,
+      "conditional_KL_bits": 0.7287605733428479,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9836354020402395
+    },
+    {
+      "beta": 1.48,
+      "conditional_KL_bits": 0.6983845040651386,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9849424507034371
+    },
+    {
+      "beta": 1.52,
+      "conditional_KL_bits": 0.6683370776629454,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.986137622756382
+    },
+    {
+      "beta": 1.56,
+      "conditional_KL_bits": 0.6387465319603897,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9872322382721658
+    },
+    {
+      "beta": 1.6,
+      "conditional_KL_bits": 0.6097203480032383,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.98823607775344
+    },
+    {
+      "beta": 2.0,
+      "conditional_KL_bits": 0.363220925710936,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9947571396192206
+    },
+    {
+      "beta": 3.0,
+      "conditional_KL_bits": 0.07847907497803869,
+      "spin_accuracy_if_clean_model_used_on_defect": 0.9992917620545035
+    }
+  ],
+  "observation_examples_beta064": [
+    {
+      "beta": 0.64,
+      "model": "ferro",
+      "mask": 0,
+      "values": 0,
+      "event_probability": 0.9999999999999998,
+      "posterior_spin_plus": [
+        0.5,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5000000000000001,
+        0.5
+      ],
+      "H_A_given_this_observation": 6.784461483336714,
+      "contact_uncertainty": 4.9359430300256815,
+      "strict_interior_uncertainty_given_contacts": 1.8485184533110328,
+      "bayes_spin_accuracy_given_this_observation": 0.5,
+      "best_full_configuration_probability": 0.2046132793313476
+    },
+    {
+      "beta": 0.64,
+      "model": "ferro",
+      "mask": 255,
+      "values": 255,
+      "event_probability": 0.21581622816212032,
+      "posterior_spin_plus": [
+        0.9322526136612507,
+        0.9233242216644657,
+        0.9225409333184873,
+        0.9478787134961393,
+        0.9403540410146639,
+        0.9437814510110379,
+        0.9558942815939748,
+        0.952082517045573,
+        0.9233242216644657,
+        0.9225409333184873,
+        0.9322526136612507,
+        0.9478787134961393,
+        0.9558942815939749,
+        0.952082517045573
+      ],
+      "H_A_given_this_observation": 3.68718007906167,
+      "contact_uncertainty": 2.2589044121193913,
+      "strict_interior_uncertainty_given_contacts": 1.4282756669422787,
+      "bayes_spin_accuracy_given_this_observation": 0.9394344323989632,
+      "best_full_configuration_probability": 0.6095863889819633
+    },
+    {
+      "beta": 0.64,
+      "model": "ferro",
+      "mask": 255,
+      "values": 85,
+      "event_probability": 0.00016795726281498903,
+      "posterior_spin_plus": [
+        0.7472015934162674,
+        0.6020646419694371,
+        0.7094212027703577,
+        0.7972377080398305,
+        0.6562002501883555,
+        0.3014637210550621,
+        0.16505892372684966,
+        0.22106943786572247,
+        0.6020646419694368,
+        0.7094212027703575,
+        0.7472015934162672,
+        0.7972377080398303,
+        0.16505892372684963,
+        0.22106943786572247
+      ],
+      "H_A_given_this_observation": 8.313284606535486,
+      "contact_uncertainty": 5.277142885872712,
+      "strict_interior_uncertainty_given_contacts": 3.0361417206627754,
+      "bayes_spin_accuracy_given_this_observation": 0.7353092927385667,
+      "best_full_configuration_probability": 0.0678218528487668
+    },
+    {
+      "beta": 0.64,
+      "model": "ferro",
+      "mask": 1,
+      "values": 1,
+      "event_probability": 0.5,
+      "posterior_spin_plus": [
+        0.8616946142907205,
+        0.8255319986672929,
+        0.8237336291251818,
+        0.7962684814625152,
+        0.7888773400478517,
+        0.7899540118837018,
+        0.7933075661787875,
+        0.7707280838964359,
+        0.7514246935710904,
+        0.7535906228433682,
+        0.7494409008158694,
+        0.7823523359478953,
+        0.7902469529135889,
+        0.8059200897152552
+      ],
+      "H_A_given_this_observation": 6.270327281919614,
+      "contact_uncertainty": 4.421808828608581,
+      "strict_interior_uncertainty_given_contacts": 1.8485184533110328,
+      "bayes_spin_accuracy_given_this_observation": 0.7916479515256825,
+      "best_full_configuration_probability": 0.3843999638009848
+    },
+    {
+      "beta": 0.64,
+      "model": "ferro",
+      "mask": 15,
+      "values": 15,
+      "event_probability": 0.30160116612673765,
+      "posterior_spin_plus": [
+        0.9167571042879232,
+        0.9003936961093886,
+        0.9000467829212037,
+        0.9103179453208254,
+        0.9103946024667899,
+        0.9208706975237994,
+        0.9227438466685416,
+        0.9394366777353896,
+        0.909914304958356,
+        0.9035290463077474,
+        0.9211989770334802,
+        0.9051678505310825,
+        0.9395270629825303,
+        0.9121797818964937
+      ],
+      "H_A_given_this_observation": 4.519792840505014,
+      "contact_uncertainty": 2.93889256133815,
+      "strict_interior_uncertainty_given_contacts": 1.580900279166864,
+      "bayes_spin_accuracy_given_this_observation": 0.9151770269102537,
+      "best_full_configuration_probability": 0.5345746277129895
+    },
+    {
+      "beta": 0.64,
+      "model": "one_reversed_bond",
+      "mask": 0,
+      "values": 0,
+      "event_probability": 1.0000000000000004,
+      "posterior_spin_plus": [
+        0.49999999999999994,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.49999999999999983,
+        0.49999999999999983,
+        0.49999999999999983,
+        0.4999999999999998,
+        0.4999999999999998,
+        0.4999999999999999,
+        0.49999999999999983,
+        0.4999999999999998,
+        0.49999999999999983,
+        0.49999999999999983,
+        0.4999999999999998
+      ],
+      "H_A_given_this_observation": 7.853468142167513,
+      "contact_uncertainty": 5.694161245037401,
+      "strict_interior_uncertainty_given_contacts": 2.159306897130111,
+      "bayes_spin_accuracy_given_this_observation": 0.5000000000000001,
+      "best_full_configuration_probability": 0.13308350348138123
+    },
+    {
+      "beta": 0.64,
+      "model": "one_reversed_bond",
+      "mask": 255,
+      "values": 255,
+      "event_probability": 0.1472504272621469,
+      "posterior_spin_plus": [
+        0.5154495657422364,
+        0.6813850606258769,
+        0.6798274059959996,
+        0.8821938330307828,
+        0.9166577917619342,
+        0.9309720176943648,
+        0.9524339151412572,
+        0.9506566411340928,
+        0.9214336263497294,
+        0.9196303710935259,
+        0.9306276996446864,
+        0.9409788119087716,
+        0.9370587161677251,
+        0.8905535566185139
+      ],
+      "H_A_given_this_observation": 5.330416583707684,
+      "contact_uncertainty": 3.3754409801280714,
+      "strict_interior_uncertainty_given_contacts": 1.9549756035796122,
+      "bayes_spin_accuracy_given_this_observation": 0.8607042152078211,
+      "best_full_configuration_probability": 0.33704495420948716
+    },
+    {
+      "beta": 0.64,
+      "model": "one_reversed_bond",
+      "mask": 255,
+      "values": 85,
+      "event_probability": 0.0002545447227527461,
+      "posterior_spin_plus": [
+        0.18599339168992385,
+        0.20428532385308412,
+        0.3003990140395921,
+        0.6139996385468731,
+        0.5440774204208466,
+        0.23756158175911893,
+        0.14020118164335535,
+        0.2038690085370844,
+        0.57925827373055,
+        0.6812030110592564,
+        0.7276001551129773,
+        0.750992747615832,
+        0.10437066251856708,
+        0.0981703478014154
+      ],
+      "H_A_given_this_observation": 7.928041994809143,
+      "contact_uncertainty": 5.030361295177563,
+      "strict_interior_uncertainty_given_contacts": 2.8976806996315796,
+      "bayes_spin_accuracy_given_this_observation": 0.7444486239031568,
+      "best_full_configuration_probability": 0.060719237873773334
+    },
+    {
+      "beta": 0.64,
+      "model": "one_reversed_bond",
+      "mask": 1,
+      "values": 1,
+      "event_probability": 0.49999999999999994,
+      "posterior_spin_plus": [
+        0.3250711386914571,
+        0.4294979340799552,
+        0.42705787181110433,
+        0.5473491248589961,
+        0.6018398929112446,
+        0.6184084996380359,
+        0.6544841891066044,
+        0.6371452627903604,
+        0.6228476947475331,
+        0.6222928825701898,
+        0.6200388000527962,
+        0.6341676602097024,
+        0.5984523519504519,
+        0.560444611954265
+      ],
+      "H_A_given_this_observation": 7.61516522569336,
+      "contact_uncertainty": 5.455858328563249,
+      "strict_interior_uncertainty_given_contacts": 2.159306897130112,
+      "bayes_spin_accuracy_given_this_observation": 0.6097031447291189,
+      "best_full_configuration_probability": 0.14501347910662774
+    },
+    {
+      "beta": 0.64,
+      "model": "one_reversed_bond",
+      "mask": 15,
+      "values": 15,
+      "event_probability": 0.22682450657655595,
+      "posterior_spin_plus": [
+        0.45985653194904685,
+        0.6092644086367043,
+        0.6086385362044918,
+        0.7984930719218912,
+        0.860365865953765,
+        0.8897153837097989,
+        0.909156311515856,
+        0.9334517237990092,
+        0.9027803457864909,
+        0.8932202123999489,
+        0.9151801852604855,
+        0.8821437694936181,
+        0.9004944066092753,
+        0.8018520453644762
+      ],
+      "H_A_given_this_observation": 6.304430654492606,
+      "contact_uncertainty": 4.201317994279606,
+      "strict_interior_uncertainty_given_contacts": 2.1031126602129997,
+      "bayes_spin_accuracy_given_this_observation": 0.8174928381933402,
+      "best_full_configuration_probability": 0.2681491457423621
+    }
+  ],
+  "maximum_greedy_regret_at_selected_temperatures": 0.025504675688982736,
+  "gates": {
+    "all_256_masks_evaluated": true,
+    "information_nonnegative_and_bounded": true,
+    "adding_observations_never_reduces_average_information_or_Bayes_accuracy": true,
+    "contact_entropy_floor": true,
+    "beta_zero_limits_exact": true
+  },
+  "small_markov_control": {
+    "vertices": 6,
+    "A": [
+      0,
+      1
+    ],
+    "B": [
+      2
+    ],
+    "C": [
+      3,
+      4,
+      5
+    ],
+    "base_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "edge_weights": [
+      2,
+      1
+    ],
+    "rows": [
+      {
+        "added_A_C_shortcut": false,
+        "exact_conditional_independence_identity": true,
+        "conditional_mutual_information_bits": 8.881784197001252e-16
+      },
+      {
+        "added_A_C_shortcut": true,
+        "exact_conditional_independence_identity": false,
+        "conditional_mutual_information_bits": 0.06383901054445928
+      }
+    ]
+  },
+  "direct_full_interior_gate": {
+    "models": [
+      "ferro",
+      "one_reversed_bond"
+    ],
+    "beta": 0.64,
+    "retained_A_states": 16384,
+    "retained_B_states": 256,
+    "direct_joint_entropy_and_spin_marginals_match": true,
+    "sensor_masks_checked": [
+      0,
+      1,
+      3,
+      85,
+      255
+    ]
+  },
+  "seconds": 4.255160788000012,
+  "class": "Numerical finite probabilities and information from EXACT coefficients; optimal masks/peaks are numerical comparisons."
+}

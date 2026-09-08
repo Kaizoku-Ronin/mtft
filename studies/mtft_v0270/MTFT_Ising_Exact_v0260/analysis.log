@@ -1,0 +1,158 @@
+{
+  "peaks": {
+    "6": {
+      "beta": 0.5973622734123948,
+      "C_per_spin": 0.29995625085257055,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "11": {
+      "beta": 0.5973622734123948,
+      "C_per_spin": 0.29995625085257055,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "15": {
+      "beta": 0.5934775740428095,
+      "C_per_spin": 0.5103024312140183,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "35": {
+      "beta": 0.6153703321798505,
+      "C_per_spin": 0.7141456580270735,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "55": {
+      "beta": 0.6335979737578856,
+      "C_per_spin": 0.805299435519836,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "77": {
+      "beta": 0.625601579856406,
+      "C_per_spin": 0.9170105904579091,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "105": {
+      "beta": 0.6312918246149631,
+      "C_per_spin": 1.1139871996228718,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    },
+    "143": {
+      "beta": 0.6414274551138474,
+      "C_per_spin": 1.0487788898635253,
+      "search_range": [
+        0.01,
+        3.0
+      ],
+      "class": "DIAGNOSTIC numerical peak"
+    }
+  },
+  "isomorphism_6_to_11": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "full_143_cycle_count_matches": true,
+  "cycle_enumeration_log": "Enumerated 536870912 even subgraphs (rank 29) in 2.94359 seconds",
+  "max_cut_witness_143": {
+    "spin_bits": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "cut_edges": 75,
+    "frustrated_edge_indices": [
+      0,
+      12,
+      17,
+      25,
+      29,
+      53,
+      73,
+      78,
+      83
+    ],
+    "antiferromagnetic_energy": -66,
+    "ground_state_degeneracy": 2
+  }
+}

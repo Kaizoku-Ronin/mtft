@@ -1,0 +1,62 @@
+{
+  "method": "Exact integer conditional sampling; each configuration is an independent equilibrium draw. Pseudorandom integer generator, fixed recorded seeds; no physical time interpretation.",
+  "small_graph_all_configuration_probabilities_exact": true,
+  "rows": [
+    {
+      "a": 1,
+      "d": 1,
+      "beta": 0.0,
+      "sample_count": 20000,
+      "seed": 14301,
+      "partition_integer": "72057594037927936",
+      "S_mean": 0.9239,
+      "S_exact_expectation": 0.9999999999999969,
+      "M_mean": 0.0435,
+      "M_exact_expectation": 5.747878189728588e-17,
+      "S_standardized_error": 1.1813011001249882,
+      "M_standardized_error": 0.8220727287950683
+    },
+    {
+      "a": 2,
+      "d": 1,
+      "beta": 0.34657359027997264,
+      "sample_count": 20000,
+      "seed": 14302,
+      "partition_integer": "69838356853589209496384691870720",
+      "S_mean": 30.1205,
+      "S_exact_expectation": 30.111696022907182,
+      "M_mean": -0.0617,
+      "M_exact_expectation": -6.385108473780596e-17,
+      "S_standardized_error": 0.13582864962025856,
+      "M_standardized_error": 0.5999049869551738
+    },
+    {
+      "a": 4,
+      "d": 1,
+      "beta": 0.6931471805599453,
+      "sample_count": 20000,
+      "seed": 14304,
+      "partition_integer": "5436006194870779519505539316406250000000000000000000",
+      "S_mean": 70.1397,
+      "S_exact_expectation": 70.2073915523049,
+      "M_mean": -0.0735,
+      "M_exact_expectation": 4.291943822888237e-16,
+      "S_standardized_error": 0.9177305518017369,
+      "M_standardized_error": 0.21977917582786252
+    },
+    {
+      "a": 8,
+      "d": 1,
+      "beta": 1.0397207708399179,
+      "sample_count": 20000,
+      "seed": 14308,
+      "partition_integer": "19185851542160824064649831238849324924840949926337042578640778773190137610240",
+      "S_mean": 82.7243,
+      "S_exact_expectation": 82.74208742544576,
+      "M_mean": 0.2149,
+      "M_exact_expectation": -5.590032364384292e-16,
+      "S_standardized_error": 0.9338245266973351,
+      "M_standardized_error": 0.5496659096352949
+    }
+  ]
+}

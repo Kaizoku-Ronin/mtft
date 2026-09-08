@@ -1,0 +1,119 @@
+{
+  "status": "EXACT_SYMBOLIC_SYNTHETIC_CONTROL",
+  "scope": "Rational 3x3 Hermitian non-involution; two active plus one complement; no MTFT data",
+  "H": [
+    [
+      "-41/49",
+      "72/49",
+      "66/49"
+    ],
+    [
+      "72/49",
+      "109/49",
+      "6/49"
+    ],
+    [
+      "66/49",
+      "6/49",
+      "30/49"
+    ]
+  ],
+  "full_eigenvalues": [
+    -2,
+    1,
+    3
+  ],
+  "compressed_D_eigenvalue": "30/49",
+  "dark_input": [
+    "sqrt(122)/122",
+    "-11*sqrt(122)/122"
+  ],
+  "Bstar_A_dark_input": [
+    "-90*sqrt(122)/427"
+  ],
+  "dark_norm_quartic_coefficient": "4050/2989",
+  "dark_norm_general_remainder": "O(t^5); this real example has stronger O(t^6) by evenness",
+  "secondary_complex_Hermitian_control": {
+    "H": [
+      [
+        "0",
+        "1",
+        "I",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "-I",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "initial_active_state": "(0,1,0), initial complement 0",
+    "complement_amplitude": "-t^2/2-t^3/6+O(t^4)",
+    "complement_norm_squared": "t^4/4+t^5/6+O(t^6)",
+    "purpose": "Shows that a nonzero fifth-order term is possible for Hermitian generators"
+  },
+  "checks": {
+    "rational_orthogonal_frame": true,
+    "Hermitian_generator": true,
+    "generator_is_not_an_involution": true,
+    "specified_characteristic_polynomial": true,
+    "complement_coupling_full_column_rank": true,
+    "compression_pole_outside_full_spectrum": true,
+    "full_resolvent": true,
+    "finite_Schur_identity_left": true,
+    "finite_Schur_identity_right": true,
+    "self_energy_pole_residue": true,
+    "projected_resolvent_null_direction_at_compression_pole": true,
+    "projected_resolvent_nullity_matches_complement_pole": true,
+    "high_frequency_self_energy_moment": true,
+    "unitary_evolution": true,
+    "unitary_evolution_equation": true,
+    "full_composition_law": true,
+    "projected_composition_defect": true,
+    "composition_defect_leading_ts": true,
+    "general_projected_norm_balance": true,
+    "dark_input_normalized": true,
+    "dark_input_in_coupling_kernel": true,
+    "dark_input_has_nonzero_second_order_transfer": true,
+    "dark_complement_initial_value": true,
+    "dark_complement_first_derivative": true,
+    "dark_complement_second_derivative": true,
+    "dark_norm_derivative_order_0": true,
+    "dark_norm_derivative_order_1": true,
+    "dark_norm_derivative_order_2": true,
+    "dark_norm_derivative_order_3": true,
+    "dark_norm_quartic_coefficient": true,
+    "real_control_norm_even": true,
+    "memory_equation_for_initially_active_input": true,
+    "memory_equation_with_initial_complement_forcing": true,
+    "minimal_auxiliary_Krylov_dimension": true,
+    "no_static_active_generator_composition_defect_nonzero": true,
+    "quintic_control_Hermitian": true,
+    "quintic_control_initial_coupling_zero": true,
+    "quintic_control_amplitude": true,
+    "quintic_control_norm_quartic": true,
+    "quintic_control_nonzero_fifth_order_term": true
+  },
+  "checks_passed": 40,
+  "checks_total": 40,
+  "domains": [
+    "Schur expression requires z outside spec(D); projected full resolvent additionally requires z outside spec(H).",
+    "A pole of Sigma at d is not a new full-system eigenvalue; the tested d is outside spec(H).",
+    "Evolution time is dimensionless. This is a direct-sum amplitude projection, not a density-matrix partial trace."
+  ],
+  "sympy_version": "1.14.0",
+  "script_sha256": "5e1d7f6f57b7d30ef4413ba4895c5770731a1797eeb230ed490f8ae93a07a8f3"
+}

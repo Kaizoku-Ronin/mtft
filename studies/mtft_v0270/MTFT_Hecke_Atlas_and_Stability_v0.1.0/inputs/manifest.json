@@ -1,0 +1,29 @@
+{
+  "mtft_version": "0.26.0",
+  "mtft_source_archive_sha256": "758f29a7a0c2ca08896a15964b3a607c7143ac1fd335bcc8f4d84a4880e53cdf",
+  "frozen_json_sha256": "53cd676946568e0ce989537f65f5d0ccc282ef7bde88f83323803b41c7c46bb8",
+  "prior_irregular_census_sha256": "b05dbeccbd3f8fbd35e76c21afc74900a02d50075028e2e31baa3c45aca7e2b2",
+  "plan_sha256": "a9295f4aecffc2d86d89440c9b17673868bea9c845c4f26449723bbd8f9c4271",
+  "prime_labels_count": 1252,
+  "frozen_package_gates": {
+    "intersection_skew_unimodular": true,
+    "AL_involutions": true,
+    "W11_W13_equals_W143": true,
+    "Hecke_commutes_with_AL": true,
+    "AL_preserve_intersection": true,
+    "Hecke_selfadjoint": true,
+    "AL_traces_2_m2_m18": true,
+    "riemann_I_symplectic": true,
+    "riemann_II_positive": true,
+    "J_commutes_with_Hecke_AL": true,
+    "frozen_J_matches_recomputed": true,
+    "live_cycle_basis_equals_frozen": true,
+    "U_commute_with_good_Hecke": true,
+    "U_commute_with_J": true,
+    "AL_adjoint_identity_U13": true,
+    "AL_adjoint_identity_U11": true,
+    "U11_squared_identity": true,
+    "hecke_block_lattices_annihilated_and_full_rank": true,
+    "hodge_covolume_squared_equals_polarization_det": true
+  }
+}

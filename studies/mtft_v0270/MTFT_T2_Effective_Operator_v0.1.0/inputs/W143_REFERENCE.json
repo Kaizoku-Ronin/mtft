@@ -1,0 +1,65 @@
+{
+  "source_file": "MTFT_W143_Effective_Operator_v0.1.0/effective_operator_results.json",
+  "source_sha256": "a440472639787f4b5aac790609ed901889beaa06a3204daec2ae4bda744a1e87",
+  "prior_protocol_sha256": "d6e08abc6b41e1aab4099653d1a8eb71df1479b103c6b751a007d3812475f18d",
+  "coupling_rank_complex": 2,
+  "modes": [
+    {
+      "mode": 1,
+      "a": 0.9384807105804687,
+      "b": 0.3453316606805388,
+      "d": -0.9384807105804682,
+      "a_squared_plus_b_squared": 1.0000000000000002,
+      "a_plus_d": 4.440892098500626e-16,
+      "coupled_pair_invariance_residual": 9.81658641153327e-15,
+      "positive_sign_overlap_rho": 0.9692403552902343,
+      "principal_angle_degrees": 10.101021438456996,
+      "maximum_toy_complement_norm_fraction": 0.11925395586837877
+    },
+    {
+      "mode": 2,
+      "a": 0.9820208126991046,
+      "b": 0.18877267658692481,
+      "d": -0.9820208126991046,
+      "a_squared_plus_b_squared": 1.0000000000000016,
+      "a_plus_d": 0.0,
+      "coupled_pair_invariance_residual": 1.2132181127800594e-14,
+      "positive_sign_overlap_rho": 0.9910104063495523,
+      "principal_angle_degrees": 5.440583836413176,
+      "maximum_toy_complement_norm_fraction": 0.03563512342579171
+    }
+  ],
+  "uncoupled_active_eigenvalues": [
+    -1.000000000000003,
+    -1.0000000000000022,
+    -1.0000000000000018,
+    -1.0000000000000007,
+    -0.9999999999999996,
+    -0.9999999999999986
+  ],
+  "uncoupled_fixed_eigenvalues": [
+    -1.0000000000000007,
+    -0.9999999999999993,
+    -0.9999999999999983
+  ],
+  "block_checks": {
+    "A2_BB_identity": 7.787019381560109e-15,
+    "D2_BstarB_identity": 5.932042453140318e-15,
+    "AB_BD_zero": 5.760842089394392e-15,
+    "canonical_transform_unitarity": 3.7299266217592845e-15,
+    "canonical_reconstruction": 2.2156526059170933e-14,
+    "P_reconstruction": 3.3522003045625154e-15,
+    "hermitian_cleanup_size": 7.953244290867373e-15
+  },
+  "response_summary": {
+    "regular_point_count": 907,
+    "pole_stress_point_count": 22,
+    "max_regular_effective_relative_error": 1.445188156306249e-14,
+    "max_regular_involution_relative_error": 2.350855330627044e-14,
+    "max_regular_naive_relative_error": 0.9073753509954773,
+    "max_stress_effective_relative_error": 6.592260287026992e-05,
+    "max_stress_involution_relative_error": 6.542809408961174e-14,
+    "max_stress_Schur_condition": 1982215571469.027
+  },
+  "scope": "Frozen prior baseline summary; the T2 replay does not rerun W143."
+}

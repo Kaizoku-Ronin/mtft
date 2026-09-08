@@ -1,0 +1,42 @@
+{
+  "experiment": "W143 coupled-mode reduction and complementary-sector feedback",
+  "companion_version": "0.1.0",
+  "date_utc": "2026-09-08",
+  "source_version": "MTFT 0.26.2",
+  "original_uploaded_archive_name": "mtft-0.26.2.tar (1).gz",
+  "source_archive": "inputs/mtft-0.26.2.tar.gz",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "source_files_verified_byte_for_byte": 395,
+  "protocol_sha256": "d6e08abc6b41e1aab4099653d1a8eb71df1479b103c6b751a007d3812475f18d",
+  "prior_study": "MTFT_Active_Module_v0.1.0",
+  "upstream_inputs": {
+    "inputs/previous/coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "inputs/previous/PROVENANCE.json": "88e85cc2e6a668e110c3c7dac8e1524ef488e1a93e54d0ba24b82a581a6b7f59",
+    "inputs/previous/ORIGINAL_STUDY_SHA256SUMS.txt": "590525a06a4d3698215eb78cac8497b2bab06a309fd9c2eac4eb16d8044db0df",
+    "inputs/previous/kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b"
+  },
+  "study_script_sha256": {
+    "feedback_identities.py": "5a4accc041a4dbd3a6bc9a5c323cddfa2dde2e357ce3520de981467c2d610e3e",
+    "run_study.py": "c134e9d87c3109621252962ff753e7808e8622584468ffd8d2de5f32d116508b",
+    "canonical_check.py": "3689b998aa9d4346e473c107d52bd495fb55a4e2cb5a8b77b7b258f5779bc1e0",
+    "effective_operator_study.py": "2fa6764d1fc65efae039be3ef0a7b3a64313a277ff684b67f3d6766fa7fe722a",
+    "render_effective_operator.py": "a6e7230553a682a410a6dec7575878f5749b34e6ab9d745d47dd9cc54599a32f"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "validation": "VALIDATION.json",
+  "replay": "python run_study.py",
+  "independence": "SVD route and positive-eigenspace route share frozen upstream Hodge geometry; symbolic checks use a generic synthetic channel.",
+  "epistemic": {
+    "exact": "Integer involution and positive-projector rank; conditional algebraic identities and generic symbolic control.",
+    "diagnostic": "Actual Hodge-frame coefficients, projectors, canonical angles, response errors, and norm fractions.",
+    "physical_interpretation": "No identification of physical time, energy, mass, Hamiltonian, spacetime signature, or QFT."
+  },
+  "conditioning": "Regular response gate passed. Raw Schur stress error reaches 6.592260287026992e-05; retained rather than reclassified as passing."
+}

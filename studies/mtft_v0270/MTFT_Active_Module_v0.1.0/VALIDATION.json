@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "release_is_0_26_2": true,
+    "exact_harmonic_support_rank_four": true,
+    "frame_metric_and_complex_structure_consistent": true,
+    "all_direct_projectors_rank_eight_without_ambiguous_singular_values": true,
+    "projectors_stable_across_registered_frames": true,
+    "block_fractions_stable_across_registered_frames": true,
+    "every_registered_non_STAR_operator_resolves_mixing": true,
+    "STAR_preserves_split_at_diagnostic_threshold": true,
+    "independent_localization_agrees": true,
+    "T2_one_augmentation_fills_real_26_with_large_singular_gap": true,
+    "all_registered_hulls_fill_real_26": true,
+    "identity_and_fullspace_controls": true,
+    "two_exact_fullspace_commutations": true
+  },
+  "all_checks_passed": true,
+  "scope": "Study replay and consistency gates; not full package tests or interval certification.",
+  "unresolved_package_closure_runs": [
+    {
+      "seed": 2026,
+      "dps": 50,
+      "error": "1 residuals in (1e-07, 1e-05]; worst [1.2076478544427825e-07]"
+    },
+    {
+      "seed": 31415,
+      "dps": 50,
+      "error": "1 residuals in (1e-07, 1e-05]; worst [1.5844900252434873e-07]"
+    }
+  ]
+}

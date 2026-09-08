@@ -1,0 +1,219 @@
+{
+  "scope": "Synthetic R^3 doubled-algebra control; NOT an X0(143) construction or a signature derivation.",
+  "construction": {
+    "algebra": "R^3 represented by all diagonal 3x3 matrices; complexification available",
+    "left_action": "pi(a)=diag(a, W a W^T)",
+    "opposite_action": "b^o=diag(W b^T W^T, b^T)",
+    "Dirac": "D=[[0,M],[M^T,0]], M=W+W^T",
+    "real_structure": "J=swap on real matrices; swap composed with conjugation after complexification",
+    "grading": "Gamma=diag(I,-I)",
+    "commutator": "ordinary [D,pi(a)], not a sigma-twisted commutator"
+  },
+  "cases": {
+    "identity": {
+      "arithmetic": "EXACT: Python integer matrix operations",
+      "W": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "M_equals_W_plus_transpose_W": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "checks": {
+        "orthogonal_twist": true,
+        "faithful_idempotent_algebra_representation": true,
+        "order_zero_all_generator_pairs": true,
+        "first_order_all_generator_pairs": true,
+        "self_adjoint_D": true,
+        "J_squared_identity": true,
+        "JD_equals_DJ": true,
+        "grading_anticommutes_D": true,
+        "grading_anticommutes_J": true
+      },
+      "one_form_Frobenius_norms_squared": [
+        0,
+        0,
+        0
+      ],
+      "has_nonzero_represented_one_forms": false
+    },
+    "transposition": {
+      "arithmetic": "EXACT: Python integer matrix operations",
+      "W": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "M_equals_W_plus_transpose_W": [
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "checks": {
+        "orthogonal_twist": true,
+        "faithful_idempotent_algebra_representation": true,
+        "order_zero_all_generator_pairs": true,
+        "first_order_all_generator_pairs": true,
+        "self_adjoint_D": true,
+        "J_squared_identity": true,
+        "JD_equals_DJ": true,
+        "grading_anticommutes_D": true,
+        "grading_anticommutes_J": true
+      },
+      "one_form_Frobenius_norms_squared": [
+        0,
+        0,
+        0
+      ],
+      "has_nonzero_represented_one_forms": false
+    },
+    "three_cycle": {
+      "arithmetic": "EXACT: Python integer matrix operations",
+      "W": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "M_equals_W_plus_transpose_W": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "checks": {
+        "orthogonal_twist": true,
+        "faithful_idempotent_algebra_representation": true,
+        "order_zero_all_generator_pairs": true,
+        "first_order_all_generator_pairs": true,
+        "self_adjoint_D": true,
+        "J_squared_identity": true,
+        "JD_equals_DJ": true,
+        "grading_anticommutes_D": true,
+        "grading_anticommutes_J": true
+      },
+      "one_form_Frobenius_norms_squared": [
+        4,
+        4,
+        4
+      ],
+      "has_nonzero_represented_one_forms": true
+    }
+  },
+  "interpretation": [
+    "A noninvolutive permutation can produce nonzero ordinary one-forms while satisfying the tested order-zero, first-order, reality and grading conditions.",
+    "This changes the algebra and does not provide a noninvolutive rational field automorphism of the quartic or sextic Hecke fields.",
+    "Aut_Q(K4)=Aut_Q(K6)={1} constrains field-automorphism twists on those factors; it is not a theorem excluding all bimodules, larger algebras, multiplicity-space transformations or scalar extensions.",
+    "All represented commutators vanishing implies no represented inner one-forms in that construction. It does not identify a physical flat gauge connection."
+  ],
+  "TH2_status": {
+    "preregistration_present": true,
+    "preregistration_states_no_primary_quantities_computed_at_filing": true,
+    "filenames_matching_TH2_or_TH_minus_2": [
+      "studies/TH2_PREREGISTRATION.md"
+    ],
+    "review_of_supplied_release": "Only preregistration found; no packaged primary gradient ledger or H-A/H-B/H-C verdict found. This does not exclude unpublished external results.",
+    "what_H_A_would_establish": "All 32 gradient support ratios satisfy the preregistered tolerance for the active 8, in a correctly matched frame and metric.",
+    "what_H_A_would_not_establish": "D4 equivariance of the gradient construction, vector-versus-spinor labeling under triality, or a real Clifford signature.",
+    "roundoff_note": "Preregistration certifies truncation tails but labels floating-point roundoff estimate NOT certified; final intervals inherit this limitation.",
+    "theta_function_evaluations_performed_in_this_control": 0,
+    "finite_input_census_rechecked": {
+      "periods": {
+        "affine_dimension": 7,
+        "invariants": 128,
+        "even": 96,
+        "odd": 32,
+        "affine_action_50_samples_per_generator": "PASS"
+      },
+      "independent_packaged_GP_frame": {
+        "affine_dimension": 7,
+        "invariants": 128,
+        "even": 96,
+        "odd": 32,
+        "affine_action_50_samples_per_generator": "PASS"
+      }
+    }
+  },
+  "source_sha256": {
+    "src/mtft/surface/bimodule.py": "08b9361b96bfd3d5453eb73f0b22187be0df7dc0a833046b5ae3a4c478d8f6ca",
+    "studies/TH2_PREREGISTRATION.md": "7857add1dfcd9fdf00e8b1599878e8d07088a0312b5ffc6764c9a64c8d8d02a7",
+    "src/mtft/thetachar/__init__.py": "698c50cafc0ddc4553529548b0b862d952bd794a53dfbf67f4f5d9f0e7a77c73",
+    "src/mtft/thetachar/_data/x0143_theta_census.json": "f4c84e6f43bde27913c365c9367cca15027dbb7c4284cac00a04dabdb412c747",
+    "src/mtft/liealg.py": "57e898bbee886475f5dae66942a1f210c9f7836ecb091cc384f5e312943cfc22",
+    "CHANGELOG_v0230.md": "56093707878c3b9f5825c9519be835ee290bfc49176c9d7254d2dadbcbbe5908",
+    "CHANGELOG_v0260.md": "7f5cf3d9c2ce2ce152c5023a658d7dd0e91fd52ddb67ed04203ae391a4c079d7"
+  }
+}

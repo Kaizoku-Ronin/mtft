@@ -1,0 +1,84 @@
+{
+  "status": "EXACT_RATIONAL_BOUND_ON_FROZEN_FINITE_MODEL",
+  "physical_time_identified": false,
+  "exact_period_geometry_certified": false,
+  "sample_count": 1001,
+  "horizons": [
+    {
+      "horizon": 0.125,
+      "best_order": 12,
+      "relative_uniform_bound": 7.684388148103691e-05,
+      "certifies_one_percent": true,
+      "sampled_maximum_relative_error": 2.9697908397070636e-05
+    },
+    {
+      "horizon": 0.25,
+      "best_order": 12,
+      "relative_uniform_bound": 0.0005660067527360588,
+      "certifies_one_percent": true,
+      "sampled_maximum_relative_error": 0.0001983624794390157
+    },
+    {
+      "horizon": 0.5,
+      "best_order": 12,
+      "relative_uniform_bound": 0.00601906309224253,
+      "certifies_one_percent": true,
+      "sampled_maximum_relative_error": 0.0019861077544629582
+    },
+    {
+      "horizon": 0.75,
+      "best_order": 12,
+      "relative_uniform_bound": 0.03025660878118122,
+      "certifies_one_percent": false,
+      "sampled_maximum_relative_error": 0.00867253405943799
+    },
+    {
+      "horizon": 1.0,
+      "best_order": 12,
+      "relative_uniform_bound": 0.11021493384752394,
+      "certifies_one_percent": false,
+      "sampled_maximum_relative_error": 0.023878649171062413
+    }
+  ],
+  "expm_controls": [
+    {
+      "t": 0,
+      "full_expm_error": 3.0802945056674763e-15,
+      "reduced_expm_error": 2.7460705500059117e-15
+    },
+    {
+      "t": 0.125,
+      "full_expm_error": 3.1078360006044212e-15,
+      "reduced_expm_error": 2.780351794895816e-15
+    },
+    {
+      "t": 0.25,
+      "full_expm_error": 3.3746023757531086e-15,
+      "reduced_expm_error": 3.0358483882771807e-15
+    },
+    {
+      "t": 0.5,
+      "full_expm_error": 3.413476195876271e-15,
+      "reduced_expm_error": 3.204738708647707e-15
+    },
+    {
+      "t": 0.75,
+      "full_expm_error": 3.587210517146611e-15,
+      "reduced_expm_error": 3.443769313261296e-15
+    },
+    {
+      "t": 1,
+      "full_expm_error": 3.895352080250882e-15,
+      "reduced_expm_error": 3.762609221036645e-15
+    }
+  ],
+  "parent_model_reconstruction_error": 0.0,
+  "minimum_sampled_full_norm": 2.32982762695216,
+  "checks": {
+    "exact_hermitian_full": true,
+    "exact_hermitian_reduced": true,
+    "moments_zero_and_one_exact": true,
+    "expm_agreement": true,
+    "all_sampled_errors_below_corresponding_bounds": true
+  }
+}

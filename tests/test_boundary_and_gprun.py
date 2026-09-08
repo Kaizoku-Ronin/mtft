@@ -202,8 +202,15 @@ def test_manifest_covers_every_studies_extension():
     studies = root / "studies"
     if not manifest.exists() or not studies.exists():
         pytest.skip("running from an installed package, not a source tree")
-    rule = [l for l in manifest.read_text().splitlines()
-            if l.startswith("recursive-include studies")]
+    lines = manifest.read_text().splitlines()
+    # v0.27.0 policy change (Kimi audit integration fix, disclosed): studies/ is
+    # pruned from the sdist and ships GitHub-only; the exclusion must be deliberate
+    # and uncontradicted.  Without a prune rule, the old coverage check applies.
+    if any(l.strip() == "prune studies" for l in lines):
+        assert not any(l.startswith("recursive-include studies") for l in lines), \
+            "contradictory MANIFEST.in: both prune and recursive-include for studies/"
+        return
+    rule = [l for l in lines if l.startswith("recursive-include studies")]
     assert rule, "no studies rule in MANIFEST.in"
     covered = {tok.lstrip("*") for tok in rule[0].split()[2:]}
     # __pycache__ is a build artifact, not source; everything else must ship

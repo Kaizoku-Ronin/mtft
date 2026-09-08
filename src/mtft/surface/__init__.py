@@ -1,4 +1,4 @@
-"""mtft.surface — the Modular Surface Laboratory as an mtft subpackage (v0.26.0).
+"""mtft.surface — the Modular Surface Laboratory as an mtft subpackage (v0.27.0).
 
 Layers, in the order the computation runs, each with its claim class:
 
@@ -39,7 +39,7 @@ from .manin import Invariants, ManinComplex, cell_complex, invariants, complex_g
 
 __all__ = ["invariants", "cell_complex", "tree_cotree", "report", "Invariants", "ManinComplex",
            "CycleBasis", "manin", "cycles", "hodge", "gauge", "transport", "hodge_structure",
-           "ising", "frozen", "dynamics", "bimodule"]
+           "ising", "frozen", "dynamics", "bimodule", "intertwiner"]
 
 
 def report(N: int, max_refinement: int = 2, gp_layers: bool = True, primes=(2, 3)) -> Dict:

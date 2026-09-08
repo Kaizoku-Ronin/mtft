@@ -1,0 +1,843 @@
+{
+  "all_passed": true,
+  "number_of_gates": 165,
+  "class_totals": {
+    "EXACT": 142,
+    "Recorded EXACT construction checks": 9,
+    "DIAGNOSTIC": 7,
+    "Recorded EXACT construction check": 1,
+    "Integration": 6
+  },
+  "independent_cycle_enumeration": {
+    "cycles": 536870912,
+    "coefficient_checks": 340,
+    "log": "Enumerated 536870912 even subgraphs (rank 29) in 4.00153 seconds"
+  },
+  "gates": [
+    {
+      "name": "joint 6: integer domain and state total",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 6: energy marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 6: binomial field marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 6: reversal and cubic parity",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 6: recorded construction gates",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "joint 11: integer domain and state total",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 11: energy marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 11: binomial field marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 11: reversal and cubic parity",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 11: recorded construction gates",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "joint 15: integer domain and state total",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 15: energy marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 15: binomial field marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 15: reversal and cubic parity",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 15: recorded construction gates",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "joint 35: integer domain and state total",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 35: energy marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 35: binomial field marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 35: reversal and cubic parity",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 35: recorded construction gates",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "joint 143: integer domain and state total",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 143: energy marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 143: binomial field marginal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 143: reversal and cubic parity",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "joint 143: recorded construction gates",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "twists 6: basis size",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 6: each census and minimum",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 6: recorded flatness, quotient, gauge checks",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "twists 11: basis size",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 11: each census and minimum",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 11: recorded flatness, quotient, gauge checks",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "twists 35: basis size",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 35: each census and minimum",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 35: recorded flatness, quotient, gauge checks",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "twists 143: basis size",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 143: each census and minimum",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "twists 143: recorded flatness, quotient, gauge checks",
+      "class": "Recorded EXACT construction checks",
+      "passed": true
+    },
+    {
+      "name": "two homology coordinates: all 4 x 85 C++ coefficients",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "two homology coordinates: all 2^29 cycles accounted for",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "independent cycle marginal vs exact signed transform",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "C++ input matches graph and two cocycles",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "N6/N11 untwisted graph control",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 6: independent layers",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 6: overlap binomial",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 6: locked layers and reversal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 11: independent layers",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 11: overlap binomial",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 11: locked layers and reversal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 15: independent layers",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 15: overlap binomial",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 15: locked layers and reversal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 35: independent layers",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 35: overlap binomial",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "bilayer 35: locked layers and reversal",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 0: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 1: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 2: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 3: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 4: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 5: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 6: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 7: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 8: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 9: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 10: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 11: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 12: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 13: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 14: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 15: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 16: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 17: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 18: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 19: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 20: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 21: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 22: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 23: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 24: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 25: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 26: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 27: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 28: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 29: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 30: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 31: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 32: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 33: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 34: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 35: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 36: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 37: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 38: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 39: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 40: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 41: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 42: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 43: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 44: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 45: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 46: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 47: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 48: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 49: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 50: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 51: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 52: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 53: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 54: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 55: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 56: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 57: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 58: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 59: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 60: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 61: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 62: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 63: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 64: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 65: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 66: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 67: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 68: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 69: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 70: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 71: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 72: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 73: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 74: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 75: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 76: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 77: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 78: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 79: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 80: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 81: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 82: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "defect 83: witness and exact ground count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "edge 4: independent ground-distance count",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=2: exact reciprocal reduction",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=2: 28 disjoint sign-changing rational intervals",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=4: exact reciprocal reduction",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=4: 28 disjoint sign-changing rational intervals",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=8: exact reciprocal reduction",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Lee-Yang a=8: 28 disjoint sign-changing rational intervals",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Fisher exact factorization and multiplicities",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Fisher numerical residual and precision agreement",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Fisher geometry: sign convention and three-route checks",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Fisher geometry: positive metric determinants and spin reversal",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Sampler: recorded all-configuration probability gate",
+      "class": "Recorded EXACT construction check",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=1: stored histograms and bit samples",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=1: finite-sample mean diagnostic",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=2: stored histograms and bit samples",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=2: finite-sample mean diagnostic",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=4: stored histograms and bit samples",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=4: finite-sample mean diagnostic",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=8: stored histograms and bit samples",
+      "class": "EXACT",
+      "passed": true
+    },
+    {
+      "name": "Sampler a=8: finite-sample mean diagnostic",
+      "class": "DIAGNOSTIC",
+      "passed": true
+    },
+    {
+      "name": "CLI field example",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "CLI twist example",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "CLI defect example",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "CLI bilayer factorization",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "CLI sampling example",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "CLI zeros example",
+      "class": "Integration",
+      "passed": true
+    },
+    {
+      "name": "Source archive SHA256",
+      "class": "EXACT",
+      "passed": true
+    }
+  ]
+}

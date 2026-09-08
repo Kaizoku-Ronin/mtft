@@ -1,0 +1,254 @@
+{
+  "epistemic": "DIAGNOSTIC except the exact rational support certificate and stated conditional rank bound",
+  "version": "0.26.2",
+  "period_input_dps": 50,
+  "operator_arithmetic": "numpy complex128 / float64, not interval-certified",
+  "frame_seed": 143,
+  "exact_support": {
+    "epistemic": "EXACT rational arithmetic on packaged harmonic matrix",
+    "edge_indices": [
+      1,
+      2,
+      11,
+      12,
+      13,
+      59,
+      81,
+      82
+    ],
+    "independent_edge_indices": [
+      2,
+      11,
+      12,
+      13
+    ],
+    "independent_row_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "rank": 4,
+    "nonzero_minor_determinant": "-10610616427/14658673262330686",
+    "reconstruction_exact": true,
+    "coordinates_4x8": [
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "-1",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "per_triangle": {
+      "1": {
+        "edges": [
+          1,
+          2,
+          59
+        ],
+        "rank": 1
+      },
+      "11": {
+        "edges": [
+          11,
+          12,
+          82
+        ],
+        "rank": 2
+      },
+      "12": {
+        "edges": [
+          12,
+          13,
+          81
+        ],
+        "rank": 2
+      }
+    }
+  },
+  "Cij_svd": {
+    "nullity_complex": 5,
+    "singular_values": [
+      0.012304247268526476,
+      0.009346859323526309,
+      0.008426889747764054,
+      0.002544680161991699,
+      0.0007095249487447763,
+      0.0004821680909475143,
+      0.00014488156276457702,
+      1.3966117643689107e-05,
+      1.4046886282766282e-17,
+      2.904831615942262e-18,
+      2.0119670344175068e-18,
+      1.0830392703446997e-18,
+      7.715789960359736e-19
+    ],
+    "relative_threshold": 1e-09,
+    "largest_discarded": 1.4046886282766282e-17,
+    "smallest_retained": 1.3966117643689107e-05,
+    "gap": 994250068132.4467,
+    "rank_by_relative_threshold": {
+      "1e-07": 8,
+      "1e-09": 8,
+      "1e-11": 8,
+      "1e-13": 8
+    }
+  },
+  "B_antilinear_svd": {
+    "nullity_complex": 5,
+    "singular_values": [
+      0.19946856560193368,
+      0.1435427435071286,
+      0.08700020465788057,
+      0.06773804866995213,
+      0.02328348638723463,
+      0.011736364680669457,
+      0.0051624007172935875,
+      0.001880434766016565,
+      4.0878576664583443e-16,
+      3.166668659786754e-16,
+      2.0368182323585094e-16,
+      1.6151352352412942e-16,
+      1.165723502875876e-16
+    ],
+    "relative_threshold": 1e-09,
+    "largest_discarded": 4.0878576664583443e-16,
+    "smallest_retained": 0.001880434766016565,
+    "gap": 4600049511131.203,
+    "rank_by_relative_threshold": {
+      "1e-07": 8,
+      "1e-09": 8,
+      "1e-11": 8,
+      "1e-13": 8
+    }
+  },
+  "Cij_energy_gram": {
+    "nullity": 5,
+    "eigenvalues": [
+      -1.1450423021847015e-20,
+      -1.9566381707823492e-21,
+      7.23530048422692e-22,
+      4.710863097325209e-21,
+      1.1196474424565746e-20,
+      1.9505244204184512e-10,
+      2.0990667229109193e-08,
+      2.3248606792796773e-07,
+      5.034256528912844e-07,
+      6.47539712683411e-06,
+      7.101247082097095e-05,
+      8.736377921379075e-05,
+      0.0001513945008450412
+    ],
+    "projector_distance_to_Cij_svd_complex": 7.062008537362607e-11,
+    "note": "Forming C* C squares conditioning; small signed eigenvalues are floating-point roundoff."
+  },
+  "localization_reconstruction": {
+    "epistemic": "DIAGNOSTIC; exact rank upper bound, numerical saturation",
+    "rank_growth_real": [
+      4,
+      8,
+      16
+    ],
+    "span_singular_values": [
+      2.166781187039039,
+      2.166781187039034,
+      1.288253815215587,
+      1.288253815215585,
+      0.6859066321762959,
+      0.6859066321762957,
+      0.5103986772692958,
+      0.510398677269295,
+      0.18237007496534857,
+      0.1823700749653485,
+      0.12335744386288576,
+      0.12335744386288555,
+      0.0692832495129844,
+      0.06928324951298435,
+      0.033207066897661563,
+      0.033207066897661425
+    ],
+    "span_condition_number": 65.25060444864621,
+    "projector_distance_to_Cij_svd_real": 4.90493582948529e-13,
+    "fixed_dimension_real": 10,
+    "fixed_dimension_complex": 5,
+    "projector_J_commutator": 4.262384180003081e-14
+  },
+  "cross_checks": {
+    "B_C_projector_distance_complex": 3.12158747880191e-13,
+    "Cij_kernel_relative_residuals": [
+      1.1404749262746573e-15,
+      1.1789886664473956e-15,
+      2.9052119665771405e-16
+    ],
+    "B_antilinear_kernel_relative_residuals": [
+      4.914911300383242e-15,
+      4.309035880178196e-15,
+      4.278940296780437e-15
+    ],
+    "closure_dimension": 28,
+    "closure_projector_distance_complex": 8.559023829884145e-12,
+    "Cij_antihermitian_relative_residuals": [
+      1.1069757349272134e-14,
+      1.0289955269800582e-14,
+      9.832929074042106e-15
+    ],
+    "B_symmetric_relative_residuals": [
+      7.420771912991614e-15,
+      9.745684112034747e-15,
+      1.1099043607816307e-14
+    ]
+  },
+  "STAR": {
+    "antilinear_structure_residual": 7.190166995545958e-15,
+    "unitarity_residual": 2.988828527704431e-14,
+    "involution_residual": 2.1955915206355917e-14,
+    "fixed_projector_preservation_residual": 4.349381140451339e-13,
+    "localized_real_projector_commutator": 6.096129189515033e-14,
+    "Cij_identity_action_relative_residuals": [
+      2.3172222718552877e-14,
+      1.6816167292745436e-14,
+      2.015127749902903e-14
+    ],
+    "interpretation": "Antiunitary real structure preserving both subspaces; not a spacetime signature."
+  },
+  "source_sha256": {
+    "src/mtft/liealg.py": "57e898bbee886475f5dae66942a1f210c9f7836ecb091cc384f5e312943cfc22",
+    "src/mtft/periods/physics.py": "b580de4ddcbaf5ffb6823a9d27d197f6c24ec9e2ef05c4a7b8c36d6b1af640fd",
+    "src/mtft/periods/_data/X0_143_m7_harmonic_basis.json": "f0a8c44b26154fffae4cc51254f0ea430594716ce51736607558a4e358554719"
+  },
+  "script_sha256": "6cadcca86c789e9f1cf4fb7b227fd4dae04fe8413fc065b083d10f95defc4acc"
+}

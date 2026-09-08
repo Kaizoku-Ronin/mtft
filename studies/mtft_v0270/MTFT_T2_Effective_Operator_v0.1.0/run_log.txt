@@ -1,0 +1,268 @@
+["t2_effective_operator_study.py", "--source", "/tmp/mtft_t2_replay_4wel1xfu/mtft-0.26.2", "--previous", "/workspace/scratch/a8262a41ed96/deliverables/MTFT_T2_Effective_Operator_v0.1.0/inputs/previous"]
+{
+  "structure": {
+    "Hermitian_cleanup_size": 1.5806201976347628e-14,
+    "coupling_singular_values": [
+      1.9183577035234354,
+      1.35007479218811,
+      0.9888337348198482,
+      0.9012020687305395,
+      0.08997359448320616
+    ],
+    "coupling_rank": {
+      "normalized_singular_values": [
+        0.30718307740297435,
+        0.2161849839718687,
+        0.15834012037689135,
+        0.1443078234711465,
+        0.014407305575803372
+      ],
+      "resolved_rank": 5,
+      "ambiguous": false
+    },
+    "full_eigenvalues": [
+      -2.7089899587502115,
+      -2.0,
+      -1.9999999999999978,
+      -1.7012607013273064,
+      -1.1267570596172174,
+      -0.6330362256722403,
+      -0.19712629759995265,
+      -6.118648453514339e-16,
+      1.2312713859754454,
+      1.3653644962925051,
+      1.747468453907947,
+      2.446651003481806,
+      2.576414903309222
+    ],
+    "complement_eigenvalues": [
+      -1.411342784681829,
+      -1.2950257910532013,
+      0.08865986849130213,
+      1.330991721558554,
+      1.6599375752129453
+    ],
+    "active_eigenvalues": [
+      -1.983205340628051,
+      -1.7575757613654748,
+      -1.0939088333805658,
+      -0.8450802455136897,
+      -0.010740137955436449,
+      0.7417417484976184,
+      1.3884089469920289,
+      2.1871390338257948
+    ],
+    "involution_defect_relative": 3.1132471299766262,
+    "SVD_pair_records": [
+      {
+        "index": 1,
+        "a": 0.5054067769593721,
+        "d": 0.08021475501430247,
+        "b": 1.9183577035234354,
+        "invariance_relative_residual": 0.16828212763114947
+      },
+      {
+        "index": 2,
+        "a": -1.0655776365367962,
+        "d": -0.5522162308359667,
+        "b": 1.35007479218811,
+        "invariance_relative_residual": 0.27502183459591967
+      },
+      {
+        "index": 3,
+        "a": 1.1861740455708327,
+        "d": -0.8254353103614601,
+        "b": 0.9888337348198482,
+        "invariance_relative_residual": 0.264684705557326
+      },
+      {
+        "index": 4,
+        "a": -0.6929973286972044,
+        "d": 0.682119686696583,
+        "b": 0.9012020687305395,
+        "invariance_relative_residual": 0.2706563488639996
+      },
+      {
+        "index": 5,
+        "a": -1.1939844196030636,
+        "d": 0.9885376890143123,
+        "b": 0.08997359448320616,
+        "invariance_relative_residual": 0.24432200135248403
+      }
+    ],
+    "independent_pair_decomposition_relative_residual": 0.6316759041715531,
+    "A_BBstar_commutator_relative": 0.2699368605573663,
+    "D_BstarB_commutator_relative": 0.30575539568635374,
+    "dark_complex_dimension": 3,
+    "instantaneous_dark_coupling_relative": 8.121757775203514e-17,
+    "delayed_dark_coupling_norm": 1.813509697186038,
+    "delayed_dark_singular_values": [
+      1.3678728787112664,
+      1.1896997003533898,
+      0.04853691845393496
+    ],
+    "delayed_dark_rank": {
+      "normalized_singular_values": [
+        0.03507366355669912,
+        0.030505120521881778,
+        0.0012445363706137164
+      ],
+      "resolved_rank": 3,
+      "ambiguous": false
+    },
+    "complement_reachable_rank": {
+      "normalized_singular_values": [
+        0.7162162306516311,
+        0.48875929209940316,
+        0.3843776397113537,
+        0.2889701650293778,
+        0.12999515048832444
+      ],
+      "resolved_rank": 5,
+      "ambiguous": false
+    },
+    "residue_sum_relative_residual": 6.70143505900596e-16,
+    "ordinary_short_time_coefficient": 0.9126063493344602,
+    "dark_short_time_coefficient": 0.27406811848231627
+  },
+  "summary": {
+    "regular_count": 1807,
+    "skipped_regular_count": 0,
+    "stress_count": 55,
+    "compression_poles_tested": 5,
+    "max_regular_effective_relative_error": 2.781605507230565e-14,
+    "max_regular_spectral_relative_error": 2.7217015197367932e-14,
+    "max_regular_naive_relative_error": 8.333652533344495,
+    "max_stress_effective_relative_error": 0.0001639292688811831,
+    "max_stress_spectral_relative_error": 1.4876332178059828e-14,
+    "max_stress_Schur_condition": 32722606588048.758,
+    "max_real_pole_null_residual": 1.0994985887759414e-15,
+    "sampled_max_average_transfer": {
+      "value": 0.37150852929594513,
+      "t": 2.2334760271614935
+    },
+    "sampled_max_worst_input_transfer": {
+      "value": 0.9981234018496973,
+      "t": 4.859651136021712
+    },
+    "sampled_max_dark_average_transfer": {
+      "value": 0.2580457575887017,
+      "t": 1.6935147898257479
+    },
+    "sampled_max_dark_worst_input_transfer": {
+      "value": 0.5848274593414322,
+      "t": 2.8961557275280905
+    }
+  },
+  "elapsed_seconds": 1.1052806260013313
+}
+
+["independent_T2_check.py", "--source", "/tmp/mtft_t2_replay_4wel1xfu/mtft-0.26.2", "--previous", "/workspace/scratch/a8262a41ed96/deliverables/MTFT_T2_Effective_Operator_v0.1.0/inputs/previous"]
+{
+  "characteristic_polynomial": "x**26 + 2*x**25 - 37*x**24 - 76*x**23 + 589*x**22 + 1254*x**21 - 5273*x**20 - 11792*x**19 + 29073*x**18 + 69770*x**17 - 101103*x**16 - 270680*x**15 + 214415*x**14 + 695542*x**13 - 233667*x**12 - 1164348*x**11 - 2413*x**10 + 1203450*x**9 + 330073*x**8 - 669152*x**7 - 358824*x**6 + 117120*x**5 + 126352*x**4 + 30336*x**3 + 2304*x**2",
+  "factorization": [
+    {
+      "polynomial": "x",
+      "coefficients_descending": [
+        "1",
+        "0"
+      ],
+      "multiplicity": 2,
+      "numerical_roots_50_digits": [
+        "0"
+      ]
+    },
+    {
+      "polynomial": "x + 2",
+      "coefficients_descending": [
+        "1",
+        "2"
+      ],
+      "multiplicity": 4,
+      "numerical_roots_50_digits": [
+        "-2.0000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "polynomial": "x**4 - 3*x**3 - x**2 + 5*x + 1",
+      "coefficients_descending": [
+        "1",
+        "-3",
+        "-1",
+        "5",
+        "1"
+      ],
+      "multiplicity": 2,
+      "numerical_roots_50_digits": [
+        "-1.1267570596172168172849817847392338761770276144193",
+        "-0.19712629759995263679653035237925485764797195904732",
+        "1.7474684539079483038727993375104435470795054132220",
+        "2.5764149033092211502087127996080451867454941602446"
+      ]
+    },
+    {
+      "polynomial": "x**6 - 10*x**4 + 2*x**3 + 24*x**2 - 7*x - 12",
+      "coefficients_descending": [
+        "1",
+        "0",
+        "-10",
+        "2",
+        "24",
+        "-7",
+        "-12"
+      ],
+      "multiplicity": 2,
+      "numerical_roots_50_digits": [
+        "-2.7089899587502103351009201938996518184408574402973",
+        "-1.7012607013273055722120888441189194566181597421685",
+        "-0.63303622567224008934548519173751180230631945660995",
+        "1.2312713859754463100412194596285719741740495501492",
+        "1.3653644962925056583543996489859418930306818439900",
+        "2.4466510034818040282628751211415692101606052449367"
+      ]
+    }
+  ],
+  "coupling_singular_values": [
+    1.9183577035234396,
+    1.3500747921882006,
+    0.988833734819681,
+    0.9012020687304727,
+    0.08997359448320813
+  ],
+  "compression_eigenvalues": [
+    -1.4113427846817947,
+    -1.2950257910532472,
+    0.08865986849137762,
+    1.330991721558617,
+    1.6599375752129033
+  ],
+  "regular_grid": {
+    "point_count": 1807,
+    "skipped_indices": [],
+    "maximum_independent_direct_vs_spectral_relative_error": 2.8341210597607352e-14,
+    "maximum_full_operator_condition_number": 105.71146024947369,
+    "complex_z_branch_note": "Responses are extracted from a complex-valued 26x26 projected resolvent via (aa+dd+i(cc-bb))/2. No literal realification assumption is made at complex z."
+  },
+  "checks": {
+    "raw_real_frame_gates": true,
+    "roundoff_cleanup_within_gate": true,
+    "active16_and_complement10_real": true,
+    "fresh_charpoly_has_degree26": true,
+    "exact_factor_roots_numerically_real": true,
+    "eigenspectrum_agrees_with_exact_polynomial": true,
+    "all_real_spectra_pair_to_complex_multiplicities": true,
+    "regular_grid_has1807_points": true,
+    "all_admissible_grid_direct_and_spectral_responses_agree": true,
+    "six_independent_expm_controls_agree": true
+  }
+}
+
+["general_feedback_identities.py"]
+{
+  "checks_passed": 40,
+  "checks_total": 40,
+  "output": "/workspace/scratch/a8262a41ed96/deliverables/MTFT_T2_Effective_Operator_v0.1.0/general_feedback_identity_results.json"
+}
+
+["render_T2_effective_operator.py"]
+

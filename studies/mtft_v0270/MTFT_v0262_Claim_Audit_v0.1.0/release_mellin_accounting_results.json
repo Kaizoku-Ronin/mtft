@@ -1,0 +1,320 @@
+{
+  "version": "0.26.2",
+  "source_hashes": {
+    "constants.py": "15a3d33311c992ecba290445e24d739a57c30b7d38cab1b5018f25efb63085a4",
+    "lattice.py": "244b078409c5e879af13a48c3ce7256be5c8e3cddbbceb374e582f98ea2351ec",
+    "arithmetic_wick.py": "48a627798667e99e9abe7116044d96bf716786e6a89120eb55576d6e23139696",
+    "falsify.py": "c1cec09285f97791c56eeadbac1b3853609c699da70642d4b2a3b050bb5a0ba8"
+  },
+  "Higgs_conventions": {
+    "original_lambda": 0.5179175466708401,
+    "canonical_lambda": 0.12947938666771003,
+    "hosotani_lambda": 0.12947938666771003,
+    "original_mass_relation_relative_error": 1.1586516541012588e-16,
+    "canonical_mass_relation_relative_error": 1.1586516541012588e-16,
+    "interpretation": "Two conventions for the same potential, not two Higgs predictions."
+  },
+  "SU_draws": [
+    {
+      "N": 2,
+      "seed": 0,
+      "det_error": 5.551115123125783e-17,
+      "unitarity_error": 3.222953162925288e-16,
+      "retired_det_error": 0.0016607262016989888
+    },
+    {
+      "N": 2,
+      "seed": 1,
+      "det_error": 3.3306690738754696e-16,
+      "unitarity_error": 3.520181286843152e-16,
+      "retired_det_error": 1.2536533899344402
+    },
+    {
+      "N": 2,
+      "seed": 2,
+      "det_error": 4.440892098500626e-16,
+      "unitarity_error": 3.7580078963824453e-16,
+      "retired_det_error": 1.0132859399628134
+    },
+    {
+      "N": 2,
+      "seed": 3,
+      "det_error": 5.551115123125783e-17,
+      "unitarity_error": 2.4500038567565657e-16,
+      "retired_det_error": 0.7443459971323036
+    },
+    {
+      "N": 2,
+      "seed": 4,
+      "det_error": 3.3766115072321297e-16,
+      "unitarity_error": 7.64788857072973e-16,
+      "retired_det_error": 0.7261931323832476
+    },
+    {
+      "N": 2,
+      "seed": 5,
+      "det_error": 1.1102230246251565e-16,
+      "unitarity_error": 1.6157846760371944e-16,
+      "retired_det_error": 0.5824196858312823
+    },
+    {
+      "N": 2,
+      "seed": 6,
+      "det_error": 2.237726045655905e-16,
+      "unitarity_error": 2.292506294669725e-16,
+      "retired_det_error": 0.38826593501753176
+    },
+    {
+      "N": 2,
+      "seed": 7,
+      "det_error": 2.7755575615628914e-17,
+      "unitarity_error": 5.415359383473671e-17,
+      "retired_det_error": 0.09152097107259584
+    },
+    {
+      "N": 3,
+      "seed": 0,
+      "det_error": 1.2412670766236366e-16,
+      "unitarity_error": 1.1135459561242487e-15,
+      "retired_det_error": 1.027896513913181
+    },
+    {
+      "N": 3,
+      "seed": 1,
+      "det_error": 2.482534153247273e-16,
+      "unitarity_error": 6.194064488435874e-16,
+      "retired_det_error": 0.12550617579949833
+    },
+    {
+      "N": 3,
+      "seed": 2,
+      "det_error": 5.551115123125783e-17,
+      "unitarity_error": 5.387450589011399e-16,
+      "retired_det_error": 1.0363562734877312
+    },
+    {
+      "N": 3,
+      "seed": 3,
+      "det_error": 5.551115123125783e-17,
+      "unitarity_error": 9.162678055927737e-16,
+      "retired_det_error": 1.2521891220650416
+    },
+    {
+      "N": 3,
+      "seed": 4,
+      "det_error": 1.2412670766236366e-16,
+      "unitarity_error": 5.494788938754254e-16,
+      "retired_det_error": 1.3241567396289755
+    },
+    {
+      "N": 3,
+      "seed": 5,
+      "det_error": 0.0,
+      "unitarity_error": 6.557416637662003e-16,
+      "retired_det_error": 0.8970493767284246
+    },
+    {
+      "N": 3,
+      "seed": 6,
+      "det_error": 2.0014830212433602e-16,
+      "unitarity_error": 6.967555308758045e-16,
+      "retired_det_error": 1.4013574394264057
+    },
+    {
+      "N": 3,
+      "seed": 7,
+      "det_error": 1.1102230246251565e-16,
+      "unitarity_error": 3.662803128592299e-16,
+      "retired_det_error": 1.0447165861608085
+    },
+    {
+      "N": 5,
+      "seed": 0,
+      "det_error": 2.3551107371985606e-16,
+      "unitarity_error": 9.675460319127388e-16,
+      "retired_det_error": 1.6375106740194891
+    },
+    {
+      "N": 5,
+      "seed": 1,
+      "det_error": 2.2887833992611187e-16,
+      "unitarity_error": 1.5134069544824006e-15,
+      "retired_det_error": 1.535545576266305
+    },
+    {
+      "N": 5,
+      "seed": 2,
+      "det_error": 2.482534153247273e-16,
+      "unitarity_error": 1.0731298046461162e-15,
+      "retired_det_error": 0.62074192409313
+    },
+    {
+      "N": 5,
+      "seed": 3,
+      "det_error": 2.9504581591051765e-16,
+      "unitarity_error": 5.184998144278552e-16,
+      "retired_det_error": 0.9966939423384478
+    },
+    {
+      "N": 5,
+      "seed": 4,
+      "det_error": 2.0014830212433605e-16,
+      "unitarity_error": 8.574909675839762e-16,
+      "retired_det_error": 0.6542168248515764
+    },
+    {
+      "N": 5,
+      "seed": 5,
+      "det_error": 4.965068306494546e-16,
+      "unitarity_error": 1.1490830462419035e-15,
+      "retired_det_error": 0.8179044567328435
+    },
+    {
+      "N": 5,
+      "seed": 6,
+      "det_error": 2.2887833992611187e-16,
+      "unitarity_error": 5.679408214199353e-16,
+      "retired_det_error": 0.5563356745487261
+    },
+    {
+      "N": 5,
+      "seed": 7,
+      "det_error": 2.2204460492503126e-16,
+      "unitarity_error": 9.047793547086127e-16,
+      "retired_det_error": 1.148726428860639
+    }
+  ],
+  "mellin_finite_checks": [
+    {
+      "s": "2.0",
+      "finite_n_max": 24,
+      "direct_Dirichlet_sum": "0.29072461427253521804039707093905763171011457485918",
+      "Mellin_recovery": "0.29072461427253521804039707093905763171011457485918",
+      "relative_error": "0.0",
+      "quadrature_integral": "0.0073641405080138383841794293043739844517722243551723"
+    },
+    {
+      "s": "3.0",
+      "finite_n_max": 24,
+      "direct_Dirichlet_sum": "0.082146557426412491625470207038854620716899446820787",
+      "Mellin_recovery": "0.082146557426412491625470207038854620716899446820787",
+      "relative_error": "0.0",
+      "quadrature_integral": "0.00066233813135168542176606271638727487145468200344583"
+    },
+    {
+      "s": "(2.5 + 0.4j)",
+      "finite_n_max": 24,
+      "direct_Dirichlet_sum": "(0.12519804492742260947805293716898836946631039321057 - 0.06819605819831467955608164524346070816589810458768j)",
+      "Mellin_recovery": "(0.12519804492742260947805293716898836946631039321057 - 0.06819605819831467955608164524346070816589810458768j)",
+      "relative_error": "3.3141164258773357026861580930061487660183039535403e-51",
+      "quadrature_integral": "(0.0010711658907080370093805285124259105017680335780466 - 0.0014984197715063029242841881817893333500634130394343j)"
+    }
+  ],
+  "mellin_working_dps": 50,
+  "kernel_obstruction": {
+    "expression": "2 log 3 - log 2 - log 4 = log(9/8)",
+    "value": "0.11778303565638345453879410947052170506848071256474",
+    "scope": "Rules out a pointwise common exponential kernel at beta>0, not every conceivable analytic-continuation construction."
+  },
+  "prediction_accounting": {
+    "raw_rows": 23,
+    "metadata_groups": {
+      "alpha_inv": [
+        1,
+        2
+      ],
+      "alpha_s": [
+        3,
+        4
+      ],
+      "row_5": [
+        5
+      ],
+      "higgs_family": [
+        6,
+        8,
+        21
+      ],
+      "row_7": [
+        7
+      ],
+      "row_9": [
+        9
+      ],
+      "row_10": [
+        10
+      ],
+      "row_11": [
+        11
+      ],
+      "row_12": [
+        12
+      ],
+      "koide_family": [
+        13,
+        16
+      ],
+      "row_14": [
+        14
+      ],
+      "row_15": [
+        15
+      ],
+      "row_17": [
+        17
+      ],
+      "row_18": [
+        18
+      ],
+      "row_19": [
+        19
+      ],
+      "row_20": [
+        20
+      ],
+      "charge": [
+        22,
+        23
+      ]
+    },
+    "metadata_group_count": 17,
+    "after_removing_definition_row18": 16,
+    "after_also_merging_row17_into_higgs_family": 15,
+    "row8_row17_algebraic_dependency": {
+      "predicted_lambda_from_row8": 0.12947938666771003,
+      "row17_predicted": 0.12947938666771,
+      "observed_lambda_from_row8": 0.12938347743146458,
+      "row17_observed": 0.12938347743146458
+    },
+    "additional_accounting_notes": [
+      "Rows14 and15 compare arithmetic to rational/numerical mathematical targets, not independent measured particle observables.",
+      "Row13 predicts tau conditionally on measured electron/muon input defaults; row19 uses PDG.alpha_inv as an input.",
+      "Shared measured masses, scheme choices and tolerance choices create further dependencies.",
+      "None of the counts is a statistically established number of independent tests. No joint null probability calculated."
+    ]
+  },
+  "systole": {
+    "trace3_residues": [],
+    "trace4_residues": [
+      19,
+      63,
+      84,
+      128
+    ],
+    "trace4_matrix": [
+      [
+        -15,
+        -2
+      ],
+      [
+        143,
+        19
+      ]
+    ],
+    "length": 2.633915793849633,
+    "metric": "Curvature -1 upper-half-plane quotient Gamma0(143)\\H, with cusps.",
+    "quotient_area": "56*pi",
+    "compact_uniformizing_area": "48*pi",
+    "normalization_scope": "A positive scalar ruler changes scales; it cannot change inertia/signature or remove non-scalar anticommutator defects."
+  }
+}

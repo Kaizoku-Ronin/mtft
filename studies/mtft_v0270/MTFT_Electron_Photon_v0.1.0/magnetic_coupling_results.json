@@ -1,0 +1,135 @@
+{
+  "status": "CONDITIONAL QED baseline plus a deliberately free low-energy Pauli coefficient",
+  "reference_url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+  "electron_rest_energy_eV": 510998.95069,
+  "reference_inverse_alpha_uncertainty": 2.1e-08,
+  "sigma_scope": "Reference offsets only; no MTFT theory-error distribution or joint likelihood supplied.",
+  "alpha_variants": [
+    {
+      "coupling": "NIST_CODATA_2022",
+      "alpha_inv": 137.035999177,
+      "alpha": 0.0072973525643314245,
+      "e_natural_units": 0.30282212076899695,
+      "inverse_alpha_offset_in_reference_sigma": 0.0,
+      "alpha_relative_offset": 0.0,
+      "coulomb_E1_infinite_nuclear_mass_eV": -13.605693122914087,
+      "coulomb_E1_relative_shift": 0.0,
+      "coulomb_E1_over_electron_rest_energy": -2.6625677224077208e-05,
+      "one_loop_anomaly_only": 0.0011614097320976644,
+      "g_magnitude_one_loop_only": 2.0023228194641955
+    },
+    {
+      "coupling": "MTFT_three_term",
+      "alpha_inv": 137.03599933773197,
+      "alpha": 0.00729735255577223,
+      "e_natural_units": 0.30282212059140423,
+      "inverse_alpha_offset_in_reference_sigma": 7.6539027391152645,
+      "alpha_relative_offset": -1.172917762914949e-09,
+      "coulomb_E1_infinite_nuclear_mass_eV": -13.605693090997368,
+      "coulomb_E1_relative_shift": -2.345835525829898e-09,
+      "coulomb_E1_over_electron_rest_energy": -2.662567716161775e-05,
+      "one_loop_anomaly_only": 0.0011614097307354263,
+      "g_magnitude_one_loop_only": 2.002322819461471
+    },
+    {
+      "coupling": "MTFT_four_term",
+      "alpha_inv": 137.03599916543925,
+      "alpha": 0.007297352564947051,
+      "e_natural_units": 0.30282212078177045,
+      "inverse_alpha_offset_in_reference_sigma": -0.5505122706901082,
+      "alpha_relative_offset": 8.436296106140162e-11,
+      "coulomb_E1_infinite_nuclear_mass_eV": -13.605693125209719,
+      "coulomb_E1_relative_shift": 1.6872592212280324e-10,
+      "coulomb_E1_over_electron_rest_energy": -2.662567722856965e-05,
+      "one_loop_anomaly_only": 0.0011614097321956444,
+      "g_magnitude_one_loop_only": 2.0023228194643914
+    },
+    {
+      "coupling": "MTFT_Monster",
+      "alpha_inv": 137.03551427541555,
+      "alpha": 0.007297378386088941,
+      "e_natural_units": 0.302822656538126,
+      "inverse_alpha_offset_in_reference_sigma": -23090.551640810496,
+      "alpha_relative_offset": 3.538510341849488e-06,
+      "coulomb_E1_infinite_nuclear_mass_eV": -13.60578941085609,
+      "coulomb_E1_relative_shift": 7.0770332047942475e-06,
+      "coulomb_E1_over_electron_rest_energy": -2.662586565487902e-05,
+      "one_loop_anomaly_only": 0.0011614138417580125,
+      "g_magnitude_one_loop_only": 2.002322827683516
+    }
+  ],
+  "loop_parameter_integral": 1.0,
+  "quadrature_estimated_error": 1.1102230246251565e-14,
+  "pauli_cases": [
+    {
+      "kappa_P": -0.01,
+      "F1_at_zero": 1.0,
+      "F2_at_zero": -0.008838590269264575,
+      "g_magnitude_to_retained_order": 1.982322819461471,
+      "spin_splitting_over_Bohr_magneton_times_B": 1.982322819461471,
+      "mass_anchor_eV": 510998.95069,
+      "electron_charge_in_units_of_e": -1,
+      "leading_coulomb_E1_eV": -13.605693090997368
+    },
+    {
+      "kappa_P": 0.0,
+      "F1_at_zero": 1.0,
+      "F2_at_zero": 0.0011614097307354263,
+      "g_magnitude_to_retained_order": 2.002322819461471,
+      "spin_splitting_over_Bohr_magneton_times_B": 2.002322819461471,
+      "mass_anchor_eV": 510998.95069,
+      "electron_charge_in_units_of_e": -1,
+      "leading_coulomb_E1_eV": -13.605693090997368
+    },
+    {
+      "kappa_P": 0.01,
+      "F1_at_zero": 1.0,
+      "F2_at_zero": 0.011161409730735426,
+      "g_magnitude_to_retained_order": 2.022322819461471,
+      "spin_splitting_over_Bohr_magneton_times_B": 2.022322819461471,
+      "mass_anchor_eV": 510998.95069,
+      "electron_charge_in_units_of_e": -1,
+      "leading_coulomb_E1_eV": -13.605693090997368
+    }
+  ],
+  "exact_pauli_identity": {
+    "status": "EXACT identity in the supplied Dirac representation",
+    "contraction": "q_mu sigma^(mu nu) q_nu = 0 for arbitrary q",
+    "zero_matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "gamma_Clifford_residual": 0.0,
+  "pauli_transversality_residual": 2.1726353818624857e-19,
+  "pauli_random_momenta": 32,
+  "catalog_mass_resolution": {
+    "mtft_catalog_electron_rest_energy_eV": 510999.99999999994,
+    "reference_electron_rest_energy_eV": 510998.95069,
+    "relative_difference": 2.0534484435064115e-06
+  },
+  "excluded": "Higher QED loops, recoil, relativistic/nuclear effects, Pauli-loop terms, and UV matching.",
+  "independence": "Coulomb and magnetic numbers obtained by reusing alpha are correlated consequences, not independent alpha predictions."
+}

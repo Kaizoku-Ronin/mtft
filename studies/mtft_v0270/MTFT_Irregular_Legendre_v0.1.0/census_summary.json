@@ -1,0 +1,57 @@
+{
+  "n_max": 100,
+  "prime_upper_bound_exclusive": 10201,
+  "prime_count": 1252,
+  "odd_prime_count": 1251,
+  "irregular_count": 504,
+  "regular_count": 747,
+  "witness_pair_count": 639,
+  "irregularity_index_histogram": {
+    "0": 747,
+    "1": 385,
+    "2": 103,
+    "3": 16
+  },
+  "irregular_free_intervals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    13,
+    14
+  ],
+  "regular_free_intervals_n_ge_2": [],
+  "prime_free_intervals": [],
+  "wieferich_records": [
+    {
+      "p": 1093,
+      "square_n": 33,
+      "residue_mod30": 13,
+      "regularity": "regular",
+      "irregularity_index": 0,
+      "witness_indices": []
+    },
+    {
+      "p": 3511,
+      "square_n": 59,
+      "residue_mod30": 1,
+      "regularity": "irregular",
+      "irregularity_index": 2,
+      "witness_indices": [
+        1416,
+        1724
+      ]
+    }
+  ],
+  "prior_census_reconciliation": {
+    "filename": "prime_traces.npz",
+    "sha256": "45b6ea1abf05b23de5ccc0b011fa72197e12dda4a5748f670961ea5cdc2aab22",
+    "all_overlapping_primes_positions_and_marks_match": true
+  },
+  "python_version": "3.12.13",
+  "numpy_version": "2.3.5",
+  "elapsed_seconds": 58.293081523999945,
+  "arithmetic_status": "exact finite modular arithmetic; not a Lean proof"
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-05",
+  "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+  "packages": {
+    "mtft": "0.26.0",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "pytest": "9.1.1"
+  },
+  "source_archive_sha256": "758f29a7a0c2ca08896a15964b3a607c7143ac1fd335bcc8f4d84a4880e53cdf",
+  "targeted_release_tests": [
+    "test_surface.py",
+    "test_surface_qft.py",
+    "test_surface_bimodule.py",
+    "test_cc19_cc20.py"
+  ],
+  "test_result": {
+    "passed": 22,
+    "skipped": 1,
+    "skip_reason": "PARI/GP not found"
+  },
+  "blas_threads": 1,
+  "counting_arithmetic": "Python unbounded integers",
+  "cycle_verifier": "g++ -O3 -std=c++17; complete Gray-code enumeration",
+  "shared_input_between_independent_routes": "Exact dual graph edge list from mtft.surface.manin.cell_complex(143)"
+}

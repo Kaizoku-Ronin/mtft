@@ -1,0 +1,264 @@
+{
+  "fields": {
+    "q4": {
+      "polynomial": "x**4 - 3*x**3 - x**2 + 5*x + 1",
+      "coefficients_descending": [
+        1,
+        -3,
+        -1,
+        5,
+        1
+      ],
+      "degree": 4,
+      "discriminant": 1957,
+      "discriminant_factorization": {
+        "19": 1,
+        "103": 1
+      },
+      "field_discriminant_equals_polynomial_discriminant": true,
+      "galois_group": "S4",
+      "galois_order": 24,
+      "permutation_generators": [
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ]
+      ],
+      "cycle_witnesses": {
+        "irreducible": {
+          "p": 2,
+          "pattern": [
+            4
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "long_cycle": {
+          "p": 3,
+          "pattern": [
+            1,
+            3
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                2
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                1,
+                0,
+                2
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "transposition": {
+          "p": 43,
+          "pattern": [
+            1,
+            1,
+            2
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                25
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                35
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                23,
+                23
+              ],
+              "multiplicity": 1
+            }
+          ]
+        }
+      }
+    },
+    "q6": {
+      "polynomial": "x**6 - 10*x**4 + 2*x**3 + 24*x**2 - 7*x - 12",
+      "coefficients_descending": [
+        1,
+        0,
+        -10,
+        2,
+        24,
+        -7,
+        -12
+      ],
+      "degree": 6,
+      "discriminant": 194616205,
+      "discriminant_factorization": {
+        "5": 1,
+        "7": 1,
+        "5560463": 1
+      },
+      "field_discriminant_equals_polynomial_discriminant": true,
+      "galois_group": "S6",
+      "galois_order": 720,
+      "permutation_generators": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "cycle_witnesses": {
+        "long_cycle": {
+          "p": 3,
+          "pattern": [
+            1,
+            5
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                0
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                0,
+                2,
+                2,
+                0,
+                2
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "irreducible": {
+          "p": 19,
+          "pattern": [
+            6
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                0,
+                9,
+                2,
+                5,
+                12,
+                7
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "transposition": {
+          "p": 307,
+          "pattern": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "factors": [
+            {
+              "coefficients_descending": [
+                1,
+                26
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                84
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                180
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                277
+              ],
+              "multiplicity": 1
+            },
+            {
+              "coefficients_descending": [
+                1,
+                47,
+                274
+              ],
+              "multiplicity": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "splitting_field_intersection": "Q",
+  "compositum_galois_group": "S4 x S6",
+  "compositum_degree": 17280,
+  "proof_group": "Irreducible reduction implies transitivity. A (1,n-1) cycle makes a point stabilizer transitive on the other roots, hence the group is doubly transitive. Conjugating a transposition in a doubly transitive group supplies every transposition, so the group is Sn.",
+  "proof_disjointness": "The Galois closures ramify only at primes dividing their respective polynomial discriminants. These sets are disjoint. Their intersection is therefore unramified at every finite prime over Q; the Minkowski discriminant bound forces this intersection to be Q. Since both closures are Galois they are linearly disjoint, giving S4 x S6.",
+  "alternative_proof": "Any common Galois subextension gives a common quotient of S4 and S6. Their only possible nontrivial common quotient is C2. Its quadratic fields would be Q(sqrt(1957)) and Q(sqrt(194616205)), which differ. Thus the common quotient is trivial.",
+  "density_rule": "For cycle partition lambda in Sn, density = 1 / product_j(j^m_j m_j!). Joint densities multiply in the direct product. These are limiting densities, not finite-sample probabilities or short-interval coverage guarantees.",
+  "checks": {
+    "factor_products": 2504,
+    "independent_degree_censuses": 2500,
+    "witness_factor_irreducibility_checks": 14,
+    "discriminant_sign_checks": 2498
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "release_is_0_26_2": true,
+    "exact_projector_partition": true,
+    "exact_independent_CRT_and_basis_agreement": true,
+    "all_ten_operators_preserve_every_block_exactly": true,
+    "exact_W143_positive_projector_rank_four": true,
+    "independent_route_checks_passed": true,
+    "independent_geometry_agreement": true,
+    "all_coupling_ranks_decided": true,
+    "W143_coupling_rank_saturates_bound": true,
+    "STAR_coupling_rank_zero": true,
+    "W143_q4_q6_commutator_component_zero_to_tolerance": true,
+    "W11_diagonal_commutator_components_zero_to_tolerance": true,
+    "commutator_attribution_reconstructs": true,
+    "signed_Gram_reconstructs_in_absolute_error": true,
+    "active_fixed_overlap_sums": true
+  },
+  "all_checks_passed": true,
+  "independent_check_count": 14,
+  "scope": "Exact rational packaged-matrix controls plus numerical study consistency checks. Not a full package test suite or an interval certificate.",
+  "known_prior_closure_ambiguities": "Not rerun or repaired; no current endpoint depends on numerical Lie closure."
+}

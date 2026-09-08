@@ -1,0 +1,1085 @@
+{
+  "status": "DIAGNOSTIC held-out approximation assessment",
+  "heldout_count": 1800,
+  "time_count": 261,
+  "models": {
+    "svd_r0": {
+      "family": "svd",
+      "rank": 0,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 8.326891225386682,
+      "spectral_worst_point": {
+        "real": 0.7450000000000001,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.4129514514266448,
+      "time_worst_point": 3.6447383520162835,
+      "average_transfer_maximum_absolute_error": 0.37147391254275197,
+      "spectral_error_by_eta": {
+        "0.05": 8.326891225386682,
+        "0.2": 2.1120606019146266,
+        "0.7": 0.6725891084927901
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.04773785383458626,
+          "maximum_average_transfer_absolute_error": 0.053294484231937944
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.6474229650084349,
+          "maximum_average_transfer_absolute_error": 0.32148790358630863
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.4129514514266448,
+          "maximum_average_transfer_absolute_error": 0.37147391254275197
+        }
+      },
+      "discarded_direct_coupling_norm": 1.9183577035234367,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 1.9183577035234367,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.8495170634660753e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -6.661338147750939e-16,
+        -2.220446049250313e-16
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "svd_r1": {
+      "family": "svd",
+      "rank": 1,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.182534790911462,
+      "cutoff_relative_gap": 0.2962340705758701,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 6.661338147750939e-16,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 6.794337671968423,
+      "spectral_worst_point": {
+        "real": 2.1449999999999996,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.1571201349201983,
+      "time_worst_point": 4.773748211900116,
+      "average_transfer_maximum_absolute_error": 0.29019012574887326,
+      "spectral_error_by_eta": {
+        "0.05": 6.794337671968423,
+        "0.2": 1.6230396197427814,
+        "0.7": 0.5150650792448522
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.024799790070903095,
+          "maximum_average_transfer_absolute_error": 0.026796537094717077
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.36709030782098856,
+          "maximum_average_transfer_absolute_error": 0.20766620245892586
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.1571201349201983,
+          "maximum_average_transfer_absolute_error": 0.29019012574887326
+        }
+      },
+      "discarded_direct_coupling_norm": 1.3500747921881096,
+      "retained_discarded_D_mixing_norm": 0.6460396643270154,
+      "embedding_error_operator_norm": 1.3501596259381063,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.6013644278931854e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -2.220446049250313e-16,
+        0.12497081646027519
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "svd_r2": {
+      "family": "svd",
+      "rank": 2,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.030161411889622,
+      "cutoff_relative_gap": 0.18830745522838244,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.2456735471175978e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 6.574798029830288,
+      "spectral_worst_point": {
+        "real": 2.1550000000000002,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.094010581226649,
+      "time_worst_point": 4.945554060143307,
+      "average_transfer_maximum_absolute_error": 0.2453483933210534,
+      "spectral_error_by_eta": {
+        "0.05": 6.574798029830288,
+        "0.2": 1.5853946536324681,
+        "0.7": 0.3723607172313511
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.014328363573323639,
+          "maximum_average_transfer_absolute_error": 0.013184530145580298
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.2408813177797364,
+          "maximum_average_transfer_absolute_error": 0.09679621301037178
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.094010581226649,
+          "maximum_average_transfer_absolute_error": 0.2453483933210534
+        }
+      },
+      "discarded_direct_coupling_norm": 0.9888337348198477,
+      "retained_discarded_D_mixing_norm": 1.3597715271125166,
+      "embedding_error_operator_norm": 1.578408728155013,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.437156822358446e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -2.220446049250313e-16,
+        0.236710257347011
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "svd_r3": {
+      "family": "svd",
+      "rank": 3,
+      "pole_indices": null,
+      "training_maximum_relative_error": 3.1167937978543847,
+      "cutoff_relative_gap": 0.04568056620950102,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.3228982195996732e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 3.4368118011360513,
+      "spectral_worst_point": {
+        "real": -2.525,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.9547880949549349,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.14964760155115742,
+      "spectral_error_by_eta": {
+        "0.05": 3.4368118011360513,
+        "0.2": 0.9069096177070403,
+        "0.7": 0.30081996972138775
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.009256948317909987,
+          "maximum_average_transfer_absolute_error": 0.006019791234972094
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.1753879744863298,
+          "maximum_average_transfer_absolute_error": 0.04668629535940805
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.9547880949549349,
+          "maximum_average_transfer_absolute_error": 0.14964760155115742
+        }
+      },
+      "discarded_direct_coupling_norm": 0.9012020687305402,
+      "retained_discarded_D_mixing_norm": 1.466279480550116,
+      "embedding_error_operator_norm": 1.6676101204863567,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 3.1405804417388007e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -2.220446049250313e-16,
+        0.2748690557137251
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "svd_r4": {
+      "family": "svd",
+      "rank": 4,
+      "pole_indices": null,
+      "training_maximum_relative_error": 1.0440874020381843,
+      "cutoff_relative_gap": 0.4228765431792805,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.337974572789872e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 1.3728518743276494,
+      "spectral_worst_point": {
+        "real": -2.645,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.39844428435336954,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.05359761375769212,
+      "spectral_error_by_eta": {
+        "0.05": 1.3728518743276494,
+        "0.2": 0.4599830481751907,
+        "0.7": 0.11333145315105835
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.00019836247943901057,
+          "maximum_average_transfer_absolute_error": 1.410890881248239e-05
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.023878649171062378,
+          "maximum_average_transfer_absolute_error": 0.001707562743395008
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.39844428435336954,
+          "maximum_average_transfer_absolute_error": 0.05359761375769212
+        }
+      },
+      "discarded_direct_coupling_norm": 0.08997359448320612,
+      "retained_discarded_D_mixing_norm": 0.9401935987019316,
+      "embedding_error_operator_norm": 0.9444888833354881,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 3.2399728397449817e-15
+      },
+      "sampled_reduced_transfer_range": [
+        7.771561172376096e-16,
+        0.3526647603223807
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "svd_r5": {
+      "family": "svd",
+      "rank": 5,
+      "pole_indices": null,
+      "training_maximum_relative_error": 4.431178621929729e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.5632162443732548e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 5.377183619096285e-14,
+      "spectral_worst_point": {
+        "real": -0.6350000000000002,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 7.467664548085325e-15,
+      "time_worst_point": 6.14819499784565,
+      "average_transfer_maximum_absolute_error": 2.6645352591003757e-15,
+      "spectral_error_by_eta": {
+        "0.05": 5.377183619096285e-14,
+        "0.2": 1.0163677894526724e-14,
+        "0.7": 2.4576422965221917e-15
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 1.534884314777467e-15,
+          "maximum_average_transfer_absolute_error": 2.1094237467877974e-15
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 2.003055711690952e-15,
+          "maximum_average_transfer_absolute_error": 2.1094237467877974e-15
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 7.467664548085325e-15,
+          "maximum_average_transfer_absolute_error": 2.6645352591003757e-15
+        }
+      },
+      "discarded_direct_coupling_norm": 0.0,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 0.0,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 5.913955704954261e-13,
+        "time_maximum_violation": 1.1031275153985932e-14
+      },
+      "sampled_reduced_transfer_range": [
+        4.440892098500626e-16,
+        0.3714739125427535
+      ],
+      "heldout_budget_passes": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true
+      }
+    },
+    "poles_r0": {
+      "family": "poles",
+      "rank": 0,
+      "pole_indices": [],
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 8.326891225386682,
+      "spectral_worst_point": {
+        "real": 0.7450000000000001,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.4129514514266448,
+      "time_worst_point": 3.6447383520162835,
+      "average_transfer_maximum_absolute_error": 0.37147391254275197,
+      "spectral_error_by_eta": {
+        "0.05": 8.326891225386682,
+        "0.2": 2.1120606019146266,
+        "0.7": 0.6725891084927901
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.04773785383458626,
+          "maximum_average_transfer_absolute_error": 0.053294484231937944
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.6474229650084349,
+          "maximum_average_transfer_absolute_error": 0.32148790358630863
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.4129514514266448,
+          "maximum_average_transfer_absolute_error": 0.37147391254275197
+        }
+      },
+      "discarded_direct_coupling_norm": 1.9183577035234367,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 1.9183577035234367,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.8495170634660753e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -6.661338147750939e-16,
+        -2.220446049250313e-16
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "poles_r1": {
+      "family": "poles",
+      "rank": 1,
+      "pole_indices": [
+        4
+      ],
+      "training_maximum_relative_error": 5.784460886741374,
+      "cutoff_relative_gap": 0.19816760495477811,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.220446049250313e-16,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 7.661089550992067,
+      "spectral_worst_point": {
+        "real": 0.645,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.300903161218202,
+      "time_worst_point": 3.6201946594101133,
+      "average_transfer_maximum_absolute_error": 0.2693875936188803,
+      "spectral_error_by_eta": {
+        "0.05": 7.661089550992067,
+        "0.2": 1.9499791959738064,
+        "0.7": 0.6281028601634894
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.045274112365083864,
+          "maximum_average_transfer_absolute_error": 0.046634770720580976
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.6118182221548318,
+          "maximum_average_transfer_absolute_error": 0.2639549985199915
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.300903161218202,
+          "maximum_average_transfer_absolute_error": 0.2693875936188803
+        }
+      },
+      "discarded_direct_coupling_norm": 1.9124339517689593,
+      "retained_discarded_D_mixing_norm": 7.005727524449693e-16,
+      "embedding_error_operator_norm": 1.912433951768959,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.9029550311968513e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -6.661338147750939e-16,
+        0.1249160370491883
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "poles_r2": {
+      "family": "poles",
+      "rank": 2,
+      "pole_indices": [
+        1,
+        2
+      ],
+      "training_maximum_relative_error": 4.569750557951216,
+      "cutoff_relative_gap": 0.0700731132095169,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.0010437191481177e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 4.595301058118149,
+      "spectral_worst_point": {
+        "real": 2.205,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.179913630218341,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.22333596599810435,
+      "spectral_error_by_eta": {
+        "0.05": 4.595301058118149,
+        "0.2": 1.3492161269901481,
+        "0.7": 0.44111321547254495
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.02195129075205095,
+          "maximum_average_transfer_absolute_error": 0.022012913897628383
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.31280712977465513,
+          "maximum_average_transfer_absolute_error": 0.14674940236223677
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.179913630218341,
+          "maximum_average_transfer_absolute_error": 0.22333596599810435
+        }
+      },
+      "discarded_direct_coupling_norm": 1.3102611550802716,
+      "retained_discarded_D_mixing_norm": 5.279128177415533e-16,
+      "embedding_error_operator_norm": 1.3102611550802716,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.9638332840203177e-15
+      },
+      "sampled_reduced_transfer_range": [
+        1.1102230246251565e-15,
+        0.2390962637763543
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "poles_r3": {
+      "family": "poles",
+      "rank": 3,
+      "pole_indices": [
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 2.538112958466866,
+      "cutoff_relative_gap": 0.8335769249436967,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.1866088818309442e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 2.5301218054276133,
+      "spectral_worst_point": {
+        "real": 2.3049999999999997,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.9457743491496966,
+      "time_worst_point": 3.32567034813607,
+      "average_transfer_maximum_absolute_error": 0.1748293140546634,
+      "spectral_error_by_eta": {
+        "0.05": 2.5301218054276133,
+        "0.2": 1.0589166372954275,
+        "0.7": 0.47545072207293015
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.021626755549656058,
+          "maximum_average_transfer_absolute_error": 0.019975020087207085
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.3114222900603345,
+          "maximum_average_transfer_absolute_error": 0.1362459327123603
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.9457743491496966,
+          "maximum_average_transfer_absolute_error": 0.1748293140546634
+        }
+      },
+      "discarded_direct_coupling_norm": 1.2296888121810636,
+      "retained_discarded_D_mixing_norm": 1.0566274551833333e-15,
+      "embedding_error_operator_norm": 1.2296888121810636,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.5298188596213183e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -2.220446049250313e-16,
+        0.2496626163455603
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "poles_r4": {
+      "family": "poles",
+      "rank": 4,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "training_maximum_relative_error": 2.6689316461759938,
+      "cutoff_relative_gap": 0.19816760495477811,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.223899354549384e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 2.77219459489208,
+      "spectral_worst_point": {
+        "real": 2.3150000000000004,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.43592965937736955,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.0887990649204291,
+      "spectral_error_by_eta": {
+        "0.05": 2.77219459489208,
+        "0.2": 0.628999023984249,
+        "0.7": 0.12551900021247886
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.00826777594086182,
+          "maximum_average_transfer_absolute_error": 0.005251369629119318
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.09610110021252388,
+          "maximum_average_transfer_absolute_error": 0.018282322440322907
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.43592965937736955,
+          "maximum_average_transfer_absolute_error": 0.0887990649204291
+        }
+      },
+      "discarded_direct_coupling_norm": 0.8669598255885711,
+      "retained_discarded_D_mixing_norm": 5.089691685969156e-16,
+      "embedding_error_operator_norm": 0.8669598255885711,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.88295150877137e-15
+      },
+      "sampled_reduced_transfer_range": [
+        4.440892098500626e-16,
+        0.3261809167729517
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "poles_r5": {
+      "family": "poles",
+      "rank": 5,
+      "pole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "training_maximum_relative_error": 3.322907439148965e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.389996852145466e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 4.098776418263212e-14,
+      "spectral_worst_point": {
+        "real": -0.6350000000000002,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 9.480280109286218e-15,
+      "time_worst_point": 6.270913460876501,
+      "average_transfer_maximum_absolute_error": 1.887379141862766e-15,
+      "spectral_error_by_eta": {
+        "0.05": 4.098776418263212e-14,
+        "0.2": 9.219307423982216e-15,
+        "0.7": 2.3810560621861004e-15
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 1.2100174213667111e-15,
+          "maximum_average_transfer_absolute_error": 8.881784197001252e-16
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 2.208333896979384e-15,
+          "maximum_average_transfer_absolute_error": 8.881784197001252e-16
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 9.480280109286218e-15,
+          "maximum_average_transfer_absolute_error": 1.887379141862766e-15
+        }
+      },
+      "discarded_direct_coupling_norm": 0.0,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 0.0,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 5.021363671123367e-13,
+        "time_maximum_violation": 1.2981732775133188e-14
+      },
+      "sampled_reduced_transfer_range": [
+        -6.661338147750939e-16,
+        0.3714739125427525
+      ],
+      "heldout_budget_passes": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true
+      }
+    },
+    "snapshots_r0": {
+      "family": "snapshots",
+      "rank": 0,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.347951572743856,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 0.0,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 8.326891225386682,
+      "spectral_worst_point": {
+        "real": 0.7450000000000001,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.4129514514266448,
+      "time_worst_point": 3.6447383520162835,
+      "average_transfer_maximum_absolute_error": 0.37147391254275197,
+      "spectral_error_by_eta": {
+        "0.05": 8.326891225386682,
+        "0.2": 2.1120606019146266,
+        "0.7": 0.6725891084927901
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.04773785383458626,
+          "maximum_average_transfer_absolute_error": 0.053294484231937944
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.6474229650084349,
+          "maximum_average_transfer_absolute_error": 0.32148790358630863
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.4129514514266448,
+          "maximum_average_transfer_absolute_error": 0.37147391254275197
+        }
+      },
+      "discarded_direct_coupling_norm": 1.9183577035234367,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 1.9183577035234367,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.8495170634660753e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -6.661338147750939e-16,
+        -2.220446049250313e-16
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "snapshots_r1": {
+      "family": "snapshots",
+      "rank": 1,
+      "pole_indices": null,
+      "training_maximum_relative_error": 6.067503196718225,
+      "cutoff_relative_gap": 0.5006762082589653,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.220446049250313e-16,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 6.168808275904398,
+      "spectral_worst_point": {
+        "real": 2.115,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.1923309234692023,
+      "time_worst_point": 5.043728830567988,
+      "average_transfer_maximum_absolute_error": 0.31417870896749245,
+      "spectral_error_by_eta": {
+        "0.05": 6.168808275904398,
+        "0.2": 1.845970591018807,
+        "0.7": 0.5115099649724879
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.0273224885458342,
+          "maximum_average_transfer_absolute_error": 0.03170620186652273
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.3754034824338542,
+          "maximum_average_transfer_absolute_error": 0.19940994062570183
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.1923309234692023,
+          "maximum_average_transfer_absolute_error": 0.31417870896749245
+        }
+      },
+      "discarded_direct_coupling_norm": 1.3566054239664846,
+      "retained_discarded_D_mixing_norm": 0.1277538608443501,
+      "embedding_error_operator_norm": 1.3568819214843624,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.3394940450756736e-15
+      },
+      "sampled_reduced_transfer_range": [
+        2.220446049250313e-16,
+        0.12451927451568667
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "snapshots_r2": {
+      "family": "snapshots",
+      "rank": 2,
+      "pole_indices": null,
+      "training_maximum_relative_error": 5.885700156547742,
+      "cutoff_relative_gap": 0.07094024057739624,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 2.502262006590522e-16,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 5.983831858765808,
+      "spectral_worst_point": {
+        "real": 2.2249999999999996,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 1.0759349698172342,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.21890524696313451,
+      "spectral_error_by_eta": {
+        "0.05": 5.983831858765808,
+        "0.2": 1.692781576926118,
+        "0.7": 0.3345927618259444
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.019906763538033896,
+          "maximum_average_transfer_absolute_error": 0.020861076169016557
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.26118586055440995,
+          "maximum_average_transfer_absolute_error": 0.10832764639280901
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 1.0759349698172342,
+          "maximum_average_transfer_absolute_error": 0.21890524696313451
+        }
+      },
+      "discarded_direct_coupling_norm": 1.2166005249309237,
+      "retained_discarded_D_mixing_norm": 0.1829361951059013,
+      "embedding_error_operator_norm": 1.2224910047301119,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 3.189071659933483e-15
+      },
+      "sampled_reduced_transfer_range": [
+        2.220446049250313e-16,
+        0.21562232758948585
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "snapshots_r3": {
+      "family": "snapshots",
+      "rank": 3,
+      "pole_indices": null,
+      "training_maximum_relative_error": 4.438422546740853,
+      "cutoff_relative_gap": 0.1422510967346422,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 8.932383453640362e-16,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 4.503853937389799,
+      "spectral_worst_point": {
+        "real": 2.215,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.8682503823566293,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.1571445190834454,
+      "spectral_error_by_eta": {
+        "0.05": 4.503853937389799,
+        "0.2": 1.305368500973538,
+        "0.7": 0.2789298600696306
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.013553814844711473,
+          "maximum_average_transfer_absolute_error": 0.011812097095536211
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.17952348697124207,
+          "maximum_average_transfer_absolute_error": 0.056303295916654506
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.8682503823566293,
+          "maximum_average_transfer_absolute_error": 0.1571445190834454
+        }
+      },
+      "discarded_direct_coupling_norm": 1.0425468447284578,
+      "retained_discarded_D_mixing_norm": 0.2021466531890181,
+      "embedding_error_operator_norm": 1.056202491590661,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.649650253329574e-15
+      },
+      "sampled_reduced_transfer_range": [
+        7.771561172376096e-16,
+        0.27175046841673234
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "snapshots_r4": {
+      "family": "snapshots",
+      "rank": 4,
+      "pole_indices": null,
+      "training_maximum_relative_error": 2.8617037108077046,
+      "cutoff_relative_gap": 0.07195390830061653,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.0425096362825728e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 3.2354865570190863,
+      "spectral_worst_point": {
+        "real": 2.2750000000000004,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 0.4188919984749435,
+      "time_worst_point": 6.283185307179586,
+      "average_transfer_maximum_absolute_error": 0.06457635960709285,
+      "spectral_error_by_eta": {
+        "0.05": 3.2354865570190863,
+        "0.2": 0.7464668784042666,
+        "0.7": 0.14080251425475743
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 0.007210823175621614,
+          "maximum_average_transfer_absolute_error": 0.004557716233876352
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 0.07980293508945617,
+          "maximum_average_transfer_absolute_error": 0.014661480755922662
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 0.4188919984749435,
+          "maximum_average_transfer_absolute_error": 0.06457635960709285
+        }
+      },
+      "discarded_direct_coupling_norm": 0.8107472666831181,
+      "retained_discarded_D_mixing_norm": 0.19368301979390165,
+      "embedding_error_operator_norm": 0.8335611810722905,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 0.0,
+        "time_maximum_violation": 2.476770958033561e-15
+      },
+      "sampled_reduced_transfer_range": [
+        -4.440892098500626e-16,
+        0.32869562035257693
+      ],
+      "heldout_budget_passes": {
+        "0.01": false,
+        "0.05": false,
+        "0.1": false
+      }
+    },
+    "snapshots_r5": {
+      "family": "snapshots",
+      "rank": 5,
+      "pole_indices": null,
+      "training_maximum_relative_error": 3.101023764073477e-14,
+      "cutoff_relative_gap": null,
+      "ambiguous_cutoff": false,
+      "basis_orthonormality": 1.3134902022418635e-15,
+      "reduced_Hermitian_residual": 0.0,
+      "spectral_maximum_relative_error": 4.145601670128502e-14,
+      "spectral_worst_point": {
+        "real": 2.4450000000000003,
+        "imag": 0.05
+      },
+      "time_maximum_relative_error": 7.709750802882957e-15,
+      "time_worst_point": 6.074563920027139,
+      "average_transfer_maximum_absolute_error": 1.7763568394002505e-15,
+      "spectral_error_by_eta": {
+        "0.05": 4.145601670128502e-14,
+        "0.2": 8.219578949128241e-15,
+        "0.7": 2.1204824051630505e-15
+      },
+      "time_prefixes": {
+        "0.25": {
+          "maximum_relative_amplitude_error": 1.2799275129705732e-15,
+          "maximum_average_transfer_absolute_error": 1.5543122344752192e-15
+        },
+        "1": {
+          "maximum_relative_amplitude_error": 1.799191439852058e-15,
+          "maximum_average_transfer_absolute_error": 1.5543122344752192e-15
+        },
+        "6.283185307179586": {
+          "maximum_relative_amplitude_error": 7.709750802882957e-15,
+          "maximum_average_transfer_absolute_error": 1.7763568394002505e-15
+        }
+      },
+      "discarded_direct_coupling_norm": 0.0,
+      "retained_discarded_D_mixing_norm": 0.0,
+      "embedding_error_operator_norm": 0.0,
+      "conditional_absolute_bound_checks": {
+        "spectral_maximum_violation": 5.456335582393877e-13,
+        "time_maximum_violation": 1.1096620904537295e-14
+      },
+      "sampled_reduced_transfer_range": [
+        -2.220446049250313e-16,
+        0.37147391254275297
+      ],
+      "heldout_budget_passes": {
+        "0.01": true,
+        "0.05": true,
+        "0.1": true
+      }
+    }
+  },
+  "frozen_choice_verdicts": {
+    "0.01": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    },
+    "0.05": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    },
+    "0.1": {
+      "svd": {
+        "model_id": "svd_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 4.431178621929729e-14,
+        "heldout_spectral_error": 5.377183619096285e-14,
+        "heldout_time_error": 7.467664548085325e-15,
+        "validated": true
+      },
+      "poles": {
+        "model_id": "poles_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.322907439148965e-14,
+        "heldout_spectral_error": 4.098776418263212e-14,
+        "heldout_time_error": 9.480280109286218e-15,
+        "validated": true
+      },
+      "snapshots": {
+        "model_id": "snapshots_r5",
+        "rank": 5,
+        "training_maximum_relative_error": 3.101023764073477e-14,
+        "heldout_spectral_error": 4.145601670128502e-14,
+        "heldout_time_error": 7.709750802882957e-15,
+        "validated": true
+      }
+    }
+  },
+  "descriptive_smallest_passing_rank_scan": {
+    "0.01": {
+      "svd": 5,
+      "poles": 5,
+      "snapshots": 5
+    },
+    "0.05": {
+      "svd": 5,
+      "poles": 5,
+      "snapshots": 5
+    },
+    "0.1": {
+      "svd": 5,
+      "poles": 5,
+      "snapshots": 5
+    }
+  },
+  "scan_warning": "Ranks chosen after inspecting held-out errors are descriptive scans, not independently validated replacements.",
+  "selection_sha256": "7b963a1c41f91bd31647243c00ce6c844c654aa342fe7d7996b72cd4c050780f",
+  "selection_basis_sha256": "0fb9ff114d7a6e099217f0ffeac3ca03b6239af6f309b310036332022bc21a26",
+  "protocol_sha256": "f784e5be3f6620f3bd9d21f6e5ba7501990f1f32035ab66340ec6fce226b5f8e",
+  "input_sha256": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b",
+  "script_sha256": "65cec43eb1cf778e4109cfc7c42e0a2e095a6d4f4c36bc892327014cfa5ebd42",
+  "scope": "Fixed numerical spectral/time grids for a dimensionless finite operator. No global relative bound or physical identification."
+}

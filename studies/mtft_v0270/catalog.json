@@ -1,0 +1,1197 @@
+{
+  "schema_version": 1,
+  "scope": "All 15 studies developed in this v0.26.x conversation, including the completed short-horizon follow-up. Earlier unrelated MTFT papers are outside this handoff.",
+  "created_utc": "2026-09-08",
+  "study_count": 15,
+  "global_integration_notes": [
+    "Preserve each frozen archive byte-for-byte. Fresh integrity checks validate bytes, not the underlying scientific hypotheses.",
+    "Keep each study in its own directory: names such as common.py, run_study.py, ising_exact.py and result files collide when flattened.",
+    "Replay in a writable copy because scripts overwrite adjacent results and plots; original manifests describe original bytes.",
+    "No executable Python/JavaScript source contains a hardcoded /workspace/, /mnt/ or /root/ path in the audited top-level scripts. Historical logs/JSON legitimately retain original run paths.",
+    "Study-specific pinned requirements are runtime records; package-level dependency policy and full release compatibility require separate validation.",
+    "SM_AUDIT-01 Higgs-defect wording is superseded. Archive the historical patch but block its application to 0.26.2/0.27.0.",
+    "A passing VALIDATION.json usually confirms replay/identity consistency. It does not mean every structural, approximation or physical hypothesis passed.",
+    "All physical interpretations retain declared inputs and limitations; no Standard Model identification, Clifford signature selection, Legendre proof or continuum critical exponent has been established."
+  ],
+  "studies": [
+    {
+      "id": "ising_exact",
+      "directory": "MTFT_Ising_Exact_v0260",
+      "title": "Exact zero-field Ising thermodynamics",
+      "source_baseline": "0.26.0 unchanged",
+      "report": "MTFT_Ising_Exact_Report.md",
+      "evidence": [
+        "EXACT finite integer counts and cut/cycle identities",
+        "DIAGNOSTIC thermodynamic evaluations and observed timings"
+      ],
+      "key_findings": [
+        "Complete 85-coefficient DOS on the 56-spin, 84-edge N=143 dual graph sums to 2^56; D0=D75=2.",
+        "All 2^29 even subgraphs independently enumerated; every coefficient agrees with the exact cut/cycle transform.",
+        "Scalar partition function is available without evaluating all 4^13 spin-structure Pfaffians; their individual contributions were not computed."
+      ],
+      "historical_validation": {
+        "records": [
+          "results.json",
+          "analysis.json",
+          "cycle_counts143.json",
+          "release_checks.log"
+        ],
+        "summary": "Exact enumeration through 24 spins on smaller levels; alternate elimination orders; complete N=143 cycle enumeration. Historical targeted release check: 22 passed, one PARI/GP-dependent skip; not the full suite."
+      },
+      "replay_commands": [
+        "python ising_exact.py --levels 6 11 15 35 55 77 105 143 --out results.json",
+        "python analyze_results.py"
+      ],
+      "candidate_reusable_code": [
+        "ising_exact.py: packed_dos, min_fill_order, even_subgraph_counts, thermodynamics",
+        "cycle_counts.cpp: independent finite cycle verifier"
+      ],
+      "integration_blockers": [
+        "Install/import the bundled 0.26.0 source for historical reconstruction; audit availability of newer upstream counting routes before promoting a duplicate.",
+        "Width and integer-size budgets need explicit production API policy; observed timings are not portable benchmarks.",
+        "No requirements.txt in this first bundle; use its recorded provenance and the common scientific environment."
+      ],
+      "preceding_studies": [],
+      "disposition": "counting_kernel_candidate",
+      "recorded_requirements": null,
+      "integrity": {
+        "study": "MTFT_Ising_Exact_v0260",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 22,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Ising_Exact_v0260.zip",
+            "bytes": 1916536,
+            "sha256": "89d13c6dc2b93f28097d268ada01de7dc8df6675fcd093959093048fc617dba1",
+            "files": 23,
+            "top_prefixes": {
+              "MTFT_Ising_Exact_v0260": 23
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 23,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Ising_Exact_v0260.zip",
+      "archive_sha256": "89d13c6dc2b93f28097d268ada01de7dc8df6675fcd093959093048fc617dba1",
+      "archive_root": "MTFT_Ising_Exact_v0260",
+      "integration_destination": "studies/mtft_v0270/MTFT_Ising_Exact_v0260",
+      "report_mirror": "reports/ising_exact/MTFT_Ising_Exact_Report.md"
+    },
+    {
+      "id": "ising_field_topology",
+      "directory": "MTFT_Ising_Field_and_Topology_v0200",
+      "title": "Ising fields, topology, zeros, defects and sampling",
+      "source_baseline": "0.26.0 unchanged",
+      "report": "MTFT_Field_and_Topology_Report.md",
+      "evidence": [
+        "EXACT joint counts, rational Lee\u2013Yang certificates, gauge and finite minimization checks",
+        "DIAGNOSTIC Fisher geometry, temperature roots, sample agreement"
+      ],
+      "key_findings": [
+        "N=143 joint energy/magnetization table includes all 2^56 configurations; 26 basis twists and all 84 one-bond AF-to-ferro reversals evaluated.",
+        "A reversed bond can require at least nine spin changes; two-coordinate topology census matches 340 coefficients from full cycle enumeration.",
+        "All 56 Lee\u2013Yang zeros certified on the unit circle for rational edge-weight ratios 2, 4 and 8; remaining Fisher temperature roots have numerical residual checks only.",
+        "Exact integer conditional sampler; 20,000 draws at each of four ratios; finite Fisher curvature changes sign under a supplied field."
+      ],
+      "historical_validation": {
+        "records": [
+          "verification.json",
+          "provenance.json",
+          "geometry_checks.json",
+          "lee_yang.json"
+        ],
+        "summary": "165 passing historical checks: 142 direct exact, ten recorded exact construction, seven numerical and six CLI checks. The carried release log is the preceding 22-pass/one-skip targeted run, not a new whole-suite run."
+      },
+      "replay_commands": [
+        "python verify_artifacts.py",
+        "python run_extensions.py",
+        "python analyze_geometry.py",
+        "python analyze_zeros.py"
+      ],
+      "candidate_reusable_code": [
+        "ising_extensions.py: signed_counts, IntegerSampler, signed_minimum, bilayer_counts, joint_observables",
+        "playground.py: six companion CLI commands",
+        "analyze_zeros.py: exact reciprocal reduction and real-root isolation"
+      ],
+      "integration_blockers": [
+        "Archive is nested locally and has the root MTFT_Ising_Playground_v0.2.0; preserve an explicit catalog mapping.",
+        "Flat sign twists, two retained homology coordinates and spin-structure Pfaffians are distinct data; no complete 2^26-sector decomposition.",
+        "Full regeneration needs the C++17 enumeration step in README; verify_artifacts.py checks its stored output without re-enumerating.",
+        "Only two layers up to 16+16 spins were studied; integer packing and elimination need bounded input/resource validation."
+      ],
+      "preceding_studies": [
+        "ising_exact"
+      ],
+      "disposition": "counting_and_sampler_candidates",
+      "recorded_requirements": "numpy>=1.22\nsympy>=1.10\nmpmath>=1.3\nscipy>=1.9\nmatplotlib>=3.5\nPillow>=9",
+      "integrity": {
+        "study": "MTFT_Ising_Field_and_Topology_v0200",
+        "manifests": [
+          {
+            "file": "SHA256SUMS",
+            "good": 59,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": [
+              "MTFT_Ising_Playground_v0.2.0_for_mtft_0.26.0.zip"
+            ]
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Ising_Field_and_Topology_v0200/MTFT_Ising_Playground_v0.2.0_for_mtft_0.26.0.zip",
+            "bytes": 3826295,
+            "sha256": "ae67503f64a9ede617ad42712b789ea7c9b0bf5a0ebd43b498a9abcc71dbb245",
+            "files": 60,
+            "top_prefixes": {
+              "MTFT_Ising_Playground_v0.2.0": 60
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 60,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Ising_Playground_v0.2.0_for_mtft_0.26.0.zip",
+      "archive_sha256": "ae67503f64a9ede617ad42712b789ea7c9b0bf5a0ebd43b498a9abcc71dbb245",
+      "archive_root": "MTFT_Ising_Playground_v0.2.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Ising_Field_and_Topology_v0200",
+      "report_mirror": "reports/ising_field_topology/MTFT_Field_and_Topology_Report.md"
+    },
+    {
+      "id": "boundary",
+      "directory": "MTFT_Boundary_Experiments_v0.1.0",
+      "title": "Boundary observations, sensor selection and model defects",
+      "source_baseline": "0.26.0 unchanged",
+      "report": "MTFT_Boundary_Experiment_Report.md",
+      "evidence": [
+        "EXACT integer coefficients and separator factorization",
+        "DIAGNOSTIC probabilities, entropies, ranks of sensor choices and peaks"
+      ],
+      "key_findings": [
+        "Fixed split has 14 interior, eight boundary and 34 exterior spins; all 256 sensor subsets evaluated at 48 temperatures in two bond models.",
+        "Clean-model boundary information peaks numerically near beta=0.612 at 1.570739 bits; reversing the selected bond raises information but worsens reconstruction.",
+        "Best sensor pair can exclude either best single; conditioning reduces entropy on average but an individual rare outcome can increase uncertainty."
+      ],
+      "historical_validation": {
+        "records": [
+          "verification.json",
+          "boundary_coefficients.json",
+          "boundary_results.json"
+        ],
+        "summary": "Exact coefficient and full-DOS controls; 24,576 sensor cases; independent full-interior check; separator-breaking negative control. JavaScript: 1,064 scalar comparisons, largest discrepancy 1.38e-13; three CLI cases."
+      },
+      "replay_commands": [
+        "python boundary_model.py",
+        "python run_boundary_experiments.py",
+        "python export_browser_data.py",
+        "python verify_boundary.py",
+        "python make_boundary_figures.py"
+      ],
+      "candidate_reusable_code": [
+        "boundary_model.py: BoundaryModel observation and sensor API",
+        "boundary_engine.js: browser/Node evaluator",
+        "boundary_cli.py: finite observation CLI"
+      ],
+      "integration_blockers": [
+        "API/data are specialized to one declared N=143 separator and two bond models; no boundary-size scaling or gravitational holography.",
+        "Browser layout and interactive theme QA were blocked historically; scientific figures were visually checked.",
+        "Keep exact coefficients in arbitrary-precision form until the intended numerical evaluation; one-step advice is not a globally optimal policy."
+      ],
+      "preceding_studies": [
+        "ising_exact",
+        "ising_field_topology"
+      ],
+      "disposition": "boundary_instrument_candidate",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nmatplotlib==3.10.8\nsympy==1.14.0\nmpmath==1.3.0",
+      "integrity": {
+        "study": "MTFT_Boundary_Experiments_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 33,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Boundary_Experiments_v0.1.0_for_mtft_0.26.0.zip",
+            "bytes": 2610375,
+            "sha256": "36413a520b8b5993ade4bf01f3a0506cea45ad9f68cb896662933525a29eb20d",
+            "files": 34,
+            "top_prefixes": {
+              "MTFT_Boundary_Experiments_v0.1.0": 34
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 34,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Boundary_Experiments_v0.1.0_for_mtft_0.26.0.zip",
+      "archive_sha256": "36413a520b8b5993ade4bf01f3a0506cea45ad9f68cb896662933525a29eb20d",
+      "archive_root": "MTFT_Boundary_Experiments_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Boundary_Experiments_v0.1.0",
+      "report_mirror": "reports/boundary/MTFT_Boundary_Experiment_Report.md"
+    },
+    {
+      "id": "prime_traces",
+      "directory": "MTFT_Prime_Traces_v0.1.0",
+      "title": "Prime families traced through square intervals",
+      "source_baseline": "0.26.0 context; no MTFT import required",
+      "report": "Prime_Trace_Guide.md",
+      "evidence": [
+        "EXACT finite integer membership and rational positions",
+        "THEOREM status from cited mathematics, not extrapolation"
+      ],
+      "key_findings": [
+        "78,650 primes below 1,002,001 in the first 1,000 strict square intervals, all nonempty.",
+        "Overlapping marks count 16,371 twin members, 7,760 Sophie Germain, 4,333 safe and two base-2 Wieferich primes.",
+        "Family infinitude labels are separated from finite membership; modulo-30 residue families partition primes above five."
+      ],
+      "historical_validation": {
+        "records": [
+          "trace_summary.json",
+          "interface_checks.json"
+        ],
+        "summary": "Builder finite-arithmetic gates, independent trial division through 5,000, 209 checked rows, prime-count anchors, partner-cutoff identities and four CLI checks."
+      },
+      "replay_commands": [
+        "python build_prime_traces.py --n-max 1000",
+        "python plot_prime_traces.py",
+        "python prime_trace_cli.py --catalogue"
+      ],
+      "candidate_reusable_code": [
+        "build_prime_traces.py: bounded finite sieve and trace schema",
+        "prime_families.py: explicit theorem-status catalogue",
+        "prime_trace_cli.py: inspect prime/interval/family"
+      ],
+      "integration_blockers": [
+        "No proof of Legendre or infinitude of the marked open families; status of intersections/complements must not be inherited.",
+        "In-memory n_max range 60\u20133000; not a segmented record-search engine.",
+        "Theorem-status catalogue is a dated source record, not automatically refreshed."
+      ],
+      "preceding_studies": [],
+      "disposition": "number_theory_instrument_candidate",
+      "recorded_requirements": "numpy==2.3.5\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_Prime_Traces_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 16,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Prime_Traces_v0.1.0.zip",
+            "bytes": 1185187,
+            "sha256": "8219f94955607bca49c1cd2f5f161473cb9e7c6d5d6505752e372b2aa8fff58b",
+            "files": 17,
+            "top_prefixes": {
+              "MTFT_Prime_Traces_v0.1.0": 17
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 17,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Prime_Traces_v0.1.0.zip",
+      "archive_sha256": "8219f94955607bca49c1cd2f5f161473cb9e7c6d5d6505752e372b2aa8fff58b",
+      "archive_root": "MTFT_Prime_Traces_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Prime_Traces_v0.1.0",
+      "report_mirror": "reports/prime_traces/Prime_Trace_Guide.md"
+    },
+    {
+      "id": "irregular_legendre",
+      "directory": "MTFT_Irregular_Legendre_v0.1.0",
+      "title": "Irregular-prime Bernoulli census and conditional nulls",
+      "source_baseline": "0.26.0 context; standalone frozen census",
+      "report": "Irregular_Legendre_Report.md",
+      "evidence": [
+        "EXACT Bernoulli residues and irregular witnesses",
+        "DIAGNOSTIC conditional randomization statistics"
+      ],
+      "key_findings": [
+        "Among 1,251 odd primes below 10,201, 504 irregular and 747 regular; all 639 irregular pairs retained; prime two unclassified.",
+        "Both classes appear in every studied interval n=15\u2013100; eight listed smaller intervals have no irregular prime.",
+        "All 12 Holm-adjusted p-values are 1.00 under the specified conditional label-shuffle comparisons; no detected departure, independence or new gap theorem."
+      ],
+      "historical_validation": {
+        "records": [
+          "validation_results.json",
+          "census_summary.json",
+          "analysis_results.json",
+          "interface_checks.json"
+        ],
+        "summary": "Full modular inverse-product certificates plus independent rational/power-sum controls; seeded 49,999 randomizations per model/range; interval and prior-overlap reconciliation."
+      },
+      "replay_commands": [
+        "python build_census.py",
+        "python analyze_traces.py",
+        "python validate_experiment.py",
+        "python render_results.py"
+      ],
+      "candidate_reusable_code": [
+        "irregular_arithmetic.py: bernoulli_residues, verify_series_product, power_sum_residue, witness_indices",
+        "build_census.py: complete finite witness schema"
+      ],
+      "integration_blockers": [
+        "No statistical independence or irregular-prime Legendre conclusion from nonsignificance.",
+        "Integer convolution has a checked int64 bound; archive residue array uses uint16 and supported n_max=32\u2013200.",
+        "Optional prior census path is relative to sibling study; it is not required for ordinary replay."
+      ],
+      "preceding_studies": [
+        "prime_traces"
+      ],
+      "disposition": "number_theory_instrument_candidate",
+      "recorded_requirements": "numpy==2.3.5\nsympy==1.14.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_Irregular_Legendre_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 23,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Irregular_Legendre_v0.1.0.zip",
+            "bytes": 6482694,
+            "sha256": "3559618863fd19b1bf5fe342a5d822023bdc6de1cbd7e0ef994f1bdb9d61570b",
+            "files": 24,
+            "top_prefixes": {
+              "MTFT_Irregular_Legendre_v0.1.0": 24
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 24,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Irregular_Legendre_v0.1.0.zip",
+      "archive_sha256": "3559618863fd19b1bf5fe342a5d822023bdc6de1cbd7e0ef994f1bdb9d61570b",
+      "archive_root": "MTFT_Irregular_Legendre_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Irregular_Legendre_v0.1.0",
+      "report_mirror": "reports/irregular_legendre/Irregular_Legendre_Report.md"
+    },
+    {
+      "id": "hecke_atlas_stability",
+      "directory": "MTFT_Hecke_Atlas_and_Stability_v0.1.0",
+      "title": "Prime splitting atlas and symmetry-preserving sector transfer",
+      "source_baseline": "0.26.0 frozen arithmetic and Hodge inputs",
+      "report": "Hecke_Atlas_and_Stability_Report.md",
+      "evidence": [
+        "EXACT field/projector certificates plus standard-theorem deductions",
+        "DIAGNOSTIC conservative finite flows"
+      ],
+      "key_findings": [
+        "Quartic/sextic splitting fields have Galois groups S4/S6 and disjoint ramification; their compositum has S4 x S6, producing 55 positive-density splitting classes.",
+        "Finite atlas has all 1,252 primes below 10,201; 51 of 55 joint classes observed; infinitude of an irregular intersection is not inferred.",
+        "Four exact real Hecke ranks 2,4,8,12; Atkin\u2013Lehner-preserving mixing can join oldspace and quartic sectors; dimension bounds constrain transfer."
+      ],
+      "historical_validation": {
+        "records": [
+          "validation_results.json",
+          "field_certificate.json",
+          "sector_certificate.json",
+          "PLAN_ERRATUM.md"
+        ],
+        "summary": "2,504 factor products, 2,500 independent degree censuses, exact rational projector checks; 400 selected flows. Largest conservation/independent numerical residual 3.74e-13."
+      },
+      "replay_commands": [
+        "python build_atlas.py",
+        "python build_sectors.py",
+        "python simulate_stability.py",
+        "python validate_results.py",
+        "python render_report.py"
+      ],
+      "candidate_reusable_code": [
+        "field_certificate.json and sector_certificate.json: exact reference fixtures",
+        "common.py and build_sectors.py: extract/generalize CRT projector construction",
+        "inspect_hecke.py: structured atlas inspector"
+      ],
+      "integration_blockers": [
+        "Frozen inputs suffice without MTFT/PARI; package promotion still needs an explicit input/version API and avoidance of common.py namespace collisions.",
+        "The Gaussian perturbation family and dimensionless time/energy convention are chosen experimental controls, not a physical model derivation.",
+        "Keep PLAN_ERRATUM.md attached to the original frozen plan. No spatial ham-sandwich or scalar fractal experiment was performed."
+      ],
+      "preceding_studies": [
+        "irregular_legendre"
+      ],
+      "disposition": "arithmetic_atlas_and_projector_candidates",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_Hecke_Atlas_and_Stability_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 28,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Hecke_Atlas_and_Stability_v0.1.0.zip",
+            "bytes": 8187498,
+            "sha256": "2bb541fa82ff1dadfb024b8818d2b36eb45f35162dbba326964e4371514d1434",
+            "files": 29,
+            "top_prefixes": {
+              "MTFT_Hecke_Atlas_and_Stability_v0.1.0": 29
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 29,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Hecke_Atlas_and_Stability_v0.1.0.zip",
+      "archive_sha256": "2bb541fa82ff1dadfb024b8818d2b36eb45f35162dbba326964e4371514d1434",
+      "archive_root": "MTFT_Hecke_Atlas_and_Stability_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Hecke_Atlas_and_Stability_v0.1.0",
+      "report_mirror": "reports/hecke_atlas_stability/Hecke_Atlas_and_Stability_Report.md"
+    },
+    {
+      "id": "sm_compatibility",
+      "directory": "MTFT_SM_Compatibility_v0.1.0",
+      "title": "Standard Model implementation/dependency assessment",
+      "source_baseline": "0.26.0 unchanged historical audit",
+      "report": "MTFT_Standard_Model_Assessment.md",
+      "evidence": [
+        "SOURCE audit and bounded numerical consistency checks",
+        "PHENO parameter formulas with declared empirical inputs"
+      ],
+      "key_findings": [
+        "Mass formulas, calibrated potential and reference particle catalogue are distinct pipelines; a common normalized Standard Model action has not been derived.",
+        "Historical SU(N) initializer violated determinant one; separate W/Z prescriptions differ and need a declared matching convention.",
+        "Original factor-four Higgs comparison is numerically valid but its characterization as an intrinsic defect is superseded by the 0.26.2 convention correction."
+      ],
+      "historical_validation": {
+        "records": [
+          "audit_results.json",
+          "package_honest_report.txt"
+        ],
+        "summary": "Bounded source/scale dependency audit, SU(3) draws and 19 frozen gates; no complete package run or precision fit."
+      },
+      "replay_commands": [
+        "python audit_sm_readiness.py"
+      ],
+      "candidate_reusable_code": [
+        "audit_sm_readiness.py: historical regression/dependency examples",
+        "audit_results.json: immutable baseline evidence"
+      ],
+      "integration_blockers": [
+        "Replay requires original 0.26.0, not the corrected local variant or 0.26.2; source archive is provided by other bundled studies.",
+        "Prepend/link CORRECTION_TO_PRIOR_HIGGS_AUDIT.md from the later claim audit before reusing claims.",
+        "No standalone requirements.txt; package dependencies and recorded NumPy/Python versions apply."
+      ],
+      "preceding_studies": [
+        "hecke_atlas_stability"
+      ],
+      "disposition": "historical_audit_with_superseding_correction",
+      "recorded_requirements": null,
+      "integrity": {
+        "study": "MTFT_SM_Compatibility_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 5,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_SM_Compatibility_v0.1.0.zip",
+            "bytes": 15734,
+            "sha256": "356eda5c935821204b9d79ac1b7f7b89c2c66ccc8ecc36d8c38ffbbfeb9414b3",
+            "files": 6,
+            "top_prefixes": {
+              "MTFT_SM_Compatibility_v0.1.0": 6
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 6,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_SM_Compatibility_v0.1.0.zip",
+      "archive_sha256": "356eda5c935821204b9d79ac1b7f7b89c2c66ccc8ecc36d8c38ffbbfeb9414b3",
+      "archive_root": "MTFT_SM_Compatibility_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_SM_Compatibility_v0.1.0",
+      "report_mirror": "reports/sm_compatibility/MTFT_Standard_Model_Assessment.md"
+    },
+    {
+      "id": "electron_photon",
+      "directory": "MTFT_Electron_Photon_v0.1.0",
+      "title": "Conditional electron\u2013photon compatibility instruments",
+      "source_baseline": "0.26.0 local unpublished SM-audit variant",
+      "report": "MTFT_Electron_Photon_Report.md",
+      "evidence": [
+        "EXACT finite charge-selection identities",
+        "DIAGNOSTIC supplied QED/Wilson\u2013Dirac/Maxwell/Coulomb controls"
+      ],
+      "key_findings": [
+        "Neutral off-block mass mixing requires equal charges: old\u2013quartic mixing reduces the four scalar-sector charge parameters to three.",
+        "Ward and local covariance controls reproduce the constraint and detect deliberately incompatible charge/mixing assignments.",
+        "Maxwell/Dirac spacetime structure, trial charges and electron dimensional anchor are supplied; no electron selection or physical Pauli coefficient is derived."
+      ],
+      "historical_validation": {
+        "records": [
+          "INDEPENDENT_REVIEW.md",
+          "PROVENANCE.json",
+          "targeted_tests.txt",
+          "charge_exact_certificate.json",
+          "local_qed_results.json"
+        ],
+        "summary": "Historical clean corrected-archive replay; ten targeted tests, 256 charge scans, 12 local fermion configurations, 48 SU-group draws, Maxwell/Coulomb/Pauli controls."
+      },
+      "replay_commands": [
+        "python run_all.py"
+      ],
+      "candidate_reusable_code": [
+        "charge_study.py: exact charge/mass selection rule and negative controls",
+        "local_qed_covariance.py: supplied finite U(1) covariance test bed",
+        "photon_atomic.py and magnetic_and_coupling.py: conditional benchmark examples"
+      ],
+      "integration_blockers": [
+        "Do not apply SM_Audit_Corrections.patch to 0.26.2 or 0.27.0. CC-21 fixes SU(N); release retains lambda_quartic and adds lambda_quartic_pdg instead of adopting the local rename.",
+        "Historical run_all.py expects retired accessor names in its bundled local archive; adapt/check explicitly for a new baseline.",
+        "Keep correction note from claim audit with both the historical report and patch; electromagnetic conclusions do not depend on the quartic convention."
+      ],
+      "preceding_studies": [
+        "hecke_atlas_stability",
+        "sm_compatibility"
+      ],
+      "disposition": "conditional_benchmarks_historical_patch_blocked",
+      "recorded_requirements": "# Recorded scientific runtime; MTFT's own dependencies remain required.\nnumpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmatplotlib==3.10.8\nmpmath==1.3.0\npytest>=8",
+      "integrity": {
+        "study": "MTFT_Electron_Photon_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 33,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Electron_Photon_v0.1.0.zip",
+            "bytes": 1749720,
+            "sha256": "756e0efea0f5063269d7d7bd630b2905215c56af5e07aa0aa012b600d4ca59f1",
+            "files": 34,
+            "top_prefixes": {
+              "MTFT_Electron_Photon_v0.1.0": 34
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 34,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Electron_Photon_v0.1.0.zip",
+      "archive_sha256": "756e0efea0f5063269d7d7bd630b2905215c56af5e07aa0aa012b600d4ca59f1",
+      "archive_root": "MTFT_Electron_Photon_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Electron_Photon_v0.1.0",
+      "report_mirror": "reports/electron_photon/MTFT_Electron_Photon_Report.md"
+    },
+    {
+      "id": "claim_audit_0262",
+      "directory": "MTFT_v0262_Claim_Audit_v0.1.0",
+      "title": "0.26.2 review audit and Clifford construction constraints",
+      "source_baseline": "0.26.2 unchanged",
+      "report": "MTFT_v0262_Mistral_Assessment.md",
+      "evidence": [
+        "EXACT synthetic algebra controls and packaged finite counts",
+        "DIAGNOSTIC D4 fingerprint, heat trace and finite Mellin quadrature",
+        "SOURCE audit and corrected interpretation"
+      ],
+      "key_findings": [
+        "D4/triality alone does not select a real Clifford signature; standard Clifford dimension control refutes the quoted four-generator even-algebra isomorphism.",
+        "TH2 input census gives 128 invariant characteristics, 32 odd; theta gradients were not evaluated.",
+        "A synthetic three-cycle bimodule has nonzero one-forms, without providing an X0(143) realization.",
+        "Same graph/DOS at N=6 and 11 with different genus demonstrates that scalar Ising thermodynamics need not recover topology; finite heat traces do not establish universal exponents.",
+        "Correct normalized relation is a Mellin integral transform; 15 adjusted metadata groups are not established independent empirical predictions."
+      ],
+      "historical_validation": {
+        "records": [
+          "PROVENANCE.json",
+          "targeted_tests.txt",
+          "d4_results.json",
+          "bimodule_control_results.json",
+          "finite_graph_results.json",
+          "release_mellin_accounting_results.json"
+        ],
+        "summary": "Five bounded scripts and three targeted release tests passed historically. No full test suite, theta-gradient evaluation or 4^13 Pfaffian sum."
+      },
+      "replay_commands": [
+        "python run_audit.py --source /path/to/mtft-0.26.2"
+      ],
+      "candidate_reusable_code": [
+        "CORRECTION_TO_PRIOR_HIGGS_AUDIT.md: controlling correction note",
+        "bimodule_control.py: synthetic non-involutive negative/positive controls",
+        "release_mellin_accounting.py: convention and dependency checks",
+        "CLIFFORD_GATE_NEXT.md: research protocol proposal, not a completed result"
+      ],
+      "integration_blockers": [
+        "Fingerprint remains numerical and STAR-fixed; Hecke-invariant algebra, triality-selected signature and TH2 outcome are unsupported.",
+        "No joint statistical p-value without a dependency/covariance/selection model.",
+        "Supersedes historical Higgs-defect wording; preserve earlier artifacts rather than silently editing them."
+      ],
+      "preceding_studies": [
+        "sm_compatibility",
+        "electron_photon",
+        "ising_exact"
+      ],
+      "disposition": "audit_and_control_reference",
+      "recorded_requirements": "# Recorded numerical environment, in addition to MTFT's own declared dependencies.\nnumpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8\npytest==9.1.1",
+      "integrity": {
+        "study": "MTFT_v0262_Claim_Audit_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 22,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_v0262_Claim_Audit_v0.1.0.zip",
+            "bytes": 1525089,
+            "sha256": "04b7b4a99c832fee4a366010b4d5938da9618d41de534f1320e6932f27d4bf99",
+            "files": 23,
+            "top_prefixes": {
+              "MTFT_v0262_Claim_Audit_v0.1.0": 23
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 23,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_v0262_Claim_Audit_v0.1.0.zip",
+      "archive_sha256": "04b7b4a99c832fee4a366010b4d5938da9618d41de534f1320e6932f27d4bf99",
+      "archive_root": "MTFT_v0262_Claim_Audit_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_v0262_Claim_Audit_v0.1.0",
+      "report_mirror": "reports/claim_audit_0262/MTFT_v0262_Mistral_Assessment.md"
+    },
+    {
+      "id": "active_module",
+      "directory": "MTFT_Active_Module_v0.1.0",
+      "title": "Arithmetic coupling of the active eight",
+      "source_baseline": "0.26.2 unchanged",
+      "report": "MTFT_Active_Module_Report.md",
+      "evidence": [
+        "EXACT localized support rank and general kernel bound",
+        "DIAGNOSTIC Hodge-dependent projector, couplings and saturated ranks"
+      ],
+      "key_findings": [
+        "Selected harmonic support has exact real rank four, implying at least five complex kernel directions; numerical construction saturates active eight complex plus fixed five.",
+        "All tested good Hecke and Atkin\u2013Lehner operators mix this split; STAR preserves it. T2 alone augments active real16 to all real26.",
+        "Lie closure at seeds 2026 and 31415 remains ambiguous; direct/localized projector routes are stable without treating those closures as passed.",
+        "Compressed commuting full-space operators can appear noncommutative via omitted complementary coupling."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "frame_check_results.json",
+          "kernel_check_results.json",
+          "independent_coupling_check_results.json",
+          "RUN_NOTES.md"
+        ],
+        "summary": "13 study replay/consistency checks passed; registered ambiguity outcomes retained; source integrity compared all 395 archived files."
+      },
+      "replay_commands": [
+        "python run_study.py --source /path/to/mtft-0.26.2"
+      ],
+      "candidate_reusable_code": [
+        "LOCALIZATION_RANK_LEMMA.md: conditional general support bound",
+        "kernel_check.py: exact-support certificate and independent projector route",
+        "coupling_matrices.npz and kernel_check_projectors.npz: explicitly frozen diagnostic fixtures"
+      ],
+      "integration_blockers": [
+        "Do not advertise active eight as a Hecke-invariant standalone module or count the five complex singlets as physical particles.",
+        "Float64 Hodge geometry is not an exact/interval certificate; two ambiguous closure frames are unresolved.",
+        "Separate antilinear local channels, linear Lie seeds and real/complex dimensions in any production API."
+      ],
+      "preceding_studies": [
+        "claim_audit_0262"
+      ],
+      "disposition": "projector_and_diagnostic_fixture_candidates",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_Active_Module_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 24,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Active_Module_v0.1.0.zip",
+            "bytes": 1690217,
+            "sha256": "cd3b039a69055350d70c360d85dc7ed732c68a3624c507d1a3838862e22c22ea",
+            "files": 25,
+            "top_prefixes": {
+              "MTFT_Active_Module_v0.1.0": 25
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 25,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Active_Module_v0.1.0.zip",
+      "archive_sha256": "cd3b039a69055350d70c360d85dc7ed732c68a3624c507d1a3838862e22c22ea",
+      "archive_root": "MTFT_Active_Module_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Active_Module_v0.1.0",
+      "report_mirror": "reports/active_module/MTFT_Active_Module_Report.md"
+    },
+    {
+      "id": "hecke_block_coupling",
+      "directory": "MTFT_Hecke_Block_Coupling_v0.1.0",
+      "title": "Exact Hecke blocks and attribution of active/fixed coupling",
+      "source_baseline": "0.26.2 unchanged",
+      "report": "MTFT_Hecke_Block_Report.md",
+      "evidence": [
+        "EXACT rational CRT/basis projectors and W143 rank bound",
+        "DIAGNOSTIC active/fixed overlaps and coupling saturation"
+      ],
+      "key_findings": [
+        "All ten tested operators preserve all four rational Hecke blocks exactly, while local active/fixed compression cuts across them.",
+        "W143 positive projector has real rank four; W143 acts as minus identity on quartic/sextic blocks, explaining coupling rank at most four real.",
+        "Observed W143 rank saturates four real/two complex; other non-STAR couplings rank ten real."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "exact_blocks_results.json",
+          "exact_projectors.json",
+          "independent_block_geometry_results.json"
+        ],
+        "summary": "15 primary replay checks and 14 independent-route checks; source integrity verified all 395 archived files."
+      },
+      "replay_commands": [
+        "python run_study.py --source /path/to/mtft-0.26.2"
+      ],
+      "candidate_reusable_code": [
+        "exact_blocks.py: exact CRT and independent basis projectors",
+        "W143_COUPLING_LEMMA.md: finite involution/rank argument",
+        "block_coupling_study.py: metric-aware attribution diagnostics"
+      ],
+      "integration_blockers": [
+        "Frozen Active Module inputs are included and reused, not rebuilt by this study.",
+        "Signed contributions may cancel; keep absolute-error reconstruction rather than dividing by nearly zero totals.",
+        "Prior closure ambiguity is neither rerun nor repaired."
+      ],
+      "preceding_studies": [
+        "active_module"
+      ],
+      "disposition": "projector_and_coupling_reference",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_Hecke_Block_Coupling_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 26,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_Hecke_Block_Coupling_v0.1.0.zip",
+            "bytes": 1733491,
+            "sha256": "7b390c2d619a07548fc536e6d74bd7e054eafaaf5aed24bf7f35d1d57cb676db",
+            "files": 27,
+            "top_prefixes": {
+              "MTFT_Hecke_Block_Coupling_v0.1.0": 27
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 27,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_Hecke_Block_Coupling_v0.1.0.zip",
+      "archive_sha256": "7b390c2d619a07548fc536e6d74bd7e054eafaaf5aed24bf7f35d1d57cb676db",
+      "archive_root": "MTFT_Hecke_Block_Coupling_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_Hecke_Block_Coupling_v0.1.0",
+      "report_mirror": "reports/hecke_block_coupling/MTFT_Hecke_Block_Report.md"
+    },
+    {
+      "id": "w143_effective",
+      "directory": "MTFT_W143_Effective_Operator_v0.1.0",
+      "title": "W143 exact-identity feedback and coupled-mode diagnostics",
+      "source_baseline": "0.26.2 unchanged",
+      "report": "MTFT_W143_Effective_Operator_Report.md",
+      "evidence": [
+        "EXACT involution and conditional Schur identities",
+        "DIAGNOSTIC two coupled complex modes and numerical response"
+      ],
+      "key_findings": [
+        "Two coupled 2x2 complex blocks plus nine decoupled negative directions describe this W143 split numerically.",
+        "Projected resolvent simplifies to (zI+A)/(z^2-1); complementary compression poles are projected-channel zeros, not additional full eigenvalues.",
+        "Regular-grid direct Schur maximum relative error 1.45e-14, but pole stress reaches 6.59e-5; stable involution evaluation stays near 6.54e-14."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "feedback_identity_results.json",
+          "canonical_check_results.json",
+          "effective_operator_results.json"
+        ],
+        "summary": "18 replay checks, ten independent checks, 27 exact synthetic controls; 907 regular and 22 stress response points, six expm controls."
+      },
+      "replay_commands": [
+        "python run_study.py"
+      ],
+      "candidate_reusable_code": [
+        "SCHUR_FEEDBACK_IDENTITIES.md: conditional closed identities",
+        "effective_operator_study.py: extract structured involution evaluator",
+        "effective_operator_matrices.npz: frozen reference matrices"
+      ],
+      "integration_blockers": [
+        "Raw Schur solve must not be promoted as uniformly stable near complementary poles.",
+        "Active/complement is a direct sum of amplitudes, not a density-matrix tensor partial trace.",
+        "Dimensionless evolution has no established physical Hamiltonian, time or energy normalization."
+      ],
+      "preceding_studies": [
+        "active_module",
+        "hecke_block_coupling"
+      ],
+      "disposition": "structured_response_reference",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_W143_Effective_Operator_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 25,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_W143_Effective_Operator_v0.1.0.zip",
+            "bytes": 2050466,
+            "sha256": "6f957f6a9237001c734eca389226f702ead1efa0406d3c8c0feab1d5f159207c",
+            "files": 26,
+            "top_prefixes": {
+              "MTFT_W143_Effective_Operator_v0.1.0": 26
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 26,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_W143_Effective_Operator_v0.1.0.zip",
+      "archive_sha256": "6f957f6a9237001c734eca389226f702ead1efa0406d3c8c0feab1d5f159207c",
+      "archive_root": "MTFT_W143_Effective_Operator_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_W143_Effective_Operator_v0.1.0",
+      "report_mirror": "reports/w143_effective/MTFT_W143_Effective_Operator_Report.md"
+    },
+    {
+      "id": "t2_effective",
+      "directory": "MTFT_T2_Effective_Operator_v0.1.0",
+      "title": "T2 complementary memory and delayed coupling",
+      "source_baseline": "0.26.2 unchanged",
+      "report": "MTFT_T2_Effective_Operator_Report.md",
+      "evidence": [
+        "EXACT rational characteristic polynomial and conditional feedback/minimality identities",
+        "DIAGNOSTIC Hodge-dependent rank, residues, responses and dynamics"
+      ],
+      "key_findings": [
+        "Complementary coupling B has complex rank five; exact reproduction in the stated auxiliary realization requires five directions.",
+        "T2 does not split into independent two-state channels; three instantaneously dark active directions gain delayed coupling.",
+        "All five complementary poles have the predicted projected null channels; naive active-only response can fail by 833% on the prescribed grid.",
+        "Regular Schur evaluation agrees to 2.78e-14; stress loses accuracy to 1.64e-4 while full spectral evaluation remains near 1.49e-14."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "general_feedback_identity_results.json",
+          "independent_T2_results.json",
+          "t2_effective_operator_results.json"
+        ],
+        "summary": "24 replay checks, ten independent checks, 40 exact synthetic controls, 1,807 regular/55 stress points, 257 dynamics points and six expm controls."
+      },
+      "replay_commands": [
+        "python run_study.py"
+      ],
+      "candidate_reusable_code": [
+        "GENERAL_FEEDBACK_IDENTITIES.md: generic Schur, memory, pole/null and exact auxiliary-rank identities",
+        "t2_effective_operator_study.py: reference block-response implementation",
+        "t2_effective_operator_matrices.npz: response fixture"
+      ],
+      "integration_blockers": [
+        "Numerical full-rank saturation is diagnostic; exact rank-minimality theorem is conditional on its input rank.",
+        "No independent-pair decomposition and no uniform raw-Schur pole accuracy.",
+        "Do not infer a physical open-system limit, irreversible memory or Standard Model field assignment."
+      ],
+      "preceding_studies": [
+        "active_module",
+        "w143_effective"
+      ],
+      "disposition": "generic_feedback_helper_candidate",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_T2_Effective_Operator_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 27,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_T2_Effective_Operator_v0.1.0.zip",
+            "bytes": 8573434,
+            "sha256": "d688d45711cb250cd92e197085a512831c64c506ff3330d23e6c76236beb3022",
+            "files": 28,
+            "top_prefixes": {
+              "MTFT_T2_Effective_Operator_v0.1.0": 28
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 28,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_T2_Effective_Operator_v0.1.0.zip",
+      "archive_sha256": "d688d45711cb250cd92e197085a512831c64c506ff3330d23e6c76236beb3022",
+      "archive_root": "MTFT_T2_Effective_Operator_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_T2_Effective_Operator_v0.1.0",
+      "report_mirror": "reports/t2_effective/MTFT_T2_Effective_Operator_Report.md"
+    },
+    {
+      "id": "t2_memory_approximation",
+      "directory": "MTFT_T2_Memory_Approximation_v0.1.0",
+      "title": "T2 structure-preserving memory approximation",
+      "source_baseline": "0.26.2 provenance; frozen parent matrices, no live MTFT import",
+      "report": "MTFT_T2_Memory_Approximation_Report.md",
+      "evidence": [
+        "EXACT conditional truncation identities and synthetic controls",
+        "DIAGNOSTIC selected/held-out reduced response comparisons"
+      ],
+      "key_findings": [
+        "SVD, complementary-eigenmode and response-snapshot families tested at ranks zero through five; no rank below five passes any prescribed joint 1%, 5% or 10% spectral/time budget.",
+        "SVD rank four discards a direct coupling of 0.08997 but encounters retained/discarded complement mixing of 0.94019.",
+        "SVD rank-four time-prefix error is 0.01984% through 0.25, 2.3879% through 1 and 39.8444% through 2pi; full spectral target worst error is 137.285%.",
+        "The short-prefix observation motivates a separately bounded short-horizon study; it does not rescue the failed full-domain target."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "selection_frozen.json",
+          "independent_selection.json",
+          "truncation_identity_results.json",
+          "RUN_NOTES.md"
+        ],
+        "summary": "24 replay checks and 44 exact synthetic controls; 183 training/1,800 held-out spectral points; all 32 pole subsets scored; all 18 family/rank models retained."
+      },
+      "replay_commands": [
+        "python run_study.py"
+      ],
+      "candidate_reusable_code": [
+        "memory_approximation.py: reduced Hermitian embedding and frozen train/test example",
+        "TRUNCATION_IDENTITIES.md: absolute resolvent/evolution bounds and delayed-mixing counterexample",
+        "selected_models.npz: fixed model choices, not validated compression defaults"
+      ],
+      "integration_blockers": [
+        "No lower-rank model passed the full target; retain all five complementary directions for that target.",
+        "Exact-minimum-rank result concerns exact realization, not a theorem forbidding every possible approximation.",
+        "Conditional absolute norm bounds do not directly certify the study\u2019s relative-Frobenius budgets; no measured runtime speedup."
+      ],
+      "preceding_studies": [
+        "t2_effective"
+      ],
+      "disposition": "negative_result_and_approximation_protocol",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nsympy==1.14.0\nmpmath==1.3.0\nmatplotlib==3.10.8",
+      "integrity": {
+        "study": "MTFT_T2_Memory_Approximation_v0.1.0",
+        "manifests": [
+          {
+            "file": "SHA256SUMS.txt",
+            "good": 30,
+            "missing": [],
+            "mismatched": [],
+            "unparsed": [],
+            "untracked": []
+          }
+        ],
+        "archives": [
+          {
+            "path": "deliverables/MTFT_T2_Memory_Approximation_v0.1.0.zip",
+            "bytes": 3122247,
+            "sha256": "42051b8a7a98576fbab2c15ff6b3551c265e53f0e324997ca46b3219f1035f82",
+            "files": 31,
+            "top_prefixes": {
+              "MTFT_T2_Memory_Approximation_v0.1.0": 31
+            },
+            "crc": null,
+            "payload_matches_local": {
+              "matched": 31,
+              "missing": [],
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      "archive": "archives/MTFT_T2_Memory_Approximation_v0.1.0.zip",
+      "archive_sha256": "42051b8a7a98576fbab2c15ff6b3551c265e53f0e324997ca46b3219f1035f82",
+      "archive_root": "MTFT_T2_Memory_Approximation_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_T2_Memory_Approximation_v0.1.0",
+      "report_mirror": "reports/t2_memory_approximation/MTFT_T2_Memory_Approximation_Report.md"
+    },
+    {
+      "id": "t2_short_horizon",
+      "directory": "MTFT_T2_Short_Horizon_v0.1.0",
+      "title": "T2 continuous short-horizon error certificate",
+      "source_baseline": "0.26.2 lineage; exact dyadic interpretation of frozen parent matrices",
+      "report": "MTFT_T2_Short_Horizon_Report.md",
+      "evidence": [
+        "EXACT rational bound for the stored finite Hermitian model",
+        "DIAGNOSTIC original numerical Hodge geometry and sampled evolution"
+      ],
+      "key_findings": [
+        "Four complement directions meet the 1% relative Frobenius active-propagator budget throughout 0 <= t <= 0.5; proved bound 0.601907%, sampled maximum 0.198611%.",
+        "Largest listed certified horizon is 0.5; the bound is inconclusive at 0.75 and a sampled violation occurs at 1.",
+        "Earlier full spectral/long-horizon failures remain; no repeated-reset or physical-time guarantee."
+      ],
+      "historical_validation": {
+        "records": [
+          "VALIDATION.json",
+          "BOUND_CERTIFICATE.json",
+          "exact_verification_results.json"
+        ],
+        "summary": "New in this handoff: dependency-free exact replay, independent Gaussian-rational verification (14 coefficients, 25 bound rows), 12 symbolic controls, 161 independent sample checks, 8 invalid-input controls and 4 strict-integer controls."
+      },
+      "replay_commands": [
+        "python verify_certificate.py",
+        "python verify_exact_certificate.py",
+        "python review_controls.py",
+        "python run_study.py"
+      ],
+      "candidate_reusable_code": [
+        "dyadic_bounds.py: exact finite-matrix Taylor error certification",
+        "FROZEN_MODELS.json and BOUND_CERTIFICATE.json: replayable exact finite fixture"
+      ],
+      "integration_blockers": [
+        "Certificate concerns stored finite matrices, not interval-certified period geometry.",
+        "No relative worst-state or probability guarantee; no physical time identified.",
+        "Public API promotion needs maintained API/input/resource policy; research helper is ready for the studies tree."
+      ],
+      "preceding_studies": [
+        "t2_memory_approximation"
+      ],
+      "disposition": "bounded research helper and exact finite fixture",
+      "recorded_requirements": "numpy==2.3.5\nscipy==1.17.0\nmatplotlib==3.10.8\nsympy==1.14.0\nmpmath==1.3.0\n",
+      "integrity": {
+        "archives": [
+          {
+            "path": "deliverables/MTFT_T2_Short_Horizon_v0.1.0.zip",
+            "sha256": "ef5e884915ca16d2c5490860df90b996df52dadce38c2cdf3e07e42fead6551c",
+            "bytes": 298589
+          }
+        ]
+      },
+      "archive": "archives/MTFT_T2_Short_Horizon_v0.1.0.zip",
+      "archive_sha256": "ef5e884915ca16d2c5490860df90b996df52dadce38c2cdf3e07e42fead6551c",
+      "archive_root": "MTFT_T2_Short_Horizon_v0.1.0",
+      "integration_destination": "studies/mtft_v0270/MTFT_T2_Short_Horizon_v0.1.0",
+      "report_mirror": "reports/t2_short_horizon/MTFT_T2_Short_Horizon_Report.md"
+    }
+  ],
+  "target_version": "0.27.0",
+  "status": "integration handoff; not a published or fully release-tested distribution"
+}

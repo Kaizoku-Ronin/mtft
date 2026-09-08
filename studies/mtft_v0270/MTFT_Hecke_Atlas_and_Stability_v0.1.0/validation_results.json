@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "exact_field_checks": {
+    "factor_products": 2504,
+    "independent_degree_censuses": 2500,
+    "witness_factor_irreducibility_checks": 14,
+    "discriminant_sign_checks": 2498
+  },
+  "exact_sector_checks": {
+    "minimal_polynomial_annihilates": true,
+    "characteristic_polynomial": true,
+    "idempotent_complete_orthogonal_projectors": true,
+    "exact_ranks": true,
+    "independent_integral_basis_projectors": true,
+    "Hecke_and_AL_commutation": true,
+    "exact_intersection_form_and_adjointness": true,
+    "AL_character_intersections": true,
+    "balanced_but_mixing_counterexample": true
+  },
+  "prime_label_and_interval_checks": 1252,
+  "joint_density_sum": "1",
+  "all_55_categories_included": true,
+  "frozen_input_and_plan_hashes_match": true,
+  "frozen_package_gates_passed": 19,
+  "period_reconstruction_J_residual": 2.3574004133385095e-14,
+  "original_cycle_frame_transfer_error": 7.771561172376096e-14,
+  "original_cycle_frame_Hodge_conservation_error": 7.978957329803161e-14,
+  "original_cycle_frame_symplectic_conservation_error": 9.834374641539725e-14,
+  "old_quartic_reciprocity_error": 3.3306690738754696e-15,
+  "AL_oldspace_leakage_half_bound": true,
+  "maximum_simulation_residual": 3.7388825897912515e-13,
+  "numerical_tolerance": 1e-09,
+  "inspector_cases": 7,
+  "scope": "Exact rational/finite-field certificates plus double-precision numerical checks. Irregularity labels reuse the preceding independently verified Bernoulli census. No Lean proof or physical calibration."
+}

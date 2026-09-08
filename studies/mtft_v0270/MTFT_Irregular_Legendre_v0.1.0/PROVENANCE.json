@@ -1,0 +1,21 @@
+{
+  "date_utc": "2026-09-06",
+  "experiment": "MTFT Irregular Legendre v0.1.0",
+  "mtft_companion_version": "0.26.0",
+  "analysis_plan_sha256": "20cbe758a3fbb94221760eed51156bbae9daac81d4a7c2bdcd4be27fe1b77e7b",
+  "prior_census": {
+    "filename": "prime_traces.npz",
+    "sha256": "45b6ea1abf05b23de5ccc0b011fa72197e12dda4a5748f670961ea5cdc2aab22",
+    "all_overlapping_primes_positions_and_marks_match": true
+  },
+  "computed_data_sources": "Local exact integer arithmetic; no downloaded irregular-prime table.",
+  "references": [
+    "https://math.dartmouth.edu/~carlp/irreg.pdf",
+    "https://arxiv.org/html/2602.22502v1"
+  ],
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  }
+}

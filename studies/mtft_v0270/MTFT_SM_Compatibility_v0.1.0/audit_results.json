@@ -1,0 +1,244 @@
+{
+  "date": "2026-09-07",
+  "mtft_version": "0.26.0",
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "scope": "Read-only source audit and bounded numerical checks, not full-suite validation or an experimental exclusion.",
+  "default_mass_pipeline": {
+    "m_W": 77.60540621188254,
+    "m_Z": 88.48377701762446,
+    "m_H": 125.29641398857645,
+    "m_KK": 323.0970709720674,
+    "theta_0": 0.5010930132653572,
+    "sin2_theta_W": 0.23076923076923078,
+    "R_tau_GeV_inv": 0.0030950450803884032,
+    "lambda_from_mass": 0.12947938666771003,
+    "fermion_mass_for_kappa_1": 155.21081242376508
+  },
+  "stored_package_references_not_a_current_PDG_fit": {
+    "mW": 80.3692,
+    "mZ": 91.1876,
+    "mH": 125.25
+  },
+  "mass_output_independent_of_PDG_object": true,
+  "VEV_dependency_check": {
+    "default": {
+      "m_W": 77.60540621188254,
+      "m_Z": 88.48377701762446,
+      "m_H": 125.29641398857645,
+      "m_KK": 323.0970709720674,
+      "theta_0": 0.5010930132653572,
+      "sin2_theta_W": 0.23076923076923078,
+      "R_tau_GeV_inv": 0.0030950450803884032,
+      "lambda_from_mass": 0.12947938666771003,
+      "fermion_mass_for_kappa_1": 155.21081242376508
+    },
+    "only_instance_v_ew_doubled": {
+      "m_W": 77.60540621188254,
+      "m_Z": 88.48377701762446,
+      "m_H": 125.29641398857645,
+      "m_KK": 646.1941419441348,
+      "theta_0": 0.5010930132653572,
+      "sin2_theta_W": 0.23076923076923078,
+      "R_tau_GeV_inv": 0.0015475225401942016,
+      "lambda_from_mass": 0.03236984666692751,
+      "fermion_mass_for_kappa_1": 310.42162484753015
+    },
+    "instance_and_two_global_vev_anchors_doubled": {
+      "m_W": 155.21081242376508,
+      "m_Z": 176.96755403524892,
+      "m_H": 250.5928279771529,
+      "m_KK": 646.1941419441348,
+      "theta_0": 0.5010930132653572,
+      "sin2_theta_W": 0.23076923076923078,
+      "R_tau_GeV_inv": 0.0015475225401942016,
+      "lambda_from_mass": 0.12947938666771003,
+      "fermion_mass_for_kappa_1": 310.42162484753015
+    },
+    "interpretation": "The public instance VEV is not a single global scale control: mW is read from constants.SM and mH is calibrated to constants.HIGGS."
+  },
+  "internal_relations": {
+    "mass_routine_mW_over_mZ": 0.8770580193070292,
+    "separate_GAUGE_W_Z_ratio": 0.8816114171759484,
+    "relative_disagreement": 0.005191672350840504,
+    "public_HIGGS_lambda": 0.5179175466708401,
+    "mass_based_lambda": 0.12947938666771003,
+    "lambda_factor": 4.0
+  },
+  "electron_catalog": {
+    "stored_mass_GeV": 0.000511,
+    "stored_kappa": 2.068e-06,
+    "representation_string": "(1,1,-1)",
+    "inferred_kappa": 3.292296406546985e-06,
+    "mass_reconstructed_from_inferred_kappa_GeV": 0.000511,
+    "interpretation": "Inverting an observed mass to obtain kappa and then reconstructing the mass is an identity, not an independent prediction."
+  },
+  "koide_tau": {
+    "result": {
+      "predicted_MeV": 1776.9690270830142,
+      "experimental_MeV": 1776.86,
+      "error_percent": 0.006135941099148239
+    },
+    "electron_muon_defaults_MeV": [
+      0.51099895,
+      105.6583755
+    ],
+    "interpretation": "Conditional on two measured masses, Koide=2/3, and the larger-root choice."
+  },
+  "su3_group_membership": {
+    "random_su_n": {
+      "samples": [
+        {
+          "seed": 0,
+          "determinant_error": 1.027896513913181,
+          "unitarity_error": 7.435178212142946e-16
+        },
+        {
+          "seed": 1,
+          "determinant_error": 0.12550617579949833,
+          "unitarity_error": 5.528495496733333e-16
+        },
+        {
+          "seed": 2,
+          "determinant_error": 1.0363562734877312,
+          "unitarity_error": 4.240635934500437e-16
+        },
+        {
+          "seed": 3,
+          "determinant_error": 1.2521891220650416,
+          "unitarity_error": 7.46237701618656e-16
+        },
+        {
+          "seed": 4,
+          "determinant_error": 1.3241567396289755,
+          "unitarity_error": 7.114686795375455e-16
+        },
+        {
+          "seed": 5,
+          "determinant_error": 0.8970493767284246,
+          "unitarity_error": 5.675660269392022e-16
+        },
+        {
+          "seed": 6,
+          "determinant_error": 1.4013574394264057,
+          "unitarity_error": 3.305655046302013e-16
+        },
+        {
+          "seed": 7,
+          "determinant_error": 1.0447165861608085,
+          "unitarity_error": 3.7921511809875895e-16
+        }
+      ],
+      "determinant_one_failures_at_1e_10": 8,
+      "max_determinant_error": 1.4013574394264057,
+      "max_unitarity_error": 7.46237701618656e-16
+    },
+    "su_n_near_identity": {
+      "samples": [
+        {
+          "seed": 0,
+          "determinant_error": 6.9388939039072276e-18,
+          "unitarity_error": 2.229194211927556e-16
+        },
+        {
+          "seed": 1,
+          "determinant_error": 3.469446951953615e-18,
+          "unitarity_error": 3.1521661513479216e-16
+        },
+        {
+          "seed": 2,
+          "determinant_error": 2.7755575615628914e-17,
+          "unitarity_error": 3.404150489280037e-16
+        },
+        {
+          "seed": 3,
+          "determinant_error": 4.443059973708341e-16,
+          "unitarity_error": 5.040927076749428e-16
+        },
+        {
+          "seed": 4,
+          "determinant_error": 1.1123893155135927e-16,
+          "unitarity_error": 1.5859049877858323e-16
+        },
+        {
+          "seed": 5,
+          "determinant_error": 2.081668171172169e-17,
+          "unitarity_error": 2.731130021118992e-16
+        },
+        {
+          "seed": 6,
+          "determinant_error": 6.661699538672011e-16,
+          "unitarity_error": 6.360814029662466e-16
+        },
+        {
+          "seed": 7,
+          "determinant_error": 3.469446951953615e-18,
+          "unitarity_error": 5.017767410959098e-16
+        }
+      ],
+      "determinant_one_failures_at_1e_10": 0,
+      "max_determinant_error": 6.661699538672011e-16,
+      "max_unitarity_error": 6.360814029662466e-16
+    }
+  },
+  "frozen_surface_gates": {
+    "intersection_skew_unimodular": true,
+    "AL_involutions": true,
+    "W11_W13_equals_W143": true,
+    "Hecke_commutes_with_AL": true,
+    "AL_preserve_intersection": true,
+    "Hecke_selfadjoint": true,
+    "AL_traces_2_m2_m18": true,
+    "riemann_I_symplectic": true,
+    "riemann_II_positive": true,
+    "J_commutes_with_Hecke_AL": true,
+    "frozen_J_matches_recomputed": true,
+    "live_cycle_basis_equals_frozen": true,
+    "U_commute_with_good_Hecke": true,
+    "U_commute_with_J": true,
+    "AL_adjoint_identity_U13": true,
+    "AL_adjoint_identity_U11": true,
+    "U11_squared_identity": true,
+    "hecke_block_lattices_annihilated_and_full_rank": true,
+    "hodge_covolume_squared_equals_polarization_det": true
+  },
+  "source_sha256": {
+    "constants.py": "1c79d44e2749fefe78889faad9ffffe0a1f385f0297e4ee4c3b28d24ff5d0947",
+    "hosotani.py": "9fd01350b2abe0a33bac7547d8e3bb7a433a079538a226968c139216e4cd8aca",
+    "particles.py": "0eecbd41253b1cb585f11ee5bceafb734a8e191abe8b1c66298324be3e4d87a0",
+    "koide.py": "dfba6e9043ceb4a63cde90e45b4937cb5f2f1d942f015ccefbc4249cbe7f7491",
+    "lattice.py": "2d43a4a1390ca02463bc0011dc0ee7973860aaffc9245ba38449b4d5ceb08fba",
+    "quantum.py": "fae65b63b4ca683c12f68d31513b8612be693f784890d8c31309a293390132d8",
+    "falsify.py": "c1cec09285f97791c56eeadbac1b3853609c699da70642d4b2a3b050bb5a0ba8",
+    "surface/gauge.py": "4d22eca42b515db36cdfc030c901df7f15b2eb3a1a46beb03258d3c62085690f",
+    "surface/bimodule.py": "08b9361b96bfd3d5453eb73f0b22187be0df7dc0a833046b5ae3a4c478d8f6ca",
+    "surface/ising.py": "03c6b57acd38dcb16fef20c7a3da1a8b820a7b54e8ad40a2de2149b67e54354a",
+    "periods/physics.py": "b580de4ddcbaf5ffb6823a9d27d197f6c24ec9e2ef05c4a7b8c36d6b1af640fd"
+  },
+  "findings": [
+    {
+      "id": "SM-AUDIT-01",
+      "status": "reproduced implementation inconsistency",
+      "finding": "HIGGS.lambda_quartic is 4 times HosotaniMTFT.higgs_self_coupling under the latter explicit lambda=mH^2/(2v^2) convention. The prediction test checks the lower formula directly and misses the public property.",
+      "class": "EXACT factor-of-four formula comparison, numerical reproduction"
+    },
+    {
+      "id": "SM-AUDIT-02",
+      "status": "reproduced implementation defect",
+      "finding": "random_su_n normalizes one row by det(Q)^(1/N), leaving determinant det(Q)^(1-1/N). All eight N=3 samples fail determinant one while remaining unitary.",
+      "class": "EXACT determinant identity, finite numerical reproduction"
+    },
+    {
+      "id": "SM-AUDIT-03",
+      "status": "requires a common physical prescription",
+      "finding": "The two MW/MZ formulas differ. A running-angle versus pole-mass interpretation would require an explicit scale, scheme, and radiative matching calculation; none is supplied by these evaluated routines.",
+      "class": "DIAGNOSTIC consistency issue, not a statistical exclusion"
+    },
+    {
+      "id": "SM-AUDIT-04",
+      "status": "dependency distinction established",
+      "finding": "HosotaniMTFT reuses arithmetic mass formulas and calibrates potential coefficients. The separate particle catalog supplies observed masses, spin/representation labels, and kappas. These layers must not be counted as independent derivations.",
+      "class": "source inspection plus dependency checks"
+    }
+  ]
+}

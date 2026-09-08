@@ -1,0 +1,24 @@
+{
+  "parent_study": "MTFT_T2_Effective_Operator_v0.1.0",
+  "primary_parent_matrix_sha256": "2246e55a64eccbd19ea7be4567df07ea06301d137f37ed7984964a6b9c002adb",
+  "independent_parent_matrix_sha256": "f664bba1b344487cf763ba13fe3964f7743aa89a721cab7706efff676d2b1508",
+  "primary_selected_keys": [
+    "H",
+    "H_raw",
+    "P",
+    "U",
+    "F",
+    "A",
+    "B",
+    "D"
+  ],
+  "independent_selected_keys": [
+    "H_real",
+    "P_real"
+  ],
+  "input_sha256": {
+    "T2_independent_geometry.npz": "2990bd3f4ec917f8ae1a264da3688bc235388a716124d9e371ce1026a232237f",
+    "T2_blocks.npz": "af01726b204310d959241020af12594b3687814eeb2cf29f85072fbabfd97f8b"
+  },
+  "scope": "Frozen extracts of the completed T2 study; this experiment recomputes approximations, not the upstream Hodge construction."
+}

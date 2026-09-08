@@ -1,0 +1,22 @@
+{
+  "scope": "new short-horizon study; not full MTFT release validation",
+  "all_pass": true,
+  "primary_checks": {
+    "exact_hermitian_full": true,
+    "exact_hermitian_reduced": true,
+    "moments_zero_and_one_exact": true,
+    "expm_agreement": true,
+    "all_sampled_errors_below_corresponding_bounds": true
+  },
+  "exact_replay_rows": 25,
+  "independent_coefficient_checks": 14,
+  "independent_bound_rows": 25,
+  "independent_one_percent_comparison_passed": true,
+  "symbolic_toy_controls": 12,
+  "independent_sampled_times": 161,
+  "invalid_input_controls": 8,
+  "strict_integer_rejection_controls": 4,
+  "figure_visually_reviewed": true,
+  "physical_identification": false,
+  "geometry_interval_certificate": false
+}

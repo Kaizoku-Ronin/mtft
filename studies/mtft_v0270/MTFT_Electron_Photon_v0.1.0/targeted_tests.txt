@@ -1,0 +1,7 @@
+Fresh corrected source archive extraction.
+Unified patch applied cleanly to a separate fresh original extraction; all four patched files match.
+Command: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -m pytest -q tests/test_sm_audit_corrections.py tests/test_predictions.py::TestHiggsSector
+..........                                                               [100%]
+10 passed in 0.45s
+
+Exit code: 0

@@ -1,0 +1,46 @@
+{
+  "experiment": "T2 effective operator, complementary memory, and delayed coupling",
+  "companion_version": "0.1.0",
+  "date_utc": "2026-09-08",
+  "source_version": "MTFT 0.26.2",
+  "source_archive": "inputs/mtft-0.26.2.tar.gz",
+  "original_uploaded_archive_name": "mtft-0.26.2.tar (1).gz",
+  "source_archive_sha256": "35cfc00c32877bd6c12b16464ddc8190bcca9e2f054474f4ab0a6c605fe9da38",
+  "source_files_verified_byte_for_byte": 395,
+  "protocol_sha256": "82a766f60ef267b7246bb09469274f12e67b69c25ee0c3b05f9b14353c61f2cc",
+  "upstream_study": "MTFT_Active_Module_v0.1.0",
+  "upstream_input_sha256": {
+    "inputs/previous/coupling_matrices.npz": "1b011327896525ffca8d53bbd0279871e102016b2035507575f13614a2543f13",
+    "inputs/previous/PROVENANCE.json": "88e85cc2e6a668e110c3c7dac8e1524ef488e1a93e54d0ba24b82a581a6b7f59",
+    "inputs/previous/ORIGINAL_STUDY_SHA256SUMS.txt": "590525a06a4d3698215eb78cac8497b2bab06a309fd9c2eac4eb16d8044db0df",
+    "inputs/previous/kernel_check_projectors.npz": "eaeef3f1b6c765b1bb3d676e219bbc2e2b41ae6f295ef4a30d12177a6329c36b"
+  },
+  "W143_baseline_reference_sha256": "3583ead38f0b505b5e4ef5558b0b0d510afb22d65a1b703cca79a5d9126ebefa",
+  "scripts_sha256": {
+    "run_study.py": "7984a0833e6b67ec964cd9e024a96cef70a9a764b702ac2decb63934ae88c1d2",
+    "general_feedback_identities.py": "5e1d7f6f57b7d30ef4413ba4895c5770731a1797eeb230ed490f8ae93a07a8f3",
+    "t2_effective_operator_study.py": "6faf7b2b4ac2c5c3493eb7a208818f541f1d2adff39c477817e224ac5eaa8288",
+    "render_T2_effective_operator.py": "830468b330bbbc14c9c4e74f93371f6acb50b20ced3809265e429d16751d2ad4",
+    "independent_T2_check.py": "729eaf9360962cc04338dc641711ce31fd2c1e87f77271b691eb328e7bdd5ce7"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "validation": "VALIDATION.json",
+  "replay_command": "python run_study.py",
+  "independent_routes": "Primary complex8+5 Schur/full solve versus real26 spectral projection with localization geometry; shared frozen upstream Hodge frame. Synthetic symbolic controls share no MTFT inputs.",
+  "exact": "Rational arithmetic characteristic polynomial and conditional general operator identities; 40 exact symbolic synthetic controls.",
+  "diagnostic": "Period-dependent subspaces, complex ranks, coupling coefficients, response comparisons, and dimensionless norm-transfer measurements.",
+  "physical_scope": "No physical clock, energy scale, Hamiltonian, mass assignment, density-matrix partial trace, irreversible limit, or Standard Model correspondence identified.",
+  "retained_outcomes": {
+    "independent_pair_description_relative_discrepancy": 0.6316759041715531,
+    "delayed_dark_complex_rank": 3,
+    "minimum_exact_auxiliary_dimension_conditional_on_rank": 5,
+    "raw_Schur_stress_maximum_relative_error": 0.0001639292688811831
+  }
+}
