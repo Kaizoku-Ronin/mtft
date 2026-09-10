@@ -193,3 +193,115 @@ def x0143_census(threshold: float = 1e-6) -> Dict:
             "sectors_VxV": tensor_sector_dimensions(d["W11"].astype(float), d["W13"].astype(float)),
             "AL_adjoint_identity_U13": adjoint_identity(d["U13"].astype(float), d["W13"].astype(float), G),
             "AL_adjoint_identity_U11": adjoint_identity(d["U11"].astype(float), d["W11"].astype(float), G)}
+
+
+# ------------------------------------------------ v0.27.1: full real-spectral-triple gate set
+def cyclic_permutation(dim: int, k: int) -> np.ndarray:
+    """Permutation matrix on (C^dim)^{⊗k} cycling the tensor factors (slot i -> slot i+1)."""
+    import itertools
+    idx = list(itertools.product(range(dim), repeat=k))
+    pos = {s: i for i, s in enumerate(idx)}
+    P = np.zeros((dim ** k, dim ** k))
+    for i, s in enumerate(idx):
+        P[pos[(s[-1],) + s[:-1]], i] = 1.0
+    return P
+
+
+def kron_power(A: np.ndarray, k: int) -> np.ndarray:
+    out = np.array(A, dtype=float)
+    for _ in range(k - 1):
+        out = np.kron(out, A)
+    return out
+
+
+def tensor_alphabet(alphabet: Dict[str, np.ndarray], k: int, max_dim: int = 4096) -> Dict[str, np.ndarray]:
+    """Slot-wise generators a⊗I⊗…, I⊗a⊗I, … of A^{⊗k} (dense; refuses beyond max_dim)."""
+    n = next(iter(alphabet.values())).shape[0]
+    if n ** k > max_dim:
+        raise RuntimeError(f"dense tensor alphabet dimension {n ** k} exceeds max_dim={max_dim}; use character orbits")
+    I = np.eye(n)
+    out = {}
+    for name, a in alphabet.items():
+        for slot in range(k):
+            mats = [np.asarray(a, float) if s == slot else I for s in range(k)]
+            M = mats[0]
+            for m in mats[1:]:
+                M = np.kron(M, m)
+            out[f"{name}@{slot}"] = M
+    return out
+
+
+def symmetric_dirac_block(W: np.ndarray, h: np.ndarray) -> np.ndarray:
+    """K_h = W h + h W^{-1}: self-adjoint (h self-adjoint, W orthogonal) and real (J D = D J)."""
+    return W @ h + h @ np.linalg.inv(W)
+
+
+class RealTriple(Doubling):
+    """Doubling with the complete finite real-spectral-triple gate set."""
+
+    def axiom_gates(self, D: np.ndarray, tol: float = 1e-10) -> Dict:
+        n = self.n
+        Z = np.zeros((n, n))
+        I = np.eye(n)
+        Jr = np.block([[Z, I], [I, Z]])            # real structure: swap (composed with conjugation over C)
+        G = np.block([[I, Z], [Z, -I]])
+        nrm = lambda A: float(np.linalg.norm(A))
+        scale = max(nrm(D), 1e-300)
+        gates = {
+            "selfadjoint": nrm(D - D.T) / scale,
+            "reality_JD_equals_DJ": nrm(Jr @ D @ Jr - D) / scale,
+            "grading_D_odd": nrm(G @ D + D @ G) / scale,
+            "grading_algebra_even": max(nrm(G @ self.left(a) - self.left(a) @ G) / nrm(a) for a in self.alphabet.values()),
+            "J_Gamma_anticommute": nrm(Jr @ G + G @ Jr) / nrm(G),
+            "order_zero": self.order_zero()["max_rel_residual"],
+        }
+        fo = 0.0
+        for a in self.alphabet.values():
+            X = D @ self.left(a) - self.left(a) @ D
+            for b in self.alphabet.values():
+                fo = max(fo, nrm(X @ self.opposite(b) - self.opposite(b) @ X) / (scale * nrm(a) * nrm(b)))
+        gates["first_order"] = fo
+        # first-order is scaled by ||D|| ||a|| ||b|| (absolute), never by the one-form norm
+        gates["max_one_form_size"] = max(nrm(D @ self.left(a) - self.left(a) @ D) / nrm(a) for a in self.alphabet.values())
+        gates["status"] = "PASS" if all(v < tol for k, v in gates.items() if k not in ("status", "max_one_form_size")) else "FAIL"
+        return gates
+
+    def pairing(self, basis: Optional[Dict[str, np.ndarray]] = None) -> Dict:
+        """Q_ij = Tr(Γ π(e_i) e_j°) on a basis of the algebra (defaults to alphabet ∪ {I}); the finite
+        Poincaré-duality gate is nondegeneracy on the FULL algebra basis (pass primitive idempotents)."""
+        n = self.n
+        Z = np.zeros((n, n))
+        I = np.eye(n)
+        G = np.block([[I, Z], [Z, -I]])
+        B = dict(basis) if basis else {**self.alphabet, "I": I}
+        names = list(B)
+        Q = np.array([[np.trace(G @ self.left(B[i]) @ self.opposite(B[j])) for j in names] for i in names])
+        rank = int(np.linalg.matrix_rank(Q, tol=1e-9 * max(1.0, np.abs(Q).max())))
+        return {"Q": Q, "basis": names, "rank": rank, "nullity": len(names) - rank,
+                "unit_in_radical": bool("I" in B and np.abs(Q[names.index("I")]).max() < 1e-9),
+                "nondegenerate_on_supplied_basis": rank == len(names)}
+
+    def differential_rank(self, D: np.ndarray) -> int:
+        forms = np.array([(D @ self.left(a) - self.left(a) @ D).reshape(-1) for a in self.alphabet.values()])
+        return int(np.linalg.matrix_rank(forms, tol=1e-9 * max(1.0, np.abs(forms).max())))
+
+
+def two_state_cyclic_control(k: int = 3) -> Dict:
+    """Astra's exact synthetic control (two-state factor algebra, cyclic twist), all gates."""
+    n = 2 ** k
+    P = cyclic_permutation(2, k)
+    E = np.eye(n)
+    alphabet = {f"e{i}": np.diag(E[i]) for i in range(n)}
+    T = RealTriple.build(alphabet, None, P)
+    h = np.diag(np.arange(2, n + 2, dtype=float))
+    rows = {}
+    for label, M in (("[[0,Wh],[Wh^T,0]]", P @ h), ("[[0,Wh],[Wh,0]]", None), ("K_h=Wh+hW^-1", symmetric_dirac_block(P, h)), ("K=W+W^-1", P + P.T)):
+        if M is None:
+            Z = np.zeros((n, n)); D = np.block([[Z, P @ h], [P @ h, Z]])
+        else:
+            Z = np.zeros((n, n)); D = np.block([[Z, M], [M.T, Z]])
+        g = T.axiom_gates(D)
+        rows[label] = {k_: (round(v, 12) if isinstance(v, float) else v) for k_, v in g.items()}
+        rows[label]["rank_d"] = T.differential_rank(D)
+    rows["pairing"] = {k_: v for k_, v in T.pairing().items() if k_ != "Q"}
+    return rows
