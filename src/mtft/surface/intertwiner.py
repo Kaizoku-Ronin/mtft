@@ -9,9 +9,9 @@ Wave 10.1 cycle basis C (in Manin-generator coordinates).  Facts, all exact inte
     Pi W_cyc = W_L^T Pi          for W11, W13 (AL self-adjoint for the pairing)
     P_canonical = - Pi Jint^-1 Pi^T   (Poincare duality between the two intersection forms)
 
-The periods frame of ``mtft.periods`` (frozen tau0) was rounded from float and carries no integer
-map to the canonical frame, so it is compared through frame-independent invariants instead:
-the j-invariants of the two 2-dimensional Atkin-Lehner sectors.  Result at N = 143:
+The periods frame of ``mtft.periods`` (frozen tau0) has, since v0.27.2, the exact integer map
+``X_periods`` (``periods_frame_map``); before that it was compared through frame-independent
+invariants, the j-invariants of the two 2-dimensional Atkin-Lehner sectors.  Result at N = 143:
 (+,+) -> j(143a1) = -141.0134480904 in both frames (3e-14); (-,-) -> j = -4096/11 = j(11a3)
 in both frames (2e-14): the (-,-) sector of H_1(X0(143), Z) is the curve 11a3.
 """
