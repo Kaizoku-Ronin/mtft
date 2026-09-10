@@ -5,4 +5,4 @@ package-side locations (pyproject.toml, src/mtft/__init__.py, CITATION.cff);
 ``test_release_pin.py`` verifies all four agree.  Introduced in v0.26.1 after
 four consecutive releases shipped with stale per-file pins (Kimi).
 """
-RELEASE_VERSION = "0.27.4"
+RELEASE_VERSION = "0.28.0"

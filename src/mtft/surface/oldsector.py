@@ -27,7 +27,15 @@ from typing import Dict, Tuple
 import sympy as sp
 
 
+def _is_prime(n: int) -> bool:
+    return n > 1 and all(n % k for k in range(2, int(n ** 0.5) + 1))
+
+
 def local_block(p: int, a_p: int) -> Dict[str, sp.Matrix]:
+    if not _is_prime(p):
+        raise ValueError(f"p={p} is not prime")
+    if a_p * a_p > 4 * p:
+        raise ValueError(f"a_p={a_p} violates the Hasse bound |a_p| <= 2 sqrt(p)")
     B = sp.Matrix([[a_p, p], [-1, 0]])
     G = sp.Matrix([[p + 1, a_p], [a_p, p + 1]])
     Bd = G.inv() * B.T * G
@@ -35,6 +43,8 @@ def local_block(p: int, a_p: int) -> Dict[str, sp.Matrix]:
 
 
 def two_prime_sector(p: int, q: int, a_p: int, a_q: int) -> Dict:
+    if p == q:
+        raise ValueError("the two added primes must be distinct")
     Lp, Lq = local_block(p, a_p), local_block(q, a_q)
     I2 = sp.eye(2)
     K = sp.kronecker_product
@@ -46,7 +56,8 @@ def two_prime_sector(p: int, q: int, a_p: int, a_q: int) -> Dict:
     H_pq = herm(Up * Uq)
     return {"p": p, "q": q, "local_p": Lp, "local_q": Lq, "G": G, "U_p": Up, "U_q": Uq, "herm": herm,
             "H_add": H_add, "H_prod": H_prod, "H_pq": H_pq,
-            "interaction_term": K(Lp["R"], Lq["R"]),
+            "skew_correction": K(Lp["R"], Lq["R"]),      # Herm(U_p U_q) - Herm(U_p) Herm(U_q)
+            "interaction_term": K(Lp["R"], Lq["R"]),     # compatibility alias for skew_correction
             "cross_commutators_zero": all((X * Y - Y * X).is_zero_matrix for X in (Up, herm(Up) * 2 - Up) for Y in (Uq, herm(Uq) * 2 - Uq))}
 
 
@@ -75,10 +86,32 @@ def hermitian_hecke_selection(sector: Dict) -> Dict:
     cols = sp.Matrix.hstack(*[m.reshape(16, 1) for m in span])
     a = sp.Symbol("alpha")
     Ha = sector["H_prod"] + a * sector["interaction_term"]
-    sol = sp.solve(list(cols.nullspace() and []) or [], a)  # placeholder, solved below
-    # solve cols c = vec(H_alpha) for (c, alpha)
     cs = sp.symbols("c0:4")
     eqs = list(cols * sp.Matrix(cs) - Ha.reshape(16, 1))
     solution = sp.solve(eqs, list(cs) + [a], dict=True)
-    alpha = solution[0][a] if solution and a in solution[0] else None
-    return {"dim_Herm_Hecke": int(cols.rank()), "alpha_selected": alpha, "H_selected": sector["H_pq"]}
+    if not solution:
+        status, alpha = "no_member_in_family", None
+    elif a in solution[0] and solution[0][a].free_symbols == set():
+        status, alpha = "unique", solution[0][a]
+    elif a in solution[0]:
+        status, alpha = "not_unique", None
+    else:                                             # alpha absent: family member for every alpha
+        status, alpha = "not_identifiable", None
+    return {"dim_Herm_Hecke": int(cols.rank()), "status": status, "alpha_selected": alpha,
+            "H_selected": sector["H_pq"] if status == "unique" else None}
+
+
+def good_prime_replacement_control(sector: Dict, a_ell: int) -> Dict:
+    """Replace the second local operator by the scalar a_ell I (a good prime T_ell acts as the
+    scalar a_ell on the fixed newform oldclass): the skew correction and the whole connected
+    term vanish.  This is the representation-specific 'bad-prime only' statement."""
+    I2 = sp.eye(2)
+    Lp = sector["local_p"]
+    Up = sp.kronecker_product(Lp["B"], I2)
+    Uq = a_ell * sp.eye(4)
+    G = sector["G"]
+    herm = lambda M: (M + G.inv() * M.T * G) / 2
+    Hpq = herm(Up * Uq)
+    skew = Hpq - herm(Up) * herm(Uq)
+    C = connected_part(Hpq, Lp["G"], sector["local_q"]["G"])
+    return {"skew_correction_zero": skew.is_zero_matrix, "connected_term_zero": C.is_zero_matrix}

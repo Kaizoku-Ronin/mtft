@@ -373,9 +373,13 @@ def metropolis_sweep(cfg: LatticeConfig, action: MTFTAction,
                         for _ in range(n_hits):
                             R = su_n_near_identity(N, epsilon, rng)
                             U_new = R @ U_old
-                            # ΔS = −(β/N) Re Tr((U_new − U_old) · staple†)
+                            # CC-23 (2026-09-10): the plaquettes containing U_mu(x) sum to
+                            # Re Tr(U_mu(x) * staple), so dS = -(beta/N) Re Tr((U_new - U_old) staple).
+                            # The pre-0.28.0 code contracted with staple^dagger: wrong sign for a
+                            # majority of proposals (found by Astra, QCD-05; verified against full
+                            # recomputation, 3e-13).  Sampler output before 0.28.0 is not Wilson-distributed.
                             dS = -(action.beta / N) * np.real(
-                                np.trace((U_new - U_old) @ staple.conj().T)
+                                np.trace((U_new - U_old) @ staple)
                             )
                             if dS < 0 or rng.random() < math.exp(-dS):
                                 U_old = U_new
