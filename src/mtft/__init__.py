@@ -14,7 +14,7 @@ Install: pip install mtft
 CLI:     python -m mtft verify | report | tower | screen | info
 """
 
-__version__ = "0.27.1"
+__version__ = "0.27.3"
 
 # ── Tier 0: Constants & Arithmetic ───────────────────────────
 from mtft.constants import (

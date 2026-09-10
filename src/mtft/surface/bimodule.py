@@ -84,13 +84,40 @@ class Doubling:
         return cls(dict(zip(names, mats)), W, n)
 
     # representations on V ⊕ V
+    @property
+    def twist_inv(self) -> np.ndarray:
+        return np.linalg.inv(self.twist)
+
     def left(self, a: np.ndarray) -> np.ndarray:
+        """π(a) = diag(a, W a W⁻¹).  (v0.27.3: W⁻¹, not Wᵀ — Astra's W = 2I probe showed the
+        transpose form is non-unital for non-orthogonal twists.)"""
         Z = np.zeros((self.n, self.n))
-        return np.block([[a, Z], [Z, self.twist @ a @ self.twist.T]])
+        return np.block([[a, Z], [Z, self.twist @ a @ self.twist_inv]])
 
     def opposite(self, b: np.ndarray) -> np.ndarray:
         Z = np.zeros((self.n, self.n))
-        return np.block([[self.twist @ b.T @ self.twist.T, Z], [Z, b.T]])
+        return np.block([[self.twist @ b.T @ self.twist_inv, Z], [Z, b.T]])
+
+    def representation_gates(self, tol: float = 1e-10) -> Dict:
+        """π must be a unital algebra homomorphism on the alphabet, and the twist must be
+        orthogonal in the working frame for J = swap to be the real structure of the metric."""
+        n = self.n
+        I = np.eye(n)
+        nrm = np.linalg.norm
+        unital = nrm(self.left(I) - np.eye(2 * n))
+        mult = 0.0
+        for a in self.alphabet.values():
+            for b in self.alphabet.values():
+                mult = max(mult, nrm(self.left(a @ b) - self.left(a) @ self.left(b)) / (nrm(a) * nrm(b)))
+        opp_anti = 0.0
+        for a in self.alphabet.values():
+            for b in self.alphabet.values():
+                opp_anti = max(opp_anti, nrm(self.opposite(a @ b) - self.opposite(b) @ self.opposite(a)) / (nrm(a) * nrm(b)))
+        orth = nrm(self.twist.T @ self.twist - I) / nrm(I)
+        out = {"unital": float(unital), "multiplicative": float(mult), "opposite_antimultiplicative": float(opp_anti),
+               "twist_orthogonal": float(orth)}
+        out["status"] = "PASS" if all(v < tol for v in out.values()) else "FAIL"
+        return out
 
     def dirac(self, M: np.ndarray) -> np.ndarray:
         Z = np.zeros((self.n, self.n))
@@ -263,7 +290,10 @@ class RealTriple(Doubling):
         gates["first_order"] = fo
         # first-order is scaled by ||D|| ||a|| ||b|| (absolute), never by the one-form norm
         gates["max_one_form_size"] = max(nrm(D @ self.left(a) - self.left(a) @ D) / nrm(a) for a in self.alphabet.values())
-        gates["status"] = "PASS" if all(v < tol for k, v in gates.items() if k not in ("status", "max_one_form_size")) else "FAIL"
+        rep = self.representation_gates(tol)
+        gates["representation"] = rep["status"]
+        gates["status"] = "PASS" if (rep["status"] == "PASS" and all(v < tol for k, v in gates.items()
+                                     if k not in ("status", "max_one_form_size", "representation"))) else "FAIL"
         return gates
 
     def pairing(self, basis: Optional[Dict[str, np.ndarray]] = None) -> Dict:
@@ -282,6 +312,8 @@ class RealTriple(Doubling):
                 "nondegenerate_on_supplied_basis": rank == len(names)}
 
     def differential_rank(self, D: np.ndarray) -> int:
+        """Rank of a ↦ [D, π(a)] on the supplied GENERATORS only (not on the generated algebra;
+        pass a full algebra basis as the alphabet for the algebra rank)."""
         forms = np.array([(D @ self.left(a) - self.left(a) @ D).reshape(-1) for a in self.alphabet.values()])
         return int(np.linalg.matrix_rank(forms, tol=1e-9 * max(1.0, np.abs(forms).max())))
 

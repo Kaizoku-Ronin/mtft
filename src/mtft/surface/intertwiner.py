@@ -85,3 +85,13 @@ def cross_frame_hodge_check(dps: int = 40) -> Dict:
                       "cross_frame_rel": abs(jc - jp) / abs(ref) if jc is not None and jp is not None else None,
                       "reference_j": ref, "curve": "143a1" if label == "(+,+)" else "11a3"}
     return out
+
+
+def periods_frame_map() -> np.ndarray:
+    """X in GL(26, Z): cycle coordinates -> mtft.periods symplectic coordinates (v0.27.2).
+    X = S^-1 V^-1 with C V = K_period (frozen v6 period basis, msinit Manin-generator coordinates)
+    and S = periods.symplectic_change().  Gates at load: conjugates W11/W13 onto periods_frame_ops,
+    X^-T Jint X^-1 = -J_std, and X J_true X^-1 = -hodge_complex_structure (2.5e-15).  With Pi
+    (canonical frame) this makes the cycle, canonical and periods frames one lattice."""
+    from .frozen import x0143
+    return x0143()["X_periods"].astype(np.int64)

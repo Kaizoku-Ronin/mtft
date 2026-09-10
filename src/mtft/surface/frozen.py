@@ -88,7 +88,31 @@ def verify_gates(d: dict, tol: float = 1e-11) -> dict:
     if "Pi_canonical" in d:                          # v0.27.0: canonical-frame intertwiner
         for k, v in canonical_frame_gates_from(d).items():
             gates["intertwiner_" + k] = v
+    if "X_periods" in d:                             # v0.27.2: periods-frame map
+        for k, v in periods_frame_gates_from(d).items():
+            gates["periods_" + k] = v
     return gates
+
+
+def periods_frame_gates_from(d: dict, dps: int = 30) -> dict:
+    """X = S^-1 V^-1 maps cycle coordinates to the mtft.periods symplectic frame."""
+    import mtft.homology as H
+    import mtft.periods as P
+    X = d["X_periods"].astype(np.int64)
+    Xf = X.astype(float)
+    Xi = np.linalg.inv(Xf)
+    po = {k: np.array(v, dtype=object).astype(np.int64) for k, v in H.periods_frame_ops().items()}
+    Jstd = np.array(H.standard_J(), dtype=object).astype(np.int64)
+    Jint = d["intersection_cycles"].astype(np.int64)
+    Jm = P.hodge_complex_structure(dps)
+    Jp = np.array([[float(Jm[i, j]) for j in range(26)] for i in range(26)])
+    Jt = Xf @ d["J_true"] @ Xi
+    rel = lambda a, b: np.linalg.norm(a - b) / max(np.linalg.norm(b), 1e-300)
+    return {"X_unimodular": abs(int(round(np.linalg.det(Xf)))) == 1,
+            "X_conjugates_W11": bool(np.array_equal(np.rint(Xf @ d["W11"] @ Xi).astype(np.int64), po["W11"])),
+            "X_conjugates_W13": bool(np.array_equal(np.rint(Xf @ d["W13"] @ Xi).astype(np.int64), po["W13"])),
+            "X_symplectic_minus_Jstd": bool(np.array_equal(np.rint(Xi.T @ Jint @ Xi).astype(np.int64), -Jstd)),
+            "J_true_equals_minus_periods_J": rel(-Jt, Jp) < 1e-10}
 
 
 def canonical_frame_gates_from(d: dict) -> dict:
