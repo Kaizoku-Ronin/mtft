@@ -32,6 +32,9 @@ def _is_prime(n: int) -> bool:
 
 
 def local_block(p: int, a_p: int) -> Dict[str, sp.Matrix]:
+    for v, nm in ((p, "p"), (a_p, "a_p")):
+        if isinstance(v, bool) or not isinstance(v, (int, sp.Integer)):
+            raise TypeError(f"{nm} must be an exact integer, got {type(v).__name__}")
     if not _is_prime(p):
         raise ValueError(f"p={p} is not prime")
     if a_p * a_p > 4 * p:

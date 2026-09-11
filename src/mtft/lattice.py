@@ -361,6 +361,10 @@ def metropolis_sweep(cfg: LatticeConfig, action: MTFTAction,
     accepted = 0
     total = 0
     N = cfg.N
+    if cfg.L < 2 or cfg.L_t < 2:
+        # CC-25 (2026-09-11): with a periodic extent of 1 the staple of U_mu(x) contains U_mu(x)
+        # itself, so the local dS is not the action change of the proposal.  Refuse before mutating.
+        raise ValueError(f"metropolis_sweep needs L, L_t >= 2 (got L={cfg.L}, L_t={cfg.L_t}); unit periodic extents are unsupported")
 
     for t in range(cfg.L_t):
         for x in range(cfg.L):
