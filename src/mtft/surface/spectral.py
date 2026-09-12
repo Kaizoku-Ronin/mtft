@@ -14,9 +14,12 @@ returns the stable set from two truncations.  Gates: lambda_0 = 0 simple (connec
 smallest stable eigenvalue >= 975/4096 (Kim–Sarnak, proven) and compared with 1/4 (Selberg).
 Results (h = 0.2, nx = 8): N = 11 stable {4.40, 6.47, 9.15, 9.54, 11.13, ...};
 N = 143 stable {0.392, 0.451, 0.563, 0.972, 1.007, 1.011, 1.069, 1.202, 1.204, ...}, lambda_1 = 0.39.
-Status: CERTIFIED_NUMERICAL only after refinement convergence (N = 11: 0.3% between meshes);
-N = 143 at h = 0.2 is DIAGNOSTIC pending a finer run.  These are the KK masses of the fiber
-(in units of the curvature radius); no physical unit is supplied.
+Status: DIAGNOSTIC throughout (v0.28.4, KK-A07): mesh convergence (N = 11: 0.3%; N = 143: lambda_1
+0.3923 -> 0.3910 between h = 0.2 and 0.15, 0.02% between truncation heights on the fine mesh) is a
+diagnostic, not a continuum enclosure.  Scope (KK-A06): this is the untwisted scalar Laplacian on
+the CUSPED quotient Y0(N) with Neumann horocycle truncation; its eigenvalues are m^2 (radius units)
+for a minimally coupled scalar.  Fermion KK masses need the compact flux-twisted Dirac operator on
+X0(N) (KK-04), a different operator on a different domain; these numbers must not be substituted.
 """
 import numpy as np, scipy.sparse as sps, scipy.sparse.linalg as spla
 from scipy.spatial import Delaunay
@@ -83,8 +86,9 @@ def surface_spectrum(N, Y0=1.0, h=0.12, nx=14, k=20):
                 if key not in key_index: key_index[key] = nxt; nxt += 1
                 gid[j] = key_index[key]
         for j in np.where(gid < 0)[0]: gid[j] = nxt; nxt += 1
-        ii, jj = np.meshgrid(gid, gid, indexing="ij")
-        rows.append(ii.ravel()); cols.append(jj.ravel()); Kblocks.append(Kl.ravel()); Mblocks.append(Ml.ravel())
+        Ks, Ms = sps.coo_matrix(Kl), sps.coo_matrix(Ml)          # v0.28.4: scatter sparse triplets only
+        rows.append(gid[Ks.row]); cols.append(gid[Ks.col]); Kblocks.append(Ks.data)
+        rows.append(gid[Ms.row]); cols.append(gid[Ms.col]); Kblocks.append(np.zeros_like(Ms.data)); Mblocks.append(np.zeros_like(Ks.data)); Mblocks.append(Ms.data)
     G = nxt
     K = sps.coo_matrix((np.concatenate(Kblocks), (np.concatenate(rows), np.concatenate(cols))), shape=(G, G)).tocsc()
     M = sps.coo_matrix((np.concatenate(Mblocks), (np.concatenate(rows), np.concatenate(cols))), shape=(G, G)).tocsc()
@@ -123,7 +127,11 @@ def maass_candidates(N, Y0a=1.0, Y0b=1.6, h=0.2, nx=8, k=18, tol=0.006):
              "kim_sarnak_975_4096": (lam1 is not None) and lam1 >= 975/4096,
              "selberg_quarter": (lam1 is not None) and lam1 >= 0.25}
     return {"N": N, "stable": stable, "pseudo_modes_Y0a": moving, "lambda_1": lam1, "dofs": G,
-            "area_over_4pi": inv.index / 12, "gates": gates, "class": "DIAGNOSTIC" if h > 0.15 else "CERTIFIED_NUMERICAL"}
+            "area_over_4pi": inv.index / 12, "gates": gates,
+            "class": "DIAGNOSTIC",   # v0.28.4 (KK-A07): mesh convergence is not a continuum enclosure; no CERTIFIED tag without one
+            "operator": "untwisted scalar hyperbolic Laplacian on the cusped Y0(N) (Neumann horocycle truncation); "
+                        "NOT the compact flux-twisted Dirac operator of KK-04; a scalar eigenvalue is m^2 in radius units for a "
+                        "minimally coupled scalar (KK-A06)"}
 
 
 # ------------------------------------------------ SPEC-02: Hecke / Atkin–Lehner census of the modes
@@ -146,7 +154,9 @@ def build_with_modes(N, Y0=1.0, h=0.2, nx=8, k=16):
                 if key not in key_index: key_index[key] = nxt; nxt += 1
                 gid[j] = key_index[key]
         for j in np.where(gid < 0)[0]: gid[j] = nxt; nxt += 1
-        ii, jj = np.meshgrid(gid, gid, indexing="ij"); rows.append(ii.ravel()); cols.append(jj.ravel()); Kb.append(Kl.ravel()); Mb.append(Ml.ravel())
+        Ks, Ms = sps.coo_matrix(Kl), sps.coo_matrix(Ml)
+        rows.append(gid[Ks.row]); cols.append(gid[Ks.col]); Kb.append(Ks.data); Mb.append(np.zeros_like(Ks.data))
+        rows.append(gid[Ms.row]); cols.append(gid[Ms.col]); Kb.append(np.zeros_like(Ms.data)); Mb.append(Ms.data)
         faces.append((nodes, tri, gid))
     G = nxt
     K = sps.coo_matrix((np.concatenate(Kb), (np.concatenate(rows), np.concatenate(cols))), shape=(G, G)).tocsc()
@@ -184,6 +194,7 @@ class Evaluator:
         l1=((w.real-x0)*(y2-y0)-(x2-x0)*(w.imag-y0))/det; l2=((x1-x0)*(w.imag-y0)-(w.real-x0)*(y1-y0))/det; l0=1-l1-l2
         lam=np.column_stack([l0,l1,l2]); ok=np.all(lam>-2e-3,axis=1)
         if not ok.any():                          # nearest triangle fallback (truncated cusp region)
+            self.fallback_count = getattr(self, "fallback_count", 0) + 1
             j=int(np.argmin(np.min(lam,axis=1)*-1)); 
         else: j=int(np.where(ok)[0][0])
         lamj=np.clip(lam[j],0,1); lamj/=lamj.sum()
@@ -239,3 +250,53 @@ def arithmetic_census(N, Y0=1.0, h=0.2, nx=8, k=16, samples_per_face=6, seed=1, 
         if stable_from is not None: row["Y_stable"] = any(abs(vals[m]-x) < 0.006*x for x in stable_from)
         rows.append(row)
     return rows
+
+
+# ------------------------------------------------ WL-01: Wilson-line twisted spectrum (v0.28.5)
+def wilson_spectrum(N, theta, q=1, Y0=1.0, h=0.2, nx=8, k=4):
+    """Scalar Laplacian on cusped Y0(N) twisted by the flat U(1) connection with cycle-coordinates theta
+    (holonomy phases e^{i q zeta(e)}, zeta = B theta on Manin edges, B = tree/cotree cycle matrix)."""
+    cx = S.cell_complex(N); cb = S.tree_cotree(cx)
+    zeta = q * (cb.basis_matrix.astype(float) @ np.asarray(theta, float))         # per Manin edge
+    width = [len(o) for o in cx.vertices]
+    rows, cols, Kv, Mv = [], [], [], []
+    key_index = {}; nxt = 0
+    for f, o in enumerate(cx.faces):
+        c_inf, c_0, c_1 = cx.vertex_of[o[0]], cx.vertex_of[cx.S(o[0])], cx.vertex_of[cx.S(o[1])]
+        nodes, tri, edges = face_mesh(Y0*width[c_inf], Y0*width[c_0], Y0*width[c_1], h, nx)
+        Kl, Ml = assemble_local(nodes, tri)
+        gid = -np.ones(len(nodes), dtype=int); phase = np.ones(len(nodes), dtype=complex)
+        for i, d in enumerate(o):
+            e, sgn = cx.edge_of[d]; idx, s = edges[i]
+            for j, sv in zip(idx, s):
+                key = (e, round(float(sgn*sv), 9))
+                if key not in key_index: key_index[key] = nxt; nxt += 1
+                gid[j] = key_index[key]
+                if sgn == -1: phase[j] = np.exp(1j*zeta[e])                          # transition phase across the glued edge
+        for j in np.where(gid < 0)[0]: gid[j] = nxt; nxt += 1
+        Ks, Ms = sps.coo_matrix(Kl), sps.coo_matrix(Ml)
+        pf = phase
+        rows.append(gid[Ks.row]); cols.append(gid[Ks.col]); Kv.append(np.conj(pf[Ks.row])*Ks.data*pf[Ks.col])
+        rows.append(gid[Ms.row]); cols.append(gid[Ms.col]); Kv.append(np.zeros(len(Ms.data)))
+        Mv.append(np.zeros(len(Ks.data))); Mv.append(np.conj(pf[Ms.row])*Ms.data*pf[Ms.col])
+    G = nxt
+    K = sps.coo_matrix((np.concatenate(Kv), (np.concatenate(rows), np.concatenate(cols))), shape=(G, G)).tocsc()
+    M = sps.coo_matrix((np.concatenate(Mv), (np.concatenate(rows), np.concatenate(cols))), shape=(G, G)).tocsc()
+    vals = spla.eigsh(K, k=k, M=M, sigma=-1e-2, which="LM", return_eigenvectors=False)
+    return np.sort(vals.real)
+
+
+
+def wilson_line_mass_check(theta, q=1, Y0=1.0, h=0.2, nx=8):
+    """Twisted ground state on X0(143) vs the Hodge prediction q^2 theta^T G theta / Area_truncated,
+    with G = Jint J_true (frozen) in cycle coordinates and Area_truncated = 56 pi - 4/Y0 (four horocycle caps).
+    A parameter-free comparison of the FEM instrument with the period-derived Hodge structure."""
+    from .frozen import x0143
+    d = x0143(); Jint = d["intersection_cycles"].astype(float); G = Jint @ d["J_true"]; G = (G + G.T) / 2
+    G = -G if np.linalg.eigvalsh(G)[0] < 0 else G
+    theta = np.asarray(theta, float)
+    lam = wilson_spectrum(143, theta, q=q, Y0=Y0, h=h, nx=nx, k=3)
+    area_trunc = 56 * np.pi - 4 / Y0
+    pred = q * q * float(theta @ G @ theta) / area_trunc
+    return {"lambda_0": float(lam[0]), "prediction": pred, "ratio": float(lam[0] / pred), "lambda_1": float(lam[1]),
+            "class": "DIAGNOSTIC", "note": "vector-like pair lifted by any nontrivial Wilson line; mass^2 = q^2 <theta,theta>_Hodge / Area to O(theta^4)"}
