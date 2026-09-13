@@ -39,7 +39,7 @@ from .manin import Invariants, ManinComplex, cell_complex, invariants, complex_g
 
 __all__ = ["invariants", "cell_complex", "tree_cotree", "report", "Invariants", "ManinComplex",
            "CycleBasis", "manin", "cycles", "hodge", "gauge", "transport", "hodge_structure",
-           "ising", "frozen", "dynamics", "bimodule", "intertwiner", "oldsector", "marked", "spectral", "yukawa", "condensation", "petersson"]
+           "ising", "frozen", "dynamics", "bimodule", "intertwiner", "oldsector", "marked", "spectral", "yukawa", "condensation", "petersson", "arithspin", "smflux"]
 
 
 def report(N: int, max_refinement: int = 2, gp_layers: bool = True, primes=(2, 3)) -> Dict:

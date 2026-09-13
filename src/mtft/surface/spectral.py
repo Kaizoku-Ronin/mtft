@@ -299,4 +299,4 @@ def wilson_line_mass_check(theta, q=1, Y0=1.0, h=0.2, nx=8):
     area_trunc = 56 * np.pi - 4 / Y0
     pred = q * q * float(theta @ G @ theta) / area_trunc
     return {"lambda_0": float(lam[0]), "prediction": pred, "ratio": float(lam[0] / pred), "lambda_1": float(lam[1]),
-            "class": "DIAGNOSTIC", "note": "vector-like pair lifted by any nontrivial Wilson line; mass^2 = q^2 <theta,theta>_Hodge / Area to O(theta^4)"}
+            "class": "DIAGNOSTIC", "note": "vector-like pair lifted iff the CHARGED line F^q is nontrivial (an order-q line acts trivially: KK05 correction); mass^2 = q^2 <theta,theta>_Hodge / Area_truncated to O(theta^4), cusped model (compact model denominator 48 pi R^2)"}

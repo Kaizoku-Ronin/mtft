@@ -4,7 +4,10 @@ Quadrature: 6-point Gauss on every chart triangle, hyperbolic area element from 
 height-maximising reduction under Gamma_0(143) ⋊ AL with one-step lookahead (greedy AL moves fail near cusp
 classes 11 and 13), automorphy factors and AL signs tracked, q-expansions of the AL-eigen weight-2 forms.
 Gate: the 13 x 13 Gram matrix of the differentials agrees with the Riemann bilinear prediction from the frozen
-period matrix (diagonal 1.005, off-diagonal 1.4%, exact vanishing across AL sectors).  DIAGNOSTIC.
+period matrix (diagonal 1.005, off-diagonal 1.4%; computed cross-sector correlations ~2e-3).  DIAGNOSTIC.
+Scope (KK05 correction): these are Petersson norms for the CUSPED hyperbolic metric.  The one-form norm is
+conformally invariant, so the period gate validates the evaluation machinery only; norms of K^k sections for
+the smooth compact metric g' = e^{2u} g scale by e^{2(1−k)u} and need the uniformising factor u.
 """
 import numpy as np, re, pickle, time, itertools
 from math import gcd
@@ -84,4 +87,6 @@ def petersson_gate(Y0=2.0, h=0.25, nx=6):
     Icup = np.linalg.inv(d["intersection_cycles"].astype(float)); pred = 0.5j * (Pe @ Icup @ Pe.conj().T)
     mask = np.abs(pred) > 1e-6 * np.abs(pred).max()
     return {"diag_ratio": np.real(np.diag(G1)) / np.real(np.diag(pred)), "offdiag_max_dev": float(np.max(np.abs(np.abs(G1[mask] / pred[mask]) - 1))),
-            "cross_sector_vanishing": bool(np.allclose(np.abs(pred[~mask]), 0, atol=1e-6 * np.abs(pred).max())), "area": float(w.sum()), "G1": G1, "F": F, "w": w, "z": z}
+            "prediction_cross_sector_zero": bool(np.allclose(np.abs(pred[~mask]), 0, atol=1e-6 * np.abs(pred).max())),
+            "computed_cross_sector_max_correlation": float(np.max(np.abs(G1[~mask]) / np.sqrt(np.outer(np.real(np.diag(G1)), np.real(np.diag(G1)))[~mask])) if (~mask).any() else 0.0),
+            "area": float(w.sum()), "G1": G1, "F": F, "w": w, "z": z}

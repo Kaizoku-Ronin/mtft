@@ -16,4 +16,4 @@ def test_yukawa_tensor_gates_and_condensation():
     e = np.array([rng.standard_normal() if tuple(s) == (1, 1) else 0.0 for s in Y["quartic_sectors"]])
     c2 = CD.extension_cohomology(Y, e)
     assert [c2["sectors"][s]["rank"] for s in ((1, 1), (1, -1), (-1, 1), (-1, -1))] == [1, 6, 5, 1]
-    assert CD.tachyon_mass2(-72) == -3.0 and abs(CD.condensation_energy(-72) - 216 * np.pi) < 1e-9
+    assert CD.tachyon_mass2(-72) == -3.0 and abs(CD.condensation_energy(-72)["split"] - 216 * np.pi) < 1e-9  # v0.29.1 API: dict return (KK05); disclosed auditor fix
