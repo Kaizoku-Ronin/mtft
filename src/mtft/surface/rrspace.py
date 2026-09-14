@@ -227,7 +227,7 @@ def w13_grading_and_texture(Yres: Dict, prec: int = 130) -> Dict:
     prod = np.array([[[g3[i] * g3[j] * g18[l] for l in range(18)] for j in range(3)] for i in range(3)]); mag = np.abs(Yg) / np.abs(Yg).max()
     return {"T_squared": complex(c), "closure_residual": res, "grades_sections": g3.tolist(), "grades_higgs": g18.tolist(),
             "max_on_forbidden": float(mag[prod == 1].max()), "max_on_allowed": float(mag[prod == -1].max()), "Y_graded": Yg,
-            "rank_even_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == 1], axis=2), tol=1e-8)), "rank_odd_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == -1], axis=2), tol=1e-8))}
+            "rank_even_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == 1], axis=2), tol=1e-6)), "rank_odd_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == -1], axis=2), tol=1e-6))}  # v0.31.0 CI fix: tol 1e-8 sat at the construction noise floor (sigma_3 = 2.2e-9 locally, >= 1.6e-8 in CI) and flipped rank even->3; 1e-6 matches the certified forbidden-entry floor (auditor)
 
 
 # ------------------------------------------------ SM-06: the chi_13-twisted (down/lepton) sector (v0.30.4)
