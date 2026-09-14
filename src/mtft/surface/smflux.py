@@ -103,3 +103,14 @@ def purity_with_S0(degree_difference: int, kind: str) -> Dict:
     if kind == "trivial" and d == 0: return {"h0": 2, "h1": 2, "pure": False, "reason": "S0 itself: two vector-like pairs (constant and u)"}
     if kind == "generic0" and d == 0: return {"h0": 0, "h1": 0, "pure": True, "reason": "generic point of the Jacobian is off the theta divisor of S0"}
     return {"h0": None, "h1": None, "pure": None, "reason": "not covered"}
+
+
+# ------------------------------------------------ SM-14: hypercharge normalisation of a stack model
+def hypercharge_normalisation(N, y):
+    """For stacks U(N_x) with one 6D gauge coupling g and hypercharge Y = sum_x y_x Q_x (Q_x the U(1) charge, +1 on the
+    fundamental), 1/g_Y^2 = (2/g^2) sum_x N_x y_x^2 =: k_Y / g^2.  Returns k_Y and sin^2 theta_W = 1/(1 + k_Y) at the
+    compactification scale, with g_3 = g_2 = sqrt(k_Y) g_Y.  M1/M2: N = (3, 2, 1, 1, 1), y = (1/6, 0, -1/2, 1/2, -1/2)
+    give k_Y = 5/3 and sin^2 theta_W = 3/8."""
+    from fractions import Fraction
+    kY = 2 * sum(Fraction(int(n)) * Fraction(yy) ** 2 for n, yy in zip(N, y))
+    return {"k_Y": kY, "sin2_thetaW": 1 / (1 + kY), "g3_over_gY": kY ** Fraction(1, 2) if kY.denominator == 1 and int(kY) ** 0.5 == int(int(kY) ** 0.5) else None}

@@ -26,10 +26,10 @@ def load_basis() -> Dict:
     return json.loads((Path(__file__).parent / "_data" / "x0143_weight2_basis.json").read_text())
 
 
-def al_eigenbasis(data: Dict):
+def al_eigenbasis(data: Dict, prec: int = 130):
     """Exact simultaneous W11/W13 eigenbasis of S_2(143): integer coefficient arrays, sector labels, scalings."""
     W11 = Matrix([[Rational(x) for x in r] for r in data["W11"]]); W13 = Matrix([[Rational(x) for x in r] for r in data["W13"]])
-    F = [np.array(c, dtype=object) for c in data["coefficients"]]; d = len(F); I = Matrix.eye(d)
+    F = [np.array(c[: prec + 1], dtype=object) for c in data["coefficients"]]; d = len(F); I = Matrix.eye(d)
     forms, labels, dens, vecs = [], [], [], []
     for sa, sb in _SECTORS:
         for v in ((I + sa * W11) * (I + sb * W13) / 4).columnspace():
