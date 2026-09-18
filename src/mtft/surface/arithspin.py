@@ -170,3 +170,45 @@ def three_family_purity() -> Dict:
     return {"u_squared_max_dev_from_-1/13": float(np.max(np.abs(sq + 1 / 13))), "signs_present": signs,
             "h0_L3": 3 if signs == [-1, 1] else None, "h1_L3": 0 if signs == [-1, 1] else None,
             "note": "purity holds iff both signs occur among the four fixed points (u∘W11 = -u pairs them)"}
+
+
+# ------------------------------------------------ TRI-02: Atkin–Lehner lift to the half-forms H^0(S0) is D8 (EXACT)
+def al_lift_on_S0():
+    """S0 = O(A), A = 6(0) + 6(1/11), sections {1, u}.  W11 preserves A (u o W11 = -u): lift s -> s o W11.  W13 sends A to
+    A + div(u) (u o W13 = -(1/13)/u): lift s -> u (s o W13).  In the basis (1, u), normalised so B^2 = -1:
+        A = diag(1, -1),  B = [[0, -1/sqrt(13)], [sqrt(13), 0]],  A^2 = +1, B^2 = -1, A B A^-1 B^-1 = -1, (AB)^2 = +1.
+    The commuting Atkin–Lehner V4 lifts to the dihedral group D8 on the half-forms: a projective, anticommuting
+    (spinorial) representation, with the cocycle fixed by the signs in the unit identities (ARITH-SPIN-01, exact).
+    CC-27: this is the SECTION-SPACE normalisation.  The spin structure is S0 together with its square map to K; the lift
+    compatible with that map is `theta_compatible_al_lift` (Q8).  Both have commutator -1; the central extensions differ."""
+    r = np.sqrt(13.0); A = np.diag([1.0, -1.0]); B = np.array([[0.0, -1 / r], [r, 0.0]])
+    comm = A @ B @ np.linalg.inv(A) @ np.linalg.inv(B)
+    return {"A": A, "B": B, "A2": A @ A, "B2": B @ B, "commutator": comm, "AB2": (A @ B) @ (A @ B), "signs": (1, -1, -1, 1), "group": "D8"}
+
+
+# ------------------------------------------------ CC-27 (Astra, v0.31.4 audit §3): theta-compatible lift is Q8
+def theta_square_action():
+    """Natural Atkin–Lehner action on H^0(K) restricted to the product span (omega, u omega, u^2 omega) of the square map
+    Phi: S0^2 -> K, s (x) t -> s t omega, omega = eta(tau)^2 eta(11 tau)^2 d tau (the level-11 newform).  Exact laws:
+    W11^* omega = -omega (Fricke sign of 11a), W13^* omega = 13 u^2 omega (W13 acts on a level-11 form as tau -> 13 tau
+    up to Gamma_0(11)), u o W11 = -u, u o W13 = -(1/13)/u.  Hence W11 = diag(-1, 1, -1) and
+    W13 = [[0, 0, 1/13], [0, -1, 0], [13, 0, 0]] in that basis."""
+    return {"W11": np.diag([-1.0, 1.0, -1.0]), "W13": np.array([[0.0, 0.0, 1 / 13.0], [0.0, -1.0, 0.0], [13.0, 0.0, 0.0]])}
+
+def symmetric_square(M):
+    """Sym^2 of a 2x2 matrix acting on (1, u) [M(1) = a 1 + c u, M(u) = b 1 + d u], on the product basis (1, u, u^2)."""
+    a, b, c, d = M[0, 0], M[0, 1], M[1, 0], M[1, 1]
+    return np.array([[a * a, a * b, b * b], [2 * a * c, a * d + b * c, 2 * b * d], [c * c, c * d, d * d]])
+
+def theta_compatible_al_lift():
+    """The lift of the Atkin–Lehner group to H^0(S0) compatible with the square map Phi (Sym^2 of the lift must equal the
+    natural action on H^0(K)): A~ = i A, B~ = B.  Then A~^2 = B~^2 = (A~ B~)^2 = -1 and [A~, B~] = -1: the quaternion group
+    Q8 (CC-27, superseding the D8 label as the spinorial lift).  D8 remains correct for the bare section normalisation."""
+    L = al_lift_on_S0(); At = 1j * L["A"]; Bt = L["B"].astype(complex)
+    return {"A": At, "B": Bt, "A2": At @ At, "B2": Bt @ Bt, "AB2": (At @ Bt) @ (At @ Bt), "commutator": At @ Bt @ np.linalg.inv(At) @ np.linalg.inv(Bt), "group": "Q8"}
+
+def check_theta_square_map():
+    """CC-27 regression: Sym^2(A~), Sym^2(B~) equal the natural K-action; Sym^2 of the D8 section lift A does not."""
+    N = theta_square_action(); Q = theta_compatible_al_lift(); D = al_lift_on_S0()
+    return {"Q8_W11_intertwines": bool(np.allclose(symmetric_square(Q["A"]), N["W11"])), "Q8_W13_intertwines": bool(np.allclose(symmetric_square(Q["B"]), N["W13"])),
+            "D8_W11_intertwines": bool(np.allclose(symmetric_square(D["A"]), N["W11"])), "raw_B0_square": -1 / 13.0}

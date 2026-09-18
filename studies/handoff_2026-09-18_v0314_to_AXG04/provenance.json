@@ -1,0 +1,1210 @@
+{
+  "handoff_date": "2026-09-18",
+  "scope": "All recovered study deliverables in this conversation from the supplied v0.31.4 candidate through AXG-04; earlier documents are context inputs.",
+  "baseline_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "original_content_policy": "Byte-preserved originals; new synthesis and implementation recommendations are separate. No package release is created.",
+  "sources": [
+    {
+      "name": "MTFT_AXG04_Reproducible_Bundle.zip",
+      "created_at": "2026-09-18T11:24:38.509638Z",
+      "modified_at": "2026-09-18T11:24:38.509638Z",
+      "version_id": null,
+      "size_bytes": 84847,
+      "model_generated": true,
+      "sha256": "035d428f6c8496b6f4ec151fa6f94037f491ecfc37da266f96dedefa33c5bc65",
+      "included_paths": [
+        "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_AXG04_Report.md",
+      "created_at": "2026-09-18T11:24:38.423919Z",
+      "modified_at": "2026-09-18T11:24:38.423919Z",
+      "version_id": null,
+      "size_bytes": 29590,
+      "model_generated": true,
+      "sha256": "3640171b742be61f86e3bac7dc6d798179a052b00e814a20a56d7cf02644c39f",
+      "included_paths": [
+        "studies/06_AXG_04/MTFT_AXG04_Report.md"
+      ]
+    },
+    {
+      "name": "MTFT_AXG03_Reproducible_Bundle.zip",
+      "created_at": "2026-09-17T12:46:54.659183Z",
+      "modified_at": "2026-09-17T12:46:54.659183Z",
+      "version_id": null,
+      "size_bytes": 49563,
+      "model_generated": true,
+      "sha256": "29be14bc27b513c330e4d73e002e2230bdf86c6bba9c161c81febc42f02ac2bc",
+      "included_paths": [
+        "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_AXG03_Report.md",
+      "created_at": "2026-09-17T12:46:54.585407Z",
+      "modified_at": "2026-09-17T12:46:54.585407Z",
+      "version_id": null,
+      "size_bytes": 27072,
+      "model_generated": true,
+      "sha256": "73bc19c18710ec0b118ead40754f81bcb01cab1bafb227bd1d2dab3e94003687",
+      "included_paths": [
+        "studies/05_AXG_03/MTFT_AXG03_Report.md"
+      ]
+    },
+    {
+      "name": "MTFT_AXG02_Report.md",
+      "created_at": "2026-09-17T12:21:38.309624Z",
+      "modified_at": "2026-09-17T12:21:38.309624Z",
+      "version_id": null,
+      "size_bytes": 23578,
+      "model_generated": true,
+      "sha256": "5788550ea74cd2eea0fe944f284ea0bc11aaca3f51b0cb84511d3d7d4bb37649",
+      "included_paths": [
+        "studies/04_AXG_02/MTFT_AXG02_Report.md"
+      ]
+    },
+    {
+      "name": "MTFT_AXG02_Reproducible_Bundle.zip",
+      "created_at": "2026-09-17T12:21:38.220723Z",
+      "modified_at": "2026-09-17T12:21:38.220723Z",
+      "version_id": null,
+      "size_bytes": 33336,
+      "model_generated": true,
+      "sha256": "48adafe265d096cb21a678e66203691c71e97a77a15f4fdfd84603c5918954ff",
+      "included_paths": [
+        "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_AXG01_Report.md",
+      "created_at": "2026-09-17T02:33:04.475366Z",
+      "modified_at": "2026-09-17T02:33:04.475366Z",
+      "version_id": null,
+      "size_bytes": 28217,
+      "model_generated": true,
+      "sha256": "49e7ec4b5327e8b8434f5fbb0dbd1a9c0b6a6f2625cc048db32eb7b0e73d1d7c",
+      "included_paths": [
+        "studies/03_AXG_01/MTFT_AXG01_Report.md"
+      ]
+    },
+    {
+      "name": "MTFT_AXG01_Reproducible_Bundle.zip",
+      "created_at": "2026-09-17T02:33:04.308481Z",
+      "modified_at": "2026-09-17T02:33:04.308481Z",
+      "version_id": null,
+      "size_bytes": 42203,
+      "model_generated": true,
+      "sha256": "29617472aafd5df86ae73b3ad0914466d600dd9d1f666f5b412a04caebf293d0",
+      "included_paths": [
+        "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_HOPF02_Reproducible_Bundle.zip",
+      "created_at": "2026-09-17T00:31:05.040155Z",
+      "modified_at": "2026-09-17T00:31:05.040155Z",
+      "version_id": null,
+      "size_bytes": 31047,
+      "model_generated": true,
+      "sha256": "2399f55ca277de4d2a5cd28edf39584789a704b0341b8b88f18d5d12e3e7cdc5",
+      "included_paths": [
+        "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_HOPF02_Report.md",
+      "created_at": "2026-09-17T00:31:04.446208Z",
+      "modified_at": "2026-09-17T00:31:04.446208Z",
+      "version_id": null,
+      "size_bytes": 22930,
+      "model_generated": true,
+      "sha256": "349c1b35fc80ecee91a415b959b63bf4343642d2d1d2eb1e8650668a33bf1d2f",
+      "included_paths": [
+        "studies/02_HOPF_02/MTFT_HOPF02_Report.md"
+      ]
+    },
+    {
+      "name": "Pasted markdown(20260916-235242).md",
+      "created_at": "2026-09-16T23:52:43.013695Z",
+      "modified_at": "2026-09-16T23:52:43.013695Z",
+      "version_id": null,
+      "size_bytes": 20399,
+      "model_generated": true,
+      "sha256": "e21dc36dbc1ad58d82d50f000087d3d1f53f2cb687de6ab870eb19f9632b0eb1",
+      "included_paths": [
+        "inputs/conversation/Pasted_markdown_20260916-235242.md"
+      ]
+    },
+    {
+      "name": "Hopf_fibration.pdf",
+      "created_at": "2026-09-16T23:40:04.872953Z",
+      "modified_at": "2026-09-16T23:40:04.872953Z",
+      "version_id": null,
+      "size_bytes": 1028248,
+      "model_generated": false,
+      "sha256": "4dce5144a57a70a55e94cba3ea71108306fa9552a39e4192e973d230aed7408b",
+      "included_paths": [
+        "inputs/reference_material/Hopf_fibration.pdf"
+      ]
+    },
+    {
+      "name": "Heegaard_splitting.pdf",
+      "created_at": "2026-09-16T23:40:04.343490Z",
+      "modified_at": "2026-09-16T23:40:04.343490Z",
+      "version_id": null,
+      "size_bytes": 322451,
+      "model_generated": false,
+      "sha256": "929ba3b85c999614bd844c3208a21cd79c5463d1690454cac90d1c343f92d42e",
+      "included_paths": [
+        "inputs/reference_material/Heegaard_splitting.pdf"
+      ]
+    },
+    {
+      "name": "Oloid.pdf",
+      "created_at": "2026-09-16T23:13:39.357201Z",
+      "modified_at": "2026-09-16T23:13:39.357201Z",
+      "version_id": null,
+      "size_bytes": 315182,
+      "model_generated": false,
+      "sha256": "fcc4240f459008a76fd2249bfea1c5297828ab268984b3307169a8f72b3c10a6",
+      "included_paths": [
+        "inputs/reference_material/Oloid.pdf"
+      ]
+    },
+    {
+      "name": "MTFT_Study_Edition_Reproduction.zip",
+      "created_at": "2026-09-16T18:40:51.630382Z",
+      "modified_at": "2026-09-16T18:40:51.630382Z",
+      "version_id": null,
+      "size_bytes": 787935,
+      "model_generated": true,
+      "sha256": "e84b98f5f577a659a5ccff2a8b0eaa782a01925c3cb437efe806ee0c37a2742c",
+      "included_paths": [
+        "original_bundles/MTFT_Study_Edition_Reproduction.zip"
+      ]
+    },
+    {
+      "name": "MTFT_Arithmetic_Geometry_and_Spacetime_Study_Edition.docx",
+      "created_at": "2026-09-16T18:40:51.044585Z",
+      "modified_at": "2026-09-16T18:40:51.044585Z",
+      "version_id": null,
+      "size_bytes": 766985,
+      "model_generated": true,
+      "sha256": "0c79fa722c7f4f26f906a49e212ad86ca9db4767e53450a52df7c30b1019f17a",
+      "included_paths": [
+        "teaching/MTFT_Arithmetic_Geometry_and_Spacetime_Study_Edition.docx"
+      ]
+    },
+    {
+      "name": "MTFT_Mathematical_Atlas_v0311_Study_Edition(2).docx",
+      "created_at": "2026-09-16T17:26:53.834762Z",
+      "modified_at": "2026-09-16T17:26:53.834762Z",
+      "version_id": null,
+      "size_bytes": 1025678,
+      "model_generated": false,
+      "sha256": "f608ab1f9963fbcfc23fade78ef2081c4815f09335ac0d6bf466fd009e2bd1fa",
+      "included_paths": [
+        "inputs/earlier_study_documents/MTFT_Mathematical_Atlas_v0311_Study_Edition(2).docx"
+      ]
+    },
+    {
+      "name": "The_Arithmetic_Geometry_of_Dimension_MTFT_v0.27.4(2).docx",
+      "created_at": "2026-09-16T17:26:22.757075Z",
+      "modified_at": "2026-09-16T17:26:22.757075Z",
+      "version_id": null,
+      "size_bytes": 1432961,
+      "model_generated": false,
+      "sha256": "184d4aeae08591edb2e0a625cf0561620a66144f86dc7957339cae654936cd1c",
+      "included_paths": [
+        "inputs/earlier_study_documents/The_Arithmetic_Geometry_of_Dimension_MTFT_v0.27.4(2).docx"
+      ]
+    },
+    {
+      "name": "MTFT_SC7_01_Reproducible_Bundle.zip",
+      "created_at": "2026-09-16T17:21:00.539655Z",
+      "modified_at": "2026-09-16T17:21:00.539655Z",
+      "version_id": null,
+      "size_bytes": 3845932,
+      "model_generated": true,
+      "sha256": "c5b2e5d9b96d63d777555e88cdad04d8123f2ace5940610f8396491b7801a853",
+      "included_paths": [
+        "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_SC7_01_Spin_Circle_Investigation.md",
+      "created_at": "2026-09-16T17:20:59.315294Z",
+      "modified_at": "2026-09-16T17:20:59.315294Z",
+      "version_id": null,
+      "size_bytes": 24273,
+      "model_generated": true,
+      "sha256": "88c34d0209c7177a223f564461ab507fae0474c8d8e79286a6a918759a871e2a",
+      "included_paths": [
+        "studies/01_SC7_01/MTFT_SC7_01_Spin_Circle_Investigation.md"
+      ]
+    },
+    {
+      "name": "2fe91cf4-7e72-4a0b-a2e4-e1f46c9a00d0.png",
+      "created_at": "2026-09-16T16:41:12.201919Z",
+      "modified_at": "2026-09-16T16:41:12.201919Z",
+      "version_id": null,
+      "size_bytes": 23464,
+      "model_generated": false,
+      "sha256": "f4de753aaa51cbae5e13851355e6645627cc9d3d06a24ceb197cb4a3955d6047",
+      "included_paths": [
+        "inputs/reference_material/2fe91cf4-7e72-4a0b-a2e4-e1f46c9a00d0.png"
+      ]
+    },
+    {
+      "name": "c505d90f-87da-4616-93a3-ed53bf07e801.png",
+      "created_at": "2026-09-16T16:40:53.049348Z",
+      "modified_at": "2026-09-16T16:40:53.049348Z",
+      "version_id": null,
+      "size_bytes": 48816,
+      "model_generated": false,
+      "sha256": "4b975c7d1dea90ca1ef4385b9f472a43970b3478980da6a30ec9512adedddb41",
+      "included_paths": [
+        "inputs/reference_material/c505d90f-87da-4616-93a3-ed53bf07e801.png"
+      ]
+    },
+    {
+      "name": "Ahlfors_measure_conjecture.pdf",
+      "created_at": "2026-09-16T16:38:16.599416Z",
+      "modified_at": "2026-09-16T16:38:16.599416Z",
+      "version_id": null,
+      "size_bytes": 141140,
+      "model_generated": false,
+      "sha256": "105298879f9d07b6a5cabd35fb355b45de9e6dfbca5c3d3480c5ebbf720aef4e",
+      "included_paths": [
+        "inputs/reference_material/Ahlfors_measure_conjecture.pdf"
+      ]
+    },
+    {
+      "name": "Semilinear_map.pdf",
+      "created_at": "2026-09-16T16:37:34.366954Z",
+      "modified_at": "2026-09-16T16:37:34.366954Z",
+      "version_id": null,
+      "size_bytes": 420968,
+      "model_generated": false,
+      "sha256": "bf7432dd6e5664e0a0266c18d5c01d61b1919c58a57c07d7db0b2ab4731c6e1e",
+      "included_paths": [
+        "inputs/reference_material/Semilinear_map.pdf"
+      ]
+    },
+    {
+      "name": "Pseudometric_space.pdf",
+      "created_at": "2026-09-16T16:37:33.979426Z",
+      "modified_at": "2026-09-16T16:37:33.979426Z",
+      "version_id": null,
+      "size_bytes": 318503,
+      "model_generated": false,
+      "sha256": "12ac8f001e69c4605447f91e2b06814b23561ceab7a8576c9fb7d99424f63239",
+      "included_paths": [
+        "inputs/reference_material/Pseudometric_space.pdf"
+      ]
+    },
+    {
+      "name": "Kleinian_group.pdf",
+      "created_at": "2026-09-16T16:37:33.763309Z",
+      "modified_at": "2026-09-16T16:37:33.763309Z",
+      "version_id": null,
+      "size_bytes": 448156,
+      "model_generated": false,
+      "sha256": "aef3d8b81d0c333c5005a16d90c01129e3037bf7f5d273a6f56438e8cd0f10e1",
+      "included_paths": [
+        "inputs/reference_material/Kleinian_group.pdf"
+      ]
+    },
+    {
+      "name": "Modular_group.pdf",
+      "created_at": "2026-09-16T16:37:33.503285Z",
+      "modified_at": "2026-09-16T16:37:33.503285Z",
+      "version_id": null,
+      "size_bytes": 856145,
+      "model_generated": false,
+      "sha256": "b70c02b5ba661ca6ad1c7cc1486e18b1e98f4af5cf5f9d52c2e0af41f33a5c3f",
+      "included_paths": [
+        "inputs/reference_material/Modular_group.pdf"
+      ]
+    },
+    {
+      "name": "Bers_slice.pdf",
+      "created_at": "2026-09-16T16:37:33.257017Z",
+      "modified_at": "2026-09-16T16:37:33.257017Z",
+      "version_id": null,
+      "size_bytes": 149482,
+      "model_generated": false,
+      "sha256": "1d0dd940e396dc8619d6349b73f10b07af53446928288a6b2c17b7aecaed0d6b",
+      "included_paths": [
+        "inputs/reference_material/Bers_slice.pdf"
+      ]
+    },
+    {
+      "name": "Fano_plane.pdf",
+      "created_at": "2026-09-16T16:37:32.281363Z",
+      "modified_at": "2026-09-16T16:37:32.281363Z",
+      "version_id": null,
+      "size_bytes": 522598,
+      "model_generated": false,
+      "sha256": "9f03fdc8131c3edc24731bc168da3e995a955657165c1581630399ea1f151195",
+      "included_paths": [
+        "inputs/reference_material/Fano_plane.pdf"
+      ]
+    },
+    {
+      "name": "MTFT_v0314_Audit_Bundle.zip",
+      "created_at": "2026-09-16T15:00:23.878096Z",
+      "modified_at": "2026-09-16T15:00:23.878096Z",
+      "version_id": null,
+      "size_bytes": 3840906,
+      "model_generated": true,
+      "sha256": "15cc96615a93042fd3cffff276afa6e97d4e8128ad4340670eff53dec4e8c24c",
+      "included_paths": [
+        "original_bundles/MTFT_v0314_Audit_Bundle.zip"
+      ]
+    },
+    {
+      "name": "MTFT_v0314_Spin_and_Vacuum_Audit.md",
+      "created_at": "2026-09-16T15:00:23.673248Z",
+      "modified_at": "2026-09-16T15:00:23.673248Z",
+      "version_id": null,
+      "size_bytes": 19562,
+      "model_generated": true,
+      "sha256": "fc69d2505d9f405b3cdb128e52e848d8167bc66467b405d0e60eb28dc6a7b6ce",
+      "included_paths": [
+        "studies/00_v0314_audit/MTFT_v0314_Spin_and_Vacuum_Audit.md"
+      ]
+    },
+    {
+      "name": "b7bc7eb4-a190-4890-8bc8-76a98b3b02b6.png",
+      "created_at": "2026-09-16T14:42:20.728681Z",
+      "modified_at": "2026-09-16T14:42:20.728681Z",
+      "version_id": null,
+      "size_bytes": 73638,
+      "model_generated": false,
+      "sha256": "d5ce0156ed6e6c07a5e3791d70ea32365c43050b379f66f42a0c138ba2e7a65e",
+      "included_paths": [
+        "inputs/reference_material/b7bc7eb4-a190-4890-8bc8-76a98b3b02b6.png"
+      ]
+    },
+    {
+      "name": "mtft-0.31.4.tar.gz",
+      "created_at": "2026-09-16T14:42:16.138603Z",
+      "modified_at": "2026-09-16T14:42:16.138603Z",
+      "version_id": null,
+      "size_bytes": 3821210,
+      "model_generated": false,
+      "sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+      "included_paths": [
+        "baseline/mtft-0.31.4.tar.gz"
+      ]
+    },
+    {
+      "name": "CHANGELOG_v0314.md",
+      "created_at": "2026-09-16T14:42:11.491283Z",
+      "modified_at": "2026-09-16T14:42:11.491283Z",
+      "version_id": null,
+      "size_bytes": 920,
+      "model_generated": false,
+      "sha256": "12dd28cd6fa28b967f5dcc3658da00ef89c60c7c7ee6a3279db69ac44a89f1b4",
+      "included_paths": [
+        "baseline/CHANGELOG_v0314.md"
+      ]
+    },
+    {
+      "name": "REVIEW_V0311_RESPONSE.md",
+      "created_at": "2026-09-16T14:42:11.479178Z",
+      "modified_at": "2026-09-16T14:42:11.479178Z",
+      "version_id": null,
+      "size_bytes": 4259,
+      "model_generated": false,
+      "sha256": "cb92a052c7eda7beb5a1bc769ad0b296024ff6ba32f50763df9574a89c09f26a",
+      "included_paths": [
+        "baseline/REVIEW_V0311_RESPONSE.md"
+      ]
+    }
+  ],
+  "archive_members": [
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/MTFT_v0314_Spin_and_Vacuum_Audit.md",
+      "path": "studies/00_v0314_audit/MTFT_v0314_Spin_and_Vacuum_Audit.md",
+      "sha256": "fc69d2505d9f405b3cdb128e52e848d8167bc66467b405d0e60eb28dc6a7b6ce"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/README.md",
+      "path": "studies/00_v0314_audit/README.md",
+      "sha256": "fef7ba1d064c9ed1fb74631cec9bfcbe7533125934f19795db20e5c4a5803bbd"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/TEST_RESULTS.md",
+      "path": "studies/00_v0314_audit/TEST_RESULTS.md",
+      "sha256": "d5578b8ccad504111c56ef2ed6876c35f6c9452a34ced8c59e443224f6f7b159"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/audit_v0314.py",
+      "path": "studies/00_v0314_audit/audit_v0314.py",
+      "sha256": "006ee446346f24d00fd1cf96d48a3866b3a895b00170843f9bf2a9d2383d3320"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/input/mtft-0.31.4.tar.gz",
+      "path": "studies/00_v0314_audit/input/mtft-0.31.4.tar.gz",
+      "sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/manifest.json",
+      "path": "studies/00_v0314_audit/manifest.json",
+      "sha256": "3e3007b95bfcc67f7f3b9de029df3925770d818290b6f347f031f849a4484f10"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/requirements.txt",
+      "path": "studies/00_v0314_audit/requirements.txt",
+      "sha256": "c97bb28838f18a3bda2c32be047c5c81521b3dc67f201414cd03e8a5497fda8b"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/results.json",
+      "path": "studies/00_v0314_audit/results.json",
+      "sha256": "149157839f4935004b2667b1bc488157a1e4f06e69b0a3cd6c68ade7e1972145"
+    },
+    {
+      "archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+      "member": "mtft_v0314_review/run.log",
+      "path": "studies/00_v0314_audit/run.log",
+      "sha256": "71131a7a7e33bccd5b426685d4c7972b7e2407ce2a755851a7fcfd9ab3d27fcd"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/PREREGISTRATION.md",
+      "path": "studies/01_SC7_01/PREREGISTRATION.md",
+      "sha256": "5e8eb784cd934cbcfe9e0df6700915176590aa0e76112d15f363a8c56bf8c456"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/investigate_spin_circle.py",
+      "path": "studies/01_SC7_01/investigate_spin_circle.py",
+      "sha256": "e9bdb718a25b6a392132655159ad8fd8734feb57209e322a1a3a437e384f5ba4"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/results.json",
+      "path": "studies/01_SC7_01/results.json",
+      "sha256": "d41c82aaf24dd2d23de6626a34fd869baa3f2fcedfb4b83dc5bd02f8e18fe32c"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/run.log",
+      "path": "studies/01_SC7_01/run.log",
+      "sha256": "3368c13d1bf446d4bcf0bd69a919ba3331e4dff7935dd02615f50fb1cecc3195"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/MTFT_SC7_01_Spin_Circle_Investigation.md",
+      "path": "studies/01_SC7_01/MTFT_SC7_01_Spin_Circle_Investigation.md",
+      "sha256": "88c34d0209c7177a223f564461ab507fae0474c8d8e79286a6a918759a871e2a"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/README.md",
+      "path": "studies/01_SC7_01/README.md",
+      "sha256": "bbabcac9a59d939c90cfea6189c9cdd8b3e9b04224b9c1055e77413604a76a69"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/requirements.txt",
+      "path": "studies/01_SC7_01/requirements.txt",
+      "sha256": "68a798d14ab7ceac5f914897b07fd7053ddfd40acabcd6c79e6ba7677e874b13"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/input/mtft-0.31.4.tar.gz",
+      "path": "studies/01_SC7_01/input/mtft-0.31.4.tar.gz",
+      "sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5"
+    },
+    {
+      "archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+      "member": "mtft_sc7_01/manifest.json",
+      "path": "studies/01_SC7_01/manifest.json",
+      "sha256": "d0ac143bf4664fb6930c1b03c8e13891bad9793ad5fe3e0111deb32d28828cd0"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/README_Reproduction.md",
+      "path": "teaching/paper_work/README_Reproduction.md",
+      "sha256": "83b592218351025e8b34ae98f10754fc6888e51f1250933d413a178b839d1def"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/MTFT_Study_Edition.md",
+      "path": "teaching/paper_work/MTFT_Study_Edition.md",
+      "sha256": "99648110f3d19e0af1331c425c68b58c19ecd0421cc264281fb39c8be0149a62"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/part_02.md",
+      "path": "teaching/paper_work/part_02.md",
+      "sha256": "fe057f9089b591e436c6db7077f5dfe803d121d1eff96f037690cc1d2dfa2201"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/part_03.md",
+      "path": "teaching/paper_work/part_03.md",
+      "sha256": "3423f5603443c6709df2280c941f81b4b23331ef5ddfb6256b82291a5d2f5137"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/part_04.md",
+      "path": "teaching/paper_work/part_04.md",
+      "sha256": "d7b0be4e6ddee2e17d88064aa9e0359ac416c5b2effdb53c59b259508c20c018"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/part_05.md",
+      "path": "teaching/paper_work/part_05.md",
+      "sha256": "3c17e08e5a037a4347a11796e51db3aebe622c156d0cf14282cf00814e18351f"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/paper_complete.md",
+      "path": "teaching/paper_work/paper_complete.md",
+      "sha256": "3bcc8b7f79819cd13f1b86d7925c91d48715c47f2264fd0faeebd101380a21b8"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/make_figures.py",
+      "path": "teaching/paper_work/make_figures.py",
+      "sha256": "818cf3024a651dbf987596aba5119f6fad4a847acbae898d4363660dd0ca9d3f"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/build_paper.py",
+      "path": "teaching/paper_work/build_paper.py",
+      "sha256": "6832937067106c3fcd8b0f025e6cb56ad9626a085ad6e472e2f6fdcc727a46f8"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/verify_hand_calculations.py",
+      "path": "teaching/paper_work/verify_hand_calculations.py",
+      "sha256": "3ef784c8d5971e2f1c6195f17abf4a973fb7c9309d71d9b1a102f2ed593b7d3f"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/inspect_pdf.py",
+      "path": "teaching/paper_work/inspect_pdf.py",
+      "sha256": "33170d0faaa9f4162eb6267c8d4390bcae3111da301cf136c506fed3a2d726dc"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/hand_calculation_checks.json",
+      "path": "teaching/paper_work/hand_calculation_checks.json",
+      "sha256": "b944d09db681ccb56ab10d77d0af6decd00e15c392c737802422c3af6810c30c"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/chapter_pages.json",
+      "path": "teaching/paper_work/chapter_pages.json",
+      "sha256": "cdd3171dec18c0dcd2360888c68e41560e4981facb5f592ef9ccaa7aca4f3531"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/chapter_titles.json",
+      "path": "teaching/paper_work/chapter_titles.json",
+      "sha256": "7cfdd91f454957175d64897a87c3735b3adbe1804cf21a53432501e0907f3d40"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/structure_check.json",
+      "path": "teaching/paper_work/structure_check.json",
+      "sha256": "58f58fd5b6112321108aa91f74030b2d79b351102642303a7197974fbcb96f69"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/pdf_layout_report.json",
+      "path": "teaching/paper_work/pdf_layout_report.json",
+      "sha256": "35f1a17ee57b40cd2cda24325550017d9c57a293975cd47ebc6df667343203de"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/final_qa.json",
+      "path": "teaching/paper_work/final_qa.json",
+      "sha256": "67576cfacbb80fb94aa51c63960004a75eb27a61ab571c386fb18b12a0b344d4"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/01_number_spaces.png",
+      "path": "teaching/paper_work/figures/01_number_spaces.png",
+      "sha256": "55bd035d0a6d40b385b46abec1f7614e7c6c6bd8e1b4161d1e221fc6e2ccf932"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/02_three_generators.png",
+      "path": "teaching/paper_work/figures/02_three_generators.png",
+      "sha256": "7e052dd6456cc9a4bbb6132744717b6be55e979aee64abe58a6882b24ecddedb"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/03_finite_actions.png",
+      "path": "teaching/paper_work/figures/03_finite_actions.png",
+      "sha256": "f74d2bc82cdb952cdadcf66ba164c249c6ff06e1ea1467b6eb14ed3069821988"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/04_lorentz_components.png",
+      "path": "teaching/paper_work/figures/04_lorentz_components.png",
+      "sha256": "b82d73d7d223518162bed9f0f0aed9c8bdd76ce69784758a167688580b44eb49"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/05_modular_hodge.png",
+      "path": "teaching/paper_work/figures/05_modular_hodge.png",
+      "sha256": "3c21ea163ff9b7c790e28b8e5dc8425395fa0c3611f4c7424c380725556720d9"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/06_cusps_characters.png",
+      "path": "teaching/paper_work/figures/06_cusps_characters.png",
+      "sha256": "d6ea9bb0e2ff903de20025ed871ad73f30906bd895d089af1c1a8835b11f8465"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/07_triality.png",
+      "path": "teaching/paper_work/figures/07_triality.png",
+      "sha256": "d72d4a4dd560a90014e3592ab9e91eef276799c5a52a963d14055d452986e91d"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/08_fano.png",
+      "path": "teaching/paper_work/figures/08_fano.png",
+      "sha256": "25e252585b9017e0cd76706c80c394d9034668d1d939ef61fb132df77ae5fb91"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/09_gray_configuration.png",
+      "path": "teaching/paper_work/figures/09_gray_configuration.png",
+      "sha256": "0233d85bada6b28efc599808f6c8470f97f55db1c0d8b4a6244370c2ea4170a4"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/10_hecke_blocks.png",
+      "path": "teaching/paper_work/figures/10_hecke_blocks.png",
+      "sha256": "e0934f2080b9c04582fdb02013164d4024fff27f26f7efa499f6ae521013013b"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/11_normalization.png",
+      "path": "teaching/paper_work/figures/11_normalization.png",
+      "sha256": "9c654a4d387681079e7108ef0de4bab3818cea167c5063b321c994b174bc804b"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/12_spin_circle.png",
+      "path": "teaching/paper_work/figures/12_spin_circle.png",
+      "sha256": "f02ec6dc6d8dd088ba680dca086ae5354e5898b35a1ba5c457485d64c38a6044"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/figures/13_radius_runaway.png",
+      "path": "teaching/paper_work/figures/13_radius_runaway.png",
+      "sha256": "59156c0933564f4d1c599e2599de30efb0f49c60a3791030351c1e89a026560d"
+    },
+    {
+      "archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+      "member": "paper_work/source_manifest.json",
+      "path": "teaching/paper_work/source_manifest.json",
+      "sha256": "d0d11578f12d4f2b3d735b0b87be64151592fb354ea64d88d34229cebbb96fde"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/PREREGISTRATION.md",
+      "path": "studies/02_HOPF_02/PREREGISTRATION.md",
+      "sha256": "44012186c4ea963025542be0ed5ff223a35734291dcde4121e0ed6605ba25bda"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/investigate.py",
+      "path": "studies/02_HOPF_02/investigate.py",
+      "sha256": "4566fb1bc2fa28e289220bf77eb0bfb0b969f0c91a21bb69f9812a8590689be3"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/input/hecke_v0314.py",
+      "path": "studies/02_HOPF_02/input/hecke_v0314.py",
+      "sha256": "6cef89c438be081e6878691f0b57fc36ab2329887901de019a3b60237423fd9d"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/input/MTFT_LICENSE.txt",
+      "path": "studies/02_HOPF_02/input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/results.json",
+      "path": "studies/02_HOPF_02/results.json",
+      "sha256": "852cfd4e84467230b053944da787b9577bf4fe8441e805f507526c2fef50d573"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/MTFT_HOPF02_Report.md",
+      "path": "studies/02_HOPF_02/MTFT_HOPF02_Report.md",
+      "sha256": "349c1b35fc80ecee91a415b959b63bf4343642d2d1d2eb1e8650668a33bf1d2f"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/README.md",
+      "path": "studies/02_HOPF_02/README.md",
+      "sha256": "8bf6a24f102bcc81bd23c18706db35a7da54b8bc3058a216f9eaef7d95089f35"
+    },
+    {
+      "archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+      "member": "MTFT_HOPF02/manifest.json",
+      "path": "studies/02_HOPF_02/manifest.json",
+      "sha256": "4b961e9006872b93daf2df705d055d4e8385612a198a5d22ba83ed7897cbc16b"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/MTFT_AXG01_Report.md",
+      "path": "studies/03_AXG_01/MTFT_AXG01_Report.md",
+      "sha256": "49e7ec4b5327e8b8434f5fbb0dbd1a9c0b6a6f2625cc048db32eb7b0e73d1d7c"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/README.md",
+      "path": "studies/03_AXG_01/README.md",
+      "sha256": "a05305cc7b115f449f8e6a85be41980da9937c14d2933f9175dbe1177c34958b"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/SCOPE.md",
+      "path": "studies/03_AXG_01/SCOPE.md",
+      "sha256": "1585b932bfa2298ff0953051ef4316380d0a32b96864cc47c07e8cf7c0df9a4b"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/anomaly_audit.py",
+      "path": "studies/03_AXG_01/anomaly_audit.py",
+      "sha256": "871653e79d0733878e08407b99cd47a78cc5e24da064eab43b508758d0698a4e"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/anomaly_results.json",
+      "path": "studies/03_AXG_01/anomaly_results.json",
+      "sha256": "d9b5c5e08ff481bc41645af9212f4b9a8991dfa1758066c873106db423c71637"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/input/MTFT_LICENSE.txt",
+      "path": "studies/03_AXG_01/input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/input/smflux_v0314.py",
+      "path": "studies/03_AXG_01/input/smflux_v0314.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/operator_audit.py",
+      "path": "studies/03_AXG_01/operator_audit.py",
+      "sha256": "4d1e089db162bd3953153b53ff7fa81d8a27b628075722ac1748f94568b6bdad"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/operator_results.json",
+      "path": "studies/03_AXG_01/operator_results.json",
+      "sha256": "ac9912b0bba54a68daaccaf54ed328943af1795d9c756b238b5a8716f242cf85"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/requirements.txt",
+      "path": "studies/03_AXG_01/requirements.txt",
+      "sha256": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/results_summary.json",
+      "path": "studies/03_AXG_01/results_summary.json",
+      "sha256": "cbbc476c4d16a3b9053a03054685b7fcad2b2efb8773a1aa45c720b175ebaef3"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/run_all.py",
+      "path": "studies/03_AXG_01/run_all.py",
+      "sha256": "636c837950c3d70fc77d513b276af6e638fb929bd55ac0f907f2014ad1407be6"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/vacuum_audit.py",
+      "path": "studies/03_AXG_01/vacuum_audit.py",
+      "sha256": "f9deb2815c914e336c78c7e604b814916d02f3bb4717416081b2725171ed5524"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/vacuum_results.json",
+      "path": "studies/03_AXG_01/vacuum_results.json",
+      "sha256": "57d8b9d3257f38d85f1bbaba4390a38a80cfcbf424d3d094dc8d83479d30c136"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG01/manifest.json",
+      "path": "studies/03_AXG_01/manifest.json",
+      "sha256": "21accc6fde123aac2e0eba8c2ee79ea1d2f26c6b280a4ec858055985cc715b06"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/SCOPE.md",
+      "path": "studies/04_AXG_02/SCOPE.md",
+      "sha256": "275b371bac99e75aafc1ded33dbcb6669175b9e2d06ecc0148226432bf92ee45"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/MTFT_AXG02_Report.md",
+      "path": "studies/04_AXG_02/MTFT_AXG02_Report.md",
+      "sha256": "5788550ea74cd2eea0fe944f284ea0bc11aaca3f51b0cb84511d3d7d4bb37649"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/README.md",
+      "path": "studies/04_AXG_02/README.md",
+      "sha256": "6d42fc2b51a172a40fb8fe8c84b269dd9232d8e5b19fd288672359144fc1009d"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/parent_anomaly.py",
+      "path": "studies/04_AXG_02/parent_anomaly.py",
+      "sha256": "ba8977b0a7c02f4c53d103629f111ca2fd4a179198af699621a331842a89e4b0"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/flux_and_scalar.py",
+      "path": "studies/04_AXG_02/flux_and_scalar.py",
+      "sha256": "e7e5fe6e3278d488276bb808ade7d78e526c54f8ab27d2e4d7872fc848843960"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/run_all.py",
+      "path": "studies/04_AXG_02/run_all.py",
+      "sha256": "60bf4534f1fc38d8506ec85a9c64db2e0acce491e6a8830f73194c48f8df9232"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/requirements.txt",
+      "path": "studies/04_AXG_02/requirements.txt",
+      "sha256": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/parent_anomaly_results.json",
+      "path": "studies/04_AXG_02/parent_anomaly_results.json",
+      "sha256": "36946ea308dc9ad5d5c86aa76a7aa168bac74327f2893319299f0cb9b39da937"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/flux_and_scalar_results.json",
+      "path": "studies/04_AXG_02/flux_and_scalar_results.json",
+      "sha256": "833f58df8e71cecbf32dafc48da9191cd550d325408a078b6d97aca175a87e27"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/results_summary.json",
+      "path": "studies/04_AXG_02/results_summary.json",
+      "sha256": "5a82b3a754833556a683ef5fbbc299a9292576700b04f7dfb1c63cdb03707504"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/input/smflux_v0314.py",
+      "path": "studies/04_AXG_02/input/smflux_v0314.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/input/MTFT_LICENSE.txt",
+      "path": "studies/04_AXG_02/input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/input/SM01_PREREGISTRATION.md",
+      "path": "studies/04_AXG_02/input/SM01_PREREGISTRATION.md",
+      "sha256": "9437345d2679c27d178ad52ec78c8645bb5a67a66955620333ac1ed74e08d693"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/input/REVIEW_V0311_RESPONSE.md",
+      "path": "studies/04_AXG_02/input/REVIEW_V0311_RESPONSE.md",
+      "sha256": "cb92a052c7eda7beb5a1bc769ad0b296024ff6ba32f50763df9574a89c09f26a"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+      "member": "MTFT_AXG02/manifest.json",
+      "path": "studies/04_AXG_02/manifest.json",
+      "sha256": "01e7a8dd56a876ef06c19c53fb167b340b248b683190105c8fdb91e8baf3c71c"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/MTFT_AXG03_Report.md",
+      "path": "studies/05_AXG_03/MTFT_AXG03_Report.md",
+      "sha256": "73bc19c18710ec0b118ead40754f81bcb01cab1bafb227bd1d2dab3e94003687"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/README.md",
+      "path": "studies/05_AXG_03/README.md",
+      "sha256": "3931abaaa03f9eb3df8e296da2bae4bc07be4b48e8c3abfab8081a5671091f32"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/SCOPE.md",
+      "path": "studies/05_AXG_03/SCOPE.md",
+      "sha256": "4a412f709368715e74e46225c68370b6860f5084debec87de1fee657da74a7e2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/discrete_operator_audit.py",
+      "path": "studies/05_AXG_03/discrete_operator_audit.py",
+      "sha256": "a5445d00a1196b9c7664a252a6f169838575be522fa537761a82679adc58082f"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/discrete_operator_results.json",
+      "path": "studies/05_AXG_03/discrete_operator_results.json",
+      "sha256": "c6463c989d03aa9dea7bbec355ed5252f750565eb67ef5e600a2252cdbb8f256"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/higgs_parent_audit.py",
+      "path": "studies/05_AXG_03/higgs_parent_audit.py",
+      "sha256": "f97190a30ddc0d7dd916a6d9f0e92960f58900161cb4d57b7ad9c44271ca7eea"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/higgs_parent_results.json",
+      "path": "studies/05_AXG_03/higgs_parent_results.json",
+      "sha256": "e061b87c0733c0fc1e1d3ad5addd00e385b70254d2494d8f079260bbbf455616"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/input/MTFT_LICENSE.txt",
+      "path": "studies/05_AXG_03/input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/input/axg02_parent_anomaly_results.json",
+      "path": "studies/05_AXG_03/input/axg02_parent_anomaly_results.json",
+      "sha256": "36946ea308dc9ad5d5c86aa76a7aa168bac74327f2893319299f0cb9b39da937"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/input/smflux_v0314.py",
+      "path": "studies/05_AXG_03/input/smflux_v0314.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/requirements.txt",
+      "path": "studies/05_AXG_03/requirements.txt",
+      "sha256": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/results_summary.json",
+      "path": "studies/05_AXG_03/results_summary.json",
+      "sha256": "0264bb308ad671170869e1af15775038ce1395020d74825cebfc304a9d2f2e6b"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/run_all.py",
+      "path": "studies/05_AXG_03/run_all.py",
+      "sha256": "f21c17b762832d1cbe700540a395239731318a347c410b0a7ad844e6a754ab40"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/tensor_factor_audit.py",
+      "path": "studies/05_AXG_03/tensor_factor_audit.py",
+      "sha256": "b0e68755c6b8913790fc013cc34954450beea09845f54c27e4b2db7b9078f255"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/tensor_factor_results.json",
+      "path": "studies/05_AXG_03/tensor_factor_results.json",
+      "sha256": "b7c17e9bdc8e4777ea2fc01fa977bcc9fc51195825f95b13b73d440a0ec45068"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/tensor_flux_audit.py",
+      "path": "studies/05_AXG_03/tensor_flux_audit.py",
+      "sha256": "7322131df587fa9496dfd9c28eb6fb2f1008ce433d574babcd183750c84e7914"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/tensor_flux_results.json",
+      "path": "studies/05_AXG_03/tensor_flux_results.json",
+      "sha256": "01090bd2566027081d7a4e721a333d35cede5f14aad51c9425869cf70578e428"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+      "member": "mtft_axg_03/manifest.json",
+      "path": "studies/05_AXG_03/manifest.json",
+      "sha256": "118d45747ae32703e4538a64a57962d18b395cccd4382586cd673d91cab29e35"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/MTFT_AXG04_Report.md",
+      "path": "studies/06_AXG_04/MTFT_AXG04_Report.md",
+      "sha256": "3640171b742be61f86e3bac7dc6d798179a052b00e814a20a56d7cf02644c39f"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/README.md",
+      "path": "studies/06_AXG_04/README.md",
+      "sha256": "d45733414018651c9590e2bc492b3c37f010a3affb6627d39d1ff8c10a5fa693"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/SCOPE.md",
+      "path": "studies/06_AXG_04/SCOPE.md",
+      "sha256": "bcff9814234aef98011e2531cf283285e87a9562d384643ade8c327ff4dee1c9"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/charged_action_audit.py",
+      "path": "studies/06_AXG_04/charged_action_audit.py",
+      "sha256": "5c6b57927dbd2199fcef1f5fb38740b0ba39590a638f62143cbb1b15488411f0"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/charged_action_results.json",
+      "path": "studies/06_AXG_04/charged_action_results.json",
+      "sha256": "570e6ba47da5dbd9b3200fc715ace7c540a9ca3be74e4901fdd7e52ee74441b9"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/chiral_parent_audit.py",
+      "path": "studies/06_AXG_04/chiral_parent_audit.py",
+      "sha256": "be5b7ae1cd1606e2aa6de2d647073a40576bf216e916b8be05ca1a29e47bd9f8"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/chiral_parent_results.json",
+      "path": "studies/06_AXG_04/chiral_parent_results.json",
+      "sha256": "0399f0f865d68d0440d32241fd88bdbef814854ab030ca458b8f199f983f16a3"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/global_bordism_audit.py",
+      "path": "studies/06_AXG_04/global_bordism_audit.py",
+      "sha256": "66112d48960c3f60e2d99c3d49c71a9a4aa1781d72a777e759326bd1c808706c"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/global_bordism_results.json",
+      "path": "studies/06_AXG_04/global_bordism_results.json",
+      "sha256": "22b5848c28f3425481cd15e75ec64ca2b464b0716bba0e6fb59fba20f64ab2db"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/gravity_background_audit.py",
+      "path": "studies/06_AXG_04/gravity_background_audit.py",
+      "sha256": "6edfd61c2cbc0b53f37a9305e82c6d34803aa9fb3798e087e60070e3fc5ad8eb"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/gravity_background_results.json",
+      "path": "studies/06_AXG_04/gravity_background_results.json",
+      "sha256": "7a00fbc00b9996354c78539f7a37fbd1ec390ce9e43c34ce5cdfa7fe4c212fb5"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/higgs_action_audit.py",
+      "path": "studies/06_AXG_04/higgs_action_audit.py",
+      "sha256": "944458d58c77eaf07e2eb530d50fedbdf8c9cb2948809a28ba0bef1252027fbb"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/higgs_action_notes.md",
+      "path": "studies/06_AXG_04/higgs_action_notes.md",
+      "sha256": "6d1f91f17a41ccb7bcec94912a2901f97021652897bf588afac7edfa272b4e4c"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/higgs_action_results.json",
+      "path": "studies/06_AXG_04/higgs_action_results.json",
+      "sha256": "7ac70e922a489bb83c7d5e870b3e7c71f300c27b3568bb095ae0676216bcc577"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/larger_parent_audit.py",
+      "path": "studies/06_AXG_04/larger_parent_audit.py",
+      "sha256": "c6a1a2424e8a0fd6c975cae038427f7e18c8cb513178237a29f05c853743e844"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/larger_parent_notes.md",
+      "path": "studies/06_AXG_04/larger_parent_notes.md",
+      "sha256": "d21a796705faed2adb77adc268deaf3368c5f81c4c439246dbca8d01512568c8"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/larger_parent_results.json",
+      "path": "studies/06_AXG_04/larger_parent_results.json",
+      "sha256": "47b66420f8243ba5c34540a9c2cb81e497433ad51a3f81966fe63db1fa1a0bd9"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/requirements.txt",
+      "path": "studies/06_AXG_04/requirements.txt",
+      "sha256": "92dbe9b319378da64be0c698868f08f20f92f4af923c102a62588c0ed2fba64f"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/results_summary.json",
+      "path": "studies/06_AXG_04/results_summary.json",
+      "sha256": "9ae4960832daaad25c32f58dd1295552ddc221cdfa598688123db94d879e85c9"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/run_all.py",
+      "path": "studies/06_AXG_04/run_all.py",
+      "sha256": "2c4a6a88a7d89dbde802a9909a2e0909be0ec39f8ab73c161b529d0c2c740b0a"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/input/MTFT_LICENSE.txt",
+      "path": "studies/06_AXG_04/input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/input/arithspin_v0314.py",
+      "path": "studies/06_AXG_04/input/arithspin_v0314.py",
+      "sha256": "cd5017990824cc3f557cafb99555a7980a27012e86749bd7dc20cfd7833808c0"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/input/axg03_summary.json",
+      "path": "studies/06_AXG_04/input/axg03_summary.json",
+      "sha256": "0264bb308ad671170869e1af15775038ce1395020d74825cebfc304a9d2f2e6b"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/input/smflux_v0314.py",
+      "path": "studies/06_AXG_04/input/smflux_v0314.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+      "member": "mtft_axg_04/manifest.json",
+      "path": "studies/06_AXG_04/manifest.json",
+      "sha256": "fb2965ba27e2ff5a7bb1a35cb67b14e5394976d6e9ac95467d43d2be66d0440c"
+    }
+  ]
+}

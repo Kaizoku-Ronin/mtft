@@ -167,7 +167,7 @@ def up_sector_mass_ratios(h: float = 0.2, nx: int = 8, Y0: float = 2.0, n_dirs: 
     h_fam = np.exp(4 * np.pi * (6 * Gq["cusp0"] + 6 * Gq["cusp1/11"] + Gq["P1"] + Gq["P2"] + Gq["P3"])); h_H = np.exp(8 * np.pi * (Gq["P1"] + Gq["P2"] + Gq["P3"])); wq = Wt * e2u
     Nf = np.array([[np.sum(wq * h_fam * phi[i] * np.conj(phi[j])) for j in range(3)] for i in range(3)]); NH = np.array([[np.sum(Wt * Z.imag ** 2 * h_H * psi[k] * np.conj(psi[l])) for l in range(18)] for k in range(18)])
     Lf = np.linalg.cholesky((Nf + Nf.conj().T) / 2); LH = np.linalg.cholesky((NH + NH.conj().T) / 2); Li = np.linalg.inv(Lf)
-    Yt = np.einsum("ijk,kl->ijl", np.einsum("ai,bj,abk->ijk", Li, Li, Y), LH)
+    Yt = np.einsum("ijk,kl->ijl", np.einsum("ia,jb,abk->ijk", Li, Li, Y), LH)
     rng = np.random.default_rng(seed); Rr = []
     for _ in range(n_dirs):
         v = rng.standard_normal(18) + 1j * rng.standard_normal(18); v /= np.linalg.norm(v); s = np.sort(np.linalg.svd(np.einsum("ijk,k->ij", Yt, v), compute_uv=False)); Rr.append(s / s[-1])
@@ -287,3 +287,57 @@ def fit_higgs_direction(Yn, target_ratios, seeds=20, rng=None):
         res = minimize(cost, rng.standard_normal(2 * n), method="Nelder-Mead", options={"maxiter": 4000, "xatol": 1e-8, "fatol": 1e-12})
         if best is None or res.fun < best.fun: best = res
     v = best.x[:n] + 1j * best.x[n:]; v = v / np.linalg.norm(v); return v, mass_ratios(Yn, v), float(best.fun)
+
+
+# ------------------------------------------------ CC-26: canonical HYM normalisation (correct contraction) and its invariance test
+def normalise_yukawa(Y, N_A, N_B, N_H, regularise=1e-9):
+    """Yukawa tensor in kinetic-orthonormal bases.  With Gram matrices N = L L^dag (Cholesky) the orthonormal sections are
+    phi' = A phi with A = L^{-1} (A N A^dag = I), so Y'_{ijl} = sum_{abk} A_{ia} B_{jb} Y_{abk} (L_H)_{kl}.  The v0.30.6–0.31.1
+    releases contracted the TRANSPOSE (index pattern 'ai,bj'), which is not a kinetic normalisation and produced spurious
+    hierarchies (CC-26, found by Astra's Atlas audit V0311-C01).  The Higgs index is expressed in the Gram-orthonormal
+    directions with eigenvalue > regularise * max (numerically null directions dropped); pass regularise=None for the
+    Cholesky factor instead."""
+    chol = lambda N: np.linalg.cholesky((N + N.conj().T) / 2)
+    A = np.linalg.inv(chol(N_A)); B = np.linalg.inv(chol(N_B)); Yn = np.einsum("ia,jb,abk->ijk", A, B, Y)
+    if regularise is None: return np.einsum("ijk,kl->ijl", Yn, chol(N_H))
+    evH, VH = np.linalg.eigh((N_H + N_H.conj().T) / 2); keep = evH / evH.max() > regularise; Vk = VH[:, keep] / np.sqrt(evH[keep])
+    return np.einsum("ijk,kl->ijl", Yn, N_H @ Vk)
+
+def normalisation_is_basis_invariant(Y, N_A, N_B, N_H, seed=0, tol=1e-6):
+    """Re-express both family bases by random nonsingular matrices (Y -> G (x) H Y, N -> G N G^dag) and check that the
+    singular-value ratios of the normalised mass matrix are unchanged (measured deviation ~1e-8 from the regularised
+    ill-conditioned Higgs Gram; tolerance 1e-6 leaves a 100x margin — CI-margin rule, v0.31.1)."""
+    rng = np.random.default_rng(seed); G = rng.standard_normal((3, 3)) + 1j * rng.standard_normal((3, 3)); H = rng.standard_normal((3, 3)) + 1j * rng.standard_normal((3, 3))
+    Y2 = np.einsum("ia,jb,abk->ijk", G, H, Y); NA2 = G @ N_A @ G.conj().T; NB2 = H @ N_B @ H.conj().T
+    Y1n = normalise_yukawa(Y, N_A, N_B, N_H); Y2n = normalise_yukawa(Y2, NA2, NB2, N_H); v = rng.standard_normal(Y1n.shape[2]) + 1j * rng.standard_normal(Y1n.shape[2])
+    s1 = np.sort(np.linalg.svd(np.einsum("ijk,k->ij", Y1n, v), compute_uv=False)); s2 = np.sort(np.linalg.svd(np.einsum("ijk,k->ij", Y2n, v), compute_uv=False))
+    return float(np.abs(s1 / s1[-1] - s2 / s2[-1]).max()) < tol
+
+
+# ------------------------------------------------ SM-15: W13-graded normalisation, degeneracy theorem, epsilon admixture
+def w13_graded_normalisation(Yres, N_fam, N_H):
+    """Normalise the M1 up tensor in the W13 eigenbases (grading preserved: the HYM metric is W13-invariant, so the Grams
+    are block-diagonal in the grading up to the mesh error).  Returns Ye (3x3xn_even), Yo (3x3xn_odd) in
+    kinetic-orthonormal family and Gram-orthonormal even/odd Higgs bases, and the gradings."""
+    from .rrspace import w13_grading_and_texture
+    tex = w13_grading_and_texture(Yres); gf = np.array(tex["grades_sections"]); g18 = np.array(tex["grades_higgs"]); Yg = tex["Y_graded"]; V3 = tex["V_sections"]; V18 = tex["V_higgs"]
+    Nf_g = V3.T @ N_fam @ np.conj(V3); NH_g = V18.T @ N_H @ np.conj(V18)
+    def blockdiag(N, gr):
+        B = np.zeros_like(N)
+        for s_ in (1, -1): m = gr == s_; B[np.ix_(m, m)] = N[np.ix_(m, m)]
+        return B
+    chol = lambda N: np.linalg.cholesky((N + N.conj().T) / 2); A = np.linalg.inv(chol(blockdiag(Nf_g, gf))); Yn = np.einsum("ia,jb,abk->ijk", A, A, Yg)
+    def orth(mask):
+        Nb = NH_g[np.ix_(mask, mask)]; ev, V = np.linalg.eigh((Nb + Nb.conj().T) / 2); keep = ev / ev.max() > 1e-9; return Nb @ (V[:, keep] / np.sqrt(ev[keep]))
+    return {"Ye": np.einsum("ijk,kl->ijl", Yn[:, :, g18 == 1], orth(g18 == 1)), "Yo": np.einsum("ijk,kl->ijl", Yn[:, :, g18 == -1], orth(g18 == -1)), "grades_sections": gf, "grades_higgs": g18,
+            "gram_offgrade_family": float(np.abs(Nf_g[gf[:, None] != gf[None, :]]).max() / np.abs(Nf_g).max()), "gram_offgrade_higgs": float(np.abs(NH_g[g18[:, None] != g18[None, :]]).max() / np.abs(NH_g).max())}
+
+def w13_epsilon_scan(Ye, Yo, eps_values=(1e-4, 1e-3, 1e-2, 1e-1, 0.3, 1.0), n=300, seed=0):
+    """Singular-value ratios of M = M(v_even) + eps M(v_odd) over random unit directions.  Degeneracy theorem: at eps = 0
+    the spectrum is (1, 1, 0) up to mesh noise; the admixture gives m1/m3 ~ eps and m2/m3 = 1 - O(eps), so a
+    W13-symmetric vacuum cannot separate the two heavy families (m_c = m_t)."""
+    rng = np.random.default_rng(seed); rnd = lambda k: (lambda v: v / np.linalg.norm(v))(rng.standard_normal(k) + 1j * rng.standard_normal(k)); out = {}
+    for eps in eps_values:
+        R = np.array([(lambda s: s / s[-1])(np.sort(np.linalg.svd(np.einsum("ijk,k->ij", Ye, rnd(Ye.shape[2])) + eps * np.einsum("ijk,k->ij", Yo, rnd(Yo.shape[2])), compute_uv=False))) for _ in range(n)])
+        out[eps] = {"median_m1_m3": float(np.median(R[:, 0])), "median_m2_m3": float(np.median(R[:, 1])), "band_m1_m3": (float(np.percentile(R[:, 0], 5)), float(np.percentile(R[:, 0], 95)))}
+    return out

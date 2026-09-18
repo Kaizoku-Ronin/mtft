@@ -1,0 +1,38 @@
+{
+  "experiment": "SC7-01",
+  "date": "2026-09-16",
+  "files": {
+    "PREREGISTRATION.md": {
+      "sha256": "5e8eb784cd934cbcfe9e0df6700915176590aa0e76112d15f363a8c56bf8c456",
+      "bytes": 3903
+    },
+    "investigate_spin_circle.py": {
+      "sha256": "e9bdb718a25b6a392132655159ad8fd8734feb57209e322a1a3a437e384f5ba4",
+      "bytes": 16174
+    },
+    "results.json": {
+      "sha256": "d41c82aaf24dd2d23de6626a34fd869baa3f2fcedfb4b83dc5bd02f8e18fe32c",
+      "bytes": 24642
+    },
+    "run.log": {
+      "sha256": "3368c13d1bf446d4bcf0bd69a919ba3331e4dff7935dd02615f50fb1cecc3195",
+      "bytes": 736
+    },
+    "MTFT_SC7_01_Spin_Circle_Investigation.md": {
+      "sha256": "88c34d0209c7177a223f564461ab507fae0474c8d8e79286a6a918759a871e2a",
+      "bytes": 24273
+    },
+    "README.md": {
+      "sha256": "bbabcac9a59d939c90cfea6189c9cdd8b3e9b04224b9c1055e77413604a76a69",
+      "bytes": 1773
+    },
+    "requirements.txt": {
+      "sha256": "68a798d14ab7ceac5f914897b07fd7053ddfd40acabcd6c79e6ba7677e874b13",
+      "bytes": 55
+    },
+    "input/mtft-0.31.4.tar.gz": {
+      "sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+      "bytes": 3821210
+    }
+  }
+}

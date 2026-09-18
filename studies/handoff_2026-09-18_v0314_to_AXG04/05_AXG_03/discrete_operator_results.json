@@ -1,0 +1,323 @@
+{
+  "investigation": "AXG-03 discrete operators and fermion anomaly",
+  "class": "EXACT charge algebra and conditional global-fermion anomaly test",
+  "Khat": [
+    [
+      "3",
+      "-2",
+      "-1",
+      "-1",
+      "1"
+    ],
+    [
+      "0",
+      "-6",
+      "3",
+      "3",
+      "0"
+    ]
+  ],
+  "generator_cocharacter": [
+    "0",
+    "0",
+    "1",
+    "0",
+    "1"
+  ],
+  "Smith_invariants": [
+    1,
+    3
+  ],
+  "field_Z3_charges": {
+    "Q": 0,
+    "u_c": 1,
+    "d_c": 0,
+    "L": 1,
+    "e_c": 2,
+    "nu_c": 0,
+    "Hu": 2,
+    "Hd": 0
+  },
+  "operators": {
+    "up_Yukawa": {
+      "charge": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Z3": 0
+    },
+    "down_Yukawa": {
+      "charge": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Z3": 0
+    },
+    "lepton_Yukawa": {
+      "charge": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Z3": 0
+    },
+    "neutrino_Dirac": {
+      "charge": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Z3": 0
+    },
+    "Hu_Hd": {
+      "charge": [
+        0,
+        2,
+        -1,
+        -1,
+        0
+      ],
+      "Z3": 2,
+      "rational_dressing": [
+        "0",
+        "-1/3"
+      ],
+      "cube_integer_dressing": [
+        "0",
+        "-1"
+      ]
+    },
+    "QQQL": {
+      "charge": [
+        3,
+        -4,
+        0,
+        0,
+        1
+      ],
+      "Z3": 1,
+      "rational_dressing": [
+        "1",
+        "1/3"
+      ],
+      "cube_integer_dressing": [
+        "3",
+        "1"
+      ]
+    },
+    "uc_uc_dc_ec": {
+      "charge": [
+        -3,
+        0,
+        2,
+        2,
+        -1
+      ],
+      "Z3": 1,
+      "rational_dressing": [
+        "-1",
+        "1/3"
+      ],
+      "cube_integer_dressing": [
+        "-3",
+        "1"
+      ]
+    },
+    "nu_c_nu_c": {
+      "charge": [
+        0,
+        0,
+        2,
+        0,
+        -2
+      ],
+      "Z3": 0
+    }
+  },
+  "fermion_ledger": [
+    {
+      "sector": "cL",
+      "orientation": 1,
+      "multiplicity": 3,
+      "representation_dimension": 6,
+      "signed_integer_charge": 0,
+      "Z3": 0,
+      "S1": 0,
+      "S3": 0
+    },
+    {
+      "sector": "ca",
+      "orientation": -1,
+      "multiplicity": 3,
+      "representation_dimension": 3,
+      "signed_integer_charge": 1,
+      "Z3": 1,
+      "S1": 9,
+      "S3": 9
+    },
+    {
+      "sector": "cb",
+      "orientation": -1,
+      "multiplicity": 3,
+      "representation_dimension": 3,
+      "signed_integer_charge": 0,
+      "Z3": 0,
+      "S1": 0,
+      "S3": 0
+    },
+    {
+      "sector": "La",
+      "orientation": -1,
+      "multiplicity": 6,
+      "representation_dimension": 2,
+      "signed_integer_charge": 1,
+      "Z3": 1,
+      "S1": 12,
+      "S3": 12
+    },
+    {
+      "sector": "Lb",
+      "orientation": -1,
+      "multiplicity": 6,
+      "representation_dimension": 2,
+      "signed_integer_charge": 0,
+      "Z3": 0,
+      "S1": 0,
+      "S3": 0
+    },
+    {
+      "sector": "Ld",
+      "orientation": -1,
+      "multiplicity": 3,
+      "representation_dimension": 2,
+      "signed_integer_charge": 1,
+      "Z3": 1,
+      "S1": 6,
+      "S3": 6
+    },
+    {
+      "sector": "ad",
+      "orientation": 1,
+      "multiplicity": 3,
+      "representation_dimension": 1,
+      "signed_integer_charge": 0,
+      "Z3": 0,
+      "S1": 0,
+      "S3": 0
+    },
+    {
+      "sector": "bd",
+      "orientation": 1,
+      "multiplicity": 3,
+      "representation_dimension": 1,
+      "signed_integer_charge": -1,
+      "Z3": 2,
+      "S1": -3,
+      "S3": -3
+    }
+  ],
+  "isolated_discrete_repair_control": {
+    "added_6D_field": "one positive-chirality complex Weyl in (det U_L)^(-1) z_a z_b",
+    "charge": [
+      "0",
+      "-2",
+      "1",
+      "1",
+      "0"
+    ],
+    "index": "12",
+    "Z3": 1,
+    "new_S1": "36",
+    "new_S3": "36",
+    "Spin_x_Z3_congruences": "pass",
+    "scope": "Isolated repair of this discrete fermion test by new charged matter. Full 6D anomalies, spectrum, interactions and vacuum must be recomputed. This field does not change the restricted gauge-inertia obstruction."
+  },
+  "discrete_anomaly": {
+    "S1": 24,
+    "S3": 24,
+    "S3_mod9": 6,
+    "S1_mod3": 0,
+    "Hsieh_cubic_mod18": 12,
+    "phase_fraction": "2/3",
+    "verdict": "nonzero fermion-sector Spin x Z3 anomaly",
+    "scope": "does not include an unspecified global GS/Wu/topological or inflow sector; ordinary neutral scalars do not cancel this fermion anomaly automatically",
+    "source": "https://arxiv.org/pdf/1808.02881, equation (1.2)"
+  },
+  "mode_counts": {
+    "nonchiral_B2": {
+      "4D_vectors": 26,
+      "4D_real_scalars": 2
+    },
+    "one_chiral_B2": {
+      "4D_vectors": 13,
+      "4D_real_scalars": 1
+    }
+  },
+  "mode_scope": "free ordinary tensor harmonic reduction on the closed curve; flux couplings, constraints, projections or masses must be derived before calling these interacting massless modes",
+  "notes": [
+    "This is a control with a changed integer lattice, not AXG01 with a harmless rescaling.",
+    "The Z3 selection rules are conditional on a quantum-consistent completion.",
+    "No B_ij, proton lifetime, or Higgs vacuum is predicted.",
+    "Index-zero vector-like matter does not alter these net chiral anomaly sums."
+  ],
+  "checks": [
+    "new charge matrix",
+    "same continuous kernel",
+    "Smith factors 1 and 3",
+    "order-three generator fixes both axion circles",
+    "generator lies in native-axion kernel",
+    "tensor transgression flux",
+    "up_Yukawa still neutral",
+    "down_Yukawa still neutral",
+    "lepton_Yukawa still neutral",
+    "neutrino_Dirac still neutral",
+    "Hu_Hd nontrivial Z3",
+    "Hu_Hd no integer axion dressing",
+    "QQQL nontrivial Z3",
+    "QQQL no integer axion dressing",
+    "uc_uc_dc_ec nontrivial Z3",
+    "uc_uc_dc_ec no integer axion dressing",
+    "cube of Hu_Hd admits integer dressing",
+    "cube of QQQL admits integer dressing",
+    "cube of uc_uc_dc_ec admits integer dressing",
+    "leading pure holomorphic Higgs product cube",
+    "Majorana B-L remains nonzero",
+    "Majorana outside axion row span",
+    "linear discrete trace",
+    "cubic discrete trace",
+    "cubic trace matches package independent ledger",
+    "Hsieh cubic congruence residue",
+    "equivalent cubic mod9 residue",
+    "linear congruence vanishes",
+    "nonzero anomaly phase fraction",
+    "fermion sector does not pass Spin x Z3 test",
+    "residue representatives give same mod9 anomaly",
+    "inverse generator conjugates anomaly",
+    "repair character is an actual weak determinant power",
+    "repair character is hypercharge neutral",
+    "repair character is B-L neutral",
+    "repair character is common-phase neutral",
+    "repair fermion has twelve net modes",
+    "repair modes have Z3 charge one",
+    "repair passes cubic congruence",
+    "repair passes linear congruence",
+    "repair leaves gauge-inertia witness unchanged",
+    "closed genus13 first Betti number",
+    "Euler characteristic",
+    "self-dual vector count halves free pair"
+  ],
+  "summary": {
+    "passed": 44,
+    "failed": 0
+  }
+}

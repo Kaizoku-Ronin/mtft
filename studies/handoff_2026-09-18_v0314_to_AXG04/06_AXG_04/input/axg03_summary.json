@@ -1,0 +1,26 @@
+{
+  "investigation": "AXG-03",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "audits": {
+    "tensor_factor": {
+      "passed": 46,
+      "failed": 0
+    },
+    "tensor_flux": {
+      "passed": 26,
+      "failed": 0
+    },
+    "higgs_parent": {
+      "passed": 33,
+      "failed": 0
+    },
+    "discrete_operator": {
+      "passed": 44,
+      "failed": 0
+    }
+  },
+  "passed": 149,
+  "failed": 0,
+  "meaning": "Exact arithmetic and analytic-consequence checks under the stated assumptions; not experimental validation or a complete parent theory."
+}

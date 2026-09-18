@@ -1,0 +1,1154 @@
+{
+  "experiment": "SC7-01",
+  "recorded_date": "2026-09-16",
+  "source": "/workspace/scratch/b8f94377c065/mtft_audit_0314/mtft-0.31.4",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "input_sha256": {
+    "src/mtft/surface/smflux.py": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+    "src/mtft/surface/arithspin.py": "cd5017990824cc3f557cafb99555a7980a27012e86749bd7dc20cfd7833808c0",
+    "src/mtft/surface/_data/x0143_weight2_basis.json": "b7ca05a16006a90d7719b077fdd04249f8e62f6ba5112f125cf577611a077007"
+  },
+  "preregistration_sha256": "5e8eb784cd934cbcfe9e0df6700915176590aa0e76112d15f363a8c56bf8c456",
+  "script_sha256": "e9bdb718a25b6a392132655159ad8fd8734feb57209e322a1a3a437e384f5ba4",
+  "scope": "closed spin-circle bundle, standard twisted 7D SYM, smooth commuting independent stack backgrounds",
+  "M1_stack_data": {
+    "N": {
+      "c": 3,
+      "L": 2,
+      "a": 1,
+      "b": 1,
+      "d": 1
+    },
+    "m": {
+      "c": 0,
+      "L": -3,
+      "a": 3,
+      "b": 3,
+      "d": 0
+    },
+    "Y": {
+      "c": "1/6",
+      "L": 0,
+      "a": "-1/2",
+      "b": "1/2",
+      "d": "-1/2"
+    },
+    "B-L": {
+      "c": "1/3",
+      "L": 0,
+      "a": 0,
+      "b": 0,
+      "d": -1
+    }
+  },
+  "archive_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "topology": {
+    "genus": 13,
+    "euler_class": 12,
+    "modular_index": 168,
+    "cusps": 4,
+    "elliptic_points": [
+      0,
+      0
+    ],
+    "abelianized_relations_smith_nonzero": [
+      12
+    ],
+    "gysin_cup_e_matrix": [
+      [
+        12
+      ]
+    ],
+    "homology_Z": [
+      "Z",
+      "Z^26 + Z/12",
+      "Z^26",
+      "Z"
+    ],
+    "cohomology_Z": [
+      "Z",
+      "Z^26",
+      "Z^26 + Z/12",
+      "Z"
+    ],
+    "base_pullback_degree_map": "m -> m mod 12 in the torsion summand of H^2",
+    "fiber_in_pi1": "infinite central cyclic subgroup",
+    "fiber_in_H1": "order 12"
+  },
+  "spectrum": {
+    "exact_field": "Q(i,sqrt(3))",
+    "characters_scanned": 36,
+    "scans": {
+      "trivial_base": [
+        {
+          "residue": 0,
+          "fiber_holonomy": "1",
+          "rank_d0": 0,
+          "rank_d1": 1,
+          "h0": 1,
+          "h1": 26,
+          "dual_rank_d0": 0,
+          "dual_rank_d1": 1,
+          "cohomology_dimensions": [
+            1,
+            26,
+            26,
+            1
+          ]
+        },
+        {
+          "residue": 1,
+          "fiber_holonomy": "sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 2,
+          "fiber_holonomy": "1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 3,
+          "fiber_holonomy": "-I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 4,
+          "fiber_holonomy": "-1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 5,
+          "fiber_holonomy": "-sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 6,
+          "fiber_holonomy": "-1",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 7,
+          "fiber_holonomy": "-sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 8,
+          "fiber_holonomy": "-1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 9,
+          "fiber_holonomy": "I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 10,
+          "fiber_holonomy": "1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 11,
+          "fiber_holonomy": "sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "unitary_nontrivial_base": [
+        {
+          "residue": 0,
+          "fiber_holonomy": "1",
+          "rank_d0": 1,
+          "rank_d1": 2,
+          "h0": 0,
+          "h1": 24,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 2,
+          "cohomology_dimensions": [
+            0,
+            24,
+            24,
+            0
+          ]
+        },
+        {
+          "residue": 1,
+          "fiber_holonomy": "sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 2,
+          "fiber_holonomy": "1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 3,
+          "fiber_holonomy": "-I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 4,
+          "fiber_holonomy": "-1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 5,
+          "fiber_holonomy": "-sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 6,
+          "fiber_holonomy": "-1",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 7,
+          "fiber_holonomy": "-sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 8,
+          "fiber_holonomy": "-1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 9,
+          "fiber_holonomy": "I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 10,
+          "fiber_holonomy": "1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 11,
+          "fiber_holonomy": "sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "complex_nonunitary_base": [
+        {
+          "residue": 0,
+          "fiber_holonomy": "1",
+          "rank_d0": 1,
+          "rank_d1": 2,
+          "h0": 0,
+          "h1": 24,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 2,
+          "cohomology_dimensions": [
+            0,
+            24,
+            24,
+            0
+          ]
+        },
+        {
+          "residue": 1,
+          "fiber_holonomy": "sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 2,
+          "fiber_holonomy": "1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 3,
+          "fiber_holonomy": "-I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 4,
+          "fiber_holonomy": "-1/2 - sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 5,
+          "fiber_holonomy": "-sqrt(3)/2 - I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 6,
+          "fiber_holonomy": "-1",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 7,
+          "fiber_holonomy": "-sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 8,
+          "fiber_holonomy": "-1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 9,
+          "fiber_holonomy": "I",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 10,
+          "fiber_holonomy": "1/2 + sqrt(3)*I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "residue": 11,
+          "fiber_holonomy": "sqrt(3)/2 + I/2",
+          "rank_d0": 1,
+          "rank_d1": 26,
+          "h0": 0,
+          "h1": 0,
+          "dual_rank_d0": 1,
+          "dual_rank_d1": 26,
+          "cohomology_dimensions": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "all_ten_stack_pairs": [
+      {
+        "ordered_pair": [
+          "c",
+          "L"
+        ],
+        "signed_degree": 3,
+        "residue": 3,
+        "torsion_order": 4,
+        "fiber_holonomy": "-I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "c",
+          "a"
+        ],
+        "signed_degree": -3,
+        "residue": 9,
+        "torsion_order": 4,
+        "fiber_holonomy": "I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "c",
+          "b"
+        ],
+        "signed_degree": -3,
+        "residue": 9,
+        "torsion_order": 4,
+        "fiber_holonomy": "I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "c",
+          "d"
+        ],
+        "signed_degree": 0,
+        "residue": 0,
+        "torsion_order": 1,
+        "fiber_holonomy": "1",
+        "zero_modes_for_trivial_base_holonomy": [
+          1,
+          26,
+          26,
+          1
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          24,
+          24,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "L",
+          "a"
+        ],
+        "signed_degree": -6,
+        "residue": 6,
+        "torsion_order": 2,
+        "fiber_holonomy": "-1",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "L",
+          "b"
+        ],
+        "signed_degree": -6,
+        "residue": 6,
+        "torsion_order": 2,
+        "fiber_holonomy": "-1",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "L",
+          "d"
+        ],
+        "signed_degree": -3,
+        "residue": 9,
+        "torsion_order": 4,
+        "fiber_holonomy": "I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "a",
+          "b"
+        ],
+        "signed_degree": 0,
+        "residue": 0,
+        "torsion_order": 1,
+        "fiber_holonomy": "1",
+        "zero_modes_for_trivial_base_holonomy": [
+          1,
+          26,
+          26,
+          1
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          24,
+          24,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "a",
+          "d"
+        ],
+        "signed_degree": 3,
+        "residue": 3,
+        "torsion_order": 4,
+        "fiber_holonomy": "-I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "ordered_pair": [
+          "b",
+          "d"
+        ],
+        "signed_degree": 3,
+        "residue": 3,
+        "torsion_order": 4,
+        "fiber_holonomy": "-I",
+        "zero_modes_for_trivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "zero_modes_for_nontrivial_base_holonomy": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "oriented_M1_sectors": [
+      {
+        "sector": "(c,Lbar)",
+        "representation": [
+          "3",
+          "2",
+          "1/6"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(cbar,a)",
+        "representation": [
+          "3bar",
+          "1",
+          "-2/3"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(cbar,b)",
+        "representation": [
+          "3bar",
+          "1",
+          "1/3"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(Lbar,a)",
+        "representation": [
+          "1",
+          "2",
+          "-1/2"
+        ],
+        "six_dimensional_multiplicity": 6,
+        "oriented_bundle_degree": 6,
+        "fiber_holonomy": "-1",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(Lbar,b)",
+        "representation": [
+          "1",
+          "2",
+          "1/2"
+        ],
+        "six_dimensional_multiplicity": 6,
+        "oriented_bundle_degree": 6,
+        "fiber_holonomy": "-1",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(Lbar,d)",
+        "representation": [
+          "1",
+          "2",
+          "-1/2"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(a,dbar)",
+        "representation": [
+          "1",
+          "1",
+          "0"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sector": "(b,dbar)",
+        "representation": [
+          "1",
+          "1",
+          "1"
+        ],
+        "six_dimensional_multiplicity": 3,
+        "oriented_bundle_degree": 3,
+        "fiber_holonomy": "-I",
+        "seven_dimensional_cohomology_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "statement": "All nonzero-degree M1 sectors are acyclic for every smooth commuting flat/Higgs background on the fixed line bundles."
+  },
+  "symmetry": {
+    "theta_compatible_A": [
+      [
+        "I",
+        "0"
+      ],
+      [
+        "0",
+        "-I"
+      ]
+    ],
+    "theta_compatible_B": [
+      [
+        "0",
+        "-sqrt(13)/13"
+      ],
+      [
+        "sqrt(13)",
+        "0"
+      ]
+    ],
+    "group": {
+      "order": 8,
+      "element_order_counts": {
+        "1": 1,
+        "2": 1,
+        "4": 6
+      }
+    },
+    "square_map_W11": [
+      [
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "square_map_W13": [
+      [
+        "0",
+        "0",
+        "1/13"
+      ],
+      [
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "13",
+        "0",
+        "0"
+      ]
+    ],
+    "traces_on_H1_P_R": {
+      "W11": 2,
+      "W13": -2,
+      "W143": -18
+    },
+    "central_half_turn_on_H1": "identity (fiber rotation is isotopic to identity)",
+    "original_M1_W11_invariance": false,
+    "full_Q8_equivariance_of_flat_7D_background": "not established",
+    "M1_note": "W11 is broken by the original odd-degree CM divisor. Choosing a flat 7D background does not automatically retain that divisor or establish a restored symmetry.",
+    "Hecke_correspondence_lift": "not established"
+  },
+  "gravity": {
+    "metric": [
+      [
+        "(R**2 + k**2*r**2)/y**2",
+        "0",
+        "k*r**2/y"
+      ],
+      [
+        "0",
+        "R**2/y**2",
+        "0"
+      ],
+      [
+        "k*r**2/y",
+        "0",
+        "r**2"
+      ]
+    ],
+    "connection_k": "1/2",
+    "metric_determinant": "R**4*r**2/y**4",
+    "Ricci_in_orthonormal_frame": [
+      [
+        "(-R**2 - k**2*r**2/2)/R**4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(-R**2 - k**2*r**2/2)/R**4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "k**2*r**2/(2*R**4)"
+      ]
+    ],
+    "scalar_curvature_general_k": "(-4*R**2 - k**2*r**2)/(2*R**4)",
+    "scalar_curvature_e12": "(-16*R**2 - r**2)/(8*R**4)",
+    "volume": "96*pi^2*R^2*r",
+    "M4_squared": "M7^5 * (96*pi^2*R^2*r)",
+    "inverse_g4_squared": "(96*pi^2*R^2*r) / g7_squared",
+    "Einstein_frame_uniform_scale_potential": "a/rho**5 + b/rho**7 + c/rho**3",
+    "uniform_scale_derivative": "-5*a/rho**6 - 7*b/rho**8 - 3*c/rho**4",
+    "derivative_strictly_negative": true,
+    "actual_flat_BPS_background_flux_coefficient_b": 0,
+    "status": "CONDITIONAL: additional unwarped 7D Einstein action and nonnegative classical energy assumptions; not a derived supergravity solution"
+  },
+  "source_files_unchanged": true,
+  "computation_status": "ALL_IMPLEMENTED_EXACT_CHECKS_PASSED",
+  "physical_gate": "FAIL: none of the eight nonzero-degree M1 matter sectors has a massless twisted 7D bulk mode",
+  "radius_gate": "FAIL within the separately declared nonnegative-energy unwarped Einstein ansatz"
+}

@@ -1,0 +1,324 @@
+{
+  "study": "AXG-04 C3X explicit charged action candidate",
+  "status": "Exact local anomaly cancellation and integral source/lattice checks; global differential-cohomology completion, UV completion and realistic vacuum not established",
+  "group": "SU(3) x SU(2) x U(1)_h x U(1)_X as a direct product; h=6Y",
+  "six_dimensional_copies": 3,
+  "fields": [
+    {
+      "name": "Q",
+      "color": 3,
+      "weak": 2,
+      "h": 1,
+      "X": 1,
+      "chi6": 1,
+      "dimension": 6,
+      "I8_per_parent_copy": "C**2/6 + C*L - C*h**2 - 2*C*h*x + C*p1/12 - C*x**2 + L**2/4 - 3*L*h**2/2 - 3*L*h*x + L*p1/8 - 3*L*x**2/2 + c3*h + c3*x + h**4/4 + h**3*x - h**2*p1/8 + 3*h**2*x**2/2 - h*p1*x/4 + h*x**3 + 7*p1**2/960 - p1*x**2/8 - p2/240 + x**4/4",
+      "4D_net_multiplets_three_copies": 3
+    },
+    {
+      "name": "U",
+      "color": 3,
+      "weak": 1,
+      "h": 4,
+      "X": 1,
+      "chi6": -1,
+      "dimension": 3,
+      "I8_per_parent_copy": "-C**2/12 + 8*C*h**2 + 4*C*h*x - C*p1/24 + C*x**2/2 - 2*c3*h - c3*x/2 - 32*h**4 - 32*h**3*x + h**2*p1 - 12*h**2*x**2 + h*p1*x/2 - 2*h*x**3 - 7*p1**2/1920 + p1*x**2/16 + p2/480 - x**4/8",
+      "4D_net_multiplets_three_copies": -3
+    },
+    {
+      "name": "D",
+      "color": 3,
+      "weak": 1,
+      "h": -2,
+      "X": 1,
+      "chi6": -1,
+      "dimension": 3,
+      "I8_per_parent_copy": "-C**2/12 + 2*C*h**2 - 2*C*h*x - C*p1/24 + C*x**2/2 + c3*h - c3*x/2 - 2*h**4 + 4*h**3*x + h**2*p1/4 - 3*h**2*x**2 - h*p1*x/4 + h*x**3 - 7*p1**2/1920 + p1*x**2/16 + p2/480 - x**4/8",
+      "4D_net_multiplets_three_copies": -3
+    },
+    {
+      "name": "Lepton",
+      "color": 1,
+      "weak": 2,
+      "h": -3,
+      "X": 1,
+      "chi6": 1,
+      "dimension": 2,
+      "I8_per_parent_copy": "L**2/12 - 9*L*h**2/2 + 3*L*h*x + L*p1/24 - L*x**2/2 + 27*h**4/4 - 9*h**3*x - 3*h**2*p1/8 + 9*h**2*x**2/2 + h*p1*x/4 - h*x**3 + 7*p1**2/2880 - p1*x**2/24 - p2/720 + x**4/12",
+      "4D_net_multiplets_three_copies": 3
+    },
+    {
+      "name": "E",
+      "color": 1,
+      "weak": 1,
+      "h": -6,
+      "X": 1,
+      "chi6": -1,
+      "dimension": 1,
+      "I8_per_parent_copy": "-54*h**4 + 36*h**3*x + 3*h**2*p1/4 - 9*h**2*x**2 - h*p1*x/4 + h*x**3 - 7*p1**2/5760 + p1*x**2/48 + p2/1440 - x**4/24",
+      "4D_net_multiplets_three_copies": -3
+    },
+    {
+      "name": "N",
+      "color": 1,
+      "weak": 1,
+      "h": 0,
+      "X": 1,
+      "chi6": -1,
+      "dimension": 1,
+      "I8_per_parent_copy": "-7*p1**2/5760 + p1*x**2/48 + p2/1440 - x**4/24",
+      "4D_net_multiplets_three_copies": -3
+    }
+  ],
+  "Higgs": {
+    "color": 1,
+    "weak": 2,
+    "h": 3,
+    "X": 0
+  },
+  "internal_X_flux": 1,
+  "I8": "3*C*L + 27*C*h**2 + L**2 - 18*L*h**2 + L*p1/2 - 6*L*x**2 - 243*h**4 + 9*h**2*p1/2 - 54*h**2*x**2",
+  "I6": "-12*L*x - 108*h**2*x",
+  "sources": {
+    "X4": "L + 9*h**2",
+    "Y4": "3*C + L - 27*h**2 + p1/2 - 6*x**2"
+  },
+  "tensor_lattice": {
+    "Omega": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "signature": [
+      1,
+      1
+    ],
+    "a_gravity": [
+      "0",
+      "2"
+    ],
+    "b_hh": [
+      "18",
+      "-54"
+    ],
+    "b_xx": [
+      "0",
+      "-12"
+    ],
+    "charge_pairing_matrix": [
+      [
+        "0",
+        "3",
+        "0",
+        "54",
+        "0"
+      ],
+      [
+        "3",
+        "2",
+        "1",
+        "-36",
+        "-12"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "18",
+        "0"
+      ],
+      [
+        "54",
+        "-36",
+        "18",
+        "-1944",
+        "-216"
+      ],
+      [
+        "0",
+        "-12",
+        "0",
+        "-216",
+        "0"
+      ]
+    ],
+    "scope": "Integral ordinary Chern classes and p1/2 on spin manifolds, even unimodular U lattice and characteristic vector; not proof for a quotient gauge global form"
+  },
+  "BF": {
+    "level_X": -12,
+    "hypercharge_level": 0,
+    "classical_finite_component": "Z12"
+  },
+  "four_dimensional_left_ledger": [
+    {
+      "field": "Q",
+      "multiplets": 3,
+      "dimension": 6,
+      "h": 1,
+      "X": 1,
+      "Z12": 1
+    },
+    {
+      "field": "U_conjugate",
+      "multiplets": 3,
+      "dimension": 3,
+      "h": -4,
+      "X": -1,
+      "Z12": 11
+    },
+    {
+      "field": "D_conjugate",
+      "multiplets": 3,
+      "dimension": 3,
+      "h": 2,
+      "X": -1,
+      "Z12": 11
+    },
+    {
+      "field": "Lepton",
+      "multiplets": 3,
+      "dimension": 2,
+      "h": -3,
+      "X": 1,
+      "Z12": 1
+    },
+    {
+      "field": "E_conjugate",
+      "multiplets": 3,
+      "dimension": 1,
+      "h": 6,
+      "X": -1,
+      "Z12": 11
+    },
+    {
+      "field": "N_conjugate",
+      "multiplets": 3,
+      "dimension": 1,
+      "h": 0,
+      "X": -1,
+      "Z12": 11
+    }
+  ],
+  "discrete_traces": {
+    "S1": 0,
+    "S3": 0,
+    "h2X": -216,
+    "hX2": 0,
+    "weak_instanton_X": 12,
+    "color_instanton_X": 0,
+    "scope": "Displayed pure Spin x Z12 and mixed instanton/trace tests pass; full global theory still requires construction"
+  },
+  "explicit_classical_AdS_control": {
+    "M6_power4": 1,
+    "gX6_squared": "1/1152",
+    "mu6_squared": -1,
+    "lambda6": 1,
+    "Lambda6": "-19/4",
+    "HdagH": "1/2",
+    "U": -5,
+    "beta": 1,
+    "R_squared": 1,
+    "AdS4_radius_squared": 1,
+    "radion_mass_squared": 8,
+    "radial_Higgs_mass_squared": 2
+  },
+  "action": {
+    "H3": "dB + omega3(X4); delta B = -omega2_1(X4)",
+    "topological": "2*pi integral B wedge Y4 in normalized B-period-one units; cancels a descent choice I7=omega3(X4)Y4",
+    "kinetic": "Einstein-Hilbert + positive Yang-Mills + positive ordinary nonchiral B kinetic + charged Weyl kinetic + scalar kinetic",
+    "potential": "V6=mu6^2 HdagH + lambda6 (HdagH)^2, lambda6>0; parameters are new inputs",
+    "Yukawas": [
+      "bar Q Y6u Htilde U",
+      "bar Q Y6d H D",
+      "bar L Y6e H E",
+      "bar L Y6nu Htilde N"
+    ],
+    "dimensional_reduction": {
+      "y4": "Y6/sqrt(Area)",
+      "lambda4": "lambda6/Area",
+      "mu4_squared": "mu6_squared in fixed product frame",
+      "fermion_mass": "v4 Y4/sqrt(2); arbitrary parent flavor matrices are inputs, not MTFT predictions"
+    }
+  },
+  "limitations": [
+    "Three copies are an input; unit flux supplies one mode per copy once the explicit degree-one bundle proof is used.",
+    "No bare or axion-dressed Majorana neutrino mass while the residual discrete symmetry is preserved.",
+    "The ordinary B field also has26 harmonic 4D vectors before interactions/projections; one of its two scalar modes participates in the X St\u00fcckelberg mechanism.",
+    "An Einstein action and its scales are supplied rather than derived.",
+    "The unwarped hyperbolic background is AdS, not a realistic Minkowski or dS vacuum."
+  ],
+  "checks": [
+    "sector flux pushforward Q",
+    "sector flux pushforward U",
+    "sector flux pushforward D",
+    "sector flux pushforward Lepton",
+    "sector flux pushforward E",
+    "sector flux pushforward N",
+    "full independent C3X factorization",
+    "irreducible color cubic cancels",
+    "irreducible gravitational anomaly cancels",
+    "pure gravitational anomaly cancels",
+    "entire four-dimensional anomaly is pushed forward",
+    "four-dimensional BF anomaly factor",
+    "hypercharge-only 4D anomaly vanishes",
+    "six-dimensional signed representation dimension",
+    "six-dimensional positive weak doublet count",
+    "conventional SU2 six-dimensional congruence",
+    "six-dimensional SU3 signed fundamental count",
+    "hyperbolic tensor factorization",
+    "unimodular tensor lattice determinant",
+    "source coefficient reconstruction",
+    "all gauge source coefficients integral",
+    "even lattice norm",
+    "characteristic gravitational vector",
+    "all displayed string charge pairings integral",
+    "electric Bianchi source has no internal X transgression",
+    "magnetic/BF source carries charge twelve",
+    "residual Smith factor",
+    "linear discrete fermion trace",
+    "cubic discrete fermion trace",
+    "pure Spin x Z12 cubic congruence",
+    "pure Spin x Z12 linear congruence",
+    "mixed h squared X trace",
+    "mixed h X squared trace",
+    "weak instanton X charge",
+    "color instanton X charge",
+    "weak instanton respects residual Z12",
+    "integer hypercharge mixed trace divisible by12",
+    "scalar Yukawa charges up",
+    "scalar Yukawa charges down",
+    "scalar Yukawa charges charged_lepton",
+    "scalar Yukawa charges Dirac_neutrino",
+    "elementary Higgs degree in X flux",
+    "opposite-chirality scalar projector is nonzero",
+    "opposite-chirality scalar projector rank",
+    "QQQL_X nontrivial modulo12",
+    "ucucdcec_X nontrivial modulo12",
+    "Majorana_nucnuc_X nontrivial modulo12",
+    "cube of QQQL neutral modulo12",
+    "6D scalar dimension",
+    "6D fermion dimension",
+    "6D Yukawa coefficient dimension",
+    "6D scalar quartic coefficient dimension",
+    "constant scalar quartic reduction",
+    "closed-curve tensor vector count",
+    "Higgs stationary norm",
+    "Higgs minimum potential",
+    "chosen scalar vacuum norm",
+    "chosen total constant potential",
+    "chosen flux coefficient",
+    "chosen internal Einstein curvature",
+    "chosen external Einstein curvature",
+    "chosen radial Higgs squared mass"
+  ],
+  "summary": {
+    "passed": 62,
+    "failed": 0
+  }
+}

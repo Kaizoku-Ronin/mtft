@@ -1,0 +1,488 @@
+{
+  "investigation": "AXG-03 tensor-factor necessary conditions",
+  "source_sha256": "36946ea308dc9ad5d5c86aa76a7aa168bac74327f2893319299f0cb9b39da937",
+  "class": "EXACT conditional algebra; not an anomaly-free parent construction",
+  "quotient_substitution": {
+    "f_c": "x",
+    "f_L": "0",
+    "f_a": "y",
+    "f_b": "z",
+    "f_d": "-3*x + y + z"
+  },
+  "quotient_I8": "c2_color**2/4 + c2_color*c2_weak + c2_color*p1/8 + 6*c2_color*x**2 - 3*c2_color*x*y - 3*c2_color*x*z + c2_color*y*z + c2_weak**2/2 + c2_weak*p1/4 - 6*c2_weak*x**2 + 3*c2_weak*x*y + 3*c2_weak*x*z - c2_weak*y**2 - c2_weak*y*z - c2_weak*z**2 + 7*p1**2/320 - p1*y**2/8 + p1*y*z/12 - p1*z**2/8 - p2/80 - 18*x**4 + 18*x**3*y + 18*x**3*z - 9*x**2*y**2/2 - 15*x**2*y*z - 9*x**2*z**2/2 + 3*x*y**2*z + 3*x*y*z**2 + y**4/4 - y**3*z/3 - y*z**3/3 + z**4/4",
+  "neutral_control": {
+    "extra_signed_complex_Weyls": -18,
+    "I8": "c2_color**2/4 + c2_color*c2_weak + c2_color*p1/8 + 6*c2_color*x**2 - 3*c2_color*x*y - 3*c2_color*x*z + c2_color*y*z + c2_weak**2/2 + c2_weak*p1/4 - 6*c2_weak*x**2 + 3*c2_weak*x*y + 3*c2_weak*x*z - c2_weak*y**2 - c2_weak*y*z - c2_weak*z**2 - p1*y**2/8 + p1*y*z/12 - p1*z**2/8 - 18*x**4 + 18*x**3*y + 18*x**3*z - 9*x**2*y**2/2 - 15*x**2*y*z - 9*x**2*z**2/2 + 3*x*y**2*z + 3*x*y*z**2 + y**4/4 - y**3*z/3 - y*z**3/3 + z**4/4"
+  },
+  "tensor_backreaction": {
+    "W": "7*p1**2/5760 - p2/1440",
+    "S": "-p1**2/360 + 7*p2/360",
+    "n_definition": "extra signed neutral complex Weyl count",
+    "t_definition": "number of real chiral tensors with anomaly +S minus number with anomaly -S",
+    "p2_cancellation": "18+n=28t",
+    "p1_square_coefficient": "d=t/32",
+    "scope": "no gravitinos or additional charged chiral fields; such fields alter these equations"
+  },
+  "pure_block": {
+    "basis": [
+      "c2_color",
+      "c2_weak",
+      "p1"
+    ],
+    "matrix": [
+      [
+        "1/4",
+        "1/2",
+        "1/16"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "1/8"
+      ],
+      [
+        "1/16",
+        "1/8",
+        "0"
+      ]
+    ],
+    "LDL_L": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "1",
+        "0"
+      ],
+      [
+        "1/4",
+        "0",
+        "1"
+      ]
+    ],
+    "LDL_D": [
+      [
+        "1/4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/64"
+      ]
+    ],
+    "inertia": [
+      1,
+      2,
+      0
+    ]
+  },
+  "one_direction_block": {
+    "basis": [
+      "c2_color",
+      "c2_weak",
+      "p1",
+      "x^2"
+    ],
+    "matrix": [
+      [
+        "1/4",
+        "1/2",
+        "1/16",
+        "3"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "1/8",
+        "-3"
+      ],
+      [
+        "1/16",
+        "1/8",
+        "d",
+        "0"
+      ],
+      [
+        "3",
+        "-3",
+        "0",
+        "-18"
+      ]
+    ],
+    "neutral_control_LDL_L": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1/4",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "12",
+        "18",
+        "48",
+        "1"
+      ]
+    ],
+    "neutral_control_LDL_D": [
+      [
+        "1/4",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/64",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "144"
+      ]
+    ],
+    "neutral_control_inertia": [
+      2,
+      2,
+      0
+    ],
+    "determinant": "-9*(48*d - 1)/32",
+    "Schur_complement": [
+      [
+        "d - 1/64",
+        "-3/4"
+      ],
+      [
+        "-3/4",
+        "108"
+      ]
+    ],
+    "inertia_cases": {
+      "d<1/48": [
+        2,
+        2,
+        0
+      ],
+      "d=1/48": [
+        2,
+        1,
+        1
+      ],
+      "d>1/48": [
+        3,
+        1,
+        0
+      ]
+    },
+    "tensor_integer_cases": {
+      "t<=0": [
+        2,
+        2,
+        0
+      ],
+      "t>=1": [
+        3,
+        1,
+        0
+      ]
+    },
+    "ordinary_nonchiral_product_bound": "one product X4*Y4 has rank <=2 and at most one eigenvalue of either sign"
+  },
+  "fixed_gauge_block": {
+    "basis": [
+      "c2_color",
+      "c2_weak",
+      "x^2"
+    ],
+    "matrix": [
+      [
+        "1/4",
+        "1/2",
+        "3"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "-3"
+      ],
+      [
+        "3",
+        "-3",
+        "-18"
+      ]
+    ],
+    "LDL_L": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "1",
+        "0"
+      ],
+      [
+        "12",
+        "18",
+        "1"
+      ]
+    ],
+    "LDL_D": [
+      [
+        "1/4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "108"
+      ]
+    ],
+    "inertia": [
+      2,
+      1,
+      0
+    ]
+  },
+  "full_formal_factorization": {
+    "basis": [
+      "c2_color",
+      "c2_weak",
+      "p1",
+      "x**2",
+      "y**2",
+      "z**2",
+      "x*y",
+      "x*z",
+      "y*z"
+    ],
+    "matrix": [
+      [
+        "1/4",
+        "1/2",
+        "1/16",
+        "3",
+        "0",
+        "0",
+        "-3/2",
+        "-3/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "1/8",
+        "-3",
+        "-1/2",
+        "-1/2",
+        "3/2",
+        "3/2",
+        "-1/2"
+      ],
+      [
+        "1/16",
+        "1/8",
+        "0",
+        "0",
+        "-1/16",
+        "-1/16",
+        "0",
+        "0",
+        "1/24"
+      ],
+      [
+        "3",
+        "-3",
+        "0",
+        "-18",
+        "-3/2",
+        "-3/2",
+        "9",
+        "9",
+        "-15/4"
+      ],
+      [
+        "0",
+        "-1/2",
+        "-1/16",
+        "-3/2",
+        "1/4",
+        "0",
+        "0",
+        "3/4",
+        "-1/6"
+      ],
+      [
+        "0",
+        "-1/2",
+        "-1/16",
+        "-3/2",
+        "0",
+        "1/4",
+        "3/4",
+        "0",
+        "-1/6"
+      ],
+      [
+        "-3/2",
+        "3/2",
+        "0",
+        "9",
+        "0",
+        "3/4",
+        "-3/2",
+        "-15/4",
+        "3/4"
+      ],
+      [
+        "-3/2",
+        "3/2",
+        "0",
+        "9",
+        "3/4",
+        "0",
+        "-15/4",
+        "-3/2",
+        "3/4"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "1/24",
+        "-15/4",
+        "-1/6",
+        "-1/6",
+        "3/4",
+        "3/4",
+        "0"
+      ]
+    ],
+    "quartic": "-18*x**4 + 18*x**3*y + 18*x**3*z - 9*x**2*y**2/2 - 15*x**2*y*z - 9*x**2*z**2/2 + 3*x*y**2*z + 3*x*y*z**2 + y**4/4 - y**3*z/3 - y*z**3/3 + z**4/4",
+    "square_completion_ell": [
+      "3*x**2 - 3*x*y/2 - 3*x*z/2 + y*z/2",
+      "-3*x**2 + 3*x*y/2 + 3*x*z/2 - y**2/2 - y*z/2 - z**2/2",
+      "-y**2/16 + y*z/24 - z**2/16"
+    ],
+    "square_completion_residual": "144*x**4 - 144*x**3*y - 144*x**3*z + 60*x**2*y**2 + 116*x**2*y*z + 60*x**2*z**2 - 12*x*y**3 - 34*x*y**2*z - 34*x*y*z**2 - 12*x*z**3 + y**4 + 10*y**3*z/3 + 49*y**2*z**2/9 + 10*y*z**3/3 + z**4",
+    "positive_residual_witness": {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "value": 144
+    },
+    "Gram_ambiguity_dimension": 6,
+    "scope": "one rational algebraic presentation; no kinetic, lattice or global consistency claim"
+  },
+  "conclusions": [
+    "Scalar cancellation by k_delta cannot change this quotient polynomial.",
+    "Irreducible p2 must be cancelled by actual chiral spectrum before ordinary tensor factorization.",
+    "The neutral-18 control requires at least two tensor-pairing directions of each sign and at least rank four.",
+    "The fixed gauge restriction always requires at least two positive directions in the displayed I8 convention.",
+    "If imposing I8=positive_constant*Omega(X4,X4) with Omega signature (1,T), neutral changes alone cannot suffice.",
+    "With the opposite overall tensor sign, d>=1/48 is necessary on this restriction, not sufficient for the full polynomial.",
+    "The conventional (1,0) hyperino convention is positive W here; Park-Taylor use its overall negative and -Omega.",
+    "Additional charged gauginos or charged matter alter the gauge block; no theorem here excludes those altered spectra.",
+    "Formal indefinite factorization does not establish positive tensor/gauge kinetic energy, a quantized self-dual charge lattice, global anomalies, supersymmetric multiplets or a stabilized vacuum."
+  ],
+  "references": [
+    {
+      "url": "https://arxiv.org/abs/1110.5916",
+      "sections": "2.2-2.4, 2.7",
+      "use": "generalized scalar versus ordinary tensor cancellation; (1,T) pairing and separate kinetic-positivity requirements"
+    },
+    {
+      "url": "https://arxiv.org/abs/1110.4639",
+      "sections": "2.2, equation 2.2",
+      "use": "real self-dual field local anomaly is L/8; global anomaly is a separate condition"
+    }
+  ],
+  "checks": [
+    "rebuild entire AXG02 polynomial from Chern characters",
+    "rebuild signed chiral representation dimension",
+    "restriction lies in kernel of native shift",
+    "six-form color term is killed by quotient",
+    "residual irreducible gravitational anomaly",
+    "cd-flipped net Weyl gravitational dimension",
+    "18 negative neutral Weyls remove both pure gravity terms",
+    "tensor-aware p2 equation",
+    "tensor-aware p2 cancellation",
+    "tensor-aware remaining p1 square",
+    "tensor family is one-parameter pure-gravity shift",
+    "fixed pure SU3 SU2 gravity block",
+    "pure-block exact LDL reconstruction",
+    "pure-block LDL pivots",
+    "pure-block determinant",
+    "one ordinary nonchiral tensor product cannot have rank three",
+    "one-direction restriction has only even x powers",
+    "rank-four restriction reconstructs polynomial",
+    "rank-four determinant",
+    "neutral-control exact LDL reconstruction",
+    "neutral-control inertia certificate pivots",
+    "gravity-independent gauge block LDL reconstruction",
+    "gauge block requires two positive directions",
+    "gauge block determinant",
+    "Schur complement exact expression",
+    "Schur determinant threshold",
+    "threshold d value",
+    "signed tensor threshold",
+    "singular threshold has rank three",
+    "full square completion identity",
+    "positive Schur residual witness",
+    "quartic monomial has ordinary four-form factorization x**4",
+    "quartic monomial has ordinary four-form factorization x**3*y",
+    "quartic monomial has ordinary four-form factorization x**3*z",
+    "quartic monomial has ordinary four-form factorization x**2*y**2",
+    "quartic monomial has ordinary four-form factorization x**2*y*z",
+    "quartic monomial has ordinary four-form factorization x**2*z**2",
+    "quartic monomial has ordinary four-form factorization x*y**2*z",
+    "quartic monomial has ordinary four-form factorization x*y*z**2",
+    "quartic monomial has ordinary four-form factorization y**4",
+    "quartic monomial has ordinary four-form factorization y**3*z",
+    "quartic monomial has ordinary four-form factorization y*z**3",
+    "quartic monomial has ordinary four-form factorization z**4",
+    "explicit full formal four-form Gram presentation",
+    "quartic coefficient map rank",
+    "quartic Gram ambiguity dimension"
+  ],
+  "summary": {
+    "passed": 46,
+    "failed": 0
+  }
+}

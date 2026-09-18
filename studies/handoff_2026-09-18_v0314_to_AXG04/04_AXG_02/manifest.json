@@ -1,0 +1,76 @@
+{
+  "investigation": "AXG-02",
+  "date": "2026-09-17",
+  "files": [
+    {
+      "path": "SCOPE.md",
+      "sha256": "275b371bac99e75aafc1ded33dbcb6669175b9e2d06ecc0148226432bf92ee45",
+      "bytes": 1358
+    },
+    {
+      "path": "MTFT_AXG02_Report.md",
+      "sha256": "5788550ea74cd2eea0fe944f284ea0bc11aaca3f51b0cb84511d3d7d4bb37649",
+      "bytes": 23578
+    },
+    {
+      "path": "README.md",
+      "sha256": "6d42fc2b51a172a40fb8fe8c84b269dd9232d8e5b19fd288672359144fc1009d",
+      "bytes": 1719
+    },
+    {
+      "path": "parent_anomaly.py",
+      "sha256": "ba8977b0a7c02f4c53d103629f111ca2fd4a179198af699621a331842a89e4b0",
+      "bytes": 7431
+    },
+    {
+      "path": "flux_and_scalar.py",
+      "sha256": "e7e5fe6e3278d488276bb808ade7d78e526c54f8ab27d2e4d7872fc848843960",
+      "bytes": 7400
+    },
+    {
+      "path": "run_all.py",
+      "sha256": "60bf4534f1fc38d8506ec85a9c64db2e0acce491e6a8830f73194c48f8df9232",
+      "bytes": 1279
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2",
+      "bytes": 27
+    },
+    {
+      "path": "parent_anomaly_results.json",
+      "sha256": "36946ea308dc9ad5d5c86aa76a7aa168bac74327f2893319299f0cb9b39da937",
+      "bytes": 10393
+    },
+    {
+      "path": "flux_and_scalar_results.json",
+      "sha256": "833f58df8e71cecbf32dafc48da9191cd550d325408a078b6d97aca175a87e27",
+      "bytes": 4416
+    },
+    {
+      "path": "results_summary.json",
+      "sha256": "5a82b3a754833556a683ef5fbbc299a9292576700b04f7dfb1c63cdb03707504",
+      "bytes": 734
+    },
+    {
+      "path": "input/smflux_v0314.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+      "bytes": 9079
+    },
+    {
+      "path": "input/MTFT_LICENSE.txt",
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2",
+      "bytes": 1067
+    },
+    {
+      "path": "input/SM01_PREREGISTRATION.md",
+      "sha256": "9437345d2679c27d178ad52ec78c8645bb5a67a66955620333ac1ed74e08d693",
+      "bytes": 1553
+    },
+    {
+      "path": "input/REVIEW_V0311_RESPONSE.md",
+      "sha256": "cb92a052c7eda7beb5a1bc769ad0b296024ff6ba32f50763df9574a89c09f26a",
+      "bytes": 4259
+    }
+  ]
+}

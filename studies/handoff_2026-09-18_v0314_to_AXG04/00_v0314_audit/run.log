@@ -1,0 +1,53 @@
+{
+  "status": "PASS: exact identities and declared numerical gates verified",
+  "groups": {
+    "section": {
+      "order": 8,
+      "element_order_counts": {
+        "1": 1,
+        "2": 5,
+        "4": 2
+      }
+    },
+    "theta": {
+      "order": 8,
+      "element_order_counts": {
+        "1": 1,
+        "4": 6,
+        "2": 1
+      }
+    }
+  },
+  "fixed_points": {
+    "W11": {
+      "trace_on_holomorphic_differentials": 1,
+      "quotient_genus": 7,
+      "fixed_points": 0
+    },
+    "W13": {
+      "trace_on_holomorphic_differentials": -1,
+      "quotient_genus": 6,
+      "fixed_points": 4
+    },
+    "W143": {
+      "trace_on_holomorphic_differentials": -9,
+      "quotient_genus": 2,
+      "fixed_points": 20
+    }
+  },
+  "diagnostic": {
+    "M2_up": {
+      "relative_reconstruction_error": 0.0,
+      "basis_gate_passed": true,
+      "median_m1_m3": 0.19051436591792195,
+      "median_m2_m3": 0.5575988188037484
+    },
+    "M2_down": {
+      "relative_reconstruction_error": 0.0,
+      "basis_gate_passed": true,
+      "median_m1_m3": 0.26073383563376684,
+      "median_m2_m3": 0.6191711302429972
+    }
+  },
+  "output": "/workspace/scratch/b8f94377c065/mtft_v0314_review/results.json"
+}

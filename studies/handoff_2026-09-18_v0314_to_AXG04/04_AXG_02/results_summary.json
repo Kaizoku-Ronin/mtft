@@ -1,0 +1,26 @@
+{
+  "investigation": "AXG-02",
+  "classification": "EXACT conditional algebra and necessary constraints",
+  "subaudits": [
+    {
+      "study": "parent_anomaly",
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "study": "flux_and_scalar",
+      "passed": 37,
+      "failed": 0
+    }
+  ],
+  "total_passed": 84,
+  "total_failed": 0,
+  "runtime": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "input_sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+  "archive_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "interpretation": "Checks establish the displayed conditional algebra, not a completed parent, vacuum, or measured prediction."
+}

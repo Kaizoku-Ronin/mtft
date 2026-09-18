@@ -1,0 +1,27 @@
+{
+  "investigation": "MTFT AXG-03",
+  "date": "2026-09-17",
+  "passed": 149,
+  "failed": 0,
+  "source_archive_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "files": {
+    "MTFT_AXG03_Report.md": "73bc19c18710ec0b118ead40754f81bcb01cab1bafb227bd1d2dab3e94003687",
+    "README.md": "3931abaaa03f9eb3df8e296da2bae4bc07be4b48e8c3abfab8081a5671091f32",
+    "SCOPE.md": "4a412f709368715e74e46225c68370b6860f5084debec87de1fee657da74a7e2",
+    "discrete_operator_audit.py": "a5445d00a1196b9c7664a252a6f169838575be522fa537761a82679adc58082f",
+    "discrete_operator_results.json": "c6463c989d03aa9dea7bbec355ed5252f750565eb67ef5e600a2252cdbb8f256",
+    "higgs_parent_audit.py": "f97190a30ddc0d7dd916a6d9f0e92960f58900161cb4d57b7ad9c44271ca7eea",
+    "higgs_parent_results.json": "e061b87c0733c0fc1e1d3ad5addd00e385b70254d2494d8f079260bbbf455616",
+    "input/MTFT_LICENSE.txt": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2",
+    "input/axg02_parent_anomaly_results.json": "36946ea308dc9ad5d5c86aa76a7aa168bac74327f2893319299f0cb9b39da937",
+    "input/smflux_v0314.py": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+    "requirements.txt": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2",
+    "results_summary.json": "0264bb308ad671170869e1af15775038ce1395020d74825cebfc304a9d2f2e6b",
+    "run_all.py": "f21c17b762832d1cbe700540a395239731318a347c410b0a7ad844e6a754ab40",
+    "tensor_factor_audit.py": "b0e68755c6b8913790fc013cc34954450beea09845f54c27e4b2db7b9078f255",
+    "tensor_factor_results.json": "b7c17e9bdc8e4777ea2fc01fa977bcc9fc51195825f95b13b73d440a0ec45068",
+    "tensor_flux_audit.py": "7322131df587fa9496dfd9c28eb6fb2f1008ce433d574babcd183750c84e7914",
+    "tensor_flux_results.json": "01090bd2566027081d7a4e721a333d35cede5f14aad51c9425869cf70578e428"
+  },
+  "note": "Hashes cover all delivered files except this manifest; intermediate bytecode is excluded."
+}

@@ -581,6 +581,57 @@ for _d in V0150_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 
+
+# ── v0.32.0 registrations: surface engines, research gates, corrections ──
+V0320_LEGEND = (
+    dict(name="al_lift_on_S0", tier="1", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="Atkin–Lehner lift to the half-forms H^0(S0), section normalisation: A^2 = +1, B^2 = -1, [A,B] = -1 (D8).",
+         example="mtft.surface.arithspin.al_lift_on_S0()", upstream=("X0_143",), ref="TRI-02; docs/SM/REVIEW_V0311_RESPONSE.md"),
+    dict(name="theta_compatible_al_lift", tier="1", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="CC-27: the lift compatible with the square map S0^2 -> K (omega = eta(t)^2 eta(11t)^2 dt, W11* omega = -omega, "
+                "W13* omega = 13 u^2 omega) is A~ = iA, B~ = B: all squares -1, Q8.  Sym^2 intertwiner is the gate.",
+         example="mtft.surface.arithspin.check_theta_square_map()", upstream=("al_lift_on_S0",), ref="handoff audit §3; tests/test_surface_cc27_q8.py"),
+    dict(name="spin_circle_cohomology", tier="1", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="Rank-one local systems on the spin circle bundle (Euler 12) of X0(143): fiber holonomy != 1 => acyclic; "
+                "degrees +-3, +-6 lose every bulk mode (SC7-01 physical gate FAIL, computation PASS).",
+         example="mtft.surface.spin_circle.m1_sector_cohomology(3)", upstream=("genus_13",), ref="studies/handoff_2026-09-18_v0314_to_AXG04/01_SC7_01"),
+    dict(name="crt_dessin_143", tier="0", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT",
+         nature="P^1(Z/143) = P^1(F11) x P^1(F13) (idempotents 78, 66); T-cycles give the cusp widths 1, 11, 13, 143; 84 edges, 56 triangles, genus 13.",
+         example="mtft.surface.crt_dessin.dessin()", upstream=("index_168",), ref="HOPF-02 §§1–3"),
+    dict(name="hodge_block_projectors", tier="1", kind="identity", primitives=("III", "V"), tag="Pr", exactness="EXACT",
+         nature="Rational projectors P12 (sextic block) and P14 (complement) of T2 on H_1 by Bezout; S(H^1) = S^11 * S^13 = S^25; "
+                "quartic block admits no T2-commuting quaternionic structure (real eigenspaces of dimension 2).",
+         example="mtft.surface.hodge_blocks.coprime_block_projectors()", upstream=("dim_S2_11",), ref="HOPF-02 §§2, 7"),
+    dict(name="stack_anomaly_polynomial", tier="2", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT",
+         nature="Cubic/gravity/mixed anomaly polynomials of a line-flux stack model; M1: P = r1 Q1 + r2 Q2, kernel of the primitive "
+                "shift matrix K = span{phase, Y, B-L}, SNF (1,1); nu^c nu^c not integer-dressable (bare Majorana forbidden).",
+         example="mtft.research.anomalies.anomaly_polynomials(...)", upstream=("X0_143",), ref="AXG-01 §3; docs/SM/WAVE_B_ENGINES.md"),
+    dict(name="mode_operator_certificates", tier="2", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="Index vs cohomology on S0 twists: O(P) -> (2,1) (mirror pair), O(P+Q-R) -> (1,0) (pure); M1 family h^0 = 3 pure; "
+                "elementary-scalar Bochner bound 2 pi |d|/A (= 1/4 for d = -6: the magnetic-mesh Landau value).",
+         example="mtft.research.mode_operators.s0_twist_cohomology([i/sqrt13, -i/sqrt13], 1)", upstream=("al_lift_on_S0",), ref="AXG-03 §6, AXG-04 §3; KKT01/02"),
+    dict(name="route2_gate_battery", tier="11", kind="standard", primitives=("II", "V"), tag="Cert", exactness="EXACT gates, OPEN physics",
+         nature="Gate 4 route 2: one parent x three internal modes must pass the C3X gates (local factorization, integral lattice, "
+                "Spin x Z_n, bordism, 6D chirality, background).  M1 today: 4D anomaly/lattice/flux/modes PASS; Z3, 6D lift, "
+                "chirality, radius FAIL/OPEN.  Every gate returns a witness; no viable boolean.",
+         example="mtft.research.pipeline.m1_gate_report()", upstream=("stack_anomaly_polynomial", "mode_operator_certificates"), ref="docs/SM/WAVE_C_GATES.md"),
+    dict(name="c3x_benchmark", tier="11", kind="standard", primitives=("II",), tag="Cert", exactness="EXACT gates; families INPUT",
+         nature="AXG-04 candidate SU3 x SU2 x U1_h x U1_X: I8 = (W + 9h^2)(3C + W + eta - 27h^2 - 6x^2); even unimodular Omega; "
+                "Omega_7^Spin(BG) = 0 (ranks 2, 7); AdS control lambda4 = -1/R^2 - 2 rho_F/M.  Benchmark record, not the target.",
+         example="mtft.research.pipeline.c3x_gate_report()", upstream=("route2_gate_battery",), ref="studies/handoff_2026-09-18_v0314_to_AXG04/06_AXG_04"),
+    dict(name="cc26_normalisation", tier="11", kind="standard", primitives=("V",), tag="Cert", exactness="EXACT identity; DIAGNOSTIC numbers",
+         nature="Kinetic normalisation is A = L^-1 with A N A^dag = I; the v0.30.6–0.31.1 transpose produced spurious hierarchies. "
+                "Corrected M1/M2 ratios are O(1) (anarchic), confirmed by kinetic-orthonormal FEM eigenmodes to 1–3%.",
+         example="mtft.surface.hym.normalisation_is_basis_invariant(...)", upstream=("X0_143",), ref="docs/SM/CC26_NORMALISATION_RETRACTION.md; KKT02"),
+    dict(name="magnetic_bochner_spectrum", tier="4", kind="ensemble", primitives=("V",), tag="Cert", exactness="DIAGNOSTIC (Landau levels EXACT)",
+         nature="P1 Peierls FEM for the Bochner Laplacian of O(D) in the compact metric; holomorphic sections appear as a Landau level "
+                "2 pi deg/A with multiplicity h^0 (Riemann–Roch realised spectrally); M1 family tower first excitation 0.023.",
+         example="mtft.surface.magnetic.m1_towers()", upstream=("genus_13",), ref="docs/SM/KKT01_MAGNETIC_TOWERS_REPORT.md"),
+)
+for _d in V0320_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
 # ═══════════════════════════════════════════════════════════════
 #  CLI
 # ═══════════════════════════════════════════════════════════════

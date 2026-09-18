@@ -1,0 +1,34 @@
+{
+  "investigation": "AXG-04",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "audits": {
+    "chiral_parent": {
+      "passed": 84,
+      "failed": 0
+    },
+    "charged_action": {
+      "passed": 62,
+      "failed": 0
+    },
+    "higgs_action": {
+      "passed": 68,
+      "failed": 0
+    },
+    "gravity_background": {
+      "passed": 47,
+      "failed": 0
+    },
+    "larger_parent": {
+      "passed": 31,
+      "failed": 0
+    },
+    "global_bordism": {
+      "passed": 30,
+      "failed": 0
+    }
+  },
+  "passed": 322,
+  "failed": 0,
+  "meaning": "Exact conditional algebra and analytic-consequence checks, not experimental validation, a global GS construction, UV completion, or a realistic vacuum."
+}

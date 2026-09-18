@@ -1,0 +1,294 @@
+{
+  "date": "2026-09-17",
+  "class": "EXACT charge algebra; no Wilson coefficient prediction",
+  "conventions": "a -> a-K lambda; a has period 2pi; e^{i n.a} O has charge q_O-K^T n",
+  "stack_order": [
+    "c",
+    "L",
+    "a",
+    "b",
+    "d"
+  ],
+  "K": [
+    [
+      "0",
+      "-2",
+      "1",
+      "1",
+      "0"
+    ],
+    [
+      "3",
+      "-4",
+      "0",
+      "0",
+      "1"
+    ]
+  ],
+  "field_charges": {
+    "Q": [
+      "1",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "u_c": [
+      "-1",
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    "d_c": [
+      "-1",
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    "L": [
+      "0",
+      "-1",
+      "0",
+      "0",
+      "1"
+    ],
+    "e_c": [
+      "0",
+      "0",
+      "0",
+      "1",
+      "-1"
+    ],
+    "nu_c": [
+      "0",
+      "0",
+      "1",
+      "0",
+      "-1"
+    ],
+    "Hu": [
+      "0",
+      "1",
+      "-1",
+      "0",
+      "0"
+    ],
+    "Hd": [
+      "0",
+      "1",
+      "0",
+      "-1",
+      "0"
+    ]
+  },
+  "operators": {
+    "up_Yukawa": {
+      "charge": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": null
+    },
+    "down_Yukawa": {
+      "charge": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": null
+    },
+    "lepton_Yukawa": {
+      "charge": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": null
+    },
+    "neutrino_Dirac": {
+      "charge": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": null
+    },
+    "Hu_Hd": {
+      "charge": [
+        "0",
+        "2",
+        "-1",
+        "-1",
+        "0"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": [
+        "-1",
+        "0"
+      ]
+    },
+    "QQQL": {
+      "charge": [
+        "3",
+        "-4",
+        "0",
+        "0",
+        "1"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": [
+        "0",
+        "1"
+      ]
+    },
+    "uc_uc_dc_ec": {
+      "charge": [
+        "-3",
+        "0",
+        "2",
+        "2",
+        "-1"
+      ],
+      "Y": "0",
+      "B_minus_L": "0",
+      "integer_axion_exponent": [
+        "2",
+        "-1"
+      ]
+    },
+    "nu_c_nu_c": {
+      "charge": [
+        "0",
+        "0",
+        "2",
+        "0",
+        "-2"
+      ],
+      "Y": "0",
+      "B_minus_L": "2",
+      "integer_axion_exponent": null
+    }
+  },
+  "characters": [
+    "(det U_L)^(-1) z_a z_b",
+    "(det U_c) (det U_L)^(-2) z_d"
+  ],
+  "interpretation": {
+    "Hu_Hd": "B_ij e^{-i a1} Hu_i dot Hd_j + h.c. allowed; B_ij unspecified",
+    "QQQL": "e^{i a2} QQQL / Lambda^2 allowed as four-fermion operator if a coefficient is generated",
+    "uc_uc_dc_ec": "e^{i(2a1-a2)} uc uc dc ec / Lambda^2 allowed if generated",
+    "nu_c_nu_c": "not made invariant by these axions while B-L unbroken",
+    "supersymmetric_variant": "if chiral T=s+i a exists, mu_ij e^{-T1} Hu_i dot Hd_j is gauge invariant; SUSY/Kahler/holomorphic coefficients not derived"
+  },
+  "checks": [
+    {
+      "name": "up_Yukawa neutral",
+      "passed": true
+    },
+    {
+      "name": "down_Yukawa neutral",
+      "passed": true
+    },
+    {
+      "name": "lepton_Yukawa neutral",
+      "passed": true
+    },
+    {
+      "name": "neutrino_Dirac neutral",
+      "passed": true
+    },
+    {
+      "name": "Hu_Hd axion dressing",
+      "passed": true
+    },
+    {
+      "name": "Hu_Hd hypercharge zero",
+      "passed": true
+    },
+    {
+      "name": "Hu_Hd B-L zero",
+      "passed": true
+    },
+    {
+      "name": "QQQL axion dressing",
+      "passed": true
+    },
+    {
+      "name": "QQQL hypercharge zero",
+      "passed": true
+    },
+    {
+      "name": "QQQL B-L zero",
+      "passed": true
+    },
+    {
+      "name": "uc_uc_dc_ec axion dressing",
+      "passed": true
+    },
+    {
+      "name": "uc_uc_dc_ec hypercharge zero",
+      "passed": true
+    },
+    {
+      "name": "uc_uc_dc_ec B-L zero",
+      "passed": true
+    },
+    {
+      "name": "Hu hypercharge",
+      "passed": true
+    },
+    {
+      "name": "Hd hypercharge",
+      "passed": true
+    },
+    {
+      "name": "Majorana hypercharge zero",
+      "passed": true
+    },
+    {
+      "name": "Majorana B-L is 2",
+      "passed": true
+    },
+    {
+      "name": "axions cannot cancel B-L",
+      "passed": true
+    },
+    {
+      "name": "Majorana outside axion charge span",
+      "passed": true
+    },
+    {
+      "name": "color center divisibility",
+      "passed": true
+    },
+    {
+      "name": "weak center divisibility",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "passed": 21,
+    "failed": 0
+  }
+}

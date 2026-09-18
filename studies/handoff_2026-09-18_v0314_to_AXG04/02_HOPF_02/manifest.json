@@ -1,0 +1,46 @@
+{
+  "study": "MTFT HOPF-02",
+  "date": "2026-09-17",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "checks_passed": 85,
+  "checks_failed": 0,
+  "source_archive_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "files": [
+    {
+      "path": "PREREGISTRATION.md",
+      "bytes": 1629,
+      "sha256": "44012186c4ea963025542be0ed5ff223a35734291dcde4121e0ed6605ba25bda"
+    },
+    {
+      "path": "investigate.py",
+      "bytes": 14182,
+      "sha256": "4566fb1bc2fa28e289220bf77eb0bfb0b969f0c91a21bb69f9812a8590689be3"
+    },
+    {
+      "path": "input/hecke_v0314.py",
+      "bytes": 14522,
+      "sha256": "6cef89c438be081e6878691f0b57fc36ab2329887901de019a3b60237423fd9d"
+    },
+    {
+      "path": "input/MTFT_LICENSE.txt",
+      "bytes": 1067,
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "path": "results.json",
+      "bytes": 71498,
+      "sha256": "852cfd4e84467230b053944da787b9577bf4fe8441e805f507526c2fef50d573"
+    },
+    {
+      "path": "MTFT_HOPF02_Report.md",
+      "bytes": 22930,
+      "sha256": "349c1b35fc80ecee91a415b959b63bf4343642d2d1d2eb1e8650668a33bf1d2f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1248,
+      "sha256": "8bf6a24f102bcc81bd23c18706db35a7da54b8bc3058a216f9eaef7d95089f35"
+    }
+  ]
+}

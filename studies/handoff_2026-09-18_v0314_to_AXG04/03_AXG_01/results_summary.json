@@ -1,0 +1,30 @@
+{
+  "investigation": "AXG-01",
+  "status": "EXACT symbolic checks; conditional effective-theory interpretation",
+  "subaudits": [
+    {
+      "subaudit": "anomaly",
+      "passed": 106,
+      "failed": 0
+    },
+    {
+      "subaudit": "operator",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "subaudit": "vacuum",
+      "passed": 32,
+      "failed": 0
+    }
+  ],
+  "total_passed": 159,
+  "total_failed": 0,
+  "runtime": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "copied_source_sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+  "meaning": "Algebraic assertions for specified inputs; not experimental validation or a completed parent theory."
+}

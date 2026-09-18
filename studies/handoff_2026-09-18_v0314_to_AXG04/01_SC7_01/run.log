@@ -1,0 +1,8 @@
+Topology: genus 13, e=12; Gysin and presentation/SNF agree.
+Exact Fox scan: trivial_base, all 12 residues match the independent fiber/Gysin calculation.
+Exact Fox scan: unitary_nontrivial_base, all 12 residues match the independent fiber/Gysin calculation.
+Exact Fox scan: complex_nonunitary_base, all 12 residues match the independent fiber/Gysin calculation.
+Symmetry: Q8 square map retained; original M1 breaks W11; no full 7D vacuum symmetry is inferred.
+Gravity: direct Ricci calculation agrees; restricted Einstein-frame scale potential is strictly decreasing.
+FAIL: none of the eight nonzero-degree M1 matter sectors has a massless twisted 7D bulk mode
+Results written to /workspace/scratch/b8f94377c065/mtft_sc7_01/results.json

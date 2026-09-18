@@ -1,0 +1,898 @@
+{
+  "test_id": "AXG-01-ANOMALY",
+  "status": "EXACT algebra, conditional 4D EFT interpretation",
+  "source": {
+    "source": "mtft-0.31.4/src/mtft/surface/smflux.py:M1_STACKS",
+    "package_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+    "copied_source_present": true,
+    "fallback": "M1 constants are recorded literally in this script; no network or package installation needed.",
+    "source_sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+    "M1_STACKS_checked": true
+  },
+  "normalization": {
+    "P": "tr_left_chiral Q(q)^3; fundamental non-Abelian Dynkin index 1/2",
+    "I6": "P(f)/6 - 2 A3(f) c2_3 - 2 A2(f) c2_2 - Agr(f) p1/24",
+    "package_note": "mixed_nonabelian_anomalies returns twice the SU(N)^2 coefficients in anomaly_ledger.",
+    "charges": "stack fundamental charge +1; stack order c,L,a,b,d"
+  },
+  "input": {
+    "N": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "m": [
+      0,
+      -3,
+      3,
+      3,
+      0
+    ],
+    "Y": [
+      [
+        "1/6"
+      ],
+      [
+        "0"
+      ],
+      [
+        "-1/2"
+      ],
+      [
+        "1/2"
+      ],
+      [
+        "-1/2"
+      ]
+    ],
+    "B-L": [
+      [
+        "1/3"
+      ],
+      [
+        "0"
+      ],
+      [
+        "0"
+      ],
+      [
+        "0"
+      ],
+      [
+        "-1"
+      ]
+    ],
+    "phase": [
+      [
+        "1"
+      ],
+      [
+        "1"
+      ],
+      [
+        "1"
+      ],
+      [
+        "1"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "K": [
+      [
+        "0",
+        "-2",
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "3",
+        "-4",
+        "0",
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "cubic": {
+    "expanded": "-48*q_L**3 + 36*q_L**2*q_a + 36*q_L**2*q_b + 54*q_L**2*q_c + 18*q_L**2*q_d - 36*q_L*q_a**2 - 36*q_L*q_b**2 - 54*q_L*q_c**2 - 18*q_L*q_d**2 + 24*q_a**3 - 27*q_a**2*q_c - 9*q_a**2*q_d + 27*q_a*q_c**2 + 9*q_a*q_d**2 + 24*q_b**3 - 27*q_b**2*q_c - 9*q_b**2*q_d + 27*q_b*q_c**2 + 9*q_b*q_d**2",
+    "symmetric_tensor_nonzero_sorted_indices": [
+      {
+        "indices": [
+          "c",
+          "c",
+          "L"
+        ],
+        "value": "-18"
+      },
+      {
+        "indices": [
+          "c",
+          "c",
+          "a"
+        ],
+        "value": "9"
+      },
+      {
+        "indices": [
+          "c",
+          "c",
+          "b"
+        ],
+        "value": "9"
+      },
+      {
+        "indices": [
+          "c",
+          "L",
+          "L"
+        ],
+        "value": "18"
+      },
+      {
+        "indices": [
+          "c",
+          "a",
+          "a"
+        ],
+        "value": "-9"
+      },
+      {
+        "indices": [
+          "c",
+          "b",
+          "b"
+        ],
+        "value": "-9"
+      },
+      {
+        "indices": [
+          "L",
+          "L",
+          "L"
+        ],
+        "value": "-48"
+      },
+      {
+        "indices": [
+          "L",
+          "L",
+          "a"
+        ],
+        "value": "12"
+      },
+      {
+        "indices": [
+          "L",
+          "L",
+          "b"
+        ],
+        "value": "12"
+      },
+      {
+        "indices": [
+          "L",
+          "L",
+          "d"
+        ],
+        "value": "6"
+      },
+      {
+        "indices": [
+          "L",
+          "a",
+          "a"
+        ],
+        "value": "-12"
+      },
+      {
+        "indices": [
+          "L",
+          "b",
+          "b"
+        ],
+        "value": "-12"
+      },
+      {
+        "indices": [
+          "L",
+          "d",
+          "d"
+        ],
+        "value": "-6"
+      },
+      {
+        "indices": [
+          "a",
+          "a",
+          "a"
+        ],
+        "value": "24"
+      },
+      {
+        "indices": [
+          "a",
+          "a",
+          "d"
+        ],
+        "value": "-3"
+      },
+      {
+        "indices": [
+          "a",
+          "d",
+          "d"
+        ],
+        "value": "3"
+      },
+      {
+        "indices": [
+          "b",
+          "b",
+          "b"
+        ],
+        "value": "24"
+      },
+      {
+        "indices": [
+          "b",
+          "b",
+          "d"
+        ],
+        "value": "-3"
+      },
+      {
+        "indices": [
+          "b",
+          "d",
+          "d"
+        ],
+        "value": "3"
+      }
+    ],
+    "difference_coordinates": {
+      "x": "q_c-q_L",
+      "y": "q_a-q_L",
+      "z": "q_b-q_L",
+      "w": "q_d-q_L"
+    },
+    "r1": "y+z",
+    "r2": "3*x+w",
+    "Q1": "24*(y^2-y*z+z^2)+27*x^2+9*w^2",
+    "Q2": "-9*(y^2+z^2)",
+    "Q1_expanded": "60*q_L**2 - 24*q_L*q_a - 24*q_L*q_b - 54*q_L*q_c - 18*q_L*q_d + 24*q_a**2 - 24*q_a*q_b + 24*q_b**2 + 27*q_c**2 + 9*q_d**2",
+    "Q2_expanded": "-18*q_L**2 + 18*q_L*q_a + 18*q_L*q_b - 9*q_a**2 - 9*q_b**2",
+    "Q_symmetric_matrices": [
+      [
+        [
+          "27",
+          "-27",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-27",
+          "60",
+          "-12",
+          "-12",
+          "-9"
+        ],
+        [
+          "0",
+          "-12",
+          "24",
+          "-12",
+          "0"
+        ],
+        [
+          "0",
+          "-12",
+          "-12",
+          "24",
+          "0"
+        ],
+        [
+          "0",
+          "-9",
+          "0",
+          "0",
+          "9"
+        ]
+      ],
+      [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-18",
+          "9",
+          "9",
+          "0"
+        ],
+        [
+          "0",
+          "9",
+          "-9",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "9",
+          "0",
+          "-9",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    ],
+    "factorization": "P=r1*Q1+r2*Q2",
+    "restriction_to_phase_Y_BL": 0
+  },
+  "mixed": {
+    "matrix_rows_SU3_SU2_gravity": [
+      [
+        "0",
+        "-3",
+        "3/2",
+        "3/2",
+        "0"
+      ],
+      [
+        "9/2",
+        "-12",
+        "3",
+        "3",
+        "3/2"
+      ],
+      [
+        "0",
+        "-48",
+        "24",
+        "24",
+        "0"
+      ]
+    ],
+    "SU3": "3*r1/2",
+    "SU2": "3*r1+3*r2/2",
+    "gravity": "24*r1",
+    "SU3_cubic": 0,
+    "SU2_doublets": 24,
+    "SU2_global_parity": 0
+  },
+  "massless_mixed_cubic": {
+    "A(Y,q,q)": "12*q_L*q_a - 12*q_L*q_b - 6*q_L*q_c + 6*q_L*q_d - 12*q_a**2 + 12*q_a*q_c + 12*q_b**2 - 6*q_b*q_c - 6*q_b*q_d",
+    "A(B-L,q,q)": "-12*q_L*q_c + 12*q_L*q_d + 6*q_a*q_c - 6*q_a*q_d + 6*q_b*q_c - 6*q_b*q_d",
+    "A(Y,Y,q)": "7*r1-3*r2/2",
+    "A(Y,B-L,q)": "2*r1",
+    "A(B-L,B-L,q)": "4*r1"
+  },
+  "descent": {
+    "necessity": "Symmetric consistent descent has nonzero massless-current anomalies with massive backgrounds; generalized Chern-Simons/Bardeen counterterms or an equivalent preserving scheme are required.",
+    "local_identity": "I5_symmetric-I5_factorized=dC4, with C4=(1/3)sum_I(KA)_I wedge sum_a A_a partial_a Q_I(f), for unnormalized P.",
+    "normalized_abelian_counterterm": "Divide the displayed C4 by 6 for the P/6 anomaly convention; overall action sign tracks anomaly convention.",
+    "counterterm_coefficients_Ai_wedge_Aj": [
+      {
+        "i": "c",
+        "j": "L",
+        "coefficient_in_f": "-72*q_L + 18*q_a + 18*q_b + 36*q_c"
+      },
+      {
+        "i": "c",
+        "j": "a",
+        "coefficient_in_f": "36*q_L - 18*q_a - 18*q_c"
+      },
+      {
+        "i": "c",
+        "j": "b",
+        "coefficient_in_f": "36*q_L - 18*q_b - 18*q_c"
+      },
+      {
+        "i": "L",
+        "j": "a",
+        "coefficient_in_f": "-48*q_L + 24*q_b + 18*q_c + 6*q_d"
+      },
+      {
+        "i": "L",
+        "j": "b",
+        "coefficient_in_f": "-48*q_L + 24*q_a + 18*q_c + 6*q_d"
+      },
+      {
+        "i": "L",
+        "j": "d",
+        "coefficient_in_f": "24*q_L - 6*q_a - 6*q_b - 12*q_d"
+      },
+      {
+        "i": "a",
+        "j": "b",
+        "coefficient_in_f": "-24*q_a + 24*q_b"
+      },
+      {
+        "i": "a",
+        "j": "d",
+        "coefficient_in_f": "-12*q_L + 6*q_a + 6*q_d"
+      },
+      {
+        "i": "b",
+        "j": "d",
+        "coefficient_in_f": "-12*q_L + 6*q_b + 6*q_d"
+      }
+    ],
+    "X4_1": "Q1/6-3*c2_3-6*c2_2-p1",
+    "X4_2": "Q2/6-3*c2_2",
+    "factorized_full_I6": "r1*X4_1+r2*X4_2",
+    "axion_variation": "With D a=d a+K A, delta a=-K lambda. A Wess-Zumino term with appropriate sign cancels the factorized local anomaly."
+  },
+  "limited_period_check": {
+    "assumptions": "closed spin 4-manifold; split SU3 x SU2 x U1^5 cover bundles; f_a integral; axions of period 2*pi and conventional exponentiated WZ normalization",
+    "result": "X4_1 and X4_2 have integral periods under these assumptions: every diagonal half-integral term multiplies an even self-intersection; all mixed coefficients and c2,p1 coefficients are integral.",
+    "coefficients": [
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "9/2",
+        "uses_even_square": true
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "-9",
+        "uses_even_square": false
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "10",
+        "uses_even_square": true
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "coefficient": "-4",
+        "uses_even_square": false
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "coefficient": "-4",
+        "uses_even_square": false
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "coefficient": "-3",
+        "uses_even_square": false
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "coefficient": "4",
+        "uses_even_square": true
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "coefficient": "-4",
+        "uses_even_square": false
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "coefficient": "4",
+        "uses_even_square": true
+      },
+      {
+        "axion": 1,
+        "monomial_exponents": [
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "coefficient": "3/2",
+        "uses_even_square": true
+      },
+      {
+        "axion": 2,
+        "monomial_exponents": [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "-3",
+        "uses_even_square": true
+      },
+      {
+        "axion": 2,
+        "monomial_exponents": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "coefficient": "3",
+        "uses_even_square": false
+      },
+      {
+        "axion": 2,
+        "monomial_exponents": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "coefficient": "3",
+        "uses_even_square": false
+      },
+      {
+        "axion": 2,
+        "monomial_exponents": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "coefficient": "-3/2",
+        "uses_even_square": true
+      },
+      {
+        "axion": 2,
+        "monomial_exponents": [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "coefficient": "-3/2",
+        "uses_even_square": true
+      }
+    ],
+    "limitation": "Does not establish differential-cohomological/global consistency on nontrivial U(N) quotient bundles, the full parent anomaly structure, or a UV completion."
+  },
+  "integer_lattice": {
+    "SNF": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "maximal_minors": {
+      "c,L": 6,
+      "c,a": -3,
+      "c,b": -3,
+      "c,d": 0,
+      "L,a": 4,
+      "L,b": 4,
+      "L,d": -2,
+      "a,b": 0,
+      "a,d": 1,
+      "b,d": 1
+    },
+    "primitive_kernel_basis_columns": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "2",
+        "-1"
+      ],
+      [
+        "-3",
+        "4",
+        "0"
+      ]
+    ],
+    "determinant_character_matrix": [
+      [
+        "0",
+        "-1",
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "-2",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "determinant_note": "K rows are characters det(U2)^(-1)*U1a*U1b and det(U3)*det(U2)^(-2)*U1d; this checks axion shifts descend at character level only.",
+    "remnant": "For the standard primitive U1^5 lattice, kernel torus is connected U1^3; no additional finite Stueckelberg remnant.",
+    "limitation": "Full gauge group global quotient, non-Abelian centers, and admissible bundles need independent treatment."
+  },
+  "mass_spectrum": {
+    "identity_metrics_KKt": [
+      [
+        "6",
+        "8"
+      ],
+      [
+        "8",
+        "26"
+      ]
+    ],
+    "identity_nonzero_m2_in_unit_scale": [
+      "16 - 2*sqrt(41)",
+      "2*sqrt(41) + 16"
+    ],
+    "identity_zero_multiplicity": 3,
+    "stack_H0": [
+      [
+        "6",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "4",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "stack_reduced_matrix": [
+      [
+        "2",
+        "2"
+      ],
+      [
+        "2",
+        "6"
+      ]
+    ],
+    "stack_nonzero_m2": [
+      "g4^2*f_axion^2*(4 - 2*sqrt(2))",
+      "g4^2*f_axion^2*(2*sqrt(2) + 4)"
+    ],
+    "stack_zero_multiplicity": 3,
+    "assumptions": "H=H0/g4^2, G_axion=f_axion^2 I2, no other Higgs/Stueckelberg masses or kinetic mixing; illustrative inputs, not a GeV prediction."
+  },
+  "unresolved": [
+    "Origin, number and periodicities of axions",
+    "Axion and gauge kinetic matrices and their moduli dependence",
+    "Choice of global gauge group and charge lattice",
+    "Full nonlinear counterterms and anomaly conventions in action",
+    "6D parent local/global anomalies and UV completion",
+    "Vacuum stabilization and B-L breaking"
+  ],
+  "reference": {
+    "authors": "Anastasopoulos, Bianchi, Dudas, Kiritsis",
+    "title": "Anomalies, Anomalous U(1)s and generalized Chern-Simons terms",
+    "url": "https://arxiv.org/abs/hep-th/0605225"
+  },
+  "checks": [
+    "source stack dimensions",
+    "source flux degrees",
+    "source hypercharge",
+    "source B-L",
+    "cubic exact ideal factorization",
+    "mixed SU3 factorization",
+    "mixed SU2 factorization",
+    "mixed gravity factorization",
+    "mixed anomaly rank two",
+    "massless named generators lie in K kernel",
+    "named kernel generators independent",
+    "entire restricted cubic polynomial vanishes",
+    "common phase decouples from full cubic",
+    "Yqq anomaly",
+    "BLqq anomaly",
+    "YYq anomaly",
+    "YBLq anomaly",
+    "BLBLq anomaly",
+    "massless Y has mixed anomalies with massive directions",
+    "massless BL has mixed anomalies with massive directions",
+    "graded descent difference equals dC4",
+    "Euler verifies dI5 symmetric",
+    "Euler verifies dI5 factorized",
+    "factorized descent preserves all massless gauge parameters",
+    "full normalized anomaly six-form factorization",
+    "X4_1 spin-period coefficient (2, 0, 0, 0, 0)",
+    "X4_1 spin-period coefficient (1, 1, 0, 0, 0)",
+    "X4_1 spin-period coefficient (0, 2, 0, 0, 0)",
+    "X4_1 spin-period coefficient (0, 1, 1, 0, 0)",
+    "X4_1 spin-period coefficient (0, 1, 0, 1, 0)",
+    "X4_1 spin-period coefficient (0, 1, 0, 0, 1)",
+    "X4_1 spin-period coefficient (0, 0, 2, 0, 0)",
+    "X4_1 spin-period coefficient (0, 0, 1, 1, 0)",
+    "X4_1 spin-period coefficient (0, 0, 0, 2, 0)",
+    "X4_1 spin-period coefficient (0, 0, 0, 0, 2)",
+    "X4_2 spin-period coefficient (0, 2, 0, 0, 0)",
+    "X4_2 spin-period coefficient (0, 1, 1, 0, 0)",
+    "X4_2 spin-period coefficient (0, 1, 0, 1, 0)",
+    "X4_2 spin-period coefficient (0, 0, 2, 0, 0)",
+    "X4_2 spin-period coefficient (0, 0, 0, 2, 0)",
+    "SU3 cubic gauge anomaly zero",
+    "SU2 Witten parity even in stated bifundamental spectrum",
+    "K Smith invariant factors one one",
+    "gcd maximal K minors one",
+    "primitive integer kernel basis",
+    "primitive kernel free parameters have unit coordinate minor",
+    "K descends to determinant characters at charge level",
+    "identity metric characteristic eigenvalue 16 - 2*sqrt(41)",
+    "identity metric characteristic eigenvalue 2*sqrt(41) + 16",
+    "identity metric positive eigenvalues",
+    "stack metric reduced mass matrix",
+    "stack metric characteristic eigenvalue 4 - 2*sqrt(2)",
+    "stack metric characteristic eigenvalue 2*sqrt(2) + 4",
+    "stack metric positive eigenvalues",
+    "mass matrix rank two",
+    "package mixed ledger c SU3^2",
+    "package mixed ledger c SU2^2",
+    "package mixed ledger c grav",
+    "package mixed ledger L SU3^2",
+    "package mixed ledger L SU2^2",
+    "package mixed ledger L grav",
+    "package mixed ledger a SU3^2",
+    "package mixed ledger a SU2^2",
+    "package mixed ledger a grav",
+    "package mixed ledger b SU3^2",
+    "package mixed ledger b SU2^2",
+    "package mixed ledger b grav",
+    "package mixed ledger d SU3^2",
+    "package mixed ledger d SU2^2",
+    "package mixed ledger d grav",
+    "package cubic value 0",
+    "package doubled mixed convention 0 c",
+    "package doubled mixed convention 0 L",
+    "package cubic value 1",
+    "package doubled mixed convention 1 c",
+    "package doubled mixed convention 1 L",
+    "package cubic value 2",
+    "package doubled mixed convention 2 c",
+    "package doubled mixed convention 2 L",
+    "package cubic value 3",
+    "package doubled mixed convention 3 c",
+    "package doubled mixed convention 3 L",
+    "package cubic value 4",
+    "package doubled mixed convention 4 c",
+    "package doubled mixed convention 4 L",
+    "package cubic value 5",
+    "package doubled mixed convention 5 c",
+    "package doubled mixed convention 5 L",
+    "package cubic value 6",
+    "package doubled mixed convention 6 c",
+    "package doubled mixed convention 6 L",
+    "package cubic value 7",
+    "package doubled mixed convention 7 c",
+    "package doubled mixed convention 7 L",
+    "package cubic value 8",
+    "package doubled mixed convention 8 c",
+    "package doubled mixed convention 8 L",
+    "package cubic value 9",
+    "package doubled mixed convention 9 c",
+    "package doubled mixed convention 9 L",
+    "package cubic value 10",
+    "package doubled mixed convention 10 c",
+    "package doubled mixed convention 10 L",
+    "package cubic value 11",
+    "package doubled mixed convention 11 c",
+    "package doubled mixed convention 11 L"
+  ],
+  "check_count": 106,
+  "all_passed": true
+}

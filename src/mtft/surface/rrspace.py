@@ -201,6 +201,10 @@ def up_yukawa_M1(prec: int = 400) -> Dict:
     return {"Y": Y, "residual": res, "three_family": sec, "target": tgt}
 
 
+def _rank_rel(M, rel=1e-6):
+    """Numerical rank with a RELATIVE tolerance rel * ||M||_2 (review V0311 §4: the v0.31.1 fix used an absolute threshold)."""
+    return int(np.linalg.matrix_rank(M, tol=rel * max(float(np.linalg.norm(M, 2)), 1e-300)))
+
 def w13_grading_and_texture(Yres: Dict, prec: int = 130) -> Dict:
     """W13 acts on H^0(S0(SigmaP)) by T(phi) = u (phi o W13) (T^2 = -1/13 on functions; in the slash
     normalisation used here T^2 = -13) and on H^0(K(2 SigmaP)) by the weight-6 slash.  Returns the grades of the
@@ -226,8 +230,8 @@ def w13_grading_and_texture(Yres: Dict, prec: int = 130) -> Dict:
     Yg = np.einsum("ai,bj,abk,kl->ijl", V3, V3, Y, np.linalg.inv(V18).T); g3 = np.round(ev3.real).astype(int); g18 = np.round(ev18.real).astype(int)
     prod = np.array([[[g3[i] * g3[j] * g18[l] for l in range(18)] for j in range(3)] for i in range(3)]); mag = np.abs(Yg) / np.abs(Yg).max()
     return {"T_squared": complex(c), "closure_residual": res, "grades_sections": g3.tolist(), "grades_higgs": g18.tolist(),
-            "max_on_forbidden": float(mag[prod == 1].max()), "max_on_allowed": float(mag[prod == -1].max()), "Y_graded": Yg,
-            "rank_even_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == 1], axis=2), tol=1e-6)), "rank_odd_higgs": int(np.linalg.matrix_rank(np.sum(Yg[:, :, g18 == -1], axis=2), tol=1e-6))}  # v0.31.0 CI fix: tol 1e-8 sat at the construction noise floor (sigma_3 = 2.2e-9 locally, >= 1.6e-8 in CI) and flipped rank even->3; 1e-6 matches the certified forbidden-entry floor (auditor)
+            "max_on_forbidden": float(mag[prod == 1].max()), "max_on_allowed": float(mag[prod == -1].max()), "Y_graded": Yg, "V_sections": V3, "V_higgs": V18,
+            "rank_even_higgs": int(_rank_rel(np.sum(Yg[:, :, g18 == 1], axis=2))), "rank_odd_higgs": int(_rank_rel(np.sum(Yg[:, :, g18 == -1], axis=2)))}  # v0.31.0 CI fix: tol 1e-8 sat at the construction noise floor (sigma_3 = 2.2e-9 locally, >= 1.6e-8 in CI) and flipped rank even->3; 1e-6 matches the certified forbidden-entry floor (auditor)
 
 
 # ------------------------------------------------ SM-06: the chi_13-twisted (down/lepton) sector (v0.30.4)

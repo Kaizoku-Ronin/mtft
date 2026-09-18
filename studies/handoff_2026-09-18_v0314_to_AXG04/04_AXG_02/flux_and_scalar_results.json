@@ -1,0 +1,156 @@
+{
+  "investigation": "AXG-02 flux and scalar audit",
+  "class": "EXACT under stated assumptions",
+  "flux": {
+    "K": [
+      [
+        "0",
+        "-2",
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "3",
+        "-4",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "m": [
+      "0",
+      "-3",
+      "3",
+      "3",
+      "0"
+    ],
+    "K_m": [
+      "12",
+      "12"
+    ],
+    "U": [
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "U_K": [
+      [
+        "3",
+        "-2",
+        "-1",
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "-2",
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "UK_m": [
+      "0",
+      "12"
+    ],
+    "compatible_primitive_row": [
+      "3",
+      "-2",
+      "-1",
+      "-1",
+      "1"
+    ],
+    "proof": "For smooth periodic native 6D scalars theta, Dtheta is a global 1-form; dDtheta=K F, so Stokes gives K m=0 on the closed internal curve.",
+    "scope": "fixed-modulus scalar, no defects or zeros; necessary topological condition only, not a vacuum or holonomy check",
+    "hybrid_candidate": "one native 6D zero-form along k2-k1; second 4D axion would need another origin, e.g. reduction of a tensor; no such tensor sector derived"
+  },
+  "Higgs_representation": {
+    "product_adjoint_dimension": 16,
+    "charged_bifundamental_scalars_from_product_gauge_components": false,
+    "scope": "elementary dimensional reduction of the stated product-group gauge fields; no claim excluding added charged scalars, composites, or a separately derived unified group"
+  },
+  "potential": {
+    "ansatz": "a*rho^-4 + b*exp(alpha*sigma)*rho^-6 +/- c*exp(beta*sigma)*rho^-2; a,b,c>0",
+    "positive_bulk": "no finite radial stationary point for any real sigma",
+    "negative_bulk_beta_nonzero": "stationary point exists iff r=alpha/beta>3; unique in (log rho,sigma)",
+    "amplitude_relations": "A=(r-3)B/2, C=rB; A=a*rho^-4, B=b exp(alpha sigma)rho^-6, C=c exp(beta sigma)rho^-2",
+    "Hessian": "Matrix([[4*B*(r + 3), -4*B*beta_nonzero*r], [-4*B*beta_nonzero*r, B*beta_nonzero**2*r*(r - 1)]])",
+    "Hessian_det": "4*r*(r-3)*(r+1)*beta^2*B^2",
+    "energy": "-(r+1)*B/2 < 0",
+    "special_cases": "beta=0,alpha!=0: no scalar stationary point; alpha=beta=0: scalar remains flat",
+    "scope": "two-field stationary minimum with positive scalar kinetic metric; conditional AdS when other equations satisfied; no parent-derived exponent or coefficient"
+  },
+  "control": {
+    "parameters": {
+      "a": 1,
+      "b": 2,
+      "c": 8,
+      "alpha": 4,
+      "beta": 1
+    },
+    "rho": 1,
+    "sigma": 0,
+    "Hessian": [
+      [
+        56,
+        -32
+      ],
+      [
+        -32,
+        24
+      ]
+    ],
+    "determinant": 320,
+    "V": -5,
+    "label": "arbitrary-unit mathematical positive control, not MTFT prediction"
+  },
+  "checks": [
+    "AXG01 shifts have nonzero internal flux",
+    "change of axion basis is unimodular",
+    "new shifts isolate flux-compatible direction",
+    "primitive compatible shift",
+    "general row combination flux",
+    "compatible subspace rank one",
+    "16 product-adjoint generators",
+    "all product-adjoint central charges vanish",
+    "Hu absent from product-adjoint charge weights",
+    "Hd absent from product-adjoint charge weights",
+    "six-dimensional measure power",
+    "four-dimensional Einstein coefficient power",
+    "internal curvature potential power",
+    "internal gauge flux potential power",
+    "bulk potential power",
+    "neutral scalar four-dimensional kinetic power",
+    "common-coupling flux weight",
+    "positive potential radial derivative",
+    "positive potential derivative strictly negative",
+    "two-field stationarity equations",
+    "two-field Hessian before stationarity",
+    "stationary ratio solution",
+    "stationary Hessian matrix",
+    "stationary Hessian determinant",
+    "negative vacuum energy",
+    "positive leading Hessian minor for r>3",
+    "positive determinant for r>3",
+    "unique log-coordinate solution determinant",
+    "beta zero scalar derivative",
+    "both exponents zero scalar derivative",
+    "both exponents zero scalar Hessian",
+    "control gradient zero",
+    "control Hessian",
+    "control Hessian determinant",
+    "control energy",
+    "control eigenvalue minus",
+    "control eigenvalue plus"
+  ],
+  "summary": {
+    "passed": 37,
+    "failed": 0
+  }
+}

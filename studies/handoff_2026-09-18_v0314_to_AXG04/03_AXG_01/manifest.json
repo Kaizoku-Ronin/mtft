@@ -1,0 +1,77 @@
+{
+  "investigation": "AXG-01",
+  "date": "2026-09-17",
+  "archive_sha256": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+  "files": [
+    {
+      "path": "MTFT_AXG01_Report.md",
+      "bytes": 28217,
+      "sha256": "49e7ec4b5327e8b8434f5fbb0dbd1a9c0b6a6f2625cc048db32eb7b0e73d1d7c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2401,
+      "sha256": "a05305cc7b115f449f8e6a85be41980da9937c14d2933f9175dbe1177c34958b"
+    },
+    {
+      "path": "SCOPE.md",
+      "bytes": 1709,
+      "sha256": "1585b932bfa2298ff0953051ef4316380d0a32b96864cc47c07e8cf7c0df9a4b"
+    },
+    {
+      "path": "anomaly_audit.py",
+      "bytes": 15056,
+      "sha256": "871653e79d0733878e08407b99cd47a78cc5e24da064eab43b508758d0698a4e"
+    },
+    {
+      "path": "anomaly_results.json",
+      "bytes": 19677,
+      "sha256": "d9b5c5e08ff481bc41645af9212f4b9a8991dfa1758066c873106db423c71637"
+    },
+    {
+      "path": "input/MTFT_LICENSE.txt",
+      "bytes": 1067,
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    {
+      "path": "input/smflux_v0314.py",
+      "bytes": 9079,
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "path": "operator_audit.py",
+      "bytes": 3511,
+      "sha256": "4d1e089db162bd3953153b53ff7fa81d8a27b628075722ac1748f94568b6bdad"
+    },
+    {
+      "path": "operator_results.json",
+      "bytes": 4904,
+      "sha256": "ac9912b0bba54a68daaccaf54ed328943af1795d9c756b238b5a8716f242cf85"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 27,
+      "sha256": "c19638f75b5d9984b795de3647c23101b5617f90a74148a809ec49eaf92b21d2"
+    },
+    {
+      "path": "results_summary.json",
+      "bytes": 720,
+      "sha256": "cbbc476c4d16a3b9053a03054685b7fcad2b2efb8773a1aa45c720b175ebaef3"
+    },
+    {
+      "path": "run_all.py",
+      "bytes": 1481,
+      "sha256": "636c837950c3d70fc77d513b276af6e638fb929bd55ac0f907f2014ad1407be6"
+    },
+    {
+      "path": "vacuum_audit.py",
+      "bytes": 9937,
+      "sha256": "f9deb2815c914e336c78c7e604b814916d02f3bb4717416081b2725171ed5524"
+    },
+    {
+      "path": "vacuum_results.json",
+      "bytes": 8187,
+      "sha256": "57d8b9d3257f38d85f1bbaba4390a38a80cfcbf424d3d094dc8d83479d30c136"
+    }
+  ]
+}

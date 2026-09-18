@@ -1,0 +1,428 @@
+{
+  "investigation": "AXG-04 explicit six-sector chiral parents",
+  "class": "EXACT conditional algebra; spectra and fluxes chosen explicitly",
+  "conventions": {
+    "N": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "stack_order": [
+      "c",
+      "L",
+      "a",
+      "b",
+      "d"
+    ],
+    "positive_Weyl_gravity": "7*p1**2/5760 - p2/1440",
+    "complex_Weyl_chirality": "The displayed +/- weights multiply the full Chern character anomaly.",
+    "tensor_normalization": "I8=1/2 Omega(X4,X4); X4=a*p1/4-b_color*c2_color-b_weak*c2_weak+(b_hh/2)h^2+(b_XX/2)u^2"
+  },
+  "core": {
+    "flux": [
+      "0",
+      "-3",
+      "-3",
+      "-3",
+      "0"
+    ],
+    "ledger": [
+      {
+        "sector": "cL",
+        "chirality_6D": 1,
+        "dimension": 6,
+        "net_index_4D": "3",
+        "natural_hypercharge": "1/6"
+      },
+      {
+        "sector": "ca",
+        "chirality_6D": -1,
+        "dimension": 3,
+        "net_index_4D": "-3",
+        "natural_hypercharge": "2/3"
+      },
+      {
+        "sector": "cb",
+        "chirality_6D": -1,
+        "dimension": 3,
+        "net_index_4D": "-3",
+        "natural_hypercharge": "-1/3"
+      },
+      {
+        "sector": "Ld",
+        "chirality_6D": 1,
+        "dimension": 2,
+        "net_index_4D": "-3",
+        "natural_hypercharge": "1/2"
+      },
+      {
+        "sector": "ad",
+        "chirality_6D": -1,
+        "dimension": 1,
+        "net_index_4D": "3",
+        "natural_hypercharge": "0"
+      },
+      {
+        "sector": "bd",
+        "chirality_6D": -1,
+        "dimension": 1,
+        "net_index_4D": "3",
+        "natural_hypercharge": "1"
+      }
+    ],
+    "I8": "c2_color*c2_weak - c2_color*f_L**2 + 2*c2_color*f_L*f_c + c2_color*f_a**2/2 - c2_color*f_a*f_c + c2_color*f_b**2/2 - c2_color*f_b*f_c + c2_weak**2/3 - 2*c2_weak*f_L**2 + 3*c2_weak*f_L*f_c + c2_weak*f_L*f_d - 3*c2_weak*f_c**2/2 - c2_weak*f_d**2/2 + c2_weak*p1/6 - c3_color*f_L + c3_color*f_a/2 + c3_color*f_b/2 + f_L**4/3 - f_L**3*f_c - f_L**3*f_d/3 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/6 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 - f_a**4/6 + f_a**3*f_c/2 + f_a**3*f_d/6 - 3*f_a**2*f_c**2/4 - f_a**2*f_d**2/4 + f_a**2*p1/12 + f_a*f_c**3/2 - f_a*f_c*p1/8 + f_a*f_d**3/6 - f_a*f_d*p1/24 - f_b**4/6 + f_b**3*f_c/2 + f_b**3*f_d/6 - 3*f_b**2*f_c**2/4 - f_b**2*f_d**2/4 + f_b**2*p1/12 + f_b*f_c**3/2 - f_b*f_c*p1/8 + f_b*f_d**3/6 - f_b*f_d*p1/24",
+    "I6": "6*c2_color*f_L - 3*c2_color*f_a - 3*c2_color*f_b + 12*c2_weak*f_L - 9*c2_weak*f_c - 3*c2_weak*f_d - 4*f_L**3 + 9*f_L**2*f_c + 3*f_L**2*f_d - 9*f_L*f_c**2 - 3*f_L*f_d**2 + f_L*p1 + 2*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1/2 + 2*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1/2",
+    "native_scalar_charge": [
+      "0",
+      "-2",
+      "1",
+      "1",
+      "0"
+    ],
+    "quotient_coordinates": {
+      "f_c": "x",
+      "f_L": "0",
+      "f_a": "y",
+      "f_b": "-y",
+      "f_d": "w"
+    },
+    "F4": "c2_weak + y**2",
+    "G4": "c2_color + c2_weak/3 + p1/6 - w**2/2 - 3*x**2/2 - y**2/3",
+    "native_X6": "c2_color*r/2 - c2_color*x - c2_color*y + c3_color/2 + p1*r/12 - p1*w/24 - p1*x/8 - p1*y/6 - r**3/6 + r**2*w/6 + r**2*x/2 + 2*r**2*y/3 - r*w**2/4 - r*w*y/2 - 3*r*x**2/4 - 3*r*x*y/2 - r*y**2 + w**3/6 + w**2*y/2 + w*y**2/2 + x**3/2 + 3*x**2*y/2 + 3*x*y**2/2 + 2*y**3/3",
+    "native_X6_coordinates": "f_L=0, f_c=x, f_a=y, f_b=r-y, f_d=w; r=k1.f",
+    "pure_gravitational_anomaly": 0,
+    "net_SU2_complex_doublets": 4,
+    "pure_block_matrix": [
+      [
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "1/3",
+        "1/12"
+      ],
+      [
+        "0",
+        "1/12",
+        "0"
+      ]
+    ],
+    "pure_block_rank": 2,
+    "quartic_norm_witness": {
+      "cocharacter": [
+        "0",
+        "0",
+        "1",
+        "-1",
+        "0"
+      ],
+      "coefficient_f4": "-1/3",
+      "required_b_dot_b": "-8/3",
+      "verdict": "fails integral string norm necessary condition"
+    }
+  },
+  "spectator_control": {
+    "added_fields": [
+      "La positive Weyl",
+      "Lb positive Weyl",
+      "four neutral negative Weyls"
+    ],
+    "I8": "c2_color*c2_weak - c2_color*f_L**2 + 2*c2_color*f_L*f_c + c2_color*f_a**2/2 - c2_color*f_a*f_c + c2_color*f_b**2/2 - c2_color*f_b*f_c + c2_weak**2/2 - 3*c2_weak*f_L**2 + c2_weak*f_L*f_a + c2_weak*f_L*f_b + 3*c2_weak*f_L*f_c + c2_weak*f_L*f_d - c2_weak*f_a**2/2 - c2_weak*f_b**2/2 - 3*c2_weak*f_c**2/2 - c2_weak*f_d**2/2 + c2_weak*p1/4 - c3_color*f_L + c3_color*f_a/2 + c3_color*f_b/2 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 - f_a**4/12 + f_a**3*f_c/2 + f_a**3*f_d/6 - 3*f_a**2*f_c**2/4 - f_a**2*f_d**2/4 + f_a**2*p1/24 + f_a*f_c**3/2 - f_a*f_c*p1/8 + f_a*f_d**3/6 - f_a*f_d*p1/24 - f_b**4/12 + f_b**3*f_c/2 + f_b**3*f_d/6 - 3*f_b**2*f_c**2/4 - f_b**2*f_d**2/4 + f_b**2*p1/24 + f_b*f_c**3/2 - f_b*f_c*p1/8 + f_b*f_d**3/6 - f_b*f_d*p1/24",
+    "quotient": "c2_color*c2_weak + c2_color*y**2 + c2_weak**2/2 + c2_weak*p1/4 - c2_weak*w**2/2 - 3*c2_weak*x**2/2 - c2_weak*y**2 + p1*y**2/12 - w**2*y**2/2 - 3*x**2*y**2/2 - y**4/6",
+    "F4": "c2_weak + y**2",
+    "G4": "c2_color + c2_weak/2 + p1/4 - w**2/2 - 3*x**2/2 - 3*y**2/2",
+    "second_product": [
+      "y**2",
+      "-p1/6 + 4*y**2/3"
+    ],
+    "pure_gravitational_anomaly": 0,
+    "net_SU2_complex_doublets": 6,
+    "restricted_Gram_matrix": [
+      [
+        "0",
+        "1/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "1/8",
+        "-1/2"
+      ],
+      [
+        "0",
+        "1/8",
+        "0",
+        "1/24"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "1/24",
+        "-1/6"
+      ]
+    ],
+    "restricted_Gram_inertia": [
+      2,
+      2,
+      0
+    ],
+    "fixed_gauge_basis": [
+      "c2_weak",
+      "c2_color",
+      "y^2"
+    ],
+    "fixed_gauge_LDL": [
+      [
+        "1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4/3"
+      ]
+    ],
+    "quartic_norm_witness": {
+      "coefficient_f4": "-1/6",
+      "required_b_dot_b": "-4/3",
+      "verdict": "fails despite conventional SU2 count passing"
+    }
+  },
+  "P3_original_product_control": {
+    "copies": 3,
+    "flux": [
+      "0",
+      "-1",
+      "-1",
+      "-1",
+      "0"
+    ],
+    "families_4D": 3,
+    "I8": "3*c2_color*c2_weak - 3*c2_color*f_L**2 + 6*c2_color*f_L*f_c + 3*c2_color*f_a**2/2 - 3*c2_color*f_a*f_c + 3*c2_color*f_b**2/2 - 3*c2_color*f_b*f_c + c2_weak**2 - 6*c2_weak*f_L**2 + 9*c2_weak*f_L*f_c + 3*c2_weak*f_L*f_d - 9*c2_weak*f_c**2/2 - 3*c2_weak*f_d**2/2 + c2_weak*p1/2 - 3*c3_color*f_L + 3*c3_color*f_a/2 + 3*c3_color*f_b/2 + f_L**4 - 3*f_L**3*f_c - f_L**3*f_d + 9*f_L**2*f_c**2/2 + 3*f_L**2*f_d**2/2 - f_L**2*p1/2 - 3*f_L*f_c**3 + 3*f_L*f_c*p1/4 - f_L*f_d**3 + f_L*f_d*p1/4 - f_a**4/2 + 3*f_a**3*f_c/2 + f_a**3*f_d/2 - 9*f_a**2*f_c**2/4 - 3*f_a**2*f_d**2/4 + f_a**2*p1/4 + 3*f_a*f_c**3/2 - 3*f_a*f_c*p1/8 + f_a*f_d**3/2 - f_a*f_d*p1/8 - f_b**4/2 + 3*f_b**3*f_c/2 + f_b**3*f_d/2 - 9*f_b**2*f_c**2/4 - 3*f_b**2*f_d**2/4 + f_b**2*p1/4 + 3*f_b*f_c**3/2 - 3*f_b*f_c*p1/8 + f_b*f_d**3/2 - f_b*f_d*p1/8",
+    "quotient": "(3*c2_weak + 3*y**2)*(c2_color + c2_weak/3 + p1/6 - w**2/2 - 3*x**2/2 - y**2/3)",
+    "net_SU2_complex_doublets": 12,
+    "primitive_a_minus_b_norm": "-8",
+    "scope": "Passes the displayed SU2 and one U1 necessary tests; full original-product charge lattice is not claimed consistent."
+  },
+  "P3_subgroup_candidate": {
+    "gauge_group": "SU(3) x SU(2) x U(1)_h x U(1)_X, direct product",
+    "h_normalization": "h is primitive U1 class; physical electric h charges are 6 times SM hypercharge",
+    "embedding": [
+      "h",
+      "-u",
+      "-3*h - u",
+      "3*h - u",
+      "-3*h"
+    ],
+    "physical_6D_charges_one_copy": {
+      "Q": {
+        "h": 1,
+        "X": 1,
+        "chi": 1,
+        "dimension": 6
+      },
+      "U": {
+        "h": 4,
+        "X": 1,
+        "chi": -1,
+        "dimension": 3
+      },
+      "D": {
+        "h": -2,
+        "X": 1,
+        "chi": -1,
+        "dimension": 3
+      },
+      "L": {
+        "h": -3,
+        "X": 1,
+        "chi": 1,
+        "dimension": 2
+      },
+      "E": {
+        "h": -6,
+        "X": 1,
+        "chi": -1,
+        "dimension": 1
+      },
+      "N": {
+        "h": 0,
+        "X": 1,
+        "chi": -1,
+        "dimension": 1
+      }
+    },
+    "copies": 3,
+    "X_flux_per_copy": 1,
+    "families_4D": 3,
+    "I8": "3*c2_color*c2_weak + 27*c2_color*h**2 + c2_weak**2 - 18*c2_weak*h**2 + c2_weak*p1/2 - 6*c2_weak*u**2 - 243*h**4 + 9*h**2*p1/2 - 54*h**2*u**2",
+    "tensor_F4": "c2_weak + 9*h**2",
+    "tensor_G4": "3*c2_color + c2_weak - 27*h**2 + p1/2 - 6*u**2",
+    "Omega": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "a": [
+      "0",
+      "2"
+    ],
+    "b_color": [
+      "0",
+      "-3"
+    ],
+    "b_weak": [
+      "-1",
+      "-1"
+    ],
+    "b_hh": [
+      "18",
+      "-54"
+    ],
+    "b_XX": [
+      "0",
+      "-12"
+    ],
+    "b_hX": [
+      0,
+      0
+    ],
+    "gravitational_characteristic": "a=(0,2) is characteristic in the even hyperbolic U lattice",
+    "I6": "-12*c2_weak*u - 108*h**2*u",
+    "tensor_flux_source": [
+      0,
+      -12
+    ],
+    "continuous_survivor": "hypercharge; X can become massive via tensor reduction",
+    "conditional_discrete_remnant": "Z12 for one primitive period-2pi axion with charge12, before additional fields/global identifications",
+    "status": "Explicit integral local-GS candidate with a nonchiral tensor; not a proved global quantum completion, UV parent, SUSY model or stable vacuum.",
+    "family_provenance": "Three 6D parent copies and unit flux are choices. They replace one parent and index-three flux."
+  },
+  "global_condition_notes": [
+    "The traditional net-complex-SU2-doublet congruence is mod6; it counts six-dimensional fields, not flux-generated four-dimensional families.",
+    "Lee-Tachikawa explain that these traditional conditions are recovered from globally quantized GS cancellation; standalone torsion bordism is trivial for BSU2.",
+    "The primitive U1 norm check follows by placing c1=u+v on spin S2xS2, integral c1^2=2; X4=b*c1^2/2 has string charge b and I8 coefficient b.b/8.",
+    "Positive kinetic terms, global product-group GS definition/inflow, the scalar action and vacuum remain separate requirements."
+  ],
+  "references": [
+    {
+      "url": "https://arxiv.org/abs/hep-ph/0102010",
+      "use": "known nonsupersymmetric Q+,L+,U-,D-,E-,N- assignment and traditional generation/doublet congruence"
+    },
+    {
+      "url": "https://arxiv.org/abs/2012.11622",
+      "use": "modern GS quantization interpretation of six-dimensional global gauge conditions"
+    },
+    {
+      "url": "https://arxiv.org/abs/1711.04777",
+      "use": "cocharacter and string-charge quantization; full supergravity sufficiency is not imported"
+    }
+  ],
+  "checks": [
+    "unchanged net chiral sector cL",
+    "three-copy unit-flux index cL",
+    "sector index pushforward cL",
+    "unchanged net chiral sector ca",
+    "three-copy unit-flux index ca",
+    "sector index pushforward ca",
+    "unchanged net chiral sector cb",
+    "three-copy unit-flux index cb",
+    "sector index pushforward cb",
+    "unchanged net chiral sector Ld",
+    "three-copy unit-flux index Ld",
+    "sector index pushforward Ld",
+    "unchanged net chiral sector ad",
+    "three-copy unit-flux index ad",
+    "sector index pushforward ad",
+    "unchanged net chiral sector bd",
+    "three-copy unit-flux index bd",
+    "sector index pushforward bd",
+    "signed six-dimensional dimension zero",
+    "no pure gravitational polynomial",
+    "no irreducible p2",
+    "color cubic native scalar direction",
+    "native scalar flux admissibility",
+    "native scalar preserves hypercharge",
+    "native scalar preserves B-L",
+    "native scalar is determinant character",
+    "Cartan independent sector cL",
+    "Cartan independent sector ca",
+    "Cartan independent sector cb",
+    "Cartan independent sector Ld",
+    "Cartan independent sector ad",
+    "Cartan independent sector bd",
+    "Cartan independent total",
+    "full quotient factorization",
+    "four-dimensional quotient anomaly",
+    "factor flux derivative first factor",
+    "factor flux derivative second factor",
+    "scalar remainder is polynomial",
+    "exact scalar plus tensor decomposition",
+    "pure weak color gravity product",
+    "core pure block rank",
+    "spectator La index zero",
+    "spectator Lb index zero",
+    "spectator leaves complete 4D chiral polynomial",
+    "spectator pure gravity zero",
+    "spectator color scalar direction unchanged",
+    "spectator two-product decomposition",
+    "spectator rank-four witness determinant",
+    "spectator fixed gauge inertia certificate",
+    "spectator LDL reconstruction",
+    "spectator has two positive directions independent of pure gravity",
+    "one parent has four net complex SU2 doublets",
+    "core conventional SU2 mod6 residue",
+    "spectator conventional SU2 mod6 residue",
+    "three-copy conventional SU2 mod6 residue",
+    "net SU3 triplets vanish",
+    "three copies with unit flux preserve target I6",
+    "three copies with old magnitude flux would give nine families",
+    "primitive cocharacter kills native scalar",
+    "core primitive Abelian quartic",
+    "spectator primitive Abelian quartic",
+    "P3 primitive Abelian quartic",
+    "core required string norm nonintegral",
+    "spectator required string norm nonintegral",
+    "P3 passes only this norm witness",
+    "subgroup kills native scalar identically",
+    "P3 subgroup exact factorization",
+    "P3 subgroup gravitational polynomial zero",
+    "P3 unit X flux anomaly",
+    "P3 reduced polynomial agrees full six-sector flux push",
+    "P3 tensor flux source first component",
+    "P3 tensor flux source second component",
+    "tensor pairing unimodular",
+    "tensor pairing hyperbolic signature trace",
+    "integral anomaly coefficient source vector",
+    "lattice factorization normalization",
+    "characteristic gravitational vector parity expression",
+    "all diagonal Abelian b vectors even",
+    "physical subgroup charge Q",
+    "physical subgroup charge U",
+    "physical subgroup charge D",
+    "physical subgroup charge L",
+    "physical subgroup charge E",
+    "physical subgroup charge N"
+  ],
+  "summary": {
+    "passed": 84,
+    "failed": 0
+  }
+}

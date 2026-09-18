@@ -183,3 +183,13 @@ does the formatting.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## v0.32.0 — handoff integration, corrections, exact engines, research gates (September 2026)
+
+- **Frozen studies** (Astra, 16–18 Sep 2026): `studies/handoff_2026-09-18_v0314_to_AXG04/` with integrity records; teaching materials are not part of the software.
+- **Corrections**: CC-26 (kinetic normalisation contraction; anarchic leading-order Yukawas, confirmed by kinetic-orthonormal FEM eigenmodes),
+  CC-27 (the theta-compatible Atkin–Lehner lift on H^0(S0) is Q8; the D8 section lift is retained; Sym^2 intertwiner gate), CC-28 (SUSY protection of the Higgs directions is conditional; CW-01 register).
+- **Surface engines**: `surface.spin_circle`, `surface.hopf_geometry`, `surface.crt_dessin`, `surface.hodge_blocks`, `surface.magnetic` (Bochner spectra of flux bundles; Landau levels realise h^0).
+- **Research namespace** `mtft.research`: `anomalies`, `charge_lattices`, `mode_operators`, `discrete_anomalies`, `tensor_gs`, `compactification`, `bordism`, `parents` (immutable records M1, controls, C3X), `pipeline` (gate reports with witnesses; no "viable" boolean).
+- **Gate 4 decision**: route 2 — one parent, three internal modes; C3X's machinery is the gate battery (`docs/SM/WAVE_C_GATES.md`).
+- Registers in `docs/SM/`; Legend entries for every new engine (`python -m mtft.legend status`).

@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-16",
+  "files": {
+    "MTFT_v0314_Spin_and_Vacuum_Audit.md": "fc69d2505d9f405b3cdb128e52e848d8167bc66467b405d0e60eb28dc6a7b6ce",
+    "README.md": "fef7ba1d064c9ed1fb74631cec9bfcbe7533125934f19795db20e5c4a5803bbd",
+    "TEST_RESULTS.md": "d5578b8ccad504111c56ef2ed6876c35f6c9452a34ced8c59e443224f6f7b159",
+    "audit_v0314.py": "006ee446346f24d00fd1cf96d48a3866b3a895b00170843f9bf2a9d2383d3320",
+    "input/mtft-0.31.4.tar.gz": "2e6fcd0fde3b1601e3cf58aaec338790aa760034e548ecded3086bfa2a110db5",
+    "requirements.txt": "c97bb28838f18a3bda2c32be047c5c81521b3dc67f201414cd03e8a5497fda8b",
+    "results.json": "149157839f4935004b2667b1bc488157a1e4f06e69b0a3cd6c68ade7e1972145",
+    "run.log": "71131a7a7e33bccd5b426685d4c7972b7e2407ce2a755851a7fcfd9ab3d27fcd"
+  }
+}

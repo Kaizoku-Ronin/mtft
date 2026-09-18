@@ -1,0 +1,164 @@
+{
+  "investigation": "AXG-02 parent anomaly",
+  "class": "EXACT conditional algebra",
+  "assumptions": [
+    "one complex 6D Weyl fermion of common chirality per unordered bifundamental pair",
+    "central line fluxes only; no internal R-symmetry twist or boundary",
+    "gauge bosons and ordinary metric are nonchiral; no gravitino, gaugino or tensor spectrum assumed"
+  ],
+  "source_sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e",
+  "stack_order": [
+    "c",
+    "L",
+    "a",
+    "b",
+    "d"
+  ],
+  "N": [
+    3,
+    2,
+    1,
+    1,
+    1
+  ],
+  "m": [
+    "0",
+    "-3",
+    "3",
+    "3",
+    "0"
+  ],
+  "I8": "5*c2_color**2/12 + c2_color*c2_weak - c2_color*f_L**2 + 2*c2_color*f_L*f_c - c2_color*f_a**2/2 + c2_color*f_a*f_c - c2_color*f_b**2/2 + c2_color*f_b*f_c - 5*c2_color*f_c**2/2 + c2_color*f_c*f_d - c2_color*f_d**2/2 + 5*c2_color*p1/24 + c2_weak**2/2 - 3*c2_weak*f_L**2 + c2_weak*f_L*f_a + c2_weak*f_L*f_b + 3*c2_weak*f_L*f_c + c2_weak*f_L*f_d - c2_weak*f_a**2/2 - c2_weak*f_b**2/2 - 3*c2_weak*f_c**2/2 - c2_weak*f_d**2/2 + c2_weak*p1/4 - c3_color*f_L - c3_color*f_a/2 - c3_color*f_b/2 + 5*c3_color*f_c/2 - c3_color*f_d/2 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 7*f_a**4/24 - f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 + f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 7*f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 7*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 7*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 5*f_c**4/8 - f_c**3*f_d/2 + 3*f_c**2*f_d**2/4 - 5*f_c**2*p1/16 - f_c*f_d**3/2 + f_c*f_d*p1/8 + 7*f_d**4/24 - 7*f_d**2*p1/48 + 7*p1**2/240 - p2/60",
+  "I6": "6*c2_color*f_L - 3*c2_color*f_a - 3*c2_color*f_b + 24*c2_weak*f_L - 6*c2_weak*f_a - 6*c2_weak*f_b - 9*c2_weak*f_c - 3*c2_weak*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+  "sector_polynomials": {
+    "cL": {
+      "I8": "c2_color**2/6 + c2_color*c2_weak - c2_color*f_L**2 + 2*c2_color*f_L*f_c - c2_color*f_c**2 + c2_color*p1/12 + c2_weak**2/4 - 3*c2_weak*f_L**2/2 + 3*c2_weak*f_L*f_c - 3*c2_weak*f_c**2/2 + c2_weak*p1/8 - c3_color*f_L + c3_color*f_c + f_L**4/4 - f_L**3*f_c + 3*f_L**2*f_c**2/2 - f_L**2*p1/8 - f_L*f_c**3 + f_L*f_c*p1/4 + f_c**4/4 - f_c**2*p1/8 + 7*p1**2/960 - p2/240",
+      "I6": "6*c2_color*f_L - 6*c2_color*f_c + 9*c2_weak*f_L - 9*c2_weak*f_c + 3*c3_color - 3*f_L**3 + 9*f_L**2*f_c - 9*f_L*f_c**2 + 3*f_L*p1/4 + 3*f_c**3 - 3*f_c*p1/4",
+      "dim": "6"
+    },
+    "ca": {
+      "I8": "c2_color**2/12 - c2_color*f_a**2/2 + c2_color*f_a*f_c - c2_color*f_c**2/2 + c2_color*p1/24 - c3_color*f_a/2 + c3_color*f_c/2 + f_a**4/8 - f_a**3*f_c/2 + 3*f_a**2*f_c**2/4 - f_a**2*p1/16 - f_a*f_c**3/2 + f_a*f_c*p1/8 + f_c**4/8 - f_c**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "-3*c2_color*f_a + 3*c2_color*f_c - 3*c3_color/2 + 3*f_a**3/2 - 9*f_a**2*f_c/2 + 9*f_a*f_c**2/2 - 3*f_a*p1/8 - 3*f_c**3/2 + 3*f_c*p1/8",
+      "dim": "3"
+    },
+    "cb": {
+      "I8": "c2_color**2/12 - c2_color*f_b**2/2 + c2_color*f_b*f_c - c2_color*f_c**2/2 + c2_color*p1/24 - c3_color*f_b/2 + c3_color*f_c/2 + f_b**4/8 - f_b**3*f_c/2 + 3*f_b**2*f_c**2/4 - f_b**2*p1/16 - f_b*f_c**3/2 + f_b*f_c*p1/8 + f_c**4/8 - f_c**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "-3*c2_color*f_b + 3*c2_color*f_c - 3*c3_color/2 + 3*f_b**3/2 - 9*f_b**2*f_c/2 + 9*f_b*f_c**2/2 - 3*f_b*p1/8 - 3*f_c**3/2 + 3*f_c*p1/8",
+      "dim": "3"
+    },
+    "cd": {
+      "I8": "c2_color**2/12 - c2_color*f_c**2/2 + c2_color*f_c*f_d - c2_color*f_d**2/2 + c2_color*p1/24 + c3_color*f_c/2 - c3_color*f_d/2 + f_c**4/8 - f_c**3*f_d/2 + 3*f_c**2*f_d**2/4 - f_c**2*p1/16 - f_c*f_d**3/2 + f_c*f_d*p1/8 + f_d**4/8 - f_d**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "0",
+      "dim": "3"
+    },
+    "La": {
+      "I8": "c2_weak**2/12 - c2_weak*f_L**2/2 + c2_weak*f_L*f_a - c2_weak*f_a**2/2 + c2_weak*p1/24 + f_L**4/12 - f_L**3*f_a/3 + f_L**2*f_a**2/2 - f_L**2*p1/24 - f_L*f_a**3/3 + f_L*f_a*p1/12 + f_a**4/12 - f_a**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "6*c2_weak*f_L - 6*c2_weak*f_a - 2*f_L**3 + 6*f_L**2*f_a - 6*f_L*f_a**2 + f_L*p1/2 + 2*f_a**3 - f_a*p1/2",
+      "dim": "2"
+    },
+    "Lb": {
+      "I8": "c2_weak**2/12 - c2_weak*f_L**2/2 + c2_weak*f_L*f_b - c2_weak*f_b**2/2 + c2_weak*p1/24 + f_L**4/12 - f_L**3*f_b/3 + f_L**2*f_b**2/2 - f_L**2*p1/24 - f_L*f_b**3/3 + f_L*f_b*p1/12 + f_b**4/12 - f_b**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "6*c2_weak*f_L - 6*c2_weak*f_b - 2*f_L**3 + 6*f_L**2*f_b - 6*f_L*f_b**2 + f_L*p1/2 + 2*f_b**3 - f_b*p1/2",
+      "dim": "2"
+    },
+    "Ld": {
+      "I8": "c2_weak**2/12 - c2_weak*f_L**2/2 + c2_weak*f_L*f_d - c2_weak*f_d**2/2 + c2_weak*p1/24 + f_L**4/12 - f_L**3*f_d/3 + f_L**2*f_d**2/2 - f_L**2*p1/24 - f_L*f_d**3/3 + f_L*f_d*p1/12 + f_d**4/12 - f_d**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "3*c2_weak*f_L - 3*c2_weak*f_d - f_L**3 + 3*f_L**2*f_d - 3*f_L*f_d**2 + f_L*p1/4 + f_d**3 - f_d*p1/4",
+      "dim": "2"
+    },
+    "ab": {
+      "I8": "f_a**4/24 - f_a**3*f_b/6 + f_a**2*f_b**2/4 - f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 + f_b**4/24 - f_b**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "0",
+      "dim": "1"
+    },
+    "ad": {
+      "I8": "f_a**4/24 - f_a**3*f_d/6 + f_a**2*f_d**2/4 - f_a**2*p1/48 - f_a*f_d**3/6 + f_a*f_d*p1/24 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "f_a**3/2 - 3*f_a**2*f_d/2 + 3*f_a*f_d**2/2 - f_a*p1/8 - f_d**3/2 + f_d*p1/8",
+      "dim": "1"
+    },
+    "bd": {
+      "I8": "f_b**4/24 - f_b**3*f_d/6 + f_b**2*f_d**2/4 - f_b**2*p1/48 - f_b*f_d**3/6 + f_b*f_d*p1/24 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "f_b**3/2 - 3*f_b**2*f_d/2 + 3*f_b*f_d**2/2 - f_b*p1/8 - f_d**3/2 + f_d*p1/8",
+      "dim": "1"
+    }
+  },
+  "obstruction": {
+    "color_cubic_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+    "p2_coefficient": "-1/60",
+    "flux_contraction_color": 0,
+    "C0_Y": "4/3",
+    "C0_BL": "8/3",
+    "ordinary_GS_scope": "products of gauge/Lorentz invariant four-forms from two-form tensor fields"
+  },
+  "zero_index_flip": {
+    "changed_sector": "(c,dbar): 6D chirality + to -",
+    "I8": "c2_color**2/4 + c2_color*c2_weak - c2_color*f_L**2 + 2*c2_color*f_L*f_c - c2_color*f_a**2/2 + c2_color*f_a*f_c - c2_color*f_b**2/2 + c2_color*f_b*f_c - 3*c2_color*f_c**2/2 - c2_color*f_c*f_d + c2_color*f_d**2/2 + c2_color*p1/8 + c2_weak**2/2 - 3*c2_weak*f_L**2 + c2_weak*f_L*f_a + c2_weak*f_L*f_b + 3*c2_weak*f_L*f_c + c2_weak*f_L*f_d - c2_weak*f_a**2/2 - c2_weak*f_b**2/2 - 3*c2_weak*f_c**2/2 - c2_weak*f_d**2/2 + c2_weak*p1/4 - c3_color*f_L - c3_color*f_a/2 - c3_color*f_b/2 + 3*c3_color*f_c/2 + c3_color*f_d/2 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 7*f_a**4/24 - f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 + f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 7*f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 7*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 7*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 3*f_c**4/8 + f_c**3*f_d/2 - 3*f_c**2*f_d**2/4 - 3*f_c**2*p1/16 + f_c*f_d**3/2 - f_c*f_d*p1/8 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/320 - p2/80",
+    "color_cubic_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+    "p2_coefficient": "-1/80",
+    "four_dimensional_chiral_pushforward": "unchanged",
+    "limitation": "not unchanged full zero-mode or massive spectrum, not anomaly-free parent"
+  },
+  "general_bifundamental_obstruction": {
+    "coefficient": "-2*f_L*n_cL - f_a*n_ca - f_b*n_cb + 2*f_c*n_cL + f_c*n_ca + f_c*n_cb + f_c*n_cd - f_d*n_cd",
+    "solution": {
+      "n_cL": "0",
+      "n_ca": "0",
+      "n_cb": "0",
+      "n_cd": "0"
+    },
+    "scope": "independent five U1 factors, only ordinary two-form GS, color-charged net matter only standard bifundamentals"
+  },
+  "checks": [
+    "M1 stack dimensions",
+    "M1 flux",
+    "sector pushforward cL",
+    "sector pushforward ca",
+    "sector pushforward cb",
+    "sector pushforward cd",
+    "sector pushforward La",
+    "sector pushforward Lb",
+    "sector pushforward Ld",
+    "sector pushforward ab",
+    "sector pushforward ad",
+    "sector pushforward bd",
+    "total pushforward identity",
+    "complex Weyl representation dimension",
+    "compact hand-replication formula for I8",
+    "six-dimensional color cubic obstruction",
+    "six-dimensional irreducible gravitational coefficient",
+    "color obstruction flux contraction zero",
+    "pure color cubic vanishes after reduction",
+    "p2 vanishes after reduction",
+    "C0 hypercharge overlap",
+    "C0 B-L overlap",
+    "independent weights cL",
+    "independent weights ca",
+    "independent weights cb",
+    "independent weights cd",
+    "independent weights La",
+    "independent weights Lb",
+    "independent weights Ld",
+    "independent weights ab",
+    "independent weights ad",
+    "independent weights bd",
+    "independent full Cartan route",
+    "reproduces AXG01 full I6",
+    "cd sector has zero index",
+    "ab sector has zero index",
+    "flipped cd still reproduces full I6",
+    "flipped color anomaly aligns with K",
+    "flipped color direction preserves Y",
+    "flipped color direction preserves B-L",
+    "flipped color direction preserves flux",
+    "flipped gravitational p2 coefficient",
+    "color six-form removed from remainder",
+    "ordinary GS basis has no c3 or p2",
+    "literal parent outside ordinary GS span",
+    "ordinary GS forces all net color bifundamentals zero",
+    "quark index forced zero in that class"
+  ],
+  "summary": {
+    "passed": 47,
+    "failed": 0
+  }
+}

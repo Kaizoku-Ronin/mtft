@@ -1,0 +1,491 @@
+{
+  "experiment": "AXG04_U8_ADJOINT_DIRAC_CONTROL",
+  "scope": "Smooth compact spin genus-13 curve; standard positive Yang-Mills action; fixed split connection; no boundary projection, branes, extra scalar stabilization or solved Einstein background.",
+  "stacks": [
+    "c",
+    "L",
+    "a",
+    "b",
+    "d"
+  ],
+  "ranks": [
+    3,
+    2,
+    1,
+    1,
+    1
+  ],
+  "line_degrees": [
+    0,
+    -3,
+    3,
+    3,
+    0
+  ],
+  "flux_matrix_diagonal": [
+    0,
+    0,
+    0,
+    -3,
+    -3,
+    3,
+    3,
+    0
+  ],
+  "bifundamental_dimensions": [
+    [
+      9,
+      6,
+      3,
+      3,
+      3
+    ],
+    [
+      6,
+      4,
+      2,
+      2,
+      2
+    ],
+    [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      1,
+      1,
+      1
+    ]
+  ],
+  "degree_difference_matrix": [
+    [
+      0,
+      3,
+      -3,
+      -3,
+      0
+    ],
+    [
+      -3,
+      0,
+      -6,
+      -6,
+      -3
+    ],
+    [
+      3,
+      6,
+      0,
+      0,
+      3
+    ],
+    [
+      3,
+      6,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      3,
+      -3,
+      -3,
+      0
+    ]
+  ],
+  "opposite_6D_chirality_index_matrix": [
+    [
+      0,
+      -3,
+      3,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      6,
+      6,
+      3
+    ],
+    [
+      -3,
+      -6,
+      0,
+      0,
+      -3
+    ],
+    [
+      -3,
+      -6,
+      0,
+      0,
+      -3
+    ],
+    [
+      0,
+      -3,
+      3,
+      3,
+      0
+    ]
+  ],
+  "Dirac_net_4D_index_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "spin_chirality_table": [
+    {
+      "chi6": -1,
+      "internal_chirality": -1,
+      "chi4": 1
+    },
+    {
+      "chi6": -1,
+      "internal_chirality": 1,
+      "chi4": -1
+    },
+    {
+      "chi6": 1,
+      "internal_chirality": -1,
+      "chi4": -1
+    },
+    {
+      "chi6": 1,
+      "internal_chirality": 1,
+      "chi4": 1
+    }
+  ],
+  "action": "Integral sqrt(-g) [M6^4/2 (R6-2 Lambda6) - Tr(F_MN F^MN)/(2 g6^2) + i Tr(barPsi Gamma^M (nabla_M Psi - i[A_M,Psi])) - Mpsi Tr(barPsi Psi)]",
+  "action_parameters_are_inputs": [
+    "M6",
+    "g6",
+    "Lambda6",
+    "Mpsi (zero if desired)",
+    "spin structure",
+    "flux and holonomy background"
+  ],
+  "chirality_conclusion": "An adjoint complex Dirac fermion contains both 6D Weyl chiralities in the same gauge bundle. Every smooth common internal operator pairs their resulting 4D chiralities. This does not supply a chiral Standard Model.",
+  "anomaly_scope": "Opposite chiral determinants in the identical representation cancel local chiral anomalies; paired determinant is the vectorlike control. No UV or quantum-gravity completion is claimed.",
+  "bare_flux_centralizer": {
+    "group": "U(4) x U(2) x U(2)",
+    "dimension": 24,
+    "five_block_subgroup_dimension": 16,
+    "extra_input_for_five_blocks": "Inequivalent flat twists on equal-degree line bundles; the bare curvature alone is insufficient."
+  },
+  "gauge_vertex_triangles": [
+    {
+      "name": "up",
+      "block_cycle": [
+        "c",
+        "L",
+        "a",
+        "c"
+      ],
+      "trace_group_coefficient": 1
+    },
+    {
+      "name": "down",
+      "block_cycle": [
+        "c",
+        "L",
+        "b",
+        "c"
+      ],
+      "trace_group_coefficient": 1
+    },
+    {
+      "name": "neutrino",
+      "block_cycle": [
+        "d",
+        "L",
+        "a",
+        "d"
+      ],
+      "trace_group_coefficient": 1
+    },
+    {
+      "name": "charged_lepton",
+      "block_cycle": [
+        "d",
+        "L",
+        "b",
+        "d"
+      ],
+      "trace_group_coefficient": 1
+    }
+  ],
+  "YM_negative_normal_blocks": [
+    {
+      "source": "c",
+      "target": "L",
+      "rank": 6,
+      "slope_difference": 3,
+      "hom_degree": -18,
+      "h0": 0,
+      "h1": 90,
+      "multiplets": 15
+    },
+    {
+      "source": "a",
+      "target": "c",
+      "rank": 3,
+      "slope_difference": 3,
+      "hom_degree": -9,
+      "h0": 0,
+      "h1": 45,
+      "multiplets": 15
+    },
+    {
+      "source": "a",
+      "target": "L",
+      "rank": 2,
+      "slope_difference": 6,
+      "hom_degree": -12,
+      "h0": 0,
+      "h1": 36,
+      "multiplets": 18
+    },
+    {
+      "source": "a",
+      "target": "d",
+      "rank": 1,
+      "slope_difference": 3,
+      "hom_degree": -3,
+      "h0": 0,
+      "h1": 15,
+      "multiplets": 15
+    },
+    {
+      "source": "b",
+      "target": "c",
+      "rank": 3,
+      "slope_difference": 3,
+      "hom_degree": -9,
+      "h0": 0,
+      "h1": 45,
+      "multiplets": 15
+    },
+    {
+      "source": "b",
+      "target": "L",
+      "rank": 2,
+      "slope_difference": 6,
+      "hom_degree": -12,
+      "h0": 0,
+      "h1": 36,
+      "multiplets": 18
+    },
+    {
+      "source": "b",
+      "target": "d",
+      "rank": 1,
+      "slope_difference": 3,
+      "hom_degree": -3,
+      "h0": 0,
+      "h1": 15,
+      "multiplets": 15
+    },
+    {
+      "source": "d",
+      "target": "L",
+      "rank": 2,
+      "slope_difference": 3,
+      "hom_degree": -6,
+      "h0": 0,
+      "h1": 30,
+      "multiplets": 15
+    }
+  ],
+  "YM_negative_complex_dimension": 312,
+  "YM_Morse_index_real": 624,
+  "colored_negative_complex_dimension": 180,
+  "stability_conclusion": "The split unequal-slope connection is a Yang-Mills saddle. Its charged gauge one-form fluctuations have a curvature term absent from the elementary scalar Bochner operator. The Higgs sectors are unstable, but so are colored sectors; no electroweak vacuum has been selected.",
+  "gravity_scope": "The displayed action includes a dynamical metric by assumption. No M4 times X solution, backreaction, radius stabilization, Newton constant prediction, or unification principle was derived.",
+  "sources": [
+    {
+      "url": "https://www.uvm.edu/~cvincen1/files/teaching/spring2019-math382/atiyahbott.pdf",
+      "location": "Atiyah--Bott, Proposition 5.4 and equation (5.10), printed pages 556-559",
+      "use": "Negative normal H1 and exact real Morse-index formula"
+    },
+    {
+      "url": "https://arxiv.org/pdf/hep-th/0404229",
+      "location": "Introduction equation (1.1), Appendix A equations (A.2)-(A.4)",
+      "use": "Internal gauge components and gauge-vertex origin of Yukawa couplings; torus spectra are not transplanted to X0(143)"
+    }
+  ],
+  "checks": [
+    {
+      "name": "fundamental rank is eight",
+      "passed": true
+    },
+    {
+      "name": "complexified adjoint decomposes into 64 matrix entries",
+      "passed": true
+    },
+    {
+      "name": "diagonal subgroup has dimension sixteen",
+      "passed": true
+    },
+    {
+      "name": "off-diagonal charged components have dimension forty-eight",
+      "passed": true
+    },
+    {
+      "name": "total first Chern number vanishes",
+      "passed": true
+    },
+    {
+      "name": "nonzero split flux has trace M squared thirty-six",
+      "passed": true
+    },
+    {
+      "name": "degree matrix is antisymmetric",
+      "passed": true
+    },
+    {
+      "name": "spin Riemann-Roch index equals flux difference",
+      "passed": true
+    },
+    {
+      "name": "opposite six-dimensional Weyl chiralities cancel each block index",
+      "passed": true
+    },
+    {
+      "name": "product chirality holds in all four spin sectors",
+      "passed": true
+    },
+    {
+      "name": "each internal mode has a four-dimensional mirror",
+      "passed": true
+    },
+    {
+      "name": "bare flux centralizer is U4 times U2 times U2",
+      "passed": true
+    },
+    {
+      "name": "bare flux centralizer dimension is twenty-four",
+      "passed": true
+    },
+    {
+      "name": "enhancement contributes eight extra gauge generators",
+      "passed": true
+    },
+    {
+      "name": "up gauge-vertex triangle has nonzero commutator trace",
+      "passed": true
+    },
+    {
+      "name": "up triangle charge sums to zero",
+      "passed": true
+    },
+    {
+      "name": "down gauge-vertex triangle has nonzero commutator trace",
+      "passed": true
+    },
+    {
+      "name": "down triangle charge sums to zero",
+      "passed": true
+    },
+    {
+      "name": "neutrino gauge-vertex triangle has nonzero commutator trace",
+      "passed": true
+    },
+    {
+      "name": "neutrino triangle charge sums to zero",
+      "passed": true
+    },
+    {
+      "name": "charged_lepton gauge-vertex triangle has nonzero commutator trace",
+      "passed": true
+    },
+    {
+      "name": "charged_lepton triangle charge sums to zero",
+      "passed": true
+    },
+    {
+      "name": "internal La vector has Higgs-up hypercharge",
+      "passed": true
+    },
+    {
+      "name": "internal Lb vector has Higgs-down hypercharge",
+      "passed": true
+    },
+    {
+      "name": "all negative normal Hom bundles have strictly negative degree",
+      "passed": true
+    },
+    {
+      "name": "negative dimension agrees in block and grouped calculations",
+      "passed": true
+    },
+    {
+      "name": "negative dimension agrees with U8 root calculation",
+      "passed": true
+    },
+    {
+      "name": "real Yang-Mills Morse index is six hundred twenty-four",
+      "passed": true
+    },
+    {
+      "name": "each Higgs block supplies eighteen unstable weak doublets",
+      "passed": true
+    },
+    {
+      "name": "colored negative normal directions number one hundred eighty",
+      "passed": true
+    },
+    {
+      "name": "six-dimensional Dirac gravitational chirality dimension cancels",
+      "passed": true
+    }
+  ],
+  "checks_passed": 31,
+  "checks_failed": 0
+}

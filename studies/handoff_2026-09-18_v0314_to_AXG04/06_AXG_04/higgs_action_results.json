@@ -1,0 +1,316 @@
+{
+  "investigation": "AXG-04 elementary Higgs action and flavor audit",
+  "classification": "EXACT CONDITIONAL; explicitly changed field content and flux, tree-level only",
+  "inputs": {
+    "source": "input/smflux_v0314.py",
+    "stack_order": [
+      "c",
+      "L",
+      "a",
+      "b",
+      "d"
+    ],
+    "old_flux": [
+      "0",
+      "-3",
+      "3",
+      "3",
+      "0"
+    ],
+    "new_flux": [
+      "0",
+      "-3",
+      "-3",
+      "-3",
+      "0"
+    ],
+    "field_content": "Only the six displayed 6D Weyls, plus added elementary Hu/Hd scalar doublets; not the old all-bifundamental parent"
+  },
+  "spectrum": [
+    {
+      "sector": "cL",
+      "chirality6": 1,
+      "line_degree": 3,
+      "signed_index": 3,
+      "SM_field": "Q",
+      "net_left_count": 3,
+      "left_charge": [
+        "1",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      "Y": "1/6",
+      "B-L": "1/3"
+    },
+    {
+      "sector": "ca",
+      "chirality6": -1,
+      "line_degree": 3,
+      "signed_index": -3,
+      "SM_field": "uc",
+      "net_left_count": 3,
+      "left_charge": [
+        "-1",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "Y": "-2/3",
+      "B-L": "-1/3"
+    },
+    {
+      "sector": "cb",
+      "chirality6": -1,
+      "line_degree": 3,
+      "signed_index": -3,
+      "SM_field": "dc",
+      "net_left_count": 3,
+      "left_charge": [
+        "-1",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "Y": "1/3",
+      "B-L": "-1/3"
+    },
+    {
+      "sector": "Ld",
+      "chirality6": 1,
+      "line_degree": -3,
+      "signed_index": -3,
+      "SM_field": "lepton",
+      "net_left_count": 3,
+      "left_charge": [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "1"
+      ],
+      "Y": "-1/2",
+      "B-L": "-1"
+    },
+    {
+      "sector": "ad",
+      "chirality6": -1,
+      "line_degree": -3,
+      "signed_index": 3,
+      "SM_field": "nuc",
+      "net_left_count": 3,
+      "left_charge": [
+        "0",
+        "0",
+        "1",
+        "0",
+        "-1"
+      ],
+      "Y": "0",
+      "B-L": "1"
+    },
+    {
+      "sector": "bd",
+      "chirality6": -1,
+      "line_degree": -3,
+      "signed_index": 3,
+      "SM_field": "ec",
+      "net_left_count": 3,
+      "left_charge": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "-1"
+      ],
+      "Y": "1",
+      "B-L": "1"
+    }
+  ],
+  "flux_constraint": {
+    "unique_with_mc_zero": [
+      "0",
+      "-3",
+      "-3",
+      "-3",
+      "0"
+    ],
+    "old_flux_indices": [
+      "3",
+      "3",
+      "3",
+      "-3",
+      "-3",
+      "-3"
+    ],
+    "explanation": "Opposite 6D chiralities needed at scalar vertices, together with desired family signs, force La and Lb to have the same degree as LL."
+  },
+  "action": {
+    "Yukawas": [
+      "y6u bar(Psi_ca^-) Psi_cL^+ Hu",
+      "y6d bar(Psi_cb^-) Psi_cL^+ Hd",
+      "y6nu bar(Psi_Ld^+) Psi_ad^- Hu",
+      "y6e bar(Psi_Ld^+) Psi_bd^- Hd"
+    ],
+    "plus": "Hermitian conjugates; standard positive scalar and Weyl kinetic terms and gauge kinetic terms.",
+    "scope": "Explicit nonsupersymmetric local EFT vertices; scalar potential, anomaly cancellation and gravitational background equations are separate requirements. Elementary six-dimensional Yukawa coupling has mass dimension -1."
+  },
+  "Higgs_zero_modes": {
+    "condition": "LL,La,Lb identified as Hermitian line bundles WITH their unitary connections; degree equality alone is insufficient.",
+    "profile": "unit parallel section/sqrt(Area)",
+    "count": "One complex weak doublet profile per Hu/Hd field on the connected compact curve.",
+    "scope": "Zero of the minimal kinetic operator. Added bare masses, curvature couplings or background scalar potential can change the physical mass."
+  },
+  "actual_fermion_zero_modes": {
+    "choice": "Lc=Ld=O and LL=La=Lb=O(-D), D any three of the four W13-fixed CM points, with S0 arithmetic spin structure.",
+    "positive_E": "E=O(D): h0(S0 E)=3,h1=0",
+    "negative_E": "E=O(-D): h0(S0 E)=0,h1=3",
+    "proof": "H0(S0)=span(1,u); CM evaluation rank2 forces H0(S0(-D))=0; Serre duality and RR give remaining dimensions.",
+    "generic_warning": "An arbitrary degree3 line only gives h0-h1=3; h0=3+k,h1=k is possible."
+  },
+  "flavor": {
+    "formula": "Y_u=(y6u/sqrt(Area)) Uu^dagger UQ; Y_d=(y6d/sqrt(Area)) Ud^dagger UQ",
+    "invariant": "Y_f^dagger Y_f=|y6f|^2/Area I3 for quark vertices; analogous identity on lepton mode spaces.",
+    "result": "Three equal singular values in each sector. Independent sector couplings do not generate within-sector hierarchy.",
+    "CKM": "Can be chosen identity; because quark masses are exactly degenerate, CKM is basis-undetermined/unobservable, not a unique predicted matrix. Quark CP commutator invariant vanishes.",
+    "scope": "Tree-level constant local Yukawa coefficients, identical relevant internal operators/connections, canonical minimal kinetic terms, constant scalar mode, no localized or higher-derivative interactions. Radiative corrections were not computed and are not ruled out.",
+    "control_Wu": [
+      [
+        "-4/5",
+        "3/5",
+        "0"
+      ],
+      [
+        "-3*I/5",
+        "-4*I/5",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-I"
+      ]
+    ],
+    "control_Wd": [
+      [
+        "3/5",
+        "4/5",
+        "0"
+      ],
+      [
+        "-4/13",
+        "3/13",
+        "12/13"
+      ],
+      [
+        "48*I/65",
+        "-36*I/65",
+        "5*I/13"
+      ]
+    ]
+  },
+  "separate_C3X_control": {
+    "parent": "3 copies of 6D physical SM representations Q+,L+,U-,D-,E-,N-, all with X=+1; gauge group SU3 x SU2 x U1_h x U1_X, h=6Y; elementary H has(h,X)=(3,0). This replaces the five-stack quiver.",
+    "explicit_unit_line": "L_X=O(P+Q-R), P,Q,R three distinct W13-fixed CM points with u(P)=+i/sqrt13 and u(Q)=-i/sqrt13.",
+    "proof": "Evaluation at R has rank1 in H0(S0), so h0(S0(-R))=1. RR and Serre give h0(S0(R))=2; inclusion identifies this with H0(S0). Evaluation at P,Q has rank2, so h0(S0(R-P-Q))=0. Thus h1(S0 L_X)=0 and h0(S0 L_X)=1.",
+    "evaluation_det": "-2*sqrt(13)*I/13",
+    "one_copy_spinor_modes": {
+      "h0": 1,
+      "h1": 0
+    },
+    "three_copy_modes": "Exactly three desired modes, no opposite-chirality paired zero modes, within each six-field representation sector under this choice.",
+    "point_line_trap": "L_X=O(P) instead gives h0=2,h1=1 for basepoint-free S0; with3parentcopies this gives6desired plus3mirror modes, net3.",
+    "geometry": "The negative coefficient -R is a divisor presentation, not a physical singular source; the degree1 holomorphic line admits a smooth HYM connection.",
+    "flavor": "The internal zero-mode space is1D; its constant-Higgs overlap is1/sqrt(Area). Therefore each arbitrary3x3 parent coefficient matrix is inherited asY4_f=Y6_f/sqrt(Area). Family hierarchy can be supplied as new parent input, not obtained from the curve.",
+    "scope": "This audit checks action vertices and zero modes only. Full anomaly/tensor/global/gravitational consistency remains a separate calculation."
+  },
+  "references": [
+    {
+      "title": "Cremades, Ibanez and Marchesano, hep-th/0404229, sections2 and3.1.3",
+      "url": "https://arxiv.org/pdf/hep-th/0404229",
+      "use": "General normalized mode expansion and overlap principle; constant-mode identity derived here, not imported from a torus spectrum."
+    },
+    {
+      "title": "Park and Taylor, 1110.5916, Table1",
+      "url": "https://arxiv.org/pdf/1110.5916",
+      "use": "Fixed chiralities of ordinary 6D(1,0) multiplets; current six-Weyl EFT is not asserted to be such a completion."
+    }
+  ],
+  "checks": [
+    "three-family index cL",
+    "three-family index ca",
+    "three-family index cb",
+    "three-family index Ld",
+    "three-family index ad",
+    "three-family index bd",
+    "left hypercharges",
+    "left B-L charges",
+    "family constraints force realigned flux after common shift",
+    "same chirality changes on original M1 flux give wrong singlet indices",
+    "four sectors reverse desired old-flux family orientation",
+    "new Higgs line degrees vanish",
+    "old Higgs line degrees were minus6",
+    "gauge invariant elementary scalar vertex up",
+    "opposite six-dimensional chiralities in up",
+    "matching internal line degree in up",
+    "gauge invariant elementary scalar vertex down",
+    "opposite six-dimensional chiralities in down",
+    "matching internal line degree in down",
+    "gauge invariant elementary scalar vertex neutrino",
+    "opposite six-dimensional chiralities in neutrino",
+    "matching internal line degree in neutrino",
+    "gauge invariant elementary scalar vertex electron",
+    "opposite six-dimensional chiralities in electron",
+    "matching internal line degree in electron",
+    "bar negative times positive scalar bilinear projector survives",
+    "bar positive times negative scalar bilinear projector survives",
+    "equal chirality scalar bilinear still vanishes",
+    "every three CM evaluation rows have rank2",
+    "S0(D) Riemann-Roch index",
+    "S0(-D) Riemann-Roch index",
+    "positive CM bundle purity agrees with source",
+    "negative CM bundle purity agrees with source",
+    "degree3 alone permits additional vectorlike pairs",
+    "constant scalar profile normalized",
+    "overlap Yukawa volume factor",
+    "Einstein-frame Yukawa after canonical rescaling",
+    "six-dimensional Yukawa mass dimension",
+    "four-dimensional Yukawa dimension after area normalization",
+    "orthonormal basis control Q",
+    "orthonormal basis control u",
+    "orthonormal basis control d",
+    "up overlap singular values all1",
+    "down overlap singular values all1",
+    "basis control gives different displayed Yukawa matrices",
+    "common Q-side quark Gram commutator vanishes",
+    "quark CP commutator determinant vanishes",
+    "up overlap can be removed by right basis rotation",
+    "down overlap can be removed by independent right basis rotation",
+    "unit-line P Q evaluation determinant",
+    "evaluation at distinct CM R has rank1",
+    "S0 minusR section dimension",
+    "S0 plusR section dimension by RR and Serre",
+    "unit-line inverse-twist section dimension",
+    "unit-line spinor section dimension by RR",
+    "unit divisor degree",
+    "naive point unitflux positive zero modes",
+    "three parent copies with pure unit line give three modes",
+    "three parent copies with point line give six and three netthree",
+    "C3X hypercharge invariant vertex up",
+    "C3X common X charge invariant vertex up",
+    "C3X hypercharge invariant vertex down",
+    "C3X common X charge invariant vertex down",
+    "C3X hypercharge invariant vertex electron",
+    "C3X common X charge invariant vertex electron",
+    "C3X hypercharge invariant vertex neutrino",
+    "C3X common X charge invariant vertex neutrino",
+    "C3X parent flavor matrix is inherited"
+  ],
+  "summary": {
+    "passed": 68,
+    "failed": 0
+  }
+}

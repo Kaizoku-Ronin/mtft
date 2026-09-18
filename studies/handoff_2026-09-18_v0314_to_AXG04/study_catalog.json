@@ -1,0 +1,74 @@
+[
+  {
+    "id": "V0314-AUDIT",
+    "path": "studies/00_v0314_audit",
+    "report": "studies/00_v0314_audit/MTFT_v0314_Spin_and_Vacuum_Audit.md",
+    "original_archive": "original_bundles/MTFT_v0314_Audit_Bundle.zip",
+    "original_archive_sha256": "15cc96615a93042fd3cffff276afa6e97d4e8128ad4340670eff53dec4e8c24c",
+    "recorded_exact_check_count": null,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "SC7-01",
+    "path": "studies/01_SC7_01",
+    "report": "studies/01_SC7_01/MTFT_SC7_01_Spin_Circle_Investigation.md",
+    "original_archive": "original_bundles/MTFT_SC7_01_Reproducible_Bundle.zip",
+    "original_archive_sha256": "c5b2e5d9b96d63d777555e88cdad04d8123f2ace5940610f8396491b7801a853",
+    "recorded_exact_check_count": null,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "STUDY-EDITION",
+    "path": "teaching/paper_work",
+    "report": "teaching/paper_work/paper_complete.md",
+    "original_archive": "original_bundles/MTFT_Study_Edition_Reproduction.zip",
+    "original_archive_sha256": "e84b98f5f577a659a5ccff2a8b0eaa782a01925c3cb437efe806ee0c37a2742c",
+    "recorded_exact_check_count": 187,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "HOPF-02",
+    "path": "studies/02_HOPF_02",
+    "report": "studies/02_HOPF_02/MTFT_HOPF02_Report.md",
+    "original_archive": "original_bundles/MTFT_HOPF02_Reproducible_Bundle.zip",
+    "original_archive_sha256": "2399f55ca277de4d2a5cd28edf39584789a704b0341b8b88f18d5d12e3e7cdc5",
+    "recorded_exact_check_count": 85,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "AXG-01",
+    "path": "studies/03_AXG_01",
+    "report": "studies/03_AXG_01/MTFT_AXG01_Report.md",
+    "original_archive": "original_bundles/MTFT_AXG01_Reproducible_Bundle.zip",
+    "original_archive_sha256": "29617472aafd5df86ae73b3ad0914466d600dd9d1f666f5b412a04caebf293d0",
+    "recorded_exact_check_count": 159,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "AXG-02",
+    "path": "studies/04_AXG_02",
+    "report": "studies/04_AXG_02/MTFT_AXG02_Report.md",
+    "original_archive": "original_bundles/MTFT_AXG02_Reproducible_Bundle.zip",
+    "original_archive_sha256": "48adafe265d096cb21a678e66203691c71e97a77a15f4fdfd84603c5918954ff",
+    "recorded_exact_check_count": 84,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "AXG-03",
+    "path": "studies/05_AXG_03",
+    "report": "studies/05_AXG_03/MTFT_AXG03_Report.md",
+    "original_archive": "original_bundles/MTFT_AXG03_Reproducible_Bundle.zip",
+    "original_archive_sha256": "29be14bc27b513c330e4d73e002e2230bdf86c6bba9c161c81febc42f02ac2bc",
+    "recorded_exact_check_count": 149,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  },
+  {
+    "id": "AXG-04",
+    "path": "studies/06_AXG_04",
+    "report": "studies/06_AXG_04/MTFT_AXG04_Report.md",
+    "original_archive": "original_bundles/MTFT_AXG04_Reproducible_Bundle.zip",
+    "original_archive_sha256": "035d428f6c8496b6f4ec151fa6f94037f491ecfc37da266f96dedefa33c5bc65",
+    "recorded_exact_check_count": 322,
+    "count_scope": "Original study record; no unique-claim or full-release-test count implied."
+  }
+]

@@ -1,0 +1,321 @@
+{
+  "study": "AXG-04 unwarped gravity background gate",
+  "classification": "Exact conditional action-and-ansatz result; no complete vacuum construction",
+  "action": "M6^4 R6/2 - U - sum Tr(F_i^2)/(4 g6_i^2) - |DH|^2",
+  "trace_convention": "Tr(I_N^2)=N; differs by factor two in gauge coefficient from AXG02 kappa_i=2N_i/g6^2",
+  "assumptions": [
+    "smooth closed genus-13 curve",
+    "Gaussian curvature -1/R^2",
+    "unwarped maximally symmetric M4 times X2",
+    "purely internal central constant magnetic curvature",
+    "covariantly constant scalar vacuum at a critical point of V",
+    "positive Einstein, gauge and scalar kinetic coefficients",
+    "no added sources or higher-derivative terms"
+  ],
+  "symbols": {
+    "M": "M6^4",
+    "lambda4": "R_mu_nu=lambda4*g_mu_nu; in AdS lambda4=-3/L4^2",
+    "k": "R_mn=k*g_mn=-g_mn/R^2",
+    "rho_F": "positive magnetic energy density in six dimensions",
+    "U": "Lambda6+V(H0), constant on the vacuum"
+  },
+  "einstein_equations": {
+    "external": "(U - rho_F)/(2*M)",
+    "internal": "(U + 3*rho_F)/(2*M)",
+    "required_U": "-2*M/R**2 - 3*rho_F",
+    "external_at_negative_internal_curvature": "-1/R**2 - 2*rho_F/M"
+  },
+  "flux": {
+    "N": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "original_m": [
+      0,
+      -3,
+      3,
+      3,
+      0
+    ],
+    "candidate_m": [
+      0,
+      -3,
+      -3,
+      -3,
+      0
+    ],
+    "weighted_sum_Nm2_both": 36,
+    "area": "48*pi*R**2",
+    "general_beta": "sum_i N_i*m_i^2/g6_i^2 / 1152",
+    "common_coupling_rho_F": "1/(32*R**4*g6**2)",
+    "common_coupling_beta": "1/(32*g6**2)"
+  },
+  "radius": {
+    "condition": "U=-u<0",
+    "R_squared": "(M + sqrt(M**2 + 3*beta*u))/u",
+    "positive_roots": 1,
+    "magnetic_energy": "beta/R^4",
+    "AdS_radius_squared": "3/(R**(-2) + 2*rho_F/M)",
+    "scale_separation": "L4^2<3 R^2 for nonzero magnetic energy"
+  },
+  "C3X_specialization": {
+    "group": "SU3 x SU2 x U1_h x U1_X",
+    "only_flux": "one unit of U1_X, Higgs X charge zero",
+    "Maxwell_normalization": "-F_X^2/(4 gX6^2)",
+    "rho_F": "1/(1152*R**4*gX6**2)",
+    "beta": "1/(1152*gX6**2)",
+    "scope": "Same Einstein/radion formulas with this beta. On the maximally symmetric product and zero other gauge backgrounds the GS four-form sources vanish as differential forms; a zero tensor background is compatible with its local equations."
+  },
+  "radion": {
+    "metric_ansatz": "ds6^2=exp(-2 sigma)ds4E^2+exp(2 sigma)dsX0^2",
+    "R": "R0 exp(sigma)",
+    "MP_squared": "M6^4 A0",
+    "canonical_field": "phi=2 MP sigma",
+    "potential": "a*exp(-4*sigma) + b*exp(-6*sigma) + c*exp(-2*sigma)",
+    "coefficients": {
+      "a": "M6^4 A0/R0^2",
+      "b": "2*pi^2 sum_i(N_i*m_i^2/g6_i^2)/A0",
+      "c": "A0 U"
+    },
+    "at_reference_radius_equal_vacuum": {
+      "c": "-2a-3b",
+      "V": "-a-2b",
+      "mass_squared": "2/R**2 + 6*rho_F/M",
+      "mass_squared_times_AdS_radius_squared": "6*(3*z + 1)/(2*z + 1)"
+    }
+  },
+  "control_arbitrary_units": {
+    "M": 1,
+    "beta": 1,
+    "U": -5,
+    "R_squared": 1,
+    "lambda4": -3,
+    "AdS_radius_squared": 1,
+    "canonical_radion_mass_squared": 8,
+    "status": "chosen action parameters, not derived MTFT values"
+  },
+  "higgs": {
+    "original_Hu_flux_degree": -6,
+    "original_Hd_flux_degree": -6,
+    "candidate_Hu_flux_degree": 0,
+    "candidate_Hd_flux_degree": 0,
+    "result": "Original M1 excludes nonzero covariantly constant Hu,Hd. Candidate sign-reversed a,b flux passes the degree-zero necessity, but matching line bundles and flat holonomies/connections are still required. Nonconstant profiles require gradient stress and their full field equations."
+  },
+  "shape_moduli": {
+    "real_dimension": 72,
+    "result": "The stated curvature+central-top-form-flux+constant-potential sector is independent of shape at fixed area; arithmetic complex structure is not selected."
+  },
+  "limits": [
+    "Radion positivity is not full scalar/KK stability",
+    "No Einstein action or Planck/gauge scale is derived from arithmetic",
+    "Changing warp factors, localized sources, matter gradients or corrections requires a new field-equation analysis",
+    "No discrete-anomaly or six-dimensional anomaly cancellation follows from the background equations"
+  ],
+  "sources": [
+    {
+      "url": "https://arxiv.org/pdf/hep-th/0405173",
+      "location": "sections 2 and 3",
+      "use": "Primary flux compactification framework and radion/AdS cross-check"
+    },
+    {
+      "url": "https://people.math.harvard.edu/~ctm/papers/home/text/class/notes/rs/course.pdf",
+      "location": "section 3.2",
+      "use": "Fenchel-Nielsen coordinates and dimension of Teichmuller space"
+    }
+  ],
+  "checks": [
+    {
+      "name": "2D magnetic stress is plus its energy density",
+      "passed": true
+    },
+    {
+      "name": "six-dimensional stress trace",
+      "passed": true
+    },
+    {
+      "name": "trace-reversed external Einstein equation",
+      "passed": true
+    },
+    {
+      "name": "trace-reversed internal Einstein equation",
+      "passed": true
+    },
+    {
+      "name": "direct Einstein external solution",
+      "passed": true
+    },
+    {
+      "name": "direct Einstein internal solution",
+      "passed": true
+    },
+    {
+      "name": "negative internal curvature fixes U",
+      "passed": true
+    },
+    {
+      "name": "negative internal curvature forces AdS",
+      "passed": true
+    },
+    {
+      "name": "AdS expression is strictly negative",
+      "passed": true
+    },
+    {
+      "name": "Minkowski would require positive internal curvature",
+      "passed": true
+    },
+    {
+      "name": "AdS curvature radius lacks parametric separation",
+      "passed": true
+    },
+    {
+      "name": "closed genus-13 hyperbolic area",
+      "passed": true
+    },
+    {
+      "name": "Gauss-Bonnet scalar curvature integral",
+      "passed": true
+    },
+    {
+      "name": "M1 trace-weighted flux norm",
+      "passed": true
+    },
+    {
+      "name": "common-coupling magnetic energy in stated trace convention",
+      "passed": true
+    },
+    {
+      "name": "beta coefficient",
+      "passed": true
+    },
+    {
+      "name": "C3X unit-flux magnetic energy",
+      "passed": true
+    },
+    {
+      "name": "C3X beta",
+      "passed": true
+    },
+    {
+      "name": "radius quadratic follows from internal Einstein equation",
+      "passed": true
+    },
+    {
+      "name": "positive radius root",
+      "passed": true
+    },
+    {
+      "name": "positive radius root has positive sign",
+      "passed": true
+    },
+    {
+      "name": "negative root rationalization",
+      "passed": true
+    },
+    {
+      "name": "other root is negative",
+      "passed": true
+    },
+    {
+      "name": "zero-flux radius limit",
+      "passed": true
+    },
+    {
+      "name": "radion stationarity condition",
+      "passed": true
+    },
+    {
+      "name": "stationary Einstein-frame potential",
+      "passed": true
+    },
+    {
+      "name": "radion coordinate Hessian",
+      "passed": true
+    },
+    {
+      "name": "canonical radion normalization n=2",
+      "passed": true
+    },
+    {
+      "name": "canonical radion squared mass",
+      "passed": true
+    },
+    {
+      "name": "radion squared mass positive",
+      "passed": true
+    },
+    {
+      "name": "4D Einstein equation equals direct 6D result",
+      "passed": true
+    },
+    {
+      "name": "4D stationary condition equals internal 6D equation",
+      "passed": true
+    },
+    {
+      "name": "dimensionless radion mass in AdS",
+      "passed": true
+    },
+    {
+      "name": "radion mass above lower endpoint",
+      "passed": true
+    },
+    {
+      "name": "radion mass below upper endpoint",
+      "passed": true
+    },
+    {
+      "name": "positive potential terms cannot stabilize radius",
+      "passed": true
+    },
+    {
+      "name": "exact control radius",
+      "passed": true
+    },
+    {
+      "name": "exact control external curvature",
+      "passed": true
+    },
+    {
+      "name": "exact control internal curvature",
+      "passed": true
+    },
+    {
+      "name": "exact control radion mass",
+      "passed": true
+    },
+    {
+      "name": "exact control AdS radius",
+      "passed": true
+    },
+    {
+      "name": "Hu cannot have nonzero covariantly constant section",
+      "passed": true
+    },
+    {
+      "name": "Hd cannot have nonzero covariantly constant section",
+      "passed": true
+    },
+    {
+      "name": "candidate flux has identical magnetic stress",
+      "passed": true
+    },
+    {
+      "name": "candidate Hu passes degree-zero necessity",
+      "passed": true
+    },
+    {
+      "name": "candidate Hd passes degree-zero necessity",
+      "passed": true
+    },
+    {
+      "name": "real hyperbolic shape dimension at genus 13",
+      "passed": true
+    }
+  ],
+  "checks_passed": 47,
+  "checks_failed": 0
+}

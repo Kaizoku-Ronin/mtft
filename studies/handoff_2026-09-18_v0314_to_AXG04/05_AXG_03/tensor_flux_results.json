@@ -1,0 +1,273 @@
+{
+  "study": "AXG-03 tensor flux transgression",
+  "scope": "Conditional exact lattice calculation, not a completed tensor parent",
+  "normalization": {
+    "f": "F/(2*pi)",
+    "normalized_axion_period": 1,
+    "physical_axion_period": "2*pi",
+    "abelian_class": "X4=(1/2)*b_ab*f_a*f_b",
+    "induced_shift": "q=b*m; delta(theta)=-q_a*Lambda_a",
+    "patching": "Includes both symmetric flux cross terms; naive local half-descent is insufficient"
+  },
+  "m": [
+    0,
+    -3,
+    3,
+    3,
+    0
+  ],
+  "m0": [
+    0,
+    -1,
+    1,
+    1,
+    0
+  ],
+  "k1": [
+    0,
+    -2,
+    1,
+    1,
+    0
+  ],
+  "k_delta": [
+    3,
+    -2,
+    -1,
+    -1,
+    1
+  ],
+  "integral_control_class": "c2(E_L)+c1(L_a)*c1(L_b)",
+  "integral_control_pairing": [
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "2",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "integral_control_shift": [
+    "0",
+    "-6",
+    "3",
+    "3",
+    "0"
+  ],
+  "rational_local_control_pairing": [
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "2/3",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1/3",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1/3",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "smith_invariants_original": [
+    1,
+    1
+  ],
+  "smith_invariants_native_plus_integral_tensor": [
+    1,
+    3
+  ],
+  "smith_invariants_actual_unitary_determinant_basis": [
+    1,
+    3
+  ],
+  "global_gate": "If the transgression pairing is integral on the actual primitive cocharacter and axion/string lattices, m=3*m0 forces q in 3 times the axion charge lattice. Primitive k1 is excluded in that class.",
+  "possible_changes_requiring_new_data": [
+    "Different primitive flux or gauge global form and allowed bundles",
+    "Fractional tensor/axion lattice with specified discrete or relative sector",
+    "Localized defects or additional non-flux shift sources",
+    "Additional native axions or additional Higgs condensates"
+  ],
+  "tensor_modes_before_flux_interactions": {
+    "genus": 13,
+    "nonchiral": {
+      "independent_scalars": 2,
+      "harmonic_one_form_vectors": 26
+    },
+    "self_dual": {
+      "independent_scalars": 1,
+      "harmonic_one_form_vectors": 13
+    },
+    "note": "Self-duality relates internal-integral and dual-external scalar; flux can mix/lift these kinematic modes."
+  },
+  "sources": [
+    {
+      "url": "https://arxiv.org/pdf/1506.05771",
+      "location": "equations (55)-(60), (73)-(76)",
+      "use": "Explicit factor-two flux patching and electric/dual axions"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1711.04777",
+      "location": "equations (2.27), (3.32)",
+      "use": "String charge quantization and actual cocharacter lattice"
+    }
+  ],
+  "checks": [
+    {
+      "name": "flux has cocharacter factor three",
+      "passed": true
+    },
+    {
+      "name": "primitive native direction",
+      "passed": true
+    },
+    {
+      "name": "native direction annihilates flux",
+      "passed": true
+    },
+    {
+      "name": "primitive k1 fails native-scalar degree test",
+      "passed": true
+    },
+    {
+      "name": "integer symmetric tensor pairing",
+      "passed": true
+    },
+    {
+      "name": "even diagonal makes integral central quadratic class",
+      "passed": true
+    },
+    {
+      "name": "primitive-flux control gives k1",
+      "passed": true
+    },
+    {
+      "name": "actual-flux control gives 3 k1",
+      "passed": true
+    },
+    {
+      "name": "tensor row need not annihilate flux",
+      "passed": true
+    },
+    {
+      "name": "quadratic polarization includes both flux cross terms",
+      "passed": true
+    },
+    {
+      "name": "naive half-descent row differs from full transgression",
+      "passed": true
+    },
+    {
+      "name": "integral U(2) characteristic class gives same center row",
+      "passed": true
+    },
+    {
+      "name": "native row is an actual determinant character",
+      "passed": true
+    },
+    {
+      "name": "rational local control reaches primitive k1",
+      "passed": true
+    },
+    {
+      "name": "rational control fails primitive integer coefficient lattice",
+      "passed": true
+    },
+    {
+      "name": "rational class has a one-third product period on S2 x S2",
+      "passed": true
+    },
+    {
+      "name": "universal transgression coefficient identity",
+      "passed": true
+    },
+    {
+      "name": "target is nonzero modulo three",
+      "passed": true
+    },
+    {
+      "name": "adding any integral native direction cannot repair divisibility",
+      "passed": true
+    },
+    {
+      "name": "original periodic map is primitive",
+      "passed": true
+    },
+    {
+      "name": "native plus integral tensor has index three",
+      "passed": true
+    },
+    {
+      "name": "unitary-center quotient does not remove index three",
+      "passed": true
+    },
+    {
+      "name": "factor three cannot be removed by integral row operations",
+      "passed": true
+    },
+    {
+      "name": "same common-phase real kernel",
+      "passed": true
+    },
+    {
+      "name": "same hypercharge real kernel",
+      "passed": true
+    },
+    {
+      "name": "same B-L real kernel",
+      "passed": true
+    }
+  ],
+  "checks_passed": 26,
+  "checks_failed": 0
+}

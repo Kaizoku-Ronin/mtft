@@ -1,0 +1,156 @@
+{
+  "date": "2026-09-18",
+  "baseline": "0.31.4",
+  "purpose": "Proposed implementation tasks; no completion or physical promotion implied.",
+  "tasks": [
+    {
+      "id": "INT-01",
+      "proposed_api": "`surface.arithspin`: retain `al_lift_on_S0`; add `theta_compatible_al_lift` and `check_theta_square_map`",
+      "source": "Initial audit `eta_transform`, `symmetric_square`, `group_stats`; teaching matrix checks",
+      "acceptance_gates": "D8 section squares; Q8 compatible squares; both commutators \u2212I; rank-three product map; exact eta and frozen-basis agreement; raw B0 square \u2212I/13",
+      "status": "PROPOSED",
+      "dependencies": []
+    },
+    {
+      "id": "INT-02",
+      "proposed_api": "`surface.spin_circle`: `circle_bundle_topology`, `fiber_holonomy`, `rank_one_cohomology`, `spin_circle_metric`",
+      "source": "SC7 `seifert_relators`, `fox_row`, `all_cohomology`, `curvature_check`",
+      "acceptance_gates": "e=12 torsion; degree \u00b13 and \u00b16 acyclicity; trivial/nontrivial base controls; duality uses inverse character; physical gate FAIL retained",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-01"
+      ]
+    },
+    {
+      "id": "INT-03",
+      "proposed_api": "`surface.hopf_geometry`: `half_form_pencil`, `hopf_connection`, `pullback_line_degrees`",
+      "source": "HOPF `qm`, curvature and Chern calculations",
+      "acceptance_gates": "Degree 12; anti-self-duality in declared orientation; c2=1 on S4; pulled-back line degrees \u00b112; arithmetic left action distinguished from right fiber action",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-01"
+      ]
+    },
+    {
+      "id": "INT-04",
+      "proposed_api": "`hecke` or dedicated surface helpers: `crt_projective_line`, `coprime_block_projectors`, `quaternionic_multiplicity_gate`",
+      "source": "HOPF Manin reconstruction, `evaluate`, CRT permutations, rational commutator system",
+      "acceptance_gates": "168 points; cusp widths 1,11,13,143; projectors ranks 12/14, idempotence and complementarity; original 8D quaternionic obstruction and doubled 16D control",
+      "status": "PROPOSED",
+      "dependencies": []
+    },
+    {
+      "id": "INT-05",
+      "proposed_api": "`research.anomalies`: `chiral_anomaly_polynomial`, `pushforward_curve_flux`, `factorized_descent`",
+      "source": "AXG-01 anomaly audit; AXG-02 parent anomaly; AXG-04 independent Cartan reconstruction",
+      "acceptance_gates": "I6 cubic/linear/non-Abelian terms with conventions; exact I8\u2192I6; irreducible p2 and f c3 witnesses; zero-index chirality flip changes I8 but preserves pushforward",
+      "status": "PROPOSED",
+      "dependencies": []
+    },
+    {
+      "id": "INT-06",
+      "proposed_api": "`research.charge_lattices`: `shift_kernel`, `smith_remnant`, `integer_dressing`, `canonical_vector_masses`",
+      "source": "AXG-01 anomaly/operator audits; AXG-03 tensor flux audit",
+      "acceptance_gates": "K kernel p,Y,B\u2212L; SNF(1,1); explicit dressings/forbidden Majorana; kinetic-normalized spectrum; reject rational-only dressing where integer periods required",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-05"
+      ]
+    },
+    {
+      "id": "INT-07",
+      "proposed_api": "`research.tensor_gs`: `native_scalar_flux_gate`, `flux_transgression`, `tensor_factorization`, `integral_lattice_gate`",
+      "source": "AXG-02 flux/scalar; AXG-03 tensor factor/flux; AXG-04 charged action",
+      "acceptance_gates": "Km=(12,12); k\u0394m=0; integral 3k1; inertia(2,1) witness; C3X \u03a9 and characteristic vector; one-parent fractional norms FAIL; no implicit change of axion period",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-05",
+        "INT-06"
+      ]
+    },
+    {
+      "id": "INT-08",
+      "proposed_api": "`research.discrete_anomalies`: `spin_zn_fermion_test`, `operator_residue_table`",
+      "source": "AXG-03 discrete/operator; AXG-04 charged action",
+      "acceptance_gates": "Z3 S1=S3=24 fails cubic mod9; isolated repair ledger includes 12 new modes; C3X Z12 tests; explicit fermion-only vs full-theory scope",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-06",
+        "INT-07"
+      ]
+    },
+    {
+      "id": "INT-09",
+      "proposed_api": "`research.mode_operators`: `spin_dirac_index`, `degree_one_purity_certificate`, `bochner_bound`, `six_d_scalar_yukawa_gate`",
+      "source": "AXG-03 Higgs parent; AXG-04 Higgs action",
+      "acceptance_gates": "Index distinct from h0/h1; O(P)\u2192(2,1) versus O(P+Q\u2212R)\u2192(1,0); degree\u22126 positive scalar bound; same/opposite chirality bilinear gates",
+      "status": "PROPOSED",
+      "dependencies": []
+    },
+    {
+      "id": "INT-10",
+      "proposed_api": "`research.parents`: immutable M1-parent controls and `c3x_model`; `validate_spectrum`, `action_data`, `reduce_yukawas`",
+      "source": "AXG-02 spectrum; AXG-04 chiral/charged/Higgs audits",
+      "acceptance_gates": "Six physical C3X reps \u00d73, one Higgs; signed dimension zero; correct conjugation in 4D; supplied arbitrary 3\u00d73 Yukawas; direct-product global form required",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-05",
+        "INT-07",
+        "INT-09"
+      ]
+    },
+    {
+      "id": "INT-11",
+      "proposed_api": "`research.compactification`: `einstein_frame_potential`, `product_background`, `radion_hessian`, `remaining_modes`",
+      "source": "Initial/SC7 gravity; AXG-01/02 vacuum; AXG-04 gravity background",
+      "acceptance_gates": "6D exponents 4,6,2 and 7D 5,7,3; nonnegative-energy runaways; negative-potential AdS controls; canonical radion; \u03bb4<0 and ell4\u00b2<3R\u00b2 for C3X; untested KK modes marked",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-10"
+      ]
+    },
+    {
+      "id": "INT-12",
+      "proposed_api": "Experimental topology study, not a generic solver: `c3x_spin_bordism_certificate`",
+      "source": "AXG-04 `global_bordism_audit.py`",
+      "acceptance_gates": "Explicit Sq2 matrices over F2; dimensions 5,9,16; ranks 2,7; ker=image; stated ordinary Spin-BG category; no automatic promotion to global GS completion",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-10"
+      ]
+    },
+    {
+      "id": "INT-13",
+      "proposed_api": "Parent comparison controls: `split_bundle_morse_index`, `flux_centralizer`",
+      "source": "AXG-04 larger-parent audit/notes",
+      "acceptance_gates": "U8 mirror indices, U4\u00d7U2\u00d7U2 enhancement, complex Morse count 312 with 180 colored directions; do not equate a fixed-YM negative mode with a completed coupled-AdS stability result",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-09",
+        "INT-10"
+      ]
+    },
+    {
+      "id": "INT-14",
+      "proposed_api": "Documentation and release registers",
+      "source": "All reports; teaching manuscript and figures",
+      "acceptance_gates": "Append correction links; retain retracted values with provenance; update stale docstrings; ship data, licenses, tests and reproducible CLI examples",
+      "status": "PROPOSED",
+      "dependencies": [
+        "INT-01",
+        "INT-02",
+        "INT-03",
+        "INT-04",
+        "INT-05",
+        "INT-06",
+        "INT-07",
+        "INT-08",
+        "INT-09",
+        "INT-10",
+        "INT-11",
+        "INT-12",
+        "INT-13"
+      ]
+    }
+  ]
+}

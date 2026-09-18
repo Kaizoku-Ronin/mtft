@@ -1,0 +1,398 @@
+{
+  "investigation": "AXG-04 Spin-BG degree-seven bordism check",
+  "class": "Exact finite-field AHSS calculation conditional on stated standard topological inputs",
+  "gauge_group": "SU(3) x SU(2) x U(1)_h x U(1)_X, direct product",
+  "integral_cohomology": "Z[h,u,C,L,D], degrees (2,2,4,4,6), torsion-free; homology likewise free and even",
+  "generator_meanings": {
+    "h": "c1(U1_h)",
+    "u": "c1(U1_X)",
+    "C": "c2(SU3)",
+    "L": "c2(SU2)",
+    "D": "c3(SU3)"
+  },
+  "Sq1": "zero on all generators because they lift integrally",
+  "Sq2_rules": {
+    "h": "h^2",
+    "u": "u^2",
+    "C": "D",
+    "L": "0",
+    "D": "0"
+  },
+  "bases": {
+    "H4": [
+      "h^2",
+      "h*u",
+      "u^2",
+      "C",
+      "L"
+    ],
+    "H6": [
+      "h^3",
+      "h^2*u",
+      "h*u^2",
+      "u^3",
+      "h*C",
+      "u*C",
+      "h*L",
+      "u*L",
+      "D"
+    ],
+    "H8": [
+      "h^4",
+      "h^3*u",
+      "h^2*u^2",
+      "h^2*C",
+      "h^2*L",
+      "h*u^3",
+      "h*u*C",
+      "h*u*L",
+      "h*D",
+      "u^4",
+      "u^2*C",
+      "u^2*L",
+      "u*D",
+      "C^2",
+      "C*L",
+      "L^2"
+    ]
+  },
+  "Sq2_H4_to_H6": {
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "rank": 2
+  },
+  "Sq2_H6_to_H8": {
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "rank": 7
+  },
+  "kernel_H6_equals_image_H4": {
+    "basis": [
+      "h^2*u+h*u^2",
+      "D"
+    ],
+    "dimension": 2,
+    "exhaustive_vectors": 4
+  },
+  "spin_point_coefficients": {
+    "0": "Z",
+    "1": "Z2",
+    "2": "Z2",
+    "3": "0",
+    "4": "Z",
+    "5": "0",
+    "6": "0",
+    "7": "0"
+  },
+  "AHSS": {
+    "E2_definition": "E2_pq=Hp(BG;Omega_q^Spin(pt))",
+    "only_total_degree_7_term": [
+      [
+        6,
+        1
+      ]
+    ],
+    "E2_6_1_dimension_F2": 9,
+    "d2_outgoing_rank": 2,
+    "d2_incoming_rank": 7,
+    "E3_6_1_dimension_F2": 0,
+    "reason_incoming_integral_reduction_surjective": "H8(BG;Z) is free in the displayed monomial basis",
+    "higher_differentials": "No total-degree-seven associated-graded group survives E3; later pages cannot create one.",
+    "extensions": "All degree-seven associated-graded pieces are zero; there is no extension ambiguity."
+  },
+  "conclusion": "Omega_7^Spin(B[SU3 x SU2 x U1 x U1])=0",
+  "physical_scope": [
+    "For ordinary spin manifolds with bundles for exactly this direct-product group, no additional Spin-BG bordism torsion anomaly remains once cancellation of the full anomaly theory by globally defined GS terms is constructed.",
+    "This calculation does not itself define the differential-cohomological Green-Schwarz/Wu counterterm or its coupling to dynamical tensors.",
+    "If the background category includes a chosen B-field trivialization such as dH=X4, it may be a homotopy fiber rather than BG. Its bordism group must be calculated separately.",
+    "The result does not apply automatically to quotient gauge groups, spin-charge identifications, defects, boundaries, or non-spin manifolds.",
+    "This is not a UV-completion, positive-energy, scalar-potential, or vacuum theorem."
+  ],
+  "references": [
+    {
+      "url": "https://arxiv.org/abs/2012.11622",
+      "sections": "Appendix B.1-B.3",
+      "support": "Spin AHSS d2 dual to Sq2 with mod2 reduction, and SU2/SU3 cohomology and Sq2 c2=c3."
+    },
+    {
+      "url": "https://arxiv.org/abs/2012.11622",
+      "sections": "Section 3.3 and Appendix B.6",
+      "support": "The B-field-trivialization background space can differ from BG and have nonzero degree-seven bordism."
+    }
+  ],
+  "checks": [
+    "H4 basis is complete",
+    "H6 basis is complete",
+    "H4 dimension five",
+    "H6 dimension nine",
+    "H8 dimension sixteen",
+    "no odd integral cohomology through degree seven",
+    "Sq2 h",
+    "Sq2 u",
+    "Sq2 color c2",
+    "Sq2 weak c2",
+    "Sq2 color c3",
+    "Cartan mixed Abelian image",
+    "Sq2 squares vanish on relevant integral classes",
+    "Sq2 images stay in expected homogeneous basis 4",
+    "Sq2 images stay in expected homogeneous basis 6",
+    "Sq2 H4 to H6 rank two",
+    "Sq2 H6 to H8 rank seven",
+    "cohomology square differential zero",
+    "exhaustive nine-dimensional kernel has four vectors",
+    "exhaustive five-dimensional image has four vectors",
+    "exhaustive cohomology exactness kernel equals image",
+    "explicit kernel basis is mixed cubic and color c3",
+    "homology outgoing d2 rank two",
+    "homology incoming d2 rank seven",
+    "homology differential square zero",
+    "homological kernel has dimension seven",
+    "homological image has dimension seven",
+    "homological E3 term vanishes exactly",
+    "unique E2 total-degree-seven term",
+    "spin-bordism coefficient at dimension seven is zero"
+  ],
+  "summary": {
+    "passed": 30,
+    "failed": 0
+  }
+}
