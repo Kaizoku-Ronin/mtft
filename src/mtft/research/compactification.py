@@ -21,3 +21,12 @@ def c3x_ads_control(M, R, rho_F):
     return {"U": sp.simplify(U), **bg, "ell4_squared": sp.simplify(ell2), "scale_separation": False, "radion_mass2": sp.simplify(2 / R ** 2 + 6 * rho_F / M), "classification": "classical control; not a vacuum, not a KK-stability result"}
 
 def planck_reduction(M6_4, area): return {"M_P_squared": M6_4 * area, "note": "reduction relation, not a scale-selection mechanism (H-25)"}
+
+
+def radion_brans_dicke(n_internal=2, cassini_bound=40000):
+    """Kaluza–Klein reduction over n internal dimensions gives a 4D scalar–tensor theory with the volume modulus as the Brans–Dicke scalar,
+    omega_BD = -(n - 1)/n (= -1/2 for a curve).  A massless radion therefore violates the Cassini bound omega > 4e4: radius stabilisation
+    (a radion mass) is required by solar-system gravity, not merely desirable.  1/g_4^2 = A/g_6^2: the internal area is the vacuum
+    'permittivity' of the gauge sector in the same reduction."""
+    from fractions import Fraction
+    w = Fraction(-(n_internal - 1), n_internal); return {"omega_BD": w, "passes_cassini_massless": w > cassini_bound, "requirement": "massive (stabilised) radion", "gauge_coupling_relation": "1/g4^2 = A/g6^2"}

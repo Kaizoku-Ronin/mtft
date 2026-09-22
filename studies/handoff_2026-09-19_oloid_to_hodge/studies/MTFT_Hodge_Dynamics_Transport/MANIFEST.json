@@ -1,0 +1,105 @@
+{
+  "title": "Hodge dynamics and explicit period transport",
+  "date": "2026-09-19",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "prior_source_snapshot": {
+    "archive": "mtft-0.32.0.tar.gz",
+    "sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+    "repository_modified": false
+  },
+  "files": {
+    "README.md": {
+      "bytes": 1672,
+      "sha256": "0820e3160fdc6092cff09364b3dd775b7cd8e84cc7bdbf0422e67bc7eec51b72"
+    },
+    "REPORT.md": {
+      "bytes": 16004,
+      "sha256": "92deca6225624d69e589d0730c7528dff59d544fc44d9159548c22af76d65bed"
+    },
+    "dynamics/DYNAMICS_AND_FRICKE.md": {
+      "bytes": 8840,
+      "sha256": "ea5126bb15dcf79a5887c0b2823e1450e4b88fcf4ed136b75ea1fbc62282514b"
+    },
+    "dynamics/fricke_checks.json": {
+      "bytes": 302,
+      "sha256": "2207430ffac9b68791608550a04292c622ebd62ea8c9e220525a7957330b7c0e"
+    },
+    "dynamics/verify_fricke.py": {
+      "bytes": 2648,
+      "sha256": "624cf8328212482241c9c81a309de4a230c410e5d503f1d753803e75ef21aad0"
+    },
+    "geometry/TRANSPORT_NOTE.md": {
+      "bytes": 7041,
+      "sha256": "ecc390a2a315f8e9a8afa5b5aa91a5137347654f539d45235af34e62521f2787"
+    },
+    "geometry/compute_transport.py": {
+      "bytes": 10761,
+      "sha256": "6da0c2b8c5eb8f4e81b33dab3d02a761900c6ccb72329de407a369ee6c288457"
+    },
+    "geometry/transport_results.json": {
+      "bytes": 22136,
+      "sha256": "3cf2ee1d0c422f202283b274688f0d40238fe1528d16c26467e1aed9d5e6d375"
+    },
+    "monodromy/NEW_COMPONENT_NOTE.md": {
+      "bytes": 3452,
+      "sha256": "c69f6dcae7be6b1f169c246fc539d882592b006ca36e4e86d3294c9cf694ec1c"
+    },
+    "monodromy/NOTE.md": {
+      "bytes": 5972,
+      "sha256": "470a8553e48fbe1d8f130347d796017fcab76515f228fdb2fccb425c88b843ed"
+    },
+    "monodromy/compute_monodromy.py": {
+      "bytes": 6045,
+      "sha256": "17adf1ac3cc95051714812a9792018d91c1a6318b3e1fe5f26adddc9562ce40f"
+    },
+    "monodromy/monodromy_growth.csv": {
+      "bytes": 1728,
+      "sha256": "0a8ef2328a36ef7161b10fbf2e0663b8900b681b1a01727c37fdcf20838a3d5c"
+    },
+    "monodromy/monodromy_results.json": {
+      "bytes": 15831,
+      "sha256": "31acef1d928578857929d8cb10035f85afeb227032ffade9d562d6509df3afa6"
+    },
+    "monodromy/new_component_monodromy.py": {
+      "bytes": 3990,
+      "sha256": "31447998393ffa1aa742a8b425aa6154a71fb4b9424a424c10f3facce4f8a6f0"
+    },
+    "monodromy/new_component_monodromy_results.json": {
+      "bytes": 8968,
+      "sha256": "485e3e0fa6e2a0caee27296c3f7e5c72bfe0163fc9e87f30c7726eba952d1e0e"
+    },
+    "plot_results.py": {
+      "bytes": 2777,
+      "sha256": "3ac502b4b4f03763f1ace8eb3e6a0fbcc66f222ae9c51bc4c65d5cb837153df5"
+    },
+    "root_checks/elliptic_exact.py": {
+      "bytes": 1751,
+      "sha256": "9988583a53aaffb932825976917388fb124fc7ceb22ff1dec7f3e7b896e14109"
+    },
+    "root_checks/elliptic_exact_results.json": {
+      "bytes": 435,
+      "sha256": "35c1e1a954d19eebed926276ba887a7a8f752b7b0ff4390839d275faa4499ba5"
+    },
+    "root_checks/interval_results.csv": {
+      "bytes": 1652,
+      "sha256": "25ca432d2b754022669bf6c1e33461dd6ab3a99967da9511ae9121277d371813"
+    },
+    "root_checks/interval_results.json": {
+      "bytes": 4958,
+      "sha256": "34b8f3e4fb7553266827438c0aa95b3c38573202adcebd99689709b9d47aea1a"
+    },
+    "root_checks/interval_transport.py": {
+      "bytes": 3646,
+      "sha256": "24078f745f879758432d9b9d42585351227325b03798d163e62379693d7923d0"
+    },
+    "transport_comparison.png": {
+      "bytes": 193648,
+      "sha256": "1bc2657fd7904df83833a8cc70da72e1f0345c543840d946692f459ce22f7a6b"
+    }
+  }
+}

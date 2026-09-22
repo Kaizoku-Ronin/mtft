@@ -1,0 +1,91 @@
+{
+  "stack_order": [
+    "c",
+    "L",
+    "a",
+    "b",
+    "d"
+  ],
+  "sector_order": [
+    "cL",
+    "ca",
+    "cb",
+    "cd",
+    "La",
+    "Lb",
+    "Ld",
+    "ab",
+    "ad",
+    "bd"
+  ],
+  "symbols": {
+    "C": "c2(SU3)",
+    "D3": "c3(SU3)",
+    "W": "c2(SU2)",
+    "p1": "p1(T)",
+    "p2": "p2(T)"
+  },
+  "normalization": "positive complex Weyl: [Ahat(T) ch(R)]8",
+  "sectors": {
+    "cL": {
+      "I8": "C**2/6 + C*W - C*f_L**2 + 2*C*f_L*f_c - C*f_c**2 + C*p1/12 - D3*f_L + D3*f_c + W**2/4 - 3*W*f_L**2/2 + 3*W*f_L*f_c - 3*W*f_c**2/2 + W*p1/8 + f_L**4/4 - f_L**3*f_c + 3*f_L**2*f_c**2/2 - f_L**2*p1/8 - f_L*f_c**3 + f_L*f_c*p1/4 + f_c**4/4 - f_c**2*p1/8 + 7*p1**2/960 - p2/240",
+      "I6": "2*C*f_L - 2*C*f_c + D3 + 3*W*f_L - 3*W*f_c - f_L**3 + 3*f_L**2*f_c - 3*f_L*f_c**2 + f_L*p1/4 + f_c**3 - f_c*p1/4",
+      "dimension": 6,
+      "c3_coefficient": "-f_L + f_c"
+    },
+    "ca": {
+      "I8": "C**2/12 - C*f_a**2/2 + C*f_a*f_c - C*f_c**2/2 + C*p1/24 - D3*f_a/2 + D3*f_c/2 + f_a**4/8 - f_a**3*f_c/2 + 3*f_a**2*f_c**2/4 - f_a**2*p1/16 - f_a*f_c**3/2 + f_a*f_c*p1/8 + f_c**4/8 - f_c**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "C*f_a - C*f_c + D3/2 - f_a**3/2 + 3*f_a**2*f_c/2 - 3*f_a*f_c**2/2 + f_a*p1/8 + f_c**3/2 - f_c*p1/8",
+      "dimension": 3,
+      "c3_coefficient": "-f_a/2 + f_c/2"
+    },
+    "cb": {
+      "I8": "C**2/12 - C*f_b**2/2 + C*f_b*f_c - C*f_c**2/2 + C*p1/24 - D3*f_b/2 + D3*f_c/2 + f_b**4/8 - f_b**3*f_c/2 + 3*f_b**2*f_c**2/4 - f_b**2*p1/16 - f_b*f_c**3/2 + f_b*f_c*p1/8 + f_c**4/8 - f_c**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "C*f_b - C*f_c + D3/2 - f_b**3/2 + 3*f_b**2*f_c/2 - 3*f_b*f_c**2/2 + f_b*p1/8 + f_c**3/2 - f_c*p1/8",
+      "dimension": 3,
+      "c3_coefficient": "-f_b/2 + f_c/2"
+    },
+    "cd": {
+      "I8": "C**2/12 - C*f_c**2/2 + C*f_c*f_d - C*f_d**2/2 + C*p1/24 + D3*f_c/2 - D3*f_d/2 + f_c**4/8 - f_c**3*f_d/2 + 3*f_c**2*f_d**2/4 - f_c**2*p1/16 - f_c*f_d**3/2 + f_c*f_d*p1/8 + f_d**4/8 - f_d**2*p1/16 + 7*p1**2/1920 - p2/480",
+      "I6": "-C*f_c + C*f_d + D3/2 + f_c**3/2 - 3*f_c**2*f_d/2 + 3*f_c*f_d**2/2 - f_c*p1/8 - f_d**3/2 + f_d*p1/8",
+      "dimension": 3,
+      "c3_coefficient": "f_c/2 - f_d/2"
+    },
+    "La": {
+      "I8": "W**2/12 - W*f_L**2/2 + W*f_L*f_a - W*f_a**2/2 + W*p1/24 + f_L**4/12 - f_L**3*f_a/3 + f_L**2*f_a**2/2 - f_L**2*p1/24 - f_L*f_a**3/3 + f_L*f_a*p1/12 + f_a**4/12 - f_a**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "-W*f_L + W*f_a + f_L**3/3 - f_L**2*f_a + f_L*f_a**2 - f_L*p1/12 - f_a**3/3 + f_a*p1/12",
+      "dimension": 2,
+      "c3_coefficient": "0"
+    },
+    "Lb": {
+      "I8": "W**2/12 - W*f_L**2/2 + W*f_L*f_b - W*f_b**2/2 + W*p1/24 + f_L**4/12 - f_L**3*f_b/3 + f_L**2*f_b**2/2 - f_L**2*p1/24 - f_L*f_b**3/3 + f_L*f_b*p1/12 + f_b**4/12 - f_b**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "-W*f_L + W*f_b + f_L**3/3 - f_L**2*f_b + f_L*f_b**2 - f_L*p1/12 - f_b**3/3 + f_b*p1/12",
+      "dimension": 2,
+      "c3_coefficient": "0"
+    },
+    "Ld": {
+      "I8": "W**2/12 - W*f_L**2/2 + W*f_L*f_d - W*f_d**2/2 + W*p1/24 + f_L**4/12 - f_L**3*f_d/3 + f_L**2*f_d**2/2 - f_L**2*p1/24 - f_L*f_d**3/3 + f_L*f_d*p1/12 + f_d**4/12 - f_d**2*p1/24 + 7*p1**2/2880 - p2/720",
+      "I6": "-W*f_L + W*f_d + f_L**3/3 - f_L**2*f_d + f_L*f_d**2 - f_L*p1/12 - f_d**3/3 + f_d*p1/12",
+      "dimension": 2,
+      "c3_coefficient": "0"
+    },
+    "ab": {
+      "I8": "f_a**4/24 - f_a**3*f_b/6 + f_a**2*f_b**2/4 - f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 + f_b**4/24 - f_b**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "f_a**3/6 - f_a**2*f_b/2 + f_a*f_b**2/2 - f_a*p1/24 - f_b**3/6 + f_b*p1/24",
+      "dimension": 1,
+      "c3_coefficient": "0"
+    },
+    "ad": {
+      "I8": "f_a**4/24 - f_a**3*f_d/6 + f_a**2*f_d**2/4 - f_a**2*p1/48 - f_a*f_d**3/6 + f_a*f_d*p1/24 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "f_a**3/6 - f_a**2*f_d/2 + f_a*f_d**2/2 - f_a*p1/24 - f_d**3/6 + f_d*p1/24",
+      "dimension": 1,
+      "c3_coefficient": "0"
+    },
+    "bd": {
+      "I8": "f_b**4/24 - f_b**3*f_d/6 + f_b**2*f_d**2/4 - f_b**2*p1/48 - f_b*f_d**3/6 + f_b*f_d*p1/24 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/5760 - p2/1440",
+      "I6": "f_b**3/6 - f_b**2*f_d/2 + f_b*f_d**2/2 - f_b*p1/24 - f_d**3/6 + f_d*p1/24",
+      "dimension": 1,
+      "c3_coefficient": "0"
+    }
+  }
+}

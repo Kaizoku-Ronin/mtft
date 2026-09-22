@@ -1,0 +1,8 @@
+{
+  "method": "exact Fraction specializations; symbolic proofs in note",
+  "fricke_involution_and_normalized_roundtrip_checks": 10,
+  "connection_intertwining_checks": 10,
+  "isogeny_equation_checks": 60,
+  "modular_word_checks": "(TU)^2=-I; TU^-1=[[3,1],[2,1]]; determinant=1",
+  "all_passed": true
+}

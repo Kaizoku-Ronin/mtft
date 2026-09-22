@@ -1,0 +1,1350 @@
+{
+  "family": "v^2=(u-c)*((u^2+c)^2+c)",
+  "basis": [
+    "u^0 du/v",
+    "u^1 du/v",
+    "u^2 du/v",
+    "u^3 du/v"
+  ],
+  "convention": "d_c eta_j = sum_k A[j][k] eta_k + d_u(R_j/v)",
+  "connection": [
+    [
+      {
+        "numerator_ascending": [
+          "-3/8",
+          "-5/8",
+          "-13/8",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "5/8",
+          "-1/4",
+          "-5/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/8",
+          "-1/4",
+          "1/8",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "9/8",
+          "3/8",
+          "-3/8"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "3/8",
+          "1/8",
+          "-1/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/8",
+          "1/8",
+          "3/8",
+          "-1/2"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/8",
+          "-3/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "3/8",
+          "9/8"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "-1/8",
+          "1/4",
+          "-1/8",
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "3/8",
+          "5/8",
+          "11/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/8",
+          "1/8",
+          "1/8",
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "3/8",
+          "9/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0",
+          "1/8",
+          "1/2",
+          "3/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-3/8",
+          "0",
+          "-1/8",
+          "1"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "3/8",
+          "3/8",
+          "5/8"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "3/8",
+          "3/8",
+          "9/8",
+          "3/2"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ]
+  ],
+  "certificate_R_coefficients": [
+    [
+      {
+        "numerator_ascending": [
+          "-3/4",
+          "-1/4",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-3/2",
+          "-1/2",
+          "1/2"
+        ],
+        "denominator_ascending": [
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-3/4",
+          "-1/4",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0",
+          "-3/4",
+          "-1/4",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4",
+          "-2",
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0",
+          "-1/4",
+          "-1",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0",
+          "-1/2",
+          "-3/2"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0",
+          "0",
+          "-1/4",
+          "-1",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4",
+          "1/4",
+          "0",
+          "-5/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ]
+  ],
+  "specializations": {
+    "-2": {
+      "D2_connection": [
+        [
+          "3/16",
+          "-11/8",
+          "7/16",
+          "9/16"
+        ],
+        [
+          "3/8",
+          "41/16",
+          "-5/8",
+          "-15/16"
+        ],
+        [
+          "-7/8",
+          "-37/8",
+          "19/16",
+          "15/8"
+        ],
+        [
+          "5/4",
+          "71/8",
+          "-17/8",
+          "-63/16"
+        ]
+      ],
+      "C2_connection": [
+        [
+          "1/8",
+          "1/8"
+        ],
+        [
+          "-1/4",
+          "-1/8"
+        ]
+      ],
+      "certificate_R_coefficients": [
+        [
+          "-3/4",
+          "5/8",
+          "3/2",
+          "-1/8",
+          "-3/8"
+        ],
+        [
+          "3/2",
+          "0",
+          "-19/8",
+          "0",
+          "5/8"
+        ],
+        [
+          "-5/2",
+          "1/4",
+          "5",
+          "1/8",
+          "-5/4"
+        ],
+        [
+          "5",
+          "0",
+          "-39/4",
+          "0",
+          "21/8"
+        ]
+      ]
+    },
+    "-3": {
+      "D2_connection": [
+        [
+          "19/88",
+          "-17/88",
+          "19/264",
+          "9/176"
+        ],
+        [
+          "9/88",
+          "131/264",
+          "-1/11",
+          "-1/11"
+        ],
+        [
+          "-19/44",
+          "-87/88",
+          "61/264",
+          "3/11"
+        ],
+        [
+          "6/11",
+          "57/22",
+          "-39/88",
+          "-83/88"
+        ]
+      ],
+      "C2_connection": [
+        [
+          "1/12",
+          "1/24"
+        ],
+        [
+          "-1/4",
+          "-1/12"
+        ]
+      ],
+      "certificate_R_coefficients": [
+        [
+          "-9/44",
+          "1/3",
+          "9/44",
+          "-1/24",
+          "-3/88"
+        ],
+        [
+          "27/44",
+          "0",
+          "-37/132",
+          "0",
+          "2/33"
+        ],
+        [
+          "-12/11",
+          "1/4",
+          "12/11",
+          "1/12",
+          "-2/11"
+        ],
+        [
+          "36/11",
+          "0",
+          "-133/44",
+          "0",
+          "83/132"
+        ]
+      ]
+    },
+    "-3/2": {
+      "D2_connection": [
+        [
+          "3/5",
+          "13/10",
+          "-2/15",
+          "-3/5"
+        ],
+        [
+          "-3/20",
+          "-71/30",
+          "7/10",
+          "7/5"
+        ],
+        [
+          "1/10",
+          "81/20",
+          "-17/15",
+          "-21/10"
+        ],
+        [
+          "-21/40",
+          "-129/20",
+          "39/20",
+          "29/10"
+        ]
+      ],
+      "C2_connection": [
+        [
+          "1/6",
+          "1/3"
+        ],
+        [
+          "-1/4",
+          "-1/6"
+        ]
+      ],
+      "certificate_R_coefficients": [
+        [
+          "3/10",
+          "7/6",
+          "-6/5",
+          "-1/3",
+          "2/5"
+        ],
+        [
+          "-9/20",
+          "0",
+          "89/30",
+          "0",
+          "-14/15"
+        ],
+        [
+          "21/20",
+          "1/4",
+          "-21/5",
+          "1/6",
+          "7/5"
+        ],
+        [
+          "-63/40",
+          "0",
+          "131/20",
+          "0",
+          "-29/15"
+        ]
+      ]
+    },
+    "1": {
+      "D2_connection": [
+        [
+          "-27/40",
+          "-1/40",
+          "1/40",
+          "9/80"
+        ],
+        [
+          "3/40",
+          "-1/40",
+          "-1/10",
+          "3/10"
+        ],
+        [
+          "-1/20",
+          "19/40",
+          "1/40",
+          "3/10"
+        ],
+        [
+          "1/5",
+          "1/10",
+          "11/40",
+          "27/40"
+        ]
+      ],
+      "C2_connection": [
+        [
+          "-1/4",
+          "1/8"
+        ],
+        [
+          "-1/4",
+          "1/4"
+        ]
+      ],
+      "certificate_R_coefficients": [
+        [
+          "-3/20",
+          "-1/2",
+          "-3/20",
+          "-1/8",
+          "-3/40"
+        ],
+        [
+          "-3/20",
+          "0",
+          "-13/20",
+          "0",
+          "-1/5"
+        ],
+        [
+          "-2/5",
+          "1/4",
+          "-2/5",
+          "-1/4",
+          "-1/5"
+        ],
+        [
+          "-2/5",
+          "0",
+          "-3/20",
+          "0",
+          "-9/20"
+        ]
+      ]
+    },
+    "2": {
+      "D2_connection": [
+        [
+          "-113/304",
+          "-1/24",
+          "17/912",
+          "1/304"
+        ],
+        [
+          "1/152",
+          "-1/16",
+          "-7/152",
+          "21/304"
+        ],
+        [
+          "-17/152",
+          "3/8",
+          "-9/304",
+          "21/152"
+        ],
+        [
+          "21/76",
+          "3/8",
+          "29/152",
+          "141/304"
+        ]
+      ],
+      "C2_connection": [
+        [
+          "-1/8",
+          "1/24"
+        ],
+        [
+          "-1/4",
+          "1/8"
+        ]
+      ],
+      "certificate_R_coefficients": [
+        [
+          "-1/76",
+          "-7/24",
+          "-1/114",
+          "-1/24",
+          "-1/456"
+        ],
+        [
+          "-1/38",
+          "0",
+          "-47/152",
+          "0",
+          "-7/152"
+        ],
+        [
+          "-21/38",
+          "1/4",
+          "-7/19",
+          "-1/8",
+          "-7/76"
+        ],
+        [
+          "-21/19",
+          "0",
+          "-37/76",
+          "0",
+          "-47/152"
+        ]
+      ]
+    }
+  },
+  "trace_zero": true,
+  "polynomial_identity_certificates_passed": 4,
+  "coefficient_equations_per_identity": 9,
+  "additional_C2_identities_passed": 2,
+  "direct_C3_pullback_identities_passed": 6,
+  "C3_exact_primitive_coefficients": [
+    [
+      {
+        "numerator_ascending": [
+          "3/4",
+          "1/4",
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0",
+          "1/4",
+          "3/4"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4",
+          "5/4"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-1",
+          "-5",
+          "-13/2",
+          "-9/4",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-9/4",
+          "-23/4",
+          "-5/2",
+          "3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-13/4",
+          "-3/2",
+          "3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-3/4",
+          "-1/4",
+          "1/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "3",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/2",
+          "-1/2",
+          "-3",
+          "-5/2"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4",
+          "-7/2",
+          "-19/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1",
+          "-3"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4",
+          "3/2",
+          "3/4",
+          "-5/4",
+          "-7/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4",
+          "-1/4",
+          "-5/2",
+          "-17/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-1/4",
+          "-3/2",
+          "-13/4"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-3/4"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0",
+          "1/2",
+          "5/2",
+          "2",
+          "1/2",
+          "-1"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "1/4",
+          "7/4",
+          "3/2",
+          "1/4",
+          "-3"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0",
+          "0",
+          "-1",
+          "-3"
+        ],
+        "denominator_ascending": [
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "0"
+        ],
+        "denominator_ascending": [
+          "1"
+        ]
+      },
+      {
+        "numerator_ascending": [
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1"
+        ],
+        "denominator_ascending": [
+          "0",
+          "1",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ]
+  ],
+  "genus3_split_basis": [
+    "2x dx/y",
+    "2x(x^2+c)^2 dx/y",
+    "2(x^2+c)^0 dx/y",
+    "2(x^2+c)^1 dx/y",
+    "2(x^2+c)^2 dx/y",
+    "2(x^2+c)^3 dx/y"
+  ],
+  "genus3_connection": "block_diag(C2_connection,D2_connection)",
+  "projector": "sigma^*(x^j dx/y)=(-1)^(j+1) x^j dx/y; P_+=(1+sigma^*)/2, P_-=(1-sigma^*)/2",
+  "valid_parameters": "c*(c+1)*(c^3+2c^2+c+1) != 0"
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Triangle involution, Feigenbaum scaling, and a Hodge tower",
+  "date": "2026-09-19",
+  "python_version": "3.12.14",
+  "source_archive": "mtft-0.32.0.tar.gz",
+  "source_archive_sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+  "files": {
+    "README.md": {
+      "bytes": 1254,
+      "sha256": "550180b920ca1acd0f71937e81faa0322b3ab4098dd59fc1f8ed33c736d27b66"
+    },
+    "REPORT.md": {
+      "bytes": 17895,
+      "sha256": "19cb85dd34688e57d21883313fcc402c23f15b6359f265a6b09176502e19fbc7"
+    },
+    "SOURCE_AUDIT.md": {
+      "bytes": 2115,
+      "sha256": "f511e6f612a59f19c41f65dfcda0924525b811956ba72ca209a627d29fded560"
+    },
+    "geometry/geometry_results.json": {
+      "bytes": 9751,
+      "sha256": "be166cbdb6758fa53de09b11489d53e49214618f538d5c9fd36a7f9182e640c5"
+    },
+    "geometry/period_results.csv": {
+      "bytes": 3329,
+      "sha256": "2b062f0907fe7ab1f0604d174f3b442e7bacd73345e7ae3cb91bafe7883eda30"
+    },
+    "geometry/verify_geometry.py": {
+      "bytes": 7710,
+      "sha256": "2488e12b6bf99bb015542d97b17a4b33824c2b4b7e077961e55b49e91315feec"
+    },
+    "investigation.png": {
+      "bytes": 173796,
+      "sha256": "4b25f51da9d8bbc49d64dd38d5823ea693280f2052d2c6ed953b1ea5cd3e90ac"
+    },
+    "plot_results.py": {
+      "bytes": 2804,
+      "sha256": "17ed9391c17e73a1e11e09d54fd3dae6bd2b3358d0b2f89cd982ac6141c74ecb"
+    },
+    "scaling/README.md": {
+      "bytes": 3043,
+      "sha256": "dd8e24095736e078e9b72a2e6c23fa69b2e2b27a8596e04a2ffab849b035e343"
+    },
+    "scaling/compute_scaling.py": {
+      "bytes": 6881,
+      "sha256": "30f2a594e7fbaf33511fcab813465222f53cb22cbf5688810bffa01e800f05f0"
+    },
+    "scaling/scaling_results.csv": {
+      "bytes": 5808,
+      "sha256": "761b1f26421b877cf3a29e7e132b46470ff753196e17d67300bc048f2753d6e4"
+    },
+    "scaling/scaling_results.json": {
+      "bytes": 16822,
+      "sha256": "30777d80e3d1a924d35d918f8b8ffc0dce05e9df3a86322dbb0b7b8f0abcd8b7"
+    }
+  }
+}

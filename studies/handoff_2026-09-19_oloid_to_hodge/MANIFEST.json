@@ -1,0 +1,363 @@
+{
+  "title": "MTFT: Oloid to Hodge — consolidated Claude handoff",
+  "created_utc": "2026-09-19T12:55:51.012705+00:00",
+  "scope": "All three completed studies in this conversation, source snapshot, supplied references, and final oloid comparison",
+  "files": {
+    "CLAIM_LEDGER.md": {
+      "bytes": 8375,
+      "sha256": "81c28574854f7d7a4bf275b83d1be10e18e9666f9b19271a4c0c82622b3c7aac"
+    },
+    "INVENTORY.csv": {
+      "bytes": 12617,
+      "sha256": "e5e13032d4e3fc8d3266a93163f3102e47873895786e1f35c90b72aa63156117"
+    },
+    "REPRODUCE.md": {
+      "bytes": 4104,
+      "sha256": "f54dccfc62554021732e9397b5fcda8639658fb32ac2f778ab9a09886a3956d6"
+    },
+    "SESSION_CONTEXT.md": {
+      "bytes": 7603,
+      "sha256": "0ace13ae6f262635613f6f07e063fdceaac66edcee86cfe7fab3fdbb674df931"
+    },
+    "START_HERE_CLAUDE.md": {
+      "bytes": 5850,
+      "sha256": "7d8fa3a7c457a6cd4225356e123cb3f04725be2b21a13d4eb5e85ef73b7c4f64"
+    },
+    "checks/verify_bundle.py": {
+      "bytes": 2995,
+      "sha256": "7fae34ba5bb327343e80adf68780ab896314cca9ad83c76fd6d080a098effa87"
+    },
+    "notes/INTERMEDIATE_DERIVATION.md": {
+      "bytes": 9289,
+      "sha256": "0c37dd2d4a231b409c2a38969c5c47a4b34d9447936993bb92b31bd6926e44fa"
+    },
+    "notes/OLOID_RETURN.md": {
+      "bytes": 5063,
+      "sha256": "ad6005982561cc543116cf5ab22689e59263c3bd10d08112a76fcc167448468f"
+    },
+    "original_archives/MTFT_Graded_Moonshine_Investigation.zip": {
+      "bytes": 38138,
+      "sha256": "8806194baad1c733345782509fb9f114943388ae3dd8a68c3f053578e765c1ff"
+    },
+    "original_archives/MTFT_Hodge_Dynamics_Transport.zip": {
+      "bytes": 224392,
+      "sha256": "32ee3f867f891a73cb4872f2b87f1bfeea1105a50e0a9d99b4ab868c388feb58"
+    },
+    "original_archives/MTFT_Triangle_Feigenbaum_Hodge_Investigation.zip": {
+      "bytes": 192391,
+      "sha256": "d54e14799f3a48be2c05a049635c88f7dc3fab11f03644b1b1b6975f7ccb37f1"
+    },
+    "provenance/PACKAGING_REPORT.json": {
+      "bytes": 1753,
+      "sha256": "c494f3e27b6993bfcaae8ef7fe22435ad920caf3bfb4035322a5aa77bcc6bb46"
+    },
+    "provenance/README.md": {
+      "bytes": 1883,
+      "sha256": "5aaccfe26093138ac0e8f710e50c32f0ddbac586b53b5b2fd948f74e04501327"
+    },
+    "references/README.md": {
+      "bytes": 4409,
+      "sha256": "70dc5aa56ce67aad3d8fb41f0949308bd5598634fe877c2410b033a08b0ddd35"
+    },
+    "references/supplied/01-1000127951.jpg": {
+      "bytes": 204449,
+      "sha256": "afacbcbceb1342784d16976b347e8672bd6c017f48e6ba2a43d66bb24bd3c978"
+    },
+    "references/supplied/01-1000127961.jpg": {
+      "bytes": 191528,
+      "sha256": "3ce34cd9370557da4e9b0660424ecf8004974f9543b45645c78271fac52dcfd1"
+    },
+    "references/supplied/01-1789780541654.jpeg": {
+      "bytes": 49408,
+      "sha256": "af60b89c9000b62660298fcb02a3dbe6454461180a6c45c4aefa5718ec95d89e"
+    },
+    "references/supplied/02-1000127929.jpg": {
+      "bytes": 169116,
+      "sha256": "4bca51a8d9195fd30295acec90f183886748ed102e501a648416e7b492fc17c2"
+    },
+    "references/supplied/02-1000127962.jpg": {
+      "bytes": 286305,
+      "sha256": "62a74845155b503e62fab9e1d02d8efed898bf74b649ced764e175894374fa0a"
+    },
+    "references/supplied/02-1000127971.jpg": {
+      "bytes": 211117,
+      "sha256": "b57c4da3e3e632bf72d59da28d5c3216f49917851f144ae3ed021c8b34f2e9e4"
+    },
+    "references/supplied/03-1000127898.jpg": {
+      "bytes": 56531,
+      "sha256": "724448377d5e0c71e26797e8fe83f5d173cb67547aa8569828a2062a12e00f72"
+    },
+    "references/supplied/03-1000127966.jpg": {
+      "bytes": 295833,
+      "sha256": "988b904275c3aa7287e8e54c7946a5c7f994911a85632bcea166303564ef9398"
+    },
+    "references/supplied/04-1000127897.jpg": {
+      "bytes": 383815,
+      "sha256": "61c2a5362efa6b20acae203a8a884648cb29183438b95132a6372459ac546ec7"
+    },
+    "references/supplied/04-1000127967.jpg": {
+      "bytes": 331497,
+      "sha256": "2bdeef2a6182c50c0ffe5ec9cdd776bfc1bc32134639b43ada45c67f55434315"
+    },
+    "references/supplied/05-1000127888.jpg": {
+      "bytes": 270960,
+      "sha256": "03045524c76c6c7fc693e41e76867c4eec6aee039c2b5d95edd921e0e1bf4413"
+    },
+    "references/supplied/05-1000127968.jpg": {
+      "bytes": 309537,
+      "sha256": "3df5ae60a5f5426ce601fbd9a93afeb0ccf554b8eb290ef2c4b4faae4fd6597f"
+    },
+    "references/supplied/06-1000127833.jpg": {
+      "bytes": 334229,
+      "sha256": "758d038656817b6fccf9580490d97480ead7dad3f61527302bdeeae9366db0c9"
+    },
+    "references/supplied/06-1000127921.jpg": {
+      "bytes": 218461,
+      "sha256": "aaa3fe02b8eb7ea1316074b7e401a849c3a1ed8141271822048703a14368551a"
+    },
+    "references/supplied/07-1000127820.jpg": {
+      "bytes": 28608,
+      "sha256": "49c92dc44c636434228e2f086809c0167d587e9a6fe83ed67bd0066803ce983d"
+    },
+    "references/supplied/08-1000127821.jpg": {
+      "bytes": 32254,
+      "sha256": "7888bbe0d3b753d20b2ffba9ee8abba55f3f34c9cac3c7fc09fd3d683c7cc1bc"
+    },
+    "references/supplied/09-1000127906.jpg": {
+      "bytes": 183508,
+      "sha256": "a0ccc0e7080e81801e0360de09adb280b58f79a579f83b81442a286807be95de"
+    },
+    "references/supplied/10-1000127970.jpg": {
+      "bytes": 281235,
+      "sha256": "448cdc99e56336d54a75bcc1bb6fc1bbcd41056c76dc6f3e96375fbe064ab6a6"
+    },
+    "references/supplied/Feigenbaum_constants.pdf": {
+      "bytes": 498769,
+      "sha256": "5bb5eef3d889694c61f9da1f09de78d34d2431b7785967f805e7a3b5aaa8766a"
+    },
+    "references/supplied/Heegaard_splitting.pdf": {
+      "bytes": 322451,
+      "sha256": "929ba3b85c999614bd844c3208a21cd79c5463d1690454cac90d1c343f92d42e"
+    },
+    "references/supplied/Hopf_fibration.pdf": {
+      "bytes": 1028248,
+      "sha256": "4dce5144a57a70a55e94cba3ea71108306fa9552a39e4192e973d230aed7408b"
+    },
+    "references/supplied/Logistic_map.pdf": {
+      "bytes": 4160024,
+      "sha256": "a250acd2574b6bc93ea41c9e13fe8e271a4beb04fc7e9f1ac6eb0f9da8b979ef"
+    },
+    "references/supplied/Oloid.pdf": {
+      "bytes": 315182,
+      "sha256": "fcc4240f459008a76fd2249bfea1c5297828ab268984b3307169a8f72b3c10a6"
+    },
+    "requirements-reproduction.txt": {
+      "bytes": 121,
+      "sha256": "2a3488dae3b6080364228bc65225e7f9868d46e9fd812066ab7cd7193472b1a9"
+    },
+    "sources/mtft-0.32.0.tar.gz": {
+      "bytes": 4123270,
+      "sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/INVESTIGATION.md": {
+      "bytes": 13823,
+      "sha256": "cb49dedd9169bf95852a6bcdacf108391d50b79f3d9c7e939d5d5a53acb18761"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/LICENSE": {
+      "bytes": 1067,
+      "sha256": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/MANIFEST.json": {
+      "bytes": 1414,
+      "sha256": "872dda14c2a4be7b99ea3ab174b26f23e7416d90fe90d90ee06aca48829420eb"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/README.md": {
+      "bytes": 784,
+      "sha256": "789f9bada76cc80eff3494aa66a81d0d734320423c092abb67de2ef2ed069d59"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/audit_bracket.py": {
+      "bytes": 10618,
+      "sha256": "528e362fd32915b8823fd788bebe854855dced0ed2b0a7761099ec25753bf025"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/audit_operators.py": {
+      "bytes": 9989,
+      "sha256": "6d949e8f6047c584d944ad472f2a98c838150fac562f87733629b6a8357f6bb4"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/bracket_results.json": {
+      "bytes": 21948,
+      "sha256": "1238c1acf06085c60b75604e8f434a7cb01c9cdb5dbdbefb6e4ae64e3449502b"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/data/X0_143_AL_adapted_basis.txt": {
+      "bytes": 1036,
+      "sha256": "b24d315e1f4d3a67651b057266352630ac9dce517609abf7a7b1c38c35e8721f"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/data/X0_143_AL_adapted_qexpansions.txt": {
+      "bytes": 7315,
+      "sha256": "cdb9f3caf6fb6eb529931f41a2b47f0657489328737eb5abf0ab82150b56eb52"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/data/X0_143_I2_by_AL_sector.txt": {
+      "bytes": 6582,
+      "sha256": "13a6b37c188bc0f4f49f2d2b95f432f15adaa00fc9535276695f2c32df14335d"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/data/X0_143_S2_qexpansions.txt": {
+      "bytes": 6840,
+      "sha256": "e7c2aaed96af74c4f21b1aa6d811a427b1a2dc7597abab9d5d5a6308888bb69f"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/graded_results.json": {
+      "bytes": 18639,
+      "sha256": "b89a6055c967c248eaf9131974d020bec735a5194d1bd7dbd2b171934a211315"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/operator_results.json": {
+      "bytes": 17070,
+      "sha256": "2923d62d6a41e8d2d21ca8c14acaff1410aa322f100807238f0422e947ca3a8a"
+    },
+    "studies/MTFT_Graded_Moonshine_Investigation/verify_graded.py": {
+      "bytes": 9398,
+      "sha256": "6327aafdf8351b2a4d7254263693a0dfaf9feb30ab629b18f9c70fd191606dd9"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/MANIFEST.json": {
+      "bytes": 3690,
+      "sha256": "119837b8ad196263902777e4e80e2e53cca0ea5e345f448af78e57b571826319"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/README.md": {
+      "bytes": 1672,
+      "sha256": "0820e3160fdc6092cff09364b3dd775b7cd8e84cc7bdbf0422e67bc7eec51b72"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/REPORT.md": {
+      "bytes": 16004,
+      "sha256": "92deca6225624d69e589d0730c7528dff59d544fc44d9159548c22af76d65bed"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/dynamics/DYNAMICS_AND_FRICKE.md": {
+      "bytes": 8840,
+      "sha256": "ea5126bb15dcf79a5887c0b2823e1450e4b88fcf4ed136b75ea1fbc62282514b"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/dynamics/fricke_checks.json": {
+      "bytes": 302,
+      "sha256": "2207430ffac9b68791608550a04292c622ebd62ea8c9e220525a7957330b7c0e"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/dynamics/verify_fricke.py": {
+      "bytes": 2648,
+      "sha256": "624cf8328212482241c9c81a309de4a230c410e5d503f1d753803e75ef21aad0"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/geometry/TRANSPORT_NOTE.md": {
+      "bytes": 7041,
+      "sha256": "ecc390a2a315f8e9a8afa5b5aa91a5137347654f539d45235af34e62521f2787"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/geometry/compute_transport.py": {
+      "bytes": 10761,
+      "sha256": "6da0c2b8c5eb8f4e81b33dab3d02a761900c6ccb72329de407a369ee6c288457"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/geometry/transport_results.json": {
+      "bytes": 22136,
+      "sha256": "3cf2ee1d0c422f202283b274688f0d40238fe1528d16c26467e1aed9d5e6d375"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/NEW_COMPONENT_NOTE.md": {
+      "bytes": 3452,
+      "sha256": "c69f6dcae7be6b1f169c246fc539d882592b006ca36e4e86d3294c9cf694ec1c"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/NOTE.md": {
+      "bytes": 5972,
+      "sha256": "470a8553e48fbe1d8f130347d796017fcab76515f228fdb2fccb425c88b843ed"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/compute_monodromy.py": {
+      "bytes": 6045,
+      "sha256": "17adf1ac3cc95051714812a9792018d91c1a6318b3e1fe5f26adddc9562ce40f"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/monodromy_growth.csv": {
+      "bytes": 1728,
+      "sha256": "0a8ef2328a36ef7161b10fbf2e0663b8900b681b1a01727c37fdcf20838a3d5c"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/monodromy_results.json": {
+      "bytes": 15831,
+      "sha256": "31acef1d928578857929d8cb10035f85afeb227032ffade9d562d6509df3afa6"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/new_component_monodromy.py": {
+      "bytes": 3990,
+      "sha256": "31447998393ffa1aa742a8b425aa6154a71fb4b9424a424c10f3facce4f8a6f0"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/monodromy/new_component_monodromy_results.json": {
+      "bytes": 8968,
+      "sha256": "485e3e0fa6e2a0caee27296c3f7e5c72bfe0163fc9e87f30c7726eba952d1e0e"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/plot_results.py": {
+      "bytes": 2777,
+      "sha256": "3ac502b4b4f03763f1ace8eb3e6a0fbcc66f222ae9c51bc4c65d5cb837153df5"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/root_checks/elliptic_exact.py": {
+      "bytes": 1751,
+      "sha256": "9988583a53aaffb932825976917388fb124fc7ceb22ff1dec7f3e7b896e14109"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/root_checks/elliptic_exact_results.json": {
+      "bytes": 435,
+      "sha256": "35c1e1a954d19eebed926276ba887a7a8f752b7b0ff4390839d275faa4499ba5"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/root_checks/interval_results.csv": {
+      "bytes": 1652,
+      "sha256": "25ca432d2b754022669bf6c1e33461dd6ab3a99967da9511ae9121277d371813"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/root_checks/interval_results.json": {
+      "bytes": 4958,
+      "sha256": "34b8f3e4fb7553266827438c0aa95b3c38573202adcebd99689709b9d47aea1a"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/root_checks/interval_transport.py": {
+      "bytes": 3646,
+      "sha256": "24078f745f879758432d9b9d42585351227325b03798d163e62379693d7923d0"
+    },
+    "studies/MTFT_Hodge_Dynamics_Transport/transport_comparison.png": {
+      "bytes": 193648,
+      "sha256": "1bc2657fd7904df83833a8cc70da72e1f0345c543840d946692f459ce22f7a6b"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/MANIFEST.json": {
+      "bytes": 1988,
+      "sha256": "4c8f259912923e77939bbd518e8a6770a6b238051bd73abba4db5910d90845c5"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/README.md": {
+      "bytes": 1254,
+      "sha256": "550180b920ca1acd0f71937e81faa0322b3ab4098dd59fc1f8ed33c736d27b66"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/REPORT.md": {
+      "bytes": 17895,
+      "sha256": "19cb85dd34688e57d21883313fcc402c23f15b6359f265a6b09176502e19fbc7"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/SOURCE_AUDIT.md": {
+      "bytes": 2115,
+      "sha256": "f511e6f612a59f19c41f65dfcda0924525b811956ba72ca209a627d29fded560"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/geometry/geometry_results.json": {
+      "bytes": 9751,
+      "sha256": "be166cbdb6758fa53de09b11489d53e49214618f538d5c9fd36a7f9182e640c5"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/geometry/period_results.csv": {
+      "bytes": 3329,
+      "sha256": "2b062f0907fe7ab1f0604d174f3b442e7bacd73345e7ae3cb91bafe7883eda30"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/geometry/verify_geometry.py": {
+      "bytes": 7710,
+      "sha256": "2488e12b6bf99bb015542d97b17a4b33824c2b4b7e077961e55b49e91315feec"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/investigation.png": {
+      "bytes": 173796,
+      "sha256": "4b25f51da9d8bbc49d64dd38d5823ea693280f2052d2c6ed953b1ea5cd3e90ac"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/plot_results.py": {
+      "bytes": 2804,
+      "sha256": "17ed9391c17e73a1e11e09d54fd3dae6bd2b3358d0b2f89cd982ac6141c74ecb"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/scaling/README.md": {
+      "bytes": 3043,
+      "sha256": "dd8e24095736e078e9b72a2e6c23fa69b2e2b27a8596e04a2ffab849b035e343"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/scaling/compute_scaling.py": {
+      "bytes": 6881,
+      "sha256": "30f2a594e7fbaf33511fcab813465222f53cb22cbf5688810bffa01e800f05f0"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/scaling/scaling_results.csv": {
+      "bytes": 5808,
+      "sha256": "761b1f26421b877cf3a29e7e132b46470ff753196e17d67300bc048f2753d6e4"
+    },
+    "studies/MTFT_Triangle_Feigenbaum_Hodge_Investigation/scaling/scaling_results.json": {
+      "bytes": 16822,
+      "sha256": "30777d80e3d1a924d35d918f8b8ffc0dce05e9df3a86322dbb0b7b8f0abcd8b7"
+    }
+  }
+}

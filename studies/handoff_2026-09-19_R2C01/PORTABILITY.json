@@ -1,0 +1,33 @@
+{
+  "scope": "ZIP extracted to a separate directory; audit rerun with --output reproduced_results. Same installed interpreter and dependency versions, not a fresh virtual environment.",
+  "exact_checks_passed": 293,
+  "exact_checks_failed": 0,
+  "results": [
+    {
+      "file": "results/assignments.csv",
+      "byte_identical": true,
+      "sha256": "3b40c5cf2a018aa88a6e1f5481a5f5f0d3ed716490bcb19bc420e6db70f4dafc"
+    },
+    {
+      "file": "results/audit_results.json",
+      "byte_identical": true,
+      "sha256": "4ef55b2b961dfc2d770c25387a29e46bdbf185e3f67d179e0f19fb53f60270b6"
+    },
+    {
+      "file": "results/clifford_matrices.json",
+      "byte_identical": true,
+      "sha256": "68fcdf11edc0c211d15a6d3dc54e63c81249bd335220e647fb4bb0410cdeb587"
+    },
+    {
+      "file": "results/sector_anomaly_basis.json",
+      "byte_identical": true,
+      "sha256": "7c0cb08e83d677bb6328360afa0b996e2be7752d7abdec5f4fdda893995edbbc"
+    },
+    {
+      "file": "results/verification.json",
+      "byte_identical": true,
+      "sha256": "8f346af19cb4afddd09f4b1441283cb88f2ac1a7e1f8a50092c20b2b93a6eed8"
+    }
+  ],
+  "distributed_input_checksum_validation": "PASS"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "EXACT",
+  "domain": "Q[c,x] after clearing denominators; c != 0,-1",
+  "parameter_specializations_used": false,
+  "verified_identities": 2,
+  "connection": [
+    [
+      "-1/(4c)",
+      "1/(4c(c+1))"
+    ],
+    [
+      "-1/4",
+      "1/(4c)"
+    ]
+  ],
+  "exact_differential_R0": "-x(x^2+3c+1)/(4c(c+1))",
+  "exact_differential_R2": "x/4-x^3/(4c)",
+  "scalar_equation": "I\"+(1/c+1/(c+1)) I'+(4c-1)/(16c^2(c+1)) I=0"
+}

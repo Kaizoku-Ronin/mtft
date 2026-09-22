@@ -1,0 +1,2064 @@
+{
+  "study": "R2C-01",
+  "status": "EXACT within the explicitly fixed finite field/operator class",
+  "runtime": {
+    "python": "3.12.14",
+    "sympy": "1.14.0"
+  },
+  "baseline_archive_sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+  "sign_convention": "nL-nR in oriented R_ij = epsilon_ij*(m_i-m_j); positive internal chirality is H0.",
+  "sector_order": [
+    "cL",
+    "ca",
+    "cb",
+    "cd",
+    "La",
+    "Lb",
+    "Ld",
+    "ab",
+    "ad",
+    "bd"
+  ],
+  "geometry": {
+    "sector_ledger": [
+      {
+        "sector": "cL",
+        "pair": [
+          "c",
+          "L"
+        ],
+        "dimension": 6,
+        "degree": 3,
+        "h0": 3,
+        "h1": 0,
+        "hypercharge": "1/6",
+        "B_minus_L": "1/3",
+        "charge_vector": [
+          "1",
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        "family_target_index": 3
+      },
+      {
+        "sector": "ca",
+        "pair": [
+          "c",
+          "a"
+        ],
+        "dimension": 3,
+        "degree": -3,
+        "h0": 0,
+        "h1": 3,
+        "hypercharge": "2/3",
+        "B_minus_L": "1/3",
+        "charge_vector": [
+          "1",
+          "0",
+          "-1",
+          "0",
+          "0"
+        ],
+        "family_target_index": -3
+      },
+      {
+        "sector": "cb",
+        "pair": [
+          "c",
+          "b"
+        ],
+        "dimension": 3,
+        "degree": -3,
+        "h0": 0,
+        "h1": 3,
+        "hypercharge": "-1/3",
+        "B_minus_L": "1/3",
+        "charge_vector": [
+          "1",
+          "0",
+          "0",
+          "-1",
+          "0"
+        ],
+        "family_target_index": -3
+      },
+      {
+        "sector": "cd",
+        "pair": [
+          "c",
+          "d"
+        ],
+        "dimension": 3,
+        "degree": 0,
+        "h0": 2,
+        "h1": 2,
+        "hypercharge": "2/3",
+        "B_minus_L": "4/3",
+        "charge_vector": [
+          "1",
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        "family_target_index": null
+      },
+      {
+        "sector": "La",
+        "pair": [
+          "L",
+          "a"
+        ],
+        "dimension": 2,
+        "degree": -6,
+        "h0": 0,
+        "h1": 6,
+        "hypercharge": "1/2",
+        "B_minus_L": "0",
+        "charge_vector": [
+          "0",
+          "1",
+          "-1",
+          "0",
+          "0"
+        ],
+        "family_target_index": null
+      },
+      {
+        "sector": "Lb",
+        "pair": [
+          "L",
+          "b"
+        ],
+        "dimension": 2,
+        "degree": -6,
+        "h0": 0,
+        "h1": 6,
+        "hypercharge": "-1/2",
+        "B_minus_L": "0",
+        "charge_vector": [
+          "0",
+          "1",
+          "0",
+          "-1",
+          "0"
+        ],
+        "family_target_index": null
+      },
+      {
+        "sector": "Ld",
+        "pair": [
+          "L",
+          "d"
+        ],
+        "dimension": 2,
+        "degree": -3,
+        "h0": 0,
+        "h1": 3,
+        "hypercharge": "1/2",
+        "B_minus_L": "1",
+        "charge_vector": [
+          "0",
+          "1",
+          "0",
+          "0",
+          "-1"
+        ],
+        "family_target_index": -3
+      },
+      {
+        "sector": "ab",
+        "pair": [
+          "a",
+          "b"
+        ],
+        "dimension": 1,
+        "degree": 0,
+        "h0": 2,
+        "h1": 2,
+        "hypercharge": "-1",
+        "B_minus_L": "0",
+        "charge_vector": [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        "family_target_index": null
+      },
+      {
+        "sector": "ad",
+        "pair": [
+          "a",
+          "d"
+        ],
+        "dimension": 1,
+        "degree": 3,
+        "h0": 3,
+        "h1": 0,
+        "hypercharge": "0",
+        "B_minus_L": "1",
+        "charge_vector": [
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1"
+        ],
+        "family_target_index": 3
+      },
+      {
+        "sector": "bd",
+        "pair": [
+          "b",
+          "d"
+        ],
+        "dimension": 1,
+        "degree": 3,
+        "h0": 3,
+        "h1": 0,
+        "hypercharge": "1",
+        "B_minus_L": "1",
+        "charge_vector": [
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        "family_target_index": 3
+      }
+    ],
+    "evaluation_matrix": [
+      [
+        "1",
+        "sqrt(13)*I/13"
+      ],
+      [
+        "1",
+        "sqrt(13)*I/13"
+      ],
+      [
+        "1",
+        "-sqrt(13)*I/13"
+      ]
+    ],
+    "evaluation_rank": 2,
+    "spin_degree": 12,
+    "genus": 13,
+    "purity_status": "Conditional exact deduction from frozen arithmetic input; not an independent reconstruction of S0 or the CM points.",
+    "zero_degree_warning": "With these explicit untwisted stack bundles, cd and ab each have (h0,h1)=(2,2).",
+    "Higgs_H1_dimension": 18
+  },
+  "enumeration": {
+    "counts": {
+      "all": 1024,
+      "six_family_indices": 16,
+      "all_M1_indices": 4,
+      "all_four_scalar_bilinears": 64,
+      "families_and_all_four_scalar_bilinears": 0,
+      "family_preserving_and_Y_BL_phase_anomaly_free": 8
+    },
+    "family_preserving_assignments": [
+      {
+        "assignment_id": 907,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": -1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 8,
+        "I8_p2_coefficient": "-1/180",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 911,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": -1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 10,
+        "I8_p2_coefficient": "-1/144",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 923,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": -1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 12,
+        "I8_p2_coefficient": "-1/120",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 927,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": -1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 14,
+        "I8_p2_coefficient": "-7/720",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 939,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": 1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 12,
+        "I8_p2_coefficient": "-1/120",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 943,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": 1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 14,
+        "I8_p2_coefficient": "-7/720",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 955,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": 1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": true,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 16,
+        "I8_p2_coefficient": "-1/90",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 959,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": -1,
+        "chi_La": 1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": true,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 18,
+        "I8_p2_coefficient": "-1/80",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 971,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": -1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 14,
+        "I8_p2_coefficient": "-7/720",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 975,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": -1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 16,
+        "I8_p2_coefficient": "-1/90",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 987,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": -1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 18,
+        "I8_p2_coefficient": "-1/80",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 991,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": -1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": 6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 20,
+        "I8_p2_coefficient": "-1/72",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 1003,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": 1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 18,
+        "I8_p2_coefficient": "-1/80",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 1007,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": 1,
+        "chi_Lb": -1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": 6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": false,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 20,
+        "I8_p2_coefficient": "-1/72",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": false
+      },
+      {
+        "assignment_id": 1019,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": 1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": -1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": true,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 22,
+        "I8_p2_coefficient": "-11/720",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      },
+      {
+        "assignment_id": 1023,
+        "chi_cL": 1,
+        "chi_ca": 1,
+        "chi_cb": 1,
+        "chi_cd": 1,
+        "chi_La": 1,
+        "chi_Lb": 1,
+        "chi_Ld": 1,
+        "chi_ab": 1,
+        "chi_ad": 1,
+        "chi_bd": 1,
+        "index_cL": 3,
+        "index_ca": -3,
+        "index_cb": -3,
+        "index_cd": 0,
+        "index_La": -6,
+        "index_Lb": -6,
+        "index_Ld": -3,
+        "index_ab": 0,
+        "index_ad": 3,
+        "index_bd": 3,
+        "preserves_six_family_indices": true,
+        "preserves_all_M1_indices": true,
+        "scalar_up": false,
+        "scalar_down": false,
+        "scalar_neutrino": false,
+        "scalar_charged_lepton": false,
+        "all_four_scalar_bilinears": false,
+        "signed_6D_dimension": 24,
+        "I8_p2_coefficient": "-1/60",
+        "I8_c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2",
+        "4D_Y_BL_phase_anomaly_free": true
+      }
+    ],
+    "family_signed_dimension_histogram": {
+      "8": 1,
+      "10": 1,
+      "12": 2,
+      "14": 3,
+      "16": 2,
+      "18": 3,
+      "20": 2,
+      "22": 1,
+      "24": 1
+    },
+    "full_ledger_survivors": [
+      {
+        "assignment_id": 955,
+        "chi_cd": -1,
+        "chi_ab": -1,
+        "I8": "C**2/4 + C*W - C*f_L**2 + 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c - 3*C*f_c**2/2 - C*f_c*f_d + C*f_d**2/2 + C*p1/8 - D3*f_L - D3*f_a/2 - D3*f_b/2 + 3*D3*f_c/2 + D3*f_d/2 + W**2/2 - 3*W*f_L**2 + W*f_L*f_a + W*f_L*f_b + 3*W*f_L*f_c + W*f_L*f_d - W*f_a**2/2 - W*f_b**2/2 - 3*W*f_c**2/2 - W*f_d**2/2 + W*p1/4 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 5*f_a**4/24 + f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 - f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 5*f_a**2*p1/48 + f_a*f_b**3/6 - f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 5*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 5*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 3*f_c**4/8 + f_c**3*f_d/2 - 3*f_c**2*f_d**2/4 - 3*f_c**2*p1/16 + f_c*f_d**3/2 - f_c*f_d*p1/8 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/360 - p2/90",
+        "I6": "6*C*f_L - 3*C*f_a - 3*C*f_b + 24*W*f_L - 6*W*f_a - 6*W*f_b - 9*W*f_c - 3*W*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+        "signed_dimension": 16,
+        "p2_coefficient": "-1/90",
+        "c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2"
+      },
+      {
+        "assignment_id": 959,
+        "chi_cd": -1,
+        "chi_ab": 1,
+        "I8": "C**2/4 + C*W - C*f_L**2 + 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c - 3*C*f_c**2/2 - C*f_c*f_d + C*f_d**2/2 + C*p1/8 - D3*f_L - D3*f_a/2 - D3*f_b/2 + 3*D3*f_c/2 + D3*f_d/2 + W**2/2 - 3*W*f_L**2 + W*f_L*f_a + W*f_L*f_b + 3*W*f_L*f_c + W*f_L*f_d - W*f_a**2/2 - W*f_b**2/2 - 3*W*f_c**2/2 - W*f_d**2/2 + W*p1/4 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 7*f_a**4/24 - f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 + f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 7*f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 7*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 7*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 3*f_c**4/8 + f_c**3*f_d/2 - 3*f_c**2*f_d**2/4 - 3*f_c**2*p1/16 + f_c*f_d**3/2 - f_c*f_d*p1/8 + f_d**4/24 - f_d**2*p1/48 + 7*p1**2/320 - p2/80",
+        "I6": "6*C*f_L - 3*C*f_a - 3*C*f_b + 24*W*f_L - 6*W*f_a - 6*W*f_b - 9*W*f_c - 3*W*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+        "signed_dimension": 18,
+        "p2_coefficient": "-1/80",
+        "c3_coefficient": "-f_L - f_a/2 - f_b/2 + 3*f_c/2 + f_d/2"
+      },
+      {
+        "assignment_id": 1019,
+        "chi_cd": 1,
+        "chi_ab": -1,
+        "I8": "5*C**2/12 + C*W - C*f_L**2 + 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c - 5*C*f_c**2/2 + C*f_c*f_d - C*f_d**2/2 + 5*C*p1/24 - D3*f_L - D3*f_a/2 - D3*f_b/2 + 5*D3*f_c/2 - D3*f_d/2 + W**2/2 - 3*W*f_L**2 + W*f_L*f_a + W*f_L*f_b + 3*W*f_L*f_c + W*f_L*f_d - W*f_a**2/2 - W*f_b**2/2 - 3*W*f_c**2/2 - W*f_d**2/2 + W*p1/4 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 5*f_a**4/24 + f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 - f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 5*f_a**2*p1/48 + f_a*f_b**3/6 - f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 5*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 5*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 5*f_c**4/8 - f_c**3*f_d/2 + 3*f_c**2*f_d**2/4 - 5*f_c**2*p1/16 - f_c*f_d**3/2 + f_c*f_d*p1/8 + 7*f_d**4/24 - 7*f_d**2*p1/48 + 77*p1**2/2880 - 11*p2/720",
+        "I6": "6*C*f_L - 3*C*f_a - 3*C*f_b + 24*W*f_L - 6*W*f_a - 6*W*f_b - 9*W*f_c - 3*W*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+        "signed_dimension": 22,
+        "p2_coefficient": "-11/720",
+        "c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2"
+      },
+      {
+        "assignment_id": 1023,
+        "chi_cd": 1,
+        "chi_ab": 1,
+        "I8": "5*C**2/12 + C*W - C*f_L**2 + 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c - 5*C*f_c**2/2 + C*f_c*f_d - C*f_d**2/2 + 5*C*p1/24 - D3*f_L - D3*f_a/2 - D3*f_b/2 + 5*D3*f_c/2 - D3*f_d/2 + W**2/2 - 3*W*f_L**2 + W*f_L*f_a + W*f_L*f_b + 3*W*f_L*f_c + W*f_L*f_d - W*f_a**2/2 - W*f_b**2/2 - 3*W*f_c**2/2 - W*f_d**2/2 + W*p1/4 + f_L**4/2 - f_L**3*f_a/3 - f_L**3*f_b/3 - f_L**3*f_c - f_L**3*f_d/3 + f_L**2*f_a**2/2 + f_L**2*f_b**2/2 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/4 - f_L*f_a**3/3 + f_L*f_a*p1/12 - f_L*f_b**3/3 + f_L*f_b*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + 7*f_a**4/24 - f_a**3*f_b/6 - f_a**3*f_c/2 - f_a**3*f_d/6 + f_a**2*f_b**2/4 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - 7*f_a**2*p1/48 - f_a*f_b**3/6 + f_a*f_b*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + 7*f_b**4/24 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - 7*f_b**2*p1/48 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24 + 5*f_c**4/8 - f_c**3*f_d/2 + 3*f_c**2*f_d**2/4 - 5*f_c**2*p1/16 - f_c*f_d**3/2 + f_c*f_d*p1/8 + 7*f_d**4/24 - 7*f_d**2*p1/48 + 7*p1**2/240 - p2/60",
+        "I6": "6*C*f_L - 3*C*f_a - 3*C*f_b + 24*W*f_L - 6*W*f_a - 6*W*f_b - 9*W*f_c - 3*W*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+        "signed_dimension": 24,
+        "p2_coefficient": "-1/60",
+        "c3_coefficient": "-f_L - f_a/2 - f_b/2 + 5*f_c/2 - f_d/2"
+      }
+    ],
+    "baseline_I6": "6*C*f_L - 3*C*f_a - 3*C*f_b + 24*W*f_L - 6*W*f_a - 6*W*f_b - 9*W*f_c - 3*W*f_d - 8*f_L**3 + 6*f_L**2*f_a + 6*f_L**2*f_b + 9*f_L**2*f_c + 3*f_L**2*f_d - 6*f_L*f_a**2 - 6*f_L*f_b**2 - 9*f_L*f_c**2 - 3*f_L*f_d**2 + 2*f_L*p1 + 4*f_a**3 - 9*f_a**2*f_c/2 - 3*f_a**2*f_d/2 + 9*f_a*f_c**2/2 + 3*f_a*f_d**2/2 - f_a*p1 + 4*f_b**3 - 9*f_b**2*f_c/2 - 3*f_b**2*f_d/2 + 9*f_b*f_c**2/2 + 3*f_b*f_d**2/2 - f_b*p1",
+    "all_assignment_scalar_count_histogram": {
+      "0": 64,
+      "1": 256,
+      "2": 384,
+      "3": 256,
+      "4": 64
+    },
+    "quark_only_witness": "Fixed Q and up-antiquark indices already force chi_cL=chi_ca=+1; a scalar needs them opposite."
+  },
+  "relaxed_flux_controls": {
+    "branches": [
+      {
+        "chi_Q": -1,
+        "chi_L": -1,
+        "core_chiralities": {
+          "cL": -1,
+          "ca": 1,
+          "cb": 1,
+          "Ld": -1,
+          "ad": 1,
+          "bd": 1
+        },
+        "flux": [
+          0,
+          3,
+          3,
+          3,
+          0
+        ],
+        "nonfamily_degrees": {
+          "cd": 0,
+          "La": 0,
+          "Lb": 0,
+          "ab": 0
+        },
+        "Higgs_degrees": [
+          0,
+          0
+        ],
+        "six_sector_I8": "-C*W + C*f_L**2 - 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c + D3*f_L - D3*f_a/2 - D3*f_b/2 - W**2/3 + 2*W*f_L**2 - 3*W*f_L*f_c - W*f_L*f_d + 3*W*f_c**2/2 + W*f_d**2/2 - W*p1/6 - f_L**4/3 + f_L**3*f_c + f_L**3*f_d/3 - 3*f_L**2*f_c**2/2 - f_L**2*f_d**2/2 + f_L**2*p1/6 + f_L*f_c**3 - f_L*f_c*p1/4 + f_L*f_d**3/3 - f_L*f_d*p1/12 + f_a**4/6 - f_a**3*f_c/2 - f_a**3*f_d/6 + 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 - f_a**2*p1/12 - f_a*f_c**3/2 + f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 + f_b**4/6 - f_b**3*f_c/2 - f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 - f_b**2*p1/12 - f_b*f_c**3/2 + f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24",
+        "net_complex_SU2_doublets": -4,
+        "SU2_mod6": 2,
+        "primitive_cocharacter": [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        "primitive_quartic": "1/3",
+        "required_tensor_norm": "8/3",
+        "ten_sector_completions": [
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -8,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -6,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "-4/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "28/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 6,
+            "a_minus_b_required_norm": "-4/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 8,
+            "a_minus_b_required_norm": "28/3",
+            "passes_this_norm_test": false
+          }
+        ],
+        "ten_sector_gravity_and_this_norm_pass": 0
+      },
+      {
+        "chi_Q": -1,
+        "chi_L": 1,
+        "core_chiralities": {
+          "cL": -1,
+          "ca": 1,
+          "cb": 1,
+          "Ld": 1,
+          "ad": -1,
+          "bd": -1
+        },
+        "flux": [
+          0,
+          3,
+          3,
+          3,
+          6
+        ],
+        "nonfamily_degrees": {
+          "cd": -6,
+          "La": 0,
+          "Lb": 0,
+          "ab": 0
+        },
+        "Higgs_degrees": [
+          0,
+          0
+        ],
+        "six_sector_I8": "-C*W + C*f_L**2 - 2*C*f_L*f_c - C*f_a**2/2 + C*f_a*f_c - C*f_b**2/2 + C*f_b*f_c + D3*f_L - D3*f_a/2 - D3*f_b/2 - W**2/6 + W*f_L**2 - 3*W*f_L*f_c + W*f_L*f_d + 3*W*f_c**2/2 - W*f_d**2/2 - W*p1/12 - f_L**4/6 + f_L**3*f_c - f_L**3*f_d/3 - 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 + f_L**2*p1/12 + f_L*f_c**3 - f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 + f_a**4/12 - f_a**3*f_c/2 + f_a**3*f_d/6 + 3*f_a**2*f_c**2/4 - f_a**2*f_d**2/4 - f_a**2*p1/24 - f_a*f_c**3/2 + f_a*f_c*p1/8 + f_a*f_d**3/6 - f_a*f_d*p1/24 + f_b**4/12 - f_b**3*f_c/2 + f_b**3*f_d/6 + 3*f_b**2*f_c**2/4 - f_b**2*f_d**2/4 - f_b**2*p1/24 - f_b*f_c**3/2 + f_b*f_c*p1/8 + f_b*f_d**3/6 - f_b*f_d*p1/24",
+        "net_complex_SU2_doublets": -2,
+        "SU2_mod6": 4,
+        "primitive_cocharacter": [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        "primitive_quartic": "1/6",
+        "required_tensor_norm": "4/3",
+        "ten_sector_completions": [
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -8,
+            "a_minus_b_required_norm": "-16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -6,
+            "a_minus_b_required_norm": "16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "-16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 6,
+            "a_minus_b_required_norm": "-8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 8,
+            "a_minus_b_required_norm": "8",
+            "passes_this_norm_test": true
+          }
+        ],
+        "ten_sector_gravity_and_this_norm_pass": 0
+      },
+      {
+        "chi_Q": 1,
+        "chi_L": -1,
+        "core_chiralities": {
+          "cL": 1,
+          "ca": -1,
+          "cb": -1,
+          "Ld": -1,
+          "ad": 1,
+          "bd": 1
+        },
+        "flux": [
+          0,
+          -3,
+          -3,
+          -3,
+          -6
+        ],
+        "nonfamily_degrees": {
+          "cd": 6,
+          "La": 0,
+          "Lb": 0,
+          "ab": 0
+        },
+        "Higgs_degrees": [
+          0,
+          0
+        ],
+        "six_sector_I8": "C*W - C*f_L**2 + 2*C*f_L*f_c + C*f_a**2/2 - C*f_a*f_c + C*f_b**2/2 - C*f_b*f_c - D3*f_L + D3*f_a/2 + D3*f_b/2 + W**2/6 - W*f_L**2 + 3*W*f_L*f_c - W*f_L*f_d - 3*W*f_c**2/2 + W*f_d**2/2 + W*p1/12 + f_L**4/6 - f_L**3*f_c + f_L**3*f_d/3 + 3*f_L**2*f_c**2/2 - f_L**2*f_d**2/2 - f_L**2*p1/12 - f_L*f_c**3 + f_L*f_c*p1/4 + f_L*f_d**3/3 - f_L*f_d*p1/12 - f_a**4/12 + f_a**3*f_c/2 - f_a**3*f_d/6 - 3*f_a**2*f_c**2/4 + f_a**2*f_d**2/4 + f_a**2*p1/24 + f_a*f_c**3/2 - f_a*f_c*p1/8 - f_a*f_d**3/6 + f_a*f_d*p1/24 - f_b**4/12 + f_b**3*f_c/2 - f_b**3*f_d/6 - 3*f_b**2*f_c**2/4 + f_b**2*f_d**2/4 + f_b**2*p1/24 + f_b*f_c**3/2 - f_b*f_c*p1/8 - f_b*f_d**3/6 + f_b*f_d*p1/24",
+        "net_complex_SU2_doublets": 2,
+        "SU2_mod6": 2,
+        "primitive_cocharacter": [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        "primitive_quartic": "-1/6",
+        "required_tensor_norm": "-4/3",
+        "ten_sector_completions": [
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -8,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -6,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "-16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 6,
+            "a_minus_b_required_norm": "-16/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 8,
+            "a_minus_b_required_norm": "16/3",
+            "passes_this_norm_test": false
+          }
+        ],
+        "ten_sector_gravity_and_this_norm_pass": 0
+      },
+      {
+        "chi_Q": 1,
+        "chi_L": 1,
+        "core_chiralities": {
+          "cL": 1,
+          "ca": -1,
+          "cb": -1,
+          "Ld": 1,
+          "ad": -1,
+          "bd": -1
+        },
+        "flux": [
+          0,
+          -3,
+          -3,
+          -3,
+          0
+        ],
+        "nonfamily_degrees": {
+          "cd": 0,
+          "La": 0,
+          "Lb": 0,
+          "ab": 0
+        },
+        "Higgs_degrees": [
+          0,
+          0
+        ],
+        "six_sector_I8": "C*W - C*f_L**2 + 2*C*f_L*f_c + C*f_a**2/2 - C*f_a*f_c + C*f_b**2/2 - C*f_b*f_c - D3*f_L + D3*f_a/2 + D3*f_b/2 + W**2/3 - 2*W*f_L**2 + 3*W*f_L*f_c + W*f_L*f_d - 3*W*f_c**2/2 - W*f_d**2/2 + W*p1/6 + f_L**4/3 - f_L**3*f_c - f_L**3*f_d/3 + 3*f_L**2*f_c**2/2 + f_L**2*f_d**2/2 - f_L**2*p1/6 - f_L*f_c**3 + f_L*f_c*p1/4 - f_L*f_d**3/3 + f_L*f_d*p1/12 - f_a**4/6 + f_a**3*f_c/2 + f_a**3*f_d/6 - 3*f_a**2*f_c**2/4 - f_a**2*f_d**2/4 + f_a**2*p1/12 + f_a*f_c**3/2 - f_a*f_c*p1/8 + f_a*f_d**3/6 - f_a*f_d*p1/24 - f_b**4/6 + f_b**3*f_c/2 + f_b**3*f_d/6 - 3*f_b**2*f_c**2/4 - f_b**2*f_d**2/4 + f_b**2*p1/12 + f_b*f_c**3/2 - f_b*f_c*p1/8 + f_b*f_d**3/6 - f_b*f_d*p1/24",
+        "net_complex_SU2_doublets": 4,
+        "SU2_mod6": 4,
+        "primitive_cocharacter": [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        "primitive_quartic": "-1/3",
+        "required_tensor_norm": "-8/3",
+        "ten_sector_completions": [
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -8,
+            "a_minus_b_required_norm": "-28/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -6,
+            "a_minus_b_required_norm": "4/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -4,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": -1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": -2,
+            "a_minus_b_required_norm": "-28/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 0,
+            "a_minus_b_required_norm": "4/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": -1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": -1
+            },
+            "signed_dimension": 2,
+            "a_minus_b_required_norm": "-8",
+            "passes_this_norm_test": true
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": -1,
+              "ab": 1
+            },
+            "signed_dimension": 4,
+            "a_minus_b_required_norm": "8/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": -1
+            },
+            "signed_dimension": 6,
+            "a_minus_b_required_norm": "-20/3",
+            "passes_this_norm_test": false
+          },
+          {
+            "extra_chiralities": {
+              "cd": 1,
+              "La": 1,
+              "Lb": 1,
+              "ab": 1
+            },
+            "signed_dimension": 8,
+            "a_minus_b_required_norm": "4",
+            "passes_this_norm_test": true
+          }
+        ],
+        "ten_sector_gravity_and_this_norm_pass": 0
+      }
+    ],
+    "C3X_independent_I8": "3*C*W + 27*C*h**2 + W**2 - 18*W*h**2 + W*p1/2 - 6*W*x**2 - 243*h**4 + 9*h**2*p1/2 - 54*h**2*x**2",
+    "C3X_factors": [
+      "W + 9*h**2",
+      "3*C + W - 27*h**2 + p1/2 - 6*x**2"
+    ],
+    "C3X_scope": "Local anomaly polynomial only. Three input copies times one mode; not a one-parent three-mode solution.",
+    "norm_scope": "Ordinary integral tensor-charge lattice with I8=Omega(X4,X4)/2 and X4=(b_tt/2)t^2 along the primitive cocharacter; requires b_tt^2=8[t^4]I8 integral. Additional matter or other anomaly-cancellation structures change the problem."
+  },
+  "checks": [
+    "frozen source SHA256: input/parents_v0320.py",
+    "frozen source SHA256: input/smflux_v0320.py",
+    "frozen source SHA256: input/mode_operators_v0320.py",
+    "source parent stack/rank/degree record",
+    "parent explicitly leaves 6D chirality unassigned",
+    "independent source stack constants",
+    "source hypercharge",
+    "source B-L",
+    "Clifford anticommutator 1,1",
+    "Clifford anticommutator 1,2",
+    "Clifford anticommutator 1,3",
+    "Clifford anticommutator 1,4",
+    "Clifford anticommutator 1,5",
+    "Clifford anticommutator 1,6",
+    "Clifford anticommutator 2,2",
+    "Clifford anticommutator 2,3",
+    "Clifford anticommutator 2,4",
+    "Clifford anticommutator 2,5",
+    "Clifford anticommutator 2,6",
+    "Clifford anticommutator 3,3",
+    "Clifford anticommutator 3,4",
+    "Clifford anticommutator 3,5",
+    "Clifford anticommutator 3,6",
+    "Clifford anticommutator 4,4",
+    "Clifford anticommutator 4,5",
+    "Clifford anticommutator 4,6",
+    "Clifford anticommutator 5,5",
+    "Clifford anticommutator 5,6",
+    "Clifford anticommutator 6,6",
+    "chirality squares to one",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "chirality anticommutes with generator",
+    "charge-conjugation intertwiner",
+    "Dirac scalar selection -1,-1",
+    "transpose scalar selection -1,-1",
+    "odd Clifford selection -1,-1",
+    "Dirac scalar selection -1,1",
+    "transpose scalar selection -1,1",
+    "odd Clifford selection -1,1",
+    "Dirac scalar selection 1,-1",
+    "transpose scalar selection 1,-1",
+    "odd Clifford selection 1,-1",
+    "Dirac scalar selection 1,1",
+    "transpose scalar selection 1,1",
+    "odd Clifford selection 1,1",
+    "CM evaluation matrix has rank two",
+    "opposite-sign evaluation minor",
+    "Riemann-Roch spin index cL",
+    "Riemann-Roch spin index ca",
+    "Riemann-Roch spin index cb",
+    "Riemann-Roch spin index cd",
+    "Riemann-Roch spin index La",
+    "Riemann-Roch spin index Lb",
+    "Riemann-Roch spin index Ld",
+    "Riemann-Roch spin index ab",
+    "Riemann-Roch spin index ad",
+    "Riemann-Roch spin index bd",
+    "4D gauge triangle up",
+    "4D gauge triangle down",
+    "4D gauge triangle charged_lepton",
+    "4D gauge triangle neutrino",
+    "6D vector Dirac triangle up",
+    "6D vector Dirac triangle down",
+    "6D vector Dirac triangle neutrino",
+    "6D vector Dirac triangle charged_lepton",
+    "original Higgs degree Hu",
+    "original Higgs degree Hd",
+    "independent Cartan I8: cL",
+    "independent Cartan I6: cL",
+    "index pushforward per stack: cL,c",
+    "index pushforward per stack: cL,L",
+    "index pushforward per stack: cL,a",
+    "index pushforward per stack: cL,b",
+    "index pushforward per stack: cL,d",
+    "irreducible gravitational coefficient cL",
+    "independent Cartan I8: ca",
+    "independent Cartan I6: ca",
+    "index pushforward per stack: ca,c",
+    "index pushforward per stack: ca,L",
+    "index pushforward per stack: ca,a",
+    "index pushforward per stack: ca,b",
+    "index pushforward per stack: ca,d",
+    "irreducible gravitational coefficient ca",
+    "independent Cartan I8: cb",
+    "independent Cartan I6: cb",
+    "index pushforward per stack: cb,c",
+    "index pushforward per stack: cb,L",
+    "index pushforward per stack: cb,a",
+    "index pushforward per stack: cb,b",
+    "index pushforward per stack: cb,d",
+    "irreducible gravitational coefficient cb",
+    "independent Cartan I8: cd",
+    "independent Cartan I6: cd",
+    "index pushforward per stack: cd,c",
+    "index pushforward per stack: cd,L",
+    "index pushforward per stack: cd,a",
+    "index pushforward per stack: cd,b",
+    "index pushforward per stack: cd,d",
+    "irreducible gravitational coefficient cd",
+    "independent Cartan I8: La",
+    "independent Cartan I6: La",
+    "index pushforward per stack: La,c",
+    "index pushforward per stack: La,L",
+    "index pushforward per stack: La,a",
+    "index pushforward per stack: La,b",
+    "index pushforward per stack: La,d",
+    "irreducible gravitational coefficient La",
+    "independent Cartan I8: Lb",
+    "independent Cartan I6: Lb",
+    "index pushforward per stack: Lb,c",
+    "index pushforward per stack: Lb,L",
+    "index pushforward per stack: Lb,a",
+    "index pushforward per stack: Lb,b",
+    "index pushforward per stack: Lb,d",
+    "irreducible gravitational coefficient Lb",
+    "independent Cartan I8: Ld",
+    "independent Cartan I6: Ld",
+    "index pushforward per stack: Ld,c",
+    "index pushforward per stack: Ld,L",
+    "index pushforward per stack: Ld,a",
+    "index pushforward per stack: Ld,b",
+    "index pushforward per stack: Ld,d",
+    "irreducible gravitational coefficient Ld",
+    "independent Cartan I8: ab",
+    "independent Cartan I6: ab",
+    "index pushforward per stack: ab,c",
+    "index pushforward per stack: ab,L",
+    "index pushforward per stack: ab,a",
+    "index pushforward per stack: ab,b",
+    "index pushforward per stack: ab,d",
+    "irreducible gravitational coefficient ab",
+    "independent Cartan I8: ad",
+    "independent Cartan I6: ad",
+    "index pushforward per stack: ad,c",
+    "index pushforward per stack: ad,L",
+    "index pushforward per stack: ad,a",
+    "index pushforward per stack: ad,b",
+    "index pushforward per stack: ad,d",
+    "irreducible gravitational coefficient ad",
+    "independent Cartan I8: bd",
+    "independent Cartan I6: bd",
+    "index pushforward per stack: bd,c",
+    "index pushforward per stack: bd,L",
+    "index pushforward per stack: bd,a",
+    "index pushforward per stack: bd,b",
+    "index pushforward per stack: bd,d",
+    "irreducible gravitational coefficient bd",
+    "scan exhaustive unique sign vectors",
+    "six fixed signs leave four free signs",
+    "eight fixed signs leave two free signs",
+    "two Yukawa components and four isolated sectors",
+    "no fixed-flux family/scalar intersection",
+    "each family-preserving assignment forbids all four scalars",
+    "all family-preserving signed dimensions strictly positive",
+    "all assignments have a nonzero color cubic coefficient",
+    "full-ledger survivor has unchanged 4D anomaly 955",
+    "full-ledger survivor has unchanged 4D anomaly 959",
+    "full-ledger survivor has unchanged 4D anomaly 1019",
+    "full-ledger survivor has unchanged 4D anomaly 1023",
+    "flux equations have unique solution up to common shift: -1,-1",
+    "closed-form relaxed flux: -1,-1",
+    "flux control changes M1: -1,-1",
+    "core pure gravitational anomaly cancels: -1,-1",
+    "core cubic color direction: -1,-1",
+    "color direction annihilates primitive cocharacter: -1,-1",
+    "color direction annihilates new flux: -1,-1",
+    "primitive quartic from direct charged-field sum: -1,-1",
+    "closed-form primitive quartic: -1,-1",
+    "ordinary tensor lattice norm fails: -1,-1",
+    "pure-gravity completion classification: -1,-1,(-1, -1, -1, -1)",
+    "pure-gravity completion classification: -1,-1,(-1, -1, -1, 1)",
+    "pure-gravity completion classification: -1,-1,(-1, -1, 1, -1)",
+    "pure-gravity completion classification: -1,-1,(-1, -1, 1, 1)",
+    "pure-gravity completion classification: -1,-1,(-1, 1, -1, -1)",
+    "pure-gravity completion classification: -1,-1,(-1, 1, -1, 1)",
+    "pure-gravity completion classification: -1,-1,(-1, 1, 1, -1)",
+    "closed-form full-completion norm: -1,-1,(-1, 1, 1, -1)",
+    "pure-gravity completion fails this tensor norm: -1,-1,(-1, 1, 1, -1)",
+    "pure-gravity completion classification: -1,-1,(-1, 1, 1, 1)",
+    "pure-gravity completion classification: -1,-1,(1, -1, -1, -1)",
+    "pure-gravity completion classification: -1,-1,(1, -1, -1, 1)",
+    "closed-form full-completion norm: -1,-1,(1, -1, -1, 1)",
+    "pure-gravity completion fails this tensor norm: -1,-1,(1, -1, -1, 1)",
+    "pure-gravity completion classification: -1,-1,(1, -1, 1, -1)",
+    "pure-gravity completion classification: -1,-1,(1, -1, 1, 1)",
+    "pure-gravity completion classification: -1,-1,(1, 1, -1, -1)",
+    "pure-gravity completion classification: -1,-1,(1, 1, -1, 1)",
+    "pure-gravity completion classification: -1,-1,(1, 1, 1, -1)",
+    "pure-gravity completion classification: -1,-1,(1, 1, 1, 1)",
+    "two pure-gravity completions per changed flux: -1,-1",
+    "flux equations have unique solution up to common shift: -1,1",
+    "closed-form relaxed flux: -1,1",
+    "flux control changes M1: -1,1",
+    "core pure gravitational anomaly cancels: -1,1",
+    "core cubic color direction: -1,1",
+    "color direction annihilates primitive cocharacter: -1,1",
+    "color direction annihilates new flux: -1,1",
+    "primitive quartic from direct charged-field sum: -1,1",
+    "closed-form primitive quartic: -1,1",
+    "ordinary tensor lattice norm fails: -1,1",
+    "pure-gravity completion classification: -1,1,(-1, -1, -1, -1)",
+    "pure-gravity completion classification: -1,1,(-1, -1, -1, 1)",
+    "pure-gravity completion classification: -1,1,(-1, -1, 1, -1)",
+    "pure-gravity completion classification: -1,1,(-1, -1, 1, 1)",
+    "pure-gravity completion classification: -1,1,(-1, 1, -1, -1)",
+    "pure-gravity completion classification: -1,1,(-1, 1, -1, 1)",
+    "pure-gravity completion classification: -1,1,(-1, 1, 1, -1)",
+    "closed-form full-completion norm: -1,1,(-1, 1, 1, -1)",
+    "pure-gravity completion fails this tensor norm: -1,1,(-1, 1, 1, -1)",
+    "pure-gravity completion classification: -1,1,(-1, 1, 1, 1)",
+    "pure-gravity completion classification: -1,1,(1, -1, -1, -1)",
+    "pure-gravity completion classification: -1,1,(1, -1, -1, 1)",
+    "closed-form full-completion norm: -1,1,(1, -1, -1, 1)",
+    "pure-gravity completion fails this tensor norm: -1,1,(1, -1, -1, 1)",
+    "pure-gravity completion classification: -1,1,(1, -1, 1, -1)",
+    "pure-gravity completion classification: -1,1,(1, -1, 1, 1)",
+    "pure-gravity completion classification: -1,1,(1, 1, -1, -1)",
+    "pure-gravity completion classification: -1,1,(1, 1, -1, 1)",
+    "pure-gravity completion classification: -1,1,(1, 1, 1, -1)",
+    "pure-gravity completion classification: -1,1,(1, 1, 1, 1)",
+    "two pure-gravity completions per changed flux: -1,1",
+    "flux equations have unique solution up to common shift: 1,-1",
+    "closed-form relaxed flux: 1,-1",
+    "flux control changes M1: 1,-1",
+    "core pure gravitational anomaly cancels: 1,-1",
+    "core cubic color direction: 1,-1",
+    "color direction annihilates primitive cocharacter: 1,-1",
+    "color direction annihilates new flux: 1,-1",
+    "primitive quartic from direct charged-field sum: 1,-1",
+    "closed-form primitive quartic: 1,-1",
+    "ordinary tensor lattice norm fails: 1,-1",
+    "pure-gravity completion classification: 1,-1,(-1, -1, -1, -1)",
+    "pure-gravity completion classification: 1,-1,(-1, -1, -1, 1)",
+    "pure-gravity completion classification: 1,-1,(-1, -1, 1, -1)",
+    "pure-gravity completion classification: 1,-1,(-1, -1, 1, 1)",
+    "pure-gravity completion classification: 1,-1,(-1, 1, -1, -1)",
+    "pure-gravity completion classification: 1,-1,(-1, 1, -1, 1)",
+    "pure-gravity completion classification: 1,-1,(-1, 1, 1, -1)",
+    "closed-form full-completion norm: 1,-1,(-1, 1, 1, -1)",
+    "pure-gravity completion fails this tensor norm: 1,-1,(-1, 1, 1, -1)",
+    "pure-gravity completion classification: 1,-1,(-1, 1, 1, 1)",
+    "pure-gravity completion classification: 1,-1,(1, -1, -1, -1)",
+    "pure-gravity completion classification: 1,-1,(1, -1, -1, 1)",
+    "closed-form full-completion norm: 1,-1,(1, -1, -1, 1)",
+    "pure-gravity completion fails this tensor norm: 1,-1,(1, -1, -1, 1)",
+    "pure-gravity completion classification: 1,-1,(1, -1, 1, -1)",
+    "pure-gravity completion classification: 1,-1,(1, -1, 1, 1)",
+    "pure-gravity completion classification: 1,-1,(1, 1, -1, -1)",
+    "pure-gravity completion classification: 1,-1,(1, 1, -1, 1)",
+    "pure-gravity completion classification: 1,-1,(1, 1, 1, -1)",
+    "pure-gravity completion classification: 1,-1,(1, 1, 1, 1)",
+    "two pure-gravity completions per changed flux: 1,-1",
+    "flux equations have unique solution up to common shift: 1,1",
+    "closed-form relaxed flux: 1,1",
+    "flux control changes M1: 1,1",
+    "core pure gravitational anomaly cancels: 1,1",
+    "core cubic color direction: 1,1",
+    "color direction annihilates primitive cocharacter: 1,1",
+    "color direction annihilates new flux: 1,1",
+    "primitive quartic from direct charged-field sum: 1,1",
+    "closed-form primitive quartic: 1,1",
+    "ordinary tensor lattice norm fails: 1,1",
+    "pure-gravity completion classification: 1,1,(-1, -1, -1, -1)",
+    "pure-gravity completion classification: 1,1,(-1, -1, -1, 1)",
+    "pure-gravity completion classification: 1,1,(-1, -1, 1, -1)",
+    "pure-gravity completion classification: 1,1,(-1, -1, 1, 1)",
+    "pure-gravity completion classification: 1,1,(-1, 1, -1, -1)",
+    "pure-gravity completion classification: 1,1,(-1, 1, -1, 1)",
+    "pure-gravity completion classification: 1,1,(-1, 1, 1, -1)",
+    "closed-form full-completion norm: 1,1,(-1, 1, 1, -1)",
+    "pure-gravity completion fails this tensor norm: 1,1,(-1, 1, 1, -1)",
+    "pure-gravity completion classification: 1,1,(-1, 1, 1, 1)",
+    "pure-gravity completion classification: 1,1,(1, -1, -1, -1)",
+    "pure-gravity completion classification: 1,1,(1, -1, -1, 1)",
+    "closed-form full-completion norm: 1,1,(1, -1, -1, 1)",
+    "pure-gravity completion fails this tensor norm: 1,1,(1, -1, -1, 1)",
+    "pure-gravity completion classification: 1,1,(1, -1, 1, -1)",
+    "pure-gravity completion classification: 1,1,(1, -1, 1, 1)",
+    "pure-gravity completion classification: 1,1,(1, 1, -1, -1)",
+    "pure-gravity completion classification: 1,1,(1, 1, -1, 1)",
+    "pure-gravity completion classification: 1,1,(1, 1, 1, -1)",
+    "pure-gravity completion classification: 1,1,(1, 1, 1, 1)",
+    "two pure-gravity completions per changed flux: 1,1",
+    "C3X factorization independently from spectrum"
+  ],
+  "summary": {
+    "passed": 293,
+    "failed": 0
+  }
+}

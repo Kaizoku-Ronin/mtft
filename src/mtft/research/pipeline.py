@@ -18,8 +18,13 @@ def m1_gate_report():
     gates["tensor_transgression_Z3"] = {"pass": z3["passes"], "witness": {"invariant_factors": tr["invariant_factors"], **z3}, "status": "EXACT (fermion-only)"}
     i13 = sp.I / sp.sqrt(13); fam = MO.s0_twist_cohomology([i13, -i13, i13], 0)
     gates["three_internal_modes"] = {"pass": fam["h0"] == 3 and fam["pure"], "witness": fam, "status": "EXACT"}
-    gates["six_d_yukawa_chirality"] = {"pass": None, "witness": "M1 assigns no 6D chiralities; the section-product tensors have no specified 6D interaction (AXG-03 §7)", "status": "NOT_TESTED"}
-    gates["six_d_anomaly_lift"] = {"pass": False, "witness": "AXG-02: irreducible p2 and mixed Abelian-color-cubic terms; AXG-03: tensor signature (2,1)", "status": "recorded from frozen studies"}
+    from .chirality import enumerate_chiralities as _ec
+    ec = _ec(); gates["six_d_yukawa_chirality"] = {"pass": False, "witness": {"counts": ec["counts"], "conflict": ec["conflict"], "elementary_scalar_higgs": "no family-preserving assignment allows the four scalar contractions",
+        "internal_vector_higgs": "allowed by the selection rule with the family signs (OPEN: action, mode operator, anomalies, background)"}, "status": "EXACT (R2C-01), conditional on the declared class"}
+    from .gravitational_anomaly import m1_tensor_survivors as _ts, hom_type_obstruction as _ho
+    gates["six_d_anomaly_lift"] = {"pass": False, "witness": {"p2_tensor_integrality": _ts()["survivors"], "colour_cubic": _ho()["statement"], "escape_routes": _ho()["escape_routes"]}, "status": "EXACT (R2C-03); AXG-02/03 recorded"}
+    from .yukawa_triangle import m1_triangles as _mt, light_higgs_no_go as _lh
+    gates["light_higgs"] = {"pass": False, "witness": {"triangles": _mt()["degrees"], "higgs_degree": _mt()["higgs_degree"], "theorem": _lh()["theorem"]}, "status": "EXACT (R2C-06): class-level no-go on a curve"}
     V = CP.einstein_frame_potential(1, 1, 1, dim=6); gates["classical_radius"] = {"pass": V["stationary_point_exists"], "witness": str(V["V"]), "status": "EXACT (restricted potential)"}
     return {"model": "M1", "gates": gates, "route_2_todo": [k for k, g in gates.items() if g["pass"] is not True]}
 

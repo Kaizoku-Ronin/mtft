@@ -1,0 +1,573 @@
+{
+  "basepoint": 1,
+  "loop_radii": 0.2,
+  "minus_one_stem": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0.75
+    ],
+    [
+      -0.8,
+      0.75
+    ],
+    [
+      -0.8,
+      0
+    ]
+  ],
+  "orientation": "counterclockwise",
+  "multiplication": "first loop 0 then loop -1 gives M_minus_one @ M_zero",
+  "precision": "IEEE complex128; adaptive DOP853, not interval certified",
+  "runs": [
+    {
+      "rtol": 1e-08,
+      "evaluations": 1100,
+      "around_zero": {
+        "matrix": [
+          [
+            {
+              "real": 2.819841190149791e-10,
+              "imag": -0.6320315146929012
+            },
+            {
+              "real": 6.770603637044654e-10,
+              "imag": 0.6959105679608009
+            }
+          ],
+          [
+            {
+              "real": -3.621333930250387e-10,
+              "imag": 0.8629502025715292
+            },
+            {
+              "real": -4.793582051493771e-10,
+              "imag": 0.6320315133575894
+            }
+          ]
+        ],
+        "trace": {
+          "real": -1.9737408613439799e-10,
+          "imag": -1.3353117500614076e-09
+        },
+        "eigenvalues": [
+          {
+            "real": -2.4219293237592865e-11,
+            "imag": -1.000000000824898
+          },
+          {
+            "real": -1.731548099348501e-10,
+            "imag": 0.9999999994895865
+          }
+        ],
+        "determinant_error": 3.479693091554678e-10,
+        "symplectic_error": 4.921026324959913e-10,
+        "operator_norm": 1.0870015362206649,
+        "spectral_radius": 1.000000000824898
+      },
+      "around_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": 2.123265670490023,
+              "imag": -0.6320315138085542
+            },
+            {
+              "real": 1.764962748715135,
+              "imag": 0.6959105691427965
+            }
+          ],
+          [
+            {
+              "real": -0.14828968324632003,
+              "imag": 0.8629502035040664
+            },
+            {
+              "real": -0.12326567141972794,
+              "imag": 0.6320315138741075
+            }
+          ]
+        ],
+        "trace": {
+          "real": 1.999999999070295,
+          "imag": 6.555334053359729e-11
+        },
+        "eigenvalues": [
+          {
+            "real": 0.9999942570048488,
+            "imag": -3.444940409258468e-05
+          },
+          {
+            "real": 1.0000057420654456,
+            "imag": 3.4449469645921425e-05
+          }
+        ],
+        "determinant_error": 3.9897248590683384e-10,
+        "symplectic_error": 5.642323335268619e-10,
+        "operator_norm": 3.095819375488307,
+        "spectral_radius": 1.000005742658825
+      },
+      "zero_then_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": -1.0000000016599369,
+              "imag": 0.18110414328944566
+            },
+            {
+              "real": 1.583022450852831e-10,
+              "imag": 2.593115095011066
+            }
+          ],
+          [
+            {
+              "real": 1.2987943841501493e-09,
+              "imag": -0.012648382991809069
+            },
+            {
+              "real": -1.0000000004872565,
+              "imag": -0.18110414626182395
+            }
+          ]
+        ],
+        "trace": {
+          "real": -2.0000000021471935,
+          "imag": -2.9723782879464977e-09
+        },
+        "eigenvalues": [
+          {
+            "real": -0.9999492627392339,
+            "imag": 3.1075054316098694e-05
+          },
+          {
+            "real": -1.0000507394079599,
+            "imag": -3.107802669426108e-05
+          }
+        ],
+        "determinant_error": 5.682203457782841e-10,
+        "symplectic_error": 8.035849158975582e-10,
+        "operator_norm": 2.945288761137539,
+        "spectral_radius": 1.0000507398908571
+      },
+      "zero_then_minus_one_twice": {
+        "matrix": [
+          [
+            {
+              "real": -2.000000002475391,
+              "imag": 0.9942398011794921
+            },
+            {
+              "real": -7.601636283793898e-10,
+              "imag": 4.490319619494559
+            }
+          ],
+          [
+            {
+              "real": 2.675690863430105e-09,
+              "imag": -0.8882469687367592
+            },
+            {
+              "real": -1.9999999997622118,
+              "imag": -0.9942398059200438
+            }
+          ]
+        ],
+        "trace": {
+          "real": -4.000000002237603,
+          "imag": -4.740551728943387e-09
+        },
+        "eigenvalues": [
+          {
+            "real": -0.2679491924782007,
+            "imag": 5.142730685747665e-10
+          },
+          {
+            "real": -3.7320508097594023,
+            "imag": -5.254824728129215e-09
+          }
+        ],
+        "determinant_error": 9.181635041914523e-10,
+        "symplectic_error": 1.2984780801831394e-09,
+        "operator_norm": 5.5584721405968756,
+        "spectral_radius": 3.7320508097594023
+      },
+      "zero_square_plus_identity_error": 1.9841954218354283e-09,
+      "minus_one_nilpotent_square_error": 3.107101579364657e-09,
+      "product_plus_identity_nilpotent_square_error": 1.0787021716330916e-08
+    },
+    {
+      "rtol": 1e-10,
+      "evaluations": 1664,
+      "around_zero": {
+        "matrix": [
+          [
+            {
+              "real": -5.636565902405925e-12,
+              "imag": -0.6320315139298842
+            },
+            {
+              "real": -5.856512943317803e-13,
+              "imag": 0.6959105679450647
+            }
+          ],
+          [
+            {
+              "real": -3.460123123200433e-13,
+              "imag": 0.8629502023206764
+            },
+            {
+              "real": -6.757295660567741e-12,
+              "imag": 0.6320315139245359
+            }
+          ]
+        ],
+        "trace": {
+          "real": -1.2393861562973665e-11,
+          "imag": -5.348277376526767e-12
+        },
+        "eigenvalues": [
+          {
+            "real": -5.469513730815834e-12,
+            "imag": -1.0000000000038798
+          },
+          {
+            "real": -6.9242250821943685e-12,
+            "imag": 0.9999999999985316
+          }
+        ],
+        "determinant_error": 2.8163034144134133e-12,
+        "symplectic_error": 3.982854484520029e-12,
+        "operator_norm": 1.0870015359378267,
+        "spectral_radius": 1.0000000000038798
+      },
+      "around_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": 2.1232656707544395,
+              "imag": -0.6320315139409478
+            },
+            {
+              "real": 1.764962750382253,
+              "imag": 0.6959105679609768
+            }
+          ],
+          [
+            {
+              "real": -0.1482896831873526,
+              "imag": 0.8629502023297204
+            },
+            {
+              "real": -0.12326567077080933,
+              "imag": 0.632031513936943
+            }
+          ]
+        ],
+        "trace": {
+          "real": 1.9999999999836302,
+          "imag": -4.004796494427865e-12
+        },
+        "eigenvalues": [
+          {
+            "real": 0.9999997910467382,
+            "imag": -3.894700477458102e-06
+          },
+          {
+            "real": 1.0000002089368931,
+            "imag": 3.8946964726546685e-06
+          }
+        ],
+        "determinant_error": 5.768897400461689e-12,
+        "symplectic_error": 8.158163590675216e-12,
+        "operator_norm": 3.0958193760520203,
+        "spectral_radius": 1.0000002089444775
+      },
+      "zero_then_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": -1.0000000000390943,
+              "imag": 0.18110414617186504
+            },
+            {
+              "real": -1.1805689776162946e-11,
+              "imag": 2.5931150979731568
+            }
+          ],
+          [
+            {
+              "real": 5.032215542259585e-13,
+              "imag": -0.012648382570861186
+            },
+            {
+              "real": -1.000000000012247,
+              "imag": -0.1811041461642785
+            }
+          ]
+        ],
+        "trace": {
+          "real": -2.000000000051341,
+          "imag": 7.586542505322313e-12
+        },
+        "eigenvalues": [
+          {
+            "real": -1.0000070874900264,
+            "imag": 2.4042229471860077e-07
+          },
+          {
+            "real": -0.999992912561315,
+            "imag": -2.404147082180021e-07
+          }
+        ],
+        "determinant_error": 4.338546986798986e-12,
+        "symplectic_error": 6.135638465528919e-12,
+        "operator_norm": 2.945288763252423,
+        "spectral_radius": 1.0000070874900553
+      },
+      "zero_then_minus_one_twice": {
+        "matrix": [
+          [
+            {
+              "real": -2.0000000000518967,
+              "imag": 0.9942398062738682
+            },
+            {
+              "real": -1.6560833626245884e-11,
+              "imag": 4.490319627959666
+            }
+          ],
+          [
+            {
+              "real": -3.5590589644492105e-12,
+              "imag": -0.8882469674611178
+            },
+            {
+              "real": -2.0000000000056524,
+              "imag": -0.9942398062453368
+            }
+          ]
+        ],
+        "trace": {
+          "real": -4.000000000057549,
+          "imag": 2.8531399465236973e-11
+        },
+        "eigenvalues": [
+          {
+            "real": -3.7320508076309005,
+            "imag": 2.7905163525353138e-11
+          },
+          {
+            "real": -0.2679491924266487,
+            "imag": 6.260867536649013e-13
+          }
+        ],
+        "determinant_error": 9.813842209042358e-12,
+        "symplectic_error": 1.3878899369827215e-11,
+        "operator_norm": 5.558472147428028,
+        "spectral_radius": 3.7320508076309005
+      },
+      "zero_square_plus_identity_error": 1.9630841359742075e-11,
+      "minus_one_nilpotent_square_error": 5.1443519366499044e-11,
+      "product_plus_identity_nilpotent_square_error": 1.5279719896297376e-10,
+      "matrix_change_from_previous": 2.46394673076996e-09
+    },
+    {
+      "rtol": 1e-13,
+      "evaluations": 2852,
+      "around_zero": {
+        "matrix": [
+          [
+            {
+              "real": -3.0667903760325635e-15,
+              "imag": -0.6320315139224303
+            },
+            {
+              "real": 2.081274683777425e-15,
+              "imag": 0.6959105679545857
+            }
+          ],
+          [
+            {
+              "real": -2.792959324005265e-15,
+              "imag": 0.8629502023141034
+            },
+            {
+              "real": -8.469167668587148e-15,
+              "imag": 0.6320315139224179
+            }
+          ]
+        ],
+        "trace": {
+          "real": -1.1535958044619711e-14,
+          "imag": -1.2434497875801753e-14
+        },
+        "eigenvalues": [
+          {
+            "real": -3.9968028886505635e-15,
+            "imag": -1.000000000000008
+          },
+          {
+            "real": -7.466249840604178e-15,
+            "imag": 0.9999999999999956
+          }
+        ],
+        "determinant_error": 5.03092760558487e-15,
+        "symplectic_error": 7.11484122736533e-15,
+        "operator_norm": 1.0870015359279102,
+        "spectral_radius": 1.000000000000008
+      },
+      "around_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": 2.1232656707579904,
+              "imag": -0.6320315139224291
+            },
+            {
+              "real": 1.764962750367769,
+              "imag": 0.695910567954624
+            }
+          ],
+          [
+            {
+              "real": -0.14828968319521352,
+              "imag": 0.8629502023141131
+            },
+            {
+              "real": -0.12326567075801102,
+              "imag": 0.6320315139224287
+            }
+          ]
+        ],
+        "trace": {
+          "real": 1.9999999999999793,
+          "imag": -3.3306690738754696e-16
+        },
+        "eigenvalues": [
+          {
+            "real": 0.9999999861163966,
+            "imag": -1.3535822851462598e-07
+          },
+          {
+            "real": 1.0000000138835812,
+            "imag": 1.353582283201993e-07
+          }
+        ],
+        "determinant_error": 5.266250202865041e-15,
+        "symplectic_error": 7.225388515614129e-15,
+        "operator_norm": 3.095819376033297,
+        "spectral_radius": 1.0000000138835903
+      },
+      "zero_then_minus_one": {
+        "matrix": [
+          [
+            {
+              "real": -1.0000000000000553,
+              "imag": 0.1811041461580253
+            },
+            {
+              "real": -2.6927722390466144e-14,
+              "imag": 2.5931150979872757
+            }
+          ],
+          [
+            {
+              "real": 8.331372924126512e-15,
+              "imag": -0.012648382550065305
+            },
+            {
+              "real": -1.0000000000000087,
+              "imag": -0.18110414615803822
+            }
+          ]
+        ],
+        "trace": {
+          "real": -2.000000000000064,
+          "imag": -1.2906342661267445e-14
+        },
+        "eigenvalues": [
+          {
+            "real": -0.9999997468045072,
+            "imag": 2.667207676942951e-08
+          },
+          {
+            "real": -1.0000002531955567,
+            "imag": -2.6672089682711064e-08
+          }
+        ],
+        "determinant_error": 7.550332863779068e-16,
+        "symplectic_error": 1.058606938899542e-15,
+        "operator_norm": 2.945288763246081,
+        "spectral_radius": 1.000000253195557
+      },
+      "zero_then_minus_one_twice": {
+        "matrix": [
+          [
+            {
+              "real": -2.000000000000084,
+              "imag": 0.9942398062384757
+            },
+            {
+              "real": -5.810846240061355e-14,
+              "imag": 4.490319628019916
+            }
+          ],
+          [
+            {
+              "real": 1.5604354354051304e-14,
+              "imag": -0.888246967414231
+            },
+            {
+              "real": -1.9999999999999911,
+              "imag": -0.9942398062384883
+            }
+          ]
+        ],
+        "trace": {
+          "real": -4.000000000000075,
+          "imag": -1.2545520178264269e-14
+        },
+        "eigenvalues": [
+          {
+            "real": -3.732050807568958,
+            "imag": -1.5127192558355757e-14
+          },
+          {
+            "real": -0.26794919243111587,
+            "imag": 2.1809512571408472e-15
+          }
+        ],
+        "determinant_error": 5.431022213568941e-15,
+        "symplectic_error": 8.061990333411165e-15,
+        "operator_norm": 5.558472147440985,
+        "spectral_radius": 3.732050807568958
+      },
+      "zero_square_plus_identity_error": 2.5227770752385142e-14,
+      "minus_one_nilpotent_square_error": 6.27196399032396e-14,
+      "product_plus_identity_nilpotent_square_error": 1.93144061741125e-13,
+      "matrix_change_from_previous": 3.5854411473589275e-11
+    }
+  ],
+  "nonconstant_gauge_check": {
+    "gauge": "G(c)=diag(exp(0.31 i c),exp(-0.31 i c))",
+    "law": "A_tilde=G_prime G_inverse+G A G_inverse; M_tilde=G(1) M G(1)^(-1)",
+    "monodromy_conjugacy_error": 3.551143678201185e-14,
+    "trace_change": 1.7795804999811164e-14
+  },
+  "expected_exact_character_data": {
+    "trace_zero_loop": 0,
+    "trace_minus_one_loop": 2,
+    "trace_product": -2,
+    "trace_hyperbolic_word": -4,
+    "hyperbolic_word_eigenvalues": [
+      -3.732050807568877,
+      -0.2679491924311228
+    ],
+    "hyperbolic_word_growth_per_repetition": 1.3169578969248166,
+    "qualification": "Character identities follow from scalar Fuchsian equation plus specified based loop topology; numerical matrices do not identify an integral homology frame."
+  },
+  "growth_caution": "Finite complex128 powers are illustrative; exact Cayley-Hamilton formulas give bounded/linear/exponential asymptotic classifications."
+}

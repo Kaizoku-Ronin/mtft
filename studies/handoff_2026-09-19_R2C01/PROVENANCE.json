@@ -1,0 +1,27 @@
+{
+  "study": "R2C-01",
+  "date": "2026-09-18",
+  "baseline": "mtft 0.32.0 supplied source archive",
+  "archive_name": "mtft-0.32.0.tar(1).gz",
+  "archive_bytes": 4123270,
+  "archive_sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+  "quoted_release_sha256": "fce3170cba73d0ce9f9ad6e5d75692733b8d778b2231342e3b060dfc1352ccbd",
+  "hash_status": "Supplied archive differs from the quoted release hash; this study is anchored to the supplied archive.",
+  "snapshots": [
+    {
+      "bundle_path": "input/parents_v0320.py",
+      "upstream_path": "src/mtft/research/parents.py",
+      "sha256": "b3cb6303c490f39fd7bb3443df50d4e761cb518c93caa3fd4a4dad575588cafa"
+    },
+    {
+      "bundle_path": "input/smflux_v0320.py",
+      "upstream_path": "src/mtft/surface/smflux.py",
+      "sha256": "6858daddd8b8bf6e4b20dbf1572d69a08a6bbe65cf8d870d9dc31a980e1b2f9e"
+    },
+    {
+      "bundle_path": "input/mode_operators_v0320.py",
+      "upstream_path": "src/mtft/research/mode_operators.py",
+      "sha256": "705deadd4529ea126c6eaa60bc20d129709e766f1e839a60e62f7e7030d8c13d"
+    }
+  ]
+}

@@ -1,0 +1,1083 @@
+{
+  "investigation": "MTFT graded geometry and Monster compatibility",
+  "upstream_version": "0.32.0",
+  "input_sha256": {
+    "X0_143_AL_adapted_basis.txt": "b24d315e1f4d3a67651b057266352630ac9dce517609abf7a7b1c38c35e8721f",
+    "X0_143_AL_adapted_qexpansions.txt": "cdb9f3caf6fb6eb529931f41a2b47f0657489328737eb5abf0ab82150b56eb52",
+    "X0_143_S2_qexpansions.txt": "e7c2aaed96af74c4f21b1aa6d811a427b1a2dc7597abab9d5d5a6308888bb69f"
+  },
+  "sector_order": [
+    "(+,+)",
+    "(+,-)",
+    "(-,+)",
+    "(-,-)"
+  ],
+  "genus": 13,
+  "cusps": 4,
+  "index": 168,
+  "canonical_hilbert_series": "(1+11t+11t^2+t^3)/(1-t)^2",
+  "logcanonical_hilbert_series": "(1+14t+13t^2)/(1-t)^2",
+  "twined_canonical_series": {
+    "W11": "1+t",
+    "W13": "(1+t^2)/(1+t)",
+    "W143": "(1-8t+t^2)/(1+t)"
+  },
+  "finite_field_certificates": {
+    "1000003": [
+      {
+        "degree": 1,
+        "weight": 2,
+        "sturm_bound": 28,
+        "rank_by_sector": [
+          1,
+          6,
+          5,
+          1
+        ],
+        "total_rank": 13,
+        "products_processed": 13,
+        "pivots_by_sector": [
+          [
+            1
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 2,
+        "weight": 4,
+        "sturm_bound": 56,
+        "rank_by_sector": [
+          12,
+          6,
+          7,
+          11
+        ],
+        "total_rank": 36,
+        "products_processed": 169,
+        "pivots_by_sector": [
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        ]
+      },
+      {
+        "degree": 3,
+        "weight": 6,
+        "sturm_bound": 84,
+        "rank_by_sector": [
+          12,
+          18,
+          17,
+          13
+        ],
+        "total_rank": 60,
+        "products_processed": 468,
+        "pivots_by_sector": [
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            15
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        ]
+      },
+      {
+        "degree": 4,
+        "weight": 8,
+        "sturm_bound": 112,
+        "rank_by_sector": [
+          24,
+          18,
+          19,
+          23
+        ],
+        "total_rank": 84,
+        "products_processed": 780,
+        "pivots_by_sector": [
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            28
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            22
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        ]
+      },
+      {
+        "degree": 5,
+        "weight": 10,
+        "sturm_bound": 140,
+        "rank_by_sector": [
+          24,
+          30,
+          29,
+          25
+        ],
+        "total_rank": 108,
+        "products_processed": 1092,
+        "pivots_by_sector": [
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            29
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            35
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ]
+        ]
+      }
+    ],
+    "1000033": [
+      {
+        "degree": 1,
+        "weight": 2,
+        "sturm_bound": 28,
+        "rank_by_sector": [
+          1,
+          6,
+          5,
+          1
+        ],
+        "total_rank": 13,
+        "products_processed": 13,
+        "pivots_by_sector": [
+          [
+            1
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 2,
+        "weight": 4,
+        "sturm_bound": 56,
+        "rank_by_sector": [
+          12,
+          6,
+          7,
+          11
+        ],
+        "total_rank": 36,
+        "products_processed": 169,
+        "pivots_by_sector": [
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        ]
+      },
+      {
+        "degree": 3,
+        "weight": 6,
+        "sturm_bound": 84,
+        "rank_by_sector": [
+          12,
+          18,
+          17,
+          13
+        ],
+        "total_rank": 60,
+        "products_processed": 468,
+        "pivots_by_sector": [
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            15
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        ]
+      },
+      {
+        "degree": 4,
+        "weight": 8,
+        "sturm_bound": 112,
+        "rank_by_sector": [
+          24,
+          18,
+          19,
+          23
+        ],
+        "total_rank": 84,
+        "products_processed": 780,
+        "pivots_by_sector": [
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            28
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            22
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        ]
+      },
+      {
+        "degree": 5,
+        "weight": 10,
+        "sturm_bound": 140,
+        "rank_by_sector": [
+          24,
+          30,
+          29,
+          25
+        ],
+        "total_rank": 108,
+        "products_processed": 1092,
+        "pivots_by_sector": [
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            29
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            35
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ]
+        ]
+      }
+    ]
+  },
+  "dimension_comparison": [
+    {
+      "degree": 0,
+      "canonical": 1,
+      "canonical_AL_sectors": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "all_even_modular_forms": 1,
+      "logcanonical_AL_sectors_theoretical": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "moonshine_conformal_weight_dim": 1
+    },
+    {
+      "degree": 1,
+      "canonical": 13,
+      "canonical_AL_sectors": [
+        1,
+        6,
+        5,
+        1
+      ],
+      "all_even_modular_forms": 16,
+      "logcanonical_AL_sectors_theoretical": [
+        1,
+        7,
+        6,
+        2
+      ],
+      "moonshine_conformal_weight_dim": 0
+    },
+    {
+      "degree": 2,
+      "canonical": 36,
+      "canonical_AL_sectors": [
+        12,
+        6,
+        7,
+        11
+      ],
+      "all_even_modular_forms": 44,
+      "logcanonical_AL_sectors_theoretical": [
+        14,
+        8,
+        9,
+        13
+      ],
+      "moonshine_conformal_weight_dim": 196884
+    },
+    {
+      "degree": 3,
+      "canonical": 60,
+      "canonical_AL_sectors": [
+        12,
+        18,
+        17,
+        13
+      ],
+      "all_even_modular_forms": 72,
+      "logcanonical_AL_sectors_theoretical": [
+        15,
+        21,
+        20,
+        16
+      ],
+      "moonshine_conformal_weight_dim": 21493760
+    },
+    {
+      "degree": 4,
+      "canonical": 84,
+      "canonical_AL_sectors": [
+        24,
+        18,
+        19,
+        23
+      ],
+      "all_even_modular_forms": 100,
+      "logcanonical_AL_sectors_theoretical": [
+        28,
+        22,
+        23,
+        27
+      ],
+      "moonshine_conformal_weight_dim": 864299970
+    },
+    {
+      "degree": 5,
+      "canonical": 108,
+      "canonical_AL_sectors": [
+        24,
+        30,
+        29,
+        25
+      ],
+      "all_even_modular_forms": 128,
+      "logcanonical_AL_sectors_theoretical": [
+        29,
+        35,
+        34,
+        30
+      ],
+      "moonshine_conformal_weight_dim": 20245856256
+    },
+    {
+      "degree": 6,
+      "canonical": 132,
+      "canonical_AL_sectors": [
+        36,
+        30,
+        31,
+        35
+      ],
+      "all_even_modular_forms": 156,
+      "logcanonical_AL_sectors_theoretical": [
+        42,
+        36,
+        37,
+        41
+      ],
+      "moonshine_conformal_weight_dim": 333202640600
+    },
+    {
+      "degree": 7,
+      "canonical": 156,
+      "canonical_AL_sectors": [
+        36,
+        42,
+        41,
+        37
+      ],
+      "all_even_modular_forms": 184,
+      "logcanonical_AL_sectors_theoretical": [
+        43,
+        49,
+        48,
+        44
+      ],
+      "moonshine_conformal_weight_dim": 4252023300096
+    },
+    {
+      "degree": 8,
+      "canonical": 180,
+      "canonical_AL_sectors": [
+        48,
+        42,
+        43,
+        47
+      ],
+      "all_even_modular_forms": 212,
+      "logcanonical_AL_sectors_theoretical": [
+        56,
+        50,
+        51,
+        55
+      ],
+      "moonshine_conformal_weight_dim": 44656994071935
+    },
+    {
+      "degree": 9,
+      "canonical": 204,
+      "canonical_AL_sectors": [
+        48,
+        54,
+        53,
+        49
+      ],
+      "all_even_modular_forms": 240,
+      "logcanonical_AL_sectors_theoretical": [
+        57,
+        63,
+        62,
+        58
+      ],
+      "moonshine_conformal_weight_dim": 401490886656000
+    },
+    {
+      "degree": 10,
+      "canonical": 228,
+      "canonical_AL_sectors": [
+        60,
+        54,
+        55,
+        59
+      ],
+      "all_even_modular_forms": 268,
+      "logcanonical_AL_sectors_theoretical": [
+        70,
+        64,
+        65,
+        69
+      ],
+      "moonshine_conformal_weight_dim": 3176440229784420
+    }
+  ],
+  "partition_at_t_half": {
+    "t": "1/2",
+    "Z": "75/2",
+    "mean_degree": "241/75",
+    "variance_degree": "24794/5625",
+    "status": "EXACT for the defined grading ensemble; no physical energy scale fixed"
+  },
+  "obstructions": {
+    "Hurwitz_bound": 1008,
+    "Monster_order": "808017424794512875886459904961710757005754368000000000",
+    "least_nontrivial_complex_Monster_rep_dimension": 196883,
+    "scope": "grading-preserving algebra actions on these rings; not all conceivable extensions"
+  },
+  "verification_status": "PASS",
+  "limits": [
+    "Frozen q-expansion modularity and AL labels are upstream mathematical inputs.",
+    "Matching Q-rank uses geometric upper bounds, not agreement of primes alone.",
+    "Modular/logcanonical dimensions use theorems; no full M_2n basis was constructed.",
+    "No VOA, physical Hamiltonian, RG fixed point, Feigenbaum value, or coupling constant was derived."
+  ]
+}

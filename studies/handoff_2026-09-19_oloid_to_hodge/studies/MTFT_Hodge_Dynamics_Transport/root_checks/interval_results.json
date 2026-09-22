@@ -1,0 +1,143 @@
+{
+  "status": "DIAGNOSTIC",
+  "base": "c_next=-3+4(c+3)(-c-2)",
+  "domain": [
+    -3,
+    -2
+  ],
+  "transport": "Y(c_next) inverse(Y(c))",
+  "exact_theorem": "Products telescope and all cocycle exponents vanish on a compact nonsingular interval.",
+  "base_reference_exponent": 0.6931471805599453,
+  "tolerance_comparison": {
+    "transport_finite_exponent": 1.6263032587282567e-18,
+    "endpoint_transport_norm": 8.881784197001252e-16
+  },
+  "sampled_bounds": {
+    "sampled_Y_norm_max": 1.0705011265882074,
+    "sampled_inverse_norm_max": 1.070501126588207,
+    "sampled_uniform_bound": 1.1459726620266208,
+    "qualification": "sampled diagnostic, not certified supremum"
+  },
+  "rows": [
+    {
+      "seed": 0.123456789,
+      "steps": 256,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6945693026756833,
+      "transport_finite_exponent": 0.00011313042635169189,
+      "endpoint_transport_norm": 1.0293848482797658,
+      "product_telescope_defect": 3.3263294380600173e-16,
+      "determinant_defect": 2.220446049250313e-16
+    },
+    {
+      "seed": 0.123456789,
+      "steps": 1024,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6926693175237997,
+      "transport_finite_exponent": 0.00010903028432056914,
+      "endpoint_transport_norm": 1.1181181077460247,
+      "product_telescope_defect": 1.821377042022605e-15,
+      "determinant_defect": 2.220446049250313e-16
+    },
+    {
+      "seed": 0.123456789,
+      "steps": 4096,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931229000652553,
+      "transport_finite_exponent": 2.546643501206869e-05,
+      "endpoint_transport_norm": 1.1099450591182913,
+      "product_telescope_defect": 1.227559953915474e-14,
+      "determinant_defect": 0.0
+    },
+    {
+      "seed": 0.123456789,
+      "steps": 8192,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931580923331889,
+      "transport_finite_exponent": 1.1856389192263574e-05,
+      "endpoint_transport_norm": 1.1020009141449743,
+      "product_telescope_defect": 1.8879688557162013e-14,
+      "determinant_defect": 0.0
+    },
+    {
+      "seed": 0.41421356237309515,
+      "steps": 256,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6907310605278976,
+      "transport_finite_exponent": 0.00027024993313984433,
+      "endpoint_transport_norm": 1.0716333532069233,
+      "product_telescope_defect": 5.4358472869475775e-15,
+      "determinant_defect": 4.440892098500626e-16
+    },
+    {
+      "seed": 0.41421356237309515,
+      "steps": 1024,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931068988560249,
+      "transport_finite_exponent": 3.297057789950607e-05,
+      "endpoint_transport_norm": 1.0343382722567553,
+      "product_telescope_defect": 4.9347294265571875e-15,
+      "determinant_defect": 0.0
+    },
+    {
+      "seed": 0.41421356237309515,
+      "steps": 4096,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931490208789733,
+      "transport_finite_exponent": 8.314414178698578e-07,
+      "endpoint_transport_norm": 1.0034113896375516,
+      "product_telescope_defect": 3.5820034145644474e-15,
+      "determinant_defect": 1.1102230246251565e-16
+    },
+    {
+      "seed": 0.41421356237309515,
+      "steps": 8192,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931378395588093,
+      "transport_finite_exponent": 4.809150763581269e-06,
+      "endpoint_transport_norm": 1.0401828999790559,
+      "product_telescope_defect": 1.8407790912125474e-14,
+      "determinant_defect": 0.0
+    },
+    {
+      "seed": 0.3141592653589793,
+      "steps": 256,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6874827647920884,
+      "transport_finite_exponent": 0.0001580329017519658,
+      "endpoint_transport_norm": 1.0412859324389894,
+      "product_telescope_defect": 2.2011528793241787e-15,
+      "determinant_defect": 1.1102230246251565e-16
+    },
+    {
+      "seed": 0.3141592653589793,
+      "steps": 1024,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6916407876245262,
+      "transport_finite_exponent": 3.9773868861169556e-05,
+      "endpoint_transport_norm": 1.041569220384906,
+      "product_telescope_defect": 2.8158580557811836e-15,
+      "determinant_defect": 2.220446049250313e-16
+    },
+    {
+      "seed": 0.3141592653589793,
+      "steps": 4096,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6929210863959632,
+      "transport_finite_exponent": 2.146067329821583e-05,
+      "endpoint_transport_norm": 1.091882114596941,
+      "product_telescope_defect": 1.440817167188526e-14,
+      "determinant_defect": 0.0
+    },
+    {
+      "seed": 0.3141592653589793,
+      "steps": 8192,
+      "solver_rtol": 2e-13,
+      "base_finite_exponent": 0.6931326445469782,
+      "transport_finite_exponent": 7.74671161756236e-06,
+      "endpoint_transport_norm": 1.06551799539695,
+      "product_telescope_defect": 1.568820690048239e-14,
+      "determinant_defect": 2.220446049250313e-16
+    }
+  ]
+}

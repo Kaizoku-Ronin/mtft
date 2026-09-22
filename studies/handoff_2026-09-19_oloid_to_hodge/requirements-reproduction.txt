@@ -1,0 +1,4 @@
+# Recorded environment: Python 3.12.14. MTFT installation is not required.
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8

@@ -1,0 +1,19 @@
+{
+  "upstream_archive": "mtft-0.32.0.tar.gz",
+  "upstream_sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+  "files": {
+    "INVESTIGATION.md": "cb49dedd9169bf95852a6bcdacf108391d50b79f3d9c7e939d5d5a53acb18761",
+    "LICENSE": "e466ba1cf60f1f59834bd6d6d70ec79df7505fbb5c0f988e3bc26b6c85e1cca2",
+    "README.md": "789f9bada76cc80eff3494aa66a81d0d734320423c092abb67de2ef2ed069d59",
+    "audit_bracket.py": "528e362fd32915b8823fd788bebe854855dced0ed2b0a7761099ec25753bf025",
+    "audit_operators.py": "6d949e8f6047c584d944ad472f2a98c838150fac562f87733629b6a8357f6bb4",
+    "bracket_results.json": "1238c1acf06085c60b75604e8f434a7cb01c9cdb5dbdbefb6e4ae64e3449502b",
+    "data/X0_143_AL_adapted_basis.txt": "b24d315e1f4d3a67651b057266352630ac9dce517609abf7a7b1c38c35e8721f",
+    "data/X0_143_AL_adapted_qexpansions.txt": "cdb9f3caf6fb6eb529931f41a2b47f0657489328737eb5abf0ab82150b56eb52",
+    "data/X0_143_I2_by_AL_sector.txt": "13a6b37c188bc0f4f49f2d2b95f432f15adaa00fc9535276695f2c32df14335d",
+    "data/X0_143_S2_qexpansions.txt": "e7c2aaed96af74c4f21b1aa6d811a427b1a2dc7597abab9d5d5a6308888bb69f",
+    "graded_results.json": "b89a6055c967c248eaf9131974d020bec735a5194d1bd7dbd2b171934a211315",
+    "operator_results.json": "2923d62d6a41e8d2d21ca8c14acaff1410aa322f100807238f0422e947ca3a8a",
+    "verify_graded.py": "6327aafdf8351b2a4d7254263693a0dfaf9feb30ab629b18f9c70fd191606dd9"
+  }
+}

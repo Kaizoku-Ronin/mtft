@@ -1,0 +1,859 @@
+{
+  "source_release": "MTFT 0.32.0",
+  "source_path_within_release": "src/mtft/canonical/_data",
+  "fixture_sha256": {
+    "X0_143_AL_adapted_qexpansions.txt": "cdb9f3caf6fb6eb529931f41a2b47f0657489328737eb5abf0ab82150b56eb52",
+    "X0_143_I2_by_AL_sector.txt": "13a6b37c188bc0f4f49f2d2b95f432f15adaa00fc9535276695f2c32df14335d"
+  },
+  "arithmetic": "exact Python integers; no floating point",
+  "degree": "canonical-ring degree; distinct from Fourier q-exponent",
+  "sector_order": [
+    "(+,+)",
+    "(+,-)",
+    "(-,+)",
+    "(-,-)"
+  ],
+  "degree_one_sector_dimensions": [
+    1,
+    6,
+    5,
+    1
+  ],
+  "quadrics_per_sector": [
+    26,
+    5,
+    4,
+    20
+  ],
+  "q_coefficients_checked_inclusive": [
+    0,
+    70
+  ],
+  "identity_control": {
+    "quadrics_checked": 55,
+    "zero_residuals_through_q70": 55,
+    "nonzero_residuals": 0,
+    "first_witness": null,
+    "shortest_witness": null
+  },
+  "Sym2_T2_substitution": {
+    "quadrics_checked": 55,
+    "zero_residuals_through_q70": 0,
+    "nonzero_residuals": 55,
+    "first_witness": {
+      "sector": "(+,+)",
+      "quadric_number_one_based": 1,
+      "first_nonzero_coefficients": [
+        {
+          "q_power": 2,
+          "coefficient": -37104
+        },
+        {
+          "q_power": 3,
+          "coefficient": 36820
+        },
+        {
+          "q_power": 4,
+          "coefficient": 205096
+        },
+        {
+          "q_power": 5,
+          "coefficient": -53692
+        }
+      ],
+      "relation_terms": [
+        {
+          "variables_one_based": [
+            1,
+            1
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            2,
+            2
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            2,
+            4
+          ],
+          "coefficient": -7
+        },
+        {
+          "variables_one_based": [
+            2,
+            5
+          ],
+          "coefficient": -8
+        },
+        {
+          "variables_one_based": [
+            2,
+            6
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            2,
+            7
+          ],
+          "coefficient": -1
+        },
+        {
+          "variables_one_based": [
+            3,
+            3
+          ],
+          "coefficient": 16
+        },
+        {
+          "variables_one_based": [
+            3,
+            4
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            3,
+            5
+          ],
+          "coefficient": 3
+        },
+        {
+          "variables_one_based": [
+            3,
+            6
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            3,
+            7
+          ],
+          "coefficient": -4
+        },
+        {
+          "variables_one_based": [
+            4,
+            4
+          ],
+          "coefficient": 10
+        },
+        {
+          "variables_one_based": [
+            4,
+            5
+          ],
+          "coefficient": 25
+        },
+        {
+          "variables_one_based": [
+            4,
+            6
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            4,
+            7
+          ],
+          "coefficient": -9
+        },
+        {
+          "variables_one_based": [
+            5,
+            5
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            5,
+            6
+          ],
+          "coefficient": -5
+        },
+        {
+          "variables_one_based": [
+            5,
+            7
+          ],
+          "coefficient": -7
+        },
+        {
+          "variables_one_based": [
+            6,
+            6
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            6,
+            7
+          ],
+          "coefficient": 6
+        },
+        {
+          "variables_one_based": [
+            7,
+            7
+          ],
+          "coefficient": 1
+        },
+        {
+          "variables_one_based": [
+            8,
+            8
+          ],
+          "coefficient": -21
+        },
+        {
+          "variables_one_based": [
+            8,
+            10
+          ],
+          "coefficient": -26
+        },
+        {
+          "variables_one_based": [
+            8,
+            11
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            8,
+            12
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            9,
+            9
+          ],
+          "coefficient": 27
+        },
+        {
+          "variables_one_based": [
+            9,
+            10
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            9,
+            11
+          ],
+          "coefficient": 27
+        },
+        {
+          "variables_one_based": [
+            9,
+            12
+          ],
+          "coefficient": -23
+        },
+        {
+          "variables_one_based": [
+            10,
+            10
+          ],
+          "coefficient": 7
+        },
+        {
+          "variables_one_based": [
+            10,
+            11
+          ],
+          "coefficient": -26
+        },
+        {
+          "variables_one_based": [
+            10,
+            12
+          ],
+          "coefficient": -28
+        },
+        {
+          "variables_one_based": [
+            11,
+            11
+          ],
+          "coefficient": 28
+        },
+        {
+          "variables_one_based": [
+            11,
+            12
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            12,
+            12
+          ],
+          "coefficient": 3
+        },
+        {
+          "variables_one_based": [
+            13,
+            13
+          ],
+          "coefficient": 1
+        }
+      ]
+    },
+    "shortest_witness": {
+      "sector": "(+,-)",
+      "quadric_number_one_based": 1,
+      "first_nonzero_coefficients": [
+        {
+          "q_power": 2,
+          "coefficient": -167616
+        },
+        {
+          "q_power": 3,
+          "coefficient": 221760
+        },
+        {
+          "q_power": 4,
+          "coefficient": 134496
+        },
+        {
+          "q_power": 5,
+          "coefficient": 387936
+        }
+      ],
+      "relation_terms": [
+        {
+          "variables_one_based": [
+            1,
+            2
+          ],
+          "coefficient": -59
+        },
+        {
+          "variables_one_based": [
+            1,
+            3
+          ],
+          "coefficient": -24
+        },
+        {
+          "variables_one_based": [
+            1,
+            4
+          ],
+          "coefficient": 19
+        },
+        {
+          "variables_one_based": [
+            1,
+            5
+          ],
+          "coefficient": 42
+        },
+        {
+          "variables_one_based": [
+            1,
+            6
+          ],
+          "coefficient": 30
+        },
+        {
+          "variables_one_based": [
+            1,
+            7
+          ],
+          "coefficient": -13
+        },
+        {
+          "variables_one_based": [
+            8,
+            13
+          ],
+          "coefficient": -3168
+        },
+        {
+          "variables_one_based": [
+            9,
+            13
+          ],
+          "coefficient": -36
+        },
+        {
+          "variables_one_based": [
+            10,
+            13
+          ],
+          "coefficient": -396
+        },
+        {
+          "variables_one_based": [
+            11,
+            13
+          ],
+          "coefficient": 1524
+        },
+        {
+          "variables_one_based": [
+            12,
+            13
+          ],
+          "coefficient": -2052
+        }
+      ]
+    }
+  },
+  "Leibniz_D_T2": {
+    "quadrics_checked": 55,
+    "zero_residuals_through_q70": 0,
+    "nonzero_residuals": 55,
+    "first_witness": {
+      "sector": "(+,+)",
+      "quadric_number_one_based": 1,
+      "first_nonzero_coefficients": [
+        {
+          "q_power": 3,
+          "coefficient": -25732
+        },
+        {
+          "q_power": 4,
+          "coefficient": 96740
+        },
+        {
+          "q_power": 5,
+          "coefficient": 446192
+        },
+        {
+          "q_power": 6,
+          "coefficient": -548844
+        }
+      ],
+      "relation_terms": [
+        {
+          "variables_one_based": [
+            1,
+            1
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            2,
+            2
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            2,
+            4
+          ],
+          "coefficient": -7
+        },
+        {
+          "variables_one_based": [
+            2,
+            5
+          ],
+          "coefficient": -8
+        },
+        {
+          "variables_one_based": [
+            2,
+            6
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            2,
+            7
+          ],
+          "coefficient": -1
+        },
+        {
+          "variables_one_based": [
+            3,
+            3
+          ],
+          "coefficient": 16
+        },
+        {
+          "variables_one_based": [
+            3,
+            4
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            3,
+            5
+          ],
+          "coefficient": 3
+        },
+        {
+          "variables_one_based": [
+            3,
+            6
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            3,
+            7
+          ],
+          "coefficient": -4
+        },
+        {
+          "variables_one_based": [
+            4,
+            4
+          ],
+          "coefficient": 10
+        },
+        {
+          "variables_one_based": [
+            4,
+            5
+          ],
+          "coefficient": 25
+        },
+        {
+          "variables_one_based": [
+            4,
+            6
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            4,
+            7
+          ],
+          "coefficient": -9
+        },
+        {
+          "variables_one_based": [
+            5,
+            5
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            5,
+            6
+          ],
+          "coefficient": -5
+        },
+        {
+          "variables_one_based": [
+            5,
+            7
+          ],
+          "coefficient": -7
+        },
+        {
+          "variables_one_based": [
+            6,
+            6
+          ],
+          "coefficient": -10
+        },
+        {
+          "variables_one_based": [
+            6,
+            7
+          ],
+          "coefficient": 6
+        },
+        {
+          "variables_one_based": [
+            7,
+            7
+          ],
+          "coefficient": 1
+        },
+        {
+          "variables_one_based": [
+            8,
+            8
+          ],
+          "coefficient": -21
+        },
+        {
+          "variables_one_based": [
+            8,
+            10
+          ],
+          "coefficient": -26
+        },
+        {
+          "variables_one_based": [
+            8,
+            11
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            8,
+            12
+          ],
+          "coefficient": 4
+        },
+        {
+          "variables_one_based": [
+            9,
+            9
+          ],
+          "coefficient": 27
+        },
+        {
+          "variables_one_based": [
+            9,
+            10
+          ],
+          "coefficient": -2
+        },
+        {
+          "variables_one_based": [
+            9,
+            11
+          ],
+          "coefficient": 27
+        },
+        {
+          "variables_one_based": [
+            9,
+            12
+          ],
+          "coefficient": -23
+        },
+        {
+          "variables_one_based": [
+            10,
+            10
+          ],
+          "coefficient": 7
+        },
+        {
+          "variables_one_based": [
+            10,
+            11
+          ],
+          "coefficient": -26
+        },
+        {
+          "variables_one_based": [
+            10,
+            12
+          ],
+          "coefficient": -28
+        },
+        {
+          "variables_one_based": [
+            11,
+            11
+          ],
+          "coefficient": 28
+        },
+        {
+          "variables_one_based": [
+            11,
+            12
+          ],
+          "coefficient": 5
+        },
+        {
+          "variables_one_based": [
+            12,
+            12
+          ],
+          "coefficient": 3
+        },
+        {
+          "variables_one_based": [
+            13,
+            13
+          ],
+          "coefficient": 1
+        }
+      ]
+    },
+    "shortest_witness": {
+      "sector": "(+,-)",
+      "quadric_number_one_based": 1,
+      "first_nonzero_coefficients": [
+        {
+          "q_power": 3,
+          "coefficient": -317088
+        },
+        {
+          "q_power": 4,
+          "coefficient": 880992
+        },
+        {
+          "q_power": 5,
+          "coefficient": -609696
+        },
+        {
+          "q_power": 6,
+          "coefficient": -1190592
+        }
+      ],
+      "relation_terms": [
+        {
+          "variables_one_based": [
+            1,
+            2
+          ],
+          "coefficient": -59
+        },
+        {
+          "variables_one_based": [
+            1,
+            3
+          ],
+          "coefficient": -24
+        },
+        {
+          "variables_one_based": [
+            1,
+            4
+          ],
+          "coefficient": 19
+        },
+        {
+          "variables_one_based": [
+            1,
+            5
+          ],
+          "coefficient": 42
+        },
+        {
+          "variables_one_based": [
+            1,
+            6
+          ],
+          "coefficient": 30
+        },
+        {
+          "variables_one_based": [
+            1,
+            7
+          ],
+          "coefficient": -13
+        },
+        {
+          "variables_one_based": [
+            8,
+            13
+          ],
+          "coefficient": -3168
+        },
+        {
+          "variables_one_based": [
+            9,
+            13
+          ],
+          "coefficient": -36
+        },
+        {
+          "variables_one_based": [
+            10,
+            13
+          ],
+          "coefficient": -396
+        },
+        {
+          "variables_one_based": [
+            11,
+            13
+          ],
+          "coefficient": 1524
+        },
+        {
+          "variables_one_based": [
+            12,
+            13
+          ],
+          "coefficient": -2052
+        }
+      ]
+    }
+  },
+  "Atkin_Lehner_controls": {
+    "W11": {
+      "quadrics_checked": 55,
+      "zero_residuals_through_q70": 55,
+      "nonzero_residuals": 0,
+      "first_witness": null,
+      "shortest_witness": null
+    },
+    "W13": {
+      "quadrics_checked": 55,
+      "zero_residuals_through_q70": 55,
+      "nonzero_residuals": 0,
+      "first_witness": null,
+      "shortest_witness": null
+    },
+    "W143": {
+      "quadrics_checked": 55,
+      "zero_residuals_through_q70": 55,
+      "nonzero_residuals": 0,
+      "first_witness": null,
+      "shortest_witness": null
+    }
+  },
+  "Euler_grading_derivation_control": {
+    "quadrics_checked": 55,
+    "zero_residuals_through_q70": 55,
+    "nonzero_residuals": 0,
+    "first_witness": null,
+    "shortest_witness": null
+  },
+  "simple_weighted_Hecke_counterexample": {
+    "form": "g=eta(tau)^2 eta(11 tau)^2=(e8+e13)/2",
+    "eta_product_matches_shipped_form_through_q140": true,
+    "T2_weight2_g_equals_minus2g_through_q70": true,
+    "g_first_coefficients_q1_through_q6": [
+      1,
+      -2,
+      -1,
+      2,
+      1,
+      2
+    ],
+    "coefficient_q1_of_T2_weight4_g_squared": 1,
+    "coefficient_q1_of_T2_weight2_g_then_squared": 0,
+    "conclusion": "T2 across weights is not multiplicative. T2(weight4)(g^2) has cusp order 1, so does not represent a holomorphic section of 2K at this cusp."
+  },
+  "Serre_derivative_cusp_gate": {
+    "operator": "D2(g)=q dg/dq - E2*g/6",
+    "input_canonical_degree": 1,
+    "output_modular_weight": 4,
+    "coefficient_q1": "5/6",
+    "minimum_q_order_for_holomorphic_2K_section": 2,
+    "preserves_canonical_ring": false,
+    "reason": "At cusp infinity d tau=dq/(2*pi*i*q); coefficient g=O(q) gives a pole for g*(d tau)^2."
+  },
+  "interpretation": "These failures obstruct these two specific T2 lifts to the canonical ring. They do not obstruct Hecke correspondences on H1 or weightwise modular-form spaces, and do not rule out a different state-space construction. A scalar shift T2-lambda*Id cannot repair the derivation obstruction: D_(T2-lambda*Id)(Q)=D_T2(Q)-2lambda*Q."
+}

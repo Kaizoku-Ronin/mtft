@@ -632,6 +632,118 @@ for _d in V0320_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 
+
+# ── v0.32.1 registrations ──
+V0321_LEGEND = (
+    dict(name="r2c01_chirality_no_go", tier="2", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT (conditional on the declared class)",
+         nature="M1 with one 6D Weyl field per sector: preserving the six family indices forces all family chiralities +1, while the four "
+                "elementary-scalar Yukawa contractions need opposite pairs: 1024 / 16 / 64 / 0.  Vector (internal-gauge) Higgs allowed.",
+         example="mtft.research.chirality.m1_scalar_higgs_no_go()", upstream=("route2_gate_battery",), ref="docs/SM/R2C01_CHIRALITY_REGISTER.md"),
+    dict(name="oloid_fricke_triangle_involution", tier="0", kind="identity", primitives=("I",), tag="Pr", exactness="EXACT",
+         nature="w(q) = -q/(1+q) (oloid contact parameters; Fricke involution of the elliptic family) is conjugate via n = -1/(q+2) to the "
+                "triangle reflection n -> -1-n preserving T(n) = n(n+1)/2.  Shared algebra; no dynamical lift.",
+         example="mtft.research.involutions.involution_checks()", upstream=("integers",), ref="docs/SM/OLOID_HODGE_RECONCILIATION.md"),
+)
+for _d in V0321_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321B_LEGEND = (
+    dict(name="vector_higgs_tachyon", tier="2", kind="identity", primitives=("V",), tag="Pr", exactness="EXACT (identity); DIAGNOSTIC (FEM)",
+         nature="Internal-vector Higgs mass operator m^2 = Bochner(deg 30) - 2(2 pi|d|/A) + K; curvature terms cancel on K = -1: "
+                "m^2_LLL = -2 pi |d_L|/A = -1/4, 18-fold; Yukawa = gauge coupling, y_t/g_4 = kappa s_max ~ 0.63 (0.42–0.87).",
+         example="mtft.research.vector_higgs.tachyon_mass2(-6)", upstream=("r2c01_chirality_no_go", "magnetic_bochner_spectrum"), ref="docs/SM/R2C02_VECTOR_HIGGS_REGISTER.md"),
+)
+for _d in V0321B_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321C_LEGEND = (
+    dict(name="r2c03_anomaly_lift", tier="2", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT",
+         nature="kappa = 1 (y = g4 sqrt(A) I); p2 cancellation needs n_T - n_T' = n_grav/4 (M1 survivors 24 -> 6, 16 -> 4; no gravitino); "
+                "the U(1)_L–SU(3)^3 term -f_L D3 is sourced by Q alone and irreducible: no Hom-type 6D completion of M1 preserves the families.",
+         example="mtft.research.gravitational_anomaly.hom_type_obstruction()", upstream=("r2c01_chirality_no_go", "vector_higgs_tachyon"), ref="docs/SM/R2C03_ANOMALY_LIFT_REGISTER.md"),
+)
+for _d in V0321C_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321D_LEGEND = (
+    dict(name="hom_type_obstruction_theorem", tier="2", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT (Hom-type content)",
+         nature="Every U(1)_x paired with colour in a family sector carries an irreducible U(1)_x–SU(3)^3 term; hypercharge needs U(1)_{a,b,d}: "
+                "no Hom-type unitary-stack flux model with SM bifundamental families is a consistent 6D gauge theory (CC-29 corrected).",
+         example="mtft.research.gravitational_anomaly.colour_cubic_without_U1L()", upstream=("r2c03_anomaly_lift",), ref="docs/SM/CC29_R2C04_REGISTER.md"),
+    dict(name="e7_three_27_families", tier="2", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT (index); record M3 OPEN",
+         nature="E7 -> E6 x U(1): one complex 27 block with flux O(P1+P2+P3) gives three pure 27's (16+10+1 of SO(10) each); no cubic or "
+                "independent quartic Casimir; gravitational anomaly needs a SUSY completion (H = 377).",
+         example="mtft.research.unified_parent.e7_three_27_families()", upstream=("hom_type_obstruction_theorem", "mode_operator_certificates"), ref="docs/SM/CC29_R2C04_REGISTER.md"),
+    dict(name="radion_brans_dicke", tier="5", kind="identity", primitives=("V",), tag="Pr", exactness="EXACT",
+         nature="KK reduction over a curve is scalar–tensor with omega_BD = -1/2 for the area modulus: a massless radion fails Cassini; "
+                "stabilisation is required.  1/g4^2 = A/g6^2: the internal area is the gauge sector's vacuum permittivity.",
+         example="mtft.research.compactification.radion_brans_dicke(2)", upstream=("X0_143",), ref="docs/SM/CC29_R2C04_REGISTER.md"),
+)
+for _d in V0321D_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321E_LEGEND = (
+    dict(name="flux_block_polarisations", tier="2", kind="identity", primitives=("V",), tag="Pr", exactness="EXACT (mesh-verified)",
+         nature="A gauge block of degree d has Landau levels at m^2 = +-d/24: tachyonic with |d| + 12 modes, massive with 12 - |d| + h0(O(|d| pts)). "
+                "M1: 18 @ -1/4, 7 @ +1/4; M3: 15 @ -1/8, 10 @ +1/8.  Every flux-charged block recombines at M_KK; a light Higgs needs d = 0.",
+         example="mtft.research.vector_higgs.block_spectrum(3)", upstream=("vector_higgs_tachyon", "e7_three_27_families"), ref="docs/SM/R2C05_POLARISATION_REGISTER.md"),
+)
+for _d in V0321E_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321F_LEGEND = (
+    dict(name="telescoping_theorem", tier="2", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="Gauge-vertex Yukawa: d_H = -(d1 + d2); chiral families of index 3 force d_H = -6, m_H^2 = -1/4, Higgs index -6 (M1's six doublet "
+                "pairs); hypercharges +-1/2 forced; E7 lacks the charge -2 block.  On a curve chirality = Higgs mass: no leading-order EW hierarchy.",
+         example="mtft.research.yukawa_triangle.light_higgs_no_go()", upstream=("flux_block_polarisations", "r2c01_chirality_no_go"), ref="docs/SM/R2C06_TELESCOPING_REGISTER.md"),
+)
+for _d in V0321F_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321G_LEGEND = (
+    dict(name="product_surface_decoupling", tier="2", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT arithmetic; record M4 OPEN",
+         nature="On X0(143) x 143a1 a bundle M (x) N has index dM dN and slope dM A_E + dN A_X: the family bundle (3,-1) keeps index 3 while the "
+                "Higgs block (-6,2) is slope-free at A_X = 3 A_E (36 massless modes); off the locus the EW scale is the Kaehler deviation.",
+         example="mtft.research.product_surface.m4_record()", upstream=("telescoping_theorem", "e7_three_27_families"), ref="docs/SM/R2C07_PRODUCT_SURFACE_REGISTER.md"),
+)
+for _d in V0321G_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321H_LEGEND = (
+    dict(name="surface_yukawa_selection_rule", tier="2", kind="identity", primitives=("II", "V"), tag="Pr", exactness="EXACT",
+         nature="On X0(143) x 143a1 a gauge-vertex Yukawa needs opposite Kuenneth parities (the (0,2)-form valued in K); curve x curve pairs are "
+                "never slope-free; mixed-origin pairs (curve Q, torus u^c) give Higgs (-4,2) or (-2,4) and rank-1 mass matrices at one VEV.",
+         example="mtft.research.product_surface.mixed_origin_solutions()", upstream=("product_surface_decoupling",), ref="docs/SM/R2C08_SURFACE_CHIRALITY_REGISTER.md"),
+)
+for _d in V0321H_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+
+V0321I_LEGEND = (
+    dict(name="theta_torus_factor_143a1", tier="2", kind="identity", primitives=("I", "V"), tag="Pr", exactness="EXACT structure; numerics to 1e-25",
+         nature="tau(143a1) = 1/2 + 1.0233i from j = -262144/1859; theta bases orthogonal, products close (classical, reproduced); torus Yukawa "
+                "factors rank 2 (S1) / rank 3 (S2); u^c curve factor H^0(S0(P)) = 2 bounds the up mass rank by 2: m_u = 0 at leading order.",
+         example="mtft.research.theta_torus.torus_factor(1, 2)", upstream=("surface_yukawa_selection_rule",), ref="docs/SM/R2C09_THETA_TORUS_REGISTER.md"),
+)
+for _d in V0321I_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
 # ═══════════════════════════════════════════════════════════════
 #  CLI
 # ═══════════════════════════════════════════════════════════════

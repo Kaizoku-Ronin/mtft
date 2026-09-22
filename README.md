@@ -193,3 +193,4 @@ MIT — see [LICENSE](LICENSE).
 - **Research namespace** `mtft.research`: `anomalies`, `charge_lattices`, `mode_operators`, `discrete_anomalies`, `tensor_gs`, `compactification`, `bordism`, `parents` (immutable records M1, controls, C3X), `pipeline` (gate reports with witnesses; no "viable" boolean).
 - **Gate 4 decision**: route 2 — one parent, three internal modes; C3X's machinery is the gate battery (`docs/SM/WAVE_C_GATES.md`).
 - Registers in `docs/SM/`; Legend entries for every new engine (`python -m mtft.legend status`).
+- **v0.32.1**: R2C-01 (`research.chirality`): the elementary-scalar Higgs is excluded for M1's three families; the internal-vector Higgs survives. `research.involutions` (oloid/Fricke/triangle algebra). Two more frozen handoffs.

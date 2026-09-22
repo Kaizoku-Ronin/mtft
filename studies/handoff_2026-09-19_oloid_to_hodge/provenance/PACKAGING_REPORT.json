@@ -1,0 +1,50 @@
+{
+  "prepared_at_utc": "2026-09-19T12:55:50.976481+00:00",
+  "scope": "Consolidation of this conversation, not a rerun of research or the full MTFT suite",
+  "original_studies": [
+    {
+      "archive": "original_archives/MTFT_Graded_Moonshine_Investigation.zip",
+      "sha256": "8806194baad1c733345782509fb9f114943388ae3dd8a68c3f053578e765c1ff",
+      "files": 14,
+      "original_payload_hashes_checked": 13,
+      "crc": "PASS",
+      "expanded_members_equal_original": true,
+      "standalone_report_equal": true
+    },
+    {
+      "archive": "original_archives/MTFT_Hodge_Dynamics_Transport.zip",
+      "sha256": "32ee3f867f891a73cb4872f2b87f1bfeea1105a50e0a9d99b4ab868c388feb58",
+      "files": 23,
+      "original_payload_hashes_checked": 22,
+      "crc": "PASS",
+      "expanded_members_equal_original": true,
+      "standalone_report_equal": true
+    },
+    {
+      "archive": "original_archives/MTFT_Triangle_Feigenbaum_Hodge_Investigation.zip",
+      "sha256": "d54e14799f3a48be2c05a049635c88f7dc3fab11f03644b1b1b6975f7ccb37f1",
+      "files": 13,
+      "original_payload_hashes_checked": 12,
+      "crc": "PASS",
+      "expanded_members_equal_original": true,
+      "standalone_report_equal": true
+    }
+  ],
+  "original_payload_hashes_checked": 47,
+  "source_distribution": {
+    "file": "sources/mtft-0.32.0.tar.gz",
+    "sha256": "46ffc563a0cd81a7a82d975497bf64d82f8471eb424409e3d154532b5d8d6069",
+    "tar_members": 665,
+    "matches_reviewed_snapshot": true
+  },
+  "supplied_references": {
+    "count": 23,
+    "pdf": 5,
+    "images": 18
+  },
+  "python_sources_parse": "PASS",
+  "original_study_files_modified": false,
+  "research_experiments_rerun": false,
+  "full_mtft_test_suite_rerun": false,
+  "packaging_source_checks": "PASS"
+}
