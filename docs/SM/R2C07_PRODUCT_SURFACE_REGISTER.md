@@ -13,3 +13,8 @@ bundle M (x) N has fermion index dM dN and slope dM A_E + dN A_X — independent
 OPEN (the new gate set): the parent is an 8D gauge theory — 8D chirality and anomaly rules replace R2C-01/03; stabilisation of (A_X, A_E)
 near the locus; the other blocks' massless moduli at the locus; gravity with two Kaehler moduli (scalar–tensor with two scalars).
 Tools: `research.product_surface` (Kuenneth counts, triangle, locus, deviation signs).  Tests check Riemann–Roch on both factors independently.
+
+
+## Addendum (2026-09-23, v0.33.0)
+"Off the locus, m^2 ~ slope" is now a theorem for the product connection: the lowest Higgs level is 2 pi mu(L_H)/(A_X A_E) (`product_surface.higgs_slope_mass`;
+`V0330_COMPENDIUM_NOTES.md` item 3).  The M4 Yukawa claim of this register was retracted in CC-31.

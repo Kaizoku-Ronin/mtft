@@ -7,7 +7,7 @@ def test_full_bidegree_rule_and_two_solutions():
     sols = PS.surface_solutions(); keys = {(r["Q"], r["u"], r["H"], r["higgs_modes"], r["slope_free_locus"] / PS.A_E) for r in sols}
     assert keys == {((3, 1), (1, -3), (-4, 2), 32, 2), ((1, -3), (3, 1), (-4, 2), 32, 2), ((-3, 1), (1, 3), (2, -4), 4, sp.Rational(1, 2)), ((1, 3), (-3, 1), (2, -4), 4, sp.Rational(1, 2))}
     assert all(r["slope_free_locus"] is None or r["higgs_modes"] == 0 for r in PS.scan_family_pairs_full() if {abs(r["Q"][0]), abs(r["u"][0])} == {3})   # curve x curve never works
-    assert TT.up_mass_rank_bound()["rank_bound"] == 2
+    rb = TT.up_mass_rank_bound(); assert rb["rank_bound"] == 2 and rb["rank_bound_hypothesis"] == "Higgs VEV of Kuenneth rank one"   # v0.33.0: qualified (compendium VI.4)
 
 @pytest.mark.slow
 def test_theta_torus_factors():

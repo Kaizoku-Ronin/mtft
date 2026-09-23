@@ -529,14 +529,14 @@ def computational_stiffness(n_states: int, max_steps: int = 50_000,
     sign pattern, which approaches 1 (all primes constrained by
     the non-vanishing theorem for newforms).
     """
-    t0 = time.time()
+    t0 = time.perf_counter()
 
     if n_states > 3:
         # For large n, exact enumeration is intractable
         # Return structural estimates
         unc, con = _count_constrained_machines(n_states, tape_len)
         comp = con / unc if unc > 0 else 1.0
-        elapsed = time.time() - t0
+        elapsed = time.perf_counter() - t0
         return StiffnessResult(
             n_states=n_states,
             bb_unconstrained=-1,  # not computed
@@ -607,7 +607,7 @@ def computational_stiffness(n_states: int, max_steps: int = 50_000,
     stiff = -math.log2(comp) if comp > 0 else float('inf')
     search_comp = total_hck / total_unc if total_unc > 0 else 1.0
 
-    elapsed = time.time() - t0
+    elapsed = time.perf_counter() - t0
 
     if verbose:
         print(f"    BB_unc({n_states}) = {bb_unc} over {total_unc:,} machines")

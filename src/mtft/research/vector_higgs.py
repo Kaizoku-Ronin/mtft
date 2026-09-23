@@ -71,3 +71,35 @@ def m3_block_check(h=0.3, nx=5):
     mm = MG.MagneticMesh(h, nx); cm = RR.cm_classes(); P = cm["P"]; T0 = {k: mm.point_triangle(P[k]) for k in (1, 2, 3)}; Tc0 = mm.cusp_triangle(143); Tc1 = mm.cusp_triangle(13)
     l27 = mm.divisor_spectrum(27, [(Tc0, 12), (Tc1, 12), (T0[1], 1), (T0[2], 1), (T0[3], 1)], 20)["eigenvalues"]; l21 = mm.divisor_spectrum(21, [(Tc0, 12), (Tc1, 12), (T0[1], -1), (T0[2], -1), (T0[3], -1)], 16)["eigenvalues"]
     F = 2 * np.pi * 3 / mm.Ac; return {"tachyon_m2": float(l27[:15].mean() - 2 * F - 1), "tachyon_gap": float(l27[15] - l27[14]), "massive_m2": float(l21[:10].mean() + 2 * F - 1), "massive_gap": float(l21[10] - l21[9])}
+
+
+# ------------------------------------------------ v0.33.0 (2026-09-23): the mode operator in Kodaira form (compendium V.2–V.3)
+def kodaira_forms(degree, genus=13):
+    """Both polarisations of a block of degree d != 0 as pointwise operator identities, valid for EVERY Kaehler metric on the curve when
+    the block carries its HYM metric (|B| = 2 pi |d| / A):
+      tachyonic  (the (0,1)-forms of the negative-degree member L_neg, sections of L_neg (x) K^-1):  m^2 = 2 d* d - |B|,
+      massive    (the (1,0)-forms of L_neg, sections of L_neg (x) K):                                  m^2 = 2 dbar* dbar + |B|.
+    The Gaussian curvature cancels at every point (the Ricci term against the curvature of Lambda^{0,1} = K^-1), not only on average.
+    The (0,1)-formula of R2C-02 therefore applies to NEGATIVE-degree blocks only — the content of CC-30 — and its multiplicity
+    h^1(L_neg) = |d| + g - 1 is Atiyah–Bott's Morse index of the split connection.  Curvature units: levels -/+ |d|/(2g-2)."""
+    ad = abs(int(degree)); B = sp.Rational(ad, 2 * genus - 2)
+    return {"B_curvature_units": B, "tachyonic": {"operator": "2 d*d - |B| on L_neg (x) K^-1", "lowest": -B, "multiplicity": ad + genus - 1},
+            "massive": {"operator": "2 dbar*dbar + |B| on L_neg (x) K", "lowest_if_attained": B, "multiplicity": f"{genus - 1 - ad} + h^0(L_neg^-1)"},
+            "sign_restriction": "the (0,1)-form formula m^2 = Bochner - 2|B| + K holds for d < 0 (CC-30)", "metric_independent": True}
+
+def constant_curvature_checks(degree):
+    """Closed-form Bochner spectra on the three constant-curvature geometries, fed into m^2 = Bochner + K -/+ 2|B| (exact rationals):
+    sphere (monopole harmonics l(l+1) - q^2, R = 1), flat torus (Landau levels (2n+1)|B_e|, B = 1 per unit degree), genus 13 (lowest
+    hyperbolic Landau level |e|/24).  Each reproduces the tachyonic level -|B| with |d| + g - 1 modes; the massive level +|B| is
+    attained only where h^0(K (x) L_neg) > 0 (genus 13).  The sphere case is the Brandt–Neri–Coleman monopole instability."""
+    from fractions import Fraction as Fr
+    d = abs(int(degree)); out = {}
+    def sphere_levels(e):
+        q = Fr(abs(e), 2); return [(l * (l + 1) - q * q, int(2 * l + 1)) for l in (q + k for k in range(4))]
+    B = Fr(d, 2); tach = min((lv + 1 - 2 * B, m) for lv, m in sphere_levels(-d + 2)); mass = min((lv + 1 + 2 * B, m) for lv, m in sphere_levels(d + 2))
+    out["sphere"] = {"tachyonic": tach, "expected": (-B, d - 1), "massive_lowest": mass, "level_at_plus_B": False}
+    B = Fr(d); tach = min(((2 * n + 1) * B - 2 * B, d) for n in range(3)); mass = min(((2 * n + 1) * B + 2 * B, d) for n in range(3))
+    out["torus"] = {"tachyonic": tach, "expected": (-B, d), "massive_lowest": mass, "level_at_plus_B": False}
+    b = Fr(d, 24); out["genus13"] = {"tachyonic": (Fr(d + 24, 24) - 1 - 2 * b, d + 12), "expected": (-b, d + 12), "massive": (Fr(24 - d, 24) - 1 + 2 * b, f"{12 - d} + h^0"), "level_at_plus_B": True}
+    out["all_tachyonic_levels_match"] = all(out[k]["tachyonic"] == out[k]["expected"] for k in ("sphere", "torus", "genus13"))
+    return out

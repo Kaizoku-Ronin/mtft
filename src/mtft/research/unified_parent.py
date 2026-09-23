@@ -38,7 +38,9 @@ def e8_adjoint_net_families(weights_degrees):
     return {"net_families": sum(weights_degrees), "traceless": sum(weights_degrees) == 0}
 
 def gaugino_p2_integrality(group):
-    n = ADJOINT_DIM[group]; need = Fraction(n, 4); return {"group": group, "n_grav": n, "net_tensors_needed": need, "integral": need.denominator == 1}
+    """Pure-gaugino p2 cancellation by chiral tensors needs dim(adj)/28 net tensors (CC-33: the tensor p2 coefficient is 28 Weyl units, not 4);
+    E6 (78), E7 (133) and E8 (248) all fail.  R2C-04's E8 survivor is withdrawn."""
+    n = ADJOINT_DIM[group]; need = Fraction(n, 28); return {"group": group, "n_grav": n, "net_tensors_needed": need, "integral": need.denominator == 1, "rule": "dim(adj) = 0 mod 28 (CC-33)"}
 
 def susy_gravitational_condition(V, T=1): return {"V": V, "T": T, "H": 273 - 29 * T + V}
 

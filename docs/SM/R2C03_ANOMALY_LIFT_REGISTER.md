@@ -18,3 +18,9 @@ U(1)_L charge among Hom-type bifundamentals (i, j-bar) — and no additional (c,
 (a) non-Hom sectors (N_i, N_j) with eps = +1, each cancellation adding three vector-like coloured pairs; (b) an L-stack without its own U(1) and the
 flux vector (3,0,0,0,-3), which keeps all six family indices at +-3 and turns both Higgs sectors into index-0 sectors (h^0 = h^1 = 2 for the
 trivial twist).  Either is a new model record for the route-2 search, not an extension of M1.  Gate `six_d_anomaly_lift` updated (EXACT witness).
+
+
+## Addendum (2026-09-23, v0.33.0): CC-33
+The self-dual tensor p2 coefficient above (+1/360) is the p1^2 coefficient of -L8/8; the p2 coefficient is -7/360 (28 Weyl units).  The rule is
+n_grav = 0 mod 28 and NONE of the four assignments survives; a gravitino needs 269/28.  See `CC33_TENSOR_COEFFICIENT.md`.  The colour-cubic
+obstruction and kappa = 1 are unaffected.

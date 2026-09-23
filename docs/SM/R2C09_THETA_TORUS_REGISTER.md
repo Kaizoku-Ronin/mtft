@@ -25,3 +25,11 @@ of sections vanishing at two CM points (products sigma_a s with s the section of
 depends only on the four torus Higgs directions and the fixed A — the next computation, and a far more constrained prediction than M1's
 eighteen-dimensional anarchy.
 OPEN: 8D anomalies; moduli stabilisation at A_X = 2 A_E or A_E/2; the three vector-like u^c pairs; the down and lepton triangles on the surface.
+
+
+## Addendum (2026-09-23, v0.33.0): the structural consequence, qualified; second route to the torus factor
+rank M <= min(3, 2 * kunneth_rank(v)).  In S2 (curve Higgs factor one-dimensional) rank <= 2 holds for every VEV; in S1 a Kuenneth-rank-two VEV
+reaches rank 3, so "m_u = 0 at leading order" holds there for Kuenneth-rank-one VEVs only (`theta_torus.up_mass_rank_bound`, `up_mass_rank_examples`).
+The torus factors are reproduced without quadrature by the theta multiplication formula, B_{j,b} = c_j(b) (2k/((k+1) Im tau))^{1/4}, to 1e-25
+(`theta_torus.torus_factor_closed_form`); the singular values are a numerical certificate on two routes (tau is transcendental).  h^0(O(sum P - P)) = 1
+for P in {P1, P2, P3} is proved (gonality >= 4); for P = P4 the S2 Higgs factor has no sections.  `V0330_COMPENDIUM_NOTES.md` items 4–6.

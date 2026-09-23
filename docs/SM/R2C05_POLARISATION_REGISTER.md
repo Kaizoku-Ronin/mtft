@@ -22,3 +22,10 @@ y_t/g_4 ~ 0.6) this locates the electroweak hierarchy problem of the class exact
 (flux-charged) or an exact modulus (flux-neutral).  A TeV compactification scale does not rescue the charged case (m_H ~ M_KK/2).
 Next: parents with a flux-neutral Higgs block (d = 0) and families in charged blocks — the block structure of E7/E8 decompositions with
 TWO U(1) fluxes, searched with the same index arithmetic — and, for the neutral block, the mechanism that gives its moduli a small potential.
+
+
+## Addendum (2026-09-23, v0.33.0): the h^0 values in the massive multiplicities
+M3's 10 = 9 + h^0(O(3 CM points)) is proved (h^0 = 1: X0(143) has gonality >= 4, `hecke.gonality_lower_bound`).  M1's 7 = 6 + h^0(O(2 sum P)) uses
+h^0(O(2 sum P)) = 1, which remains a register value supported by the mesh; an exact route is proposed in `V0330_COMPENDIUM_NOTES.md` item 1.
+Later the same day: h^0(O(2 sum P)) = 1 is proved (`canonical.gates.gate_petri_w13_quotient`: the genus-6 quotient X0(143)/W13 has gonality >= 4 by Petri,
+and h^0(O_X(2 sum P)) = h^0(O_Y(Q1+Q2+Q3))); M1's 7 = 6 + 1 is exact.  `V0330_COMPENDIUM_NOTES.md` item 1b.

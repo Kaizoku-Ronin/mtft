@@ -33,6 +33,7 @@ __all__ = [
     "PRIMES", "NCOEF", "ROUTE2_PRIMES_EXPECTED", "verify",
     "gate_petri", "gate_generation", "gate_sector_grading", "gate_bundles",
     "gate_projection", "gate_descent", "gate_route2", "gate_ci_a",
+    "w13_quotient_quadrics", "gate_petri_w13_quotient",
 ]
 
 #: Two primes for the rank certificates.
@@ -348,6 +349,123 @@ def gate_ci_a():
             and a == -(7 ** 2) * 13 * 1957 ** 2}
 
 
+# ---------------------------------------------------------------- v0.33.0: the W13 quotient Y = X0(143)/W13 (genus 6) and h^0(O(2 sum P))
+
+def _kernel_Q(rows, ncols):
+    """Basis of {c : rows . c = 0} over Q, by exact Gaussian elimination."""
+    from fractions import Fraction as Fr
+    R = [[Fr(v) for v in r] for r in rows]
+    pivots, r = [], 0
+    for c in range(ncols):
+        piv = next((i for i in range(r, len(R)) if R[i][c] != 0), None)
+        if piv is None:
+            continue
+        R[r], R[piv] = R[piv], R[r]
+        pv = R[r][c]
+        R[r] = [x / pv for x in R[r]]
+        for i in range(len(R)):
+            if i != r and R[i][c] != 0:
+                f = R[i][c]
+                R[i] = [a - f * b for a, b in zip(R[i], R[r])]
+        pivots.append(c)
+        r += 1
+    free = [c for c in range(ncols) if c not in pivots]
+    basis = []
+    for fcol in free:
+        v = [Fr(0)] * ncols
+        v[fcol] = Fr(1)
+        for i, pc in enumerate(pivots):
+            v[pc] = -R[i][fcol]
+        basis.append(v)
+    return basis
+
+
+def w13_quotient_quadrics():
+    """I_2 of the canonical curve of Y = X0(143)/W13 (genus 6) in P^5.
+
+    H^0(K_Y) is the W13-invariant part of H^0(K_X): the adapted coordinates
+    of sectors (+,+) and (-,+) (six of them).  The quadrics vanishing on the
+    canonical curve of Y are exactly the quadrics of I_2(X) supported on
+    the 21 monomials in those six coordinates.  Returns
+    (invariant coordinate indices, list of quadrics as {monomial_index:
+    integer}), with the quadrics integrally scaled.  EXACT.
+    """
+    from math import gcd
+    from . import ideal_basis_adapted
+    inv = _SECTOR_COORDS["(+,+)"] + _SECTOR_COORDS["(-,+)"]
+    inv_set = set(inv)
+    inv_mon = [k for k, (i, j) in enumerate(MONOMIALS)
+               if i in inv_set and j in inv_set]
+    other = [k for k in range(len(MONOMIALS)) if k not in inv_mon]
+    A = ideal_basis_adapted()                       # 91 x 55
+    kernel = _kernel_Q([A[k] for k in other], 55)  # combinations vanishing off the invariant monomials
+    quads = []
+    for c in kernel:
+        v = [sum(A[m][j] * c[j] for j in range(55)) for m in inv_mon]
+        den = 1
+        for x in v:
+            den = den * x.denominator // gcd(den, x.denominator)
+        w = [int(x * den) for x in v]
+        g = 0
+        for x in w:
+            g = gcd(g, x)
+        quads.append({k: x // g for k, x in zip(inv_mon, w) if x})
+    return inv, quads
+
+
+def gate_petri_w13_quotient():
+    """Y = X0(143)/W13 has gonality >= 4, hence h^0(O_X(2 sum P)) = 1.  EXACT.
+
+    Three exact facts about the canonical curve of the genus-6 quotient Y:
+    (i) dim I_2(Y) = 6 = (g-2)(g-3)/2 — a hyperelliptic Y would satisfy 10
+        quadrics (its canonical image is a rational normal quintic);
+    (ii) the cubic products y_i Q_j span 31 = 56 - h^0(O_Y(3)) dimensions
+        (Noether's projective normality), i.e. I_3(Y) = S_1 I_2(Y);
+    (iii) the quartic products span 91 = 126 - h^0(O_Y(4)).
+    By Petri (Saint-Donat 1973), I_3 = S_1 I_2 fails exactly for trigonal
+    curves and plane quintics; so Y is neither, and with (i) not
+    hyperelliptic: gonality(Y) >= 4 and h^0(O_Y(D)) = 1 for every effective
+    D of degree <= 3.  For the three W13-fixed CM points P_i with images
+    Q_i, pi^* O_Y(Q1+Q2+Q3) = O_X(2 sum P) and H^0(K_X(-2 sum P)) =
+    H^0(K_Y(-sum Q)) (+) {anti-invariant differentials vanishing at sum P}
+    give h^0(O_X(2 sum P)) = h^0(O_Y(Q1+Q2+Q3)) = 1.  This closes the last
+    open value of the polarisation multiplicities (M1's 7 = 6 + 1) and of
+    `research.product_surface.curve_cohomology`.  Ranks are certified mod
+    two primes and capped above by theory, as in `gate_generation`.
+    """
+    inv, quads = w13_quotient_quadrics()
+    pos = {v: k for k, v in enumerate(inv)}
+
+    def rank_of_products(extra_degree):
+        mons = list(combinations_with_replacement(range(6), 2 + extra_degree))
+        idx = {m: k for k, m in enumerate(mons)}
+        cols = []
+        for q in quads:
+            for extra in combinations_with_replacement(range(6), extra_degree):
+                col = [0] * len(mons)
+                for k, c in q.items():
+                    i, j = MONOMIALS[k]
+                    key = tuple(sorted((pos[i], pos[j]) + extra))
+                    col[idx[key]] += c
+                cols.append(col)
+        return _rank(cols), len(mons)
+
+    r3, n3 = rank_of_products(1)
+    r4, n4 = rank_of_products(2)
+    g = 6
+    out = {"genus_Y": g, "dim_I2_Y": len(quads), "expected_dim_I2": (g - 2) * (g - 3) // 2,
+           "hyperelliptic_would_give": 10,
+           "rank_S1_I2": r3, "expected_dim_I3": n3 - (3 * (2 * g - 2) + 1 - g),
+           "rank_S2_I2": r4, "expected_dim_I4": n4 - (4 * (2 * g - 2) + 1 - g)}
+    out["not_hyperelliptic"] = out["dim_I2_Y"] == out["expected_dim_I2"]
+    out["generated_by_quadrics"] = (out["rank_S1_I2"] == out["expected_dim_I3"]
+                                    and out["rank_S2_I2"] == out["expected_dim_I4"])
+    out["gonality_Y_at_least"] = 4 if out["not_hyperelliptic"] and out["generated_by_quadrics"] else None
+    out["h0_O_2sumP"] = 1 if out["gonality_Y_at_least"] == 4 else None
+    out["ok"] = out["h0_O_2sumP"] == 1
+    return out
+
+
 def verify(full=True):
     """Run the gates.  `full=False` skips the two slowest."""
     out = {
@@ -357,6 +475,7 @@ def verify(full=True):
         "projection": gate_projection(),
         "descent": gate_descent(),
         "ci_a": gate_ci_a(),
+        "petri_w13_quotient": gate_petri_w13_quotient(),
     }
     if full:
         out["generation"] = gate_generation()

@@ -253,7 +253,8 @@ class TestComputationalStiffness(unittest.TestCase):
         """μ_C(1) is computable and non-negative."""
         result = computational_stiffness(1, max_steps=5000, tape_len=5)
         self.assertGreaterEqual(result.stiffness, 0)
-        self.assertGreater(result.computation_time, 0)
+        self.assertGreaterEqual(result.computation_time, 0)
+        self.assertTrue(math.isfinite(result.computation_time))
 
     def test_stiffness_result_structure(self):
         """StiffnessResult has all required fields."""

@@ -22,7 +22,7 @@ def curve_cohomology(degree, spin_twisted):
     if spin_twisted: return (d, 0) if d > 0 else ((0, -d) if d < 0 else (2, 2))
     if d < 0: return (0, 12 - d)
     if d == 0: return (1, 13)
-    return (d - 12 + (1 if d in (3, 6) else 0), (1 if d in (3, 6) else 0))       # h^0(O(sum P)) = 1, h^0(O(2 sum P)) = 1 on the CM divisors
+    return (d - 12 + (1 if d in (3, 6) else 0), (1 if d in (3, 6) else 0))       # h^0(O(sum P)) = 1 (hecke.gonality_lower_bound) and h^0(O(2 sum P)) = 1 (canonical.gates.gate_petri_w13_quotient): both proved in v0.33.0
 
 def torus_cohomology(degree):
     n = int(degree); return (n, 0) if n > 0 else ((0, -n) if n < 0 else (1, 1))
@@ -85,7 +85,8 @@ def rank_structure():
     rank M <= rank v.  One Higgs VEV gives rank one (only the top massive at leading order); the lighter masses are set by the subleading
     singular values of the VEV matrix — a hierarchy mechanism, not a prediction of its size.  The torus factors are triple products of
     theta functions on 143a1 (degrees 1, 3, 4 for the (3,-1)/(-1,-3)/(-2,4) solution)."""
-    return {"mass_matrix": "M = A v B^T", "rank_bound": "rank(v)", "one_VEV": "rank 1: top only", "torus_factor": "theta triple products on 143a1"}
+    return {"mass_matrix": "M = A v B^T", "rank_bound": "rank(v)", "one_VEV": "rank 1: top only", "torus_factor": "theta triple products on 143a1",
+            "v0330_note": "with the u^c curve factor 2-dimensional the general bound is rank M <= min(3, 2 * kunneth_rank(v)); see theta_torus.up_mass_rank_bound"}
 
 
 # ------------------------------------------------ CC-32 / R2C-09: the FULL selection rule (bidegrees sum to (1,1)) and the two solutions
@@ -115,5 +116,24 @@ def scan_family_pairs_full(index=3):
 
 def surface_solutions(index=3):
     """The two mixed-origin solutions (mirror pairs): S1 = ((3,1),(1,-3)) with Higgs (-4,2), 32 modes, A_X = 2 A_E; S2 = ((-3,1),(1,3)) with Higgs
-    (2,-4), 4 modes, A_X = A_E/2.  Every curve x curve pair fails."""
+    (2,-4), 4 modes, A_X = A_E/2.  Every curve x curve pair fails, and so does every torus x torus pair (a zero degree on one factor).
+    Conventions made explicit in v0.33.0 (compendium VI.3): a family's bidegree is that of its net chiral zero modes (`bidegree`); the
+    degree-1 curve factor is S0(P) with P one of P1, P2, P3 (for P = P4 the S2 Higgs factor O(sum P - P) has no sections); the S2 count
+    h^0(O(P2 + P3)) = 1 uses that X0(143) is not hyperelliptic (hecke.gonality_lower_bound)."""
     return [r for r in scan_family_pairs_full(index) if r["slope_free_locus"] is not None and r["higgs_modes"] > 0]
+
+
+# ------------------------------------------------ v0.33.0 (2026-09-23): the Higgs level on the surface from Chapter V (compendium VI.3, remark)
+def higgs_slope_mass(H, bidegree_H):
+    """Lowest level of the Higgs polarisation of a block of bidegree H = (H_X, H_E) whose (0,1)-leg sits on the factor with bidegree_H = (1,0)
+    (leg on X) or (0,1) (leg on E), for the product connection and product metric: the leg factor contributes the vector level
+    -2 pi |deg|/A (V.2, curvature cancels pointwise), the other factor its scalar Landau level +2 pi deg/A (V.1).  The result is
+    2 pi mu(L_H)/(A_X A_E): massless exactly on the slope-free locus, tachyonic for mu < 0, massive for mu > 0.  S1: H = (-4, 2), leg on X;
+    S2: H = (2, -4), leg on E."""
+    HX, HE = H
+    if bidegree_H == (1, 0): m2 = -2 * sp.pi * abs(HX) / A_X + 2 * sp.pi * HE / A_E
+    elif bidegree_H == (0, 1): m2 = 2 * sp.pi * HX / A_X - 2 * sp.pi * abs(HE) / A_E
+    else: raise ValueError("bidegree_H must be (1,0) or (0,1)")
+    mu = HX * A_E + HE * A_X
+    return {"m2_lowest": sp.simplify(m2), "slope": mu, "equals_2pi_slope_over_areas": sp.simplify(m2 - 2 * sp.pi * mu / (A_X * A_E)) == 0,
+            "massless_locus": sp.solve(sp.Eq(mu, 0), A_X)}

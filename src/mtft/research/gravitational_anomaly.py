@@ -1,9 +1,12 @@
 """R2C-03 (2026-09-19): tensor integrality for the p2 term, and the colour-cubic (2-form x 6-form) obstruction of M1's declared content.
 
-p2 coefficients of I8 per field: complex Weyl (signed dimension) -1/1440; self-dual tensor +1/360; gravitino -49/288.  Cancelling the
-irreducible p2 term of a fermion spectrum with n_grav signed dimensions needs n_T - n_T' = n_grav/4 net self-dual tensors: an integer
-only if n_grav = 0 mod 4.  For M1's four ledger-preserving assignments: n_grav = 24 (6 tensors) and 16 (4) survive; 22 and 18 are
-excluded; a gravitino cannot be balanced by tensors alone (269/4).
+p2 coefficients of I8 per field (CC-33, 2026-09-23; v0.33.0): complex Weyl (signed dimension) -1/1440; self-dual tensor -7/360
+(the -L8/8 genus: L8 = (7 p2 - p1^2)/45 — the +1/360 quoted in R2C-03 is its p1^2 coefficient, not its p2 coefficient); gravitino
+-49/288.  In Weyl units the three are 1 : 28 : 245, which is the 273 = 245 + 28 and 29 = 28 + 1 of the (1,0) count H - V + 29 T = 273
+and the 1/48 = (28 + 2)/1440 of the (2,0) tensor multiplet.  Cancelling the p2 term of a fermion spectrum with n_grav signed
+dimensions needs n_grav/28 net anti-self-dual tensors: an integer only if n_grav = 0 mod 28.  For M1's four ledger-preserving
+assignments n_grav = 24, 22, 18, 16 NONE survives (R2C-03's survivors 24 -> 6 and 16 -> 4 are withdrawn); a gravitino cannot be
+balanced by tensors alone (269/28).  `tensor_coefficient_witnesses` re-derives the constant on three independent routes.
 Colour-cubic ledger: dI8/dD3 = sum over colour triplet sectors of eps * A(rep) * q * mult/2 (F32: D3 q, F3: D3 q/2; q = f_i - f_j).  The f_L
 coefficient is sourced only by the Q sector (the only coloured field with U(1)_L charge among Hom-type bifundamentals (i, j-bar)); it
 equals -eps_cL = -1 for family preservation, and it is a 2-form x 6-form term, hence not cancellable by products of 4-forms.  Escape
@@ -17,11 +20,30 @@ consistent 6D gauge theory."""
 from fractions import Fraction
 import sympy as sp
 
-P2_WEYL = Fraction(-1, 1440); P2_SELF_DUAL_TENSOR = Fraction(1, 360); P2_GRAVITINO = Fraction(-49, 288)
+P2_WEYL = Fraction(-1, 1440); P2_SELF_DUAL_TENSOR = Fraction(-7, 360); P2_GRAVITINO = Fraction(-49, 288)      # CC-33: tensor was +1/360
+P1SQ_SELF_DUAL_TENSOR = Fraction(1, 360)                        # the coefficient that was mistaken for the p2 one (R2C-03)
+P2_WEYL_UNITS = {"weyl": 1, "self_dual_tensor": 28, "gravitino": 245}
+
+def tensor_coefficient_witnesses():
+    """Three independent derivations of the self-dual-tensor p2 coefficient (CC-33), each an exact rational identity:
+    (i) the genera: A-roof_8 = (7 p1^2 - 4 p2)/5760 gives the Weyl -1/1440, -L8/8 with L8 = (7 p2 - p1^2)/45 gives the tensor -7/360;
+    (ii) the (1,0) supergravity count H - V + 29 T = 273: gravity multiplet 273 = 245 (gravitino) + 28 (self-dual tensor), tensor multiplet 29 = 28 + 1;
+    (iii) the (2,0) tensor multiplet (one self-dual tensor, two Weyl): p2 magnitude 1/48 = (28 + 2)/1440."""
+    p1sq, p2 = sp.symbols("p1sq p2")
+    a_roof8 = (7 * p1sq - 4 * p2) / 5760; L8 = (7 * p2 - p1sq) / 45
+    weyl = Fraction(str(sp.Rational(a_roof8.coeff(p2)))); tensor = Fraction(str(sp.Rational((-L8 / 8).coeff(p2)))); tensor_p1sq = Fraction(str(sp.Rational((-L8 / 8).coeff(p1sq))))
+    units = {"weyl": 1, "self_dual_tensor": tensor / weyl, "gravitino": P2_GRAVITINO / weyl}
+    return {"weyl": weyl, "self_dual_tensor": tensor, "tensor_p1sq_coefficient": tensor_p1sq, "weyl_units": units,
+            "route_i_genera": weyl == P2_WEYL and tensor == P2_SELF_DUAL_TENSOR and tensor_p1sq == P1SQ_SELF_DUAL_TENSOR,
+            "route_ii_273": units["gravitino"] + units["self_dual_tensor"] == 273 and units["self_dual_tensor"] + units["weyl"] == 29,
+            "route_iii_2_0_multiplet": (units["self_dual_tensor"] + 2) * (-P2_WEYL) == Fraction(1, 48)}
 
 def tensor_integrality(n_grav, gravitino=False):
+    """Net self-dual tensors needed to cancel the p2 term of n_grav signed Weyl dimensions (negative = anti-self-dual): -n_grav/28.
+    Integral iff n_grav = 0 mod 28 (CC-33; the earlier n_grav/4 used the p1^2 coefficient of the tensor genus)."""
     p2 = n_grav * P2_WEYL + (P2_GRAVITINO if gravitino else 0); need = -p2 / P2_SELF_DUAL_TENSOR
-    return {"n_grav": n_grav, "p2_fermions": n_grav * P2_WEYL, "net_self_dual_tensors_needed": need, "integral": need.denominator == 1}
+    return {"n_grav": n_grav, "p2_fermions": n_grav * P2_WEYL, "net_self_dual_tensors_needed": need, "anti_self_dual_tensors_needed": -need,
+            "integral": need.denominator == 1, "rule": "n_grav = 0 mod 28 (CC-33)"}
 
 def m1_tensor_survivors():
     out = []

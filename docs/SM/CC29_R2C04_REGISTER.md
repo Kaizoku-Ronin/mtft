@@ -28,3 +28,7 @@ pairs per cancelled U(1)), or a parent whose simple factor has no cubic Casimir.
 Kaluza–Klein reduction over a curve is a scalar–tensor theory with the area modulus as Brans–Dicke scalar, omega_BD = -(n-1)/n = -1/2: a
 massless radion violates Cassini (omega > 4e4), so radius stabilisation is required by solar-system gravity.  1/g_4^2 = A/g_6^2: the internal
 area plays the role of the vacuum permittivity of the gauge sector.  `compactification.radion_brans_dicke`.
+
+
+## Addendum (2026-09-23, v0.33.0): CC-33
+The pure-gaugino p2 rule becomes dim(adj) = 0 mod 28: E6, E7 and E8 all fail (the E8 survivor of R2C-04 is withdrawn).  `unified_parent.gaugino_p2_integrality`.

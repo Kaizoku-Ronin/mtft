@@ -22,7 +22,7 @@ def m1_gate_report():
     ec = _ec(); gates["six_d_yukawa_chirality"] = {"pass": False, "witness": {"counts": ec["counts"], "conflict": ec["conflict"], "elementary_scalar_higgs": "no family-preserving assignment allows the four scalar contractions",
         "internal_vector_higgs": "allowed by the selection rule with the family signs (OPEN: action, mode operator, anomalies, background)"}, "status": "EXACT (R2C-01), conditional on the declared class"}
     from .gravitational_anomaly import m1_tensor_survivors as _ts, hom_type_obstruction as _ho
-    gates["six_d_anomaly_lift"] = {"pass": False, "witness": {"p2_tensor_integrality": _ts()["survivors"], "colour_cubic": _ho()["statement"], "escape_routes": _ho()["escape_routes"]}, "status": "EXACT (R2C-03); AXG-02/03 recorded"}
+    gates["six_d_anomaly_lift"] = {"pass": False, "witness": {"p2_tensor_integrality": _ts(), "colour_cubic": _ho()["statement"], "escape_routes": _ho()["escape_routes"]}, "status": "EXACT (R2C-03, CC-33: no tensor survivor); AXG-02/03 recorded"}
     from .yukawa_triangle import m1_triangles as _mt, light_higgs_no_go as _lh
     gates["light_higgs"] = {"pass": False, "witness": {"triangles": _mt()["degrees"], "higgs_degree": _mt()["higgs_degree"], "theorem": _lh()["theorem"]}, "status": "EXACT (R2C-06): class-level no-go on a curve"}
     V = CP.einstein_frame_potential(1, 1, 1, dim=6); gates["classical_radius"] = {"pass": V["stationary_point_exists"], "witness": str(V["V"]), "status": "EXACT (restricted potential)"}

@@ -20,3 +20,8 @@
 The Higgs direction remains unselected (the ratio is a distribution); no vacuum, no absolute scale, no RG running; the irreducible p2 term of
 the declared spectrum (R2C-01) still needs a tensor/gravity sector before the parent stands alone; kappa unfixed.
 Tools: `research.vector_higgs` (exact identity test; slow FEM test with margins 6% over ~2% measured).
+
+
+## Addendum (2026-09-23, v0.33.0): pointwise form and sign restriction
+The mode operator equals 2 d*d - |B| identically on the (0,1)-forms of a NEGATIVE-degree block, for every Kaehler metric (the curvature cancels
+pointwise); the formula as written applies to d < 0 only (CC-30).  `vector_higgs.kodaira_forms`; `V0330_COMPENDIUM_NOTES.md` item 2.

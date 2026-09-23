@@ -139,6 +139,8 @@ def test_liealg_d4():
     rep = L.d4_report(screen=True)
     assert rep["dim"] == 28
     assert rep["closure"]["growth"][:4] == [3, 6, 17, 28]
+    assert rep["closure"]["gap"] > 1e8          # spectral-gap gate: 6e10 on the reference machine
+    assert rep["closure"]["leak"] < 1e-8
     s = rep["structure"]
     assert (s["center_dim"], s["derived_dim"], s["rank"]) == (0, 28, 4)
     assert s["killing_signature"] == [28, 0, 0]

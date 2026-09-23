@@ -30,7 +30,7 @@ import numpy as np
 
 __all__ = [
     "LieGateAmbiguous", "inner", "antiherm", "vec_u", "unvec_u", "u_basis",
-    "close_lie", "structure_constants", "invariants", "rep_summary",
+    "close_lie", "close_lie_svd", "spectral_rank", "structure_constants", "invariants", "rep_summary",
     "spectral_gap_kernel", "normalizer_in_u", "cartan_and_roots",
     "cosine_bucket_dev", "symmetry_screen",
     "x0143_fixed_channels", "x0143_symmetry_ops", "d4_report",
@@ -161,6 +161,76 @@ def close_lie(seeds, tol_hi=1e-5, tol_lo=1e-7, max_rounds=10):
             "min_accepted": float(state["acc"]),
             "max_rejected": float(state["rej"]),
             "separation": float(state["acc"] / max(state["rej"], 1e-300))}
+
+
+def spectral_rank(s, gap_floor=1e6, tiny=1e-10):
+    """Rank of a matrix from its singular values by the largest log-gap.
+
+    If no singular value is below ``tiny`` times the largest, the matrix
+    has full rank.  Otherwise the rank is the position of the largest
+    ratio s[k]/s[k+1]; if that ratio is below ``gap_floor`` the spectrum
+    has no usable gap and :class:`LieGateAmbiguous` is raised."""
+    s = np.asarray(s, float)
+    s = s[s > 0]
+    if s.min() > tiny * s.max():
+        return len(s)
+    ratios = s[:-1] / np.maximum(s[1:], 1e-300)
+    k = int(np.argmax(ratios))
+    if ratios[k] < gap_floor:
+        raise LieGateAmbiguous(
+            f"no spectral gap >= {gap_floor:g} in the closure spectrum; "
+            f"largest ratio {ratios[k]:.3e} at rank {k + 1}")
+    return k + 1
+
+
+def close_lie_svd(seeds, max_rounds=10, gap_floor=1e6):
+    """Lie closure by singular-value rank with a spectral-gap gate.
+
+    Method note (2026-09-23, D4 portability diagnostic).  The greedy
+    absolute gate of :func:`close_lie` normalises near-dependent
+    brackets (for the X0(143) seeds the second round has s_6 = 7.6e-3
+    and a bracket is accepted at residual 7.8e-5), which amplifies
+    seed-level perturbations of 1e-16 into closure residuals of 1e-7 --
+    the size of the ambiguity window.  The same seeds rebuilt at 40
+    digits agree with the float64 seeds to 3e-16, and an 80-bit closure
+    reproduces the 9.3e-8 residuals exactly: they are properties of the
+    algorithm, not of the data.  This routine instead stacks the current
+    orthonormal basis with all unit brackets and takes the SVD; the rank
+    is read off the largest log-gap (as :func:`spectral_gap_kernel` does
+    for the normaliser) and the new basis is the leading right-singular
+    vectors, so no small residual is ever normalised.  For X0(143) the
+    gap at rank 28 is 6e10 (3.17 against 5e-11), and a 1e-15 relative
+    perturbation of the seeds leaves rank and gap intact.
+
+    Returns dict with keys ``basis``, ``growth``, ``spectra`` (per round:
+    (s_r, s_{r+1})), ``gap`` (final s_r / s_{r+1}) and ``leak`` (final
+    s_{r+1} / s_r, the relative size of the bracket components outside
+    the algebra)."""
+    n = seeds[0].shape[0]
+    W = np.array([vec_u(antiherm(S)) for S in seeds])
+    W = W / np.maximum(np.linalg.norm(W, axis=1, keepdims=True), 1e-300)
+    _, s, Vt = np.linalg.svd(W, full_matrices=False)
+    B = Vt[:spectral_rank(s, gap_floor)]
+    growth = [len(B)]
+    spectra = []
+    for _ in range(max_rounds):
+        cur = [unvec_u(v, n) for v in B]
+        br = [vec_u(cur[i] @ cur[j] - cur[j] @ cur[i])
+              for i in range(len(cur)) for j in range(i + 1, len(cur))]
+        M = np.vstack([B] + [b / max(np.linalg.norm(b), 1e-300) for b in br])
+        _, s, Vt = np.linalg.svd(M, full_matrices=False)
+        r = spectral_rank(s, gap_floor)
+        spectra.append((float(s[r - 1]), float(s[r]) if r < len(s) else 0.0))
+        assert r <= n * n, "closure exceeded dim u(n)"
+        stable = (r == len(B))
+        B = Vt[:r]
+        growth.append(r)
+        if stable:
+            break
+    sr, sr1 = spectra[-1]
+    return {"basis": [unvec_u(v, n) for v in B], "growth": growth,
+            "spectra": spectra, "gap": sr / max(sr1, 1e-300),
+            "leak": sr1 / sr}
 
 
 def structure_constants(basis):
@@ -473,22 +543,29 @@ def d4_report(screen=True, dps=50):
     STAR-fixed triangle algebra: closure, structure, representation,
     normalizer, roots, and (optionally) the arithmetic symmetry screen.
     Expected values (CERT(tol, E2)): dim 28, growth [3, 6, 17, 28, 28],
+    closure gap > 1e8 at rank 28 (SVD route; see :func:`close_lie_svd`),
     center 0, derived 28, rank 4, Killing (28, 0, 0), rep 8 + 1^5 with
     active commutant 1, normalizer 54, 24 equal-length roots on the D4
     cosine buckets, STAR = identity on g, W11/W13/W143 non-normalizing."""
     R, Ri, fixed = x0143_fixed_channels(dps=dps)
     seeds = [fixed[i] @ np.conj(fixed[j]) - fixed[j] @ np.conj(fixed[i])
              for i in range(3) for j in range(i + 1, 3)]
-    cl = close_lie(seeds)
+    cl = close_lie_svd(seeds)
     basis = cl["basis"]
+    try:                                   # legacy greedy gate, for the record only
+        legacy = close_lie(seeds)
+        legacy = {k: legacy[k] for k in ("growth", "min_accepted",
+                                         "max_rejected", "separation")}
+    except LieGateAmbiguous as exc:
+        legacy = {"ambiguous": str(exc)}
     ad, maxres = structure_constants(basis)
     inv = invariants(basis, ad)
     rep = rep_summary(basis)
     nz = normalizer_in_u(basis)
     rt = cartan_and_roots(basis, ad, inv)
     out = {
-        "closure": {k: cl[k] for k in
-                    ("growth", "min_accepted", "max_rejected", "separation")},
+        "closure": {k: cl[k] for k in ("growth", "spectra", "gap", "leak")},
+        "closure_legacy_gate": legacy,
         "dim": len(basis),
         "structure_closure_maxres": maxres,
         "structure": {k: inv[k] for k in
