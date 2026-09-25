@@ -2,196 +2,227 @@
 
 [![PyPI](https://img.shields.io/pypi/v/mtft.svg?color=blue)](https://pypi.org/project/mtft/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-612%2F612-brightgreen.svg)](https://github.com/Kaizoku-Ronin/mtft/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Fundamental constants from the integers. **Zero free parameters.**
+MTFT is a research toolkit for arithmetic weights, modular geometry, spectral
+dynamics and tests of proposed connections to physics. Its central objects are
 
-![The Stiffness Landscape](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/hero_stiffness.png)
+\[
+w_n=\sum_{d\mid n}\frac{\log d}{d},\qquad X_0(143),\qquad 143=11\times13.
+\]
 
-<p align="center"><sub>
-μ<sub>N</sub>(y) over gauge groups SU(2)…SU(16), computed entirely from
-w<sub>n</sub> = Σ<sub>d|n</sub> (log d)/d. The wall at small y is confinement;
-uniform positivity <em>is</em> the mass-gap statement.
-<a href="https://raw.githack.com/Kaizoku-Ronin/mtft/main/viz/stiffness_navigator.html">
-<b>Open the interactive 3D navigator →</b></a>
-</sub></p>
+The software has grown from stiffness and phenomenology tools into an exact
+arithmetic and modular-surface laboratory: Hecke operators, canonical rings,
+periods and Hodge structures, spin characteristics, field dynamics, Yukawa
+tensors, anomaly tests and model-selection gates. It also includes experimental
+cryptography, arithmetic computation, sonification and visualization tools.
 
-![Unitary wavepacket on the dual graph of X₀(143)](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.gif)
+**Research status:** integer-derived formulas, numerical certificates and
+physical hypotheses have different evidence requirements. MTFT does not yet
+supply a validated Standard Model or a general simulator of matter. The new
+interaction atlas provides external SM targets against which future MTFT
+derivations can be checked. Its reference parameters are not MTFT predictions.
 
-<p align="center"><sub>
-Unitary wavepacket evolution on the 56-node Farey dual of X₀(143) —
-the graph clock (CURVE) of <code>studies/du01_two_clock_ledger.py</code>:
-Laplacian Cayley steps, pure a.c. propagation, ‖ψ‖ = 1 throughout.
-<a href="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.mp4">Full-resolution mp4</a>
-· draw your own loops with <code>viz/MTFT_DrawnLoop.jsx</code>.
-</sub></p>
+**Start here:** [Capability index](docs/CAPABILITIES.md) ·
+[SM interaction atlas](docs/SM/INTERACTION_ATLAS.md) ·
+[Research and correction registers](docs/SM/) ·
+[Release history](docs/changelog/README.md) · [Examples](examples/README.md)
 
-MTFT proposes a modular time field **τ(x) = t_R / t_U** mapping spacetime to
-the upper half-plane **ℍ**, with SL(2,ℤ) symmetry and the modular curve
-**X₀(143)** (genus 13, level 11×13) as the arithmetic backbone. Coupling
-constants, the gauge tower, dark-sector profiles, and a Riemann-Hypothesis
-toolkit all emerge from one weight sequence — no fitted parameters anywhere
-in the pipeline.
-
-## The Three-Ensemble Program (v0.7 → v0.8)
-
-One weight sequence, three assemblies, three classical RH criteria — all
-installable, all cross-certified by independent audit:
-
-| Ensemble | Object | Curvature output | RH criterion |
-|---|---|---|---|
-| **Laplace** | Σ wₙ e^(−2πyn) | μ_N(y) = (1/4π²)[T″(y) − Re T″(y−i/N)] — exact | Th 1: limsup\|Δκ·X^(−3/2)\| < ∞ |
-| **Dirichlet** | Z_D(β) = −ζ(β)ζ′(β+1) — exact | g_D = ∂²log ζ(β) + ∂²log(−ζ′(β+1)) | Speiser (1935): ζ′ ≠ 0 in 0 < Re s < ½ |
-| **Critical** | log ξ at s = 1 | Li coefficients λₙ, three independent methods | Li (1997): λₙ ≥ 0 for **all** n |
-
-```python
-from mtft import dirichlet_curvature, li_criterion_report, hadamard_zetaprime_check
-
-dirichlet_curvature(3.0)     # exact split: ζ piece + ζ′ piece (48.59%)
-li_criterion_report(12)      # λ₁..λ₁₂ with the Bombieri–Lagarias caveat attached
-hadamard_zetaprime_check(3)  # ∂²log(−ζ′) = 2/(s−1)² − Σ(s−ρ′)⁻²; residual 4e−9
-                             # at s=3, certified < 1e−5 across s ∈ [3,10]
-```
-
-## The Legend — `python -m mtft.legend`
-
-mtft computes artifacts of the number line. The Legend is its map key:
-every function tagged by **nature**, **Arithmetica Generale primitive
-signature** (⟳ ÷ Σ ↑ ∂), **epistemic status** (Df/Pp/Pr/Conj/Heur/Cert ×
-EXACT/CERTIFIED/DIAGNOSTIC/PHENO), and **derivation chain**. Zero free
-parameters means every chain terminates in the integers — and you can watch:
-
-```
-$ python -m mtft.legend trace alpha_inverse
-alpha_inverse  [Pr, CERTIFIED(3.5ppm)]
-   └─ monster_order  [Pr, EXACT]  └─ integers  → It was always the integers.
-   └─ genus_13       [Pr, EXACT]  └─ X0_143 └─ N_143 └─ integers  → ...
-   └─ dim_S2_11      [Pr, EXACT]  └─ X0_143 └─ N_143 └─ integers  → ...
-
-$ python -m mtft.legend status        # epistemic audit of the whole surface
-$ python -m mtft.legend status EXACT  # just the bedrock you can build on
-```
-
-No other scientific package can ship `trace` honestly: everyone else's
-chains end in a fitted constant.
-
-## Machine Certificates (Tier 11)
-
-The **Jacobian Conjecture counterexample** (July 2026) ships as a
-self-certifying, dependency-free module — its own exact-arithmetic engine
-re-derives the whole mechanism (constant Jacobian, S₃ monodromy, non-surjective
-image) on every call. A counterexample cannot be faked:
-
-```python
-import mtft
-cert = mtft.jc_verify_all(verbose=True)   # det DF = -2, degree 3, JC false n>=3
-```
-
-## Installation
+## Install
 
 ```bash
-pip install mtft            # fresh install
-pip install --upgrade mtft  # already installed? pip won't upgrade unless asked
+python -m pip install --upgrade mtft
 ```
 
-## Quick Start
+For development, including changes not yet released on PyPI:
+
+```bash
+git clone https://github.com/Kaizoku-Ronin/mtft.git
+cd mtft
+python -m venv .venv
+# Linux/macOS:
+source .venv/bin/activate
+# Windows PowerShell instead:
+# .venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev,full]"
+```
+
+| Dependency set | Purpose |
+|---|---|
+| Base package | NumPy, SymPy and mpmath arithmetic/numerical engines |
+| `mtft[full]` | SciPy solvers/quadrature and Matplotlib plots |
+| `mtft[viz]` | Matplotlib and Plotly visualization helpers |
+| `mtft[dev]` | pytest, coverage and Ruff |
+| `mtft[lhc]` | uproot and Awkward for the optional ROOT/LHCb analysis bridge |
+| PARI/GP, installed separately | Recompute GP-dependent modular-symbol and period data |
+| MadGraph5_aMC@NLO, installed separately | Optional SM process-diagram/code generation |
+
+The bundled SM atlas works offline with the base install. Many geometry engines
+can use frozen data without PARI/GP; regenerating those records is separate work.
+
+## Quick start
 
 ```python
 import mtft
+from mtft.interactions import load_catalog, select_vertices
 
-# ── Modular forms on X₀(143) ──────────────────────────────
-C = mtft.X0(143)                     # the modular curve, LMFDB-anchored
-C.genus                              # 13
-mtft.dedekind_eta(1j)                # 0.7682254223260566 = Γ(1/4)/(2π^(3/4))
+C = mtft.X0(143)
+print(C.genus)                         # 13
+print(mtft.dedekind_eta(1j))
+print(mtft.filtered_moment_identity(0.18174, N=3))
 
-# ── Gauge-Higgs via Hosotani holonomy ─────────────────────
-h = mtft.HosotaniMTFT()
-h.find_vacuum()                      # the Hosotani angle θ₀
-h.gauge_masses()                     # m_W, m_Z, m_H from the holonomy
+# Inspect the SM reference without computing an MTFT amplitude.
+catalog = load_catalog()
+print(len(select_vertices(catalog, sector="qcd")))  # 8 for this model
 
-# ── Mass gap / stiffness ──────────────────────────────────
-mtft.filtered_moment_identity(0.18174, N=3)   # exact to machine precision
-
-# ── Falsifiability: the honest scorecard ──────────────────
-mtft.falsify.honest_report()         # 23 pre-registered zero-parameter
-                                     # predictions, ppm deviations, no cherry-picking
-
-# ── Arithmetic computation (v0.7.0) ───────────────────────
-from mtft.arithmetic_machine import decompose_turing_machine
-decompose_turing_machine()           # a TM as a five-primitive AG object
+# Existing phenomenology comparison, with its own assumptions and inputs:
+print(mtft.falsify.honest_report())
 ```
 
-CLI: `python -m mtft verify | report | tower | screen | info`
+```bash
+python -m mtft info
+python -m mtft report
+python -m mtft.legend search Hodge
+python -m mtft.legend card surface_higgs_slope_level
+python -m mtft.interactions render -o atlas-output/index.html
+```
 
-## Package Structure — 41 modules in 18 tiers
+Open `atlas-output/index.html` in a browser. Search vertices, inspect diagrams
+and symbolic tensors, filter sectors, follow related MTFT research and export
+the reference or evidence ledger. The atlas contains **153 reference vertices**
+from a pinned stock model and explicitly lists its omissions. It does not
+represent every possible SM process diagram. See the
+[atlas guide](docs/SM/INTERACTION_ATLAS.md) for evidence statuses, import limits,
+scope, licenses and MadGraph integration.
 
-| Tier | Modules | What lives here |
+A [prebuilt offline atlas](viz/sm_interaction_atlas.html) is also included:
+download the HTML file and open it directly, without installing MTFT.
+
+## What the package can do
+
+The table groups the complete module surface by task. The
+[generated module index](docs/CAPABILITIES.md) links every public module to its
+source and entry points, covering both older tools and current research code.
+
+| Work area | Capabilities and principal modules |
+|---|---|
+| Arithmetic foundations | Constants, divisor-log weights, filtered moments and combinatorial ancestry: `constants`, `arithmetic`, `combinatorial` |
+| Modular functions and curves | SL(2,ℤ), eta/modular forms, X₀(N), newform data and X₀(143) anchors: `modular`, `modular_curve`, `forms`, `x0_143`, `levels`, `coset_reps` |
+| Riemann and ensembles | Explicit formula, ζ′/Speiser diagnostics, Dirichlet curvature, Li coefficients and compressed Weil forms: `riemann`, `arithmetic_wick`, `critical_ensemble`, `weil` |
+| Weight moments and information geometry | Closed-form moments, statistical metrics, curvature and stiffness landscapes: `moments`, `curvature`, `info_geometry`, `jacobian`, `tower` |
+| Spectral dynamics | Marked primon gas, KMS diagnostics, internal/coupled chains, gap extraction and exceptional-point studies: `marked_gas`, `marked_gap`, `chain`, `coupled`, `ep`, `expansion`, `exception_spectrum` |
+| Mellin and L-function channels | Bulk/skeleton peel, Dirichlet channels, GL(2) diagnostics and analytic benchmarks: `peel`, `lchannels`, `gl2_peel`, `hardy_ramanujan` |
+| Hecke and integral arithmetic | Manin symbols, Hecke blocks, Eisenstein congruences, cuspidal torsion, codifferents and integer lattices: `hecke`, `eisenstein`, `cuspidal`, `codifferent`, `integral_lattice`, `quadratic_forms` |
+| Canonical geometry | Canonical ideals, quadrics, Atkin–Lehner descent, mod-p and Petri gates: [`canonical`](src/mtft/canonical/) |
+| Periods and Hodge geometry | Period matrices, symplectic frames, polarization, Bergman density, Hamiltonian channels and stability: [`periods`](src/mtft/periods/), `hodge_polarization`, `al_morphology` |
+| Homology, spin and theta | Integral homology, affine spin actions, Arf parity, theta functions and finite Kakeya diagnostics: [`homology`](src/mtft/homology/), [`thetachar`](src/mtft/thetachar/), `thetafun`, `kakeya` |
+| Discrete and boundary geometry | Origami/dimers, insertion calculus, boundary diagnostics and finite graph tools: [`origami`](src/mtft/origami/), [`boundary`](src/mtft/boundary/) |
+| Modular-surface geometry | Manin meshes, cycle lattices, exact transport, Hodge frames, marked/oldform sectors, CRT dessins, spin circles and Hopf bookkeeping: [`surface`](src/mtft/surface/) |
+| Fields on the surface | Yang–Mills partition functions, line operators, Ising models, Hamiltonian evolution, FEM Laplace/Bochner spectra, Petersson and HYM normalization: `surface.gauge`, `.ising`, `.dynamics`, `.spectral`, `.magnetic`, `.petersson`, `.hym` |
+| Fluxes and Yukawa tensors | Spin/CM data, Riemann–Roch spaces, canonical multiplication tensors, flux scans and condensation: `surface.arithspin`, `.rrspace`, `.yukawa`, `.smflux`, `.condensation` |
+| Parent-theory gates | Parent records, anomaly polynomials, charge lattices, discrete/bordism tests, tensor factorization, mode/chirality gates and compactification: [`research`](src/mtft/research/) |
+| Product-surface research | Vector Higgs operators, X₀(143)×E slopes/indices, Künneth selection rules and torus theta factors: `research.vector_higgs`, `.product_surface`, `.yukawa_triangle`, `.theta_torus`, `.unified_parent`, `.involutions` |
+| SM interaction reference | Pinned UFO vertices, tensor/parameter data, SVG/HTML diagrams and an evidence ledger: [`interactions`](docs/SM/INTERACTION_ATLAS.md) |
+| Physics phenomenology | Particle data/embeddings, Hosotani mechanism, Koide relations, decay, dimensional bridges, cosmology/dark-sector models and comparison reports: `particles`, `hosotani`, `koide`, `decay`, `dimensional_bridge`, `cosmology`, `dark_sector`, `falsify`, `verify` |
+| Lattice, algebra and materials | Lattice gauge experiments, Burning Ship models, Lie-algebra closure/SVD gates and material-property diagnostics: `lattice`, `burning_ship`, `liealg`, `tano_metric` |
+| Quantum and experimental cryptography | Qudits/holonomy gates, arithmetic codes, SL(2,ℤ)-sponge experiments and Jacobian orders: `quantum`, `crypto`, `monster_hash`; research implementations, not a security certification |
+| Arithmetic computation | Primitive signatures, Turing-machine decompositions, halting diagnostics and the package's exact-polynomial certificate: `arithmetic_machine`, `busy_beaver`, `jc_counterexample` |
+| Provenance and usability | Epistemic metadata, constant ledgers, estimator standards, PARI runner, plots and sonification: `legend`, `ledger`, `ledger_peel`, `estimator_standards`, `gprun`, `viz`, `music` |
+| Experimental data bridge | Optional ROOT-file/LHCb analysis via uproot and Awkward: `lhcb_analysis` |
+
+The original three-ensemble route remains available:
+
+| Assembly | Object | Tools |
 |---|---|---|
-| 0 | `constants` `arithmetic` | wₙ weights, X₀(143) structural constants |
-| 1 | `modular` `modular_curve` `forms` `x0_143` | Modular geometry, LMFDB-validated newforms |
-| 2 | `hosotani` `tano_metric` | Gauge-Higgs unification, the Tano metric |
-| 3 | `particles` `koide` `decay` | Spectrum phenomenology |
-| 4 | `lattice` `burning_ship` | Lattice gauge, Burning Ship fermions |
-| 5 | `dimensional_bridge` `cosmology` `dark_sector` | Bridges & the dark sector |
-| 5b | `falsify` | 23 pre-registered predictions, honest scorecard |
-| 5c | `tower` | SU(N) landscape |
-| 5d | `riemann` `marked_gas` | Explicit formula, corrected RH diagnostic, **Speiser–Hadamard lab**, the marked primon gas |
-| 5e | `lhcb_analysis` | ROOT-bridge confrontation (uproot) |
-| 6 | `quantum` | Topological qudits |
-| 7 | `crypto` `monster_hash` | SL(2,ℤ)-sponge hashing |
-| 8 | `info_geometry` `jacobian` | Fisher–Rao curvature, Jacobian engine |
-| 9 | `arithmetic_machine` `arithmetic_wick` `busy_beaver` `music` `viz` | Computation as arithmetic, Wick bridge, sonification |
-| 10 | `critical_ensemble` | Li coefficients λₙ — three cross-certified methods |
-| 11 | `jc_counterexample` `estimator_standards` `legend` | Machine certificates, A.7 estimator standards, the Legend |
-| 12 | `moments` `curvature` `hecke` `eisenstein` | Promotion wave: Tano-weight closed forms, Brioschi curvature, Manin/Merel engine, Eisenstein congruences |
-| 13 | `weil` | Compressed Weil form — the fourth ensemble (v0.15.0) |
+| Laplace | Weighted theta sums and filtered curvature | `weighted_theta`, `filtered_moment_identity`, `peel` |
+| Dirichlet | −ζ(β)ζ′(β+1) and its log curvature | `dirichlet_curvature`, `hadamard_zetaprime_check`, `marked_gas` |
+| Critical | Li coefficients from log ξ | `li_criterion_report`, `critical_ensemble` |
+| Weil extension | Compressed explicit-formula quadratic form | `weil` |
 
-## Key Identities
+Finite scans and truncated tests remain diagnostics unless their documented
+theorem or error bound supports a stronger conclusion.
 
-```
-α⁻¹        = ln|M| + genus − 1/11 + O(10⁻⁴)          Monster ↔ fine structure
-μ_N(y)     = (1/4π²)[T″(y) − Re T″(y − i/N)]          mass gap = twisted-curvature gap (exact)
-Z_D(β)     = −ζ(β)·ζ′(β+1)                            Dirichlet ensemble closed form (exact)
-∂²log(−ζ′) = 2/(s−1)² − Σ_ρ′ (s−ρ′)⁻²                Hadamard over ζ′ zeros (certified < 1e−5, s ∈ [3,10])
-λ₁         = 1 + γ/2 − ½ln(4π)                        critical-ensemble anchor (exact)
-```
+## Read the evidence and corrections
 
-## Visuals
-
-`viz/` ships the gallery: `hero_stiffness.png` + `stiffness_navigator.html`
-(regenerate with `python viz/make_hero.py`), the auto-looping
-`wavepacket_X0143.gif` / `wavepacket_X0143.mp4` (graph-clock unitary
-evolution), plus React components —
-`X0_143_BurningMandelbrot.jsx`, `MTFT_HyperbolicTiling.jsx`,
-`MTFT_MonsterFingerprint.jsx`, `mtft_enneper.jsx`, `MTFT_DrawnLoop.jsx`.
-
-## Testing
+The Legend is a curated map, with tags `Df`, `Pp`, `Pr`, `Conj`, `Heur`, `Cert`
+and labels such as `EXACT`, `CERTIFIED`, `DIAGNOSTIC`, `PHENO` and `GIVEN`.
+It does not yet contain a hand-written entry for every callable.
 
 ```bash
-pytest          # 484 tests: LMFDB anchors, exact identities, audit regressions
+python -m mtft.legend status
+python -m mtft.legend trace alpha_inverse
+python -m mtft.legend trace sm_interaction_atlas
 ```
 
-Every numerical claim above is a test. The suite gates PyPI publication —
-nothing ships if anything fails.
+The atlas trace terminates at **external SM reference inputs**. Its data is
+not presented as an arithmetic derivation. A passed software test verifies its
+stated calculation, not an unrestricted claim of physical validity.
 
-## Citation
+For the current v0.33.0 research line, start with:
 
-See [`CITATION.cff`](CITATION.cff). GitHub's "Cite this repository" button
-does the formatting.
+- [Compendium implementation notes](docs/SM/V0330_COMPENDIUM_NOTES.md): exact
+  inputs, operator conventions, rank qualifications and independent routes.
+- [CC-33 tensor coefficient correction](docs/SM/CC33_TENSOR_COEFFICIENT.md):
+  the corrected six-dimensional gravitational-anomaly obstruction.
+- [CC-26 normalization retraction](docs/SM/CC26_NORMALISATION_RETRACTION.md):
+  an earlier Yukawa normalization claim and its corrected interpretation.
+- [Wave C gates](docs/SM/WAVE_C_GATES.md),
+  [chirality register](docs/SM/R2C01_CHIRALITY_REGISTER.md) and
+  [product-surface register](docs/SM/R2C07_PRODUCT_SURFACE_REGISTER.md).
 
-## License
+Historical results and frozen handoffs stay in `studies/`. They may contain
+superseded hypotheses and release-specific scripts; their original bytes and
+correction trail matter. New atlas mappings require explicit evidence.
 
-MIT — see [LICENSE](LICENSE).
+## Visuals and long calculations
 
-## v0.32.0 — handoff integration, corrections, exact engines, research gates (September 2026)
+![Stiffness landscape](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/hero_stiffness.png)
 
-- **Frozen studies** (Astra, 16–18 Sep 2026): `studies/handoff_2026-09-18_v0314_to_AXG04/` with integrity records; teaching materials are not part of the software.
-- **Corrections**: CC-26 (kinetic normalisation contraction; anarchic leading-order Yukawas, confirmed by kinetic-orthonormal FEM eigenmodes),
-  CC-27 (the theta-compatible Atkin–Lehner lift on H^0(S0) is Q8; the D8 section lift is retained; Sym^2 intertwiner gate), CC-28 (SUSY protection of the Higgs directions is conditional; CW-01 register).
-- **Surface engines**: `surface.spin_circle`, `surface.hopf_geometry`, `surface.crt_dessin`, `surface.hodge_blocks`, `surface.magnetic` (Bochner spectra of flux bundles; Landau levels realise h^0).
-- **Research namespace** `mtft.research`: `anomalies`, `charge_lattices`, `mode_operators`, `discrete_anomalies`, `tensor_gs`, `compactification`, `bordism`, `parents` (immutable records M1, controls, C3X), `pipeline` (gate reports with witnesses; no "viable" boolean).
-- **Gate 4 decision**: route 2 — one parent, three internal modes; C3X's machinery is the gate battery (`docs/SM/WAVE_C_GATES.md`).
-- Registers in `docs/SM/`; Legend entries for every new engine (`python -m mtft.legend status`).
-- **v0.32.1**: R2C-01 (`research.chirality`): the elementary-scalar Higgs is excluded for M1's three families; the internal-vector Higgs survives. `research.involutions` (oloid/Fricke/triangle algebra). Two more frozen handoffs.
-- **v0.33.0**: CC-33 (the tensor p2 coefficient is 28 Weyl units: no chiral-tensor completion of M1, no pure-gaugino parent); the theorem compendium's exact inputs — X0(143) has gonality >= 4 (`hecke.gonality_lower_bound`) and h^0(O(2 sum P)) = 1 (`canonical.gates.gate_petri_w13_quotient`), the vector-Higgs operator in pointwise Kodaira form, the surface Higgs level 2 pi mu/(A_X A_E), the up-mass rank bound qualified (S2 unconditional), the torus factor on a second route; D4 closure by singular values. `CHANGELOG_v0330.md`.
+The [visualization gallery](viz/README.md) includes the stiffness navigator,
+modular-surface and tiling components, arithmetic fingerprints and drawn-loop
+tools. The graph-clock wavepacket animation is a model evolution on the
+X₀(143) dual graph, not a simulation of experimentally established matter:
+
+![Wavepacket on the X₀(143) graph](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.gif)
+
+For long PARI/GP work:
+
+```bash
+python -m mtft.gprun
+```
+
+The local browser runner locates `gp` (or the executable specified by `MTFT_GP`),
+freezes the input script, stamps its hash and GP version, streams output to
+disk, and records exit status. See [PARI scripts](scripts/pari/README.md) and
+the [study guide](studies/README.md). Hours-long studies are separate from
+routine tests; choose a study's documented parameters and preserve its logs.
+
+## Test and maintain
+
+```bash
+# Atlas and its integration:
+python -m pytest tests/test_interactions.py tests/test_tier11_and_legend.py -q
+# Routine suite excluding tests marked slow (some unmarked tests still take minutes):
+python -m pytest tests/ -m "not slow" -q
+# The existing release gate:
+python -m pytest tests/ -q
+# Update or check the module index:
+python scripts/build_capability_index.py
+python scripts/build_capability_index.py --check
+```
+
+Optional dependencies and PARI/GP affect skips. Some research tests also use
+their own opt-ins, such as `MTFT_SLOW=1` for the full theta census. Follow the
+test/study's instructions rather than treating one command as every archived
+experiment. No fixed test-count badge is maintained here.
+
+Release notes are organized in [`docs/changelog/`](docs/changelog/README.md),
+with a separate [unreleased record](docs/changelog/UNRELEASED.md). Publishing
+uses the existing [release workflow](PUBLISHING.md); the package version,
+`__init__` version and `CITATION.cff` must agree before a release.
+
+## Citation and license
+
+See [`CITATION.cff`](CITATION.cff) and [`LICENSE`](LICENSE) (MIT).
+The external MadGraph reference retains its
+[upstream license](src/mtft/interactions/_data/MADGRAPH_LICENSE.txt).

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MTFT · Standard Model interaction atlas</title>
+<style>
+:root{color-scheme:light;--ink:#142c40;--muted:#586b79;--line:#dce4e9;--blue:#125b80;--paper:#fff;--bg:#edf2f5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif}header{background:#142c40;color:white;padding:28px max(24px,calc((100vw - 1300px)/2))}h1{font-size:30px;margin:4px 0}h2{font-size:21px;margin:0 0 14px}h3{font-size:15px;margin:22px 0 8px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#9fcadd}header p{max-width:950px;margin:8px 0;color:#d2e4ee}.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px}.stats strong{display:block;font-size:27px;color:#fff}.stats span{font-size:12px;color:#bdd1db}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:18px 0}input,select,button{font:inherit;padding:9px 12px;border:1px solid #bacbd5;border-radius:6px;background:white;color:var(--ink)}input[type=search]{flex:1;min-width:220px}button{cursor:pointer}button:hover{border-color:var(--blue);background:#eef6fa}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e6a93d;outline-offset:2px}main{max-width:1348px;margin:auto;padding:0 24px 32px}.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:20px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}#result-count{padding:10px 15px;margin:0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}#vertex-list{max-height:780px;overflow-y:auto;padding:6px}.vertex{display:block;text-align:left;width:100%;border:0;border-radius:5px;border-left:3px solid transparent;margin:2px 0}.vertex.active{background:#e5f2f8;border-left-color:#126286}.vertex small{display:block;color:var(--muted)}.detail{padding:24px}.detail-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.badge{display:inline-block;background:#eef1f5;color:#435563;border:1px solid #ced8df;border-radius:18px;padding:3px 12px;font-size:12px;white-space:nowrap}.diagram-row{display:grid;grid-template-columns:minmax(200px,1fr) minmax(210px,1fr);gap:20px;align-items:center}#diagram svg{width:100%;max-height:290px}.note{color:var(--muted);font-size:13px}.callout{border-left:3px solid #c89c4c;padding:9px 15px;background:#fff9ec}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:12px;border-radius:6px;font:12px/1.65 ui-monospace,monospace}code{font-family:ui-monospace,monospace;font-size:.92em}table{border-collapse:collapse;width:100%;font-size:13px}td,th{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}td{overflow-wrap:anywhere}a{color:#075983;text-underline-offset:3px}ul{padding-left:21px}.scope{margin-top:20px;padding:22px}.scope summary{cursor:pointer;font-weight:650}.downloads{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.tensor{border-top:1px solid var(--line);padding-top:8px;margin-top:12px}#empty{padding:40px}.footer{padding:18px 0;color:var(--muted);font-size:12px}#filter-physical{accent-color:#125b80}.path{font-size:12px;overflow-wrap:anywhere}.benchmark{padding:7px 0}.table-wrap{overflow-x:auto}
+@media(max-width:800px){.layout{grid-template-columns:1fr}#vertex-list{max-height:235px}.diagram-row{grid-template-columns:1fr}header{padding:22px}h1{font-size:25px}main{padding:0 14px 24px}.detail{padding:18px}}
+@media print{.toolbar,.downloads,aside{display:none}.layout{display:block}header{background:white;color:black}.stats,header p,.eyebrow{color:#333}.stats strong{color:black}.panel{break-inside:avoid}.detail{padding:14px}}
+</style></head><body>
+<header><div class="eyebrow">MTFT / Research atlas</div><h1>Standard Model interaction atlas</h1>
+<p>Browse the reference vertices. Inspect their tensor structure. Track the evidence needed to connect MTFT to a physical interaction.</p>
+<div class="stats"><div><strong id="stat-total"></strong><span>REFERENCE VERTICES</span></div><div><strong id="stat-physical"></strong><span>WITHOUT GHOSTS / GOLDSTONES</span></div><div><strong id="stat-derived"></strong><span>RECORDED AS VERTEX-DERIVED OR TESTED</span></div><div><strong id="stat-gaps"></strong><span>DECLARED COVERAGE GAPS</span></div></div></header>
+<main><div class="toolbar"><input id="search" type="search" aria-label="Search vertices" placeholder="Search particle, vertex, coupling or tensor…"><select id="sector" aria-label="Interaction sector"><option value="">All sectors</option></select><label><input id="filter-physical" type="checkbox"> Hide ghosts / Goldstones</label></div>
+<div class="layout"><aside class="panel"><p id="result-count" aria-live="polite"></p><div id="vertex-list" aria-label="Vertices"></div></aside>
+<section class="panel detail" aria-label="Vertex details"><div id="empty" hidden>No matching vertices. Try another search or sector.</div><div id="selected">
+<div class="detail-top"><h2 id="vertex-title"></h2><span class="badge" id="status"></span></div>
+<div class="diagram-row"><div id="diagram"></div><div><p id="sector-title"></p><p class="note">All legs incoming. Labels are UFO leg indices. A single vertex is a building block of a process amplitude.</p><p class="note">Solid: fermion · wave: gauge boson · coil: gluon · dashed: scalar · dotted: ghost.</p><button id="save-svg">Download SVG</button></div></div>
+<div class="table-wrap"><table><thead><tr><th>Leg</th><th>Particle</th><th>PDG</th><th>Spin code</th><th>Color</th><th>Charge</th></tr></thead><tbody id="particle-table"></tbody></table></div>
+<p class="note">UFO spin code = 2s + 1; ghosts use −1. Color ±3 denotes fundamental / antifundamental.</p>
+<h3>Color × Lorentz × coupling</h3><p class="note">Tensor slots below are zero-based UFO array indices. Particle indices inside tensor expressions are one-based. Couplings are symbolic, not evaluated.</p><div id="tensors"></div>
+<details><summary>Parameters and function definitions</summary><p class="note">Source defaults and definitions, including indirect dependencies. These are external SM inputs.</p><pre id="parameters"></pre></details>
+<h3>MTFT evidence</h3><div id="evidence"></div><h3>Related research</h3><p class="note" id="research-disclaimer"></p><p id="requirement"></p><ul id="research-links"></ul>
+<p class="note"><a id="upstream" rel="noreferrer" target="_blank">Open pinned upstream vertex definition ↗</a></p>
+</div></section></div>
+<details class="panel scope" open><summary>Reference scope, omissions and provenance</summary><ul id="scope-notes"></ul><div id="gaps"></div><pre id="provenance"></pre><div class="downloads"><button id="save-catalog">Download catalog JSON</button><button id="save-ledger">Download evidence ledger</button></div></details>
+<details class="panel scope"><summary>Process benchmarks to build toward</summary><p>These are proposed checks, with no MTFT amplitude result attached. Fix energy, input parameters, gauge, normalization and perturbative order before comparing the complete amplitudes.</p><div id="benchmarks"></div></details>
+<div class="footer">Offline reference viewer · Tree-level model snapshot · Ledger validation checks records, not the scientific validity of a derivation.</div>
+</main><script id="atlas-data" type="application/json">__ATLAS_DATA__</script><script>
+'use strict';
+const data=JSON.parse(document.getElementById('atlas-data').textContent),cat=data.catalog;
+const byId=Object.fromEntries(cat.vertices.map(v=>[v.id,v]));
+const ledger=Object.fromEntries(data.ledger.entries.map(e=>[e.vertex_id,e]));
+const searchText=Object.fromEntries(cat.vertices.map(v=>[v.id,JSON.stringify([v.id,v.sector,v.particles.map(p=>[p,cat.particles[p].name,cat.particles[p].pdg_code]),v.lorentz.map(l=>[l,cat.lorentz[l].structure]),v.color,v.couplings.map(c=>[c.coupling,cat.couplings[c.coupling].value])]).toLowerCase()]));
+const $=id=>document.getElementById(id), el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+const safeLink=(url,text)=>{const a=el('a',text);if(url.startsWith('https://')){a.href=url;a.target='_blank';a.rel='noreferrer';}return a;};
+const download=(name,text,type)=>{const url=URL.createObjectURL(new Blob([text],{type})),a=el('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('stat-total').textContent=cat.vertices.length;
+$('stat-physical').textContent=cat.vertices.filter(v=>!['ghost','goldstone'].includes(v.sector)).length;
+$('stat-derived').textContent=data.ledger.entries.filter(e=>['vertex-derived','amplitude-tested'].includes(e.status)).length;
+$('stat-gaps').textContent=(cat.coverage_gaps||[]).length;
+for(const [key,name] of Object.entries(data.sectors)){const option=el('option',name);option.value=key;$('sector').append(option);}
+for(const note of cat.scope_notes||[])$('scope-notes').append(el('li',note));
+for(const gap of cat.coverage_gaps||[])$('gaps').append(el('p',gap.target+' — '+gap.reason,'callout'));
+const provenance={...cat.provenance};delete provenance.license_text;
+$('provenance').textContent=JSON.stringify(provenance,null,2);
+if(cat.provenance.license_text){const details=el('details');details.append(el('summary','Upstream reference license'),el('pre',cat.provenance.license_text));$('provenance').after(details);}
+$('research-disclaimer').textContent=data.guide.description;
+for(const b of data.guide.benchmarks){const div=el('div',undefined,'benchmark');div.append(el('code',b.process),el('p',b.purpose,'note'));$('benchmarks').append(div);}
+$('save-catalog').onclick=()=>download('sm-catalog.json',JSON.stringify(cat,null,2)+'\n','application/json');
+$('save-ledger').onclick=()=>download('mtft-sm-ledger.json',JSON.stringify(data.ledger,null,2)+'\n','application/json');
+let selected=byId[location.hash.slice(1)]?location.hash.slice(1):cat.vertices.find(v=>v.sector==='qcd').id;
+function select(id){selected=id;const v=byId[id],row=ledger[id];$('selected').hidden=false;$('empty').hidden=true;
+ $('vertex-title').textContent=v.id+' · '+v.particles.map(p=>cat.particles[p].name).join(' / ');
+ $('status').textContent=row.status;$('sector-title').textContent=data.sectors[v.sector];
+ $('diagram').innerHTML=data.svgs[id]; // generated, XML-escaped SVG from the Python renderer
+ $('save-svg').onclick=()=>download(id+'.svg',data.svgs[id],'image/svg+xml');
+ $('particle-table').replaceChildren();v.particles.forEach((key,i)=>{const p=cat.particles[key],tr=el('tr');[i+1,p.name,p.pdg_code,p.spin,p.color,Number(p.charge.toFixed(6))].forEach(x=>tr.append(el('td',x)));$('particle-table').append(tr);});
+ $('tensors').replaceChildren();for(const c of v.couplings){const box=el('div',undefined,'tensor'),l=v.lorentz[c.lorentz_index],g=cat.couplings[c.coupling];box.append(el('strong',`Slot (${c.color_index}, ${c.lorentz_index}) · ${l} · ${c.coupling}`),el('pre',`Color:   ${v.color[c.color_index]}\nLorentz: ${cat.lorentz[l].structure}\nCoupling: ${g.value}\nOrders:  ${JSON.stringify(g.order)}`));$('tensors').append(box);}
+ const needed=new Set(),pending=v.couplings.map(c=>cat.couplings[c.coupling].value);let definitions={};
+ while(pending.length){const expression=String(pending.pop());for(const name of expression.match(/[A-Za-z_][A-Za-z0-9_]*/g)||[]){if(needed.has(name))continue;const def=cat.parameters[name]||cat.functions[name];if(def){needed.add(name);definitions[name]=def;pending.push(def.value||def.expression||'');}}}
+ $('parameters').textContent=JSON.stringify(definitions,null,2);
+ $('evidence').replaceChildren(el('p',row.notes||'No MTFT derivation has been recorded for this reference vertex.','callout'));
+ if(row.evidence.length){const list=el('ul');for(const ref of row.evidence)list.append(el('li',ref));$('evidence').append(list);}
+ if(row.benchmarks.length)$('evidence').append(el('pre',JSON.stringify(row.benchmarks,null,2)));
+ const guide=data.guide.sectors[v.sector];$('requirement').textContent=guide.requirement;$('research-links').replaceChildren();
+ for(const path of guide.paths){const item=el('li',undefined,'path');item.append(safeLink(data.guide.repository+'/blob/'+data.guide.research_revision+'/'+path,path));$('research-links').append(item);}
+ const upstream=cat.provenance.source_url+'/blob/'+cat.provenance.revision+'/'+cat.provenance.model_path+'/vertices.py#L'+v.source_line;
+ if(upstream.startsWith('https://'))$('upstream').href=upstream;
+ document.querySelectorAll('.vertex').forEach(n=>{const active=n.dataset.id===id;n.classList.toggle('active',active);n.setAttribute('aria-pressed',String(active));});
+ try{history.replaceState(null,'','#'+id);}catch(e){/* file viewers can disable history */}
+}
+function filter(){const query=$('search').value.trim().toLowerCase(),sector=$('sector').value;
+ const vertices=cat.vertices.filter(v=>(!sector||v.sector===sector)&&(!$('filter-physical').checked||!['ghost','goldstone'].includes(v.sector))&&searchText[v.id].includes(query));
+ $('result-count').textContent=vertices.length+' of '+cat.vertices.length+' vertices';$('vertex-list').replaceChildren();
+ for(const v of vertices){const b=el('button',undefined,'vertex');b.dataset.id=v.id;b.append(el('strong',v.particles.map(p=>cat.particles[p].name).join(' · ')),el('small',v.id+' / '+data.sectors[v.sector]));b.onclick=()=>select(v.id);$('vertex-list').append(b);}
+ if(vertices.length){select(vertices.some(v=>v.id===selected)?selected:vertices[0].id);}else{$('selected').hidden=true;$('empty').hidden=false;}
+}
+$('search').oninput=filter;$('sector').onchange=filter;$('filter-physical').onchange=filter;
+window.onhashchange=()=>{if(byId[location.hash.slice(1)]){selected=location.hash.slice(1);$('search').value='';$('sector').value='';$('filter-physical').checked=false;filter();}};
+filter();
+</script></body></html>

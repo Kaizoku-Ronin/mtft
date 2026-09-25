@@ -1,0 +1,21 @@
+{
+  "description": "Related MTFT research is a starting point for investigation, not evidence of a derived SM vertex.",
+  "repository": "https://github.com/Kaizoku-Ronin/mtft",
+  "research_revision": "ecef8e47556880d6595ce065014097a529bc7a70",
+  "sectors": {
+    "qcd": {"requirement": "Derive the SU(3) fundamental generators, structure constants, relative three/four-gluon couplings and Ward identities in a normalized 4D theory.", "paths": ["src/mtft/surface/gauge.py", "src/mtft/research/parents.py", "src/mtft/research/anomalies.py"]},
+    "ew_fermion": {"requirement": "Identify physical chiral fermions, hypercharges, charged-current mixing and normalized electroweak currents.", "paths": ["src/mtft/surface/smflux.py", "src/mtft/research/chirality.py", "src/mtft/research/charge_lattices.py", "docs/SM/CC33_TENSOR_COEFFICIENT.md"]},
+    "gauge_self": {"requirement": "Derive the broken electroweak gauge action, gauge-field normalization and correlated cubic/quartic couplings.", "paths": ["src/mtft/hosotani.py", "src/mtft/research/vector_higgs.py", "docs/SM/SM14_HIGGS_CKM_GAUGE_REPORT.md"]},
+    "higgs_yukawa": {"requirement": "Identify physical Higgs and fermion modes, canonically normalize kinetic terms, obtain chirality and Yukawa tensors, then compare mass-basis vertices.", "paths": ["src/mtft/surface/yukawa.py", "src/mtft/research/theta_torus.py", "src/mtft/research/yukawa_triangle.py", "docs/SM/CC26_NORMALISATION_RETRACTION.md", "docs/SM/V0330_COMPENDIUM_NOTES.md"]},
+    "higgs_gauge": {"requirement": "Derive the normalized scalar kinetic term, physical Higgs direction and W/Z couplings; a mode count alone is insufficient.", "paths": ["src/mtft/research/vector_higgs.py", "src/mtft/research/product_surface.py", "docs/SM/R2C02_VECTOR_HIGGS_REGISTER.md"]},
+    "higgs_self": {"requirement": "Derive the Higgs potential, vacuum and normalization, including the relationship between its cubic and quartic terms.", "paths": ["src/mtft/surface/condensation.py", "docs/SM/CW01_ONE_LOOP_POTENTIAL.md"]},
+    "goldstone": {"requirement": "Specify a consistent gauge fixing and derive Goldstone interactions from the same broken gauge theory as the physical vertices.", "paths": ["src/mtft/research/vector_higgs.py", "docs/SM/WAVE_C_GATES.md"]},
+    "ghost": {"requirement": "Construct the Faddeev–Popov/BRST sector from a declared gauge-fixing functional; no ghost-sector derivation is asserted by this atlas.", "paths": ["docs/SM/WAVE_C_GATES.md"]}
+  },
+  "benchmarks": [
+    {"id": "qed-current", "process": "e+ e- > mu+ mu- QED=2 QCD=0", "purpose": "Photon/Z currents and interference; keep input masses and electroweak scheme explicit."},
+    {"id": "qcd-current", "process": "u u~ > g g QCD=2 QED=0", "purpose": "Quark and three-gluon structures; check the summed amplitude and Ward identities."},
+    {"id": "ew-cancellation", "process": "e+ e- > w+ w- QED=2 QCD=0", "purpose": "Gauge cancellations need all contributing diagrams and consistent parameters."},
+    {"id": "higgs-yukawa", "process": "h > b b~", "purpose": "A first Higgs Yukawa target once MTFT has a normalized physical vertex."}
+  ]
+}

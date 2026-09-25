@@ -1,0 +1,12 @@
+# Reference-only diagram/code generation. No launch or event integration.
+# Run from the intended output directory with an installed MadGraph5_aMC@NLO.
+# sm-full bypasses restrict_default.dat; it retains intrinsic stock assumptions.
+# For agreement with the bundled snapshot use the MG5 checkout at
+# abfd2c92873b3cfe4baa65c661b580e5cc07d45f (models/sm).
+set gauge Feynman
+import model sm-full
+generate e+ e- > mu+ mu- QED=2 QCD=0
+add process u u~ > g g QCD=2 QED=0
+add process e+ e- > w+ w- QED=2 QCD=0
+add process h > b b~
+output mtft_sm_reference

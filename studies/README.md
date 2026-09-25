@@ -79,4 +79,4 @@ archived falsification record and is not meant to be re-run.
 
 Original artifacts: rung-4/rung-5 sessions, Add. U → BN.  Builders:
 R. Tano (Claude engine) and K. K3 under the mutual-audit protocol.
-Stage-5 migration certified in CHANGELOG_v0100.md.
+Stage-5 migration certified in [CHANGELOG_v0100.md](../docs/changelog/CHANGELOG_v0100.md).

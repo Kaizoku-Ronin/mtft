@@ -1,4 +1,23 @@
-# viz/ — React visualizations of the MTFT geometry
+# viz/ — MTFT visualization gallery
+
+## Standard Model interaction atlas
+
+Open [`sm_interaction_atlas.html`](sm_interaction_atlas.html) in a browser for
+the prebuilt, offline viewer. It includes reference vertex diagrams, tensor
+details, search, sector filters, source provenance and an all-unmapped MTFT
+evidence ledger. No installation is needed to view this file.
+
+Regenerate it after changing the reference or viewer:
+
+```bash
+python -m mtft.interactions render -o viz/sm_interaction_atlas.html --force
+```
+
+See the [atlas guide](../docs/SM/INTERACTION_ATLAS.md) for model scope and
+evidence requirements. This is a tree-level interaction reference, not a
+matter simulation.
+
+## Geometry components
 
 Five self-contained React components (hooks only, no external state, no
 build config beyond React 18).  Render any of them in a React sandbox,

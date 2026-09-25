@@ -12,4 +12,4 @@ Numerical gates and their margins (your rule): `normalisation_is_basis_invariant
 Exact tests use sympy/Fraction; nothing asserts a value produced by the same code path it tests.
 
 Known documentation items: the published 0.31.1 changelog header predates the 0.31.0 consolidation; dev changelogs (0.32.0.dev1–3) are kept as wave
-history alongside CHANGELOG_v0320.md.  The `studies/handoff_…` scripts write JSON beside themselves — run only in a copy (see its README).
+history alongside [CHANGELOG_v0320.md](../changelog/CHANGELOG_v0320.md).  The `studies/handoff_…` scripts write JSON beside themselves — run only in a copy (see its README).

@@ -56,15 +56,20 @@ class TestLegend(unittest.TestCase):
             self.assertIn(e.tag, ("Df","Pp","Pr","Conj","Heur","Cert"))
             for up in e.upstream:
                 self.assertIn(up, REGISTRY)
-    def test_all_chains_reach_integers(self):
+    def test_chains_reach_declared_roots(self):
+        # External SM inputs must never be presented as arithmetic derivations.
+        roots = {"integers", "sm_reference_inputs"}
         def reaches(n, path=()):
-            if n == "integers": return True
+            if n in roots: return True
             if n in path: return False
             e = REGISTRY[n]
             return any(reaches(u, path+(n,)) for u in e.upstream) if e.upstream else False
         for name in REGISTRY:
-            if name != "integers":
-                self.assertTrue(reaches(name), f"{name} !-> N")
+            if name not in roots:
+                self.assertTrue(reaches(name), f"{name} !-> declared root")
+        self.assertEqual(REGISTRY["sm_reference_inputs"].exactness, "GIVEN")
+        self.assertEqual(REGISTRY["sm_reference_inputs"].upstream, ())
+        self.assertIn("not an MTFT derivation", trace("sm_interaction_atlas"))
     def test_trace_terminates(self):
         self.assertIn("always the integers", trace("alpha_inverse"))
     def test_map_covers_tier11(self):

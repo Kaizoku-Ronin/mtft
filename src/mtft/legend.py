@@ -25,10 +25,9 @@ cannot:
               CERTIFIED(e) numeric, sealed to stated tolerance
               DIAGNOSTIC   monotone bounds / truncations / scans
               PHENO        confronts measured data
-  WHENCE — upstream derivation links. Because the pipeline has zero
-           free parameters, every chain terminates in the integers.
-           `trace` walks it. No other scientific package can ship this
-           honestly: everyone else's chains end in a fitted number.
+  WHENCE — upstream derivation links. Arithmetic chains terminate in
+           the integers. External reference inputs are labelled GIVEN
+           and retain their own provenance; they are not derived by MTFT.
 
 Interfaces:
     python -m mtft.legend            the map (tiers, glyphs, tags)
@@ -378,9 +377,9 @@ def _introspect_card(name: str) -> str:
 
 def trace(name: str, _depth: int = 0,
           _path: Tuple[str, ...] = ()) -> str:
-    """Walk the derivation chain down to the integers. Branches may
-    share ancestors (the chains CONVERGE on N — that is the theorem);
-    only a true cycle along the current path is cut."""
+    """Walk provenance to arithmetic or explicitly declared external givens.
+    Shared ancestors are allowed; only a cycle on the current path is cut.
+    """
     e = REGISTRY.get(name)
     pad = "   " * _depth + ("└─ " if _depth else "")
     if e is None:
@@ -396,6 +395,9 @@ def trace(name: str, _depth: int = 0,
     if not e.upstream and name == "integers":
         out.append("   " * (_depth + 1)
                    + _c("dim", "└─ end of chain. It was always the integers."))
+    elif not e.upstream and e.exactness == "GIVEN":
+        out.append("   " * (_depth + 1)
+                   + _c("dim", "└─ external reference input; not an MTFT derivation."))
     return "\n".join(out)
 
 
@@ -795,6 +797,22 @@ V0330_LEGEND = (
 for _d in V0330_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
+
+# ═══════════════════════════════════════════════════════════════
+#  External interaction reference (source inputs, not arithmetic predictions)
+# ═══════════════════════════════════════════════════════════════
+
+_reg(LegendEntry(
+    "sm_reference_inputs", "GIVENS", "definition", (), "Df", "GIVEN",
+    "Pinned MadGraph SM UFO snapshot, including its input parameters, gauge and omissions. "
+    "External Standard Model reference; no MTFT derivation implied.",
+    ref="docs/SM/INTERACTION_ATLAS.md"))
+_reg(LegendEntry(
+    "sm_interaction_atlas", "2", "engine", ("III",), "Df", "DIAGNOSTIC",
+    "Searchable vertex diagrams, symbolic tensors and source hashes; MTFT mapping ledger "
+    "requires evidence and records numerical benchmark gates. All shipped mappings are unmapped.",
+    example="python -m mtft.interactions render -o atlas-output/index.html",
+    upstream=("sm_reference_inputs",), ref="docs/SM/INTERACTION_ATLAS.md"))
 
 # ═══════════════════════════════════════════════════════════════
 #  CLI

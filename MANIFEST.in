@@ -1,5 +1,12 @@
 include LICENSE README.md CITATION.cff PUBLISHING.md TRUSTED_PUBLISHING_SETUP.md
-include CHANGELOG_*.md
+recursive-include docs/changelog *.md
+recursive-include src/mtft/interactions/_data *.json *.html *.txt
+recursive-include scripts/interactions *.py *.mg5
+include scripts/build_capability_index.py
+recursive-include examples *.md *.py
+recursive-include scripts/pari *.md *.gp *.txt
+include viz/README.md
+include viz/sm_interaction_atlas.html
 recursive-include tests *.py *.npy
 recursive-include src/mtft/crypto/_data *.csv
 recursive-include src/mtft/canonical/_data *.txt

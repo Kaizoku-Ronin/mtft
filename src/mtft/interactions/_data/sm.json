@@ -1,0 +1,6381 @@
+{
+  "schema_version": 1,
+  "model_id": "sm-abfd2c92873b",
+  "provenance": {
+    "source_url": "https://github.com/mg5amcnlo/mg5amcnlo",
+    "revision": "abfd2c92873b3cfe4baa65c661b580e5cc07d45f",
+    "model_path": "models/sm",
+    "gauge": "Feynman-gauge vertices, including ghosts and Goldstone bosons",
+    "restrictions": "No restrict_*.dat applied; intrinsic stock-model assumptions remain",
+    "perturbative_order": "tree-level",
+    "source_files": {
+      "particles.py": "61880e5b804d22ec72ac02d8453fa7133a2bba264b9a5e09d5364d6d5e11ebf8",
+      "vertices.py": "0a4d978fb87f251253b622f6ed01cb6b4ae09dec31a131632f9494eb54541721",
+      "couplings.py": "26ea8b77bc510057305420ec9e8424faf996888236e9cfd29f741da8921922dc",
+      "lorentz.py": "09f9eb3be5f2309936d4d3109ae204fd4fac89ad92af8b16e652521484e99ccc",
+      "parameters.py": "2e4046c3566f1fb62fad92ffa705eef66a0124cc2a1cf4cc0d0ff2dc7f94c8fc",
+      "coupling_orders.py": "c89fc6f38d118a50a1e562da8653a2ccc96a9e00be22696bf5fb771a4df313b4",
+      "function_library.py": "10a39383a5494a7acf9eb775ec4e8dd3c78d99be886f3488b044bdfb51d7b80b"
+    },
+    "license_file": "MADGRAPH_LICENSE.txt",
+    "license_text": "The MadGraph5_aMC@NLO software comes with the following Open Source License,\nadapted from the University of Illinois/NCSA license.\n\nCopyright (c) 2009, 2013, the MadTeam.  All rights reserved.\n\nDeveloped by the \"MadTeam\", i.e.\n\nJohan ALWALL\nRikkert FREDERIX\nStefano FRIXIONE\nMichel HERQUET\nValentin HIRSCHI\nFabio MALTONI\nOlivier MATTELAER\nTim STELZER\nPaolo TORRIELLI\nMarco ZARO\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal with the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n  1. Redistributions of source code must retain the above copyright notice,\n     this list of conditions and the following disclaimers.\n  2. Redistributions in binary form must reproduce the above copyright\n     notice, this list of conditions and the following disclaimers in the\n     documentation and/or other materials provided with the distribution.\n  3. Neither the name \"MadTeam\", the names of the authors, their institution,\n     nor the names of its contributors may be used to endorse or promote\n     products derived from this Software without specific prior written\n     permission.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nCONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\nWITH THE SOFTWARE.\n"
+  },
+  "scope_notes": [
+    "Complete vertices.py inventory of this pinned stock model, not all possible SM diagrams.",
+    "The source fixes u, d, s and neutrino masses to zero. It omits the u, d and s Higgs Yukawa vertices.",
+    "CKM entries use the source's Wolfenstein parametrization; parameter defaults are inherited reference inputs, not new measurements or MTFT predictions.",
+    "Tree-level only: no counterterms, loop amplitudes, or effective hgg/hgamma-gamma vertices.",
+    "Hiding ghosts and Goldstones is a display filter, not a change of gauge.",
+    "The coupling powers labelled QED also include weak and Higgs interactions.",
+    "No source expressions are numerically evaluated and no MTFT vertex is claimed derived."
+  ],
+  "particles": {
+    "a": {
+      "pdg_code": 22,
+      "name": "a",
+      "antiname": "a",
+      "spin": 3,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "a",
+      "antitexname": "a",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 10
+    },
+    "Z": {
+      "pdg_code": 23,
+      "name": "Z",
+      "antiname": "Z",
+      "spin": 3,
+      "color": 1,
+      "mass": "MZ",
+      "width": "WZ",
+      "texname": "Z",
+      "antitexname": "Z",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 24
+    },
+    "W__plus__": {
+      "pdg_code": 24,
+      "name": "W+",
+      "antiname": "W-",
+      "spin": 3,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "W+",
+      "antitexname": "W-",
+      "charge": 1,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 38
+    },
+    "W__minus__": {
+      "pdg_code": -24,
+      "name": "W-",
+      "antiname": "W+",
+      "spin": 3,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "W-",
+      "antitexname": "W+",
+      "charge": -1,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 52
+    },
+    "g": {
+      "pdg_code": 21,
+      "name": "g",
+      "antiname": "g",
+      "spin": 3,
+      "color": 8,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "g",
+      "antitexname": "g",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 54
+    },
+    "ghA": {
+      "pdg_code": 9000001,
+      "name": "ghA",
+      "antiname": "ghA~",
+      "spin": -1,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ghA",
+      "antitexname": "ghA~",
+      "charge": 0,
+      "GhostNumber": 1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 68
+    },
+    "ghA__tilde__": {
+      "pdg_code": -9000001,
+      "name": "ghA~",
+      "antiname": "ghA",
+      "spin": -1,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ghA~",
+      "antitexname": "ghA",
+      "charge": 0,
+      "GhostNumber": -1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 82
+    },
+    "ghZ": {
+      "pdg_code": 9000002,
+      "name": "ghZ",
+      "antiname": "ghZ~",
+      "spin": -1,
+      "color": 1,
+      "mass": "MZ",
+      "width": "WZ",
+      "texname": "ghZ",
+      "antitexname": "ghZ~",
+      "charge": 0,
+      "GhostNumber": 1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 84
+    },
+    "ghZ__tilde__": {
+      "pdg_code": -9000002,
+      "name": "ghZ~",
+      "antiname": "ghZ",
+      "spin": -1,
+      "color": 1,
+      "mass": "MZ",
+      "width": "WZ",
+      "texname": "ghZ~",
+      "antitexname": "ghZ",
+      "charge": 0,
+      "GhostNumber": -1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 98
+    },
+    "ghWp": {
+      "pdg_code": 9000003,
+      "name": "ghWp",
+      "antiname": "ghWp~",
+      "spin": -1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "ghWp",
+      "antitexname": "ghWp~",
+      "charge": 1,
+      "GhostNumber": 1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 100
+    },
+    "ghWp__tilde__": {
+      "pdg_code": -9000003,
+      "name": "ghWp~",
+      "antiname": "ghWp",
+      "spin": -1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "ghWp~",
+      "antitexname": "ghWp",
+      "charge": -1,
+      "GhostNumber": -1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 114
+    },
+    "ghWm": {
+      "pdg_code": 9000004,
+      "name": "ghWm",
+      "antiname": "ghWm~",
+      "spin": -1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "ghWm",
+      "antitexname": "ghWm~",
+      "charge": -1,
+      "GhostNumber": 1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 116
+    },
+    "ghWm__tilde__": {
+      "pdg_code": -9000004,
+      "name": "ghWm~",
+      "antiname": "ghWm",
+      "spin": -1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "ghWm~",
+      "antitexname": "ghWm",
+      "charge": 1,
+      "GhostNumber": -1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 130
+    },
+    "ghG": {
+      "pdg_code": 9000005,
+      "name": "ghG",
+      "antiname": "ghG~",
+      "spin": -1,
+      "color": 8,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ghG",
+      "antitexname": "ghG~",
+      "charge": 0,
+      "GhostNumber": 1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 132
+    },
+    "ghG__tilde__": {
+      "pdg_code": -9000005,
+      "name": "ghG~",
+      "antiname": "ghG",
+      "spin": -1,
+      "color": 8,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ghG~",
+      "antitexname": "ghG",
+      "charge": 0,
+      "GhostNumber": -1,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 146
+    },
+    "ve": {
+      "pdg_code": 12,
+      "name": "ve",
+      "antiname": "ve~",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ve",
+      "antitexname": "ve~",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 148
+    },
+    "ve__tilde__": {
+      "pdg_code": -12,
+      "name": "ve~",
+      "antiname": "ve",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "ve~",
+      "antitexname": "ve",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 162
+    },
+    "vm": {
+      "pdg_code": 14,
+      "name": "vm",
+      "antiname": "vm~",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "vm",
+      "antitexname": "vm~",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 164
+    },
+    "vm__tilde__": {
+      "pdg_code": -14,
+      "name": "vm~",
+      "antiname": "vm",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "vm~",
+      "antitexname": "vm",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 178
+    },
+    "vt": {
+      "pdg_code": 16,
+      "name": "vt",
+      "antiname": "vt~",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "vt",
+      "antitexname": "vt~",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 180
+    },
+    "vt__tilde__": {
+      "pdg_code": -16,
+      "name": "vt~",
+      "antiname": "vt",
+      "spin": 2,
+      "color": 1,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "vt~",
+      "antitexname": "vt",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 194
+    },
+    "u": {
+      "pdg_code": 2,
+      "name": "u",
+      "antiname": "u~",
+      "spin": 2,
+      "color": 3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "u",
+      "antitexname": "u~",
+      "charge": 0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 196
+    },
+    "u__tilde__": {
+      "pdg_code": -2,
+      "name": "u~",
+      "antiname": "u",
+      "spin": 2,
+      "color": -3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "u~",
+      "antitexname": "u",
+      "charge": -0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 210
+    },
+    "c": {
+      "pdg_code": 4,
+      "name": "c",
+      "antiname": "c~",
+      "spin": 2,
+      "color": 3,
+      "mass": "MC",
+      "width": "ZERO",
+      "texname": "c",
+      "antitexname": "c~",
+      "charge": 0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 212
+    },
+    "c__tilde__": {
+      "pdg_code": -4,
+      "name": "c~",
+      "antiname": "c",
+      "spin": 2,
+      "color": -3,
+      "mass": "MC",
+      "width": "ZERO",
+      "texname": "c~",
+      "antitexname": "c",
+      "charge": -0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 226
+    },
+    "t": {
+      "pdg_code": 6,
+      "name": "t",
+      "antiname": "t~",
+      "spin": 2,
+      "color": 3,
+      "mass": "MT",
+      "width": "WT",
+      "texname": "t",
+      "antitexname": "t~",
+      "charge": 0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 228
+    },
+    "t__tilde__": {
+      "pdg_code": -6,
+      "name": "t~",
+      "antiname": "t",
+      "spin": 2,
+      "color": -3,
+      "mass": "MT",
+      "width": "WT",
+      "texname": "t~",
+      "antitexname": "t",
+      "charge": -0.6666666666666666,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 242
+    },
+    "d": {
+      "pdg_code": 1,
+      "name": "d",
+      "antiname": "d~",
+      "spin": 2,
+      "color": 3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "d",
+      "antitexname": "d~",
+      "charge": -0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 244
+    },
+    "d__tilde__": {
+      "pdg_code": -1,
+      "name": "d~",
+      "antiname": "d",
+      "spin": 2,
+      "color": -3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "d~",
+      "antitexname": "d",
+      "charge": 0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 258
+    },
+    "s": {
+      "pdg_code": 3,
+      "name": "s",
+      "antiname": "s~",
+      "spin": 2,
+      "color": 3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "s",
+      "antitexname": "s~",
+      "charge": -0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 260
+    },
+    "s__tilde__": {
+      "pdg_code": -3,
+      "name": "s~",
+      "antiname": "s",
+      "spin": 2,
+      "color": -3,
+      "mass": "ZERO",
+      "width": "ZERO",
+      "texname": "s~",
+      "antitexname": "s",
+      "charge": 0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 274
+    },
+    "b": {
+      "pdg_code": 5,
+      "name": "b",
+      "antiname": "b~",
+      "spin": 2,
+      "color": 3,
+      "mass": "MB",
+      "width": "ZERO",
+      "texname": "b",
+      "antitexname": "b~",
+      "charge": -0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 276
+    },
+    "b__tilde__": {
+      "pdg_code": -5,
+      "name": "b~",
+      "antiname": "b",
+      "spin": 2,
+      "color": -3,
+      "mass": "MB",
+      "width": "ZERO",
+      "texname": "b~",
+      "antitexname": "b",
+      "charge": 0.3333333333333333,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 290
+    },
+    "H": {
+      "pdg_code": 25,
+      "name": "H",
+      "antiname": "H",
+      "spin": 1,
+      "color": 1,
+      "mass": "MH",
+      "width": "WH",
+      "texname": "H",
+      "antitexname": "H",
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 292
+    },
+    "G0": {
+      "pdg_code": 250,
+      "name": "G0",
+      "antiname": "G0",
+      "spin": 1,
+      "color": 1,
+      "mass": "MZ",
+      "width": "WZ",
+      "texname": "G0",
+      "antitexname": "G0",
+      "goldstoneboson": true,
+      "charge": 0,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 306
+    },
+    "G__plus__": {
+      "pdg_code": 251,
+      "name": "G+",
+      "antiname": "G-",
+      "spin": 1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "G+",
+      "antitexname": "G-",
+      "goldstoneboson": true,
+      "charge": 1,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 321
+    },
+    "G__minus__": {
+      "pdg_code": -251,
+      "name": "G-",
+      "antiname": "G+",
+      "spin": 1,
+      "color": 1,
+      "mass": "MW",
+      "width": "WW",
+      "texname": "G-",
+      "antitexname": "G+",
+      "goldstoneboson": true,
+      "charge": -1,
+      "GhostNumber": 0,
+      "LeptonNumber": 0,
+      "Y": 0,
+      "source_line": 336
+    },
+    "e__minus__": {
+      "pdg_code": 11,
+      "name": "e-",
+      "antiname": "e+",
+      "spin": 2,
+      "color": 1,
+      "mass": "Me",
+      "width": "ZERO",
+      "texname": "e-",
+      "antitexname": "e+",
+      "charge": -1,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 338
+    },
+    "e__plus__": {
+      "pdg_code": -11,
+      "name": "e+",
+      "antiname": "e-",
+      "spin": 2,
+      "color": 1,
+      "mass": "Me",
+      "width": "ZERO",
+      "texname": "e+",
+      "antitexname": "e-",
+      "charge": 1,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 352
+    },
+    "mu__minus__": {
+      "pdg_code": 13,
+      "name": "mu-",
+      "antiname": "mu+",
+      "spin": 2,
+      "color": 1,
+      "mass": "MM",
+      "width": "ZERO",
+      "texname": "mu-",
+      "antitexname": "mu+",
+      "charge": -1,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 354
+    },
+    "mu__plus__": {
+      "pdg_code": -13,
+      "name": "mu+",
+      "antiname": "mu-",
+      "spin": 2,
+      "color": 1,
+      "mass": "MM",
+      "width": "ZERO",
+      "texname": "mu+",
+      "antitexname": "mu-",
+      "charge": 1,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 368
+    },
+    "ta__minus__": {
+      "pdg_code": 15,
+      "name": "ta-",
+      "antiname": "ta+",
+      "spin": 2,
+      "color": 1,
+      "mass": "MTA",
+      "width": "WTau",
+      "texname": "ta-",
+      "antitexname": "ta+",
+      "charge": -1,
+      "GhostNumber": 0,
+      "LeptonNumber": 1,
+      "Y": 0,
+      "source_line": 370
+    },
+    "ta__plus__": {
+      "pdg_code": -15,
+      "name": "ta+",
+      "antiname": "ta-",
+      "spin": 2,
+      "color": 1,
+      "mass": "MTA",
+      "width": "WTau",
+      "texname": "ta+",
+      "antitexname": "ta-",
+      "charge": 1,
+      "GhostNumber": 0,
+      "LeptonNumber": -1,
+      "Y": 0,
+      "source_line": 384
+    }
+  },
+  "vertices": [
+    {
+      "name": "V_1",
+      "particles": [
+        "G0",
+        "G0",
+        "G0",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_33"
+        }
+      ],
+      "source_line": 12,
+      "id": "V_1",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_2",
+      "particles": [
+        "G0",
+        "G0",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_31"
+        }
+      ],
+      "source_line": 18,
+      "id": "V_2",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_3",
+      "particles": [
+        "G__minus__",
+        "G__minus__",
+        "G__plus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_32"
+        }
+      ],
+      "source_line": 24,
+      "id": "V_3",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_4",
+      "particles": [
+        "G0",
+        "G0",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_31"
+        }
+      ],
+      "source_line": 30,
+      "id": "V_4",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_5",
+      "particles": [
+        "G__minus__",
+        "G__plus__",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_31"
+        }
+      ],
+      "source_line": 36,
+      "id": "V_5",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_6",
+      "particles": [
+        "H",
+        "H",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_33"
+        }
+      ],
+      "source_line": 42,
+      "id": "V_6",
+      "sector": "higgs_self"
+    },
+    {
+      "name": "V_7",
+      "particles": [
+        "G0",
+        "G0",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_68"
+        }
+      ],
+      "source_line": 48,
+      "id": "V_7",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_8",
+      "particles": [
+        "G__minus__",
+        "G__plus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_68"
+        }
+      ],
+      "source_line": 54,
+      "id": "V_8",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_9",
+      "particles": [
+        "H",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "SSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_69"
+        }
+      ],
+      "source_line": 60,
+      "id": "V_9",
+      "sector": "higgs_self"
+    },
+    {
+      "name": "V_10",
+      "particles": [
+        "a",
+        "a",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_6"
+        }
+      ],
+      "source_line": 66,
+      "id": "V_10",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_11",
+      "particles": [
+        "a",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 72,
+      "id": "V_11",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_12",
+      "particles": [
+        "ghA",
+        "ghWm__tilde__",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 78,
+      "id": "V_12",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_13",
+      "particles": [
+        "ghA",
+        "ghWp__tilde__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_4"
+        }
+      ],
+      "source_line": 84,
+      "id": "V_13",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_14",
+      "particles": [
+        "ghWm",
+        "ghA__tilde__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_75"
+        }
+      ],
+      "source_line": 90,
+      "id": "V_14",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_15",
+      "particles": [
+        "ghWm",
+        "ghA__tilde__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 96,
+      "id": "V_15",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_16",
+      "particles": [
+        "ghWm",
+        "ghWm__tilde__",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_70"
+        }
+      ],
+      "source_line": 102,
+      "id": "V_16",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_17",
+      "particles": [
+        "ghWm",
+        "ghWm__tilde__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_71"
+        }
+      ],
+      "source_line": 108,
+      "id": "V_17",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_18",
+      "particles": [
+        "ghWm",
+        "ghWm__tilde__",
+        "a"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_4"
+        }
+      ],
+      "source_line": 114,
+      "id": "V_18",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_19",
+      "particles": [
+        "ghWm",
+        "ghWm__tilde__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_53"
+        }
+      ],
+      "source_line": 120,
+      "id": "V_19",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_20",
+      "particles": [
+        "ghWm",
+        "ghZ__tilde__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_78"
+        }
+      ],
+      "source_line": 126,
+      "id": "V_20",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_21",
+      "particles": [
+        "ghWm",
+        "ghZ__tilde__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_52"
+        }
+      ],
+      "source_line": 132,
+      "id": "V_21",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_22",
+      "particles": [
+        "ghWp",
+        "ghA__tilde__",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_74"
+        }
+      ],
+      "source_line": 138,
+      "id": "V_22",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_23",
+      "particles": [
+        "ghWp",
+        "ghA__tilde__",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_4"
+        }
+      ],
+      "source_line": 144,
+      "id": "V_23",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_24",
+      "particles": [
+        "ghWp",
+        "ghWp__tilde__",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_73"
+        }
+      ],
+      "source_line": 150,
+      "id": "V_24",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_25",
+      "particles": [
+        "ghWp",
+        "ghWp__tilde__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_71"
+        }
+      ],
+      "source_line": 156,
+      "id": "V_25",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_26",
+      "particles": [
+        "ghWp",
+        "ghWp__tilde__",
+        "a"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 162,
+      "id": "V_26",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_27",
+      "particles": [
+        "ghWp",
+        "ghWp__tilde__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_52"
+        }
+      ],
+      "source_line": 168,
+      "id": "V_27",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_28",
+      "particles": [
+        "ghWp",
+        "ghZ__tilde__",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_77"
+        }
+      ],
+      "source_line": 174,
+      "id": "V_28",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_29",
+      "particles": [
+        "ghWp",
+        "ghZ__tilde__",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_53"
+        }
+      ],
+      "source_line": 180,
+      "id": "V_29",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_30",
+      "particles": [
+        "ghZ",
+        "ghWm__tilde__",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_79"
+        }
+      ],
+      "source_line": 186,
+      "id": "V_30",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_31",
+      "particles": [
+        "ghZ",
+        "ghWm__tilde__",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_52"
+        }
+      ],
+      "source_line": 192,
+      "id": "V_31",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_32",
+      "particles": [
+        "ghZ",
+        "ghWp__tilde__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_76"
+        }
+      ],
+      "source_line": 198,
+      "id": "V_32",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_33",
+      "particles": [
+        "ghZ",
+        "ghWp__tilde__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_53"
+        }
+      ],
+      "source_line": 204,
+      "id": "V_33",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_34",
+      "particles": [
+        "ghZ",
+        "ghZ__tilde__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "UUS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_80"
+        }
+      ],
+      "source_line": 210,
+      "id": "V_34",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_35",
+      "particles": [
+        "ghG",
+        "ghG__tilde__",
+        "g"
+      ],
+      "color": [
+        "f(1,2,3)"
+      ],
+      "lorentz": [
+        "UUV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_10"
+        }
+      ],
+      "source_line": 216,
+      "id": "V_35",
+      "sector": "ghost"
+    },
+    {
+      "name": "V_36",
+      "particles": [
+        "g",
+        "g",
+        "g"
+      ],
+      "color": [
+        "f(1,2,3)"
+      ],
+      "lorentz": [
+        "VVV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_10"
+        }
+      ],
+      "source_line": 222,
+      "id": "V_36",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_37",
+      "particles": [
+        "g",
+        "g",
+        "g",
+        "g"
+      ],
+      "color": [
+        "f(-1,1,2)*f(3,4,-1)",
+        "f(-1,1,3)*f(2,4,-1)",
+        "f(-1,1,4)*f(2,3,-1)"
+      ],
+      "lorentz": [
+        "VVVV1",
+        "VVVV3",
+        "VVVV4"
+      ],
+      "couplings": [
+        {
+          "color_index": 1,
+          "lorentz_index": 1,
+          "coupling": "GC_12"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_12"
+        },
+        {
+          "color_index": 2,
+          "lorentz_index": 2,
+          "coupling": "GC_12"
+        }
+      ],
+      "source_line": 228,
+      "id": "V_37",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_38",
+      "particles": [
+        "a",
+        "W__minus__",
+        "G0",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_55"
+        }
+      ],
+      "source_line": 234,
+      "id": "V_38",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_39",
+      "particles": [
+        "a",
+        "W__minus__",
+        "G__plus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_54"
+        }
+      ],
+      "source_line": 240,
+      "id": "V_39",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_40",
+      "particles": [
+        "a",
+        "W__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_74"
+        }
+      ],
+      "source_line": 246,
+      "id": "V_40",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_41",
+      "particles": [
+        "W__minus__",
+        "G0",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_39"
+        }
+      ],
+      "source_line": 252,
+      "id": "V_41",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_42",
+      "particles": [
+        "W__minus__",
+        "G__plus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_37"
+        }
+      ],
+      "source_line": 258,
+      "id": "V_42",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_43",
+      "particles": [
+        "a",
+        "W__minus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_4"
+        }
+      ],
+      "source_line": 264,
+      "id": "V_43",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_44",
+      "particles": [
+        "a",
+        "W__plus__",
+        "G0",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_55"
+        }
+      ],
+      "source_line": 270,
+      "id": "V_44",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_45",
+      "particles": [
+        "a",
+        "W__plus__",
+        "G__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_56"
+        }
+      ],
+      "source_line": 276,
+      "id": "V_45",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_46",
+      "particles": [
+        "a",
+        "W__plus__",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_75"
+        }
+      ],
+      "source_line": 282,
+      "id": "V_46",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_47",
+      "particles": [
+        "W__plus__",
+        "G0",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_38"
+        }
+      ],
+      "source_line": 288,
+      "id": "V_47",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_48",
+      "particles": [
+        "W__plus__",
+        "G__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_37"
+        }
+      ],
+      "source_line": 294,
+      "id": "V_48",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_49",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "G0",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_34"
+        }
+      ],
+      "source_line": 300,
+      "id": "V_49",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_50",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_34"
+        }
+      ],
+      "source_line": 306,
+      "id": "V_50",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_51",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_34"
+        }
+      ],
+      "source_line": 312,
+      "id": "V_51",
+      "sector": "higgs_gauge"
+    },
+    {
+      "name": "V_52",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_72"
+        }
+      ],
+      "source_line": 318,
+      "id": "V_52",
+      "sector": "higgs_gauge"
+    },
+    {
+      "name": "V_53",
+      "particles": [
+        "a",
+        "a",
+        "W__minus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVVV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_5"
+        }
+      ],
+      "source_line": 324,
+      "id": "V_53",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_54",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_53"
+        }
+      ],
+      "source_line": 330,
+      "id": "V_54",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_55",
+      "particles": [
+        "W__minus__",
+        "W__minus__",
+        "W__plus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVVV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_35"
+        }
+      ],
+      "source_line": 336,
+      "id": "V_55",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_56",
+      "particles": [
+        "a",
+        "Z",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_63"
+        }
+      ],
+      "source_line": 342,
+      "id": "V_56",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_57",
+      "particles": [
+        "Z",
+        "G0",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_60"
+        }
+      ],
+      "source_line": 348,
+      "id": "V_57",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_58",
+      "particles": [
+        "Z",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_61"
+        }
+      ],
+      "source_line": 354,
+      "id": "V_58",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_59",
+      "particles": [
+        "W__minus__",
+        "Z",
+        "G0",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_8"
+        }
+      ],
+      "source_line": 360,
+      "id": "V_59",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_60",
+      "particles": [
+        "W__minus__",
+        "Z",
+        "G__plus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_9"
+        }
+      ],
+      "source_line": 366,
+      "id": "V_60",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_61",
+      "particles": [
+        "W__minus__",
+        "Z",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_67"
+        }
+      ],
+      "source_line": 372,
+      "id": "V_61",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_62",
+      "particles": [
+        "W__plus__",
+        "Z",
+        "G0",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_8"
+        }
+      ],
+      "source_line": 378,
+      "id": "V_62",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_63",
+      "particles": [
+        "W__plus__",
+        "Z",
+        "G__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_7"
+        }
+      ],
+      "source_line": 384,
+      "id": "V_63",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_64",
+      "particles": [
+        "W__plus__",
+        "Z",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_66"
+        }
+      ],
+      "source_line": 390,
+      "id": "V_64",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_65",
+      "particles": [
+        "a",
+        "W__minus__",
+        "W__plus__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVVV5"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_57"
+        }
+      ],
+      "source_line": 396,
+      "id": "V_65",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_66",
+      "particles": [
+        "Z",
+        "Z",
+        "G0",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_65"
+        }
+      ],
+      "source_line": 402,
+      "id": "V_66",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_67",
+      "particles": [
+        "Z",
+        "Z",
+        "G__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_64"
+        }
+      ],
+      "source_line": 408,
+      "id": "V_67",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_68",
+      "particles": [
+        "Z",
+        "Z",
+        "H",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVSS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_65"
+        }
+      ],
+      "source_line": 414,
+      "id": "V_68",
+      "sector": "higgs_gauge"
+    },
+    {
+      "name": "V_69",
+      "particles": [
+        "Z",
+        "Z",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_81"
+        }
+      ],
+      "source_line": 420,
+      "id": "V_69",
+      "sector": "higgs_gauge"
+    },
+    {
+      "name": "V_70",
+      "particles": [
+        "W__minus__",
+        "W__plus__",
+        "Z",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "VVVV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_36"
+        }
+      ],
+      "source_line": 426,
+      "id": "V_70",
+      "sector": "gauge_self"
+    },
+    {
+      "name": "V_71",
+      "particles": [
+        "d__tilde__",
+        "d",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_1"
+        }
+      ],
+      "source_line": 432,
+      "id": "V_71",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_72",
+      "particles": [
+        "s__tilde__",
+        "s",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_1"
+        }
+      ],
+      "source_line": 438,
+      "id": "V_72",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_73",
+      "particles": [
+        "b__tilde__",
+        "b",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_1"
+        }
+      ],
+      "source_line": 444,
+      "id": "V_73",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_74",
+      "particles": [
+        "d__tilde__",
+        "d",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 450,
+      "id": "V_74",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_75",
+      "particles": [
+        "s__tilde__",
+        "s",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 456,
+      "id": "V_75",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_76",
+      "particles": [
+        "b__tilde__",
+        "b",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 462,
+      "id": "V_76",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_77",
+      "particles": [
+        "b__tilde__",
+        "b",
+        "G0"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_82"
+        }
+      ],
+      "source_line": 468,
+      "id": "V_77",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_78",
+      "particles": [
+        "b__tilde__",
+        "b",
+        "H"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_83"
+        }
+      ],
+      "source_line": 474,
+      "id": "V_78",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_79",
+      "particles": [
+        "d__tilde__",
+        "d",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        }
+      ],
+      "source_line": 480,
+      "id": "V_79",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_80",
+      "particles": [
+        "s__tilde__",
+        "s",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        }
+      ],
+      "source_line": 486,
+      "id": "V_80",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_81",
+      "particles": [
+        "b__tilde__",
+        "b",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        }
+      ],
+      "source_line": 492,
+      "id": "V_81",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_82",
+      "particles": [
+        "c__tilde__",
+        "d",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_16"
+        }
+      ],
+      "source_line": 498,
+      "id": "V_82",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_83",
+      "particles": [
+        "t__tilde__",
+        "d",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_17"
+        }
+      ],
+      "source_line": 504,
+      "id": "V_83",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_84",
+      "particles": [
+        "c__tilde__",
+        "s",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_18"
+        }
+      ],
+      "source_line": 510,
+      "id": "V_84",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_85",
+      "particles": [
+        "t__tilde__",
+        "s",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_19"
+        }
+      ],
+      "source_line": 516,
+      "id": "V_85",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_86",
+      "particles": [
+        "u__tilde__",
+        "b",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_13"
+        }
+      ],
+      "source_line": 522,
+      "id": "V_86",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_87",
+      "particles": [
+        "c__tilde__",
+        "b",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1",
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_14"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_20"
+        }
+      ],
+      "source_line": 528,
+      "id": "V_87",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_88",
+      "particles": [
+        "t__tilde__",
+        "b",
+        "G__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1",
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_15"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_21"
+        }
+      ],
+      "source_line": 534,
+      "id": "V_88",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_89",
+      "particles": [
+        "u__tilde__",
+        "d",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_100"
+        }
+      ],
+      "source_line": 540,
+      "id": "V_89",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_90",
+      "particles": [
+        "c__tilde__",
+        "d",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_103"
+        }
+      ],
+      "source_line": 546,
+      "id": "V_90",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_91",
+      "particles": [
+        "t__tilde__",
+        "d",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_106"
+        }
+      ],
+      "source_line": 552,
+      "id": "V_91",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_92",
+      "particles": [
+        "u__tilde__",
+        "s",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_101"
+        }
+      ],
+      "source_line": 558,
+      "id": "V_92",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_93",
+      "particles": [
+        "c__tilde__",
+        "s",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_104"
+        }
+      ],
+      "source_line": 564,
+      "id": "V_93",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_94",
+      "particles": [
+        "t__tilde__",
+        "s",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_107"
+        }
+      ],
+      "source_line": 570,
+      "id": "V_94",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_95",
+      "particles": [
+        "u__tilde__",
+        "b",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_102"
+        }
+      ],
+      "source_line": 576,
+      "id": "V_95",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_96",
+      "particles": [
+        "c__tilde__",
+        "b",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_105"
+        }
+      ],
+      "source_line": 582,
+      "id": "V_96",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_97",
+      "particles": [
+        "t__tilde__",
+        "b",
+        "W__plus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_108"
+        }
+      ],
+      "source_line": 588,
+      "id": "V_97",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_98",
+      "particles": [
+        "e__plus__",
+        "e__minus__",
+        "a"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 594,
+      "id": "V_98",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_99",
+      "particles": [
+        "mu__plus__",
+        "mu__minus__",
+        "a"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 600,
+      "id": "V_99",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_100",
+      "particles": [
+        "ta__plus__",
+        "ta__minus__",
+        "a"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_3"
+        }
+      ],
+      "source_line": 606,
+      "id": "V_100",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_101",
+      "particles": [
+        "e__plus__",
+        "e__minus__",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_88"
+        }
+      ],
+      "source_line": 612,
+      "id": "V_101",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_102",
+      "particles": [
+        "mu__plus__",
+        "mu__minus__",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_92"
+        }
+      ],
+      "source_line": 618,
+      "id": "V_102",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_103",
+      "particles": [
+        "ta__plus__",
+        "ta__minus__",
+        "G0"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_98"
+        }
+      ],
+      "source_line": 624,
+      "id": "V_103",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_104",
+      "particles": [
+        "e__plus__",
+        "e__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_89"
+        }
+      ],
+      "source_line": 630,
+      "id": "V_104",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_105",
+      "particles": [
+        "mu__plus__",
+        "mu__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_93"
+        }
+      ],
+      "source_line": 636,
+      "id": "V_105",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_106",
+      "particles": [
+        "ta__plus__",
+        "ta__minus__",
+        "H"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_99"
+        }
+      ],
+      "source_line": 642,
+      "id": "V_106",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_107",
+      "particles": [
+        "e__plus__",
+        "e__minus__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_59"
+        }
+      ],
+      "source_line": 648,
+      "id": "V_107",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_108",
+      "particles": [
+        "mu__plus__",
+        "mu__minus__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_59"
+        }
+      ],
+      "source_line": 654,
+      "id": "V_108",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_109",
+      "particles": [
+        "ta__plus__",
+        "ta__minus__",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_50"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_59"
+        }
+      ],
+      "source_line": 660,
+      "id": "V_109",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_110",
+      "particles": [
+        "ve__tilde__",
+        "e__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_87"
+        }
+      ],
+      "source_line": 666,
+      "id": "V_110",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_111",
+      "particles": [
+        "vm__tilde__",
+        "mu__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_91"
+        }
+      ],
+      "source_line": 672,
+      "id": "V_111",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_112",
+      "particles": [
+        "vt__tilde__",
+        "ta__minus__",
+        "G__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_97"
+        }
+      ],
+      "source_line": 678,
+      "id": "V_112",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_113",
+      "particles": [
+        "ve__tilde__",
+        "e__minus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 684,
+      "id": "V_113",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_114",
+      "particles": [
+        "vm__tilde__",
+        "mu__minus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 690,
+      "id": "V_114",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_115",
+      "particles": [
+        "vt__tilde__",
+        "ta__minus__",
+        "W__plus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 696,
+      "id": "V_115",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_116",
+      "particles": [
+        "b__tilde__",
+        "u",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_28"
+        }
+      ],
+      "source_line": 702,
+      "id": "V_116",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_117",
+      "particles": [
+        "d__tilde__",
+        "c",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_22"
+        }
+      ],
+      "source_line": 708,
+      "id": "V_117",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_118",
+      "particles": [
+        "s__tilde__",
+        "c",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_23"
+        }
+      ],
+      "source_line": 714,
+      "id": "V_118",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_119",
+      "particles": [
+        "b__tilde__",
+        "c",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1",
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_24"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_29"
+        }
+      ],
+      "source_line": 720,
+      "id": "V_119",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_120",
+      "particles": [
+        "d__tilde__",
+        "t",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_25"
+        }
+      ],
+      "source_line": 726,
+      "id": "V_120",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_121",
+      "particles": [
+        "s__tilde__",
+        "t",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_26"
+        }
+      ],
+      "source_line": 732,
+      "id": "V_121",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_122",
+      "particles": [
+        "b__tilde__",
+        "t",
+        "G__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS1",
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_27"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_30"
+        }
+      ],
+      "source_line": 738,
+      "id": "V_122",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_123",
+      "particles": [
+        "d__tilde__",
+        "u",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_41"
+        }
+      ],
+      "source_line": 744,
+      "id": "V_123",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_124",
+      "particles": [
+        "s__tilde__",
+        "u",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_42"
+        }
+      ],
+      "source_line": 750,
+      "id": "V_124",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_125",
+      "particles": [
+        "b__tilde__",
+        "u",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_43"
+        }
+      ],
+      "source_line": 756,
+      "id": "V_125",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_126",
+      "particles": [
+        "d__tilde__",
+        "c",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_44"
+        }
+      ],
+      "source_line": 762,
+      "id": "V_126",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_127",
+      "particles": [
+        "s__tilde__",
+        "c",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_45"
+        }
+      ],
+      "source_line": 768,
+      "id": "V_127",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_128",
+      "particles": [
+        "b__tilde__",
+        "c",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_46"
+        }
+      ],
+      "source_line": 774,
+      "id": "V_128",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_129",
+      "particles": [
+        "d__tilde__",
+        "t",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_47"
+        }
+      ],
+      "source_line": 780,
+      "id": "V_129",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_130",
+      "particles": [
+        "s__tilde__",
+        "t",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_48"
+        }
+      ],
+      "source_line": 786,
+      "id": "V_130",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_131",
+      "particles": [
+        "b__tilde__",
+        "t",
+        "W__minus__"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_49"
+        }
+      ],
+      "source_line": 792,
+      "id": "V_131",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_132",
+      "particles": [
+        "u__tilde__",
+        "u",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_2"
+        }
+      ],
+      "source_line": 798,
+      "id": "V_132",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_133",
+      "particles": [
+        "c__tilde__",
+        "c",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_2"
+        }
+      ],
+      "source_line": 804,
+      "id": "V_133",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_134",
+      "particles": [
+        "t__tilde__",
+        "t",
+        "a"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_2"
+        }
+      ],
+      "source_line": 810,
+      "id": "V_134",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_135",
+      "particles": [
+        "u__tilde__",
+        "u",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 816,
+      "id": "V_135",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_136",
+      "particles": [
+        "c__tilde__",
+        "c",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 822,
+      "id": "V_136",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_137",
+      "particles": [
+        "t__tilde__",
+        "t",
+        "g"
+      ],
+      "color": [
+        "T(3,2,1)"
+      ],
+      "lorentz": [
+        "FFV1"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_11"
+        }
+      ],
+      "source_line": 828,
+      "id": "V_137",
+      "sector": "qcd"
+    },
+    {
+      "name": "V_138",
+      "particles": [
+        "c__tilde__",
+        "c",
+        "G0"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_85"
+        }
+      ],
+      "source_line": 834,
+      "id": "V_138",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_139",
+      "particles": [
+        "t__tilde__",
+        "t",
+        "G0"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_95"
+        }
+      ],
+      "source_line": 840,
+      "id": "V_139",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_140",
+      "particles": [
+        "c__tilde__",
+        "c",
+        "H"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_84"
+        }
+      ],
+      "source_line": 846,
+      "id": "V_140",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_141",
+      "particles": [
+        "t__tilde__",
+        "t",
+        "H"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFS4"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_94"
+        }
+      ],
+      "source_line": 852,
+      "id": "V_141",
+      "sector": "higgs_yukawa"
+    },
+    {
+      "name": "V_142",
+      "particles": [
+        "u__tilde__",
+        "u",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV5"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_51"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        }
+      ],
+      "source_line": 858,
+      "id": "V_142",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_143",
+      "particles": [
+        "c__tilde__",
+        "c",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV5"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_51"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        }
+      ],
+      "source_line": 864,
+      "id": "V_143",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_144",
+      "particles": [
+        "t__tilde__",
+        "t",
+        "Z"
+      ],
+      "color": [
+        "Identity(1,2)"
+      ],
+      "lorentz": [
+        "FFV2",
+        "FFV5"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_51"
+        },
+        {
+          "color_index": 0,
+          "lorentz_index": 1,
+          "coupling": "GC_58"
+        }
+      ],
+      "source_line": 870,
+      "id": "V_144",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_145",
+      "particles": [
+        "e__plus__",
+        "ve",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_86"
+        }
+      ],
+      "source_line": 876,
+      "id": "V_145",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_146",
+      "particles": [
+        "mu__plus__",
+        "vm",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_90"
+        }
+      ],
+      "source_line": 882,
+      "id": "V_146",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_147",
+      "particles": [
+        "ta__plus__",
+        "vt",
+        "G__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFS3"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_96"
+        }
+      ],
+      "source_line": 888,
+      "id": "V_147",
+      "sector": "goldstone"
+    },
+    {
+      "name": "V_148",
+      "particles": [
+        "e__plus__",
+        "ve",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 894,
+      "id": "V_148",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_149",
+      "particles": [
+        "mu__plus__",
+        "vm",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 900,
+      "id": "V_149",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_150",
+      "particles": [
+        "ta__plus__",
+        "vt",
+        "W__minus__"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_40"
+        }
+      ],
+      "source_line": 906,
+      "id": "V_150",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_151",
+      "particles": [
+        "ve__tilde__",
+        "ve",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_62"
+        }
+      ],
+      "source_line": 912,
+      "id": "V_151",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_152",
+      "particles": [
+        "vm__tilde__",
+        "vm",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_62"
+        }
+      ],
+      "source_line": 918,
+      "id": "V_152",
+      "sector": "ew_fermion"
+    },
+    {
+      "name": "V_153",
+      "particles": [
+        "vt__tilde__",
+        "vt",
+        "Z"
+      ],
+      "color": [
+        "1"
+      ],
+      "lorentz": [
+        "FFV2"
+      ],
+      "couplings": [
+        {
+          "color_index": 0,
+          "lorentz_index": 0,
+          "coupling": "GC_62"
+        }
+      ],
+      "source_line": 924,
+      "id": "V_153",
+      "sector": "ew_fermion"
+    }
+  ],
+  "couplings": {
+    "GC_1": {
+      "name": "GC_1",
+      "value": "-(ee*complex(0,1))/3.",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 12
+    },
+    "GC_2": {
+      "name": "GC_2",
+      "value": "(2*ee*complex(0,1))/3.",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 16
+    },
+    "GC_3": {
+      "name": "GC_3",
+      "value": "-(ee*complex(0,1))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 20
+    },
+    "GC_4": {
+      "name": "GC_4",
+      "value": "ee*complex(0,1)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 24
+    },
+    "GC_5": {
+      "name": "GC_5",
+      "value": "ee**2*complex(0,1)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 28
+    },
+    "GC_6": {
+      "name": "GC_6",
+      "value": "2*ee**2*complex(0,1)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 32
+    },
+    "GC_7": {
+      "name": "GC_7",
+      "value": "-ee**2/(2.*cw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 36
+    },
+    "GC_8": {
+      "name": "GC_8",
+      "value": "(ee**2*complex(0,1))/(2.*cw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 40
+    },
+    "GC_9": {
+      "name": "GC_9",
+      "value": "ee**2/(2.*cw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 44
+    },
+    "GC_10": {
+      "name": "GC_10",
+      "value": "-G",
+      "order": {
+        "QCD": 1
+      },
+      "source_line": 48
+    },
+    "GC_11": {
+      "name": "GC_11",
+      "value": "complex(0,1)*G",
+      "order": {
+        "QCD": 1
+      },
+      "source_line": 52
+    },
+    "GC_12": {
+      "name": "GC_12",
+      "value": "complex(0,1)*G**2",
+      "order": {
+        "QCD": 2
+      },
+      "source_line": 56
+    },
+    "GC_13": {
+      "name": "GC_13",
+      "value": "I1x31",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 60
+    },
+    "GC_14": {
+      "name": "GC_14",
+      "value": "I1x32",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 64
+    },
+    "GC_15": {
+      "name": "GC_15",
+      "value": "I1x33",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 68
+    },
+    "GC_16": {
+      "name": "GC_16",
+      "value": "-I2x12",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 72
+    },
+    "GC_17": {
+      "name": "GC_17",
+      "value": "-I2x13",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 76
+    },
+    "GC_18": {
+      "name": "GC_18",
+      "value": "-I2x22",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 80
+    },
+    "GC_19": {
+      "name": "GC_19",
+      "value": "-I2x23",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 84
+    },
+    "GC_20": {
+      "name": "GC_20",
+      "value": "-I2x32",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 88
+    },
+    "GC_21": {
+      "name": "GC_21",
+      "value": "-I2x33",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 92
+    },
+    "GC_22": {
+      "name": "GC_22",
+      "value": "I3x21",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 96
+    },
+    "GC_23": {
+      "name": "GC_23",
+      "value": "I3x22",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 100
+    },
+    "GC_24": {
+      "name": "GC_24",
+      "value": "I3x23",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 104
+    },
+    "GC_25": {
+      "name": "GC_25",
+      "value": "I3x31",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 108
+    },
+    "GC_26": {
+      "name": "GC_26",
+      "value": "I3x32",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 112
+    },
+    "GC_27": {
+      "name": "GC_27",
+      "value": "I3x33",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 116
+    },
+    "GC_28": {
+      "name": "GC_28",
+      "value": "-I4x13",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 120
+    },
+    "GC_29": {
+      "name": "GC_29",
+      "value": "-I4x23",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 124
+    },
+    "GC_30": {
+      "name": "GC_30",
+      "value": "-I4x33",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 128
+    },
+    "GC_31": {
+      "name": "GC_31",
+      "value": "-2*complex(0,1)*lam",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 132
+    },
+    "GC_32": {
+      "name": "GC_32",
+      "value": "-4*complex(0,1)*lam",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 136
+    },
+    "GC_33": {
+      "name": "GC_33",
+      "value": "-6*complex(0,1)*lam",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 140
+    },
+    "GC_34": {
+      "name": "GC_34",
+      "value": "(ee**2*complex(0,1))/(2.*sw**2)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 144
+    },
+    "GC_35": {
+      "name": "GC_35",
+      "value": "-((ee**2*complex(0,1))/sw**2)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 148
+    },
+    "GC_36": {
+      "name": "GC_36",
+      "value": "(cw**2*ee**2*complex(0,1))/sw**2",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 152
+    },
+    "GC_37": {
+      "name": "GC_37",
+      "value": "-ee/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 156
+    },
+    "GC_38": {
+      "name": "GC_38",
+      "value": "-(ee*complex(0,1))/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 160
+    },
+    "GC_39": {
+      "name": "GC_39",
+      "value": "(ee*complex(0,1))/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 164
+    },
+    "GC_40": {
+      "name": "GC_40",
+      "value": "(ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 168
+    },
+    "GC_41": {
+      "name": "GC_41",
+      "value": "(CKM1x1*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 172
+    },
+    "GC_42": {
+      "name": "GC_42",
+      "value": "(CKM1x2*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 176
+    },
+    "GC_43": {
+      "name": "GC_43",
+      "value": "(CKM1x3*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 180
+    },
+    "GC_44": {
+      "name": "GC_44",
+      "value": "(CKM2x1*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 184
+    },
+    "GC_45": {
+      "name": "GC_45",
+      "value": "(CKM2x2*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 188
+    },
+    "GC_46": {
+      "name": "GC_46",
+      "value": "(CKM2x3*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 192
+    },
+    "GC_47": {
+      "name": "GC_47",
+      "value": "(CKM3x1*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 196
+    },
+    "GC_48": {
+      "name": "GC_48",
+      "value": "(CKM3x2*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 200
+    },
+    "GC_49": {
+      "name": "GC_49",
+      "value": "(CKM3x3*ee*complex(0,1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 204
+    },
+    "GC_50": {
+      "name": "GC_50",
+      "value": "-(cw*ee*complex(0,1))/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 208
+    },
+    "GC_51": {
+      "name": "GC_51",
+      "value": "(cw*ee*complex(0,1))/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 212
+    },
+    "GC_52": {
+      "name": "GC_52",
+      "value": "-((cw*ee*complex(0,1))/sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 216
+    },
+    "GC_53": {
+      "name": "GC_53",
+      "value": "(cw*ee*complex(0,1))/sw",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 220
+    },
+    "GC_54": {
+      "name": "GC_54",
+      "value": "-ee**2/(2.*sw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 224
+    },
+    "GC_55": {
+      "name": "GC_55",
+      "value": "-(ee**2*complex(0,1))/(2.*sw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 228
+    },
+    "GC_56": {
+      "name": "GC_56",
+      "value": "ee**2/(2.*sw)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 232
+    },
+    "GC_57": {
+      "name": "GC_57",
+      "value": "(-2*cw*ee**2*complex(0,1))/sw",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 236
+    },
+    "GC_58": {
+      "name": "GC_58",
+      "value": "-(ee*complex(0,1)*sw)/(6.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 240
+    },
+    "GC_59": {
+      "name": "GC_59",
+      "value": "(ee*complex(0,1)*sw)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 244
+    },
+    "GC_60": {
+      "name": "GC_60",
+      "value": "-(cw*ee)/(2.*sw) - (ee*sw)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 248
+    },
+    "GC_61": {
+      "name": "GC_61",
+      "value": "-(cw*ee*complex(0,1))/(2.*sw) + (ee*complex(0,1)*sw)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 252
+    },
+    "GC_62": {
+      "name": "GC_62",
+      "value": "(cw*ee*complex(0,1))/(2.*sw) + (ee*complex(0,1)*sw)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 256
+    },
+    "GC_63": {
+      "name": "GC_63",
+      "value": "(cw*ee**2*complex(0,1))/sw - (ee**2*complex(0,1)*sw)/cw",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 260
+    },
+    "GC_64": {
+      "name": "GC_64",
+      "value": "-(ee**2*complex(0,1)) + (cw**2*ee**2*complex(0,1))/(2.*sw**2) + (ee**2*complex(0,1)*sw**2)/(2.*cw**2)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 264
+    },
+    "GC_65": {
+      "name": "GC_65",
+      "value": "ee**2*complex(0,1) + (cw**2*ee**2*complex(0,1))/(2.*sw**2) + (ee**2*complex(0,1)*sw**2)/(2.*cw**2)",
+      "order": {
+        "QED": 2
+      },
+      "source_line": 268
+    },
+    "GC_66": {
+      "name": "GC_66",
+      "value": "-(ee**2*vev)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 272
+    },
+    "GC_67": {
+      "name": "GC_67",
+      "value": "(ee**2*vev)/(2.*cw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 276
+    },
+    "GC_68": {
+      "name": "GC_68",
+      "value": "-2*complex(0,1)*lam*vev",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 280
+    },
+    "GC_69": {
+      "name": "GC_69",
+      "value": "-6*complex(0,1)*lam*vev",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 284
+    },
+    "GC_70": {
+      "name": "GC_70",
+      "value": "-(ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 288
+    },
+    "GC_71": {
+      "name": "GC_71",
+      "value": "-(ee**2*complex(0,1)*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 292
+    },
+    "GC_72": {
+      "name": "GC_72",
+      "value": "(ee**2*complex(0,1)*vev)/(2.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 296
+    },
+    "GC_73": {
+      "name": "GC_73",
+      "value": "(ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 300
+    },
+    "GC_74": {
+      "name": "GC_74",
+      "value": "-(ee**2*vev)/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 304
+    },
+    "GC_75": {
+      "name": "GC_75",
+      "value": "(ee**2*vev)/(2.*sw)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 308
+    },
+    "GC_76": {
+      "name": "GC_76",
+      "value": "-(ee**2*vev)/(4.*cw) - (cw*ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 312
+    },
+    "GC_77": {
+      "name": "GC_77",
+      "value": "(ee**2*vev)/(4.*cw) - (cw*ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 316
+    },
+    "GC_78": {
+      "name": "GC_78",
+      "value": "-(ee**2*vev)/(4.*cw) + (cw*ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 320
+    },
+    "GC_79": {
+      "name": "GC_79",
+      "value": "(ee**2*vev)/(4.*cw) + (cw*ee**2*vev)/(4.*sw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 324
+    },
+    "GC_80": {
+      "name": "GC_80",
+      "value": "-(ee**2*complex(0,1)*vev)/2. - (cw**2*ee**2*complex(0,1)*vev)/(4.*sw**2) - (ee**2*complex(0,1)*sw**2*vev)/(4.*cw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 328
+    },
+    "GC_81": {
+      "name": "GC_81",
+      "value": "ee**2*complex(0,1)*vev + (cw**2*ee**2*complex(0,1)*vev)/(2.*sw**2) + (ee**2*complex(0,1)*sw**2*vev)/(2.*cw**2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 332
+    },
+    "GC_82": {
+      "name": "GC_82",
+      "value": "-(yb/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 336
+    },
+    "GC_83": {
+      "name": "GC_83",
+      "value": "-((complex(0,1)*yb)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 340
+    },
+    "GC_84": {
+      "name": "GC_84",
+      "value": "-((complex(0,1)*yc)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 344
+    },
+    "GC_85": {
+      "name": "GC_85",
+      "value": "yc/cmath.sqrt(2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 348
+    },
+    "GC_86": {
+      "name": "GC_86",
+      "value": "-ye",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 352
+    },
+    "GC_87": {
+      "name": "GC_87",
+      "value": "ye",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 356
+    },
+    "GC_88": {
+      "name": "GC_88",
+      "value": "-(ye/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 360
+    },
+    "GC_89": {
+      "name": "GC_89",
+      "value": "-((complex(0,1)*ye)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 364
+    },
+    "GC_90": {
+      "name": "GC_90",
+      "value": "-ym",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 368
+    },
+    "GC_91": {
+      "name": "GC_91",
+      "value": "ym",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 372
+    },
+    "GC_92": {
+      "name": "GC_92",
+      "value": "-(ym/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 376
+    },
+    "GC_93": {
+      "name": "GC_93",
+      "value": "-((complex(0,1)*ym)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 380
+    },
+    "GC_94": {
+      "name": "GC_94",
+      "value": "-((complex(0,1)*yt)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 384
+    },
+    "GC_95": {
+      "name": "GC_95",
+      "value": "yt/cmath.sqrt(2)",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 388
+    },
+    "GC_96": {
+      "name": "GC_96",
+      "value": "-ytau",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 392
+    },
+    "GC_97": {
+      "name": "GC_97",
+      "value": "ytau",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 396
+    },
+    "GC_98": {
+      "name": "GC_98",
+      "value": "-(ytau/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 400
+    },
+    "GC_99": {
+      "name": "GC_99",
+      "value": "-((complex(0,1)*ytau)/cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 404
+    },
+    "GC_100": {
+      "name": "GC_100",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM1x1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 408
+    },
+    "GC_101": {
+      "name": "GC_101",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM1x2))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 412
+    },
+    "GC_102": {
+      "name": "GC_102",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM1x3))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 416
+    },
+    "GC_103": {
+      "name": "GC_103",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM2x1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 420
+    },
+    "GC_104": {
+      "name": "GC_104",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM2x2))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 424
+    },
+    "GC_105": {
+      "name": "GC_105",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM2x3))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 428
+    },
+    "GC_106": {
+      "name": "GC_106",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM3x1))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 432
+    },
+    "GC_107": {
+      "name": "GC_107",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM3x2))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 436
+    },
+    "GC_108": {
+      "name": "GC_108",
+      "value": "(ee*complex(0,1)*complexconjugate(CKM3x3))/(sw*cmath.sqrt(2))",
+      "order": {
+        "QED": 1
+      },
+      "source_line": 440
+    }
+  },
+  "lorentz": {
+    "UUS1": {
+      "name": "UUS1",
+      "spins": [
+        -1,
+        -1,
+        1
+      ],
+      "structure": "1",
+      "source_line": 15
+    },
+    "UUV1": {
+      "name": "UUV1",
+      "spins": [
+        -1,
+        -1,
+        3
+      ],
+      "structure": "P(3,2) + P(3,3)",
+      "source_line": 19
+    },
+    "SSS1": {
+      "name": "SSS1",
+      "spins": [
+        1,
+        1,
+        1
+      ],
+      "structure": "1",
+      "source_line": 23
+    },
+    "FFS1": {
+      "name": "FFS1",
+      "spins": [
+        2,
+        2,
+        1
+      ],
+      "structure": "ProjM(2,1)",
+      "source_line": 27
+    },
+    "FFS2": {
+      "name": "FFS2",
+      "spins": [
+        2,
+        2,
+        1
+      ],
+      "structure": "ProjM(2,1) - ProjP(2,1)",
+      "source_line": 31
+    },
+    "FFS3": {
+      "name": "FFS3",
+      "spins": [
+        2,
+        2,
+        1
+      ],
+      "structure": "ProjP(2,1)",
+      "source_line": 35
+    },
+    "FFS4": {
+      "name": "FFS4",
+      "spins": [
+        2,
+        2,
+        1
+      ],
+      "structure": "ProjM(2,1) + ProjP(2,1)",
+      "source_line": 39
+    },
+    "FFV1": {
+      "name": "FFV1",
+      "spins": [
+        2,
+        2,
+        3
+      ],
+      "structure": "Gamma(3,2,1)",
+      "source_line": 43
+    },
+    "FFV2": {
+      "name": "FFV2",
+      "spins": [
+        2,
+        2,
+        3
+      ],
+      "structure": "Gamma(3,2,-1)*ProjM(-1,1)",
+      "source_line": 47
+    },
+    "FFV3": {
+      "name": "FFV3",
+      "spins": [
+        2,
+        2,
+        3
+      ],
+      "structure": "Gamma(3,2,-1)*ProjM(-1,1) - 2*Gamma(3,2,-1)*ProjP(-1,1)",
+      "source_line": 51
+    },
+    "FFV4": {
+      "name": "FFV4",
+      "spins": [
+        2,
+        2,
+        3
+      ],
+      "structure": "Gamma(3,2,-1)*ProjM(-1,1) + 2*Gamma(3,2,-1)*ProjP(-1,1)",
+      "source_line": 55
+    },
+    "FFV5": {
+      "name": "FFV5",
+      "spins": [
+        2,
+        2,
+        3
+      ],
+      "structure": "Gamma(3,2,-1)*ProjM(-1,1) + 4*Gamma(3,2,-1)*ProjP(-1,1)",
+      "source_line": 59
+    },
+    "VSS1": {
+      "name": "VSS1",
+      "spins": [
+        3,
+        1,
+        1
+      ],
+      "structure": "P(1,2) - P(1,3)",
+      "source_line": 63
+    },
+    "VVS1": {
+      "name": "VVS1",
+      "spins": [
+        3,
+        3,
+        1
+      ],
+      "structure": "Metric(1,2)",
+      "source_line": 67
+    },
+    "VVV1": {
+      "name": "VVV1",
+      "spins": [
+        3,
+        3,
+        3
+      ],
+      "structure": "P(3,1)*Metric(1,2) - P(3,2)*Metric(1,2) - P(2,1)*Metric(1,3) + P(2,3)*Metric(1,3) + P(1,2)*Metric(2,3) - P(1,3)*Metric(2,3)",
+      "source_line": 71
+    },
+    "SSSS1": {
+      "name": "SSSS1",
+      "spins": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": "1",
+      "source_line": 75
+    },
+    "VVSS1": {
+      "name": "VVSS1",
+      "spins": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "structure": "Metric(1,2)",
+      "source_line": 79
+    },
+    "VVVV1": {
+      "name": "VVVV1",
+      "spins": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "structure": "Metric(1,4)*Metric(2,3) - Metric(1,3)*Metric(2,4)",
+      "source_line": 83
+    },
+    "VVVV2": {
+      "name": "VVVV2",
+      "spins": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "structure": "Metric(1,4)*Metric(2,3) + Metric(1,3)*Metric(2,4) - 2*Metric(1,2)*Metric(3,4)",
+      "source_line": 87
+    },
+    "VVVV3": {
+      "name": "VVVV3",
+      "spins": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "structure": "Metric(1,4)*Metric(2,3) - Metric(1,2)*Metric(3,4)",
+      "source_line": 91
+    },
+    "VVVV4": {
+      "name": "VVVV4",
+      "spins": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "structure": "Metric(1,3)*Metric(2,4) - Metric(1,2)*Metric(3,4)",
+      "source_line": 95
+    },
+    "VVVV5": {
+      "name": "VVVV5",
+      "spins": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "structure": "Metric(1,4)*Metric(2,3) - (Metric(1,3)*Metric(2,4))/2. - (Metric(1,2)*Metric(3,4))/2.",
+      "source_line": 99
+    }
+  },
+  "parameters": {
+    "ZERO": {
+      "name": "ZERO",
+      "nature": "internal",
+      "type": "real",
+      "value": "0.0",
+      "texname": "0",
+      "source_line": 14
+    },
+    "aEWM1": {
+      "name": "aEWM1",
+      "nature": "external",
+      "type": "real",
+      "value": 132.50698,
+      "texname": "\\text{aEWM1}",
+      "lhablock": "SMINPUTS",
+      "lhacode": [
+        1
+      ],
+      "source_line": 21
+    },
+    "Gf": {
+      "name": "Gf",
+      "nature": "external",
+      "type": "real",
+      "value": 1.16639e-05,
+      "texname": "G_f",
+      "lhablock": "SMINPUTS",
+      "lhacode": [
+        2
+      ],
+      "source_line": 29
+    },
+    "aS": {
+      "name": "aS",
+      "nature": "external",
+      "type": "real",
+      "value": 0.118,
+      "texname": "\\alpha _s",
+      "lhablock": "SMINPUTS",
+      "lhacode": [
+        3
+      ],
+      "source_line": 37
+    },
+    "lamWS": {
+      "name": "lamWS",
+      "nature": "external",
+      "type": "real",
+      "value": 0.2253,
+      "texname": "\\text{lamWS}",
+      "lhablock": "Wolfenstein",
+      "lhacode": [
+        1
+      ],
+      "source_line": 45
+    },
+    "AWS": {
+      "name": "AWS",
+      "nature": "external",
+      "type": "real",
+      "value": 0.808,
+      "texname": "\\text{AWS}",
+      "lhablock": "Wolfenstein",
+      "lhacode": [
+        2
+      ],
+      "source_line": 53
+    },
+    "rhoWS": {
+      "name": "rhoWS",
+      "nature": "external",
+      "type": "real",
+      "value": 0.132,
+      "texname": "\\text{rhoWS}",
+      "lhablock": "Wolfenstein",
+      "lhacode": [
+        3
+      ],
+      "source_line": 61
+    },
+    "etaWS": {
+      "name": "etaWS",
+      "nature": "external",
+      "type": "real",
+      "value": 0.341,
+      "texname": "\\text{etaWS}",
+      "lhablock": "Wolfenstein",
+      "lhacode": [
+        4
+      ],
+      "source_line": 69
+    },
+    "ymc": {
+      "name": "ymc",
+      "nature": "external",
+      "type": "real",
+      "value": 1.27,
+      "texname": "\\text{ymc}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        4
+      ],
+      "source_line": 77
+    },
+    "ymb": {
+      "name": "ymb",
+      "nature": "external",
+      "type": "real",
+      "value": 4.2,
+      "texname": "\\text{ymb}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        5
+      ],
+      "source_line": 85
+    },
+    "ymt": {
+      "name": "ymt",
+      "nature": "external",
+      "type": "real",
+      "value": 164.5,
+      "texname": "\\text{ymt}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        6
+      ],
+      "source_line": 93
+    },
+    "yme": {
+      "name": "yme",
+      "nature": "external",
+      "type": "real",
+      "value": 0.000511,
+      "texname": "\\text{yme}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        11
+      ],
+      "source_line": 101
+    },
+    "ymm": {
+      "name": "ymm",
+      "nature": "external",
+      "type": "real",
+      "value": 0.10566,
+      "texname": "\\text{ymm}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        13
+      ],
+      "source_line": 109
+    },
+    "ymtau": {
+      "name": "ymtau",
+      "nature": "external",
+      "type": "real",
+      "value": 1.777,
+      "texname": "\\text{ymtau}",
+      "lhablock": "YUKAWA",
+      "lhacode": [
+        15
+      ],
+      "source_line": 117
+    },
+    "MZ": {
+      "name": "MZ",
+      "nature": "external",
+      "type": "real",
+      "value": 91.188,
+      "texname": "\\text{MZ}",
+      "lhablock": "MASS",
+      "lhacode": [
+        23
+      ],
+      "source_line": 125
+    },
+    "MC": {
+      "name": "MC",
+      "nature": "external",
+      "type": "real",
+      "value": 1.27,
+      "texname": "\\text{MC}",
+      "lhablock": "MASS",
+      "lhacode": [
+        4
+      ],
+      "source_line": 133
+    },
+    "MT": {
+      "name": "MT",
+      "nature": "external",
+      "type": "real",
+      "value": 172.0,
+      "texname": "\\text{MT}",
+      "lhablock": "MASS",
+      "lhacode": [
+        6
+      ],
+      "source_line": 141
+    },
+    "MB": {
+      "name": "MB",
+      "nature": "external",
+      "type": "real",
+      "value": 4.7,
+      "texname": "\\text{MB}",
+      "lhablock": "MASS",
+      "lhacode": [
+        5
+      ],
+      "source_line": 149
+    },
+    "MH": {
+      "name": "MH",
+      "nature": "external",
+      "type": "real",
+      "value": 125.0,
+      "texname": "\\text{MH}",
+      "lhablock": "MASS",
+      "lhacode": [
+        25
+      ],
+      "source_line": 157
+    },
+    "Me": {
+      "name": "Me",
+      "nature": "external",
+      "type": "real",
+      "value": 0.000511,
+      "texname": "\\text{Me}",
+      "lhablock": "MASS",
+      "lhacode": [
+        11
+      ],
+      "source_line": 165
+    },
+    "MM": {
+      "name": "MM",
+      "nature": "external",
+      "type": "real",
+      "value": 0.10566,
+      "texname": "\\text{MM}",
+      "lhablock": "MASS",
+      "lhacode": [
+        13
+      ],
+      "source_line": 173
+    },
+    "MTA": {
+      "name": "MTA",
+      "nature": "external",
+      "type": "real",
+      "value": 1.777,
+      "texname": "\\text{MTA}",
+      "lhablock": "MASS",
+      "lhacode": [
+        15
+      ],
+      "source_line": 181
+    },
+    "WZ": {
+      "name": "WZ",
+      "nature": "external",
+      "type": "real",
+      "value": 2.44140351,
+      "texname": "\\text{WZ}",
+      "lhablock": "DECAY",
+      "lhacode": [
+        23
+      ],
+      "source_line": 189
+    },
+    "WW": {
+      "name": "WW",
+      "nature": "external",
+      "type": "real",
+      "value": 2.04759951,
+      "texname": "\\text{WW}",
+      "lhablock": "DECAY",
+      "lhacode": [
+        24
+      ],
+      "source_line": 197
+    },
+    "WT": {
+      "name": "WT",
+      "nature": "external",
+      "type": "real",
+      "value": 1.50833649,
+      "texname": "\\text{WT}",
+      "lhablock": "DECAY",
+      "lhacode": [
+        6
+      ],
+      "source_line": 205
+    },
+    "WH": {
+      "name": "WH",
+      "nature": "external",
+      "type": "real",
+      "value": 0.00638233934,
+      "texname": "\\text{WH}",
+      "lhablock": "DECAY",
+      "lhacode": [
+        25
+      ],
+      "source_line": 213
+    },
+    "WTau": {
+      "name": "WTau",
+      "nature": "external",
+      "type": "real",
+      "value": 2.27e-12,
+      "texname": "\\text{WTau}",
+      "lhablock": "DECAY",
+      "lhacode": [
+        15
+      ],
+      "source_line": 221
+    },
+    "CKM1x1": {
+      "name": "CKM1x1",
+      "nature": "internal",
+      "type": "complex",
+      "value": "1 - lamWS**2/2.",
+      "texname": "\\text{CKM1x1}",
+      "source_line": 229
+    },
+    "CKM1x2": {
+      "name": "CKM1x2",
+      "nature": "internal",
+      "type": "complex",
+      "value": "lamWS",
+      "texname": "\\text{CKM1x2}",
+      "source_line": 235
+    },
+    "CKM1x3": {
+      "name": "CKM1x3",
+      "nature": "internal",
+      "type": "complex",
+      "value": "AWS*lamWS**3*(-(etaWS*complex(0,1)) + rhoWS)",
+      "texname": "\\text{CKM1x3}",
+      "source_line": 241
+    },
+    "CKM2x1": {
+      "name": "CKM2x1",
+      "nature": "internal",
+      "type": "complex",
+      "value": "-lamWS",
+      "texname": "\\text{CKM2x1}",
+      "source_line": 247
+    },
+    "CKM2x2": {
+      "name": "CKM2x2",
+      "nature": "internal",
+      "type": "complex",
+      "value": "1 - lamWS**2/2.",
+      "texname": "\\text{CKM2x2}",
+      "source_line": 253
+    },
+    "CKM2x3": {
+      "name": "CKM2x3",
+      "nature": "internal",
+      "type": "complex",
+      "value": "AWS*lamWS**2",
+      "texname": "\\text{CKM2x3}",
+      "source_line": 259
+    },
+    "CKM3x1": {
+      "name": "CKM3x1",
+      "nature": "internal",
+      "type": "complex",
+      "value": "AWS*lamWS**3*(1 - etaWS*complex(0,1) - rhoWS)",
+      "texname": "\\text{CKM3x1}",
+      "source_line": 265
+    },
+    "CKM3x2": {
+      "name": "CKM3x2",
+      "nature": "internal",
+      "type": "complex",
+      "value": "-(AWS*lamWS**2)",
+      "texname": "\\text{CKM3x2}",
+      "source_line": 271
+    },
+    "CKM3x3": {
+      "name": "CKM3x3",
+      "nature": "internal",
+      "type": "complex",
+      "value": "1",
+      "texname": "\\text{CKM3x3}",
+      "source_line": 277
+    },
+    "aEW": {
+      "name": "aEW",
+      "nature": "internal",
+      "type": "real",
+      "value": "1/aEWM1",
+      "texname": "\\alpha _{\\text{EW}}",
+      "source_line": 283
+    },
+    "G": {
+      "name": "G",
+      "nature": "internal",
+      "type": "real",
+      "value": "2*cmath.sqrt(aS)*cmath.sqrt(cmath.pi)",
+      "texname": "G",
+      "source_line": 289
+    },
+    "MW": {
+      "name": "MW",
+      "nature": "internal",
+      "type": "real",
+      "value": "cmath.sqrt(MZ**2/2. + cmath.sqrt(MZ**4/4. - (aEW*cmath.pi*MZ**2)/(Gf*cmath.sqrt(2))))",
+      "texname": "M_W",
+      "source_line": 295
+    },
+    "ee": {
+      "name": "ee",
+      "nature": "internal",
+      "type": "real",
+      "value": "2*cmath.sqrt(aEW)*cmath.sqrt(cmath.pi)",
+      "texname": "e",
+      "source_line": 301
+    },
+    "sw2": {
+      "name": "sw2",
+      "nature": "internal",
+      "type": "real",
+      "value": "1 - MW**2/MZ**2",
+      "texname": "\\text{sw2}",
+      "source_line": 307
+    },
+    "cw": {
+      "name": "cw",
+      "nature": "internal",
+      "type": "real",
+      "value": "cmath.sqrt(1 - sw2)",
+      "texname": "c_w",
+      "source_line": 313
+    },
+    "sw": {
+      "name": "sw",
+      "nature": "internal",
+      "type": "real",
+      "value": "cmath.sqrt(sw2)",
+      "texname": "s_w",
+      "source_line": 319
+    },
+    "g1": {
+      "name": "g1",
+      "nature": "internal",
+      "type": "real",
+      "value": "ee/cw",
+      "texname": "g_1",
+      "source_line": 325
+    },
+    "gw": {
+      "name": "gw",
+      "nature": "internal",
+      "type": "real",
+      "value": "ee/sw",
+      "texname": "g_w",
+      "source_line": 331
+    },
+    "vev": {
+      "name": "vev",
+      "nature": "internal",
+      "type": "real",
+      "value": "(2*MW*sw)/ee",
+      "texname": "\\text{vev}",
+      "source_line": 337
+    },
+    "lam": {
+      "name": "lam",
+      "nature": "internal",
+      "type": "real",
+      "value": "MH**2/(2.*vev**2)",
+      "texname": "\\text{lam}",
+      "source_line": 343
+    },
+    "yb": {
+      "name": "yb",
+      "nature": "internal",
+      "type": "real",
+      "value": "(ymb*cmath.sqrt(2))/vev",
+      "texname": "\\text{yb}",
+      "source_line": 349
+    },
+    "yc": {
+      "name": "yc",
+      "nature": "internal",
+      "type": "real",
+      "value": "(ymc*cmath.sqrt(2))/vev",
+      "texname": "\\text{yc}",
+      "source_line": 355
+    },
+    "ye": {
+      "name": "ye",
+      "nature": "internal",
+      "type": "real",
+      "value": "(yme*cmath.sqrt(2))/vev",
+      "texname": "\\text{ye}",
+      "source_line": 361
+    },
+    "ym": {
+      "name": "ym",
+      "nature": "internal",
+      "type": "real",
+      "value": "(ymm*cmath.sqrt(2))/vev",
+      "texname": "\\text{ym}",
+      "source_line": 367
+    },
+    "yt": {
+      "name": "yt",
+      "nature": "internal",
+      "type": "real",
+      "value": "(ymt*cmath.sqrt(2))/vev",
+      "texname": "\\text{yt}",
+      "source_line": 373
+    },
+    "ytau": {
+      "name": "ytau",
+      "nature": "internal",
+      "type": "real",
+      "value": "(ymtau*cmath.sqrt(2))/vev",
+      "texname": "\\text{ytau}",
+      "source_line": 379
+    },
+    "muH": {
+      "name": "muH",
+      "nature": "internal",
+      "type": "real",
+      "value": "cmath.sqrt(lam*vev**2)",
+      "texname": "\\mu",
+      "source_line": 385
+    },
+    "I1x31": {
+      "name": "I1x31",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yb*complexconjugate(CKM1x3)",
+      "texname": "\\text{I1x31}",
+      "source_line": 391
+    },
+    "I1x32": {
+      "name": "I1x32",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yb*complexconjugate(CKM2x3)",
+      "texname": "\\text{I1x32}",
+      "source_line": 397
+    },
+    "I1x33": {
+      "name": "I1x33",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yb*complexconjugate(CKM3x3)",
+      "texname": "\\text{I1x33}",
+      "source_line": 403
+    },
+    "I2x12": {
+      "name": "I2x12",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yc*complexconjugate(CKM2x1)",
+      "texname": "\\text{I2x12}",
+      "source_line": 409
+    },
+    "I2x13": {
+      "name": "I2x13",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yt*complexconjugate(CKM3x1)",
+      "texname": "\\text{I2x13}",
+      "source_line": 415
+    },
+    "I2x22": {
+      "name": "I2x22",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yc*complexconjugate(CKM2x2)",
+      "texname": "\\text{I2x22}",
+      "source_line": 421
+    },
+    "I2x23": {
+      "name": "I2x23",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yt*complexconjugate(CKM3x2)",
+      "texname": "\\text{I2x23}",
+      "source_line": 427
+    },
+    "I2x32": {
+      "name": "I2x32",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yc*complexconjugate(CKM2x3)",
+      "texname": "\\text{I2x32}",
+      "source_line": 433
+    },
+    "I2x33": {
+      "name": "I2x33",
+      "nature": "internal",
+      "type": "complex",
+      "value": "yt*complexconjugate(CKM3x3)",
+      "texname": "\\text{I2x33}",
+      "source_line": 439
+    },
+    "I3x21": {
+      "name": "I3x21",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM2x1*yc",
+      "texname": "\\text{I3x21}",
+      "source_line": 445
+    },
+    "I3x22": {
+      "name": "I3x22",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM2x2*yc",
+      "texname": "\\text{I3x22}",
+      "source_line": 451
+    },
+    "I3x23": {
+      "name": "I3x23",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM2x3*yc",
+      "texname": "\\text{I3x23}",
+      "source_line": 457
+    },
+    "I3x31": {
+      "name": "I3x31",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM3x1*yt",
+      "texname": "\\text{I3x31}",
+      "source_line": 463
+    },
+    "I3x32": {
+      "name": "I3x32",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM3x2*yt",
+      "texname": "\\text{I3x32}",
+      "source_line": 469
+    },
+    "I3x33": {
+      "name": "I3x33",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM3x3*yt",
+      "texname": "\\text{I3x33}",
+      "source_line": 475
+    },
+    "I4x13": {
+      "name": "I4x13",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM1x3*yb",
+      "texname": "\\text{I4x13}",
+      "source_line": 481
+    },
+    "I4x23": {
+      "name": "I4x23",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM2x3*yb",
+      "texname": "\\text{I4x23}",
+      "source_line": 487
+    },
+    "I4x33": {
+      "name": "I4x33",
+      "nature": "internal",
+      "type": "complex",
+      "value": "CKM3x3*yb",
+      "texname": "\\text{I4x33}",
+      "source_line": 493
+    }
+  },
+  "coupling_orders": {
+    "QCD": {
+      "name": "QCD",
+      "expansion_order": 99,
+      "hierarchy": 1,
+      "source_line": 9
+    },
+    "QED": {
+      "name": "QED",
+      "expansion_order": 99,
+      "hierarchy": 2,
+      "source_line": 13
+    }
+  },
+  "functions": {
+    "complexconjugate": {
+      "name": "complexconjugate",
+      "arguments": [
+        "z"
+      ],
+      "expression": "z.conjugate()",
+      "source_line": 20
+    },
+    "re": {
+      "name": "re",
+      "arguments": [
+        "z"
+      ],
+      "expression": "z.real",
+      "source_line": 25
+    },
+    "im": {
+      "name": "im",
+      "arguments": [
+        "z"
+      ],
+      "expression": "z.imag",
+      "source_line": 29
+    },
+    "sec": {
+      "name": "sec",
+      "arguments": [
+        "z"
+      ],
+      "expression": "1./cos(z)",
+      "source_line": 36
+    },
+    "asec": {
+      "name": "asec",
+      "arguments": [
+        "z"
+      ],
+      "expression": "acos(1./z)",
+      "source_line": 40
+    },
+    "csc": {
+      "name": "csc",
+      "arguments": [
+        "z"
+      ],
+      "expression": "1./sin(z)",
+      "source_line": 44
+    },
+    "acsc": {
+      "name": "acsc",
+      "arguments": [
+        "z"
+      ],
+      "expression": "asin(1./z)",
+      "source_line": 48
+    }
+  },
+  "coverage_gaps": [
+    {
+      "target": "h ubar u",
+      "reason": "u mass and Yukawa absent from stock source"
+    },
+    {
+      "target": "h dbar d",
+      "reason": "d mass and Yukawa absent from stock source"
+    },
+    {
+      "target": "h sbar s",
+      "reason": "s mass and Yukawa absent from stock source"
+    }
+  ]
+}

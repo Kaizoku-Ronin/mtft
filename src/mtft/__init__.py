@@ -1,5 +1,5 @@
 """
-MTFT — Modular Time Field Theory  (v0.15.0 — certification wave)
+MTFT — Modular Time Field Theory
 ============================================================================
 
 39 modules covering the complete MTFT framework from arithmetic

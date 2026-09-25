@@ -49,6 +49,7 @@ mtft = ["mtft_legend.md"]
 "mtft.boundary" = ["_data/*.txt"]
 "mtft.periods" = ["_data/*.json", "_data/*.txt"]
 "mtft.surface" = ["_data/*.json", "_data/*.npz"]
+"mtft.interactions" = ["_data/*.json", "_data/*.html", "_data/*.txt"]
 
 [tool.pytest.ini_options]
 markers = [
