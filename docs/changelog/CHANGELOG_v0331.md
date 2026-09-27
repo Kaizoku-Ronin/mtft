@@ -34,6 +34,10 @@
 - `product_surface.s1_iterated_extension_instability`: theorem — every iterated extension of the S1 split stacks is mu-unstable for
   r < 5 (twisted colour line L_c(-X x {e}) or a split colour line destabilises); the S1 wall is closed for the whole family. Notes item 10.
 
+- `product_surface.colour_slope_condition`, `three_stack_trilemma`: theorem — in the three-stack framework no family-type pair is at once
+  Yukawa-admissible, Higgs-slope-free and colour-slope-matchable; the four VI.3 solutions can never host an unbroken-SU(3) HYM vacuum at any r.
+  Notes item 11.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153

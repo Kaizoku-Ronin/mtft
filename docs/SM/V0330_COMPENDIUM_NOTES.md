@@ -109,6 +109,19 @@ the Higgs-type gluing.  This closes the S1 wall for the whole extension family w
 studies' negative results (which excluded specified deformation families at r = 1/2).  For r >= 5 the destabiliser is harmless; stable
 bundles of the S1 topology there are expected from fiberwise stability but are not iterated extensions of these line bundles.
 
+## 11. Theorem: the three-stack trilemma (v0.33.1, 27 Sept) — EXACT
+`product_surface.colour_slope_condition`, `three_stack_trilemma`.  Unbroken SU(3) in a HYM vacuum requires the colour line bundle to be a
+direct summand of a polystable bundle, so mu(L_c) must equal the slope of the rank-3 rest W, whatever W recombines into; with the family
+types q, u this reads w = -2q + u having entries of opposite signs (then r = -w_X/w_E).  Over the 64 ordered pairs: Yukawa-admissible and
+Higgs-slope-free are exactly the four VI.3 solutions, and all four have w = (-5,-5), (7,1), (-5,-5), (1,7) — colour can never be
+slope-matched, at any r, by any recombination of doublets and singlet: this is the common cause of the S2 studies' negative results, the
+census's tachyons at every r, and the S1 theorem of item 10.  Higgs-slope-free and colour-matchable forces q = u (no Yukawa).  Yukawa-
+admissible and colour-matchable is possible for eight pairs, but their Higgs blocks are tachyonic at every r (electroweak breaking at the
+compactification scale).  Hence: a gauge-vertex Yukawa, a light Higgs and an unbroken-colour vacuum cannot all be had in the three-stack
+framework on X0(143) x 143a1 with index-3 family types.  It also settles the Fourier–Mukai question physically: stable rank-6 bundles at
+large r are irreducible and break SU(3), so they are not QCD vacua.  What a viable configuration needs is a fourth stack or a different
+family assignment whose rank-weighted non-colour flux has mixed signs while keeping a slope-free Higgs block with a (1,1)-bidegree Yukawa.
+
 ## 7. Method note (D4 closure gate, `tests/test_v0230.py`)
 The greedy absolute gate of `liealg.close_lie` normalised near-dependent residuals and sat inside its ambiguity window on one platform
 (residual 1.25e-7 on Windows, 9.3e-8 on Linux) for reasons of the algorithm, not of the data.  `liealg.close_lie_svd` (singular-value

@@ -324,3 +324,37 @@ def s1_iterated_extension_instability(r=2):
             "unstable": bool(mu_twisted > mu_V), "threshold_r": 5,
             "ingredients": {"Ext1(L_c, L_L)": 0, "Ext1(L_c, L_1) per colour": 3, "kernel of H1(N_-3) -> H1(N_-3(e))": "C delta_e",
                             "H1(L_L(X x e)) for e != e_0": 0, "exception": "e = e_0 only (N_1 = O(e_0)); irrelevant since zeta is onto"}}
+
+
+# ================================================================== v0.33.1 (2026-09-27): the colour slope condition and the three-stack trilemma
+def colour_slope_condition(q, u):
+    """An SU(3)-preserving HYM vacuum needs the colour summand L_c (x) C^3 to be a direct summand of a polystable bundle, hence
+    mu(L_c) = mu(W) for W the (possibly recombined) rank-3 rest, whose c_1 relative to colour is w = 2 (L_L - L_c) + (L_1 - L_c) = -2q + u
+    in terms of the family types q = Q, u = u^c (VI.3 conventions).  mu(W (x) L_c^-1) = (w_X A_E + w_E A_X)/3 vanishes for some positive
+    r = A_X/A_E iff w_X w_E < 0.  Returns (w, matchable, r_colour)."""
+    w = (-2 * q[0] + u[0], -2 * q[1] + u[1]); ok = w[0] * w[1] < 0
+    return {"w": w, "colour_matchable": ok, "r_colour": sp.Rational(-w[0], w[1]) if ok else None}
+
+def three_stack_trilemma():
+    """THEOREM (exact, finite check over the 64 ordered family-type pairs).  In the three-stack framework (colour^3, doublet^2, singlet)
+    on X0(143) x 143a1 with family types of index +-3, no pair (Q, u^c) satisfies all three of
+      (Y) a gauge-vertex Yukawa (VI.2 admissibility),
+      (H) a Higgs massless at leading order (slope-free Higgs block, VI.3),
+      (C) an SU(3)-preserving polystable vacuum at some r (`colour_slope_condition`).
+    (Y)+(H) are exactly the four VI.3 solutions, all with w of equal signs ((-5,-5), (7,1), (-5,-5), (1,7)): no r matches colour, whatever
+    W recombines into — which is why both split walls close.  (H)+(C) forces q = u: same Kuenneth type, no Yukawa (CC-31).  (Y)+(C) is
+    possible (eight pairs) but their Higgs block has same-sign entries, i.e. the Higgs is tachyonic at every r (electroweak breaking at the
+    compactification scale).  Any two of the three can be had; not all three."""
+    types = [(a, b) for a in (3, -3, 1, -1) for b in (3, -3, 1, -1) if abs(a * b) == 3]
+    out = {"Y+H": [], "H+C": [], "Y+C": [], "Y+H+C": []}
+    for q, u in itertools.product(types, types):
+        flags = (int(q[0] < 0) + int(u[0] < 0), int(q[1] < 0) + int(u[1] < 0)); Y = flags in ((1, 0), (0, 1))
+        H = (-(q[0] + u[0]), -(q[1] + u[1])); Hf = H[0] * H[1] < 0
+        C = colour_slope_condition(q, u)["colour_matchable"]
+        rec = (q, u, H, colour_slope_condition(q, u)["w"])
+        if Y and Hf: out["Y+H"].append(rec)
+        if Hf and C: out["H+C"].append(rec)
+        if Y and C: out["Y+C"].append(rec)
+        if Y and Hf and C: out["Y+H+C"].append(rec)
+    out["conclusion"] = "no family-type pair is simultaneously Yukawa-admissible, Higgs-slope-free and colour-slope-matchable"
+    return out

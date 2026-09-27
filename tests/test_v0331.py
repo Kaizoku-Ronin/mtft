@@ -63,3 +63,10 @@ def test_s1_iterated_extensions_are_unstable_below_r_five():
     assert PS.curve_h0_flux(-3) == (0, None) and PS.torus_cohomology(0) == (1, 1) and PS.torus_cohomology(-3) == (0, 3)
     g = {e["class_bundle"]: e for e in PS.extension_graph("S1", 2)["edges"]}
     assert g[(-3, -1)]["ext1"] == 0 and g[(1, -3)]["ext1_E_leg"] == 3
+
+
+def test_three_stack_trilemma():
+    t = PS.three_stack_trilemma()
+    assert t["Y+H+C"] == [] and len(t["Y+H"]) == 4 and all(w[0] * w[1] > 0 for *_, w in t["Y+H"])
+    assert all(q == u for q, u, *_ in t["H+C"]) and len(t["Y+C"]) == 8 and all(H[0] * H[1] >= 0 for _, _, H, _ in t["Y+C"])
+    assert PS.colour_slope_condition((3, 1), (1, -3))["w"] == (-5, -5) and PS.colour_slope_condition((-3, 1), (1, 3))["w"] == (7, 1)
