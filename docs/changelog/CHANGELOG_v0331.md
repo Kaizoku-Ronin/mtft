@@ -18,6 +18,14 @@
   closed-form theta matrices refresh in about a second with the reviewer's `export_v0330_updates.py` (handoff, `01_release_review/`); the
   older GP/terminal kit stays pinned to 0.32.1 and must not label a rerun as 0.33.x unchanged.
 
+## Exact block census of split surface backgrounds (27 September 2026)
+
+- `product_surface.block_census(r, model)`, `census_scan`, `curve_h0_flux`, `curve_h1_flux`: V.1–V.3 applied leg by leg to every gauge block
+  of the split S1/S2 bundles on X0(143) x 143a1 — exact ground levels (units 2 pi/A_E), Kuenneth multiplicities, Dolbeault-closedness, the
+  flat-torus ladders, critical ratios, and a lower bound on the Morse index. Reproduces, from arithmetic alone, the handoff's S2 wall numbers
+  (279 negative directions, 90 Dolbeault-closed, 4 + 56 massless Higgs coefficients) and gives S1's wall 99 / 9. No split background is
+  polystable at any r. Legend `surface_block_census`; `tests/test_v0331.py`; notes item 8.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153

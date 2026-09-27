@@ -11,6 +11,7 @@ family-block scalars are massive: the electroweak scale is a Kaehler-modulus dev
 Yukawa I x T for two (3,-1) families was WRONG — two families of the same Kuenneth parity have no gauge-vertex Yukawa (see below).
 OPEN (new gates): the parent is an 8D gauge theory (four internal real dimensions): 8D chirality rules and anomalies replace R2C-01/03;
 stabilisation of (A_X, A_E) near the locus; the other blocks' massless moduli at the locus; gravity with two Kaehler moduli."""
+import itertools
 import sympy as sp
 
 A_X, A_E = sp.symbols("A_X A_E", positive=True)
@@ -137,3 +138,82 @@ def higgs_slope_mass(H, bidegree_H):
     mu = HX * A_E + HE * A_X
     return {"m2_lowest": sp.simplify(m2), "slope": mu, "equals_2pi_slope_over_areas": sp.simplify(m2 - 2 * sp.pi * mu / (A_X * A_E)) == 0,
             "massless_locus": sp.solve(sp.Eq(mu, 0), A_X)}
+
+
+# ================================================================== v0.33.1 (2026-09-27): exact block census of the split surface backgrounds
+# For a split background V = (+)_i L_i^{(+) n_i} on S = X x E (product metric, areas A_X = r A_E; product HYM connection) every
+# off-diagonal gauge block L_i (x) L_j^{-1} is a line bundle of bidegree (a, b).  Its internal (0,1)-forms have an X-leg and an E-leg,
+# and the Jacobi operator of T29 separates on product modes: the leg carrying the form obeys V.2/V.3 on its factor (tachyonic
+# polarisation 2 d*d - |B|, massive 2 dbar*dbar + |B|), the other factor contributes its scalar Bochner spectrum (V.1/V.4).  On the flat
+# torus every level is a Landau level, (2n+1)|b| in units of 2 pi/A_E; on the curve only the ground level is exact (attained iff the
+# relevant h^0 is positive, Lemma E.1 and RR supply the multiplicities).  So the census is exact for ground x ladder products and
+# gives (i) the harmonic (Dolbeault-closed) negative directions, i.e. the Kuenneth H^1 classes with negative level, and (ii) a lower
+# bound on the Morse index from all exactly known product modes.  Units: 2 pi/A_E; x = 1/r = A_E/A_X; 2 pi mu(L)/(A_X A_E) = a x + b.
+S2_STACKS = (("c", 3, (0, 0)), ("L", 2, (3, -1)), ("1", 1, (1, 3)))      # Q = L_c L_L^-1 = (-3, 1), u^c = L_1 L_c^-1 = (1, 3), H = L_L L_1^-1 = (2, -4)
+S1_STACKS = (("c", 3, (0, 0)), ("L", 2, (-3, -1)), ("1", 1, (1, -3)))    # Q = (3, 1), u^c = (1, -3), H = (-4, 2)
+STACK_MODELS = {"S1": S1_STACKS, "S2": S2_STACKS}
+
+def curve_h0_flux(a):
+    """h^0(X, O(D)) for the flux line bundle of degree a supported on the marked CM points (P in {P1, P2, P3}).
+    Exact for |a| <= 3 (gonality >= 4: hecke.gonality_lower_bound) and for a = 6 = 2 sum P (canonical.gates.gate_petri_w13_quotient);
+    degree 4 (sum P + P) is 1 unless X carries a g^1_4 through those points, which is not excluded — returned as (1, 'open: 1 or 2')."""
+    if a < 0: return 0, None
+    if a == 0: return 1, None
+    if a <= 3 or a == 6: return 1, None
+    return 1, "open: 1 unless a g^1_4 passes through the marked points"
+
+def curve_h1_flux(a):
+    """h^1 = h^0 - a + 12 (Riemann-Roch, genus 13), with the same caveat as curve_h0_flux."""
+    h0, note = curve_h0_flux(a); return h0 - a + 12, note
+
+def block_census(r, model="S2", stacks=None, torus_levels=6):
+    """Exact census of every gauge block of a split background at A_X/A_E = r.
+
+    Returns {"r", "x", "blocks": [...], "summary": {...}}.  Each block lists, for its X-leg and E-leg, the ground level (units
+    2 pi/A_E), its multiplicity per component, whether the ground mode is Dolbeault-closed (a Kuenneth H^1 class), the exactly
+    known torus ladder above it, and the number of components n_comp = n_i n_j.  The summary counts negative exact-product modes
+    (a lower bound on the Morse index of the split background), the harmonic negative directions among them, the harmonic
+    massless directions, and the critical ratios where a ground level crosses zero.  Compendium V.1–V.3 and VI.3 (remark).
+    At r = 1/2 for S2 this reproduces the coupled-relaxation study's 279 negative directions with 90 Dolbeault-closed, and the
+    4 + 56 massless Higgs coefficients per component."""
+    stacks = stacks if stacks is not None else STACK_MODELS[model]
+    x = sp.Rational(1) / sp.nsimplify(r)
+    blocks, notes = [], []
+    neg = neg_closed = zero_closed = zero_total = 0; crit = set()
+    for (ni, ranki, di), (nj, rankj, dj) in itertools.permutations(stacks, 2):
+        a, b = di[0] - dj[0], di[1] - dj[1]; ncomp = ranki * rankj
+        h1a, note1 = curve_h1_flux(a); h0abs, note0 = curve_h0_flux(abs(a))
+        for note in (note1, note0):
+            if note: notes.append(f"block {ni}{nj} ({a},{b}): {note}")
+        # X-leg: (0,1)-form on X in L_a  (x)  scalar on E in N_b
+        gX = a * x + abs(b); mX = h1a * (abs(b) if b else 1); closedX = b >= 0
+        ladderX = [(a * x + abs(b) * (2 * n + 1), h1a * abs(b)) for n in range(1, torus_levels)] if b else []
+        # E-leg: scalar on X in L_a  (x)  (0,1)-form on E in N_b
+        gE = abs(a) * x + (-abs(b) if b < 0 else (3 * b if b > 0 else 0)); mE = h0abs * (abs(b) if b else 1); closedE = (a >= 0) and (b <= 0)
+        ladderE = [(abs(a) * x + (abs(b) * (2 * n - 1) if b < 0 else b * (2 * n + 3)), h0abs * abs(b)) for n in range(1, torus_levels)] if b else []
+        legs = {"X_leg": {"ground": gX, "multiplicity": mX, "closed": closedX, "ladder": ladderX},
+                "E_leg": {"ground": gE, "multiplicity": mE, "closed": closedE, "ladder": ladderE}}
+        for leg in legs.values():
+            g, m = leg["ground"], leg["multiplicity"]
+            if g < 0:
+                neg += m * ncomp
+                if leg["closed"]: neg_closed += m * ncomp
+            elif g == 0:
+                zero_total += m * ncomp
+                if leg["closed"]: zero_closed += m * ncomp
+            for lv, lm in leg["ladder"]:
+                if lv < 0: neg += lm * ncomp
+        if a < 0 and b: crit.add(sp.Rational(-a, abs(b)))               # X-leg ground a x + |b| = 0  ->  r = |a|/|b|
+        if b < 0 and a: crit.add(sp.Rational(abs(a), abs(b)))          # E-leg ground |a| x - |b| = 0  ->  r = |a|/|b|
+        blocks.append({"block": f"L_{ni} (x) L_{nj}^-1", "bidegree": (a, b), "n_comp": ncomp, "slope_level": a * x + b, **legs})
+    # diagonal blocks: Wilson-line moduli H^1(S, O) = 13 (X-leg) + 1 (E-leg) per component
+    ndiag = sum(rk * rk for _, rk, _ in stacks); zero_closed += 14 * ndiag; zero_total += 14 * ndiag
+    return {"model": model if stacks is STACK_MODELS.get(model) else "custom", "r": sp.nsimplify(r), "x": x, "units": "2 pi / A_E",
+            "blocks": blocks, "notes": sorted(set(notes)),
+            "summary": {"negative_exact_product_modes": neg, "harmonic_negative": neg_closed, "harmonic_massless": zero_closed,
+                        "massless_total_exact": zero_total, "diagonal_components": ndiag, "critical_r": sorted(crit),
+                        "polystable": all(b["slope_level"] == 0 for b in blocks)}}
+
+def census_scan(model="S2", ratios=(sp.Rational(1, 4), sp.Rational(1, 3), sp.Rational(1, 2), 1, 2, 3, 4)):
+    """Summary rows of `block_census` across ratios: (r, negative, harmonic negative, harmonic massless)."""
+    return [(sp.nsimplify(r), *(lambda s: (s["negative_exact_product_modes"], s["harmonic_negative"], s["harmonic_massless"]))(block_census(r, model)["summary"])) for r in ratios]

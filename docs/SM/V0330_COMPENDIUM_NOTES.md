@@ -61,6 +61,22 @@ it agrees with `torus_factor` entrywise to 1e-25, and tau from the q-series of E
 transcendental (Schneider; 143a1 is not CM), so the singular values are a numerical certificate on two routes, not exact arithmetic.
 `theta_torus.tau_143a1_qseries`, `theta_torus.theta_norm_closed_form`, `theta_torus.torus_factor_closed_form`.
 
+## 8. Exact block census of the split surface backgrounds (v0.33.1, 2026-09-27) — EXACT
+`product_surface.block_census(r, model)` applies V.1–V.3 leg by leg to every gauge block L_i (x) L_j^-1 of the split rank-6 bundles of
+S1 and S2 (stacks (0,0)^3, (3,-1)^2, (1,3) for S2; (0,0)^3, (-3,-1)^2, (1,-3) for S1) at A_X/A_E = r.  In units of 2 pi/A_E with x = 1/r,
+the X-leg of a block (a,b) has ground level a x + |b| with multiplicity h^1(X, L_a) (|b| or 1) and is Dolbeault-closed iff b >= 0; the
+E-leg has ground |a| x + (-|b|, 3b, 0) with multiplicity h^0 (|b| or 1) and is closed iff a >= 0 and b <= 0; above each sits the exact
+flat-torus Landau ladder.  The ground levels are attained (Lemma E.1, E.2 and RR fix every multiplicity for S2; S1's degree-4 curve
+factor carries a declared h^0 = 1-or-2 caveat).  Results: S2 at the wall r = 1/2 has exactly 279 negative exact-product directions, 90
+of them harmonic, and 2 x (4 + 56) + 14 x 14 = 316 harmonic massless directions — the same 279, 90, 4 and 56 that the handoff's
+coupled-relaxation and vacuum studies obtained by direct computation (independent route).  The 9 non-closed tachyons of the u^c block's
+E-leg are antiholomorphic on X and therefore not extension classes.  S1 at its wall r = 2 has 99 negative directions but only 9
+harmonic ones (the u^c block's E-leg, H^0(X, O(P)) (x) H^1(E, N_-3)); its 90 non-closed ones sit in the doublet–colour block.  No split
+background is polystable at any r: the three summand slopes cannot coincide on one ray, and the census shows harmonic tachyons at every
+r (minimum 8 for S2 at r = 3, 9 for S1 at r = 2).  Critical ratios: 1/3, 1/2, 3 (S2); 1/3, 2, 3 (S1).  `census_scan` tabulates them;
+`tests/test_v0331.py`.  Excited curve levels are not exact, so the negative counts are lower bounds on the Morse index and the
+harmonic counts are exact.
+
 ## 7. Method note (D4 closure gate, `tests/test_v0230.py`)
 The greedy absolute gate of `liealg.close_lie` normalised near-dependent residuals and sat inside its ambiguity window on one platform
 (residual 1.25e-7 on Windows, 9.3e-8 on Linux) for reasons of the algorithm, not of the data.  `liealg.close_lie_svd` (singular-value

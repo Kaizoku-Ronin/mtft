@@ -788,6 +788,13 @@ V0330_LEGEND = (
                 "agrees entrywise with the quadrature route to 1e-25; tau from the q-series of E4^3/Delta agrees with kleinj to 1e-26. Singular values "
                 "S1 (1.10302625437, 0.859234662985), S2 (1.12362454225, 0.978985971006, 0.843100702144).",
          example="mtft.research.theta_torus.torus_factor_closed_form(1, 2)", upstream=("theta_torus_factor_143a1",), ref="docs/SM/V0330_COMPENDIUM_NOTES.md"),
+    dict(name="surface_block_census", tier="2", kind="identity", primitives=("V", "II"), tag="Pr", exactness="EXACT (ground x Landau products)",
+         nature="Every gauge block of a split background on X0(143) x 143a1 has an X-leg and an E-leg; V.2/V.3 on the leg factor and the scalar "
+                "Landau level on the other give exact ground levels (units 2 pi/A_E, x = A_E/A_X) with Kuenneth multiplicities, plus the exact "
+                "flat-torus ladders. S2 at r = 1/2: 279 negative exact-product directions (Morse index >= 279), 90 of them harmonic — the "
+                "coupled-relaxation study's numbers — and 4 + 56 massless Higgs coefficients per component; S1 at r = 2: 99 / 9. No split "
+                "background is polystable at any r (three summand slopes never coincide); critical ratios 1/3, 1/2, 3 (S2) and 1/3, 2, 3 (S1).",
+         example="mtft.research.product_surface.block_census(1/2, 'S2')", upstream=("surface_higgs_slope_level", "vector_higgs_kodaira_form"), ref="docs/SM/V0330_COMPENDIUM_NOTES.md"),
     dict(name="lie_closure_svd_gate", tier="3", kind="definition", primitives=("III",), tag="Cert", exactness="CERTIFIED (method note)",
          nature="Lie closure by singular-value rank with a spectral-gap gate (close_lie_svd): no small residual is ever normalised; the D4 closure reads "
                 "[3, 6, 17, 28, 28] with structure residual 8e-12 and a gap above 1e9 in every round, where the greedy gate sat inside its ambiguity window "
