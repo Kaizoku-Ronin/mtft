@@ -38,6 +38,10 @@
   Yukawa-admissible, Higgs-slope-free and colour-slope-matchable; the four VI.3 solutions can never host an unbroken-SU(3) HYM vacuum at any r.
   Notes item 11.
 
+- `product_surface.adjoint_net_chirality`, `chirality_parity_theorem`: theorem — adjoint-origin matter on the spin surface X0(143) x 143a1 has
+  even net chirality (zero for the spin twist); the S1/S2 families are vector-like pairs in an adjoint 8D theory. `rank2_net_index_lemma`:
+  under a chiral parent, polystable SM vacua with summands of rank <= 2 cannot give Q and u^c the required opposite net indices. Notes 12–13.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153

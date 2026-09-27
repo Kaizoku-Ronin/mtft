@@ -70,3 +70,26 @@ def test_three_stack_trilemma():
     assert t["Y+H+C"] == [] and len(t["Y+H"]) == 4 and all(w[0] * w[1] > 0 for *_, w in t["Y+H"])
     assert all(q == u for q, u, *_ in t["H+C"]) and len(t["Y+C"]) == 8 and all(H[0] * H[1] >= 0 for _, _, H, _ in t["Y+C"])
     assert PS.colour_slope_condition((3, 1), (1, -3))["w"] == (-5, -5) and PS.colour_slope_condition((-3, 1), (1, 3))["w"] == (7, 1)
+
+
+def test_chirality_parity_on_the_spin_surface():
+    t = PS.chirality_parity_theorem(box=4)
+    assert t["odd_cases"] == [] and t["untwisted_nets"] == {0}
+    assert all(f["vector_like"] and f["index_block"] == f["index_conjugate"] for f in t["families"].values())
+    assert PS.adjoint_net_chirality((1, 1), (12, 1))["net_chirality"] == 2 and PS.adjoint_net_chirality((0, 1), (0, 0))["net_chirality"] == -24
+
+
+def test_rank2_net_index_lemma_and_empty_recombination():
+    r = 3
+    assert PS.rank2_net_index_lemma([(0, 0)], [(3, -1)], r)["net_index"] == -3                               # a line pair on the ray
+    lem = PS.rank2_net_index_lemma([(0, 0)], [(5, -2), (1, 0)], r)                                            # rank 2: m = (3,-1) on the ray, extension block (4,-2)
+    assert lem["holds"] and lem["net_index"] == -10
+    import itertools, fractions
+    box = [(a, b) for a in range(-6, 7) for b in range(-4, 5)]
+    found = 0
+    for dx, dxp in itertools.combinations(box, 2):                                                           # option A at r = 3, Q = (3, -1)
+        if dx[0] + 3 * dx[1] + dxp[0] + 3 * dxp[1] != 0: continue
+        e2 = (dx[0] - dxp[0], dx[1] - dxp[1])
+        if e2[0] * e2[1] > 0 or dx[0] + 3 * dx[1] == 0: continue                                              # no extension in either direction
+        if dx[0] * dx[1] + dxp[0] * dxp[1] == 3: found += 1                                                   # u^c net +3 opposite to Q's -3
+    assert found == 0

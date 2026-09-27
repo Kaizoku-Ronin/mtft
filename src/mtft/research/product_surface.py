@@ -358,3 +358,54 @@ def three_stack_trilemma():
         if Y and Hf and C: out["Y+H+C"].append(rec)
     out["conclusion"] = "no family-type pair is simultaneously Yukawa-admissible, Higgs-slope-free and colour-slope-matchable"
     return out
+
+
+# ================================================================== v0.33.1 (2026-09-27): chirality parity on the spin surface, and the rank-2 net-index lemma
+SPIN_TWIST = (12, 0)                     # K_S^{1/2} = S0 (x) O_E has bidegree (12, 0); K_S = (24, 0)
+
+def adjoint_net_chirality(block, twist=SPIN_TWIST):
+    """Net number of left-handed fermions in the bifundamental (N_i, N_j-bar) of an 8D gauge theory whose fermions transform in the
+    ADJOINT, reduced on X0(143) x 143a1 with spinors twisted by a line bundle R (default the spin structure K^{1/2}).
+
+    In 8D no reality condition relates the (i,j) and (j,i) blocks at fixed 8D chirality (charge conjugation flips 8D chirality), so both
+    blocks are independent and net = index(R (x) L) - index(R (x) L^-1) = chi(R (x) L) - chi(R (x) L^-1) = c_1(L).(2R - K_S)  (Riemann–Roch).
+    With chi(X, O(a)) = a - 12 and chi(E, N_b) = b:  net = 2 [a rho_E + b (rho_X - 12)]  for L = (a, b), R = (rho_X, rho_E).  EXACT."""
+    a, b = block; rx, re = twist
+    chi = lambda d: (d[0] - 12) * d[1]
+    net = chi((rx + a, re + b)) - chi((rx - a, re - b))
+    assert net == 2 * (a * re + b * (rx - 12))
+    return {"block": (a, b), "twist": (rx, re), "index_block": chi((rx + a, re + b)), "index_conjugate": chi((rx - a, re - b)),
+            "net_chirality": net, "vector_like": net == 0}
+
+def chirality_parity_theorem(box=6):
+    """THEOREM (exact).  On a spin Kaehler surface S, for fermions in the adjoint of a gauge group broken by a background bundle, twisted by any
+    spin^c structure with determinant class c (c characteristic: c.D = D.D mod 2), the net chirality of every bifundamental block F is
+    c_1(F).c = c_1(F)^2 (mod 2).  NS(X0(143) x 143a1) is an even lattice (K_S = 2 K^{1/2}; Wu), so the net chirality is EVEN: three
+    generations cannot come from adjoint matter on this surface, for any flux, any recombination and any twist.  With the untwisted spin
+    structure it is ZERO: the S1/S2 family blocks (index +-3) are cancelled by their conjugate blocks (same index, Serre duality preserving
+    degree parity in complex dimension 2) — they are vector-like pairs.  Returns the exact check over a box of blocks and twists and the
+    S1/S2 bookkeeping."""
+    rng = range(-box, box + 1)
+    odd = [(a, b, rx, re) for a in rng for b in rng for rx in range(0, 25) for re in rng
+           if adjoint_net_chirality((a, b), (rx, re))["net_chirality"] % 2]
+    untwisted = {adjoint_net_chirality((a, b))["net_chirality"] for a in rng for b in rng}
+    fam = {n: adjoint_net_chirality(blk) for n, blk in (("S1_Q", (3, 1)), ("S1_u", (1, -3)), ("S2_Q", (-3, 1)), ("S2_u", (1, 3)))}
+    return {"odd_cases": odd, "untwisted_nets": untwisted, "families": fam,
+            "statement": "net chirality = c1(F).c = c1(F)^2 mod 2 = even on X0(143) x 143a1; zero for the spin twist"}
+
+def rank2_net_index_lemma(summand1, summand2, r):
+    """LEMMA (exact; parallelogram law).  For the index form Q(a, b) = a b (the spin-twisted index of a block, VI.1): let W1, W2 be equal-slope
+    summands, each a line bundle m or a rank-2 extension with constituents m +- e whose extension block 2e satisfies Q(2e) <= 0 (necessary for
+    Ext^1 != 0 in the destabilising-free direction: an extension block is never in the (-,-) quadrant, and a (+,+) block has positive slope).
+    Then the net index of the block Hom(W2, W1) is  n1 n2 Q(m1 - m2) + n2 * sum Q(e1) + n1 * sum Q(e2) <= 0,  because m1 - m2 lies on the
+    slope-zero ray where Q = -r b^2 <= 0.  Consequence (under a chiral parent, where one block per pair carries the families and VI.3's sign
+    rule holds): Q and u^c can never have the opposite net indices -3, +3 in an SU(3) x SU(2) x U(1)_Y-preserving polystable vacuum whose
+    stable summands have rank <= 2 — the recombination search over options (u^c partner, colour, doublet) finds no candidate, and this is why.
+    Returns the net index and the decomposition."""
+    import fractions
+    Qf = lambda v: v[0] * v[1]
+    r = fractions.Fraction(r)
+    mu = lambda W: sum(fractions.Fraction(c[0]) + c[1] * r for c in W) / len(W)
+    assert mu(summand1) == mu(summand2), "summands must have equal slope"
+    net = sum(Qf((c1[0] - c2[0], c1[1] - c2[1])) for c1 in summand1 for c2 in summand2)
+    return {"net_index": net, "bound": "<= 0", "holds": net <= 0}

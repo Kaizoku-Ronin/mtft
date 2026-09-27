@@ -122,6 +122,28 @@ framework on X0(143) x 143a1 with index-3 family types.  It also settles the Fou
 large r are irreducible and break SU(3), so they are not QCD vacua.  What a viable configuration needs is a fourth stack or a different
 family assignment whose rank-weighted non-colour flux has mixed signs while keeping a slope-free Higgs block with a (1,1)-bidegree Yukawa.
 
+## 12. Theorem: chirality parity on the spin surface — adjoint matter is never three-generational (v0.33.1, 27 Sept) — EXACT
+`product_surface.adjoint_net_chirality`, `chirality_parity_theorem`.  In 8D, charge conjugation flips chirality, so no reality condition
+relates the (i,j) and (j,i) blocks of an adjoint fermion at fixed 8D chirality: both are independent fields, and the net number of
+left-handed fermions in (N_i, N_j-bar) is index(R (x) F) - index(R (x) F^*) = c_1(F).(2R - K_S) by Riemann–Roch (R the spinor twist).
+For a spin^c twist with determinant c this is c_1(F).c = c_1(F)^2 (mod 2).  NS(X0(143) x 143a1) is even (K_S = 2 K^{1/2}), so the net
+chirality is always EVEN; with the untwisted spin structure (Chapter VI's convention) it is ZERO.  Concretely, the S1/S2 family blocks
+(-3,1), (1,3), (3,1), (1,-3) have index -3, 3, 3, -3, and their conjugate blocks have the same indices (Serre duality preserves degree
+parity in complex dimension 2): each family is a vector-like pair.  VI.1's index a b is the Dirac index of ONE block — correct as
+mathematics; its reading as "three chiral families" needs a parent with 8D fermions in complex (non-self-conjugate) representations, or
+matter localised on curves, or a non-spin surface (e.g. a blow-up of X x E at an arithmetic point, where c_1(F)^2 can be odd).  This is
+the resolution of R2C-07's "8D chirality rules — open", and a new entry for the parent-action requirements.
+
+## 13. Lemma: rank-2 recombinations cannot supply the family signs (v0.33.1, 27 Sept) — EXACT (conditional on a chiral parent)
+`product_surface.rank2_net_index_lemma`.  Requiring SU(3) x SU(2) unbroken at M_KK makes W_c (x) C^3 and W_L (x) C^2 summands of the
+polystable vacuum, so all summands share one slope.  (a) Fully split vacua put every block on the slope-zero ray, where any two chiral
+blocks have Kuenneth types summing to (0,2), (1,1) or (2,0): no gauge-vertex Yukawa between chiral families, for any number of stacks.
+(b) Hypercharge needs u^c and d^c from stacks with different U(1) charges, and a stable summand carries a single U(1): they must lie in
+different summands.  (c) For summands of rank <= 2 built from line bundles, the index form Q(a,b) = ab and the parallelogram law give
+net index <= 0 for EVERY block (the slope-zero ray and the extension blocks are where Q <= 0), so Q and u^c cannot carry the opposite
+net indices -3, +3 of an admissible Yukawa.  The search over the three single-recombination options (u^c partner, colour, doublet) found
+no candidate, for this reason.  Under a chiral parent, a viable vacuum needs a stable summand of rank >= 3.
+
 ## 7. Method note (D4 closure gate, `tests/test_v0230.py`)
 The greedy absolute gate of `liealg.close_lie` normalised near-dependent residuals and sat inside its ambiguity window on one platform
 (residual 1.25e-7 on Windows, 9.3e-8 on Linux) for reasons of the algorithm, not of the data.  `liealg.close_lie_svd` (singular-value
