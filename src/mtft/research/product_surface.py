@@ -298,3 +298,29 @@ def torus_cp_test(tol=1e-12):
                 if abs(q) > 1e-20: phases.append(float(mp.arg(q)))
         out[name] = {"quartet_phases": phases, "real_up_to_rephasing": all(min(abs(p), abs(abs(p) - float(mp.pi))) < tol for p in phases)}
     return out
+
+
+# ================================================================== v0.33.1 (2026-09-27): the S1 iterated extensions are mu-unstable for r < 5
+def s1_iterated_extension_instability(r=2):
+    """THEOREM (exact).  Let V be any rank-6 holomorphic bundle on S = X0(143) x 143a1 admitting a filtration whose graded pieces are
+    the six S1 line bundles L_c^3 = O^3, L_L^2 = (-3,-1)^2, L_1 = (1,-3) — i.e. any iterated extension of the S1 split background.
+    Then V is mu-unstable for the product polarisation with r = A_X/A_E < 5; in particular at the S1 wall r = 2.
+
+    Proof.  mu(V) = -(5 + 5r)/6 A_E.  (i) If some colour line L_c is a subsheaf of V it destabilises (slope 0).  Since
+    Ext^1(L_c, L_L) = H^1((-3,-1)) = 0 and Ext^1(L_c, F) injects into Ext^1(L_c, L_1) = H^0(X, O(P)) (x) H^1(E, N_-3) = C^3 for every
+    F built from the L_L's and L_1, the colour stack can only sit on top of L_1, attached by classes s (x) zeta(v), zeta: C^3 -> H^1(E, N_-3);
+    if zeta has a kernel, that colour line splits off — so zeta must be an isomorphism.  (ii) For a point e of E the class delta_e in
+    H^1(E, N_-3) (the coboundary of the point, dual to evaluation at e on H^0(N_3)) spans the kernel of H^1(E, N_-3) -> H^1(E, N_-3(e)),
+    so the twisted colour line L_c(-X x {e}) v with zeta(v) = delta_e lifts to the colour–L_1 extension; the further lift to V is
+    obstructed in H^1(L_L(X x {e}))^2 = (H^1(X, O(-sum P)) (x) H^0(E, N_-1(e)))^2, which vanishes for every e except the single point
+    e_0 with N_1 = O(e_0).  Since zeta is onto, every delta_e is hit; pick e != e_0.  (iii) mu(L_c(-X x {e})) = -A_X = -r A_E exceeds
+    mu(V) exactly when r < 5.  QED.  So no mu-stable bundle at the S1 wall is an iterated extension of the split stacks, for any choice
+    of the 9 tachyonic classes and of the Higgs-type gluing (32 + 2 classes) — the S1 analogue of the S2 relaxation studies, obtained
+    without obstruction theory.  For r >= 5 the argument gives nothing; stable bundles of this topology at large r are expected from
+    fiberwise stability (E-degree -5 coprime to the rank), and are not iterated extensions of these six line bundles."""
+    r = sp.nsimplify(r)
+    mu_V = -(5 + 5 * r) / 6; mu_twisted = -r; mu_split = sp.Integer(0)
+    return {"r": r, "mu_V_units_A_E": mu_V, "destabilisers": {"split colour line L_c": mu_split, "twisted colour line L_c(-X x {e})": mu_twisted},
+            "unstable": bool(mu_twisted > mu_V), "threshold_r": 5,
+            "ingredients": {"Ext1(L_c, L_L)": 0, "Ext1(L_c, L_1) per colour": 3, "kernel of H1(N_-3) -> H1(N_-3(e))": "C delta_e",
+                            "H1(L_L(X x e)) for e != e_0": 0, "exception": "e = e_0 only (N_1 = O(e_0)); irrelevant since zeta is onto"}}

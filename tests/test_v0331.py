@@ -53,3 +53,13 @@ def test_cp_structure_of_the_flux_choice():
     c = PS.cm_point_cp_structure(); assert c["CP_pairs"] == (("P1", "P2"), ("P3", "P4")) and c["W11_pairs"] == (("P1", "P3"), ("P2", "P4"))
     assert set(c["orbit_of_family_divisor"].values()) == {"omit P1", "omit P2", "omit P3", "omit P4"}
     t = PS.torus_cp_test(); assert t["S1"]["real_up_to_rephasing"] and t["S2"]["real_up_to_rephasing"]
+
+
+def test_s1_iterated_extensions_are_unstable_below_r_five():
+    for r in (sp.Rational(1, 2), 1, 2, 3, sp.Rational(49, 10)):
+        assert PS.s1_iterated_extension_instability(r)["unstable"]
+    assert not PS.s1_iterated_extension_instability(5)["unstable"] and not PS.s1_iterated_extension_instability(6)["unstable"]
+    # the Kuenneth vanishings the proof uses, from the module's own cohomology helpers
+    assert PS.curve_h0_flux(-3) == (0, None) and PS.torus_cohomology(0) == (1, 1) and PS.torus_cohomology(-3) == (0, 3)
+    g = {e["class_bundle"]: e for e in PS.extension_graph("S1", 2)["edges"]}
+    assert g[(-3, -1)]["ext1"] == 0 and g[(1, -3)]["ext1_E_leg"] == 3

@@ -31,6 +31,9 @@
   space after colour–L_1 recombination: 17, 2, 2 dimensions), `cm_point_cp_structure` and `torus_cp_test` (the flux choice breaks CP
   explicitly; the torus factor is CP-conserving). Notes item 9; `tests/test_v0331.py`.
 
+- `product_surface.s1_iterated_extension_instability`: theorem — every iterated extension of the S1 split stacks is mu-unstable for
+  r < 5 (twisted colour line L_c(-X x {e}) or a split colour line destabilises); the S1 wall is closed for the whole family. Notes item 10.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153

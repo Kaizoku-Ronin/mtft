@@ -99,6 +99,16 @@ harmonic counts are exact.
   Every CP-violating phase — the CKM phase and the strong-CP angle after the leading-order m_u = 0 of S2 is lifted — therefore comes
   from the curve pairing and the vacuum values, not from 143a1.
 
+## 10. Theorem: the S1 iterated extensions are mu-unstable for r < 5 (v0.33.1, 27 Sept) — EXACT
+`product_surface.s1_iterated_extension_instability`.  Any rank-6 bundle filtered by the six S1 line bundles is destabilised, at every
+r < 5, either by a split colour line (slope 0) or by a twisted colour line L_c(-X x {e}) (slope -r A_E > mu(V) = -(5+5r)/6 A_E).  The
+three ingredients are Kuenneth statements: Ext^1(L_c, L_L) = 0 forces the colours on top of L_1 through classes s (x) zeta(v) with zeta
+onto H^1(E, N_-3); the point classes delta_e span the kernels of H^1(N_-3) -> H^1(N_-3(e)), so L_c(-X x {e}) lifts to the colour–L_1
+extension; and H^1(L_L(X x {e})) = H^1(X, O(-sum P)) (x) H^0(E, N_-1(e)) = 0 for e != e_0, so nothing obstructs the lift to V whatever
+the Higgs-type gluing.  This closes the S1 wall for the whole extension family without obstruction theory, the counterpart of the S2
+studies' negative results (which excluded specified deformation families at r = 1/2).  For r >= 5 the destabiliser is harmless; stable
+bundles of the S1 topology there are expected from fiberwise stability but are not iterated extensions of these line bundles.
+
 ## 7. Method note (D4 closure gate, `tests/test_v0230.py`)
 The greedy absolute gate of `liealg.close_lie` normalised near-dependent residuals and sat inside its ambiguity window on one platform
 (residual 1.25e-7 on Windows, 9.3e-8 on Linux) for reasons of the algorithm, not of the data.  `liealg.close_lie_svd` (singular-value
