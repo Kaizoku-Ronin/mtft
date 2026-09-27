@@ -50,7 +50,8 @@ S1: the curve Higgs factor is 16-dimensional and the torus factor 2-dimensional;
 relation (su) s = s (su), using h^0(O(sum P)) = 1 of item 1), and a Kuenneth-rank-two VEV with A(w1) = E11, A(w2) = E22 + E31 gives
 rank 3.  So "m_u = 0 at leading order in both solutions" holds for S2 and, in S1, for VEVs of Kuenneth rank one.  R2C-08's "rank M <=
 rank v" is correct with rank meaning Kuenneth rank, times the 2 of the curve factor.  `theta_torus.up_mass_rank_bound` (qualified),
-`theta_torus.up_mass_rank_examples`.
+`theta_torus.up_mass_rank_examples`.  Correction (v0.33.1): in S2 the ratio of the two nonzero singular values is that of A alone — the torus
+direction only scales M (M M^dagger = |b|^2 A A^dagger); the earlier "depends only on the four torus Higgs directions" is withdrawn (R2C-09 addendum).
 
 ## 6. The torus factor on a second route (compendium VI.5) — CERTIFIED (numerical, two routes)
 Exact: c4 = 64, c6 = 1864, Delta = -1859, j = -262144/1859; j < 0 puts tau on Re tau = 1/2 above rho.  Theorems (proved in the compendium):

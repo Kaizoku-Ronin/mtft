@@ -94,3 +94,22 @@ def test_theta_closed_form_pinned():
 def test_theta_closed_form_matches_quadrature():
     tau = TT.tau_143a1(); q1 = TT.torus_factor(1, 2, tau, N=16); c1 = TT.torus_factor_closed_form(1, 2, tau)
     assert max(abs(q1["B"][i, j] - c1["B"][i, j]) for i in range(3) for j in range(2)) < 1e-12
+
+
+# ------------------------------------------------------------------ v0.33.1: import-precision of j (release review, Finding 1) and the S2 ratio (Finding 2)
+def test_tau_precision_does_not_depend_on_import_history():
+    saved = mp.mp.dps
+    try:
+        mp.mp.dps = 15
+        exact = TT._j_143a1_at_working_precision                       # rebuilt at the requested precision, not stored at import
+        tau50 = TT.tau_143a1(dps=50); tq50 = TT.tau_143a1_qseries(dps=50)
+        target = mp.mpf(TT.J_143A1_NUMERATOR) / TT.J_143A1_DENOMINATOR
+        assert abs(1728 * mp.kleinj(tau50) - target) < mp.mpf(10) ** -45
+        assert abs(tau50 - tq50) < mp.mpf(10) ** -45 and abs(exact() - target) == 0
+    finally:
+        mp.mp.dps = saved
+
+def test_s2_ratio_is_curve_only():
+    r = TT.s2_ratio_independence(n_random=30)
+    assert r["max_ratio_deviation"] < 1e-12 and r["max_scale_deviation"] < 1e-12
+    assert "independent of the torus Higgs direction" in TT.up_mass_rank_bound()["S2"]

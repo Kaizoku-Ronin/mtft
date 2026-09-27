@@ -10,6 +10,10 @@ Structural consequence (EXACT): in both solutions the u^c curve factor is H^0(S0
 sum v A_{i a ...} B_{... j} has rank <= 2 at leading order: the lightest up-type quark is massless at leading order (a Riemann–Roch number).
 The curve factor A of S2 is the Serre pairing of the family space with its 2-dimensional subspace of sections vanishing at two CM points;
 m_c/m_t then depends only on the four torus Higgs directions — the next computation.
+[v0.33.1 correction (release review, 2026-09-24): with M = A (x) b(v)^T and the product kinetic normalisation, M M^dagger = |b(v)|^2 A A^dagger,
+so the torus direction sets the overall scale and CANCELS from the ratio of the two nonzero singular values; that ratio is fixed by the
+curve pairing A alone (undefined when b(v) = 0).  Its identification with a physical charm/top ratio still requires the vectorlike states
+and the resulting light spectrum.  `s2_ratio_independence` demonstrates the cancellation.]
 v0.33.0 (2026-09-23, theorem compendium VI.4–VI.5): the rank bound is qualified — rank M <= min(3, 2 * kunneth_rank(v)); unconditional
 (every VEV) in S2, where the curve Higgs factor is one-dimensional; in S1 a Kuenneth-rank-two VEV reaches rank 3 (`up_mass_rank_examples`).
 `torus_factor_closed_form` evaluates B through the theta multiplication formula (no quadrature) and agrees with `torus_factor` to 1e-25;
@@ -17,10 +21,16 @@ v0.33.0 (2026-09-23, theorem compendium VI.4–VI.5): the rank bound is qualifie
 import mpmath as mp
 import numpy as np
 
-J_143A1 = mp.mpf(64 ** 3) / mp.mpf(-1859)
+# Exact source for working-precision evaluation.  Keep the historical mpf
+# constant for callers, but do not use its import-time rounding as an input.
+J_143A1_NUMERATOR, J_143A1_DENOMINATOR = -262144, 1859
+J_143A1 = mp.mpf(J_143A1_NUMERATOR) / J_143A1_DENOMINATOR
+
+def _j_143a1_at_working_precision():
+    return mp.mpf(J_143A1_NUMERATOR) / J_143A1_DENOMINATOR
 
 def tau_143a1(dps=25):
-    mp.mp.dps = dps; g = lambda y: mp.re(1728 * mp.kleinj(mp.mpc(0.5, mp.re(y))) - J_143A1); y = mp.re(mp.findroot(g, mp.mpf(1.08)))
+    mp.mp.dps = dps; target_j = _j_143a1_at_working_precision(); g = lambda y: mp.re(1728 * mp.kleinj(mp.mpc(0.5, mp.re(y))) - target_j); y = mp.re(mp.findroot(g, mp.mpf(1.08)))
     return mp.mpc(0.5, y)
 
 def theta_basis(k, tau, terms=14):
@@ -64,7 +74,8 @@ def up_mass_rank_bound():
     (`up_mass_rank_examples`), so R2C-09's "m_u = 0 in both solutions" is restricted to Kuenneth-rank-one VEVs in S1."""
     return {"u_c_curve_factor": "H^0(S0(P)), h^0 = 2", "rank_bound": 2, "rank_bound_hypothesis": "Higgs VEV of Kuenneth rank one",
             "rank_bound_general": "min(3, 2 * kunneth_rank(v))",
-            "S2": "curve Higgs factor 1-dimensional: rank <= 2 for every VEV; m_u = 0 at leading order (unconditional)",
+            "S2": "curve Higgs factor 1-dimensional: rank <= 2 for every VEV; m_u = 0 at leading order (unconditional); the ratio of the two "
+                  "nonzero singular values is that of the curve pairing A, independent of the torus Higgs direction (v0.33.1)",
             "S1": "curve Higgs factor 16-dimensional, torus factor 2-dimensional: rank 3 is reached by a Kuenneth-rank-two VEV",
             "consequence": "m_u = 0 at leading order: unconditional in S2; in S1 for Kuenneth-rank-one VEVs"}
 
@@ -74,10 +85,11 @@ def tau_143a1_qseries(dps=30, terms=40):
     """tau of 143a1 on Re tau = 1/2 from j = E4^3/Delta summed as q-series (independent of mpmath's kleinj): y = 1.02327459269646120559956631..."""
     import sympy as _sp
     mp.mp.dps = dps
+    target_j = _j_143a1_at_working_precision()
     def j_of(tau):
         q = mp.exp(2j * mp.pi * tau); E4 = 1 + 240 * sum(int(_sp.divisor_sigma(n, 3)) * q ** n for n in range(1, terms))
         D = q * mp.fprod((1 - q ** n) ** 24 for n in range(1, terms)); return E4 ** 3 / D
-    y = mp.findroot(lambda t: mp.re(j_of(mp.mpc(0.5, t))) - J_143A1, mp.mpf("1.02")); return mp.mpc(0.5, y)
+    y = mp.findroot(lambda t: mp.re(j_of(mp.mpc(0.5, t))) - target_j, mp.mpf("1.02")); return mp.mpc(0.5, y)
 
 def theta_norm_closed_form(k, tau):
     """||theta_{k,j}||_k = (Im tau / 2k)^(1/4) for every j (orthogonal basis with equal norms; compendium VI.5(c))."""
@@ -116,3 +128,24 @@ def up_mass_rank_examples(seed=143, n_random=50):
         Aw = rng.standard_normal((3, 2)) + 1j * rng.standard_normal((3, 2)); Aw[0, 1] = Aw[1, 0]
         prod.add(int(np.linalg.matrix_rank(np.kron(Aw, (nB1 @ rng.standard_normal(2))[None, :]), tol=1e-9)))
     return {"S2_ranks_random_VEVs": sorted(s2), "S1_rank_kunneth_rank_two_VEV": r3, "S1_ranks_product_VEVs": sorted(prod)}
+
+
+# ------------------------------------------------ v0.33.1 (2026-09-26): the S2 leading mass ratio does not see the torus direction
+def s2_ratio_independence(seed=143, n_random=50, A=None):
+    """In S2 the leading up mass matrix is M = A (x) b(t)^T with A the 3 x 2 curve pairing and b(t) = B'^T t the torus contraction of the
+    Higgs direction t.  Then M M^dagger = |b(t)|^2 A A^dagger: the singular values are sigma_i(A) |b(t)|, so the torus direction changes the
+    overall scale only and the ratio sigma_2/sigma_1 equals that of A (undefined when b(t) = 0).  Returns the maximal deviation of the
+    ratio over random t, with the closed-form B' of 143a1 and a random (or supplied) rank-2 curve pairing A.  Float64 demonstration of an
+    identity; the curve pairing itself is computed elsewhere (`surface.rrspace`, `surface.yukawa`)."""
+    B2 = torus_factor_closed_form(1, 3)["B"]
+    nB2 = np.array([[complex(B2[i, j]) for j in range(B2.cols)] for i in range(B2.rows)])
+    rng = np.random.default_rng(seed)
+    A = np.asarray(A, complex) if A is not None else rng.standard_normal((3, 2)) + 1j * rng.standard_normal((3, 2))
+    sA = np.linalg.svd(A, compute_uv=False); ratio_A = sA[1] / sA[0]
+    devs, scales = [], []
+    for _ in range(n_random):
+        t = rng.standard_normal(4) + 1j * rng.standard_normal(4); b = nB2.T @ t
+        sM = np.linalg.svd(np.kron(A, b[None, :]), compute_uv=False)
+        devs.append(abs(sM[1] / sM[0] - ratio_A)); scales.append(abs(sM[0] - sA[0] * np.linalg.norm(b)))
+    return {"ratio_A": float(ratio_A), "max_ratio_deviation": float(max(devs)), "max_scale_deviation": float(max(scales)),
+            "statement": "sigma_i(M) = sigma_i(A) |b(t)|: the torus Higgs direction cancels from the S2 leading mass ratio"}

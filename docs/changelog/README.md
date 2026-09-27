@@ -6,6 +6,7 @@ The current README and capability index describe the current source tree.
 
 - [Unreleased changes](UNRELEASED.md)
 
+- [mtft v0.33.1 — SM interaction atlas, repository navigation, and the v0.33.0 review corrections (2026-09-26)](CHANGELOG_v0331.md)
 - [mtft v0.33.0 — the theorem compendium applied to the toolset; CC-33 (2026-09-23)](CHANGELOG_v0330.md)
 - [mtft v0.32.1 — route-2 first gate (R2C-01) and the oloid-to-Hodge handoff (2026-09-19)](CHANGELOG_v0321.md)
 - [mtft v0.32.0 — Standard Model campaign corrections, KK towers, handoff integration, research gates (2026-09-18)](CHANGELOG_v0320.md)

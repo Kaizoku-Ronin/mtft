@@ -33,3 +33,13 @@ reaches rank 3, so "m_u = 0 at leading order" holds there for Kuenneth-rank-one 
 The torus factors are reproduced without quadrature by the theta multiplication formula, B_{j,b} = c_j(b) (2k/((k+1) Im tau))^{1/4}, to 1e-25
 (`theta_torus.torus_factor_closed_form`); the singular values are a numerical certificate on two routes (tau is transcendental).  h^0(O(sum P - P)) = 1
 for P in {P1, P2, P3} is proved (gonality >= 4); for P = P4 the S2 Higgs factor has no sections.  `V0330_COMPENDIUM_NOTES.md` items 4–6.
+
+
+## Addendum (2026-09-26, v0.33.1): the S2 mass ratio (release review of 24 September, Finding 2)
+The sentence above, "m_c/m_t depends only on the four torus Higgs directions and the fixed A", contradicts the factorisation it rests on.
+In S2 the leading 3 x 6 coupling is M = A (x) b(v)^T and has rank exactly two whenever its torus contraction b(v) is nonzero.  With the product
+kinetic normalisation M M^dagger = |b(v)|^2 A A^dagger: the torus Higgs direction changes the overall scale but cancels from the ratio of the
+two nonzero singular values, which is the ratio for the curve pairing A alone (undefined when b(v) = 0).  Identification with a physical
+charm/top ratio requires resolving the additional vectorlike states and specifying the resulting light spectrum.  `theta_torus.s2_ratio_independence`.
+Also from the review: the released `J_143A1` was an mpf rounded at import precision and both tau routes used it; v0.33.1 reconstructs the
+rational j at each routine's working precision (`_j_143a1_at_working_precision`), which is a repair of the input, not an interval certificate.

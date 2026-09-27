@@ -158,7 +158,7 @@ The atlas trace terminates at **external SM reference inputs**. Its data is
 not presented as an arithmetic derivation. A passed software test verifies its
 stated calculation, not an unrestricted claim of physical validity.
 
-For the current v0.33.0 research line, start with:
+For the current v0.33.x research line (v0.33.1 adds the SM interaction atlas and the review corrections listed in [the v0.33.1 changelog](docs/changelog/CHANGELOG_v0331.md)), start with:
 
 - [Compendium implementation notes](docs/SM/V0330_COMPENDIUM_NOTES.md): exact
   inputs, operator conventions, rank qualifications and independent routes.
