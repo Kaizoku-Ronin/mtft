@@ -153,14 +153,31 @@ S2_STACKS = (("c", 3, (0, 0)), ("L", 2, (3, -1)), ("1", 1, (1, 3)))      # Q = L
 S1_STACKS = (("c", 3, (0, 0)), ("L", 2, (-3, -1)), ("1", 1, (1, -3)))    # Q = (3, 1), u^c = (1, -3), H = (-4, 2)
 STACK_MODELS = {"S1": S1_STACKS, "S2": S2_STACKS}
 
+def h0_cm_divisor(m, genus_Y=6):
+    """h^0(X, O(D)) and h^0(K_X(-D)) for D = m1 P1 + m2 P2 + m3 P3 (+ m4 P4), the P_i the W13-fixed CM points.  EXACT where returned.
+    W13 fixes each P_i, so H^0(K_X(-D)) splits into W13-eigenspaces.  Invariant differentials are odd in a local coordinate z with
+    W13: z -> -z, descend to Y = X/W13 (genus 6) and satisfy ord_{P_i} >= m_i iff the descended form vanishes to order floor(m_i/2) at
+    Q_i = pi(P_i); anti-invariant ones are even and satisfy ord >= m_i iff ord >= 2 ceil(m_i/2).  With gonality(Y) >= 4 (Petri gate) an
+    effective divisor E on Y of degree <= 3 has h^0(K_Y(-E)) = 6 - deg E, and with gonality(X) >= 4 the value conditions at <= 3 of the
+    P_i on the 7-dimensional anti-invariant space are independent.  So for ceil(m_i/2) <= 1 at at most three points and sum floor(m_i/2)
+    <= 3:  h^0(K_X(-D)) = (6 - sum floor(m_i/2)) + (7 - #{i : m_i >= 1}),  and Riemann-Roch gives h^0(O(D)).  Examples: sum P -> 1,
+    2 sum P -> 1 (Lemma E.2), sum P + P1 -> 1 (closes the S1 degree-4 caveat), 2 sum P + P1 -> 1."""
+    m = tuple(m) + (0,) * (4 - len(m))
+    pts = [i for i in range(4) if m[i] >= 1]
+    if len(pts) > 3 or any(-(-mi // 2) > 1 for mi in m) or sum(mi // 2 for mi in m) > 3:
+        return None
+    h0K = (genus_Y - sum(mi // 2 for mi in m)) + (7 - len(pts))
+    deg = sum(m); return {"h0_K_minus_D": h0K, "h0_O_D": h0K + deg + 1 - 13, "degree": deg}
+
 def curve_h0_flux(a):
-    """h^0(X, O(D)) for the flux line bundle of degree a supported on the marked CM points (P in {P1, P2, P3}).
-    Exact for |a| <= 3 (gonality >= 4: hecke.gonality_lower_bound) and for a = 6 = 2 sum P (canonical.gates.gate_petri_w13_quotient);
-    degree 4 (sum P + P) is 1 unless X carries a g^1_4 through those points, which is not excluded — returned as (1, 'open: 1 or 2')."""
+    """h^0(X, O(D)) for the flux line bundle of degree a supported on the marked CM points, D = sum P (a = 3), P1 (1), P2 + P3 (2),
+    sum P + P1 (4), 2 sum P (6), and their negatives.  All exact: gonality >= 4 (hecke.gonality_lower_bound) for |a| <= 3, and
+    `h0_cm_divisor` (the W13 eigenspace decomposition with the Petri gate on the quotient) for a = 4 and a = 6."""
     if a < 0: return 0, None
     if a == 0: return 1, None
-    if a <= 3 or a == 6: return 1, None
-    return 1, "open: 1 unless a g^1_4 passes through the marked points"
+    table = {1: (1,), 2: (0, 1, 1), 3: (1, 1, 1), 4: (2, 1, 1), 5: (2, 2, 1), 6: (2, 2, 2)}
+    if a in table: return h0_cm_divisor(table[a])["h0_O_D"], None
+    return 1, f"degree {a}: not covered by h0_cm_divisor"
 
 def curve_h1_flux(a):
     """h^1 = h^0 - a + 12 (Riemann-Roch, genus 13), with the same caveat as curve_h0_flux."""
@@ -217,3 +234,67 @@ def block_census(r, model="S2", stacks=None, torus_levels=6):
 def census_scan(model="S2", ratios=(sp.Rational(1, 4), sp.Rational(1, 3), sp.Rational(1, 2), 1, 2, 3, 4)):
     """Summary rows of `block_census` across ratios: (r, negative, harmonic negative, harmonic massless)."""
     return [(sp.nsimplify(r), *(lambda s: (s["negative_exact_product_modes"], s["harmonic_negative"], s["harmonic_massless"]))(block_census(r, model)["summary"])) for r in ratios]
+
+
+# ================================================================== v0.33.1 (2026-09-27): the S1/S2 extension graphs (holomorphic recombination data)
+def extension_graph(model="S2", r=None):
+    """For every ordered pair of stacks (i, j): dim Ext^1(L_j, L_i) = h^1(S, L_i L_j^-1) and dim Ext^2 = h^2, from Kuenneth, with the
+    level of the corresponding harmonic classes at r (units 2 pi/A_E; negative = tachyonic, zero = massless, positive = massive) —
+    the exact data every holomorphic recombination of the split background starts from.  Iterated extensions are holomorphic bundles by
+    construction (no obstruction theory), so the remaining question for each candidate is mu-stability at the chosen r."""
+    stacks = STACK_MODELS[model]; x = None if r is None else sp.Rational(1) / sp.nsimplify(r)
+    def curve(a):   # (h0, h1) of the untwisted flux bundle of degree a on X
+        h0 = curve_h0_flux(a)[0]; return h0, h0 - a + 12
+    out = []
+    for (ni, ranki, di), (nj, rankj, dj) in itertools.permutations(stacks, 2):
+        a, b = di[0] - dj[0], di[1] - dj[1]; (h0X, h1X), (h0E, h1E) = curve(a), torus_cohomology(b)
+        ext1_X, ext1_E = h1X * h0E, h0X * h1E                          # X-leg classes H^1(X) (x) H^0(E) and E-leg classes H^0(X) (x) H^1(E)
+        ext2 = h1X * h1E                                                # H^2(S, L) = H^1(X) (x) H^1(E)
+        lev_X = None if x is None else a * x + abs(b); lev_E = None if x is None else abs(a) * x + (-abs(b) if b < 0 else (3 * b if b > 0 else 0))
+        out.append({"extension": f"0 -> L_{ni} -> ? -> L_{nj} -> 0", "class_bundle": (a, b), "n_comp": ranki * rankj,
+                    "ext1": ext1_X + ext1_E, "ext1_X_leg": ext1_X, "ext1_E_leg": ext1_E, "ext2": ext2,
+                    "level_X_leg": lev_X if ext1_X else None, "level_E_leg": lev_E if ext1_E else None})
+    return {"model": model, "r": None if r is None else sp.nsimplify(r), "edges": out}
+
+def s1_colour_recombination_dims(k_colours=3):
+    """S1 at its wall r = 2: the only tachyonic harmonic classes are the 9 of Ext^1(L_c, L_1) = C^3 (x) H^1(E, N_-3).  Recombining
+    k colour components with L_1 by classes xi_1..xi_k in H^1(E, N_-3) that are linearly independent gives a rank-(k+1) extension E_k;
+    gluing the doublet stack L_L on top uses Ext^1(E_k, L_L) = ker( Ext^1(L_1, L_L) -> Ext^2(L_c, L_L)^k ), the cup product with the
+    xi's.  Ext^1(L_1, L_L) = H^1(X, O(-sum P - P)) (x) H^0(E, N_2) (16 x 2 = 32, the Higgs classes) and the cup product factorises:
+    on X, multiplication by the constant section of O(P), H^1(O(-sum P - P)) -> H^1(O(-sum P)), surjective with 1-dimensional kernel;
+    on E, the pairing H^1(N_-3) (x) H^0(N_2) -> H^1(N_-1), which is the S1 torus factor B (3 x 2, rank 2 — VI.5).  Hence the classes
+    eta_{r alpha} must satisfy sum_alpha eta_{r alpha} B(xi_i)_alpha = 0 for the 15 non-kernel r and each i: with rank(B restricted to
+    the xi's) = min(k, 2) the surviving Higgs-type gluing space has dimension 15 * (2 - min(k, 2)) + 2.  EXACT (Kuenneth + VI.5 rank)."""
+    rank = min(k_colours, 2); dim = 15 * (2 - rank) + 2
+    return {"k_colours": k_colours, "tachyonic_classes_used": 3 * k_colours, "rank_E_k": k_colours + 1,
+            "slope_E_k_at_r2_units_A_E": sp.Rational(-5, k_colours + 1), "dim_Ext1_E_k_L_L": dim,
+            "note": "Ext^1(L_c, L_L) = 0 in S1: the doublet stack can only be reached through L_1 (Higgs classes)"}
+
+def cm_point_cp_structure():
+    """CP on X0(143) (complex conjugation tau -> -conj(tau), the real structure of the curve over Q) pairs the W13-fixed points as
+    {P1, P2}, {P3, P4} (they share j = -82306.31.. and j = 6896962306.31.., the two roots of the class polynomial of discriminant -52),
+    while W11 pairs them as {P1, P3}, {P2, P4} (u -> -u; Part A, Lemma II.3.B).  The family divisor sum P = P1 + P2 + P3 ("omit P4")
+    is mapped by CP to "omit P3", by W11 to "omit P2" and by CP W11 to "omit P1": the four choices form one orbit of V4 = <CP, W11>
+    and none of them is CP-invariant.  Since Aut(X0(143)) is the Atkin–Lehner group, "omit P4" ~ "omit P2" and "omit P3" ~ "omit P1"
+    are the two holomorphically inequivalent three-family models, and they are CP conjugates of each other: the flux choice breaks CP
+    explicitly and geometrically.  The torus factor does not: 143a1 has rational j, its tau lies on the CP-symmetric line Re tau = 1/2,
+    and every rephasing-invariant quartet phase of the closed-form B (S1) and B' (S2) is 0 or pi (`torus_cp_test`)."""
+    return {"CP_pairs": (("P1", "P2"), ("P3", "P4")), "W11_pairs": (("P1", "P3"), ("P2", "P4")),
+            "u_values": {"P1": "-i/sqrt(13)", "P2": "+i/sqrt(13)", "P3": "+i/sqrt(13)", "P4": "-i/sqrt(13)"},
+            "orbit_of_family_divisor": {"identity": "omit P4", "CP": "omit P3", "W11": "omit P2", "CP W11": "omit P1"},
+            "conclusion": "the three-family flux breaks CP explicitly; the torus factor is CP-conserving"}
+
+def torus_cp_test(tol=1e-12):
+    """Rephasing-invariant quartet phases arg(B_jb B_j'b' conj(B_jb') conj(B_j'b)) of the closed-form torus factors: all 0 or pi means
+    B is equivalent to a real matrix, i.e. the torus contributes no CP-violating phase."""
+    from . import theta_torus as TT
+    import mpmath as mp
+    out = {}
+    for name, k2 in (("S1", 2), ("S2", 3)):
+        B = TT.torus_factor_closed_form(1, k2)["B"]; phases = []
+        for (j, jj) in itertools.combinations(range(B.rows), 2):
+            for (b, bb) in itertools.combinations(range(B.cols), 2):
+                q = B[j, b] * B[jj, bb] * mp.conj(B[j, bb]) * mp.conj(B[jj, b])
+                if abs(q) > 1e-20: phases.append(float(mp.arg(q)))
+        out[name] = {"quartet_phases": phases, "real_up_to_rephasing": all(min(abs(p), abs(abs(p) - float(mp.pi))) < tol for p in phases)}
+    return out

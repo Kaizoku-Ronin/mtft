@@ -30,5 +30,26 @@ def test_slope_level_and_ground_levels_are_consistent():
 def test_s1_wall_has_nine_harmonic_tachyons():
     s = PS.block_census(2, "S1")["summary"]
     assert s["harmonic_negative"] == 9 and s["negative_exact_product_modes"] == 99 and s["critical_r"] == [sp.Rational(1, 3), 2, 3]
-    assert any("g^1_4" in n for n in PS.block_census(2, "S1")["notes"])                       # the degree-4 caveat is declared, not hidden
-    assert PS.curve_h0_flux(6) == (1, None) and PS.curve_h0_flux(4)[1] is not None and PS.curve_h0_flux(-2) == (0, None)
+    assert PS.block_census(2, "S1")["notes"] == []                                                # the degree-4 caveat is closed (h0_cm_divisor)
+    assert PS.curve_h0_flux(6) == (1, None) and PS.curve_h0_flux(4) == (1, None) and PS.curve_h0_flux(-2) == (0, None)
+
+
+def test_h0_of_cm_divisors_by_w13_eigenspaces():
+    assert PS.h0_cm_divisor((1, 1, 1)) == {"h0_K_minus_D": 10, "h0_O_D": 1, "degree": 3}          # Lemma E.1
+    assert PS.h0_cm_divisor((2, 2, 2)) == {"h0_K_minus_D": 7, "h0_O_D": 1, "degree": 6}           # Lemma E.2
+    assert PS.h0_cm_divisor((2, 1, 1))["h0_O_D"] == 1 and PS.h0_cm_divisor((2, 2, 1))["h0_O_D"] == 1   # no g^1_4, g^1_5 through 2P1+P2+P3, 2P1+2P2+P3
+    assert PS.h0_cm_divisor((1, 1, 1, 1)) is None and PS.h0_cm_divisor((3, 1, 1)) is None            # four points / order-3 conditions: not decided here
+
+
+def test_s1_extension_graph_and_gluing_dimensions():
+    g = {e["class_bundle"]: e for e in PS.extension_graph("S1", 2)["edges"]}
+    assert g[(1, -3)]["ext1"] == 3 and g[(1, -3)]["level_E_leg"] == sp.Rational(-5, 2)            # Ext^1(L_c, L_1): the 9 tachyons (x3 colours)
+    assert g[(-4, 2)]["ext1"] == 32 and g[(-4, 2)]["level_X_leg"] == 0 and g[(4, -2)]["ext1"] == 2  # Higgs classes and their conjugates, massless
+    assert g[(-3, -1)]["ext1"] == 0 and g[(-3, -1)]["ext2"] == 15 and g[(3, 1)]["ext1"] == 10       # no colour–doublet recombination at all
+    assert [PS.s1_colour_recombination_dims(k)["dim_Ext1_E_k_L_L"] for k in (1, 2, 3)] == [17, 2, 2]
+
+
+def test_cp_structure_of_the_flux_choice():
+    c = PS.cm_point_cp_structure(); assert c["CP_pairs"] == (("P1", "P2"), ("P3", "P4")) and c["W11_pairs"] == (("P1", "P3"), ("P2", "P4"))
+    assert set(c["orbit_of_family_divisor"].values()) == {"omit P1", "omit P2", "omit P3", "omit P4"}
+    t = PS.torus_cp_test(); assert t["S1"]["real_up_to_rephasing"] and t["S2"]["real_up_to_rephasing"]

@@ -77,6 +77,28 @@ r (minimum 8 for S2 at r = 3, 9 for S1 at r = 2).  Critical ratios: 1/3, 1/2, 3 
 `tests/test_v0331.py`.  Excited curve levels are not exact, so the negative counts are lower bounds on the Morse index and the
 harmonic counts are exact.
 
+## 9. The S1 wall: degree-4 gate closed, extension graph, gluing dimensions, and the CP structure of the flux choice (v0.33.1, 27 Sept) — EXACT
+- `product_surface.h0_cm_divisor(m)`: for D = sum m_i P_i on the W13-fixed points, H^0(K_X(-D)) splits into W13-eigenspaces; invariant
+  differentials descend to Y = X/W13 with ord halved, anti-invariant ones satisfy the conditions in pairs.  With gonality(Y) >= 4 and
+  gonality(X) >= 4: h^0(K_X(-D)) = (6 - sum floor(m_i/2)) + (7 - #points) when ceil(m_i/2) <= 1 at <= 3 points.  Consequences:
+  h^0(O(sum P + P1)) = 1 (no g^1_4 through 2P1 + P2 + P3), so the S1 block census is fully exact; Lemmas E.1/E.2 are the cases (1,1,1), (2,2,2).
+- `extension_graph("S1", 2)`: Ext^1(L_c, L_1) = 3 per colour (the 9 tachyons, level -5/2), Ext^1(L_1, L_L) = 32 and Ext^1(L_L, L_1) = 2
+  (massless: the Higgs classes and their conjugates), Ext^1(L_1, L_c) = 39 and Ext^1(L_L, L_c) = 10 (massive), Ext^1(L_c, L_L) = 0 with
+  Ext^2 = 15: the colour and doublet stacks cannot recombine directly; every path from colour to the doublets passes through L_1.
+- `s1_colour_recombination_dims(k)`: recombining k colours with L_1 (linearly independent classes xi in H^1(E, N_-3)) gives a rank-(k+1)
+  bundle E_k of slope -5/(k+1) A_E at r = 2; the Higgs-type gluing space Ext^1(E_k, L_L) is the kernel of the cup product with the xi's,
+  which factorises (multiplication by the constant section of O(P) on X, the rank-2 torus factor B of VI.5 on E): its dimension is
+  15 (2 - min(k,2)) + 2 = 17, 2, 2 for k = 1, 2, 3.  Iterated extensions are holomorphic bundles; their mu-stability at r = 2 is the
+  open, finite question (the first destabilising candidates are L_c(-X x {e}), slope -2 A_E, which lift to E_k exactly along the cone over
+  the plane cubic |N_3|(E) in P(H^1(E, N_-3))).  Any such bundle keeps the summand slopes of L_L (-5 A_E) and E_k unequal unless the
+  Higgs gluing is used, so "recombination at the S1 wall" means an iterated extension through the 2-dimensional gluing space.
+- `cm_point_cp_structure`, `torus_cp_test`: complex conjugation pairs the CM points {P1, P2}, {P3, P4} (equal j), W11 pairs {P1, P3},
+  {P2, P4}; the family divisor "omit P4" is sent to "omit P3" by CP, "omit P2" by W11, "omit P1" by CP W11 — one V4-orbit, no CP-fixed
+  choice — so the three-family flux breaks CP explicitly and the two holomorphically inequivalent models are CP conjugates.  The torus
+  factors B, B' have all rephasing-invariant quartet phases equal to 0 or pi: the torus is CP-conserving (Re tau = 1/2, rational j).
+  Every CP-violating phase — the CKM phase and the strong-CP angle after the leading-order m_u = 0 of S2 is lifted — therefore comes
+  from the curve pairing and the vacuum values, not from 143a1.
+
 ## 7. Method note (D4 closure gate, `tests/test_v0230.py`)
 The greedy absolute gate of `liealg.close_lie` normalised near-dependent residuals and sat inside its ambiguity window on one platform
 (residual 1.25e-7 on Windows, 9.3e-8 on Linux) for reasons of the algorithm, not of the data.  `liealg.close_lie_svd` (singular-value

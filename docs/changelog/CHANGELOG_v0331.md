@@ -26,6 +26,11 @@
   (279 negative directions, 90 Dolbeault-closed, 4 + 56 massless Higgs coefficients) and gives S1's wall 99 / 9. No split background is
   polystable at any r. Legend `surface_block_census`; `tests/test_v0331.py`; notes item 8.
 
+- `product_surface.h0_cm_divisor` (W13-eigenspace count of h^0 for divisors on the CM points: closes the S1 degree-4 caveat, contains
+  Lemmas E.1/E.2 as cases), `extension_graph` (Ext^1/Ext^2 between stacks with levels), `s1_colour_recombination_dims` (the Higgs gluing
+  space after colour–L_1 recombination: 17, 2, 2 dimensions), `cm_point_cp_structure` and `torus_cp_test` (the flux choice breaks CP
+  explicitly; the torus factor is CP-conserving). Notes item 9; `tests/test_v0331.py`.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153
