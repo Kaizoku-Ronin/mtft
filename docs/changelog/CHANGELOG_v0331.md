@@ -42,6 +42,17 @@
   even net chirality (zero for the spin twist); the S1/S2 families are vector-like pairs in an adjoint 8D theory. `rank2_net_index_lemma`:
   under a chiral parent, polystable SM vacua with summands of rank <= 2 cannot give Q and u^c the required opposite net indices. Notes 12–13.
 
+## The parent-action ledger and CC-34 (28 September 2026)
+
+- `docs/SM/PARENT_ACTION_REQUIREMENTS.md`: every constraint proved so far on a parent action (odd chirality, Yukawa between chiral
+  families, hypercharge placement, unbroken SU(3) x SU(2) x U(1)_Y, stability, tachyon-freedom, light Higgs, strong CP, anomaly integrality,
+  hypercharge normalisation), the theorem behind each, its gate, and the three candidate classes that survive the parity theorem (a chiral
+  8D parent, matter on curves, a non-spin blow-up) with the tools each needs. `tests/test_parent_ledger.py` ties the ledger to the code.
+- CC-34 (`docs/SM/CC34_DARK_ENERGY_FORMULA_AUDIT.md`, `scripts/cosmology/cc34_cosmology_audit.py`): the dark-energy formula
+  rho_Lambda/M_P^4 = delta^-6 exp(-2/alpha) evaluates to 9.05e-124 (an arithmetic slip in the papers gave 1.296e-123); its agreement holds
+  only for the non-reduced Planck mass, at 20%, and rests on two undetermined structural choices: retagged DIAGNOSTIC. "Lambda exactly
+  constant" is kept as the falsifiable prediction, with DESI as the watch. Documentation only: the package does not implement the formula.
+
 ## SM interaction atlas and repository organisation (25 September 2026, commit ad457373)
 
 - Add `mtft.interactions`: a pinned, offline reference containing all 153
