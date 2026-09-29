@@ -18,7 +18,7 @@ reviews to detect modules missing from this index.
 | Module | Scope | Entry points |
 |---|---|---|
 | [`mtft`](../src/mtft/__init__.py) | MTFT — Modular Time Field Theory | Package exports / data |
-| [`mtft.__main__`](../src/mtft/__main__.py) | MTFT Command-Line Interface | `cmd_verify`, `cmd_report`, `cmd_tower`, `cmd_screen` (+2 more in source) |
+| [`mtft.__main__`](../src/mtft/__main__.py) | MTFT Command-Line Interface | `cmd_verify`, `cmd_report`, `cmd_tower`, `cmd_screen` (+3 more in source) |
 | [`mtft.al_morphology`](../src/mtft/al_morphology.py) | mtft.al_morphology — what Atkin-Lehner does to shape (v0.24.0). | `al_traces`, `morphology`, `cusp_torsor` |
 | [`mtft.arithmetic`](../src/mtft/arithmetic.py) | MTFT Arithmetic Weights and Holonomy Stiffness | `weight`, `weight_array`, `weight_euler`, `damped_weight` (+10 more in source) |
 | [`mtft.arithmetic_machine`](../src/mtft/arithmetic_machine.py) | Arithmetic Machine: Computation as a Five-Primitive Object | `Primitive`, `PrimitiveLevel`, `PrimitiveDecomposition`, `decompose_turing_machine` (+29 more in source) |
@@ -71,6 +71,7 @@ reviews to detect modules missing from this index.
 | [`mtft.moments`](../src/mtft/moments.py) | Tano weight moments — closed forms for the arithmetic ensemble | `sieve_primes`, `primesum_logk`, `rep_mul`, `S_r` (+18 more in source) |
 | [`mtft.monster_hash`](../src/mtft/monster_hash.py) | MonsterHash — SL(2,Z)-Sponge Hash Function | `MonsterHash`, `compare_hashes` |
 | [`mtft.music`](../src/mtft/music.py) | MTFT Music Module — Arithmetic Sonification Engine | `VacuumSonifier`, `ModularScale`, `Note`, `Phrase` (+4 more in source) |
+| [`mtft.parent`](../src/mtft/parent.py) | mtft.parent — candidate parent actions as data, and the parent-action ledger's gates as verdicts (PV-01, 2026-09-29). | `ParentCandidate`, `gates`, `ledger_table` |
 | [`mtft.particles`](../src/mtft/particles.py) | Standard Model particle database with MTFT modular-time embeddings. | `ParticleType`, `Particle`, `StandardModel` |
 | [`mtft.peel`](../src/mtft/peel.py) | mtft.peel — Mellin peel engine for the bulk and skeleton stiffness. | `w_sieve`, `lambda_sieve`, `F_bulk`, `mu_bulk_direct` (+5 more in source) |
 | [`mtft.quadratic_forms`](../src/mtft/quadratic_forms.py) | mtft.quadratic_forms — the Gauss-Legendre three-squares layer (v0.19.0). | `v2`, `forbidden`, `forbidden_projector`, `r3_array` (+3 more in source) |
@@ -163,6 +164,7 @@ reviews to detect modules missing from this index.
 |---|---|---|
 | [`mtft.research`](../src/mtft/research/__init__.py) | Experimental research namespace (Wave B/C of the v0.32.0 plan): parent theories, anomaly polynomials, charge lattices, | Package exports / data |
 | [`mtft.research.anomalies`](../src/mtft/research/anomalies.py) | INT-05 (AXG-01 §3): 4D anomaly polynomial of a stack model with line fluxes, and its factorization through the shift matrix. | `stack_model`, `anomaly_polynomials`, `directional`, `polarised_trace` (+3 more in source) |
+| [`mtft.research.anomaly8d`](../src/mtft/research/anomaly8d.py) | PV-01 (2026-09-29): the ten-form anomaly polynomial of chiral eight-dimensional field content, exactly — the gate the | `Ch`, `s`, `rank`, `fund` (+24 more in source) |
 | [`mtft.research.bordism`](../src/mtft/research/bordism.py) | INT-12 (AXG-04 §5): the C3X ordinary spin-bordism certificate, Omega_7^Spin(B(SU3 x SU2 x U1^2)) = 0. | `c3x_spin_bordism_certificate` |
 | [`mtft.research.charge_lattices`](../src/mtft/research/charge_lattices.py) | INT-06 (AXG-01 §§4, 6; AXG-03 §4): shift kernel, Smith remnants, integer dressings and kinetic-normalised vector masses. | `shift_kernel`, `smith_remnant`, `integer_dressing`, `canonical_vector_masses` |
 | [`mtft.research.chirality`](../src/mtft/research/chirality.py) | R2C-01 (Astra, 2026-09-18; verified independently 2026-09-19): 6D chirality assignments for M1's ten oriented bifundamentals. | `sector_degrees`, `clifford_6d`, `bilinear_selection`, `signed_index` (+3 more in source) |
@@ -174,9 +176,11 @@ reviews to detect modules missing from this index.
 | [`mtft.research.parents`](../src/mtft/research/parents.py) | INT-10: immutable model records — M1, the rejected parent controls, and C3X — with the conventions each carries. | Package exports / data |
 | [`mtft.research.pipeline`](../src/mtft/research/pipeline.py) | Composed gate battery (Wave C): field inventory -> anomaly polynomial -> charge lattice -> discrete anomaly -> flux/scalar gate | `m1_gate_report`, `c3x_gate_report`, `route_2_requirements` |
 | [`mtft.research.product_surface`](../src/mtft/research/product_surface.py) | R2C-07 (2026-09-19): the product surface S = X0(143) x E (E = 143a1) — index and slope decoupled (exact arithmetic). | `curve_cohomology`, `torus_cohomology`, `product_block`, `triangle` (+28 more in source) |
+| [`mtft.research.reflection_positivity`](../src/mtft/research/reflection_positivity.py) | CC-35 (2026-09-29): reflection positivity of the MTFT lattice action — the Polyakov-loop term is NOT covered by the Osterwalder–Seiler | `a_n`, `hook_expansion`, `reduce_to_su`, `conjugate_rep` (+10 more in source) |
 | [`mtft.research.tensor_gs`](../src/mtft/research/tensor_gs.py) | INT-07 (AXG-02 §6, AXG-03 §4, AXG-04 §5): flux/scalar gates, tensor transgression, factorization and integral lattices. | `native_scalar_flux_gate`, `flux_transgression`, `factorization_check`, `c3x_anomaly_polynomial` (+1 more in source) |
 | [`mtft.research.theta_torus`](../src/mtft/research/theta_torus.py) | R2C-09 (2026-09-19): the torus factor of the surface Yukawa — theta functions on 143a1. | `tau_143a1`, `theta_basis`, `inner`, `torus_factor` (+7 more in source) |
 | [`mtft.research.unified_parent`](../src/mtft/research/unified_parent.py) | R2C-04 (2026-09-19): where an MTFT-native parent can live — exact representation-theoretic facts. | `parent_admissible`, `complex_block_families`, `e7_three_27_families`, `e6_three_16_families` (+3 more in source) |
+| [`mtft.research.vacuum_energy`](../src/mtft/research/vacuum_energy.py) | PV-01 (2026-09-29): the flux (Yang–Mills) energy of a split background on S = X0(143) x 143a1 as an exact function of the shape modulus | `intersection`, `line_bundle_energy`, `split_topology`, `flux_energy` (+3 more in source) |
 | [`mtft.research.vector_higgs`](../src/mtft/research/vector_higgs.py) | R2C-02 (2026-09-19): the internal-vector Higgs of M1 — mode operator, tachyon mass, and the Yukawa as the gauge interaction. | `tachyon_mass2`, `mass_operator_spectrum`, `m1_vector_higgs_spectrum`, `yukawa_gauge_ratio` (+5 more in source) |
 | [`mtft.research.yukawa_triangle`](../src/mtft/research/yukawa_triangle.py) | R2C-06 (2026-09-19): the telescoping theorem for gauge-vertex Yukawas, and the light-Higgs no-go of the class on a curve. | `triangle_closure`, `forced_higgs_hypercharge`, `m1_triangles`, `e7_triangle_test` (+1 more in source) |
 
@@ -187,6 +191,7 @@ reviews to detect modules missing from this index.
 | [`mtft.surface`](../src/mtft/surface/__init__.py) | mtft.surface — the Modular Surface Laboratory as an mtft subpackage (v0.27.0). | `report`, `all_pass` |
 | [`mtft.surface.arithspin`](../src/mtft/surface/arithspin.py) | mtft.surface.arithspin — arithmetic spin structures, cuspidal group, CM fixed points, three-family purity | `divisors`, `eta_quotient_lattice`, `in_lattice`, `cuspidal_group` (+15 more in source) |
 | [`mtft.surface.bimodule`](../src/mtft/surface/bimodule.py) | mtft.surface.bimodule — doubled-space (real spectral triple) census on H_1(X0(N), R). | `orthonormal_frame`, `sector_dimensions`, `tensor_sector_dimensions`, `adjoint_identity` (+10 more in source) |
+| [`mtft.surface.blowup`](../src/mtft/surface/blowup.py) | mtft.surface.blowup — B3 of the parent-action ledger (PV-02, 2026-09-29): the blow-up of X0(143) x 143a1 at an arithmetic point, its | `dot`, `self_intersection`, `is_spin`, `net_chirality` (+11 more in source) |
 | [`mtft.surface.condensation`](../src/mtft/surface/condensation.py) | mtft.surface.condensation — tachyon condensation as bundle extension (COND-01, v0.29.0). | `tachyon_mass2`, `condensation_energy`, `extension_cohomology` |
 | [`mtft.surface.crt_dessin`](../src/mtft/surface/crt_dessin.py) | INT-04a (HOPF-02 §§1–3): P^1(Z/143) = P^1(F_11) x P^1(F_13) by CRT and the canonical dessin of X0(143). | `crt`, `canon_prime`, `crt_projective_line`, `act` (+4 more in source) |
 | [`mtft.surface.cycles`](../src/mtft/surface/cycles.py) | mtft.surface.cycles — EXACT layer: deterministic integral basis of H_1(X0(N), Z). | `bareiss_det`, `CycleBasis`, `tree_cotree` |

@@ -53,3 +53,26 @@ U ⊕ ⟨−2δ⟩ ⊕ ⟨−1⟩, spin^c structures, the parity gate on it), th
 
 Release shape: v0.33.1 (eight commits: atlas, review corrections, census, S1 wall, S1 theorem, trilemma, parity, this ledger with CC-34) now; v0.34.0
 when the `parent` gates and at least one of B1–B3's toolchains land.
+
+## E. Appended 29 September 2026 (PV-01; see `PV01_PARENT_VACUUM_REGISTER.md`)
+- Tools landed: `research/anomaly8d.py` (B1's `I10`, `classify`, `gs_decomposition`, `specialise`; the split-stack parity lemma; the B1
+  finite search `b1_scan` with `hypercharge_assignment` — row 3's tool — and `b1_trilemma`), `research/vacuum_energy.py` (section C:
+  `flux_energy`, `hym_floor`, `einstein_frame_scaling`), and `mtft.parent` (D.2: `ParentCandidate`, `gates`, `ledger_table`, `python -m mtft parent`).
+- Row 9 for 8D parents: quintic-free content with one 2-form (SU(N)) or a 2-form plus an axion (U(N)) Green–Schwarz completion; `gates` reports the
+  irreducible quintic and the number of fields.  Global anomalies remain open.
+- Result: the class U(8) ⊃ U(3) x U(2) x U(1)^3 with Lambda^2(8) + 8 x 8 has split backgrounds whose net chiral content is exactly three
+  Standard-Model families (60 in box 3, 156 in box 4) — rows 1 and 3 pass, row 9 passes with two Green–Schwarz fields — but no assignment has
+  rows 2, 4 and 7 at one ratio: Y+H and Y+C are disjoint in box 3; in box 4 the two loci coexist only at different shapes (r_H = 2, r_c = 5/2).
+  Row 6 fails for every split background (never polystable); row 5 is open for these stacks.  The trilemma is transported, not escaped.
+- Section C, first numbers: S1 and S2 share E(r) = 4 pi^2 (19/r + 11 r); HYM floors 32/3 at r = 1 (S1) and r = 7 (S2); no volume stationary point
+  in the Einstein frame; no Lambda selected classically.
+
+## F. Appended 29 September 2026 (PV-02; see `PV02_BLOWUP_SUSY_REGISTER.md`)
+- B3 toolchain landed: `mtft.surface.blowup` (lattice U ⊕ ⟨−8⟩ ⊕ ⟨−1⟩, K̃ = 24f₁ + E, SUSY twist net = e − 24b, ampleness, slopes,
+  `polystable_locus`, `d_flat_sm_search`, `collinear_family`).  The blow-up is not spin: row 1's parity obstruction disappears and the
+  supersymmetric twist gives odd chirality from adjoint matter.
+- Supersymmetry decision, consequences recorded: a supersymmetric 8D parent has adjoint bulk matter only (B1 excluded); on the product its net
+  chirality is −24b (never 3); on the blow-up there are D-flat exact-SM split backgrounds (116 in the search box), so rows 4, 6 and 7 hold
+  simultaneously at a point of the Kähler cone — the trilemma's root (one ratio, many slope rays) is removed by the second Kähler modulus.
+  Row 2 (Yukawa) on the blow-up needs h¹/h⁰(K̃ ⊗ L) and is open; every solution carries ≥ 6 vector-like doublet pairs.
+- Added to the constraint list: n_A = n_B + 1 singlet stacks for hypercharge (coboundary structure of adjoint chirality).

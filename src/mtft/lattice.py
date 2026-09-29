@@ -14,9 +14,14 @@ The arithmetic term replaces the single Wilson coupling with an infinite
 tower of arithmetically determined couplings {wₙ/g²}.
 
 Key features:
-    - Reflection positivity (OS2) proven via Osterwalder-Seiler (Paper 24)
-    - μ_N(y) > 0 unconditionally → nonperturbative mass gap
-    - Continuum limit via asymptotic freedom scaling
+    - Reflection positivity (OS2): a theorem for the Wilson term (Osterwalder-Seiler 1978).  For the arithmetic
+      Polyakov term it is UNPROVEN — CC-35: the lemma "c_n >= 0 makes exp(c_n Re Tr P^n) positive-definite" (Paper 13
+      §4.2, Paper 24 Thm 2.4) is false for n >= 2, and site-reflection positivity fails at strong coupling at the
+      default (kappa, y).  See mtft.research.reflection_positivity and docs/SM/CC35_REFLECTION_POSITIVITY.md.
+    - μ_N(y) > 0 unconditionally: the classical curvature (stiffness) of the Polyakov potential at the centre-symmetric
+      point — NOT a spectral gap of the transfer matrix (CC-35).
+    - The Polyakov term singles out time and needs a compact time circle: the action is not O(4)/hypercubic invariant.
+    - Continuum limit: asymptotic-freedom scaling is a heuristic, not a construction.
     - SU(N) for any N; specialises to SU(3) for QCD
 
 This module provides data structures and Monte Carlo tools for
@@ -302,11 +307,13 @@ class MTFTAction:
 
     def mass_gap_bound(self, N: int = 3) -> float:
         """
-        Analytic lower bound on the mass gap from arithmetic stiffness:
+        The arithmetic stiffness μ_N(y) (the method name is historical).
 
-            m²_gap ≥ κ·μ_N(y) / (K·λ(α))
+        Papers 5/13 propose  m²_gap ≥ κ·μ_N(y) / (K·λ(α));  CC-35: that inequality is a programme target, not a
+        theorem — μ_N is the classical curvature of the Polyakov potential, and the reflection positivity needed to
+        speak of a transfer-matrix gap is unproven for this action.
 
-        Returns μ_N(y) (the arithmetic part).
+        Returns μ_N(y).
         """
         return mass_gap_stiffness(self.y, N=N, n_max=self.n_max)
 

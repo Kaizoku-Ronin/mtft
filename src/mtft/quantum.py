@@ -9,8 +9,8 @@ entangled states carry the SAME topological structure as Yang-Mills
 monopoles, with wrapping numbers = topological charges = quantum numbers.
 
 MTFT adds: the arithmetic weights wₙ provide a SPECIFIC realization of
-these gauge fields, with the mass gap μ_N(y) > 0 guaranteeing topological
-protection unconditionally.
+these gauge fields, with the stiffness μ_N(y) > 0 (the papers' 'mass gap'; a classical
+curvature, not a spectral gap — CC-35) as the proposed source of topological protection.
 
 Modules:
     1. HolonomyGate     — Quantum gates from path-ordered exponentials on SU(N)
