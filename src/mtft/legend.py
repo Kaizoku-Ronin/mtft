@@ -161,13 +161,14 @@ _reg(LegendEntry("HosotaniMTFT", "2", "engine", ("I", "III", "V"), "Pp", "PHENO"
 _reg(LegendEntry("mu_stiffness", "5c", "identity", ("I", "II", "III", "V"),
                  "Pr", "EXACT",
                  "mu_N(y) = sum n^2 w_n e^{-2pi y n}(1 - cos 2pi n/N): "
-                 "the Laplace-ensemble mass-gap object.",
+                 "the Laplace-ensemble stiffness object (the papers' 'mass gap'; a classical curvature, not a "
+                 "spectral gap — CC-35).",
                  example="mtft.tower / viz.make_hero",
                  upstream=("w_n",)))
 _reg(LegendEntry("filtered_moment_identity", "5d", "identity",
                  ("I", "III", "IV", "V"), "Pr", "EXACT",
-                 "mu_N(y) = (1/4pi^2)[T''(y) - Re T''(y - i/N)] — mass gap "
-                 "as twisted-minus-untwisted curvature. Machine precision.",
+                 "mu_N(y) = (1/4pi^2)[T''(y) - Re T''(y - i/N)] — the stiffness "
+                 "as twisted-minus-untwisted curvature. Machine precision. (CC-35: not a spectral gap.)",
                  example="mtft.filtered_moment_identity(0.18174, N=3)",
                  upstream=("mu_stiffness",), ref="v0.7.1; N=3 = SU(3) center"))
 _reg(LegendEntry("y_c", "5c", "constant", ("V",), "Pr", "CERTIFIED",
@@ -802,6 +803,61 @@ V0330_LEGEND = (
          example="mtft.liealg.close_lie_svd", upstream=("X0_143",), ref="tests/test_v0230.py"),
 )
 for _d in V0330_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+# ═══════════════════════════════════════════════════════════════
+#  PV-01 (2026-09-29): parent actions and vacua
+# ═══════════════════════════════════════════════════════════════
+
+PV01_LEGEND = (
+    dict(name="anomaly_8d_ten_form", tier="2", kind="identity", primitives=("III",), tag="Pr", exactness="EXACT",
+         nature="Ten-form anomaly of chiral 8D content by lambda-ring rules on the Chern character: tr_{Lambda^2} F^5 = (N - 16) tr F^5 + 5 tr F tr F^4 "
+                "+ 10 tr F^2 tr F^3, Sym^2 with N + 16, adjoint zero. SU(N >= 5): the quintic vanishes iff n_F + (N - 16) n_A + (N + 16) n_S = 0 and the "
+                "remainder is s_3 X_4 (one Green-Schwarz 2-form; the cubic Casimir that obstructs 6D is the 8D GS factor); U(N) needs an axion too. "
+                "No exact cancellation without GS. No pure gravitational anomaly in 8D.",
+         example="mtft.research.anomaly8d.sun_content_conditions(6)", upstream=("cc33_tensor_coefficient",), ref="docs/SM/PV01_PARENT_VACUUM_REGISTER.md"),
+    dict(name="b1_split_stack_search", tier="2", kind="identity", primitives=("V", "III"), tag="Cert", exactness="EXACT (finite scan, box 3 / box 4)",
+         nature="Split-stack parity lemma (L_i^2 blocks even; only L_i^{+-1} and L_i L_j odd) and the exact search over Lambda^2(N) + (16 - N) N: k = 1, 2 "
+                "singlet stacks give no Standard Model; U(8) with three singlet stacks gives exactly three families (60 assignments in box 3, 156 in box 4) "
+                "with a rational hypercharge, yet never a Yukawa, a slope-free Higgs and a colour-matched slope at one ratio (r_H = 2 vs r_c = 5/2 at best).",
+         example="mtft.research.anomaly8d.b1_trilemma(mtft.research.anomaly8d.b1_scan(3, 3))", upstream=("anomaly_8d_ten_form", "surface_block_census"), ref="docs/SM/PV01_PARENT_VACUUM_REGISTER.md"),
+    dict(name="flux_energy_landscape", tier="2", kind="identity", primitives=("V", "I"), tag="Pr", exactness="EXACT",
+         nature="int |F|^2 = 4 pi^2 (a^2/r + b^2 r) per line bundle (AM >= GM floor 8 pi^2 |ab| at r = |a/b|); split background E = 4 pi^2 (A/r + B r), "
+                "r* = sqrt(A/B), Cauchy-Schwarz excess over the floor; HYM floor [Delta + A_1^2/r + B_1^2 r]/N. S1 and S2 share (A, B) = (19, 11); floors 32/3 "
+                "at r = 1 and r = 7; Einstein frame: flux Vol^-2, curvature r^-1/2 Vol^-3/2, no volume stationary point, shape stabilised at fixed volume.",
+         example="mtft.research.vacuum_energy.landscape_report('S2')", upstream=("surface_block_census",), ref="docs/SM/PV01_PARENT_VACUUM_REGISTER.md"),
+    dict(name="parent_ledger_gates", tier="3", kind="engine", primitives=("III", "V"), tag="Df", exactness="EXACT (verdicts) / OPEN (rows the data do not decide)",
+         nature="mtft.parent: a ParentCandidate is finite data; gates() returns True/False/None with witnesses for the ledger rows 1-10 and section C; "
+                "ledger_table() and `python -m mtft parent` print the scoreboard over the catalogue (three-stack S1/S2, three B1 U(8) exemplars, M3, C3X).",
+         example="python -m mtft parent B1_U8_LAMBDA2_HC", upstream=("b1_split_stack_search", "flux_energy_landscape", "surface_block_census"), ref="docs/SM/PARENT_ACTION_REQUIREMENTS.md"),
+)
+for _d in PV01_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+PV02_LEGEND = (
+    dict(name="blowup_susy_twist", tier="2", kind="identity", primitives=("V", "II"), tag="Pr", exactness="EXACT (lattice, RR, ampleness); search EXACT in box",
+         nature="Bl_p(X0(143) x 143a1): NS contains U (+) <-8> (+) <-1>, K~ = 24 f1 + E (K~^2 = -1, not spin). Supersymmetric twist: adjoint-block "
+                "chirality e - 24 b, a coboundary of phi(d) = e - 24 b; exact SM needs n_A = n_B + 1 singlet stacks and >= 6 vector-like doublet pairs. "
+                "Kahler class A_X f1 + A_E f2 - eps E ample iff 0 < eps < min(A_X, A_E). 116 D-flat exact-SM split backgrounds in the search box; the "
+                "single-line-bundle family v = (1,0,-3) (traceless SU(8) flux, charges 0,1,-1,2,-3) is D-flat on eps = A_E/3 for every r > 1/3.",
+         example="mtft.surface.blowup.report(6)", upstream=("parent_ledger_gates", "flux_energy_landscape"), ref="docs/SM/PV02_BLOWUP_SUSY_REGISTER.md"),
+)
+for _d in PV02_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+CC35_LEGEND = (
+    dict(name="cc35_reflection_positivity", tier="2", kind="identity", primitives=("III",), tag="Pr", exactness="EXACT (lemma, first order, repair) / NUMERICAL (thresholds)",
+         nature="CC-35: reflection positivity of the MTFT lattice action retracted from PROVEN to OPEN. Tr U^n is a virtual character "
+                "(Tr U^2 = chi_Sym2 - chi_Lambda2), so exp(c Re Tr P^n), c > 0, is not positive-definite for n >= 2; w_1 = 0 leaves nothing to compensate. "
+                "At kappa = 1, y = 0.18174 the Polyakov kernel has coefficients -0.0047 (SU(3) 3bar), -0.0040 (adjoint), -0.0059 (SU(2) spin 1/2): "
+                "site-reflection positivity fails at strong coupling. Link reflections and the gauge-invariant sector: open. mu_N is a stiffness, not a gap. "
+                "Repair: weights on chi_Sym^n (positive-definite, exact).",
+         example="mtft.research.reflection_positivity.cc35_report()", upstream=("mu_stiffness", "anomaly_8d_ten_form"), ref="docs/SM/CC35_REFLECTION_POSITIVITY.md"),
+)
+for _d in CC35_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 

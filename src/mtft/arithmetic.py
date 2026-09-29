@@ -10,7 +10,7 @@ Key series at modular depth y:
     S₁(y)  = Σ aₙ(y)           (partition function / stiffness action)
     S(y)   = Σ n² aₙ(y)        (holonomy stiffness)
     C_N(y) = Σ n² aₙ(y) cos(2πn/N)  (center-projected stiffness)
-    μ_N(y) = min_m Σ n² aₙ(y) (1 − cos(2πnm/N))  (mass gap)
+    μ_N(y) = min_m Σ n² aₙ(y) (1 − cos(2πnm/N))  (holonomy stiffness; 'mass gap' is historical — CC-35)
 
 The fine-structure constant is α⁻¹ = 2/S₁(y_spec).
 The confinement lock is C_3(y_conf) = 0  (Hessian isotropy).
@@ -122,7 +122,8 @@ def mass_gap_stiffness(y: float, N: int = 3, n_max: int = 500) -> float:
     SU(N) mass gap stiffness (minimum over modes m):
         μ_N(y) = min_{m=1..N-1} Σ n² wₙ e^{−2πyn} (1 − cos(2πnm/N))
 
-    Theorem: μ_N(y) > 0 unconditionally for all N≥2, y>0.
+    Theorem: μ_N(y) > 0 unconditionally for all N≥2, y>0 (a sum of non-negative terms).
+    CC-35: this is the classical curvature of the Polyakov potential, not a spectral gap of any transfer matrix.
     """
     ns = np.arange(1, n_max + 1)
     ws = weight_array(n_max)

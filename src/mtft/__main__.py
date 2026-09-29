@@ -8,6 +8,7 @@ Usage:
     python -m mtft tower [N]       Multi-N tower analysis (default N=15)
     python -m mtft screen          Materials screening table
     python -m mtft info            Version, constants, module count
+    python -m mtft parent [ID]     Parent-action ledger scoreboard (PV-01)
 
 Examples:
     $ python -m mtft verify
@@ -86,6 +87,19 @@ def cmd_info(args):
     print(f"  sin²θ_W = {GAUGE.sin2_theta_W:.10f} = 3/13")
 
 
+def cmd_parent(args):
+    """Scoreboard of the parent-action ledger over the candidate catalogue (mtft.parent, PV-01)."""
+    from mtft import parent as P
+    if args.candidate:
+        c = P.CATALOGUE[args.candidate]; g = P.gates(c)
+        print(f"{c.model_id}: {c.group}, {c.dimension}D, content {c.content}\n  {c.notes}")
+        for k, v in g.items():
+            print(f"  {k:34s} {str(v['pass']):6s} [{v['status']}]")
+    else:
+        print(P.ledger_table()["table"])
+        print("\nT = passes exactly, F = fails exactly, - = open for that candidate.  python -m mtft parent CANDIDATE for witnesses.")
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog="mtft",
@@ -103,6 +117,9 @@ def main():
     sub.add_parser("screen", help="Materials screening")
     sub.add_parser("info", help="Package info")
 
+    p_parent = sub.add_parser("parent", help="Parent-action ledger scoreboard (PV-01)")
+    p_parent.add_argument("candidate", nargs="?", default=None, help="catalogue id for per-gate witnesses")
+
     args = parser.parse_args()
 
     commands = {
@@ -111,6 +128,7 @@ def main():
         "tower": cmd_tower,
         "screen": cmd_screen,
         "info": cmd_info,
+        "parent": cmd_parent,
     }
 
     if args.command in commands:

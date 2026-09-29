@@ -8,11 +8,12 @@ SU(N_max), revealing:
   1. Even-N universality — all SU(2k) collapse to the odd-integer sieve
   2. Prime-N individuality — each prime sees a unique arithmetic landscape
   3. Phase transition scaling — y_c(N) ~ c/N² confinement boundaries
-  4. Mass gap persistence — μ_N > 0 unconditionally for all N, y > 0
+  4. Stiffness persistence — μ_N > 0 unconditionally for all N, y > 0 (classical curvature; CC-35)
   5. Arithmetic genome — Euler product decomposition of each gauge group
 
-Key result (Paper 5, Theorem 7.8): The mass gap is UNCONDITIONALLY
-positive because w_n ≥ 0, e^{-2πyn} > 0, and (1-cos) ≥ 0.
+Key result (Paper 5, Theorem 7.8): the holonomy stiffness μ_N is UNCONDITIONALLY
+positive because w_n ≥ 0, e^{-2πyn} > 0, and (1-cos) ≥ 0.  CC-35: Paper 5 calls this
+the mass gap; it is the curvature of the classical Polyakov potential, not a spectral gap.
 
 Reference: Papers 5, 18; Discoveries Addendum.
 """

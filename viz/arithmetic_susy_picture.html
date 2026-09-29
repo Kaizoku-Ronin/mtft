@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arithmetic supersymmetry on X₀(143) × 143a1 — the picture</title>
+<style>
+:root{
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f7f7fb; --panel:#ffffff; --ink:#1b1d2a; --muted:#5c6078; --grid:#d9dbe6; --axis:#8a8ea5;
+  --hm:#2f8fd6; --gm:#2bb673; --am:#e0b300; --rms:#ee7d3a; --cm:#e8467c; --diag:#9a9fb8; --pt:#1b1d2a;
+  --boson:#2f8fd6; --fermion:#e8467c; --zero:#b9bccb; --pos:#7c5cff; --neg:#ee7d3a; --ok:#2bb673; --warn:#e0b300;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --axis:#6d7396; --pt:#ffffff; --diag:#6d7396; --zero:#3a3f60; } }
+:root[data-theme="dark"]{ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --axis:#6d7396; --pt:#ffffff; --diag:#6d7396; --zero:#3a3f60; }
+html{scroll-padding-top:env(safe-area-inset-top,0px)} *{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.45}
+main{max-width:980px;margin:0 auto;padding:18px 14px 60px}
+h1{font-size:1.45rem;margin:.2em 0 .1em} h2{font-size:1.1rem;margin:1.6em 0 .3em}
+p{margin:.35em 0;color:var(--ink)} .muted{color:var(--muted);font-size:.92rem}
+section{background:var(--panel);border:1px solid var(--grid);border-radius:14px;padding:14px 14px 10px;margin:14px 0}
+canvas{width:100%;height:auto;display:block;border-radius:8px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}
+label{font-size:.9rem;color:var(--muted)} select,button{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--grid);background:var(--panel);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--am)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 12px;font-family:var(--mono);font-size:.85rem;margin-top:6px}
+.stats b{font-weight:600} .k{color:var(--muted)}
+.chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.78rem;border:1px solid var(--grid);color:var(--muted);margin-left:6px}
+table{border-collapse:collapse;font-family:var(--mono);font-size:.8rem} td,th{border:1px solid var(--grid);padding:3px 6px;text-align:center}
+.wide{overflow-x:auto}
+</style>
+</head>
+<body>
+<main>
+<h1>Arithmetic supersymmetry on X₀(143) × 143a1</h1>
+<p class="muted">Five interactive pictures of the note (29 Sep 2026). Every curve is drawn from the exact formulas in <code>mtft</code> (PV-01/PV-02); nothing is fitted. Class of each statement is marked.</p>
+
+<section id="s1">
+<h2>1 · The five means are the BPS bound <span class="chip">EXACT</span></h2>
+<p>A gauge block of bidegree (a, b) has two field strengths, x along X₀(143) and y along 143a1. At fixed volume the shape r = A<sub>X</sub>/A<sub>E</sub> slides (x, y) along the hyperbola xy = |ab| — its topological charge. Its Yang–Mills energy is x² + y², the circle through the point. The circle can only touch the hyperbola on the diagonal x = y: that tangency is rms ≥ gm, and for opposite-sign blocks it is the zero-slope, D-flat, supersymmetric point. Off the diagonal the Higgs mass² is the signed gap and (x − y)² is the D-term.</p>
+<div class="row">
+  <label>block <select id="blk">
+    <option value="-4,2,S1 Higgs (−4, 2): wall r = 2">S1 Higgs (−4, 2)</option>
+    <option value="2,-4,S2 Higgs (2, −4): wall r = 1/2">S2 Higgs (2, −4)</option>
+    <option value="4,-2,B1 U(8) Higgs (4, −2): r = 2">B1 U(8) Higgs (4, −2)</option>
+    <option value="1,-3,S1 u^c (1, −3): r = 1/3">S1 u^c (1, −3)</option>
+    <option value="3,1,S1 Q (3, 1): same-sign, never D-flat">S1 Q (3, 1)</option>
+  </select></label>
+  <label style="flex:1;min-width:200px">shape r = A<sub>X</sub>/A<sub>E</sub> = <b id="rval">2.00</b><input id="r" type="range" min="-1.2" max="1.2" step="0.005" value="0.301"></label>
+</div>
+<canvas id="c1" width="900" height="520"></canvas>
+<div class="stats" id="st1"></div>
+</section>
+
+<section id="s2">
+<h2>2 · Möbius is (−1)<sup>F</sup> <span class="chip">EXACT (Spector 1990)</span></h2>
+<p>Put a boson and a fermion on every prime. The graded count of states at level n is Σ<sub>d|n</sub> μ(d): every excited level cancels exactly; only the vacuum n = 1 survives. Below: each level's divisors coloured by μ, then the Mertens function M(x) = Σ<sub>n≤x</sub> μ(n) — the fermion-number imbalance — against ±√x. The prime number theorem is Σμ(n)/n = 0; RH is M(x) staying inside x<sup>1/2+ε</sup>.</p>
+<canvas id="c2" width="900" height="300"></canvas>
+<canvas id="c2b" width="900" height="260"></canvas>
+<div class="stats" id="st2"></div>
+</section>
+
+<section id="s3">
+<h2>3 · Where the 12 lives, and what the twist does to it <span class="chip">EXACT</span></h2>
+<p>11 and 13 mean to 12 because they are twin primes; what is unique to 143 among twin-prime levels is that this mean equals g − 1 = deg K<sup>½</sup>, the degree of the spin structure. The spin twist (12, 0) makes every adjoint block vector-like; the supersymmetric twist O gives net chirality −24b = χ(X₀(143)) × (torus flux); the blow-up adds the exceptional flux e, net = e − 24b, and the lattice becomes odd (no spin structure at all).</p>
+<div class="wide"><table id="t3"></table></div>
+<div class="stats" id="st3"></div>
+</section>
+
+<section id="s4">
+<h2>4 · The blow-up escape: two ratios, four slope lines, one point <span class="chip">EXACT (finite search)</span></h2>
+<p>On the product, every stack's slope-zero condition is a vertical line in the (r, ε/A<sub>E</sub>) plane and one ratio can hit only one of them — the root of the trilemma. On the blow-up each condition is a line a + br + e t = 0. Left: a non-collinear D-flat Standard-Model solution from the search, four lines through one point inside the ample triangle. Right: the single-line-bundle family, D-flat along the whole line t = 1/3.</p>
+<canvas id="c4" width="900" height="420"></canvas>
+<div class="stats" id="st4"></div>
+</section>
+
+<section id="s5">
+<h2>5 · The flux landscape: shape stabilised, volume not <span class="chip">EXACT</span></h2>
+<p>E<sub>split</sub>(r) = 4π²(19/r + 11r) for both S1 and S2; the HYM floor of each class is 4π²[Δ + A₁²/r + B₁²r]/6; the gap is the slope variance — the D-term energy. In the Einstein frame both classical terms fall with the volume, so nothing selects a cosmological constant (CC-34).</p>
+<canvas id="c5" width="900" height="360"></canvas>
+</section>
+
+<p class="muted">Sources: <code>mtft.research.vacuum_energy</code>, <code>mtft.research.anomaly8d</code>, <code>mtft.surface.blowup</code>, <code>mtft.research.product_surface</code>. Conventions: units 4π² for energies; x = |a|/√r, y = |b|√r at unit volume; the chirality potential φ(d) = e − 24b.</p>
+</main>
+<script>
+(function(){
+const css=(v)=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function setup(c){const dpr=Math.min(window.devicePixelRatio||1,2);const w=c.clientWidth||900;const h=w*c.getAttribute('height')/c.getAttribute('width');c.width=w*dpr;c.height=h*dpr;c.style.height=h+'px';const g=c.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);return {g,w,h};}
+function txt(g,s,x,y,col,sz,al){g.fillStyle=col||css('--ink');g.font=(sz||12)+'px '+css('--font');g.textAlign=al||'left';g.fillText(s,x,y);}
+
+/* ---------- Panel 1: five means / BPS ---------- */
+const c1=document.getElementById('c1'), rS=document.getElementById('r'), blkS=document.getElementById('blk');
+function draw1(){
+  const {g,w,h}=setup(c1); const [a,b]=blkS.value.split(',').map(Number); const r=Math.pow(10,parseFloat(rS.value));
+  document.getElementById('rval').textContent=r.toFixed(2);
+  const x=Math.abs(a)/Math.sqrt(r), y=Math.abs(b)*Math.sqrt(r);
+  const hm=2*x*y/(x+y), gm=Math.sqrt(x*y), am=(x+y)/2, rms=Math.sqrt((x*x+y*y)/2), cm=(x*x+y*y)/(x+y);
+  const opp=(a*b<0); const m2=(Math.sign(a)*x+Math.sign(b)*y); const dterm=(x-y)*(x-y);
+  const L=Math.max(cm*1.25, 3.2); const pad={l:44,r:14,t:16,b:34}; const W=w-pad.l-pad.r, H=h-pad.t-pad.b;
+  const X=v=>pad.l+v/L*W, Y=v=>pad.t+H-v/L*H;
+  g.fillStyle=css('--panel'); g.fillRect(0,0,w,h);
+  g.strokeStyle=css('--grid'); g.lineWidth=1; for(let v=1;v<L;v++){g.beginPath();g.moveTo(X(v),pad.t);g.lineTo(X(v),pad.t+H);g.stroke();g.beginPath();g.moveTo(pad.l,Y(v));g.lineTo(pad.l+W,Y(v));g.stroke();}
+  g.strokeStyle=css('--axis'); g.beginPath();g.moveTo(pad.l,Y(0));g.lineTo(pad.l+W,Y(0));g.stroke();g.beginPath();g.moveTo(X(0),pad.t);g.lineTo(X(0),pad.t+H);g.stroke();
+  txt(g,'x = |F| along X₀(143)  (units 2π/√Vol)',pad.l+W/2,h-10,css('--muted'),12,'center');
+  g.save();g.translate(12,pad.t+H/2);g.rotate(-Math.PI/2);txt(g,'y = |F| along 143a1',0,0,css('--muted'),12,'center');g.restore();
+  // diagonal
+  g.setLineDash([6,5]);g.strokeStyle=css('--diag');g.lineWidth=1.5;g.beginPath();g.moveTo(X(0),Y(0));g.lineTo(X(L),Y(L));g.stroke();g.setLineDash([]);
+  txt(g,opp?'diagonal x = y: anti-self-dual = D-flat = SUSY':'diagonal x = y: self-dual (not a SUSY point on this surface)',X(L*0.52),Y(L*0.55)-6,css('--diag'),11,'left');
+  // hyperbola xy = gm^2 (charge)
+  g.strokeStyle=css('--gm');g.lineWidth=2.4;g.beginPath();let first=true;for(let u=gm*gm/L;u<=L;u+=L/600){const v=gm*gm/u;if(v>L)continue;if(first){g.moveTo(X(u),Y(v));first=false;}else g.lineTo(X(u),Y(v));}g.stroke();
+  // circle x^2+y^2 = 2 rms^2 (energy)
+  g.strokeStyle=css('--rms');g.lineWidth=2.4;g.beginPath();const R=Math.sqrt(2)*rms;for(let t=0;t<=Math.PI/2;t+=Math.PI/300){const u=R*Math.cos(t),v=R*Math.sin(t);if(u>L||v>L)continue;if(t===0)g.moveTo(X(u),Y(v));else g.lineTo(X(u),Y(v));}g.stroke();
+  // line x+y = 2 am
+  g.strokeStyle=css('--am');g.lineWidth=2;g.beginPath();g.moveTo(X(Math.max(0,2*am-L)),Y(Math.min(L,2*am)));g.lineTo(X(Math.min(L,2*am)),Y(Math.max(0,2*am-L)));g.stroke();
+  // circle through BPS point x^2+y^2 = 2 gm^2 (floor)
+  g.setLineDash([3,4]);g.strokeStyle=css('--gm');g.lineWidth=1.2;g.beginPath();const R0=Math.sqrt(2)*gm;for(let t=0;t<=Math.PI/2;t+=Math.PI/200){const u=R0*Math.cos(t),v=R0*Math.sin(t);if(t===0)g.moveTo(X(u),Y(v));else g.lineTo(X(u),Y(v));}g.stroke();g.setLineDash([]);
+  // means on axes
+  const marks=[['hm',hm,'--hm'],['gm',gm,'--gm'],['am',am,'--am'],['rms',rms,'--rms'],['cm',cm,'--cm']];
+  for(const [n,v,col] of marks){g.fillStyle=css(col);g.beginPath();g.arc(X(v),Y(0),4,0,7);g.fill();g.beginPath();g.arc(X(0),Y(v),4,0,7);g.fill();txt(g,n,X(v),Y(0)+14,css(col),11,'center');txt(g,n,X(0)-6,Y(v)+4,css(col),11,'right');}
+  // points
+  g.fillStyle=css('--pt');g.beginPath();g.arc(X(x),Y(y),6,0,7);g.fill();g.beginPath();g.arc(X(y),Y(x),6,0,7);g.fill();
+  g.fillStyle=css('--gm');g.beginPath();g.arc(X(gm),Y(gm),5,0,7);g.fill();
+  txt(g,'(x, y) at r = '+r.toFixed(2),X(x)+8,Y(y)-8,css('--pt'),12,'left');
+  txt(g,'BPS point (gm, gm)',X(gm)+8,Y(gm)+16,css('--gm'),11,'left');
+  txt(g,'xy = |ab| = '+(Math.abs(a*b))+'  (charge)',X(L*0.62),Y(gm*gm/(L*0.62))-8,css('--gm'),11,'left');
+  txt(g,'x² + y² = energy/4π²',X(L*0.03),Y(R)+14,css('--rms'),11,'left');
+  txt(g,'x + y = 2·am',X(Math.min(L,2*am))-4,Y(Math.max(0,2*am-L))-6,css('--am'),11,'right');
+  const s=document.getElementById('st1');
+  s.innerHTML=`<div><span class=k>block</span> <b>(${a}, ${b})</b></div><div><span class=k>hm</span> <b>${hm.toFixed(3)}</b></div><div><span class=k>gm</span> <b>${gm.toFixed(3)}</b></div><div><span class=k>am</span> <b>${am.toFixed(3)}</b></div><div><span class=k>rms</span> <b>${rms.toFixed(3)}</b></div><div><span class=k>cm</span> <b>${cm.toFixed(3)}</b></div>`+
+   `<div><span class=k>energy x²+y²</span> <b>${(x*x+y*y).toFixed(3)}</b> = a²/r + b²r</div><div><span class=k>floor 2|ab|</span> <b>${(2*Math.abs(a*b)).toFixed(3)}</b></div><div><span class=k>D-term (x−y)²</span> <b>${dterm.toFixed(3)}</b></div>`+
+   `<div><span class=k>Higgs m² ∝ sgn(a)x + sgn(b)y</span> <b>${m2.toFixed(3)}</b> ${opp?(Math.abs(m2)<0.02?'massless (BPS)':(m2<0?'tachyonic':'massive')):'same-sign: no zero'}</div><div><span class=k>slope-free r</span> <b>${opp?(Math.abs(a/b)).toFixed(3):'none'}</b></div>`;
+}
+rS.addEventListener('input',draw1); blkS.addEventListener('change',()=>{const [a,b]=blkS.value.split(',').map(Number); if(a*b<0){rS.value=Math.log10(Math.abs(a/b)).toFixed(3);} draw1();});
+
+/* ---------- Panel 2: Moebius ---------- */
+const NMAX=3000; const mu=new Int8Array(NMAX+1); (function(){const isP=new Uint8Array(NMAX+1); for(let i=0;i<=NMAX;i++)mu[i]=1; mu[0]=0; const primes=[];for(let i=2;i<=NMAX;i++){if(!isP[i]){primes.push(i);for(let j=i;j<=NMAX;j+=i){isP[j]=1;mu[j]*=-1;}for(let j=i*i;j<=NMAX;j+=i*i)mu[j]=0;}}})();
+function draw2(){
+  const {g,w,h}=setup(document.getElementById('c2')); g.fillStyle=css('--panel');g.fillRect(0,0,w,h);
+  const N=36, cols=6, cw=(w-20)/cols, rh=(h-30)/6; txt(g,'levels n = 1 … 36: divisors d | n coloured by μ(d) (+1 boson-like, −1 fermion-like, 0 excluded); graded count Σ μ(d) at right',12,16,css('--muted'),11);
+  for(let n=1;n<=N;n++){const i=(n-1)%cols, j=Math.floor((n-1)/cols); const x0=10+i*cw, y0=26+j*rh; const ds=[];for(let d=1;d<=n;d++)if(n%d===0)ds.push(d); let sum=0; txt(g,'n='+n,x0,y0+12,css('--ink'),11); ds.forEach((d,k)=>{const m=mu[d];sum+=m;const bw=Math.min(14,(cw-46)/ds.length);g.fillStyle=m>0?css('--boson'):(m<0?css('--fermion'):css('--zero'));g.fillRect(x0+40+k*(bw+1),y0+3,bw,12);});
+    txt(g,'Σμ = '+sum,x0+cw-6,y0+12,sum===0?css('--muted'):css('--ok'),11,'right');}
+  const c=document.getElementById('c2b'); const s=setup(c); const G=s.g; G.fillStyle=css('--panel');G.fillRect(0,0,s.w,s.h);
+  const pad={l:40,r:10,t:14,b:26}; const W=s.w-pad.l-pad.r,H=s.h-pad.t-pad.b; let M=0; const Ms=[0]; let mx=0; for(let n=1;n<=NMAX;n++){M+=mu[n];Ms.push(M);mx=Math.max(mx,Math.abs(M));}
+  const ymax=Math.max(mx*1.1,Math.sqrt(NMAX)*1.1); const X=n=>pad.l+n/NMAX*W, Y=v=>pad.t+H/2-v/ymax*H/2;
+  G.strokeStyle=css('--grid');G.beginPath();G.moveTo(pad.l,Y(0));G.lineTo(pad.l+W,Y(0));G.stroke();
+  G.strokeStyle=css('--gm');G.setLineDash([4,4]);G.beginPath();for(let n=1;n<=NMAX;n+=5){const v=Math.sqrt(n);n===1?G.moveTo(X(n),Y(v)):G.lineTo(X(n),Y(v));}G.stroke();G.beginPath();for(let n=1;n<=NMAX;n+=5){const v=-Math.sqrt(n);n===1?G.moveTo(X(n),Y(v)):G.lineTo(X(n),Y(v));}G.stroke();G.setLineDash([]);
+  G.strokeStyle=css('--fermion');G.lineWidth=1.4;G.beginPath();for(let n=0;n<=NMAX;n++){n===0?G.moveTo(X(n),Y(Ms[n])):G.lineTo(X(n),Y(Ms[n]));}G.stroke();
+  txt(G,'Mertens M(x) = Σ_{n≤x} μ(n)   (fermion-number imbalance)',pad.l+6,pad.t+12,css('--fermion'),11); txt(G,'±√x',X(NMAX)-30,Y(Math.sqrt(NMAX))-4,css('--gm'),11,'right'); txt(G,'x → '+NMAX,pad.l+W,s.h-8,css('--muted'),11,'right');
+  let S=0; for(let n=1;n<=NMAX;n++)S+=mu[n]/n; document.getElementById('st2').innerHTML=`<div><span class=k>Σ_{n≤3000} μ(n)/n</span> <b>${S.toFixed(5)}</b> → 0 (PNT)</div><div><span class=k>max |M(x)|/√x, x ≤ 3000</span> <b>${(Ms.reduce((m,v,n)=>n>0?Math.max(m,Math.abs(v)/Math.sqrt(n)):m,0)).toFixed(3)}</b></div><div><span class=k>MTFT alphabet</span> <b>μ ∗ w = (log n)/n</b> exactly</div>`;
+}
+
+/* ---------- Panel 3: twist table ---------- */
+function draw3(){
+  const t=document.getElementById('t3'); let html='<tr><th>block (a, b, e)</th><th>spin twist K<sup>½</sup> = (12, 0): net</th><th>SUSY twist O on product: −24b</th><th>SUSY twist on blow-up: e − 24b</th></tr>';
+  const rows=[[3,1,0],[-4,2,0],[1,-3,0],[0,1,0],[-1,0,3],[1,0,-3],[2,0,-6],[-3,0,9],[-3,1,21],[4,-1,-29]];
+  for(const [a,b,e] of rows){const spin=e===0?0:'—';const prod=e===0?(-24*b):'—';const bl=e-24*b;html+=`<tr><td>(${a}, ${b}, ${e})</td><td>${spin}</td><td>${prod}</td><td style="color:${Math.abs(bl)===3?'var(--ok)':'inherit'};font-weight:${Math.abs(bl)===3?600:400}">${bl}</td></tr>`;}
+  t.innerHTML=html;
+  document.getElementById('st3').innerHTML=`<div><span class=k>twin primes 6k∓1</span> <b>g(X₀(pq)) = k(3k+1) − 1</b></div><div><span class=k>g − 1 = 6k</span> <b>(3k+1)(k−2) = 0 ⇒ k = 2</b></div><div><span class=k>deg K^½ of X₀(143)</span> <b>12 = (11+13)/2</b></div><div><span class=k>χ(X₀(143))</span> <b>−24 = −(11+13)</b></div><div><span class=k>blow-up lattice</span> <b>U ⊕ ⟨−8⟩ ⊕ ⟨−1⟩, odd, not spin</b></div><div><span class=k>chirality potential</span> <b>φ(d) = e − 24b</b>; net(i, j̄) = φ_i − φ_j</div>`;
+}
+
+/* ---------- Panel 4: blow-up escape ---------- */
+function draw4(){
+  const {g,w,h}=setup(document.getElementById('c4')); g.fillStyle=css('--panel');g.fillRect(0,0,w,h);
+  const two=w>640; const pw=two?w/2:w; const panels=[
+    {title:'non-collinear solution: n = (A_E, A_X, ε) = (8, 3, 1) → r = 3/8, t = 1/8', stacks:[['L',-3,1,21],['B',3,-1,-21],['A1',-1,0,8],['A2',4,-1,-29]], pt:[3/8,1/8], rmax:1.2, tmax:0.5},
+    {title:'single line bundle v = (1, 0, −3): D-flat on t = 1/3, every r > 1/3', stacks:[['L',1,0,-3],['B',-1,0,3],['A1',2,0,-6],['A2',-3,0,9]], pt:null, rmax:3, tmax:1.05}];
+  panels.forEach((P,idx)=>{ if(!two&&idx===1) return; const ox=idx*pw; const pad={l:44+ox,r:14,t:26,b:30}; const W=pw-58, H=h-pad.t-pad.b; const X=r=>pad.l+r/P.rmax*W, Y=t=>pad.t+H-t/P.tmax*H;
+    g.strokeStyle=css('--grid'); for(let v=0.25;v<P.rmax;v+=0.25){g.beginPath();g.moveTo(X(v),pad.t);g.lineTo(X(v),pad.t+H);g.stroke();} for(let v=0.25;v<P.tmax;v+=0.25){g.beginPath();g.moveTo(pad.l,Y(v));g.lineTo(pad.l+W,Y(v));g.stroke();}
+    // ample region: 0 < t < min(1, r)
+    g.fillStyle=css('--ok'); g.globalAlpha=0.12; g.beginPath(); g.moveTo(X(0),Y(0)); g.lineTo(X(Math.min(1,P.rmax)),Y(Math.min(1,P.tmax))); g.lineTo(X(P.rmax),Y(Math.min(1,P.tmax))); g.lineTo(X(P.rmax),Y(0)); g.closePath(); g.fill(); g.globalAlpha=1;
+    txt(g,'ample: 0 < ε/A_E < min(1, r)',X(P.rmax*0.55),Y(0)-6,css('--ok'),11,'left');
+    const cols=['--hm','--cm','--pos','--neg'];
+    P.stacks.forEach(([nm,a,b,e],k)=>{ g.strokeStyle=css(cols[k]); g.lineWidth=2; g.beginPath(); let started=false; // a + b r + e t = 0
+      for(let r=0;r<=P.rmax;r+=P.rmax/400){ let t; if(e!==0){t=-(a+b*r)/e;} else {continue;} if(t<0||t>P.tmax){started=false;continue;} if(!started){g.moveTo(X(r),Y(t));started=true;}else g.lineTo(X(r),Y(t)); }
+      if(e===0){ const r0=-a/b; if(b!==0){g.beginPath();g.moveTo(X(r0),pad.t);g.lineTo(X(r0),pad.t+H);g.stroke();} }
+      g.stroke(); txt(g,nm+' ('+a+','+b+','+e+')',X(P.rmax)-4,Y(Math.max(0.03,Math.min(P.tmax-0.03,e!==0?-(a+b*P.rmax)/e:0)))+(k%2?12:-4),css(cols[k]),11,'right'); });
+    if(P.pt){ g.fillStyle=css('--pt'); g.beginPath(); g.arc(X(P.pt[0]),Y(P.pt[1]),6,0,7); g.fill(); txt(g,'all four slopes vanish here',X(P.pt[0])+9,Y(P.pt[1])-9,css('--pt'),12); }
+    g.strokeStyle=css('--axis'); g.beginPath(); g.moveTo(pad.l,Y(0)); g.lineTo(pad.l+W,Y(0)); g.stroke(); g.beginPath(); g.moveTo(X(0),pad.t); g.lineTo(X(0),pad.t+H); g.stroke();
+    txt(g,P.title,pad.l,16,css('--ink'),12); txt(g,'r = A_X/A_E',pad.l+W/2,h-8,css('--muted'),11,'center'); g.save(); g.translate(ox+12,pad.t+H/2); g.rotate(-Math.PI/2); txt(g,'t = ε/A_E',0,0,css('--muted'),11,'center'); g.restore();
+  });
+  document.getElementById('st4').innerHTML=`<div><span class=k>search (n ≤ 8, |a| ≤ 4, |b| ≤ 1, |e| ≤ 30)</span> <b>116 D-flat exact-SM assignments</b></div><div><span class=k>fewest vector-like extras</span> <b>31</b> (non-collinear, e up to 29)</div><div><span class=k>single-line-bundle family</span> <b>36</b> (6 u^c + 6 e^c + 9 doublet pairs + 15 sterile)</div><div><span class=k>floor for any assignment</span> <b>≥ 6 doublet pairs</b></div><div><span class=k>not yet computed</span> <b>h¹, h⁰(K⊗L) on the blow-up (Yukawa rule)</b></div>`;
+}
+
+/* ---------- Panel 5: flux landscape ---------- */
+function draw5(){
+  const {g,w,h}=setup(document.getElementById('c5')); g.fillStyle=css('--panel');g.fillRect(0,0,w,h);
+  const pad={l:44,r:14,t:20,b:30}; const W=w-pad.l-pad.r,H=h-pad.t-pad.b; const rmin=0.2,rmax=8; const X=r=>pad.l+(Math.log(r)-Math.log(rmin))/(Math.log(rmax)-Math.log(rmin))*W; const Emax=70; const Y=v=>pad.t+H-v/Emax*H;
+  g.strokeStyle=css('--grid'); [0.5,1,2,4].forEach(r=>{g.beginPath();g.moveTo(X(r),pad.t);g.lineTo(X(r),pad.t+H);g.stroke();txt(g,'r='+r,X(r),h-10,css('--muted'),11,'center');}); [10,20,30,40,50,60].forEach(v=>{g.beginPath();g.moveTo(pad.l,Y(v));g.lineTo(pad.l+W,Y(v));g.stroke();txt(g,String(v),pad.l-6,Y(v)+4,css('--muted'),10,'right');});
+  const Es=r=>19/r+11*r, H1=r=>(14+25/r+25*r)/6, H2=r=>(50+49/r+r)/6;
+  const plot=(f,col,dash)=>{g.strokeStyle=css(col);g.lineWidth=2;g.setLineDash(dash||[]);g.beginPath();let first=true;for(let i=0;i<=400;i++){const r=rmin*Math.pow(rmax/rmin,i/400);const v=f(r);if(v>Emax)continue;first?g.moveTo(X(r),Y(v)):g.lineTo(X(r),Y(v));first=false;}g.stroke();g.setLineDash([]);};
+  plot(Es,'--rms'); plot(H1,'--hm'); plot(H2,'--pos');
+  const rs=Math.sqrt(19/11); g.fillStyle=css('--rms'); g.beginPath(); g.arc(X(rs),Y(Es(rs)),5,0,7); g.fill();
+  g.fillStyle=css('--hm'); g.beginPath(); g.arc(X(1),Y(H1(1)),5,0,7); g.fill(); g.fillStyle=css('--pos'); g.beginPath(); g.arc(X(7),Y(H2(7)),5,0,7); g.fill();
+  txt(g,'E_split (S1 = S2): 19/r + 11r, min 2√209 at r = √(19/11)',X(rs)+8,Y(Es(rs))-8,css('--rms'),11);
+  txt(g,'HYM floor S1: min 32/3 at r = 1',X(1)+8,Y(H1(1))+16,css('--hm'),11); txt(g,'HYM floor S2: min 32/3 at r = 7',X(7)-8,Y(H2(7))+16,css('--pos'),11,'right');
+  txt(g,'units 4π²; gap = Σ nᵢ(μᵢ − μ̄)²/r = D-term energy',pad.l+6,pad.t+12,css('--muted'),11);
+  g.strokeStyle=css('--axis'); g.beginPath(); g.moveTo(pad.l,Y(0)); g.lineTo(pad.l+W,Y(0)); g.stroke();
+}
+function all(){draw1();draw2();draw3();draw4();draw5();}
+window.addEventListener('resize',all); window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',all); all();
+})();
+</script>
+</body>
+</html>
