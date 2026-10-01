@@ -1,0 +1,8 @@
+{
+  "passed": 54,
+  "failed": 0,
+  "oraclePoints": 25,
+  "oracleMaxRelative": 1.4347431733301133e-15,
+  "maxAngularIntegralRelative": 1.1024005922343211e-11,
+  "scope": "Offline script/DOM checks. Actual browser layout was not tested."
+}

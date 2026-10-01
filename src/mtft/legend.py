@@ -161,8 +161,8 @@ _reg(LegendEntry("HosotaniMTFT", "2", "engine", ("I", "III", "V"), "Pp", "PHENO"
 _reg(LegendEntry("mu_stiffness", "5c", "identity", ("I", "II", "III", "V"),
                  "Pr", "EXACT",
                  "mu_N(y) = sum n^2 w_n e^{-2pi y n}(1 - cos 2pi n/N): "
-                 "the Laplace-ensemble stiffness object (the papers' 'mass gap'; a classical curvature, not a "
-                 "spectral gap — CC-35).",
+                 "the defined Laplace-ensemble stiffness diagnostic (the papers' 'mass gap'); neither the Hessian "
+                 "of the current single-trace Polyakov action nor a spectral gap — CC-35.",
                  example="mtft.tower / viz.make_hero",
                  upstream=("w_n",)))
 _reg(LegendEntry("filtered_moment_identity", "5d", "identity",
@@ -851,7 +851,8 @@ for _d in PV02_LEGEND:
 CC35_LEGEND = (
     dict(name="cc35_reflection_positivity", tier="2", kind="identity", primitives=("III",), tag="Pr", exactness="EXACT (lemma, first order, repair) / NUMERICAL (thresholds)",
          nature="CC-35: reflection positivity of the MTFT lattice action retracted from PROVEN to OPEN. Tr U^n is a virtual character "
-                "(Tr U^2 = chi_Sym2 - chi_Lambda2), so exp(c Re Tr P^n), c > 0, is not positive-definite for n >= 2; w_1 = 0 leaves nothing to compensate. "
+                "(Tr U^2 = chi_Sym2 - chi_Lambda2), so c >= 0 does not ensure positive-definiteness for arbitrary powers and groups. "
+                "SU(2), n=2 is an exception; the default tower still has negative coefficients. "
                 "At kappa = 1, y = 0.18174 the Polyakov kernel has coefficients -0.0047 (SU(3) 3bar), -0.0040 (adjoint), -0.0059 (SU(2) spin 1/2): "
                 "site-reflection positivity fails at strong coupling. Link reflections and the gauge-invariant sector: open. mu_N is a stiffness, not a gap. "
                 "Repair: weights on chi_Sym^n (positive-definite, exact).",

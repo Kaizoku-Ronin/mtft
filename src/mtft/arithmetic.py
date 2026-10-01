@@ -123,7 +123,9 @@ def mass_gap_stiffness(y: float, N: int = 3, n_max: int = 500) -> float:
         μ_N(y) = min_{m=1..N-1} Σ n² wₙ e^{−2πyn} (1 − cos(2πnm/N))
 
     Theorem: μ_N(y) > 0 unconditionally for all N≥2, y>0 (a sum of non-negative terms).
-    CC-35: this is the classical curvature of the Polyakov potential, not a spectral gap of any transfer matrix.
+    CC-35: this is a defined arithmetic stiffness diagnostic, not the Hessian of the current
+    single-trace Polyakov action or a spectral gap of any transfer matrix. Positivity refers
+    to the full convergent sum; a too-short truncation or floating-point underflow can return zero.
     """
     ns = np.arange(1, n_max + 1)
     ws = weight_array(n_max)
@@ -141,11 +143,12 @@ def mass_gap_stiffness(y: float, N: int = 3, n_max: int = 500) -> float:
 
 def su3_hessian_eigenvalues(y: float, n_max: int = 500) -> tuple[float, float]:
     """
-    SU(3) holonomy Hessian eigenvalues:
+    SU(3) arithmetic stiffness combinations (the API name is historical):
         λ₁ = (S_N + 2C_N) / 3
         λ₂ = (S_N − C_N) / 3
 
-    At y_conf ≈ 0.18174:  λ₁/λ₂ = 1.000001 (the spectral lock).
+    At y_conf ≈ 0.18174: λ₁/λ₂ = 1.000001 (the arithmetic spectral-lock diagnostic).
+    These are not the eigenvalues of the Hessian of MTFTAction.arithmetic_action.
     """
     S = stiffness_S(y, n_max)
     C = center_stiffness(y, N=3, n_max=n_max)
@@ -158,7 +161,8 @@ def find_confinement_depth(
     y_min: float = 0.10, y_max: float = 0.25, tol: float = 1e-8, n_max: int = 500
 ) -> float:
     """
-    Find y_conf where C_3(y) = 0 (SU(3) Hessian isotropy).
+    Find y_conf where C_3(y) = 0 (equality of the two arithmetic stiffness combinations).
+    The historical API name does not establish a physical confinement transition.
 
     Uses bisection on C_3(y).
     """

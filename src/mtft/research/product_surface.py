@@ -256,19 +256,38 @@ def extension_graph(model="S2", r=None):
                     "level_X_leg": lev_X if ext1_X else None, "level_E_leg": lev_E if ext1_E else None})
     return {"model": model, "r": None if r is None else sp.nsimplify(r), "edges": out}
 
-def s1_colour_recombination_dims(k_colours=3):
-    """S1 at its wall r = 2: the only tachyonic harmonic classes are the 9 of Ext^1(L_c, L_1) = C^3 (x) H^1(E, N_-3).  Recombining
-    k colour components with L_1 by classes xi_1..xi_k in H^1(E, N_-3) that are linearly independent gives a rank-(k+1) extension E_k;
-    gluing the doublet stack L_L on top uses Ext^1(E_k, L_L) = ker( Ext^1(L_1, L_L) -> Ext^2(L_c, L_L)^k ), the cup product with the
-    xi's.  Ext^1(L_1, L_L) = H^1(X, O(-sum P - P)) (x) H^0(E, N_2) (16 x 2 = 32, the Higgs classes) and the cup product factorises:
-    on X, multiplication by the constant section of O(P), H^1(O(-sum P - P)) -> H^1(O(-sum P)), surjective with 1-dimensional kernel;
-    on E, the pairing H^1(N_-3) (x) H^0(N_2) -> H^1(N_-1), which is the S1 torus factor B (3 x 2, rank 2 — VI.5).  Hence the classes
-    eta_{r alpha} must satisfy sum_alpha eta_{r alpha} B(xi_i)_alpha = 0 for the 15 non-kernel r and each i: with rank(B restricted to
-    the xi's) = min(k, 2) the surviving Higgs-type gluing space has dimension 15 * (2 - min(k, 2)) + 2.  EXACT (Kuenneth + VI.5 rank)."""
-    rank = min(k_colours, 2); dim = 15 * (2 - rank) + 2
+def s1_colour_recombination_dims(k_colours=3, pairing_rank=None):
+    """S1 Higgs-type gluing dimensions, conditional on the selected colour classes.
+
+    Independent xi_1..xi_k in H^1(E, N_-3) define a rank-(k+1) extension E_k.
+    Ext^1(E_k, L_L) is the kernel of the cup product from the 32-dimensional
+    Higgs space.  The curve factor is surjective with a one-dimensional kernel;
+    the torus factor is B: C^3 -> C^2 of rank 2.  If r_B is its rank on span(xi),
+    the cup product has rank 15 r_B, so dim Ext^1(E_k, L_L) = 32 - 15 r_B.
+
+    Independence alone does not fix r_B: ker(B) has dimension 1.  The possible
+    ranks are max(0,k-1)..min(k,2), giving dimensions {32,17}, {17,2}, {2} for
+    k=1,2,3.  With pairing_rank=None the historical 17,2,2 counts are retained
+    as GENERIC counts.  An explicitly supplied pairing_rank gives the exact
+    dimension conditional on that rank.  In the VI.5 theta basis, B rows 1 and
+    2 coincide, so xi=(0,1,-1) is an exceptional rank-zero class for k=1.
+    """
+    if not isinstance(k_colours, (int, sp.Integer)) or not 0 <= k_colours <= 3:
+        raise ValueError("k_colours must be an integer from 0 to 3")
+    k_colours = int(k_colours)
+    possible_ranks = tuple(range(max(0, k_colours - 1), min(k_colours, 2) + 1))
+    generic = pairing_rank is None
+    rank = min(k_colours, 2) if generic else pairing_rank
+    if not isinstance(rank, (int, sp.Integer)) or rank not in possible_ranks:
+        raise ValueError("pairing_rank is incompatible with independent colour classes")
+    rank = int(rank); dim = 32 - 15 * rank
     return {"k_colours": k_colours, "tachyonic_classes_used": 3 * k_colours, "rank_E_k": k_colours + 1,
             "slope_E_k_at_r2_units_A_E": sp.Rational(-5, k_colours + 1), "dim_Ext1_E_k_L_L": dim,
+            "pairing_rank": rank, "possible_pairing_ranks": possible_ranks,
+            "possible_gluing_dimensions": tuple(32 - 15 * rr for rr in possible_ranks),
+            "rank_assumption": "generic independent colour classes" if generic else "supplied restricted pairing rank",
             "note": "Ext^1(L_c, L_L) = 0 in S1: the doublet stack can only be reached through L_1 (Higgs classes)"}
+
 
 def cm_point_cp_structure():
     """CP on X0(143) (complex conjugation tau -> -conj(tau), the real structure of the curve over Q) pairs the W13-fixed points as

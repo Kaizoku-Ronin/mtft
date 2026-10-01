@@ -1,0 +1,1384 @@
+{
+  "study": "Matter-01 selected B3 witness and U(1) bridge",
+  "version": 1,
+  "source_repository": "mtft 0.34.0",
+  "source_hashes": {
+    "src/mtft/surface/blowup.py": "1b2b436ab5a37c65b15f510604b9c17b38f47dbcde5aabc7e7c69affb29328fc",
+    "src/mtft/research/anomaly8d.py": "a0988c6cb82b638f6713d51eec2f4874c59039b067e9af5f1bbcca93ce151669",
+    "src/mtft/parent.py": "a08ff5f006b746c53c0e12b4711c1b05f8953a5cdbca9eb9064ed92d16a1e1d3",
+    "src/mtft/legend.py": "4238572fbd1c040c78b4cb9828028dac8bd8332712622a19734edc5cd481bb79",
+    "docs/SM/PV02_BLOWUP_SUSY_REGISTER.md": "27aca0e5bce4767f9268dc9b67651d35fa3820839d5baefd8b4748a620accab8",
+    "docs/SM/PARENT_ACTION_REQUIREMENTS.md": "655018ac8af3aca619c7fbbf62926c0f688c736c27dccc6ce2cbae42f112b657",
+    "docs/SM/CC26_NORMALISATION_RETRACTION.md": "e6e278c3a523dfd78456688aa203987061054dfb236a4af527161e344d970de2"
+  },
+  "scope": "Exact index, slope, charge and necessary-anomaly audit. No claim of a complete physical vacuum or derived QED.",
+  "selection": {
+    "method": "Frozen first minimum-score witness of the archived restricted box, independently rechecked without a new full scan.",
+    "archived_n_solutions": 116,
+    "archived_min_extras_score": 31,
+    "archived_boxes": {
+      "n_box": 8,
+      "box_a": 4,
+      "box_b": 1,
+      "box_e": 30
+    },
+    "archived_counts_status": "EXACT in recorded finite box; not re-enumerated in Matter-01; provenance PV02 and v0340_review parent audit",
+    "normal_slice_selection_check": "Four solutions at normal (8,3,1); minimum31 reproduced during this audit, not a global minimum claim."
+  },
+  "witness": {
+    "gauge_parent": "conditional topologically twisted 8D U(8) adjoint gauge parent",
+    "stack_order": [
+      "c",
+      "L",
+      "A1",
+      "A2",
+      "B"
+    ],
+    "ranks": {
+      "c": 3,
+      "L": 2,
+      "A1": 1,
+      "A2": 1,
+      "B": 1
+    },
+    "classes_(a,b,e)": {
+      "c": [
+        0,
+        0,
+        0
+      ],
+      "L": [
+        -3,
+        1,
+        21
+      ],
+      "A1": [
+        -1,
+        0,
+        8
+      ],
+      "A2": [
+        4,
+        -1,
+        -29
+      ],
+      "B": [
+        3,
+        -1,
+        -21
+      ]
+    },
+    "kahler_normal_(A_E,A_X,epsilon)": [
+      8,
+      3,
+      1
+    ],
+    "r_A_X_over_A_E": "3/8",
+    "epsilon_over_A_E": "1/8",
+    "phi": {
+      "c": 0,
+      "L": -3,
+      "A1": 8,
+      "A2": -5,
+      "B": 3
+    },
+    "slopes": {
+      "c": 0,
+      "L": 0,
+      "A1": 0,
+      "A2": 0,
+      "B": 0
+    },
+    "rank_weighted_c1": [
+      0,
+      0,
+      0
+    ],
+    "net_SM_indices": {
+      "Q": 3,
+      "u^c": 3,
+      "d^c": 3,
+      "L": 3,
+      "e^c": 3
+    },
+    "signed_index_blocks": {
+      "Q": [
+        3
+      ],
+      "u^c": [
+        8,
+        -5
+      ],
+      "d^c": [
+        3
+      ],
+      "L": [
+        11,
+        -2,
+        -6
+      ],
+      "e^c": [
+        -5,
+        8
+      ]
+    },
+    "index_forced_lower_bounds": {
+      "u^c_pairs": 5,
+      "e^c_pairs": 5,
+      "doublet_pairs": 8,
+      "neutral_singlets": 13
+    },
+    "RR_cohomology_lower_bounds": [
+      {
+        "orientation": "c/L",
+        "class_(a,b,e)": [
+          3,
+          -1,
+          -21
+        ],
+        "chi_L": "-222",
+        "chi_dual": "-225",
+        "net_chi_difference": "3",
+        "h1_L_lower_bound": "222",
+        "h1_dual_lower_bound": "225",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "c/A1",
+        "class_(a,b,e)": [
+          1,
+          0,
+          -8
+        ],
+        "chi_L": "-36",
+        "chi_dual": "-28",
+        "net_chi_difference": "-8",
+        "h1_L_lower_bound": "36",
+        "h1_dual_lower_bound": "28",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "c/A2",
+        "class_(a,b,e)": [
+          -4,
+          1,
+          29
+        ],
+        "chi_L": "-422",
+        "chi_dual": "-427",
+        "net_chi_difference": "5",
+        "h1_L_lower_bound": "422",
+        "h1_dual_lower_bound": "427",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "c/B",
+        "class_(a,b,e)": [
+          -3,
+          1,
+          21
+        ],
+        "chi_L": "-225",
+        "chi_dual": "-222",
+        "net_chi_difference": "-3",
+        "h1_L_lower_bound": "225",
+        "h1_dual_lower_bound": "222",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "L/A1",
+        "class_(a,b,e)": [
+          -2,
+          1,
+          13
+        ],
+        "chi_L": "-92",
+        "chi_dual": "-81",
+        "net_chi_difference": "-11",
+        "h1_L_lower_bound": "92",
+        "h1_dual_lower_bound": "81",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "L/A2",
+        "class_(a,b,e)": [
+          -7,
+          2,
+          50
+        ],
+        "chi_L": "-1263",
+        "chi_dual": "-1265",
+        "net_chi_difference": "2",
+        "h1_L_lower_bound": "1263",
+        "h1_dual_lower_bound": "1265",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "L/B",
+        "class_(a,b,e)": [
+          -6,
+          2,
+          42
+        ],
+        "chi_L": "-897",
+        "chi_dual": "-891",
+        "net_chi_difference": "-6",
+        "h1_L_lower_bound": "897",
+        "h1_dual_lower_bound": "891",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "A1/A2",
+        "class_(a,b,e)": [
+          -5,
+          1,
+          37
+        ],
+        "chi_L": "-683",
+        "chi_dual": "-696",
+        "net_chi_difference": "13",
+        "h1_L_lower_bound": "683",
+        "h1_dual_lower_bound": "696",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "A1/B",
+        "class_(a,b,e)": [
+          -4,
+          1,
+          29
+        ],
+        "chi_L": "-422",
+        "chi_dual": "-427",
+        "net_chi_difference": "5",
+        "h1_L_lower_bound": "422",
+        "h1_dual_lower_bound": "427",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      },
+      {
+        "orientation": "A2/B",
+        "class_(a,b,e)": [
+          1,
+          0,
+          -8
+        ],
+        "chi_L": "-36",
+        "chi_dual": "-28",
+        "net_chi_difference": "-8",
+        "h1_L_lower_bound": "36",
+        "h1_dual_lower_bound": "28",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    ],
+    "RR_warning": "Negative Euler characteristics force much larger H1 dimensions than the abs(net)-based extras score suggests. E.g. c/L has H1>=222 and dual>=225; L/B has H1>=897 and dual>=891. Their lifting and physical interpretation must be handled by a complete reduction.",
+    "extras_score_warning": "31 adds representation-pair counts to neutral-singlet multiplicity; it is neither a particle count nor the full massless spectrum."
+  },
+  "U1_bridge": {
+    "convention": "Q=T3+Y; L has Y=-1/2; e^c is left-handed anti-electron with Y=+1",
+    "stack_Y": {
+      "c": "1/6",
+      "L": "0",
+      "A1": "-1/2",
+      "A2": "-1/2",
+      "B": "1/2"
+    },
+    "root_Y": {
+      "Q": "1/6",
+      "u^c": "-2/3",
+      "d^c": "1/3",
+      "L": "-1/2",
+      "e^c": "1"
+    },
+    "Tr_Y_squared": "5/6",
+    "common_center_lift": "Adding s to all five stack hypercharges leaves every adjoint root charge unchanged; Tr(Y(s)^2)=5/6+8s^2. The displayed s=0 representative is traceless. A full GS/kinetic sector must decide the physical lift.",
+    "electric_charges_after_EW": {
+      "L_doublet": [
+        "0",
+        "-1"
+      ],
+      "e^c": "1",
+      "H_u": [
+        "1",
+        "0"
+      ],
+      "H_d": [
+        "0",
+        "-1"
+      ]
+    },
+    "lepton_Yukawa_triangles": [
+      {
+        "stack": "A1",
+        "classes": [
+          [
+            2,
+            -1,
+            -13
+          ],
+          [
+            4,
+            -1,
+            -29
+          ],
+          [
+            -6,
+            2,
+            42
+          ]
+        ],
+        "sum": [
+          0,
+          0,
+          0
+        ],
+        "Y_sum": "0"
+      },
+      {
+        "stack": "A2",
+        "classes": [
+          [
+            7,
+            -2,
+            -50
+          ],
+          [
+            -1,
+            0,
+            8
+          ],
+          [
+            -6,
+            2,
+            42
+          ]
+        ],
+        "sum": [
+          0,
+          0,
+          0
+        ],
+        "Y_sum": "0"
+      }
+    ],
+    "Tr_Y_c1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "integral_Tr_Y_c1_squared": "233",
+    "conditional_universal_YM": {
+      "assumption": "One universal U8 parent kinetic term, no threshold or kinetic mixing correction, generator tr(TaTb)=delta_ab/2.",
+      "gY_squared_over_g2_squared": "3/5",
+      "sin2_theta_matching": "3/8",
+      "status": "EXACT conditional group normalization; not a measured low-energy coupling prediction"
+    },
+    "photon_conditions": [
+      "All axion mass rows annihilate the hypercharge direction before EWSB.",
+      "Selected Higgs VEV is neutral under Q=T3+Y.",
+      "Positive kinetic matrix is canonically normalized including extra U1 mixing.",
+      "The combined gauge mass matrix has the electromagnetic null direction."
+    ],
+    "standard_no_extra_mixing_relation": "1/e^2 = 1/g2^2 + 1/gY^2",
+    "derived_electron_mass": null,
+    "derived_alpha_EM": null,
+    "physical_QED_parameters": "INPUT in the separate reference benchmark"
+  },
+  "anomalies": {
+    "4d_net": {
+      "gravitational_U1Y": "0",
+      "U1Y_cubed": "0",
+      "SU3_squared_U1Y": "0",
+      "SU2_squared_U1Y": "0",
+      "SU3_cubed": 0,
+      "net_SU2_doublet_multiplicity": 12
+    },
+    "8d_local_adjoint_I10": "0",
+    "status": "EXACT necessary local/net checks; globally consistent parent and extra-U1 sectors OPEN"
+  },
+  "collinear_comparison_control": {
+    "classes_(a,b,e)": {
+      "c": [
+        0,
+        0,
+        0
+      ],
+      "L": [
+        1,
+        0,
+        -3
+      ],
+      "A1": [
+        2,
+        0,
+        -6
+      ],
+      "A2": [
+        -3,
+        0,
+        9
+      ],
+      "B": [
+        -1,
+        0,
+        3
+      ]
+    },
+    "phi": {
+      "c": 0,
+      "L": -3,
+      "A1": -6,
+      "A2": 9,
+      "B": 3
+    },
+    "ample_Dflat_locus": "epsilon/A_E=1/3, A_X/A_E>1/3",
+    "net_SM_indices": {
+      "Q": 3,
+      "u^c": 3,
+      "d^c": 3,
+      "L": 3,
+      "e^c": 3
+    },
+    "index_forced_lower_bounds": {
+      "u^c": 6,
+      "e^c": 6,
+      "doublets": 9,
+      "sterile_singlets": 15
+    },
+    "index_extras_score": 36,
+    "RR_cohomology_lower_bounds": [
+      {
+        "orientation": "c/L",
+        "class_(a,b,e)": [
+          -1,
+          0,
+          3
+        ],
+        "chi_L": "-3",
+        "chi_dual": "-6",
+        "h1_L_lower_bound": "3",
+        "h1_dual_lower_bound": "6"
+      },
+      {
+        "orientation": "c/A1",
+        "class_(a,b,e)": [
+          -2,
+          0,
+          6
+        ],
+        "chi_L": "-15",
+        "chi_dual": "-21",
+        "h1_L_lower_bound": "15",
+        "h1_dual_lower_bound": "21"
+      },
+      {
+        "orientation": "c/A2",
+        "class_(a,b,e)": [
+          3,
+          0,
+          -9
+        ],
+        "chi_L": "-45",
+        "chi_dual": "-36",
+        "h1_L_lower_bound": "45",
+        "h1_dual_lower_bound": "36"
+      },
+      {
+        "orientation": "c/B",
+        "class_(a,b,e)": [
+          1,
+          0,
+          -3
+        ],
+        "chi_L": "-6",
+        "chi_dual": "-3",
+        "h1_L_lower_bound": "6",
+        "h1_dual_lower_bound": "3"
+      },
+      {
+        "orientation": "L/A1",
+        "class_(a,b,e)": [
+          -1,
+          0,
+          3
+        ],
+        "chi_L": "-3",
+        "chi_dual": "-6",
+        "h1_L_lower_bound": "3",
+        "h1_dual_lower_bound": "6"
+      },
+      {
+        "orientation": "L/A2",
+        "class_(a,b,e)": [
+          4,
+          0,
+          -12
+        ],
+        "chi_L": "-78",
+        "chi_dual": "-66",
+        "h1_L_lower_bound": "78",
+        "h1_dual_lower_bound": "66"
+      },
+      {
+        "orientation": "L/B",
+        "class_(a,b,e)": [
+          2,
+          0,
+          -6
+        ],
+        "chi_L": "-21",
+        "chi_dual": "-15",
+        "h1_L_lower_bound": "21",
+        "h1_dual_lower_bound": "15"
+      },
+      {
+        "orientation": "A1/A2",
+        "class_(a,b,e)": [
+          5,
+          0,
+          -15
+        ],
+        "chi_L": "-120",
+        "chi_dual": "-105",
+        "h1_L_lower_bound": "120",
+        "h1_dual_lower_bound": "105"
+      },
+      {
+        "orientation": "A1/B",
+        "class_(a,b,e)": [
+          3,
+          0,
+          -9
+        ],
+        "chi_L": "-45",
+        "chi_dual": "-36",
+        "h1_L_lower_bound": "45",
+        "h1_dual_lower_bound": "36"
+      },
+      {
+        "orientation": "A2/B",
+        "class_(a,b,e)": [
+          -2,
+          0,
+          6
+        ],
+        "chi_L": "-15",
+        "chi_dual": "-21",
+        "h1_L_lower_bound": "15",
+        "h1_dual_lower_bound": "21"
+      }
+    ],
+    "unweighted_H1_lower_bound_sum_all_Hom_orientations": "666",
+    "primary_unweighted_H1_lower_bound_sum": "8588",
+    "status": "EXACT comparison; neither sum is a particle count, and this control is not established viable or optimal.",
+    "recommendation": "Use this lower-degree one-line-bundle family as a cohomology control before preferring the minimum-net-index-extras witness."
+  },
+  "checks": [
+    {
+      "name": "ampleness",
+      "pass": true,
+      "status": "EXACT",
+      "witness": [
+        8,
+        3,
+        1
+      ]
+    },
+    {
+      "name": "all_stack_slopes_zero",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "c": 0,
+        "L": 0,
+        "A1": 0,
+        "A2": 0,
+        "B": 0
+      }
+    },
+    {
+      "name": "phi_c_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "slope_c_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "phi_L_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": -3
+    },
+    {
+      "name": "slope_L_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "phi_A1_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 8
+    },
+    {
+      "name": "slope_A1_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "phi_A2_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": -5
+    },
+    {
+      "name": "slope_A2_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "phi_B_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 3
+    },
+    {
+      "name": "slope_B_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 0
+    },
+    {
+      "name": "five_distinct_stack_classes",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "c": [
+          0,
+          0,
+          0
+        ],
+        "L": [
+          -3,
+          1,
+          21
+        ],
+        "A1": [
+          -1,
+          0,
+          8
+        ],
+        "A2": [
+          4,
+          -1,
+          -29
+        ],
+        "B": [
+          3,
+          -1,
+          -21
+        ]
+      }
+    },
+    {
+      "name": "noncollinear_witness",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "c": [
+          0,
+          0,
+          0
+        ],
+        "L": [
+          -3,
+          1,
+          21
+        ],
+        "A1": [
+          -1,
+          0,
+          8
+        ],
+        "A2": [
+          4,
+          -1,
+          -29
+        ],
+        "B": [
+          3,
+          -1,
+          -21
+        ]
+      }
+    },
+    {
+      "name": "rank_weighted_flux_traceless",
+      "pass": true,
+      "status": "EXACT",
+      "witness": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "independent_net_content_vs_release",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "Q": 3,
+        "u^c": 3,
+        "d^c": 3,
+        "L": 3,
+        "e^c": 3
+      }
+    },
+    {
+      "name": "three_net_SM_families",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "Q": 3,
+        "u^c": 3,
+        "d^c": 3,
+        "L": 3,
+        "e^c": 3
+      }
+    },
+    {
+      "name": "index_forced_lower_bounds",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "u^c_pairs": 5,
+        "e^c_pairs": 5,
+        "doublet_pairs": 8,
+        "neutral_singlets": 13
+      }
+    },
+    {
+      "name": "archived_extras_score",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 31
+    },
+    {
+      "name": "RR_bound_c_L",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "c/L",
+        "class_(a,b,e)": [
+          3,
+          -1,
+          -21
+        ],
+        "chi_L": "-222",
+        "chi_dual": "-225",
+        "net_chi_difference": "3",
+        "h1_L_lower_bound": "222",
+        "h1_dual_lower_bound": "225",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_c_A1",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "c/A1",
+        "class_(a,b,e)": [
+          1,
+          0,
+          -8
+        ],
+        "chi_L": "-36",
+        "chi_dual": "-28",
+        "net_chi_difference": "-8",
+        "h1_L_lower_bound": "36",
+        "h1_dual_lower_bound": "28",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_c_A2",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "c/A2",
+        "class_(a,b,e)": [
+          -4,
+          1,
+          29
+        ],
+        "chi_L": "-422",
+        "chi_dual": "-427",
+        "net_chi_difference": "5",
+        "h1_L_lower_bound": "422",
+        "h1_dual_lower_bound": "427",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_c_B",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "c/B",
+        "class_(a,b,e)": [
+          -3,
+          1,
+          21
+        ],
+        "chi_L": "-225",
+        "chi_dual": "-222",
+        "net_chi_difference": "-3",
+        "h1_L_lower_bound": "225",
+        "h1_dual_lower_bound": "222",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_L_A1",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "L/A1",
+        "class_(a,b,e)": [
+          -2,
+          1,
+          13
+        ],
+        "chi_L": "-92",
+        "chi_dual": "-81",
+        "net_chi_difference": "-11",
+        "h1_L_lower_bound": "92",
+        "h1_dual_lower_bound": "81",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_L_A2",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "L/A2",
+        "class_(a,b,e)": [
+          -7,
+          2,
+          50
+        ],
+        "chi_L": "-1263",
+        "chi_dual": "-1265",
+        "net_chi_difference": "2",
+        "h1_L_lower_bound": "1263",
+        "h1_dual_lower_bound": "1265",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_L_B",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "L/B",
+        "class_(a,b,e)": [
+          -6,
+          2,
+          42
+        ],
+        "chi_L": "-897",
+        "chi_dual": "-891",
+        "net_chi_difference": "-6",
+        "h1_L_lower_bound": "897",
+        "h1_dual_lower_bound": "891",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_A1_A2",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "A1/A2",
+        "class_(a,b,e)": [
+          -5,
+          1,
+          37
+        ],
+        "chi_L": "-683",
+        "chi_dual": "-696",
+        "net_chi_difference": "13",
+        "h1_L_lower_bound": "683",
+        "h1_dual_lower_bound": "696",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_A1_B",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "A1/B",
+        "class_(a,b,e)": [
+          -4,
+          1,
+          29
+        ],
+        "chi_L": "-422",
+        "chi_dual": "-427",
+        "net_chi_difference": "5",
+        "h1_L_lower_bound": "422",
+        "h1_dual_lower_bound": "427",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "RR_bound_A2_B",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "orientation": "A2/B",
+        "class_(a,b,e)": [
+          1,
+          0,
+          -8
+        ],
+        "chi_L": "-36",
+        "chi_dual": "-28",
+        "net_chi_difference": "-8",
+        "h1_L_lower_bound": "36",
+        "h1_dual_lower_bound": "28",
+        "status": "EXACT lower bounds for cohomology; not full dimensions or physical masses"
+      }
+    },
+    {
+      "name": "hypercharge_traceless",
+      "pass": true,
+      "status": "EXACT",
+      "witness": "0"
+    },
+    {
+      "name": "hypercharge_generator_norm",
+      "pass": true,
+      "status": "EXACT",
+      "witness": "5/6"
+    },
+    {
+      "name": "common_center_hypercharge_lift_norm",
+      "pass": true,
+      "status": "EXACT",
+      "witness": "8*s**2 + 5/6"
+    },
+    {
+      "name": "SM_hypercharge_root_assignments",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "Q": "1/6",
+        "u^c": "-2/3",
+        "d^c": "1/3",
+        "L": "-1/2",
+        "e^c": "1"
+      }
+    },
+    {
+      "name": "electric_charge_and_neutral_Higgs_components",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "L_doublet": [
+          "0",
+          "-1"
+        ],
+        "e^c": "1",
+        "H_u": [
+          "1",
+          "0"
+        ],
+        "H_d": [
+          "0",
+          "-1"
+        ]
+      }
+    },
+    {
+      "name": "charged_lepton_Yukawa_topological_triangle_only",
+      "pass": true,
+      "status": "EXACT",
+      "witness": [
+        {
+          "stack": "A1",
+          "classes": [
+            [
+              2,
+              -1,
+              -13
+            ],
+            [
+              4,
+              -1,
+              -29
+            ],
+            [
+              -6,
+              2,
+              42
+            ]
+          ],
+          "sum": [
+            0,
+            0,
+            0
+          ],
+          "Y_sum": "0"
+        },
+        {
+          "stack": "A2",
+          "classes": [
+            [
+              7,
+              -2,
+              -50
+            ],
+            [
+              -1,
+              0,
+              8
+            ],
+            [
+              -6,
+              2,
+              42
+            ]
+          ],
+          "sum": [
+            0,
+            0,
+            0
+          ],
+          "Y_sum": "0"
+        }
+      ]
+    },
+    {
+      "name": "linear_hypercharge_flux_projection",
+      "pass": true,
+      "status": "EXACT",
+      "witness": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "name": "quadratic_hypercharge_flux_projection",
+      "pass": true,
+      "status": "EXACT",
+      "witness": "233"
+    },
+    {
+      "name": "4d_net_perturbative_anomaly_cancellation",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "gravitational_U1Y": "0",
+        "U1Y_cubed": "0",
+        "SU3_squared_U1Y": "0",
+        "SU2_squared_U1Y": "0",
+        "SU3_cubed": 0,
+        "net_SU2_doublet_multiplicity": 12
+      }
+    },
+    {
+      "name": "4d_net_SU2_Witten_parity",
+      "pass": true,
+      "status": "EXACT",
+      "witness": 12
+    },
+    {
+      "name": "8d_adjoint_local_I10_zero",
+      "pass": true,
+      "status": "EXACT",
+      "witness": "0"
+    },
+    {
+      "name": "conditional_universal_YM_coupling_normalisation",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "gY_squared_over_g2_squared": "3/5",
+        "sin2_theta_at_matching": "3/8"
+      }
+    },
+    {
+      "name": "collinear_control_net_families",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "Q": 3,
+        "u^c": 3,
+        "d^c": 3,
+        "L": 3,
+        "e^c": 3
+      }
+    },
+    {
+      "name": "collinear_control_Dflat_at_3_3_1",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "c": [
+          0,
+          0,
+          0
+        ],
+        "L": [
+          1,
+          0,
+          -3
+        ],
+        "A1": [
+          2,
+          0,
+          -6
+        ],
+        "A2": [
+          -3,
+          0,
+          9
+        ],
+        "B": [
+          -1,
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "name": "collinear_control_RR_bounds",
+      "pass": true,
+      "status": "EXACT",
+      "witness": [
+        {
+          "orientation": "c/L",
+          "class_(a,b,e)": [
+            -1,
+            0,
+            3
+          ],
+          "chi_L": "-3",
+          "chi_dual": "-6",
+          "h1_L_lower_bound": "3",
+          "h1_dual_lower_bound": "6"
+        },
+        {
+          "orientation": "c/A1",
+          "class_(a,b,e)": [
+            -2,
+            0,
+            6
+          ],
+          "chi_L": "-15",
+          "chi_dual": "-21",
+          "h1_L_lower_bound": "15",
+          "h1_dual_lower_bound": "21"
+        },
+        {
+          "orientation": "c/A2",
+          "class_(a,b,e)": [
+            3,
+            0,
+            -9
+          ],
+          "chi_L": "-45",
+          "chi_dual": "-36",
+          "h1_L_lower_bound": "45",
+          "h1_dual_lower_bound": "36"
+        },
+        {
+          "orientation": "c/B",
+          "class_(a,b,e)": [
+            1,
+            0,
+            -3
+          ],
+          "chi_L": "-6",
+          "chi_dual": "-3",
+          "h1_L_lower_bound": "6",
+          "h1_dual_lower_bound": "3"
+        },
+        {
+          "orientation": "L/A1",
+          "class_(a,b,e)": [
+            -1,
+            0,
+            3
+          ],
+          "chi_L": "-3",
+          "chi_dual": "-6",
+          "h1_L_lower_bound": "3",
+          "h1_dual_lower_bound": "6"
+        },
+        {
+          "orientation": "L/A2",
+          "class_(a,b,e)": [
+            4,
+            0,
+            -12
+          ],
+          "chi_L": "-78",
+          "chi_dual": "-66",
+          "h1_L_lower_bound": "78",
+          "h1_dual_lower_bound": "66"
+        },
+        {
+          "orientation": "L/B",
+          "class_(a,b,e)": [
+            2,
+            0,
+            -6
+          ],
+          "chi_L": "-21",
+          "chi_dual": "-15",
+          "h1_L_lower_bound": "21",
+          "h1_dual_lower_bound": "15"
+        },
+        {
+          "orientation": "A1/A2",
+          "class_(a,b,e)": [
+            5,
+            0,
+            -15
+          ],
+          "chi_L": "-120",
+          "chi_dual": "-105",
+          "h1_L_lower_bound": "120",
+          "h1_dual_lower_bound": "105"
+        },
+        {
+          "orientation": "A1/B",
+          "class_(a,b,e)": [
+            3,
+            0,
+            -9
+          ],
+          "chi_L": "-45",
+          "chi_dual": "-36",
+          "h1_L_lower_bound": "45",
+          "h1_dual_lower_bound": "36"
+        },
+        {
+          "orientation": "A2/B",
+          "class_(a,b,e)": [
+            -2,
+            0,
+            6
+          ],
+          "chi_L": "-15",
+          "chi_dual": "-21",
+          "h1_L_lower_bound": "15",
+          "h1_dual_lower_bound": "21"
+        }
+      ]
+    },
+    {
+      "name": "collinear_control_geometric_count_proxy",
+      "pass": true,
+      "status": "EXACT",
+      "witness": {
+        "collinear_H1_bound_sum": "666",
+        "primary_H1_bound_sum": "8588"
+      }
+    }
+  ],
+  "summary": {
+    "n_exact_checks": 45,
+    "n_failed": 0,
+    "complete_vacuum_established": false,
+    "MTFT_derived_electron_photon_sector": false
+  },
+  "open_gates": [
+    {
+      "gate": "arithmetic_blowup_point_and_holomorphic_bundles",
+      "status": "OPEN",
+      "reason": "An actual point, line bundles including Picard data, and a compatible holomorphic metric are not fixed by NS classes."
+    },
+    {
+      "gate": "full_cohomology_and_particle_spectrum",
+      "status": "OPEN",
+      "reason": "No h0, h1, h2 or normalized zero-mode bases on this blow-up have been computed."
+    },
+    {
+      "gate": "nonzero_normalized_electron_Yukawa_and_mass",
+      "status": "OPEN",
+      "reason": "Triangle class/charge closure is necessary but does not compute overlaps, kinetic Grams, a selected VEV, or the mass matrix."
+    },
+    {
+      "gate": "vectorlike_exotic_lifting",
+      "status": "OPEN",
+      "reason": "Index-forced pairs have not been assigned a full-rank gauge-invariant mass matrix; further pairs may exist."
+    },
+    {
+      "gate": "hypercharge_Stueckelberg_kernel",
+      "status": "OPEN",
+      "reason": "No axion/GS charge matrix is specified. Tr(Yc1)=0 does not establish every relevant coupling vanishes; Tr(Yc1^2)=233 is nonzero."
+    },
+    {
+      "gate": "physical_gauge_kinetic_matrix_and_mixing",
+      "status": "OPEN",
+      "reason": "Tr(Y^2)=5/6 is a generator norm. The universal parent kinetic action, volume, thresholds, extra-U1 mixing and RG matching are not derived."
+    },
+    {
+      "gate": "selected_electroweak_vacuum_and_massless_photon",
+      "status": "OPEN",
+      "reason": "Neutral Higgs components exist algebraically; an actual stable VEV and all axion/gauge mass kernels remain to be demonstrated."
+    },
+    {
+      "gate": "global_parent_consistency",
+      "status": "OPEN",
+      "reason": "Local I10 cancellation does not supply global anomalies, charge/flux quantisation and a UV/global completion of the non-spin twisted parent."
+    },
+    {
+      "gate": "complete_stability_and_moduli",
+      "status": "OPEN",
+      "reason": "The exact split-slope/D-flat check is conditional internal HYM data, not a computed full fluctuation Hessian or moduli-stabilized spacetime vacuum."
+    },
+    {
+      "gate": "dimensionful_scales",
+      "status": "OPEN",
+      "reason": "K\u00e4hler ratios are dimensionless; compactification, gauge and Higgs/electron scales are not determined."
+    },
+    {
+      "gate": "B3_C3X_common_parent",
+      "status": "OPEN",
+      "reason": "B3 is the 8D blow-up adjoint/twisted branch. ADS-03 evolves a separate 6D C3X-derived classical scalar benchmark; there is no common reduction yet."
+    }
+  ],
+  "physics_references": [
+    {
+      "url": "https://pdg.lbl.gov/2025/reviews/standard_model_and_related.html",
+      "use": "Electroweak charge and coupling conventions."
+    },
+    {
+      "url": "https://cds.cern.ch/record/819632/files/0502010.pdf",
+      "use": "A. Pich, Standard Model of Electroweak Interactions: Q=T3+Y and e=g sin(theta)=g' cos(theta)."
+    },
+    {
+      "url": "https://arxiv.org/abs/hep-th/0304245",
+      "use": "Ruegg/Ruiz-Altaba, The Stueckelberg Field; a gauge symmetry alone does not exclude a Stueckelberg photon mass."
+    },
+    {
+      "url": "https://arxiv.org/abs/1411.0034",
+      "use": "Heterotic example of model-dependent axion/hypercharge constraints; not assumed to be the MTFT parent."
+    }
+  ]
+}

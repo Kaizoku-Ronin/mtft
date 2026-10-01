@@ -1,0 +1,71 @@
+{
+  "milestone": "Matter-02",
+  "source_version": "0.34.0 + unreleased Matter-01/02",
+  "passed": true,
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "pytest": "8.4.2",
+    "matplotlib": "3.10.8"
+  },
+  "exact_certificates": {
+    "cohomology": 148,
+    "yukawa": 34,
+    "photon": 38
+  },
+  "holomorphic_rank_lower_bound": 3,
+  "physical_mass_and_photon": "OPEN",
+  "browser_layout": "UNVERIFIED: mock-DOM logic is not browser layout QA",
+  "full_release_suite": "NOT RUN by this focused runner",
+  "stages": [
+    {
+      "name": "cohomology",
+      "returncode": 0,
+      "seconds": 0.133,
+      "log": "results/cohomology.log"
+    },
+    {
+      "name": "yukawa",
+      "returncode": 0,
+      "seconds": 0.089,
+      "log": "results/yukawa.log"
+    },
+    {
+      "name": "photon",
+      "returncode": 0,
+      "seconds": 1.749,
+      "log": "results/photon.log"
+    },
+    {
+      "name": "public_api",
+      "returncode": 0,
+      "seconds": 1.062,
+      "log": "results/public_api.log"
+    },
+    {
+      "name": "capability_index",
+      "returncode": 0,
+      "seconds": 0.529,
+      "log": "results/capability_index.log"
+    },
+    {
+      "name": "focused_tests",
+      "returncode": 0,
+      "seconds": 11.741,
+      "log": "results/focused_tests.log"
+    },
+    {
+      "name": "lab_logic",
+      "returncode": 0,
+      "seconds": 0.128,
+      "log": "results/lab_logic.log"
+    },
+    {
+      "name": "scientific_figure",
+      "returncode": 0,
+      "seconds": 2.338,
+      "log": "results/scientific_figure.log"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "milestone": "Matter-01",
+  "catalog_sha256": "021526ec5480af79169c8e94d9ade6ae9fbfa20e411a38cc96e3053a1c19d29d",
+  "reference_vertex": {
+    "name": "V_98",
+    "particles": [
+      "e__plus__",
+      "e__minus__",
+      "a"
+    ],
+    "color": [
+      "1"
+    ],
+    "lorentz": [
+      "FFV1"
+    ],
+    "couplings": [
+      {
+        "color_index": 0,
+        "lorentz_index": 0,
+        "coupling": "GC_3"
+      }
+    ],
+    "source_line": 594,
+    "id": "V_98",
+    "sector": "ew_fermion"
+  },
+  "reference_kernel": {
+    "status": "DIAGNOSTIC: ordinary tree-level QED validated on declared grids",
+    "evidence": [
+      "qed_reference_report.json",
+      "qed_oracle_checks.json"
+    ],
+    "mass": "INPUT",
+    "alpha": "INPUT",
+    "photon_massless": "DEFINED reference assumption"
+  },
+  "conditional_reduction": {
+    "status": "EXACT conditional identities; sampled numerical evaluation",
+    "evidence": [
+      "u1_reduction_checks.json"
+    ],
+    "assumptions": [
+      "constant unbroken photon zero mode",
+      "positive kinetic Gram",
+      "uniform charge within each mode block",
+      "supplied parent coupling"
+    ]
+  },
+  "selected_MTFT_vacuum": {
+    "status": "OPEN",
+    "evidence": [
+      "vacuum_audit.json"
+    ],
+    "missing": [
+      "full cohomology and field dictionary",
+      "normalized electron Yukawa",
+      "photon axion/Stueckelberg kernel",
+      "physical scales and gauge matching",
+      "unwanted-mode masses"
+    ]
+  },
+  "atlas_MTFT_mapping_counts": {
+    "unmapped": 153,
+    "symmetry-compatible": 0,
+    "vertex-derived": 0,
+    "amplitude-tested": 0
+  },
+  "atlas_promotions": 0
+}

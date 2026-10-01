@@ -17,10 +17,13 @@ Every statement below is EXACT unless it says otherwise; the finite scans are ex
   come only from mixed blocks, so u^c and d^c need two singlet stacks (ledger row 3 made concrete).
 
 ## 2. The B1 finite search (`b1_scan`, `hypercharge_assignment`, `sm_net_content`, `b1_trilemma`)
-Content Lambda^2(N) + (16 - N) N (quintic-free), N = 5 + k, on stacks c (U(3)), L (U(2)) and k singlet stacks with bidegrees in a box;
+Content Lambda^2(N) + (16 - N) N (quintic-free), N = 5 + k, on stacks c (U(3)), L (U(2)) and k singlet stacks with bidegrees in a box.
+The scan imposes a_c b_c = 0 and selects two individual mixed antitriplet blocks of index -3; it searches this restricted subclass,
+not every B1 background in the box.  The colour restriction is not forced by the Standard-Model net-index equations: contributions
+from different parent representations can cancel.  Counts and finite trilemma statements below refer to the implemented subclass;
 acceptance = net left-handed content EXACTLY three Standard-Model families plus hypercharge-neutral singlets and vector-like pairs, for
 some rational stack hypercharges (exact Gaussian elimination; the free directions are pinned exhaustively at SM values).
-- k = 1 (U(6)), k = 2 (U(7)), box 3, and the Sym^2 class: NO Standard-Model assignment (the lepton-doublet count cannot be 3).
+- k = 1 (U(6)), k = 2 (U(7)), box 3, and the Sym^2 class: NO Standard-Model assignment in the restricted scan (the lepton-doublet count cannot be 3).
 - k = 3 (U(8) = U(3) x U(2) x U(1)^3, Lambda^2(8) + 8 x 8): box 3 gives 60 assignments, box 4 gives 156, each with exactly three families;
   one class has a single vector-like Higgs-type doublet pair and only integer-charged singlets.  These are the first chiral, quintic-free 8D
   contents that land the Standard Model on X0(143) x 143a1 as net indices.  (Net indices only; vector-like pairs beyond the ones listed

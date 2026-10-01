@@ -1,0 +1,1078 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "021526ec5480af79169c8e94d9ade6ae9fbfa20e411a38cc96e3053a1c19d29d",
+  "model_id": "sm-abfd2c92873b",
+  "entries": [
+    {
+      "vertex_id": "V_1",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_2",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_3",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_4",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_5",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_6",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_7",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_8",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_9",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_10",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_11",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_12",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_13",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_14",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_15",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_16",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_17",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_18",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_19",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_20",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_21",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_22",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_23",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_24",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_25",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_26",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_27",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_28",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_29",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_30",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_31",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_32",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_33",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_34",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_35",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_36",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_37",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_38",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_39",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_40",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_41",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_42",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_43",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_44",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_45",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_46",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_47",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_48",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_49",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_50",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_51",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_52",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_53",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_54",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_55",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_56",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_57",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_58",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_59",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_60",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_61",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_62",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_63",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_64",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_65",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_66",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_67",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_68",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_69",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_70",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_71",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_72",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_73",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_74",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_75",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_76",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_77",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_78",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_79",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_80",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_81",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_82",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_83",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_84",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_85",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_86",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_87",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_88",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_89",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_90",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_91",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_92",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_93",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_94",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_95",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_96",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_97",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_98",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "Matter-01 validates an ordinary supplied-parameter QED reference amplitude. No selected-vacuum MTFT electron-photon vertex or coefficient has been derived; status remains unmapped. See matter01_evidence_ledger.json.",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_99",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_100",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_101",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_102",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_103",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_104",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_105",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_106",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_107",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_108",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_109",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_110",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_111",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_112",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_113",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_114",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_115",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_116",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_117",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_118",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_119",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_120",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_121",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_122",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_123",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_124",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_125",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_126",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_127",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_128",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_129",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_130",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_131",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_132",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_133",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_134",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_135",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_136",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_137",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_138",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_139",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_140",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_141",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_142",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_143",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_144",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_145",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_146",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_147",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_148",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_149",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_150",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_151",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_152",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    },
+    {
+      "vertex_id": "V_153",
+      "status": "unmapped",
+      "evidence": [],
+      "notes": "",
+      "benchmarks": []
+    }
+  ]
+}

@@ -296,7 +296,7 @@ def sm_net_content(blocks, hy):
         col, wk, _ = key; Y = hy[key]
         if col == "3bar": key2 = ("3", wk, -Y); v2 = -v            # record antitriplets as negative triplets
         elif col == "1" and wk == "2": key2 = ("1", "2", Y if Y <= 0 else -Y); v2 = v if Y <= 0 else -v
-        elif col == "1": key2 = ("1", "1", abs(Y)); v2 = v if Y >= 0 else -v
+        elif col == "1": key2 = ("1", wk, abs(Y)); v2 = v if Y >= 0 else -v
         else: key2 = (col, wk, Y); v2 = v
         net[key2] = net.get(key2, 0) + v2
     return {k: v for k, v in net.items() if v != 0}
@@ -304,9 +304,11 @@ def sm_net_content(blocks, hy):
 SM_NET = lambda f: {("3", "2", Fraction(1, 6)): f, ("3", "1", Fraction(2, 3)): -f, ("3", "1", Fraction(-1, 3)): -f, ("1", "2", Fraction(-1, 2)): f, ("1", "1", Fraction(1)): f}
 
 def b1_scan(k_singlets=2, box=3, families=3, n_anti=1, n_sym=0):
-    """Exact finite search over split backgrounds for the quintic-free content Lambda^2(N) + (16 - N) N, N = 5 + k_singlets, with stacks
-    c (U(3)), L (U(2)) and k singlet stacks, bidegrees in [-box, box]^2 (colour stack with a_c b_c = 0, forced by the Lambda^2 colour
-    block 4 a_c b_c).  Accepts an assignment when, for some rational stack hypercharges y, the net left-handed content (conjugates
+    """Exact finite search over a restricted subclass of split backgrounds for the quintic-free content Lambda^2(N) + (16 - N) N,
+    N = 5 + k_singlets, with stacks c (U(3)), L (U(2)) and k singlet stacks, bidegrees in [-box, box]^2.  The colour restriction a_c b_c = 0
+    is imposed, not forced by exact SM net content: nonzero-colour indices can cancel between representations.  The search also selects
+    two individual mixed antitriplet blocks of index -families before hypercharge pinning.  It is not an exhaustive search of all B1
+    backgrounds.  Accepts an assignment when, for some rational stack hypercharges y, the net left-handed content (conjugates
     identified, 2 ~ 2bar) is EXACTLY `families` Standard-Model families plus hypercharge-neutral singlets: no chiral exotic of any kind.
     The hypercharge y is pinned by Q, the two antitriplets, and the first doublet and singlet blocks (each tried at its SM values).
     Returns the accepted assignments and counters at each stage.  EXACT scan."""

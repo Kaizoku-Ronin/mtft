@@ -9,8 +9,9 @@ entangled states carry the SAME topological structure as Yang-Mills
 monopoles, with wrapping numbers = topological charges = quantum numbers.
 
 MTFT adds: the arithmetic weights wₙ provide a SPECIFIC realization of
-these gauge fields, with the stiffness μ_N(y) > 0 (the papers' 'mass gap'; a classical
-curvature, not a spectral gap — CC-35) as the proposed source of topological protection.
+these gauge fields, with the arithmetic stiffness μ_N(y) > 0 (the papers' 'mass gap';
+a diagnostic, not the current Polyakov-action Hessian or a spectral gap — CC-35)
+as a proposed source of topological protection. This protection is not established.
 
 Modules:
     1. HolonomyGate     — Quantum gates from path-ordered exponentials on SU(N)
@@ -20,7 +21,8 @@ Modules:
 
 The connection chain:
     Holonomy Ω = P exp(i∮A_τ dτ)  →  gauge charges (winding numbers)
-    →  topological protection (μ_N > 0)  →  fault-tolerant qudits
+    →  proposed topological protection  →  prospective fault-tolerant qudits
+    CC-35: positivity of μ_N alone proves neither of the latter steps.
 
 Reference: Papers 5-7, 14; de Mello Koch et al. Nature Comms 16:11095 (2025)
 """
@@ -179,12 +181,10 @@ class TopologicalQudit:
     is characterised by a spectrum of wrapping numbers, one for each
     SU(2) subgroup embedded in SU(d).
 
-    The topological protection comes from MTFT's mass gap:
-        μ_N(y) > 0 unconditionally for all N ≥ 2, y > 0
-
-    This means perturbations below the gap scale cannot change
-    the topological quantum numbers — exactly what de Mello Koch
-    et al. confirmed experimentally (Nature Comms 2025, Fig. 5).
+    The class reports the positive arithmetic stiffness μ_N(y), historically
+    called a mass gap. CC-35: it has not been identified with a physical spectral
+    gap, so protection against perturbations does not follow from its positivity.
+    The cited topological-state experiments do not certify this MTFT quantity.
 
     Parameters
     ----------
@@ -251,11 +251,11 @@ class TopologicalQudit:
 
     def topological_gap(self, y: float = 0.18) -> float:
         """
-        The MTFT mass gap protecting this qudit's topology:
+        Arithmetic stiffness diagnostic (the API name is historical):
             μ_d(y) = min_m Σ n² wₙ e^{−2πyn} (1 − cos(2πnm/d))
 
-        This is UNCONDITIONALLY positive — the topological protection
-        that de Mello Koch et al. confirmed experimentally.
+        CC-35: positivity of the full sum does not establish a protecting
+        physical spectral gap or an experimentally certified MTFT prediction.
         """
         return mass_gap_stiffness(y, N=self.d, n_max=200)
 
@@ -332,14 +332,14 @@ class ArithmeticCode:
        not a flat superposition.  This embeds the arithmetic structure
        directly into the codewords.
 
-    3. **Divisor-enhanced protection** — the topological mass gap
-       μ_N(y) is amplified by the divisor density factor
-       D(n) = 1 + log σ₀(n) / (2 log n), so highly composite
-       physical dimensions provide stronger error correction.
+    3. **Divisor-enhanced diagnostic** — μ_N(y) is multiplied by
+       D(n) = 1 + log σ₀(n) / (2 log n). CC-35: the resulting
+       protection_gap field is an arithmetic diagnostic, not a proven
+       spectral gap, error threshold, or fault-tolerance guarantee.
 
-    The result: primes and composites produce measurably different
-    code distances and protection gaps, making the divisor structure
-    of the hardware dimension a tunable resource for fault tolerance.
+    Primes and composites produce different code constructions and
+    diagnostic values; physical error protection requires a noise model
+    and separate validation.
 
     Parameters
     ----------
@@ -487,13 +487,13 @@ class ArithmeticCode:
     @property
     def protection_gap(self) -> float:
         """
-        Divisor-enhanced MTFT mass gap:
+        Divisor-enhanced arithmetic stiffness diagnostic (historical API name):
 
             μ_eff(y, n) = μ_N(y) × D(n)
 
         where D(n) = 1 + log(σ₀(n)) / (2 log n) is the divisor
-        density factor.  Highly composite n_physical provides
-        stronger topological protection.
+        density factor. CC-35: a larger diagnostic does not establish
+        stronger physical topological protection.
         """
         base_gap = mass_gap_stiffness(self.y, N=self.d_logical, n_max=200)
         return base_gap * self._divisor_density

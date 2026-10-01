@@ -1,0 +1,872 @@
+{
+  "study": "Matter-02 collinear photon-kernel audit",
+  "all_pass": true,
+  "exact_gates_passed": 38,
+  "gates": [
+    {
+      "name": "collinear_self_intersection",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "traceless_flux",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "traceless_hypercharge",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "linear_flux_projection_vanishes",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "quadratic_flux_projection_is_54",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "center_shift_linear_projection_unchanged",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "center_shift_quadratic_projection",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "center_shift_trace_projection",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "root_charges_center_invariant",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "hypercharge_kinetic_trace",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "linear_quadratic_probe_rank",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "shifted_hypercharge_in_linear_quadratic_kernel",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "trace_plus_quadratic_has_no_SM_hypercharge_lift",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "independent_cubic_matches_repository",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "independent_gravity_matches_repository",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "independent_mixed_matches_repository",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "mixed_anomaly_matrix_rank_two",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "mixed_anomaly_hypercharge_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "mixed_anomaly_center_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "cubic_hypercharge_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "mixed_kernel_not_cubic_anomaly_free",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "restricted_cubic_polynomial",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "center_hypercharge_plane_cubic_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "anomaly_row_spaces_match",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "input_K3_rank_and_kernel",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "input_K4_rank_and_hypercharge_kernel",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "neutral_Hd_is_Q_neutral",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "neutral_Hu_is_Q_neutral",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "input_neutral_combined_exactly_one_kernel",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "second_neutral_Higgs_preserves_same_Q",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "supplied_gauge_kinetic_is_positive",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "canonical_kinetic_identity",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "canonical_mass_rank_unchanged",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "canonical_mass_kernel_transformed",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "Matter01_baseline_linear_projection",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "Matter01_baseline_quadratic_projection",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "ordinary_8D_adjoint_local_I10_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    },
+    {
+      "name": "ordinary_8D_adjoint_local_GS_count_zero",
+      "pass": true,
+      "classification": "EXACT conditional arithmetic"
+    }
+  ],
+  "source_hashes": {
+    "src/mtft/surface/blowup.py": "1b2b436ab5a37c65b15f510604b9c17b38f47dbcde5aabc7e7c69affb29328fc",
+    "src/mtft/research/anomaly8d.py": "a0988c6cb82b638f6713d51eec2f4874c59039b067e9af5f1bbcca93ce151669",
+    "src/mtft/research/anomalies.py": "17f0fbea77a3fa19256da3531f4c899ddd0761f57314d5176272eb054cece995",
+    "src/mtft/research/charge_lattices.py": "944c5d3982a6147d687390ddc5582288180087db1bfb957f4ab14399b9aac89d",
+    "src/mtft/parent.py": "a08ff5f006b746c53c0e12b4711c1b05f8953a5cdbca9eb9064ed92d16a1e1d3",
+    "docs/SM/PV02_BLOWUP_SUSY_REGISTER.md": "27aca0e5bce4767f9268dc9b67651d35fa3820839d5baefd8b4748a620accab8"
+  },
+  "frozen": {
+    "stack_order": [
+      "c",
+      "L",
+      "A1",
+      "A2",
+      "B"
+    ],
+    "ranks": [
+      [
+        "3"
+      ],
+      [
+        "2"
+      ],
+      [
+        "1"
+      ],
+      [
+        "1"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "line_powers": [
+      [
+        "0"
+      ],
+      [
+        "1"
+      ],
+      [
+        "2"
+      ],
+      [
+        "-3"
+      ],
+      [
+        "-1"
+      ]
+    ],
+    "v_(a,b,e)": [
+      1,
+      0,
+      -3
+    ],
+    "v_squared": "-9",
+    "Y_traceless": [
+      [
+        "1/6"
+      ],
+      [
+        "0"
+      ],
+      [
+        "-1/2"
+      ],
+      [
+        "-1/2"
+      ],
+      [
+        "1/2"
+      ]
+    ],
+    "Y_center_lift": [
+      [
+        "s + 1/6"
+      ],
+      [
+        "s"
+      ],
+      [
+        "s - 1/2"
+      ],
+      [
+        "s - 1/2"
+      ],
+      [
+        "s + 1/2"
+      ]
+    ]
+  },
+  "flux_projections": {
+    "Tr_Y_c1_class": [
+      0,
+      0,
+      0
+    ],
+    "integral_Tr_Y_c1_squared": 54,
+    "integral_Tr_Ys_c1_squared": "54 - 144*s",
+    "Tr_Ys": "8*s",
+    "Tr_Ys_squared": "8*s**2 + 5/6",
+    "matrix_moments_Tr_Y_n_power": {
+      "0": "0",
+      "1": "0",
+      "2": "-6",
+      "3": "9",
+      "4": "-48"
+    },
+    "mixed_matrix_moments": {
+      "Y^1_n^1": "0",
+      "Y^1_n^2": "-6",
+      "Y^1_n^3": "9",
+      "Y^1_n^4": "-48",
+      "Y^2_n^1": "-1/2",
+      "Y^2_n^2": "7/2",
+      "Y^3_n^1": "0",
+      "Y^4_n^0": "41/216"
+    },
+    "pure_internal_c1_cubed_and_fourth": "zero in real dimension 4; matrix moments 9 and -48 are not those integrals",
+    "formal_Tr_F_cubed_fY_barF_squared_coefficient_integrated": 162,
+    "formal_Tr_F_fourth_fY_squared_barF_squared_coefficient_integrated": -189,
+    "baseline_Matter01_quadratic": "233"
+  },
+  "ordinary_parent_local_anomaly": {
+    "I10_adjoint": "0",
+    "GS_fields_for_this_polynomial": 0,
+    "status": "EXACT local polynomial only; spin^c/R-twist/global and 4D anomaly completion OPEN"
+  },
+  "4D_anomaly": {
+    "mixed_row_matrix": [
+      [
+        "0",
+        "-3",
+        "-3",
+        "9/2",
+        "3/2"
+      ],
+      [
+        "9/2",
+        "-12",
+        "-3/2",
+        "6",
+        "3"
+      ],
+      [
+        "0",
+        "-48",
+        "-48",
+        "72",
+        "24"
+      ]
+    ],
+    "rank": 2,
+    "nullspace": [
+      [
+        [
+          "-7/3"
+        ],
+        [
+          "-1"
+        ],
+        [
+          "1"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "8/3"
+        ],
+        [
+          "3/2"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1"
+        ],
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "2/3"
+        ],
+        [
+          "1/2"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1"
+        ]
+      ]
+    ],
+    "cubic_polynomial": "-48*q_A1**3 + 45*q_A1**2*q_A2 + 27*q_A1**2*q_B + 18*q_A1**2*q_L + 54*q_A1**2*q_c - 45*q_A1*q_A2**2 - 27*q_A1*q_B**2 - 18*q_A1*q_L**2 - 54*q_A1*q_c**2 + 72*q_A2**3 - 18*q_A2**2*q_B - 72*q_A2**2*q_L - 81*q_A2**2*q_c + 18*q_A2*q_B**2 + 72*q_A2*q_L**2 + 81*q_A2*q_c**2 + 24*q_B**3 - 36*q_B**2*q_L - 27*q_B**2*q_c + 36*q_B*q_L**2 + 27*q_B*q_c**2 - 48*q_L**3 + 54*q_L**2*q_c - 54*q_L*q_c**2",
+    "cubic_on_mixed_kernel": "-72*(t0 - t1)**2*(4*t0 - t1 - 3*t2)",
+    "nullspace_parameter_basis": [
+      [
+        "-7/3",
+        "8/3",
+        "2/3"
+      ],
+      [
+        "-1",
+        "3/2",
+        "1/2"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "mixed_kernel_is_full_anomaly_free_space": false,
+    "hypercharge_and_center_plane_cubic_zero": true
+  },
+  "INPUT_probe_kernels": {
+    "linear_flux_only": {
+      "K": [
+        [
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ]
+      ],
+      "rank": 1,
+      "nullspace": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "-1"
+          ],
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "3/2"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "1/2"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      ],
+      "Y_kernel": true
+    },
+    "linear_plus_quadratic_flux": {
+      "K": [
+        [
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ],
+        [
+          "0",
+          "2",
+          "4",
+          "9",
+          "1"
+        ]
+      ],
+      "rank": 2,
+      "nullspace": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "15/2"
+          ],
+          [
+            "-6"
+          ],
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ],
+          [
+            "3/2"
+          ],
+          [
+            "-1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      ],
+      "Y_kernel": false,
+      "same_SM_charges_shifted_kernel": [
+        [
+          "13/24"
+        ],
+        [
+          "3/8"
+        ],
+        [
+          "-1/8"
+        ],
+        [
+          "-1/8"
+        ],
+        [
+          "7/8"
+        ]
+      ]
+    },
+    "trace_linear_quadratic": {
+      "K": [
+        [
+          "3",
+          "2",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ],
+        [
+          "0",
+          "2",
+          "4",
+          "9",
+          "1"
+        ]
+      ],
+      "rank": 3,
+      "nullspace": [
+        [
+          [
+            "-10/3"
+          ],
+          [
+            "15/2"
+          ],
+          [
+            "-6"
+          ],
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "-1"
+          ],
+          [
+            "3/2"
+          ],
+          [
+            "-1"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      ],
+      "any_Y_plus_center_lift": false
+    },
+    "anomaly_compatible_K3": {
+      "K": [
+        [
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ],
+        [
+          "3",
+          "-8",
+          "-1",
+          "4",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ]
+      ],
+      "rank": 3,
+      "kernel_basis": [
+        [
+          [
+            "1/6"
+          ],
+          [
+            "0"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1"
+          ],
+          [
+            "1"
+          ],
+          [
+            "1"
+          ],
+          [
+            "1"
+          ],
+          [
+            "1"
+          ]
+        ]
+      ]
+    },
+    "anomaly_compatible_K4_trace_center_lifted": {
+      "K": [
+        [
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ],
+        [
+          "3",
+          "-8",
+          "-1",
+          "4",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        [
+          "3",
+          "2",
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "rank": 4,
+      "kernel_basis": [
+        [
+          [
+            "1/6"
+          ],
+          [
+            "0"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "1/2"
+          ]
+        ]
+      ]
+    },
+    "K4_plus_neutral_Hd": {
+      "basis": [
+        "T3",
+        "c",
+        "L",
+        "A1",
+        "A2",
+        "B"
+      ],
+      "stacked_constraint_matrix": [
+        [
+          "0",
+          "0",
+          "2",
+          "2",
+          "-3",
+          "-1"
+        ],
+        [
+          "0",
+          "3",
+          "-8",
+          "-1",
+          "4",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "2",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1/2",
+          "0",
+          "1",
+          "0",
+          "0",
+          "-1"
+        ]
+      ],
+      "rank": 5,
+      "kernel_basis": [
+        [
+          [
+            "1"
+          ],
+          [
+            "1/6"
+          ],
+          [
+            "0"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "-1/2"
+          ],
+          [
+            "1/2"
+          ]
+        ]
+      ],
+      "gauge_mass_rank_unchanged_by_positive_kinetics": true
+    }
+  },
+  "physical_photon_status": "OPEN: no B3-specific axion/GS kinetic, shift and counterterm action has been supplied and reduced",
+  "requirements": [
+    "Specify parent form fields and their kinetic/shift/counterterm action, including spin^c twist data",
+    "Reduce on independent cohomology classes, respecting form degrees and field dualities",
+    "Compute full 4D anomaly polynomial and cancel anomalies, including cubic anomalies",
+    "Derive K in the same neutral connection basis as every Higgs charge covector",
+    "Show a positive kinetic mass operator with ker equal to the desired electromagnetic direction",
+    "Normalize gauge and matter mode kinetic forms and match measured coupling separately"
+  ]
+}

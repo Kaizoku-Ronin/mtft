@@ -10,9 +10,11 @@
 - Paper 5, Theorem 7.8 and the Dictionary (Paper 24: "reflection positivity proven"; Paper 5: "Stiffness μ_N(y)" as the mass gap).
 
 ## Findings (`mtft.research.reflection_positivity`, `tests/test_cc35.py`; every number reproducible)
-1. **The lemma is false for n ≥ 2 (EXACT).** Tr Uⁿ is the power sum pₙ, a virtual character: pₙ = Σₖ (−1)ᵏ s_{(n−k,1ᵏ)} (Murnaghan–Nakayama).
+1. **The general lemma fails for arbitrary powers and groups (EXACT).** Tr Uⁿ is the power sum pₙ, a virtual character: pₙ = Σₖ (−1)ᵏ s_{(n−k,1ᵏ)} (Murnaghan–Nakayama).
    On SU(3): Tr U² = χ₆ − χ_3̄, Tr U³ = χ₁₀ − χ₈ + 1, Tr U⁴ = χ₁₅′ − χ₁₅ + χ₃; on SU(2): Tr U³ = χ_{3/2} − χ_{1/2}. So exp(c Re Tr Uⁿ) with c > 0
-   has negative character coefficients at small c and is not positive-definite. This is the Adams operation ψⁿ (the same identity that fixes
+   has negative character coefficients at small c in the channels displayed above. SU(2), n = 2 is an exception:
+   Tr U² = χ_{Sym²} − 1, so exp(c Tr U²) = e^{−c} exp(cχ_{Sym²}) is positive-type for c ≥ 0. The universal lemma still fails.
+   This is the Adams operation ψⁿ (the same identity that fixes
    tr_{Λ²}F⁵ in `anomaly8d`).
 2. **Nothing compensates, because w₁ = 0 (EXACT).** exp(Σ hⁿpₙ/n) = Σ hᵏ χ_{Symᵏ} is positive-definite only through the n = 1 term; log 1 = 0 removes
    it. First-order coefficients per unit κ: SU(3) 3̄: (a₄ − a₂)/6 (< 0 for y > ln√2/2π = 0.0552); SU(3) adjoint: −a₃/3; SU(2) spin ½: −a₃/2 (< 0 for all y).
@@ -27,17 +29,21 @@
    erase the coupling (kernel = k̂(1)); at β > 0 the status is open. Positivity restricted to gauge-invariant functions is open. Paper 24's
    Step 3 treats n × 1 rectangles (a different action); rectangles crossing the plane off-centre are not of the form A Θ(A)† and are not covered
    by the argument as written. A positive transfer matrix is therefore not ruled out — it is unproven.
-6. **Two structural corrections recorded with it.** (a) μ_N(y) = minₘ Σ n² aₙ (1 − cos 2πnm/N) is the curvature of the classical Polyakov potential
-   at the centre-symmetric point — a stiffness, not a spectral gap; "mass gap" attached to μ_N anywhere in the package is historical wording.
-   (b) The Polyakov term singles out time and needs a compact time circle, so the action is not O(4)/hypercubic invariant; OS1 in the continuum
-   requires the term to become irrelevant, in which case it cannot supply the gap.
+6. **Two structural corrections recorded with it.** (a) μ_N(y) = minₘ Σ n² aₙ (1 − cos 2πnm/N) is a defined positive arithmetic stiffness
+   diagnostic. It is neither the Hessian of the current single-trace Polyakov action nor a spectral gap. "Mass gap" attached to this quantity
+   is historical wording. For the actual eigenphase potential V = κΣₙaₙ[1 − N⁻¹Σⱼcos(nθⱼ)],
+   ∂ⱼV = (κ/N)Σₙnaₙsin(nθⱼ), and ∂ⱼ∂ₖV = δⱼₖ(κ/N)Σₙn²aₙcos(nθⱼ), restricted to Σⱼδθⱼ = 0.
+   At SU(3) θ = (−2π/3, 0, 2π/3), κ = 1, y = 0.18174, the tangent-gradient norm is 0.01928985 and the Hessian eigenvalues are
+   approximately (3.60 × 10⁻⁸, 0.09845407), whereas the package's arithmetic stiffness combinations are both about 0.1476811.
+   Thus the centre-symmetric holonomy is not even stationary here. At y = 0.3 its Hessian has a negative eigenvalue although μ₃ > 0.
+   (b) The Polyakov term singles out time and needs a compact time circle. An O(4)-invariant vacuum continuum limit requires a separate
+   justification of the fate of that deformation.
 
 ## Repair (EXACT)
 k_sym(U) = exp((κ/N) Σ aₙ Re χ_{Symⁿ}(U)) is positive-definite for every κ ≥ 0 (positive-type class functions are closed under sums, products and
 exponentials); `kernel_coefficients(..., weights="sym")` confirms it numerically (lowest coefficient ≥ 0 across κ = 0.01 … 1000). Placing the tower on
-plaquettes, Σ aₙ Re χ_{Symⁿ}(U_□), restores hypercubic symmetry and falls under Osterwalder–Seiler. Cost: the eigenphase potential changes, so μ_N,
-the Hessian eigenvalues and the spectral lock at y_c must be recomputed for the repaired action. Universality then predicts the same continuum
-Yang–Mills: the arithmetic tower can shape the lattice road but cannot by itself supply the continuum gap.
+plaquettes, Σ aₙ Re χ_{Symⁿ}(U_□), restores hypercubic symmetry and falls under Osterwalder–Seiler. Cost: the eigenphase potential changes. Any action-derived Hessian and proposed spectral lock must be recomputed for the repaired action. If an appropriate local, isotropic
+Yang–Mills continuum limit exists, universality is an expectation. Existence of that limit and a uniform continuum gap remain separate open gates.
 
 ## Package changes (this correction)
 `lattice.py` module docstring and `mass_gap_bound` docstring; `arithmetic.py` (μ_N labelled a stiffness); `tower.py`; `quantum.py`; Legend entries
@@ -50,10 +56,10 @@ were not audited here; they are fixed-spacing statements and inherit the need fo
 
 ## Proposed register text
 "Reflection positivity of the MTFT lattice action is retracted from PROVEN to OPEN. The lemma used for the Polyakov term (exp(c Re Tr Pⁿ) positive-definite
-for c ≥ 0) is false for n ≥ 2 because power sums are virtual characters; with w₁ = 0 no term compensates. In the papers' site-reflection sense RP fails
-at strong coupling at the default parameters. μ_N(y) is the classical stiffness of the Polyakov potential, not a spectral gap. A character-based
+for c ≥ 0) fails for arbitrary powers and groups because power sums are virtual characters; the default tower has negative character coefficients. In the papers' site-reflection sense RP fails
+at strong coupling at the default κ and y. μ_N(y) is an arithmetic stiffness diagnostic, not the actual Polyakov-action Hessian or a spectral gap. A character-based
 repair is exact and available. None of this touches the arithmetic layer."
 
 ## What would upgrade it
-RP proved for link reflections at physical β for the current action, or adoption of the character repair with μ_N and y_c recomputed; then the
+RP proved for link reflections at physical β for the current action, or adoption of the character repair with its physical curvature and proposed critical point recomputed; then the
 programme's position relative to the Clay problem is that of any reflection-positive lattice action: the continuum limit with a uniform gap is open.

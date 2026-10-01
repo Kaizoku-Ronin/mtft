@@ -83,7 +83,8 @@ def polystable_locus(stacks):
     r = A_X/A_E, t = eps/A_E, with the ampleness verdict.  stacks: ((name, rank, class), ...)."""
     r, t = sp.symbols("r t", positive=True)
     mus = [slope(d, r, 1, t) for _, _, d in stacks]
-    eqs = [sp.Eq(m, mus[0]) for m in mus[1:]]
+    eqs = [sp.expand(m - mus[0]) for m in mus[1:]]
+    eqs = [eq for eq in eqs if eq != 0]
     sols = sp.solve(eqs, [r, t], dict=True) if eqs else [{}]
     out = []
     for s in sols:
@@ -169,9 +170,10 @@ def _collinear(vs):
 
 def collinear_family(a_L=1):
     """Closed form: with every stack a power of the single line bundle v = (a_L, 0, -3 a_L) — degree a_L on X0(143), exceptional flux -3 a_L —
-    and charges k = (c: 0, L: 1, B: -1, A1: 2, A2: -3), the background is D-flat exactly on eps = a_L A_E / 3 for EVERY shape r > a_L/3
+    and charges k = (c: 0, L: 1, B: -1, A1: 2, A2: -3), the background is D-flat exactly on eps = A_E / 3 for EVERY shape r > 1/3 (a_L != 0)
     (ampleness), the flux is traceless (sum n_i k_i = 0: an SU(8) background), and the net chirality of a block of relative charge q is
-    -3 a_L q: three families for a_L = 1.  Vector-like extras: six doublet pairs, six u^c pairs, six e^c pairs, fifteen sterile singlets."""
+    -3 a_L q: three families for a_L = 1.  Vector-like extras at a_L = 1: nine doublet pairs, six u^c pairs, six e^c pairs, fifteen sterile singlets."""
+    if a_L == 0: raise ValueError("a_L must be nonzero for the collinear flux family")
     v = (a_L, 0, -3 * a_L); k = {"c": 0, "L": 1, "B": -1, "A1": 2, "A2": -3}; ranks = {"c": 3, "L": 2, "B": 1, "A1": 1, "A2": 1}
     stacks = {name: tuple(kk * x for x in v) for name, kk in k.items()}
     phis = {name: phi(d) for name, d in stacks.items()}
@@ -179,7 +181,7 @@ def collinear_family(a_L=1):
     r, t = sp.symbols("r t", positive=True)
     mus = {name: slope(d, r, 1, t) for name, d in stacks.items()}
     return {"v": v, "charges": k, "stacks": stacks, "traceless": sum(ranks[nm] * kk for nm, kk in k.items()) == 0, "phi": phis, "exact_SM": rec["exact_SM"],
-            "vector_like_pairs": rec["vector_like_pairs"], "slopes": mus, "d_flat_locus": sp.solve(sp.Eq(mus["L"], mus["c"]), t)[0], "ample_iff": f"r > {a_L}/3",
+            "vector_like_pairs": rec["vector_like_pairs"], "slopes": mus, "d_flat_locus": sp.solve(sp.Eq(mus["L"], mus["c"]), t)[0], "ample_iff": "r > 1/3",
             "net_per_unit_charge": phi(v)}
 
 def report(n_box=8):

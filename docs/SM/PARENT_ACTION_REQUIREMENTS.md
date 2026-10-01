@@ -76,3 +76,11 @@ when the `parent` gates and at least one of B1–B3's toolchains land.
   simultaneously at a point of the Kähler cone — the trilemma's root (one ratio, many slope rays) is removed by the second Kähler modulus.
   Row 2 (Yukawa) on the blow-up needs h¹/h⁰(K̃ ⊗ L) and is open; every solution carries ≥ 6 vector-like doublet pairs.
 - Added to the constraint list: n_A = n_B + 1 singlet stacks for hypercharge (coboundary structure of adjoint chirality).
+
+## G. Appended v0.34.0 review: scope of the B1 scan
+
+The 60/156 accepted records and trilemma counts in section E concern the implemented `b1_scan` subclass: it imposes `a_c*b_c=0`,
+selects two individual mixed antitriplet blocks of index `-3`, and applies its hypercharge-pinning rules.  The colour restriction is
+not forced by SM net content; indices from distinct parent representations can cancel.  An exact U(8) net-index counterexample with
+colour class `(1,1)` and degrees up to 12 appears in `test_parent_edge_cases_review.py`.  It does not refute the finite box-3/box-4
+results or establish a viable parent, but broader B1 backgrounds are not exhausted by these scans.

@@ -1,0 +1,104 @@
+{
+  "all_passed": true,
+  "gates": [
+    {
+      "name": "CM scalar versus invariant scalar",
+      "maximum_relative_error": 7.28156684850517e-15,
+      "limit": 3e-12,
+      "samples": 42,
+      "passed": true
+    },
+    {
+      "name": "CM total versus independent Heitler total",
+      "maximum_relative_error": 8.496362292599328e-15,
+      "limit": 3e-12,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "adaptive direct-angle integration versus analytic total",
+      "maximum_relative_error": 2.4896656050536516e-16,
+      "limit": 3e-12,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "explicit spinor Msq versus independent oracle",
+      "maximum_relative_error": 1.1821768313088947e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "independently boosted spinor Msq versus invariant oracle",
+      "maximum_relative_error": 3.612206984554956e-14,
+      "limit": 2e-10,
+      "samples": 42,
+      "passed": true
+    },
+    {
+      "name": "engine event differential per solid angle",
+      "maximum_relative_error": 1.7349717679217207e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine event differential per cosine",
+      "maximum_relative_error": 1.7417388696268748e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine nb conversion",
+      "maximum_relative_error": 1.7350672082358403e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine integrated event total versus oracle",
+      "maximum_relative_error": 1.6992724585198657e-14,
+      "limit": 2e-10,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "engine integration orders 64 versus 128",
+      "maximum_relative_error": 1.4937993630321893e-15,
+      "limit": 2e-10,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "formal Born sigma*v threshold limit",
+      "maximum_relative_error": 9.992007221626409e-15,
+      "limit": 1e-12,
+      "samples": 3,
+      "passed": true
+    },
+    {
+      "name": "high-energy asymptotic total",
+      "maximum_relative_error": 4.000037989038141e-05,
+      "limit": 0.0001,
+      "samples": 3,
+      "passed": true
+    },
+    {
+      "name": "independent mass dimension scaling",
+      "maximum_relative_error": 0.0,
+      "limit": 1e-13,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "independent alpha squared scaling",
+      "maximum_relative_error": 0.0,
+      "limit": 1e-13,
+      "samples": 42,
+      "passed": true
+    }
+  ],
+  "output": "/workspace/scratch/30fe37353c9b/matter01/repo_candidate/studies/matter01/results/qed_oracle_checks.json"
+}

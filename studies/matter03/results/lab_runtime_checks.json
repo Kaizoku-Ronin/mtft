@@ -1,0 +1,1261 @@
+{
+  "scope": "Offline numerical and mock-DOM interaction checks. No actual browser layout test was performed.",
+  "passed": 167,
+  "failed": 0,
+  "gates": [
+    {
+      "name": "no external resources",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "no runtime network APIs",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "scope distinguishes conditional, input and diagnostic",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "physical mass inputs remain visibly open",
+      "passed": true,
+      "detail": [
+        "selected Higgs scale",
+        "light-family embeddings",
+        "surface harmonic kinetic matrices",
+        "parent prefactors",
+        "unique photon"
+      ]
+    },
+    {
+      "name": "canonical twist and parent assumptions visible",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "valution addition",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "odd spectral valuation",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "paired initial state",
+      "passed": true,
+      "detail": {
+        "label": "Paired nonzero branch: classical vacuum exists.",
+        "reason": "An odd exceptional valuation makes the active spectral polynomial irreducible. The stable active pair and slope-zero spectators give a polystable full bundle.",
+        "good": true
+      }
+    },
+    {
+      "name": "pair exists including split endpoint t=0",
+      "passed": true,
+      "detail": {
+        "label": "Split zero-Higgs background: classical vacuum exists.",
+        "reason": "Both arrows vanish at t = 0. This is the original polystable wall background; the nonzero-pair irreducibility argument is not used here.",
+        "good": true
+      }
+    },
+    {
+      "name": "branch t control and invariant t²=0",
+      "passed": true,
+      "detail": "s(t) = 0.0000 s(1)"
+    },
+    {
+      "name": "zero branch distinguishes split from irreducible pair t=0",
+      "passed": true,
+      "detail": "Split zero-Higgs background: classical vacuum exists."
+    },
+    {
+      "name": "single arrow no-go at nonzero t=0",
+      "passed": true,
+      "detail": {
+        "label": "Split zero-Higgs background: classical vacuum exists.",
+        "reason": "Both arrows vanish at t = 0. This is the original polystable wall background; the nonzero-pair irreducibility argument is not used here.",
+        "good": true
+      }
+    },
+    {
+      "name": "single map spectral product vanishes t=0",
+      "passed": true,
+      "detail": "s(t) = 0 · triangular single arrow"
+    },
+    {
+      "name": "single arrow visibility t=0",
+      "passed": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "pair exists including split endpoint t=0.01",
+      "passed": true,
+      "detail": {
+        "label": "Paired nonzero branch: classical vacuum exists.",
+        "reason": "An odd exceptional valuation makes the active spectral polynomial irreducible. The stable active pair and slope-zero spectators give a polystable full bundle.",
+        "good": true
+      }
+    },
+    {
+      "name": "branch t control and invariant t²=0.01",
+      "passed": true,
+      "detail": "s(t) = 0.0001 s(1)"
+    },
+    {
+      "name": "zero branch distinguishes split from irreducible pair t=0.01",
+      "passed": true,
+      "detail": "Paired nonzero branch: classical vacuum exists."
+    },
+    {
+      "name": "single arrow no-go at nonzero t=0.01",
+      "passed": true,
+      "detail": {
+        "label": "Single nonzero arrow: no classical vacuum on this wall.",
+        "reason": "The invariant weak subbundle has slope equal to the full bundle. The projection identity forces its incoming Higgs map to vanish for every smooth positive Hermitian metric.",
+        "good": false
+      }
+    },
+    {
+      "name": "single map spectral product vanishes t=0.01",
+      "passed": true,
+      "detail": "s(t) = 0 · triangular single arrow"
+    },
+    {
+      "name": "single arrow visibility t=0.01",
+      "passed": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "pair exists including split endpoint t=0.2",
+      "passed": true,
+      "detail": {
+        "label": "Paired nonzero branch: classical vacuum exists.",
+        "reason": "An odd exceptional valuation makes the active spectral polynomial irreducible. The stable active pair and slope-zero spectators give a polystable full bundle.",
+        "good": true
+      }
+    },
+    {
+      "name": "branch t control and invariant t²=0.2",
+      "passed": true,
+      "detail": "s(t) = 0.0400 s(1)"
+    },
+    {
+      "name": "zero branch distinguishes split from irreducible pair t=0.2",
+      "passed": true,
+      "detail": "Paired nonzero branch: classical vacuum exists."
+    },
+    {
+      "name": "single arrow no-go at nonzero t=0.2",
+      "passed": true,
+      "detail": {
+        "label": "Single nonzero arrow: no classical vacuum on this wall.",
+        "reason": "The invariant weak subbundle has slope equal to the full bundle. The projection identity forces its incoming Higgs map to vanish for every smooth positive Hermitian metric.",
+        "good": false
+      }
+    },
+    {
+      "name": "single map spectral product vanishes t=0.2",
+      "passed": true,
+      "detail": "s(t) = 0 · triangular single arrow"
+    },
+    {
+      "name": "single arrow visibility t=0.2",
+      "passed": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "pair exists including split endpoint t=1",
+      "passed": true,
+      "detail": {
+        "label": "Paired nonzero branch: classical vacuum exists.",
+        "reason": "An odd exceptional valuation makes the active spectral polynomial irreducible. The stable active pair and slope-zero spectators give a polystable full bundle.",
+        "good": true
+      }
+    },
+    {
+      "name": "branch t control and invariant t²=1",
+      "passed": true,
+      "detail": "s(t) = 1.0000 s(1)"
+    },
+    {
+      "name": "zero branch distinguishes split from irreducible pair t=1",
+      "passed": true,
+      "detail": "Paired nonzero branch: classical vacuum exists."
+    },
+    {
+      "name": "single arrow no-go at nonzero t=1",
+      "passed": true,
+      "detail": {
+        "label": "Single nonzero arrow: no classical vacuum on this wall.",
+        "reason": "The invariant weak subbundle has slope equal to the full bundle. The projection identity forces its incoming Higgs map to vanish for every smooth positive Hermitian metric.",
+        "good": false
+      }
+    },
+    {
+      "name": "single map spectral product vanishes t=1",
+      "passed": true,
+      "detail": "s(t) = 0 · triangular single arrow"
+    },
+    {
+      "name": "single arrow visibility t=1",
+      "passed": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "pair exists including split endpoint t=2",
+      "passed": true,
+      "detail": {
+        "label": "Paired nonzero branch: classical vacuum exists.",
+        "reason": "An odd exceptional valuation makes the active spectral polynomial irreducible. The stable active pair and slope-zero spectators give a polystable full bundle.",
+        "good": true
+      }
+    },
+    {
+      "name": "branch t control and invariant t²=2",
+      "passed": true,
+      "detail": "s(t) = 4.0000 s(1)"
+    },
+    {
+      "name": "zero branch distinguishes split from irreducible pair t=2",
+      "passed": true,
+      "detail": "Paired nonzero branch: classical vacuum exists."
+    },
+    {
+      "name": "single arrow no-go at nonzero t=2",
+      "passed": true,
+      "detail": {
+        "label": "Single nonzero arrow: no classical vacuum on this wall.",
+        "reason": "The invariant weak subbundle has slope equal to the full bundle. The projection identity forces its incoming Higgs map to vanish for every smooth positive Hermitian metric.",
+        "good": false
+      }
+    },
+    {
+      "name": "single map spectral product vanishes t=2",
+      "passed": true,
+      "detail": "s(t) = 0 · triangular single arrow"
+    },
+    {
+      "name": "single arrow visibility t=2",
+      "passed": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "six block rows render",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "six capacities total118",
+      "passed": true,
+      "detail": [
+        {
+          "spectator": "L−",
+          "arrow": "down",
+          "shape": [
+            14,
+            25
+          ],
+          "capacity": 14
+        },
+        {
+          "spectator": "L−",
+          "arrow": "up",
+          "shape": [
+            32,
+            14
+          ],
+          "capacity": 14
+        },
+        {
+          "spectator": "A₁",
+          "arrow": "down",
+          "shape": [
+            18,
+            44
+          ],
+          "capacity": 18
+        },
+        {
+          "spectator": "A₁",
+          "arrow": "up",
+          "shape": [
+            55,
+            15
+          ],
+          "capacity": 15
+        },
+        {
+          "spectator": "A₂",
+          "arrow": "down",
+          "shape": [
+            72,
+            32
+          ],
+          "capacity": 32
+        },
+        {
+          "spectator": "A₂",
+          "arrow": "up",
+          "shape": [
+            25,
+            87
+          ],
+          "capacity": 25
+        }
+      ]
+    },
+    {
+      "name": "rectangular block capacity 0",
+      "passed": true,
+      "detail": {
+        "spectator": "L−",
+        "arrow": "down",
+        "shape": [
+          14,
+          25
+        ],
+        "capacity": 14
+      }
+    },
+    {
+      "name": "block inspection button 0",
+      "passed": true,
+      "detail": "down arrow / L−: a 14 × 25 linear map can have rank at most 14. The certified rank is 2."
+    },
+    {
+      "name": "rectangular block capacity 1",
+      "passed": true,
+      "detail": {
+        "spectator": "L−",
+        "arrow": "up",
+        "shape": [
+          32,
+          14
+        ],
+        "capacity": 14
+      }
+    },
+    {
+      "name": "block inspection button 1",
+      "passed": true,
+      "detail": "up arrow / L−: a 32 × 14 linear map can have rank at most 14. The certified rank is 2."
+    },
+    {
+      "name": "rectangular block capacity 2",
+      "passed": true,
+      "detail": {
+        "spectator": "A₁",
+        "arrow": "down",
+        "shape": [
+          18,
+          44
+        ],
+        "capacity": 18
+      }
+    },
+    {
+      "name": "block inspection button 2",
+      "passed": true,
+      "detail": "down arrow / A₁: a 18 × 44 linear map can have rank at most 18. The certified rank is 5."
+    },
+    {
+      "name": "rectangular block capacity 3",
+      "passed": true,
+      "detail": {
+        "spectator": "A₁",
+        "arrow": "up",
+        "shape": [
+          55,
+          15
+        ],
+        "capacity": 15
+      }
+    },
+    {
+      "name": "block inspection button 3",
+      "passed": true,
+      "detail": "up arrow / A₁: a 55 × 15 linear map can have rank at most 15. The certified rank is 3."
+    },
+    {
+      "name": "rectangular block capacity 4",
+      "passed": true,
+      "detail": {
+        "spectator": "A₂",
+        "arrow": "down",
+        "shape": [
+          72,
+          32
+        ],
+        "capacity": 32
+      }
+    },
+    {
+      "name": "block inspection button 4",
+      "passed": true,
+      "detail": "down arrow / A₂: a 72 × 32 linear map can have rank at most 32. The certified rank is 17."
+    },
+    {
+      "name": "rectangular block capacity 5",
+      "passed": true,
+      "detail": {
+        "spectator": "A₂",
+        "arrow": "up",
+        "shape": [
+          25,
+          87
+        ],
+        "capacity": 25
+      }
+    },
+    {
+      "name": "block inspection button 5",
+      "passed": true,
+      "detail": "up arrow / A₂: a 25 × 87 linear map can have rank at most 25. The certified rank is 12."
+    },
+    {
+      "name": "split charged total minus",
+      "passed": true,
+      "detail": {
+        "a": 216,
+        "phi": 63
+      }
+    },
+    {
+      "name": "split charged total plus",
+      "passed": true,
+      "detail": {
+        "a": 217,
+        "phi": 62
+      }
+    },
+    {
+      "name": "rank bounds give160 to275",
+      "passed": true,
+      "detail": {
+        "exact": false,
+        "rank": null,
+        "min": 160,
+        "max": 275
+      }
+    },
+    {
+      "name": "bound display identifies capacity",
+      "passed": true,
+      "detail": "<span class=\"survive\" style=\"width:57.34767025089606%\">160 minimum</span><span class=\"lift\" style=\"width:42.29390681003584%\">118 capacity</span><span class=\"gauge tiny\" style=\"width:0.35842293906810035%\">1</span>"
+    },
+    {
+      "name": "reviewed data slot rank41 leads237",
+      "passed": true,
+      "detail": {
+        "exact": true,
+        "rank": 41,
+        "min": 237,
+        "max": 237
+      }
+    },
+    {
+      "name": "exact slot does not retain bound text",
+      "passed": true,
+      "detail": "rank(A) = 41 ⇒ dim 𝕳¹ = 237"
+    },
+    {
+      "name": "reviewed block rank renders 0",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "reviewed block rank renders 1",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "reviewed block rank renders 2",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "reviewed block rank renders 3",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "reviewed block rank renders 4",
+      "passed": true,
+      "detail": "17"
+    },
+    {
+      "name": "reviewed block rank renders 5",
+      "passed": true,
+      "detail": "12"
+    },
+    {
+      "name": "inconsistent review data falls back to bound",
+      "passed": true,
+      "detail": {
+        "exact": false,
+        "rank": null,
+        "min": 160,
+        "max": 275
+      }
+    },
+    {
+      "name": "inconsistent block-rank sum falls back to bound",
+      "passed": true,
+      "detail": {
+        "exact": false,
+        "rank": null,
+        "min": 160,
+        "max": 275
+      }
+    },
+    {
+      "name": "block rank above capacity falls back to bound",
+      "passed": true,
+      "detail": {
+        "exact": false,
+        "rank": null,
+        "min": 160,
+        "max": 275
+      }
+    },
+    {
+      "name": "toy quartic u=0 d=0",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy quartic u=0 d=0.1",
+      "passed": true,
+      "detail": 0.00002500000000000001
+    },
+    {
+      "name": "toy quartic u=0 d=0.5",
+      "passed": true,
+      "detail": 0.015625
+    },
+    {
+      "name": "toy quartic u=0 d=1",
+      "passed": true,
+      "detail": 0.25
+    },
+    {
+      "name": "toy quartic u=0 d=1.5",
+      "passed": true,
+      "detail": 1.265625
+    },
+    {
+      "name": "toy quartic u=0 d=2",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "toy quartic u=0.1 d=0",
+      "passed": true,
+      "detail": 0.00002500000000000001
+    },
+    {
+      "name": "toy quartic u=0.1 d=0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy quartic u=0.1 d=0.5",
+      "passed": true,
+      "detail": 0.0144
+    },
+    {
+      "name": "toy quartic u=0.1 d=1",
+      "passed": true,
+      "detail": 0.245025
+    },
+    {
+      "name": "toy quartic u=0.1 d=1.5",
+      "passed": true,
+      "detail": 1.2544000000000002
+    },
+    {
+      "name": "toy quartic u=0.1 d=2",
+      "passed": true,
+      "detail": 3.9800250000000004
+    },
+    {
+      "name": "toy quartic u=0.5 d=0",
+      "passed": true,
+      "detail": 0.015625
+    },
+    {
+      "name": "toy quartic u=0.5 d=0.1",
+      "passed": true,
+      "detail": 0.0144
+    },
+    {
+      "name": "toy quartic u=0.5 d=0.5",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy quartic u=0.5 d=1",
+      "passed": true,
+      "detail": 0.140625
+    },
+    {
+      "name": "toy quartic u=0.5 d=1.5",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "toy quartic u=0.5 d=2",
+      "passed": true,
+      "detail": 3.515625
+    },
+    {
+      "name": "toy quartic u=1 d=0",
+      "passed": true,
+      "detail": 0.25
+    },
+    {
+      "name": "toy quartic u=1 d=0.1",
+      "passed": true,
+      "detail": 0.245025
+    },
+    {
+      "name": "toy quartic u=1 d=0.5",
+      "passed": true,
+      "detail": 0.140625
+    },
+    {
+      "name": "toy quartic u=1 d=1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy quartic u=1 d=1.5",
+      "passed": true,
+      "detail": 0.390625
+    },
+    {
+      "name": "toy quartic u=1 d=2",
+      "passed": true,
+      "detail": 2.25
+    },
+    {
+      "name": "toy quartic u=1.5 d=0",
+      "passed": true,
+      "detail": 1.265625
+    },
+    {
+      "name": "toy quartic u=1.5 d=0.1",
+      "passed": true,
+      "detail": 1.2544000000000002
+    },
+    {
+      "name": "toy quartic u=1.5 d=0.5",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "toy quartic u=1.5 d=1",
+      "passed": true,
+      "detail": 0.390625
+    },
+    {
+      "name": "toy quartic u=1.5 d=1.5",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy quartic u=1.5 d=2",
+      "passed": true,
+      "detail": 0.765625
+    },
+    {
+      "name": "toy quartic u=2 d=0",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "toy quartic u=2 d=0.1",
+      "passed": true,
+      "detail": 3.9800250000000004
+    },
+    {
+      "name": "toy quartic u=2 d=0.5",
+      "passed": true,
+      "detail": 3.515625
+    },
+    {
+      "name": "toy quartic u=2 d=1",
+      "passed": true,
+      "detail": 2.25
+    },
+    {
+      "name": "toy quartic u=2 d=1.5",
+      "passed": true,
+      "detail": 0.765625
+    },
+    {
+      "name": "toy quartic u=2 d=2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "toy zero ray t=0",
+      "passed": true,
+      "detail": "0.000000"
+    },
+    {
+      "name": "toy zero ray t=0.1",
+      "passed": true,
+      "detail": "0.000000"
+    },
+    {
+      "name": "toy zero ray t=0.5",
+      "passed": true,
+      "detail": "0.000000"
+    },
+    {
+      "name": "toy zero ray t=1",
+      "passed": true,
+      "detail": "0.000000"
+    },
+    {
+      "name": "toy zero ray t=2",
+      "passed": true,
+      "detail": "0.000000"
+    },
+    {
+      "name": "off-ray toy value3²/4",
+      "passed": true,
+      "detail": "2.250000"
+    },
+    {
+      "name": "plot draws supplied point",
+      "passed": true,
+      "detail": 152250
+    },
+    {
+      "name": "identity Grams three equal singular values",
+      "passed": true,
+      "detail": {
+        "paired": true,
+        "branchScale": 1,
+        "toyUp": 1,
+        "toyDown": 1,
+        "left": [
+          1,
+          4,
+          25
+        ],
+        "right": [
+          1,
+          9,
+          16
+        ],
+        "higgs": 1,
+        "massScale": 1,
+        "block": 2,
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "positive illustrative hierarchy1,1/8,1/15",
+      "passed": true,
+      "detail": [
+        1,
+        0.125,
+        0.06666666666666667
+      ]
+    },
+    {
+      "name": "illustrative ratios render",
+      "passed": true,
+      "detail": [
+        "0.125000",
+        "0.066667"
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 0",
+      "passed": true,
+      "detail": [
+        0.07071067811865475,
+        0.05773502691896259,
+        0.035355339059327376
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 0",
+      "passed": true,
+      "detail": [
+        0.07071067811865475,
+        0.05773502691896259,
+        0.035355339059327376
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 1",
+      "passed": true,
+      "detail": [
+        0.07954951288348659,
+        0.07261843774138907,
+        0.04107919181288746
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 1",
+      "passed": true,
+      "detail": [
+        0.07954951288348659,
+        0.07261843774138907,
+        0.04107919181288746
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 2",
+      "passed": true,
+      "detail": [
+        0.07826237921249263,
+        0.07637626158259733,
+        0.04124789556921527
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 2",
+      "passed": true,
+      "detail": [
+        0.07826237921249263,
+        0.07637626158259733,
+        0.04124789556921527
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 3",
+      "passed": true,
+      "detail": [
+        0.11875,
+        0.07665279539368845,
+        0.040144827099604534
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 3",
+      "passed": true,
+      "detail": [
+        0.11875,
+        0.07665279539368845,
+        0.040144827099604534
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 4",
+      "passed": true,
+      "detail": [
+        0.101418510567422,
+        0.07559289460184543,
+        0.054772255750516606
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 4",
+      "passed": true,
+      "detail": [
+        0.101418510567422,
+        0.07559289460184543,
+        0.054772255750516606
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 5",
+      "passed": true,
+      "detail": [
+        0.0935970975333459,
+        0.090625,
+        0.07399500264657519
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 5",
+      "passed": true,
+      "detail": [
+        0.0935970975333459,
+        0.090625,
+        0.07399500264657519
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 6",
+      "passed": true,
+      "detail": [
+        0.3470110468942836,
+        0.20034692133618848,
+        0.19102329436458523
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 6",
+      "passed": true,
+      "detail": [
+        0.3470110468942836,
+        0.20034692133618848,
+        0.19102329436458523
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 7",
+      "passed": true,
+      "detail": [
+        0.2569350598886808,
+        0.2180166278062295,
+        0.1302898554323069
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 7",
+      "passed": true,
+      "detail": [
+        0.2569350598886808,
+        0.2180166278062295,
+        0.1302898554323069
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 8",
+      "passed": true,
+      "detail": [
+        0.196931590360844,
+        0.16583123951777,
+        0.14200938936093863
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 8",
+      "passed": true,
+      "detail": [
+        0.196931590360844,
+        0.16583123951777,
+        0.14200938936093863
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 9",
+      "passed": true,
+      "detail": [
+        0.21655145173838017,
+        0.16369751067135996,
+        0.11182668882397141
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 9",
+      "passed": true,
+      "detail": [
+        0.21655145173838017,
+        0.16369751067135996,
+        0.11182668882397141
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 10",
+      "passed": true,
+      "detail": [
+        0.17428425057933375,
+        0.1674468916954314,
+        0.14230249470757708
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 10",
+      "passed": true,
+      "detail": [
+        0.17428425057933375,
+        0.1674468916954314,
+        0.14230249470757708
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 11",
+      "passed": true,
+      "detail": [
+        0.13937439942215255,
+        0.13140344394027534,
+        0.12723083750374656
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 11",
+      "passed": true,
+      "detail": [
+        0.13937439942215255,
+        0.13140344394027534,
+        0.12723083750374656
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 12",
+      "passed": true,
+      "detail": [
+        0.5059644256269408,
+        0.4,
+        0.3067859955389482
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 12",
+      "passed": true,
+      "detail": [
+        0.5059644256269408,
+        0.4,
+        0.3067859955389482
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 13",
+      "passed": true,
+      "detail": [
+        0.30493979938669863,
+        0.24395183950935892,
+        0.21428984784372987
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 13",
+      "passed": true,
+      "detail": [
+        0.30493979938669863,
+        0.24395183950935892,
+        0.21428984784372987
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 14",
+      "passed": true,
+      "detail": [
+        0.3163433252262559,
+        0.22434545315860802,
+        0.1780163330001346
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 14",
+      "passed": true,
+      "detail": [
+        0.3163433252262559,
+        0.22434545315860802,
+        0.1780163330001346
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 15",
+      "passed": true,
+      "detail": [
+        0.2850666954123778,
+        0.2639204763885191,
+        0.246875
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 15",
+      "passed": true,
+      "detail": [
+        0.2850666954123778,
+        0.2639204763885191,
+        0.246875
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 16",
+      "passed": true,
+      "detail": [
+        0.27110883423451915,
+        0.21545545393788237,
+        0.204939015319192
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 16",
+      "passed": true,
+      "detail": [
+        0.27110883423451915,
+        0.21545545393788237,
+        0.204939015319192
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 17",
+      "passed": true,
+      "detail": [
+        0.2031137817414991,
+        0.1767878550892869,
+        0.1759016948468661
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 17",
+      "passed": true,
+      "detail": [
+        0.2031137817414991,
+        0.1767878550892869,
+        0.1759016948468661
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 18",
+      "passed": true,
+      "detail": [
+        0.6280639184941974,
+        0.4290493367123801,
+        0.4141330838995169
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 18",
+      "passed": true,
+      "detail": [
+        0.6280639184941974,
+        0.4290493367123801,
+        0.4141330838995169
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 19",
+      "passed": true,
+      "detail": [
+        0.3731202889149825,
+        0.2824194437136013,
+        0.2700446391670406
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 19",
+      "passed": true,
+      "detail": [
+        0.3731202889149825,
+        0.2824194437136013,
+        0.2700446391670406
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 20",
+      "passed": true,
+      "detail": [
+        0.530722777603022,
+        0.2710687382741972,
+        0.2237723711142063
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 20",
+      "passed": true,
+      "detail": [
+        0.530722777603022,
+        0.2710687382741972,
+        0.2237723711142063
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 21",
+      "passed": true,
+      "detail": [
+        0.351795987280507,
+        0.344964346912874,
+        0.340625
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 21",
+      "passed": true,
+      "detail": [
+        0.351795987280507,
+        0.344964346912874,
+        0.340625
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 22",
+      "passed": true,
+      "detail": [
+        0.27424137786507224,
+        0.2601682148149539,
+        0.2549117494349761
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 22",
+      "passed": true,
+      "detail": [
+        0.27424137786507224,
+        0.2601682148149539,
+        0.2549117494349761
+      ]
+    },
+    {
+      "name": "independent squared-singular-value normalization 23",
+      "passed": true,
+      "detail": [
+        0.22952623306861172,
+        0.20627913547125706,
+        0.2052945039043504
+      ]
+    },
+    {
+      "name": "positive normalization preserves nonzero rank 23",
+      "passed": true,
+      "detail": [
+        0.22952623306861172,
+        0.20627913547125706,
+        0.2052945039043504
+      ]
+    },
+    {
+      "name": "zero scale yields rank0 and undefined ratio",
+      "passed": true,
+      "detail": [
+        "0 · zero supplied scale",
+        "Undefined at zero scale"
+      ]
+    },
+    {
+      "name": "Higgs Gram scales all singular values byonehalf",
+      "passed": true,
+      "detail": [
+        0.5,
+        0.0625,
+        0.03333333333333333
+      ]
+    },
+    {
+      "name": "Higgs Gram retains ratios",
+      "passed": true,
+      "detail": "0.125000"
+    },
+    {
+      "name": "supplied mass scale doubles all values",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "light theme interaction",
+      "passed": true,
+      "detail": "light"
+    },
+    {
+      "name": "dark theme interaction",
+      "passed": true,
+      "detail": "dark"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS: finite numerical/API tests; no B3 mass prediction",
+  "new_test_file": "tests/test_matter03_kinetics.py",
+  "new_test_cases": 60,
+  "regression_test_file": "tests/test_matter01_normalization.py",
+  "regression_test_cases": 6,
+  "combined_passed": 66,
+  "failed": 0,
+  "command": "python -m pytest tests/test_matter03_kinetics.py tests/test_matter01_normalization.py -q",
+  "source_convention": "Lower-index field-coordinate W=kappa sum Y_abc L_a E_b H_c; raw fields=C canonical fields; C_dagger G C=I",
+  "required_physical_inputs": ["kappa", "vev", "unit canonical Higgs direction", "all three positive Hermitian Grams"],
+  "historical_normalise_yukawa_changed": false,
+  "package_version_changed": false
+}

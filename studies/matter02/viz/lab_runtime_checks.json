@@ -1,0 +1,1250 @@
+{
+  "scope": "Numerical and mock-DOM interaction checks. No actual browser layout test was performed.",
+  "passed": 138,
+  "failed": 0,
+  "gates": [
+    {
+      "name": "offline document has no external script/style/resource",
+      "passed": true,
+      "detail": "Primary reference anchors are allowed."
+    },
+    {
+      "name": "no network API in runtime",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "specified representative is visible",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "physical photon status stays open",
+      "passed": true,
+      "detail": "OPEN"
+    },
+    {
+      "name": "full matrix and Higgs scope visible",
+      "passed": true,
+      "detail": [
+        18,
+        44
+      ]
+    },
+    {
+      "name": "cohomology matches frozen certificate q=-5",
+      "passed": true,
+      "detail": {
+        "q": -5,
+        "h0": 0,
+        "h1": 109,
+        "h2": 4,
+        "chi": -105,
+        "net": 15,
+        "phi": 8
+      }
+    },
+    {
+      "name": "Riemann–Roch q=-5",
+      "passed": true,
+      "detail": -105
+    },
+    {
+      "name": "Serre duality dimension q=-5",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "mode count and repo index sign q=-5",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "slider updates q=-5",
+      "passed": true,
+      "detail": "109"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=-4",
+      "passed": true,
+      "detail": {
+        "q": -4,
+        "h0": 0,
+        "h1": 72,
+        "h2": 6,
+        "chi": -66,
+        "net": 12,
+        "phi": 9
+      }
+    },
+    {
+      "name": "Riemann–Roch q=-4",
+      "passed": true,
+      "detail": -66
+    },
+    {
+      "name": "Serre duality dimension q=-4",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "mode count and repo index sign q=-4",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "slider updates q=-4",
+      "passed": true,
+      "detail": "72"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=-3",
+      "passed": true,
+      "detail": {
+        "q": -3,
+        "h0": 0,
+        "h1": 44,
+        "h2": 8,
+        "chi": -36,
+        "net": 9,
+        "phi": 10
+      }
+    },
+    {
+      "name": "Riemann–Roch q=-3",
+      "passed": true,
+      "detail": -36
+    },
+    {
+      "name": "Serre duality dimension q=-3",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "mode count and repo index sign q=-3",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "slider updates q=-3",
+      "passed": true,
+      "detail": "44"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=-2",
+      "passed": true,
+      "detail": {
+        "q": -2,
+        "h0": 0,
+        "h1": 25,
+        "h2": 10,
+        "chi": -15,
+        "net": 6,
+        "phi": 11
+      }
+    },
+    {
+      "name": "Riemann–Roch q=-2",
+      "passed": true,
+      "detail": -15
+    },
+    {
+      "name": "Serre duality dimension q=-2",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "mode count and repo index sign q=-2",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "slider updates q=-2",
+      "passed": true,
+      "detail": "25"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=-1",
+      "passed": true,
+      "detail": {
+        "q": -1,
+        "h0": 0,
+        "h1": 15,
+        "h2": 12,
+        "chi": -3,
+        "net": 3,
+        "phi": 12
+      }
+    },
+    {
+      "name": "Riemann–Roch q=-1",
+      "passed": true,
+      "detail": -3
+    },
+    {
+      "name": "Serre duality dimension q=-1",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "mode count and repo index sign q=-1",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "slider updates q=-1",
+      "passed": true,
+      "detail": "15"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=0",
+      "passed": true,
+      "detail": {
+        "q": 0,
+        "h0": 1,
+        "h1": 14,
+        "h2": 13,
+        "chi": 0,
+        "net": 0,
+        "phi": 13
+      }
+    },
+    {
+      "name": "Riemann–Roch q=0",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "Serre duality dimension q=0",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "mode count and repo index sign q=0",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "slider updates q=0",
+      "passed": true,
+      "detail": "14"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=1",
+      "passed": true,
+      "detail": {
+        "q": 1,
+        "h0": 0,
+        "h1": 18,
+        "h2": 12,
+        "chi": -6,
+        "net": -3,
+        "phi": 12
+      }
+    },
+    {
+      "name": "Riemann–Roch q=1",
+      "passed": true,
+      "detail": -6
+    },
+    {
+      "name": "Serre duality dimension q=1",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "mode count and repo index sign q=1",
+      "passed": true,
+      "detail": -3
+    },
+    {
+      "name": "slider updates q=1",
+      "passed": true,
+      "detail": "18"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=2",
+      "passed": true,
+      "detail": {
+        "q": 2,
+        "h0": 0,
+        "h1": 32,
+        "h2": 11,
+        "chi": -21,
+        "net": -6,
+        "phi": 10
+      }
+    },
+    {
+      "name": "Riemann–Roch q=2",
+      "passed": true,
+      "detail": -21
+    },
+    {
+      "name": "Serre duality dimension q=2",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "mode count and repo index sign q=2",
+      "passed": true,
+      "detail": -6
+    },
+    {
+      "name": "slider updates q=2",
+      "passed": true,
+      "detail": "32"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=3",
+      "passed": true,
+      "detail": {
+        "q": 3,
+        "h0": 0,
+        "h1": 55,
+        "h2": 10,
+        "chi": -45,
+        "net": -9,
+        "phi": 8
+      }
+    },
+    {
+      "name": "Riemann–Roch q=3",
+      "passed": true,
+      "detail": -45
+    },
+    {
+      "name": "Serre duality dimension q=3",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "mode count and repo index sign q=3",
+      "passed": true,
+      "detail": -9
+    },
+    {
+      "name": "slider updates q=3",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=4",
+      "passed": true,
+      "detail": {
+        "q": 4,
+        "h0": 0,
+        "h1": 87,
+        "h2": 9,
+        "chi": -78,
+        "net": -12,
+        "phi": 6
+      }
+    },
+    {
+      "name": "Riemann–Roch q=4",
+      "passed": true,
+      "detail": -78
+    },
+    {
+      "name": "Serre duality dimension q=4",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "mode count and repo index sign q=4",
+      "passed": true,
+      "detail": -12
+    },
+    {
+      "name": "slider updates q=4",
+      "passed": true,
+      "detail": "87"
+    },
+    {
+      "name": "cohomology matches frozen certificate q=5",
+      "passed": true,
+      "detail": {
+        "q": 5,
+        "h0": 0,
+        "h1": 128,
+        "h2": 8,
+        "chi": -120,
+        "net": -15,
+        "phi": 4
+      }
+    },
+    {
+      "name": "Riemann–Roch q=5",
+      "passed": true,
+      "detail": -120
+    },
+    {
+      "name": "Serre duality dimension q=5",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "mode count and repo index sign q=5",
+      "passed": true,
+      "detail": -15
+    },
+    {
+      "name": "slider updates q=5",
+      "passed": true,
+      "detail": "128"
+    },
+    {
+      "name": "exact table renders eleven rows",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "fat quotient has five local surviving classes",
+      "passed": true,
+      "detail": {
+        "survivors": 5,
+        "global": 1,
+        "witnesses": 3
+      }
+    },
+    {
+      "name": "all degree-three monomials vanish",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "monomial selection w³, zero modulo I cubed",
+      "passed": true,
+      "detail": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "monomial selection w², selected coupling witness",
+      "passed": true,
+      "detail": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "monomial selection zw², zero modulo I cubed",
+      "passed": true,
+      "detail": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "monomial selection w, selected coupling witness",
+      "passed": true,
+      "detail": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "monomial selection zw, selected coupling witness",
+      "passed": true,
+      "detail": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "monomial selection z²w, zero modulo I cubed",
+      "passed": true,
+      "detail": [
+        2,
+        1
+      ]
+    },
+    {
+      "name": "monomial selection 1, survives local quotient",
+      "passed": true,
+      "detail": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "monomial selection z, removed global image",
+      "passed": true,
+      "detail": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "monomial selection z², survives local quotient",
+      "passed": true,
+      "detail": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "monomial selection z³, zero modulo I cubed",
+      "passed": true,
+      "detail": [
+        3,
+        0
+      ]
+    },
+    {
+      "name": "two-variable coefficient extraction v6=-2",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "independent elimination gives rank three v6=-2",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "determinant fixed v6=-2",
+      "passed": true,
+      "detail": -1
+    },
+    {
+      "name": "coefficient control updates v6=-2",
+      "passed": true,
+      "detail": "det = −1"
+    },
+    {
+      "name": "two-variable coefficient extraction v6=-1.25",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          -1.25,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "independent elimination gives rank three v6=-1.25",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          -1.25,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "determinant fixed v6=-1.25",
+      "passed": true,
+      "detail": -1
+    },
+    {
+      "name": "coefficient control updates v6=-1.25",
+      "passed": true,
+      "detail": "det = −1"
+    },
+    {
+      "name": "two-variable coefficient extraction v6=0",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "independent elimination gives rank three v6=0",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "determinant fixed v6=0",
+      "passed": true,
+      "detail": -1
+    },
+    {
+      "name": "coefficient control updates v6=0",
+      "passed": true,
+      "detail": "det = −1"
+    },
+    {
+      "name": "two-variable coefficient extraction v6=0.25",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          0.25,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "independent elimination gives rank three v6=0.25",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          0.25,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "determinant fixed v6=0.25",
+      "passed": true,
+      "detail": -1
+    },
+    {
+      "name": "coefficient control updates v6=0.25",
+      "passed": true,
+      "detail": "det = −1"
+    },
+    {
+      "name": "two-variable coefficient extraction v6=2",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "independent elimination gives rank three v6=2",
+      "passed": true,
+      "detail": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "determinant fixed v6=2",
+      "passed": true,
+      "detail": -1
+    },
+    {
+      "name": "coefficient control updates v6=2",
+      "passed": true,
+      "detail": "det = −1"
+    },
+    {
+      "name": "residue entry selection 0,0",
+      "passed": true,
+      "detail": "w × z⁻⁶w⁻² × φ(z)   →   residue 1"
+    },
+    {
+      "name": "residue entry selection 0,1",
+      "passed": true,
+      "detail": "w × z⁻⁷w⁻² × φ(z)   →   residue 2"
+    },
+    {
+      "name": "residue entry selection 0,2",
+      "passed": true,
+      "detail": "w × z⁻⁶w⁻³ × φ(z)   →   residue 0"
+    },
+    {
+      "name": "residue entry selection 1,0",
+      "passed": true,
+      "detail": "w² × z⁻⁶w⁻² × φ(z)   →   residue 0"
+    },
+    {
+      "name": "residue entry selection 1,1",
+      "passed": true,
+      "detail": "w² × z⁻⁷w⁻² × φ(z)   →   residue 0"
+    },
+    {
+      "name": "residue entry selection 1,2",
+      "passed": true,
+      "detail": "w² × z⁻⁶w⁻³ × φ(z)   →   residue 1"
+    },
+    {
+      "name": "residue entry selection 2,0",
+      "passed": true,
+      "detail": "zw × z⁻⁶w⁻² × φ(z)   →   residue 0"
+    },
+    {
+      "name": "residue entry selection 2,1",
+      "passed": true,
+      "detail": "zw × z⁻⁷w⁻² × φ(z)   →   residue 1"
+    },
+    {
+      "name": "residue entry selection 2,2",
+      "passed": true,
+      "detail": "zw × z⁻⁶w⁻³ × φ(z)   →   residue 0"
+    },
+    {
+      "name": "probe kernel s=0, mask=0",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 0,
+          "survives": true,
+          "rows": []
+        },
+        "exactDot": []
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=0",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=1",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": true,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=1",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=2",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": false,
+          "rows": [
+            {
+              "label": "quadratic",
+              "value": 54
+            }
+          ]
+        },
+        "exactDot": [
+          -6
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=2",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=3",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": false,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "quadratic",
+              "value": 54
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          -6
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=3",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=4",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": true,
+          "rows": [
+            {
+              "label": "trace",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=4",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=5",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": true,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "trace",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=5",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=6",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": false,
+          "rows": [
+            {
+              "label": "quadratic",
+              "value": 54
+            },
+            {
+              "label": "trace",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          -6,
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=6",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0, mask=7",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 3,
+          "survives": false,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "quadratic",
+              "value": 54
+            },
+            {
+              "label": "trace",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          -6,
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0, mask=7",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=0",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 0,
+          "survives": true,
+          "rows": []
+        },
+        "exactDot": []
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=0",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=1",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": true,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=1",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=2",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": true,
+          "rows": [
+            {
+              "label": "quadratic",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=2",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=3",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": true,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "quadratic",
+              "value": 0
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=3",
+      "passed": true,
+      "detail": "This lift survives all supplied rows. Physical photon remains OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=4",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 1,
+          "survives": false,
+          "rows": [
+            {
+              "label": "trace",
+              "value": 3
+            }
+          ]
+        },
+        "exactDot": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=4",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=5",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": false,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "trace",
+              "value": 3
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=5",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=6",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 2,
+          "survives": false,
+          "rows": [
+            {
+              "label": "quadratic",
+              "value": 0
+            },
+            {
+              "label": "trace",
+              "value": 3
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=6",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "probe kernel s=0.375, mask=7",
+      "passed": true,
+      "detail": {
+        "r": {
+          "rank": 3,
+          "survives": false,
+          "rows": [
+            {
+              "label": "linear",
+              "value": 0
+            },
+            {
+              "label": "quadratic",
+              "value": 0
+            },
+            {
+              "label": "trace",
+              "value": 3
+            }
+          ]
+        },
+        "exactDot": [
+          0,
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "name": "probe controls s=0.375, mask=7",
+      "passed": true,
+      "detail": "This lift is removed by at least one supplied row. The actual parent is still OPEN."
+    },
+    {
+      "name": "traceless quadratic projection is 54",
+      "passed": true,
+      "detail": {
+        "linear": 0,
+        "quadratic": 54,
+        "trace": 0
+      }
+    },
+    {
+      "name": "center shift cancels quadratic but not trace",
+      "passed": true,
+      "detail": {
+        "linear": 0,
+        "quadratic": 0,
+        "trace": 3
+      }
+    },
+    {
+      "name": "light theme control",
+      "passed": true,
+      "detail": "light"
+    },
+    {
+      "name": "dark theme control",
+      "passed": true,
+      "detail": "dark"
+    }
+  ]
+}

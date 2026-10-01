@@ -1,0 +1,182 @@
+{
+  "study": "Matter-01 U1 conditional reduction",
+  "exact_gates": [
+    {
+      "name": "Einstein-frame volume times two external inverse metrics",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "canonical breathing exponent",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "C3X d=2 gauge coefficient exponent",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "B3 d=4 uniform breathing coefficient exponent",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact kinetic normalization entry 00",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact kinetic normalization entry 01",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact kinetic normalization entry 10",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact kinetic normalization entry 11",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact U1 charge vertex entry 00",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact U1 charge vertex entry 01",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact U1 charge vertex entry 10",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "exact U1 charge vertex entry 11",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    },
+    {
+      "name": "electroweak inverse coupling matching",
+      "class": "EXACT conditional algebra",
+      "residual": "0"
+    }
+  ],
+  "numerical_class": "DIAGNOSTIC, finite basis-change sample",
+  "basis_change_samples": 30,
+  "max_basis_residual": 1.4480049899603275e-14,
+  "C3X_breathing": {
+    "Z": 1.1051709180756477,
+    "g_eff_over_g0": 0.951229424500714,
+    "mp_dZ_dchi": 1.1051709180756477,
+    "canonical_exponent": 1.0,
+    "internal_dimension": 2,
+    "status": "EXACT conditional reduction; numerical evaluation DIAGNOSTIC",
+    "implemented_evolution": false
+  },
+  "B3_uniform_breathing": {
+    "Z": 1.1224009024456676,
+    "g_eff_over_g0": 0.9439000224008953,
+    "mp_dZ_dchi": 1.29603692633137,
+    "canonical_exponent": 1.1547005383792515,
+    "internal_dimension": 4,
+    "status": "EXACT conditional reduction; numerical evaluation DIAGNOSTIC",
+    "implemented_evolution": false
+  },
+  "breathing_implementation_samples": [
+    {
+      "internal_dimension": 2,
+      "chi_over_mp": -1.0,
+      "Z": 0.36787944117144233,
+      "g_eff_over_g0": 1.6487212707001282,
+      "mp_dZ_dchi": 0.36787944117144233,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 2,
+      "chi_over_mp": 0.0,
+      "Z": 1.0,
+      "g_eff_over_g0": 1.0,
+      "mp_dZ_dchi": 1.0,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 2,
+      "chi_over_mp": 0.1,
+      "Z": 1.1051709180756477,
+      "g_eff_over_g0": 0.951229424500714,
+      "mp_dZ_dchi": 1.1051709180756477,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 2,
+      "chi_over_mp": 1.0,
+      "Z": 2.718281828459045,
+      "g_eff_over_g0": 0.6065306597126334,
+      "mp_dZ_dchi": 2.718281828459045,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 4,
+      "chi_over_mp": -1.0,
+      "Z": 0.3151518986722024,
+      "g_eff_over_g0": 1.7813121741108024,
+      "mp_dZ_dchi": 0.3639060670680354,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 4,
+      "chi_over_mp": 0.0,
+      "Z": 1.0,
+      "g_eff_over_g0": 1.0,
+      "mp_dZ_dchi": 1.1547005383792515,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 4,
+      "chi_over_mp": 0.1,
+      "Z": 1.1224009024456676,
+      "g_eff_over_g0": 0.9439000224008953,
+      "mp_dZ_dchi": 1.29603692633137,
+      "status": "PASS"
+    },
+    {
+      "internal_dimension": 4,
+      "chi_over_mp": 1.0,
+      "Z": 3.1730730616353533,
+      "g_eff_over_g0": 0.5613839137989282,
+      "mp_dZ_dchi": 3.663949172587042,
+      "status": "PASS"
+    }
+  ],
+  "null_plane_wave": {
+    "F_squared": 0.0,
+    "energy_density": 1.0,
+    "E_dot_B": 0.0,
+    "poynting": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "status": "classical diagnostic in declared units; canonical Z=1"
+  },
+  "unified_input_matching": {
+    "e": 0.6123724356957946,
+    "sin2_theta_w": 0.37500000000000006,
+    "alpha": 0.029841551829730383,
+    "generator": "Q = T3 + Y",
+    "status": "EXACT conditional tree-level matching; couplings INPUT"
+  },
+  "open": [
+    "unbroken massless photon in selected MTFT vacuum",
+    "parent coupling and physical scale",
+    "electron identification and mass",
+    "coupled gauge-fermion-breathing evolution",
+    "Einstein metric feedback"
+  ]
+}

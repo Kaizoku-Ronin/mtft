@@ -1,0 +1,616 @@
+{
+  "status": "DIAGNOSTIC examples and EXACT conditional normalization identities; no mass prediction",
+  "convention": "W=L^T Y_k E H_k; raw fields=C canonical fields; C\u2020GC=I",
+  "inputs": {
+    "Grams": "supplied complex positive-definite examples, not B3 metrics",
+    "tensor": "Matter-02 rank-three slice plus supplied second-Higgs example",
+    "physical_v": 1.0,
+    "scale_units": "arbitrary; INPUT",
+    "light_family_selection": "OPEN"
+  },
+  "exact_witness_normalized_determinant": "-4/81",
+  "diagnostic_singular_values": [
+    0.3059400243922693,
+    0.18163609825242874,
+    0.1139409200902836
+  ],
+  "diagonal_metric_singular_values": [
+    1.0,
+    0.125,
+    0.06666666666666667
+  ],
+  "basis_change_count": 24,
+  "max_mass_covariance_relative_residual": 1.1031889691468632e-15,
+  "max_singular_value_relative_residual": 1.270111876962456e-15,
+  "max_unitarity_residual": 2.4390314676585214e-15,
+  "wrong_conjugation_relative_mass_error": 0.09437638146493336,
+  "check_count": 117,
+  "passed": true,
+  "checks": [
+    {
+      "name": "exact L canonical kinetic identity",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact L positive Gram by invertible congruence",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact E canonical kinetic identity",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact E positive Gram by invertible congruence",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact H canonical kinetic identity",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact H positive Gram by invertible congruence",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact ordinary-transpose holomorphic determinant",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact rank-three slice survives positive normalization",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "exact Pauli D-term identity",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "neutral paired-Higgs D-flat ray",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "unbroken zero-FI D potential has no negative quadratic mass",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "numeric L canonical kinetic residual",
+      "passed": true,
+      "value": 1.0812700602243303e-16
+    },
+    {
+      "name": "numeric E canonical kinetic residual",
+      "passed": true,
+      "value": 9.61912941329517e-17
+    },
+    {
+      "name": "numeric H canonical kinetic residual",
+      "passed": true,
+      "value": 2.223392691457059e-16
+    },
+    {
+      "name": "numeric/exact frame agreement",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "numeric/exact rank witness normalization",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 0: canonical frames differ unitarily",
+      "passed": true,
+      "value": 9.74790751732372e-16
+    },
+    {
+      "name": "basis 0: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 0: holomorphic mass covariance",
+      "passed": true,
+      "value": 2.4843881798467985e-16
+    },
+    {
+      "name": "basis 0: physical singular values invariant",
+      "passed": true,
+      "value": 3.628891077035589e-16
+    },
+    {
+      "name": "basis 1: canonical frames differ unitarily",
+      "passed": true,
+      "value": 5.704500957891237e-16
+    },
+    {
+      "name": "basis 1: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 1: holomorphic mass covariance",
+      "passed": true,
+      "value": 4.79768775036754e-16
+    },
+    {
+      "name": "basis 1: physical singular values invariant",
+      "passed": true,
+      "value": 3.17527969240614e-16
+    },
+    {
+      "name": "basis 2: canonical frames differ unitarily",
+      "passed": true,
+      "value": 2.4390314676585214e-15
+    },
+    {
+      "name": "basis 2: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 2: holomorphic mass covariance",
+      "passed": true,
+      "value": 4.493386839738753e-16
+    },
+    {
+      "name": "basis 2: physical singular values invariant",
+      "passed": true,
+      "value": 7.257782154071178e-16
+    },
+    {
+      "name": "basis 3: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.0968905432158957e-15
+    },
+    {
+      "name": "basis 3: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 3: holomorphic mass covariance",
+      "passed": true,
+      "value": 7.931893805755983e-16
+    },
+    {
+      "name": "basis 3: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "basis 4: canonical frames differ unitarily",
+      "passed": true,
+      "value": 6.84355860766992e-16
+    },
+    {
+      "name": "basis 4: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 4: holomorphic mass covariance",
+      "passed": true,
+      "value": 4.462217513285239e-16
+    },
+    {
+      "name": "basis 4: physical singular values invariant",
+      "passed": true,
+      "value": 1.8144455385177944e-16
+    },
+    {
+      "name": "basis 5: canonical frames differ unitarily",
+      "passed": true,
+      "value": 2.241952422636726e-15
+    },
+    {
+      "name": "basis 5: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 5: holomorphic mass covariance",
+      "passed": true,
+      "value": 7.227073686533818e-16
+    },
+    {
+      "name": "basis 5: physical singular values invariant",
+      "passed": true,
+      "value": 2.7216683077766916e-16
+    },
+    {
+      "name": "basis 6: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.3257266342448063e-15
+    },
+    {
+      "name": "basis 6: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 6: holomorphic mass covariance",
+      "passed": true,
+      "value": 5.166613234780493e-16
+    },
+    {
+      "name": "basis 6: physical singular values invariant",
+      "passed": true,
+      "value": 2.7216683077766916e-16
+    },
+    {
+      "name": "basis 7: canonical frames differ unitarily",
+      "passed": true,
+      "value": 5.595924051991953e-16
+    },
+    {
+      "name": "basis 7: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 7: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.219552023409827e-16
+    },
+    {
+      "name": "basis 7: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "basis 8: canonical frames differ unitarily",
+      "passed": true,
+      "value": 9.554286447260204e-16
+    },
+    {
+      "name": "basis 8: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 8: holomorphic mass covariance",
+      "passed": true,
+      "value": 7.660332059767917e-16
+    },
+    {
+      "name": "basis 8: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "basis 9: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.8286583353698226e-15
+    },
+    {
+      "name": "basis 9: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 9: holomorphic mass covariance",
+      "passed": true,
+      "value": 1.1031889691468632e-15
+    },
+    {
+      "name": "basis 9: physical singular values invariant",
+      "passed": true,
+      "value": 4.082502461665038e-16
+    },
+    {
+      "name": "basis 10: canonical frames differ unitarily",
+      "passed": true,
+      "value": 9.403970541286846e-16
+    },
+    {
+      "name": "basis 10: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 10: holomorphic mass covariance",
+      "passed": true,
+      "value": 8.049653312238324e-16
+    },
+    {
+      "name": "basis 10: physical singular values invariant",
+      "passed": true,
+      "value": 1.8144455385177944e-16
+    },
+    {
+      "name": "basis 11: canonical frames differ unitarily",
+      "passed": true,
+      "value": 9.553218125412172e-16
+    },
+    {
+      "name": "basis 11: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 11: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.552353289440991e-16
+    },
+    {
+      "name": "basis 11: physical singular values invariant",
+      "passed": true,
+      "value": 7.257782154071178e-16
+    },
+    {
+      "name": "basis 12: canonical frames differ unitarily",
+      "passed": true,
+      "value": 7.66875690022907e-16
+    },
+    {
+      "name": "basis 12: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 12: holomorphic mass covariance",
+      "passed": true,
+      "value": 8.188628786586725e-16
+    },
+    {
+      "name": "basis 12: physical singular values invariant",
+      "passed": true,
+      "value": 1.270111876962456e-15
+    },
+    {
+      "name": "basis 13: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.0814564867925754e-15
+    },
+    {
+      "name": "basis 13: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 13: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.750304723521512e-16
+    },
+    {
+      "name": "basis 13: physical singular values invariant",
+      "passed": true,
+      "value": 9.072227692588972e-16
+    },
+    {
+      "name": "basis 14: canonical frames differ unitarily",
+      "passed": true,
+      "value": 5.269941020386746e-16
+    },
+    {
+      "name": "basis 14: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 14: holomorphic mass covariance",
+      "passed": true,
+      "value": 7.175348283759081e-16
+    },
+    {
+      "name": "basis 14: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "basis 15: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.2437495050895993e-15
+    },
+    {
+      "name": "basis 15: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 15: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.966109672098413e-16
+    },
+    {
+      "name": "basis 15: physical singular values invariant",
+      "passed": true,
+      "value": 1.8144455385177944e-16
+    },
+    {
+      "name": "basis 16: canonical frames differ unitarily",
+      "passed": true,
+      "value": 4.537758175780652e-16
+    },
+    {
+      "name": "basis 16: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 16: holomorphic mass covariance",
+      "passed": true,
+      "value": 3.663446407962086e-16
+    },
+    {
+      "name": "basis 16: physical singular values invariant",
+      "passed": true,
+      "value": 9.072227692588972e-17
+    },
+    {
+      "name": "basis 17: canonical frames differ unitarily",
+      "passed": true,
+      "value": 2.0524219743647958e-15
+    },
+    {
+      "name": "basis 17: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 17: holomorphic mass covariance",
+      "passed": true,
+      "value": 7.506845558923423e-16
+    },
+    {
+      "name": "basis 17: physical singular values invariant",
+      "passed": true,
+      "value": 3.628891077035589e-16
+    },
+    {
+      "name": "basis 18: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.0944256359009844e-15
+    },
+    {
+      "name": "basis 18: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 18: holomorphic mass covariance",
+      "passed": true,
+      "value": 2.9706624001203605e-16
+    },
+    {
+      "name": "basis 18: physical singular values invariant",
+      "passed": true,
+      "value": 7.257782154071178e-16
+    },
+    {
+      "name": "basis 19: canonical frames differ unitarily",
+      "passed": true,
+      "value": 9.092057259838946e-16
+    },
+    {
+      "name": "basis 19: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 19: holomorphic mass covariance",
+      "passed": true,
+      "value": 2.9637569920826886e-16
+    },
+    {
+      "name": "basis 19: physical singular values invariant",
+      "passed": true,
+      "value": 7.257782154071178e-16
+    },
+    {
+      "name": "basis 20: canonical frames differ unitarily",
+      "passed": true,
+      "value": 8.816189258247299e-16
+    },
+    {
+      "name": "basis 20: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 20: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.117350181411545e-16
+    },
+    {
+      "name": "basis 20: physical singular values invariant",
+      "passed": true,
+      "value": 4.082502461665038e-16
+    },
+    {
+      "name": "basis 21: canonical frames differ unitarily",
+      "passed": true,
+      "value": 4.75242872803301e-16
+    },
+    {
+      "name": "basis 21: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 21: holomorphic mass covariance",
+      "passed": true,
+      "value": 5.885336591100962e-16
+    },
+    {
+      "name": "basis 21: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "basis 22: canonical frames differ unitarily",
+      "passed": true,
+      "value": 1.0816527431132504e-15
+    },
+    {
+      "name": "basis 22: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 22: holomorphic mass covariance",
+      "passed": true,
+      "value": 5.733498387860426e-16
+    },
+    {
+      "name": "basis 22: physical singular values invariant",
+      "passed": true,
+      "value": 1.8144455385177944e-16
+    },
+    {
+      "name": "basis 23: canonical frames differ unitarily",
+      "passed": true,
+      "value": 7.320489476949568e-16
+    },
+    {
+      "name": "basis 23: same physical Higgs direction",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "basis 23: holomorphic mass covariance",
+      "passed": true,
+      "value": 6.908603726713661e-16
+    },
+    {
+      "name": "basis 23: physical singular values invariant",
+      "passed": true,
+      "value": 5.443336615553383e-16
+    },
+    {
+      "name": "incorrect conjugation detected on complex nonorthogonal example",
+      "passed": true,
+      "value": 0.09437638146493336
+    },
+    {
+      "name": "positive metric can change mass ratios while preserving rank",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "invalid indefinite kinetic matrix rejected",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "invalid singular kinetic matrix rejected",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "invalid non-Hermitian kinetic matrix rejected",
+      "passed": true,
+      "value": null
+    }
+  ]
+}

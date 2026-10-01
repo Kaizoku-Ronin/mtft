@@ -1,0 +1,5 @@
+{
+  "passed": 138,
+  "failed": 0,
+  "scope": "Numerical and mock-DOM interaction checks. No actual browser layout test was performed."
+}

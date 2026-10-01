@@ -158,7 +158,7 @@ The atlas trace terminates at **external SM reference inputs**. Its data is
 not presented as an arithmetic derivation. A passed software test verifies its
 stated calculation, not an unrestricted claim of physical validity.
 
-For the current v0.33.x research line (v0.33.1 adds the SM interaction atlas and the review corrections listed in [the v0.33.1 changelog](docs/changelog/CHANGELOG_v0331.md)), start with:
+For the current v0.34.x research line (v0.34.0 adds the parent-action gates, the blow-up branch and CC-35, listed in [the v0.34.0 changelog](docs/changelog/CHANGELOG_v0340.md); later work is in [Unreleased](docs/changelog/UNRELEASED.md)), start with:
 
 - [Compendium implementation notes](docs/SM/V0330_COMPENDIUM_NOTES.md): exact
   inputs, operator conventions, rank qualifications and independent routes.
@@ -226,3 +226,71 @@ uses the existing [release workflow](PUBLISHING.md); the package version,
 See [`CITATION.cff`](CITATION.cff) and [`LICENSE`](LICENSE) (MIT).
 The external MadGraph reference retains its
 [upstream license](src/mtft/interactions/_data/MADGRAPH_LICENSE.txt).
+
+
+## Matter-01: electromagnetic U(1) reference (unreleased)
+
+The [Matter-01 report](docs/SM/MATTER01_REPORT.md) records a massive tree-level
+`e- e+ -> gamma gamma` benchmark, an independent scalar oracle, conditional
+mode/gauge normalization, and a B3 vacuum audit. Electron mass and alpha are
+supplied reference inputs; a physical MTFT electron and massless photon remain
+OPEN. The audit also distinguishes net family indices from full cohomology.
+
+Open the [offline U(1) lab](viz/matter01_u1_lab.html) or
+[scientific overview](viz/matter01_u1_overview.png). Reproduce the focused gate:
+
+```bash
+python -m pip install -r studies/matter01/requirements.txt
+python studies/matter01/run_all.py
+# After installing this source checkout with pip install -e .:
+python -m mtft.matter benchmark --sqrt-s-gev 0.01 --cos-theta 0.37 --output benchmark.json
+python -m mtft.matter report --output qed_report.json
+```
+
+This addition does not change the release version or substitute for the full
+MTFT release suite. Its source, checks, logs and derivations are in
+[`studies/matter01/`](studies/matter01/).
+
+## Matter-02: exact collinear modes and a bulk coupling (unreleased)
+
+The [Matter-02 report](docs/SM/MATTER02_REPORT.md) specifies a cusp blow-up
+representative and computes its actual cohomology dimensions. An exact
+holomorphic lepton–Higgs coupling has rank at least three. Physical family
+selection, a Higgs vacuum, normalized masses and the photon mass kernel remain
+open. Both index orientations are documented explicitly.
+
+Open [the mode lab](viz/matter02_mode_lab.html), or reproduce the focused
+certificates, regressions and figures with:
+
+```bash
+python studies/matter02/run_all.py
+python -m mtft.matter.collinear --output collinear_report.json
+```
+
+The standard-library cohomology and Yukawa scripts are under
+`studies/matter02/`; the photon audit uses the repository's existing SymPy
+dependency. These are unreleased additions to v0.34.0.
+
+## Matter-03: a paired Higgs branch and the light-mode gate (unreleased)
+
+The [Matter-03 report](docs/SM/MATTER03_REPORT.md) excludes a nonzero single
+directed Higgs vacuum in the unchanged full B3 background and constructs a
+paired classical branch. Its specific deformed charged complex retains 237
+degree-one classes per electric-charge sign. Even an arbitrary aligned pair
+in the same spaces retains at least 160; family selection requires a further
+change to the construction. A Higgs scale and physical surface metrics remain
+open. The new `mtft.matter.kinetics` API normalizes lower-index superpotential
+tensors only with explicitly supplied Grams, direction, vev and parent factor.
+
+Open [the offline Higgs lab](viz/matter03_higgs_lab.html) or run:
+
+```bash
+python studies/matter03/run_all.py
+python -m mtft.matter.higgs_vacuum --output higgs_vacuum.json
+python -m mtft.matter.charged_modes --output charged_modes.json
+```
+
+The [study guide](studies/matter03/README.md) identifies the exact conditional
+proofs, finite diagnostics and focused regressions. This is a source candidate;
+no observed masses, release version changes or full release certification are
+implied.

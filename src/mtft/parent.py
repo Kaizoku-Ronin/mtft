@@ -34,6 +34,14 @@ class ParentCandidate:
 
 def _verdict(passed, witness, status="EXACT"): return {"pass": passed, "witness": witness, "status": status}
 
+def _positive_slope_locus(d):
+    """Positive r for a + b r = 0: 'all', one rational, or None."""
+    a, b = d
+    if a == 0 and b == 0: return "all"
+    if b == 0: return None
+    rr = sp.Rational(-a, b)
+    return rr if rr > 0 else None
+
 def gates(c: ParentCandidate):
     """Every ledger row the candidate's data decide.  Rows: 1 odd chirality; 2 Yukawa between chiral families; 3 u^c/d^c in different
     summands; 4 SM unbroken at M_KK (colour slope); 5 no destabilising twisted colour line; 6 tachyon-free background; 7 light Higgs;
@@ -69,7 +77,7 @@ def gates(c: ParentCandidate):
     if c.stacks:
         dc = next(d for n, r, d in c.stacks if r == 3); rest = [(n, r, d) for n, r, d in c.stacks if r != 3]
         w = (sum(r * (d[0] - dc[0]) for _, r, d in rest), sum(r * (d[1] - dc[1]) for _, r, d in rest))
-        rc = sp.Rational(-w[0], w[1]) if w[1] and sp.Rational(-w[0], w[1]) > 0 else None
+        rc = _positive_slope_locus(w)
         g["4_colour_slope"] = _verdict(rc is not None, {"w": w, "r_colour": rc, "note": "necessary for an SU(3)-preserving polystable vacuum"})
     else: g["4_colour_slope"] = _verdict(None, "no background", "OPEN")
     # 5. destabilising twisted colour line (proved for S1; other backgrounds open)
@@ -82,9 +90,9 @@ def gates(c: ParentCandidate):
     else: g["6_tachyon_free"] = _verdict(None, "no background", "OPEN")
     # 7. light Higgs at leading order
     if c.higgs_blocks:
-        loci = {k: (sp.Rational(-H[0], H[1]) if H[1] and sp.Rational(-H[0], H[1]) > 0 else None) for k, H in c.higgs_blocks.items()}
-        common = set(v for v in loci.values()) if loci else set()
-        g["7_light_higgs"] = _verdict(all(v is not None for v in loci.values()) and len(common) == 1, {"slope_free_loci": loci})
+        loci = {k: _positive_slope_locus(H) for k, H in c.higgs_blocks.items()}
+        fixed = {v for v in loci.values() if v != "all"}
+        g["7_light_higgs"] = _verdict(None not in fixed and len(fixed) <= 1, {"slope_free_loci": loci})
     else: g["7_light_higgs"] = _verdict(None, "no Higgs block declared", "OPEN")
     # 8. strong CP
     g["8_strong_cp"] = _verdict(None, {"curve": PS.cm_point_cp_structure()["conclusion"], "torus": "CP-conserving (torus_cp_test)"}, "OPEN (lift must be phase-aligned or an axion exists)")
@@ -93,16 +101,16 @@ def gates(c: ParentCandidate):
         n = sum(m * UP.ADJOINT_DIM.get(c.group, 0) for k, m in c.content if k == "adjoint")
         g["9_anomaly"] = _verdict(GA.tensor_integrality(n)["integral"] if n else None, GA.tensor_integrality(n) if n else "content not in adjoint-dimension table", "EXACT (CC-33)" if n else "OPEN")
     elif c.dimension == 8:
-        N = sum(r for _, r, _ in c.stacks) if c.stacks else None
-        spec = []
-        for k, m in c.content:
-            if k == "adjoint": spec.append((A8.adjoint("A", N), m))
-            elif k == "fund": spec.append((A8.fund("A", N), m))
-            elif k == "antisym2": spec.append((A8.antisym2("A", N), m))
-            elif k == "sym2": spec.append((A8.sym2("A", N), m))
-        I = A8.I10(spec); d = A8.gs_decomposition(I)
-        g["9_anomaly"] = _verdict(d["cancellable"], {"irreducible_quintic": d["irreducible_quintic"], "green_schwarz_fields_needed": d["green_schwarz_fields_needed"], "axion_X8": d["axion_X8"], "two_form_factors": d["two_form_factors"]},
-                                  "EXACT (quintic-free; Green–Schwarz completion assumed, global anomalies open)")
+        constructors = {"adjoint": A8.adjoint, "fund": A8.fund, "antisym2": A8.antisym2, "sym2": A8.sym2}
+        unsupported = [(k, m) for k, m in c.content if m and k not in constructors]
+        if unsupported:
+            g["9_anomaly"] = _verdict(None, {"unsupported_content": unsupported, "reason": "anomaly ledger has no representation constructor for this content"}, "OPEN (unsupported content)")
+        else:
+            N = sum(r for _, r, _ in c.stacks) if c.stacks else None
+            spec = [(constructors[k]("A", N), m) for k, m in c.content if m]
+            I = A8.I10(spec); d = A8.gs_decomposition(I)
+            g["9_anomaly"] = _verdict(d["cancellable"], {"irreducible_quintic": d["irreducible_quintic"], "green_schwarz_fields_needed": d["green_schwarz_fields_needed"], "axion_X8": d["axion_X8"], "two_form_factors": d["two_form_factors"]},
+                                      "EXACT (quintic-free; Green–Schwarz completion assumed, global anomalies open)")
     else: g["9_anomaly"] = _verdict(None, "dimension not covered", "OPEN")
     # 10. hypercharge normalisation
     g["10_hypercharge_normalisation"] = _verdict(True if adjoint_only and c.stacks else None, "CC-26 (three-stack)" if adjoint_only and c.stacks else "to be recomputed for the candidate's U(1)s", "EXACT" if adjoint_only and c.stacks else "OPEN")

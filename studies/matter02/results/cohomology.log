@@ -1,0 +1,14 @@
+PASS: 148 exact arithmetic gates; ordinary cusp gap sequence1..13
+q     h0    h1    h2    chi
+-5      0   109     4   -105
+-4      0    72     6    -66
+-3      0    44     8    -36
+-2      0    25    10    -15
+-1      0    15    12     -3
+ 0      1    14    13      0
+ 1      0    18    12     -6
+ 2      0    32    11    -21
+ 3      0    55    10    -45
+ 4      0    87     9    -78
+ 5      0   128     8   -120
+Written: /workspace/scratch/30fe37353c9b/matter02/repo_candidate/studies/matter02/results/cohomology_exact.json

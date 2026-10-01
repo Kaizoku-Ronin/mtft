@@ -1,0 +1,263 @@
+{
+  "status": "EXACT CONDITIONAL HOLOMORPHIC deformation complex",
+  "split_census": {
+    "status": "EXACT CONDITIONAL SPLIT COHOMOLOGY",
+    "rows": {
+      "Qminus": [
+        {
+          "target": "L-",
+          "source": "L+",
+          "exponent": 0,
+          "electric_charge": -1,
+          "a_dim": 14,
+          "phi_dim": 13,
+          "gauge_dim": 1
+        },
+        {
+          "target": "L-",
+          "source": "B",
+          "exponent": 2,
+          "electric_charge": -1,
+          "a_dim": 32,
+          "phi_dim": 10,
+          "gauge_dim": 0
+        },
+        {
+          "target": "A1",
+          "source": "L+",
+          "exponent": 1,
+          "electric_charge": -1,
+          "a_dim": 18,
+          "phi_dim": 12,
+          "gauge_dim": 0
+        },
+        {
+          "target": "A1",
+          "source": "B",
+          "exponent": 3,
+          "electric_charge": -1,
+          "a_dim": 55,
+          "phi_dim": 8,
+          "gauge_dim": 0
+        },
+        {
+          "target": "A2",
+          "source": "L+",
+          "exponent": -4,
+          "electric_charge": -1,
+          "a_dim": 72,
+          "phi_dim": 9,
+          "gauge_dim": 0
+        },
+        {
+          "target": "A2",
+          "source": "B",
+          "exponent": -2,
+          "electric_charge": -1,
+          "a_dim": 25,
+          "phi_dim": 11,
+          "gauge_dim": 0
+        }
+      ],
+      "Qplus": [
+        {
+          "target": "L+",
+          "source": "L-",
+          "exponent": 0,
+          "electric_charge": 1,
+          "a_dim": 14,
+          "phi_dim": 13,
+          "gauge_dim": 1
+        },
+        {
+          "target": "L+",
+          "source": "A1",
+          "exponent": -1,
+          "electric_charge": 1,
+          "a_dim": 15,
+          "phi_dim": 12,
+          "gauge_dim": 0
+        },
+        {
+          "target": "L+",
+          "source": "A2",
+          "exponent": 4,
+          "electric_charge": 1,
+          "a_dim": 87,
+          "phi_dim": 6,
+          "gauge_dim": 0
+        },
+        {
+          "target": "B",
+          "source": "L-",
+          "exponent": -2,
+          "electric_charge": 1,
+          "a_dim": 25,
+          "phi_dim": 11,
+          "gauge_dim": 0
+        },
+        {
+          "target": "B",
+          "source": "A1",
+          "exponent": -3,
+          "electric_charge": 1,
+          "a_dim": 44,
+          "phi_dim": 10,
+          "gauge_dim": 0
+        },
+        {
+          "target": "B",
+          "source": "A2",
+          "exponent": 2,
+          "electric_charge": 1,
+          "a_dim": 32,
+          "phi_dim": 10,
+          "gauge_dim": 0
+        }
+      ]
+    },
+    "totals": {
+      "Qminus": {
+        "a_dim": 216,
+        "phi_dim": 63,
+        "gauge_dim": 1,
+        "chiral_dim": 279
+      },
+      "Qplus": {
+        "a_dim": 217,
+        "phi_dim": 62,
+        "gauge_dim": 1,
+        "chiral_dim": 279
+      }
+    },
+    "physical_particle_counts": false,
+    "note": "q0 gauge generators are separate from a and Phi chiral classes."
+  },
+  "six_a_mass_blocks": [
+    {
+      "spectator": "L-",
+      "higgs_entry": "down",
+      "negative_a_exponent": 0,
+      "positive_a_exponent": -2,
+      "higgs_exponent": 2,
+      "shape": [
+        14,
+        25
+      ],
+      "rank_capacity": 14,
+      "certified_rank": 2
+    },
+    {
+      "spectator": "L-",
+      "higgs_entry": "up",
+      "negative_a_exponent": 2,
+      "positive_a_exponent": 0,
+      "higgs_exponent": -2,
+      "shape": [
+        32,
+        14
+      ],
+      "rank_capacity": 14,
+      "certified_rank": 2
+    },
+    {
+      "spectator": "A1",
+      "higgs_entry": "down",
+      "negative_a_exponent": 1,
+      "positive_a_exponent": -3,
+      "higgs_exponent": 2,
+      "shape": [
+        18,
+        44
+      ],
+      "rank_capacity": 18,
+      "certified_rank": 5
+    },
+    {
+      "spectator": "A1",
+      "higgs_entry": "up",
+      "negative_a_exponent": 3,
+      "positive_a_exponent": -1,
+      "higgs_exponent": -2,
+      "shape": [
+        55,
+        15
+      ],
+      "rank_capacity": 15,
+      "certified_rank": 3
+    },
+    {
+      "spectator": "A2",
+      "higgs_entry": "down",
+      "negative_a_exponent": -4,
+      "positive_a_exponent": 2,
+      "higgs_exponent": 2,
+      "shape": [
+        72,
+        32
+      ],
+      "rank_capacity": 32,
+      "certified_rank": 17
+    },
+    {
+      "spectator": "A2",
+      "higgs_entry": "up",
+      "negative_a_exponent": -2,
+      "positive_a_exponent": 4,
+      "higgs_exponent": -2,
+      "shape": [
+        25,
+        87
+      ],
+      "rank_capacity": 25,
+      "certified_rank": 12
+    }
+  ],
+  "a_map_rank_upper_bound": 118,
+  "charged_gauge_map_rank": {
+    "Qminus": 1,
+    "Qplus": 1
+  },
+  "paired_lower_bounds": {
+    "Qminus": {
+      "a_kernel_lower_bound": 98,
+      "phi_cokernel_dimension": 62,
+      "hyperH1_lower_bound": 160
+    },
+    "Qplus": {
+      "a_kernel_lower_bound": 99,
+      "phi_cokernel_dimension": 61,
+      "hyperH1_lower_bound": 160
+    }
+  },
+  "assumptions": [
+    "Fixed Matter-02 cusp representative and BHV bulk dictionary",
+    "Nonzero Phi entries L+<-B and B<-L+; no a expectation value",
+    "End(V) --adPhi--> K_S tensor End(V) deformation complex",
+    "Chosen canonical vanishing orders down3/up2 at the ordinary cusp"
+  ],
+  "physical_mass_spectrum": false,
+  "open": [
+    "actual Hermitian metric and physical kinetic integrals",
+    "additional lifting interactions",
+    "observed light-family selection"
+  ],
+  "canonical_vanishing_orders": {
+    "down": 3,
+    "up": 2
+  },
+  "a_map_rank": 41,
+  "paired_hyperH1": {
+    "Qminus": {
+      "a_kernel_dimension": 175,
+      "phi_cokernel_dimension": 62,
+      "hyperH1_dimension": 237
+    },
+    "Qplus": {
+      "a_kernel_dimension": 176,
+      "phi_cokernel_dimension": 61,
+      "hyperH1_dimension": 237
+    }
+  },
+  "hermitian_bps_existence": "Established separately for the stated stable paired branch under its parent assumptions."
+}

@@ -1,0 +1,545 @@
+{
+  "study": "Matter-01 independent massive QED oracle",
+  "status": "FINITE-GRID NUMERICAL DIAGNOSTIC; ordinary Born QED reference",
+  "engine_included": true,
+  "protocol": {
+    "beta_grid": [
+      0.05,
+      0.2,
+      0.5,
+      0.8,
+      0.95,
+      0.99
+    ],
+    "cosine_grid": [
+      -0.999,
+      -0.95,
+      -0.5,
+      0.0,
+      0.37,
+      0.8,
+      0.99
+    ],
+    "phi_grid": [
+      0.0,
+      0.61,
+      1.73
+    ],
+    "independent_boost": [
+      0.12,
+      -0.07,
+      0.2
+    ],
+    "event_identical_photon_factor": 0.5,
+    "engine_quadrature_orders": [
+      64,
+      128
+    ]
+  },
+  "inputs": {
+    "electron_mass_gev": 0.00051099895069,
+    "alpha_inverse": 137.035999177,
+    "gev2_to_nb": 389379.3721,
+    "provenance": "PDG 2026 supplied inputs"
+  },
+  "gates": [
+    {
+      "name": "CM scalar versus invariant scalar",
+      "maximum_relative_error": 7.28156684850517e-15,
+      "limit": 3e-12,
+      "samples": 42,
+      "passed": true
+    },
+    {
+      "name": "CM total versus independent Heitler total",
+      "maximum_relative_error": 8.496362292599328e-15,
+      "limit": 3e-12,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "adaptive direct-angle integration versus analytic total",
+      "maximum_relative_error": 2.4896656050536516e-16,
+      "limit": 3e-12,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "explicit spinor Msq versus independent oracle",
+      "maximum_relative_error": 1.1821768313088947e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "independently boosted spinor Msq versus invariant oracle",
+      "maximum_relative_error": 3.612206984554956e-14,
+      "limit": 2e-10,
+      "samples": 42,
+      "passed": true
+    },
+    {
+      "name": "engine event differential per solid angle",
+      "maximum_relative_error": 1.7349717679217207e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine event differential per cosine",
+      "maximum_relative_error": 1.7417388696268748e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine nb conversion",
+      "maximum_relative_error": 1.7350672082358403e-14,
+      "limit": 2e-10,
+      "samples": 126,
+      "passed": true
+    },
+    {
+      "name": "engine integrated event total versus oracle",
+      "maximum_relative_error": 1.6992724585198657e-14,
+      "limit": 2e-10,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "engine integration orders 64 versus 128",
+      "maximum_relative_error": 1.4937993630321893e-15,
+      "limit": 2e-10,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "formal Born sigma*v threshold limit",
+      "maximum_relative_error": 9.992007221626409e-15,
+      "limit": 1e-12,
+      "samples": 3,
+      "passed": true
+    },
+    {
+      "name": "high-energy asymptotic total",
+      "maximum_relative_error": 4.000037989038141e-05,
+      "limit": 0.0001,
+      "samples": 3,
+      "passed": true
+    },
+    {
+      "name": "independent mass dimension scaling",
+      "maximum_relative_error": 0.0,
+      "limit": 1e-13,
+      "samples": 6,
+      "passed": true
+    },
+    {
+      "name": "independent alpha squared scaling",
+      "maximum_relative_error": 0.0,
+      "limit": 1e-13,
+      "samples": 42,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "total_grid": [
+    {
+      "beta": 0.05,
+      "sqrt_s_gev": 0.001023277799065471,
+      "event_sigma_gev2": 6422.711300094638,
+      "event_sigma_nb": 2500871293.210425,
+      "heitler_sigma_gev2": 6422.711300094693,
+      "independent_quad_sigma_gev2": 6422.711300094638,
+      "quad_reported_absolute_error": 7.130641965885241e-11,
+      "sigma_times_2beta_gev2": 642.271130009464,
+      "engine64": {
+        "sqrt_s_gev": 0.001023277799065471,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.049999999999999156,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 6422.7113000947475,
+        "event_sigma_nb": 2500871293.2104673,
+        "sigma_times_2beta_gev2": 642.271130009464,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.001023277799065471,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.049999999999999156,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 6422.7113000947475,
+        "event_sigma_nb": 2500871293.2104673,
+        "sigma_times_2beta_gev2": 642.271130009464,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    },
+    {
+      "beta": 0.2,
+      "sqrt_s_gev": 0.0010430722402401016,
+      "event_sigma_gev2": 1659.6659008610686,
+      "event_sigma_nb": 646239666.3730637,
+      "heitler_sigma_gev2": 1659.6659008610684,
+      "independent_quad_sigma_gev2": 1659.6659008610686,
+      "quad_reported_absolute_error": 1.8425992963212107e-11,
+      "sigma_times_2beta_gev2": 663.8663603444274,
+      "engine64": {
+        "sqrt_s_gev": 0.0010430722402401016,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.20000000000000015,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 1659.6659008610677,
+        "event_sigma_nb": 646239666.3730633,
+        "sigma_times_2beta_gev2": 663.8663603444276,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.0010430722402401016,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.20000000000000015,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 1659.6659008610673,
+        "event_sigma_nb": 646239666.3730632,
+        "sigma_times_2beta_gev2": 663.8663603444274,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    },
+    {
+      "beta": 0.5,
+      "sqrt_s_gev": 0.001180101526945951,
+      "event_sigma_gev2": 709.7956193799936,
+      "event_sigma_nb": 276379772.5935125,
+      "heitler_sigma_gev2": 709.7956193799934,
+      "independent_quad_sigma_gev2": 709.7956193799936,
+      "quad_reported_absolute_error": 7.880314394137387e-12,
+      "sigma_times_2beta_gev2": 709.7956193799936,
+      "engine64": {
+        "sqrt_s_gev": 0.001180101526945951,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.5,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 709.7956193799938,
+        "event_sigma_nb": 276379772.5935126,
+        "sigma_times_2beta_gev2": 709.7956193799938,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.001180101526945951,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.5,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 709.7956193799935,
+        "event_sigma_nb": 276379772.5935124,
+        "sigma_times_2beta_gev2": 709.7956193799935,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    },
+    {
+      "beta": 0.8,
+      "sqrt_s_gev": 0.0017033298356333333,
+      "event_sigma_gev2": 316.74786118639554,
+      "event_sigma_nb": 123335083.30277665,
+      "heitler_sigma_gev2": 316.74786118639554,
+      "independent_quad_sigma_gev2": 316.7478611863956,
+      "quad_reported_absolute_error": 6.449689685613235e-11,
+      "sigma_times_2beta_gev2": 506.7965778982329,
+      "engine64": {
+        "sqrt_s_gev": 0.0017033298356333333,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.8,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 316.7478611863956,
+        "event_sigma_nb": 123335083.30277668,
+        "sigma_times_2beta_gev2": 506.796577898233,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.0017033298356333333,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.8,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 316.7478611863957,
+        "event_sigma_nb": 123335083.30277671,
+        "sigma_times_2beta_gev2": 506.7965778982331,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    },
+    {
+      "beta": 0.95,
+      "sqrt_s_gev": 0.003273012742813057,
+      "event_sigma_gev2": 102.4625926176688,
+      "event_sigma_nb": 39896819.97720597,
+      "heitler_sigma_gev2": 102.46259261766882,
+      "independent_quad_sigma_gev2": 102.46259261766879,
+      "quad_reported_absolute_error": 1.137197782016305e-12,
+      "sigma_times_2beta_gev2": 194.67892597357073,
+      "engine64": {
+        "sqrt_s_gev": 0.003273012742813057,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.95,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 102.46259261766879,
+        "event_sigma_nb": 39896819.97720596,
+        "sigma_times_2beta_gev2": 194.6789259735707,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.003273012742813057,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.95,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 102.46259261766893,
+        "event_sigma_nb": 39896819.97720602,
+        "sigma_times_2beta_gev2": 194.67892597357095,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    },
+    {
+      "beta": 0.99,
+      "sqrt_s_gev": 0.007244751038462442,
+      "event_sigma_gev2": 28.539685583389346,
+      "event_sigma_nb": 11112764.852391565,
+      "heitler_sigma_gev2": 28.539685583389346,
+      "independent_quad_sigma_gev2": 28.53968558338934,
+      "quad_reported_absolute_error": 4.4302870866910456e-10,
+      "sigma_times_2beta_gev2": 56.50857745511091,
+      "engine64": {
+        "sqrt_s_gev": 0.007244751038462442,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.99,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 64,
+        "event_sigma_gev2": 28.53968558338934,
+        "event_sigma_nb": 11112764.852391561,
+        "sigma_times_2beta_gev2": 56.50857745511089,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      },
+      "engine128": {
+        "sqrt_s_gev": 0.007244751038462442,
+        "mass_gev": 0.00051099895069,
+        "alpha": 0.0072973525643314245,
+        "beta": 0.99,
+        "cos_theta_max": 1.0,
+        "quadrature_order": 128,
+        "event_sigma_gev2": 28.53968558338938,
+        "event_sigma_nb": 11112764.852391578,
+        "sigma_times_2beta_gev2": 56.508577455110974,
+        "integration_variable": "y=atanh(beta*cos(theta))",
+        "convention": "events; identical-photon 1/2; full azimuth"
+      }
+    }
+  ],
+  "formal_threshold_checks": [
+    {
+      "beta": 0.001,
+      "ratio_sigma_times_2beta_to_threshold": 1.0000009999975998
+    },
+    {
+      "beta": 1e-05,
+      "ratio_sigma_times_2beta_to_threshold": 1.0000000001000002
+    },
+    {
+      "beta": 1e-07,
+      "ratio_sigma_times_2beta_to_threshold": 1.00000000000001
+    }
+  ],
+  "angular_grid": [
+    {
+      "beta": 0.1,
+      "energy_ratio": 1.005037815259212,
+      "cos_theta": -1.0,
+      "dsigma_dcos_nb": 629904683.5218806
+    },
+    {
+      "beta": 0.1,
+      "energy_ratio": 1.005037815259212,
+      "cos_theta": -0.5,
+      "dsigma_dcos_nb": 629741089.2239455
+    },
+    {
+      "beta": 0.1,
+      "energy_ratio": 1.005037815259212,
+      "cos_theta": 0.0,
+      "dsigma_dcos_nb": 629656463.6564932
+    },
+    {
+      "beta": 0.1,
+      "energy_ratio": 1.005037815259212,
+      "cos_theta": 0.5,
+      "dsigma_dcos_nb": 629741089.2239455
+    },
+    {
+      "beta": 0.1,
+      "energy_ratio": 1.005037815259212,
+      "cos_theta": 1.0,
+      "dsigma_dcos_nb": 629904683.5218806
+    },
+    {
+      "beta": 0.4,
+      "energy_ratio": 1.0910894511799618,
+      "cos_theta": -1.0,
+      "dsigma_dcos_nb": 180863721.0112331
+    },
+    {
+      "beta": 0.4,
+      "energy_ratio": 1.0910894511799618,
+      "cos_theta": -0.5,
+      "dsigma_dcos_nb": 170534219.70347947
+    },
+    {
+      "beta": 0.4,
+      "energy_ratio": 1.0910894511799618,
+      "cos_theta": 0.0,
+      "dsigma_dcos_nb": 166175092.193107
+    },
+    {
+      "beta": 0.4,
+      "energy_ratio": 1.0910894511799618,
+      "cos_theta": 0.5,
+      "dsigma_dcos_nb": 170534219.70347947
+    },
+    {
+      "beta": 0.4,
+      "energy_ratio": 1.0910894511799618,
+      "cos_theta": 1.0,
+      "dsigma_dcos_nb": 180863721.0112331
+    },
+    {
+      "beta": 0.7,
+      "energy_ratio": 1.4002800840280099,
+      "cos_theta": -1.0,
+      "dsigma_dcos_nb": 132752189.31366369
+    },
+    {
+      "beta": 0.7,
+      "energy_ratio": 1.4002800840280099,
+      "cos_theta": -0.5,
+      "dsigma_dcos_nb": 80245439.32033257
+    },
+    {
+      "beta": 0.7,
+      "energy_ratio": 1.4002800840280099,
+      "cos_theta": 0.0,
+      "dsigma_dcos_nb": 68148915.50445823
+    },
+    {
+      "beta": 0.7,
+      "energy_ratio": 1.4002800840280099,
+      "cos_theta": 0.5,
+      "dsigma_dcos_nb": 80245439.32033257
+    },
+    {
+      "beta": 0.7,
+      "energy_ratio": 1.4002800840280099,
+      "cos_theta": 1.0,
+      "dsigma_dcos_nb": 132752189.31366369
+    },
+    {
+      "beta": 0.9,
+      "energy_ratio": 2.294157338705618,
+      "cos_theta": -1.0,
+      "dsigma_dcos_nb": 125426565.14572103
+    },
+    {
+      "beta": 0.9,
+      "energy_ratio": 2.294157338705618,
+      "cos_theta": -0.5,
+      "dsigma_dcos_nb": 24631627.343731917
+    },
+    {
+      "beta": 0.9,
+      "energy_ratio": 2.294157338705618,
+      "cos_theta": 0.0,
+      "dsigma_dcos_nb": 17218919.204717707
+    },
+    {
+      "beta": 0.9,
+      "energy_ratio": 2.294157338705618,
+      "cos_theta": 0.5,
+      "dsigma_dcos_nb": 24631627.343731917
+    },
+    {
+      "beta": 0.9,
+      "energy_ratio": 2.294157338705618,
+      "cos_theta": 1.0,
+      "dsigma_dcos_nb": 125426565.14572103
+    },
+    {
+      "beta": 0.98,
+      "energy_ratio": 5.025189076296055,
+      "cos_theta": -1.0,
+      "dsigma_dcos_nb": 124759056.53427917
+    },
+    {
+      "beta": 0.98,
+      "energy_ratio": 5.025189076296055,
+      "cos_theta": -0.5,
+      "dsigma_dcos_nb": 4361631.004811345
+    },
+    {
+      "beta": 0.98,
+      "energy_ratio": 5.025189076296055,
+      "cos_theta": 0.0,
+      "dsigma_dcos_nb": 2711818.049229315
+    },
+    {
+      "beta": 0.98,
+      "energy_ratio": 5.025189076296055,
+      "cos_theta": 0.5,
+      "dsigma_dcos_nb": 4361631.004811345
+    },
+    {
+      "beta": 0.98,
+      "energy_ratio": 5.025189076296055,
+      "cos_theta": 1.0,
+      "dsigma_dcos_nb": 124759056.53427917
+    }
+  ],
+  "high_energy_checks": [
+    {
+      "beta": 0.999,
+      "ratio_exact_to_asymptotic": 1.004003665006458
+    },
+    {
+      "beta": 0.9999,
+      "ratio_exact_to_asymptotic": 1.0004000374787652
+    },
+    {
+      "beta": 0.99999,
+      "ratio_exact_to_asymptotic": 1.0000400003798904
+    }
+  ],
+  "scope": "No parameter derivation, positronium, Coulomb resummation, radiative corrections, material effects, or MTFT vacuum validation."
+}

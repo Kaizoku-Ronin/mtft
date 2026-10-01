@@ -8,12 +8,13 @@ SU(N_max), revealing:
   1. Even-N universality — all SU(2k) collapse to the odd-integer sieve
   2. Prime-N individuality — each prime sees a unique arithmetic landscape
   3. Phase transition scaling — y_c(N) ~ c/N² confinement boundaries
-  4. Stiffness persistence — μ_N > 0 unconditionally for all N, y > 0 (classical curvature; CC-35)
+  4. Stiffness persistence — the full arithmetic sum μ_N > 0 for all N, y > 0 (diagnostic; CC-35)
   5. Arithmetic genome — Euler product decomposition of each gauge group
 
 Key result (Paper 5, Theorem 7.8): the holonomy stiffness μ_N is UNCONDITIONALLY
 positive because w_n ≥ 0, e^{-2πyn} > 0, and (1-cos) ≥ 0.  CC-35: Paper 5 calls this
-the mass gap; it is the curvature of the classical Polyakov potential, not a spectral gap.
+the mass gap; it is a defined arithmetic stiffness diagnostic, not the Hessian of the
+current single-trace Polyakov action or a spectral gap.
 
 Reference: Papers 5, 18; Discoveries Addendum.
 """
@@ -95,8 +96,8 @@ def even_n_universality(
 
     So μ_{2k}(y)|_{m=N/2} = 2·Σ_{odd n} n² w_n e^{-2πyn} for ALL k ≥ 1.
 
-    This is also the minimising mode for moderate y, making it
-    the mass gap itself for the even-N universality class.
+    When this is the minimising mode, it gives the even-N arithmetic stiffness.
+    This does not identify a physical mass gap (CC-35).
 
     Returns dict with even_values, verification, and max_deviation.
     """
@@ -147,8 +148,8 @@ def confinement_boundary(
     The boundary is where the center stiffness C_N(y) crosses zero.
     For N=3, this is y_c ≈ 0.18174.
 
-    Note: μ_N(y) > 0 ALWAYS (unconditional mass gap).
-    The "boundary" is the Hessian isotropy point, not a gap closure.
+    CC-35: μ_N(y) is a positive arithmetic diagnostic, not an established mass gap.
+    The "boundary" is C_N(y) = 0; its physical transition interpretation remains open.
 
     Uses N² scaling to set intelligent search bounds for large N.
     """
@@ -214,10 +215,11 @@ def boundary_tracking(
     n_max: int = 500,
 ) -> List[dict]:
     """
-    Under the ansatz y = c/N², compute μ_N and the physical mass gap.
+    Under the ansatz y = c/N², compute μ_N and the diagnostic scale sqrt(μ_N/N).
 
-    The mass gap m_gap = √(μ_N / N) should remain O(1) or grow,
-    proving confinement persists in the large-N limit.
+    CC-35: the returned m_gap field and CONFINED/DECONFINED labels are historical
+    API labels determined solely by this arithmetic quantity. They are not physical
+    spectral-gap measurements or evidence establishing large-N confinement.
 
     Key result (Paper 5): μ_N grows DRAMATICALLY under tracking —
     the arithmetic enhancement far outpaces the 1/N² suppression.

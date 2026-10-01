@@ -1,0 +1,324 @@
+{
+  "study": "Matter-02 holomorphic bulk Yukawa existence and rank certificate",
+  "status": "EXACT conditional on the specified holomorphic background and partially twisted 8D YM action",
+  "background": {
+    "surface": "Bl_(P,Q)(X0(143) x 143a1)",
+    "P": "rational cusp infinity, coordinate z=q",
+    "Q": "elliptic origin; dw is locally a nonzero holomorphic elliptic differential",
+    "line_bundle": "L=pi*pr_C O_C(P) tensor O(-3E_exc)",
+    "stack_exponents": {
+      "c": 0,
+      "L": 1,
+      "A1": 2,
+      "A2": -3,
+      "B": -1
+    },
+    "torus_flat_twist": "trivial",
+    "Phi_background": "zero; Phi in certificate is a fluctuation/possible Higgs direction"
+  },
+  "field_dictionary": {
+    "a": "H1(S_tilde, L^q), a (0,1)-form valued in its Hom block",
+    "phi": "H0(S_tilde, K_tilde tensor L^q), a (2,0)-form",
+    "cubic": "W_cubic proportional to integral Tr(a wedge a wedge phi)",
+    "Serre_duality": "H1(L^1) x H1(L^-3) -> H2(L^-2), paired with H0(K_tilde L^2)"
+  },
+  "charged_phi_spaces": {
+    "q_positive": "H0(K_C(-(2q-1)P)); q=1,...,5",
+    "q_negative": "H0(K_C(-|q|P)); q=-1,...,-5",
+    "q_zero": "H0(K_C) tensor H0(K_E), dimension13",
+    "charged_H0_L": "zero for every nonzero q; this does not imply charged Phi absent"
+  },
+  "source_hashes": {
+    "X0_143_S2_qexpansions.txt": "e7c2aaed96af74c4f21b1aa6d811a427b1a2dc7597abab9d5d5a6308888bb69f",
+    "X0_143_AL_adapted_qexpansions.txt": "cdb9f3caf6fb6eb529931f41a2b47f0657489328737eb5abf0ab82150b56eb52"
+  },
+  "canonical_jet_ranks_1_to_9": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "canonical_basis_combination": [
+    "8235/34426",
+    "0",
+    "-603/17213",
+    "171/9836",
+    "81/9836",
+    "593/68852",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "canonical_q_coefficients_first_16": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "1",
+    "0",
+    "5321/17213",
+    "-17769/17213",
+    "3117/17213",
+    "-39121/34426",
+    "-21888/17213",
+    "6096/17213",
+    "-19121/17213",
+    "16574/17213",
+    "29714/17213",
+    "-14580/17213",
+    "-33581/34426"
+  ],
+  "positive_local_H1_L_classes": [
+    "w",
+    "w^2",
+    "z*w"
+  ],
+  "negative_local_H1_L_minus3_classes": [
+    "z^-6*w^-2",
+    "z^-7*w^-2",
+    "z^-6*w^-3"
+  ],
+  "residue_matrix": [
+    [
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1",
+      "0"
+    ]
+  ],
+  "determinant": "-1",
+  "holomorphic_full_matrix_rank_lower_bound": 3,
+  "gauge_bracket_factor": -1,
+  "normalization": "Leading holomorphic Taylor coefficient fixed to1. No Hermitian kinetic normalization or physical unit normalization.",
+  "open": [
+    "selected three light lepton families",
+    "Higgs VEV selection",
+    "kinetic Gram matrices and Hermitian metric",
+    "full holomorphic tensor and its rank",
+    "electron mass and physical Yukawa",
+    "vectorlike/exotic lifting",
+    "global parent and photon mass kernel"
+  ],
+  "sources": [
+    "https://arxiv.org/abs/0802.3391, sections3.3.2-3.3.3 and equation3.54-3.55",
+    "Archived MTFT canonical q-expansion bases, hashes above"
+  ],
+  "gates": [
+    {
+      "name": "basis_dimension_13",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "canonical_cusp_jet_rank_1",
+      "pass": true,
+      "detail": {
+        "original": 1,
+        "AL_adapted": 1
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_2",
+      "pass": true,
+      "detail": {
+        "original": 2,
+        "AL_adapted": 2
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_3",
+      "pass": true,
+      "detail": {
+        "original": 3,
+        "AL_adapted": 3
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_4",
+      "pass": true,
+      "detail": {
+        "original": 4,
+        "AL_adapted": 4
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_5",
+      "pass": true,
+      "detail": {
+        "original": 5,
+        "AL_adapted": 5
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_6",
+      "pass": true,
+      "detail": {
+        "original": 6,
+        "AL_adapted": 6
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_7",
+      "pass": true,
+      "detail": {
+        "original": 7,
+        "AL_adapted": 7
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_8",
+      "pass": true,
+      "detail": {
+        "original": 8,
+        "AL_adapted": 8
+      }
+    },
+    {
+      "name": "canonical_cusp_jet_rank_9",
+      "pass": true,
+      "detail": {
+        "original": 9,
+        "AL_adapted": 9
+      }
+    },
+    {
+      "name": "phi_normalized_canonical_jet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "phi_relative_frame_leading_order_5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "phi_relative_frame_order_6_zero",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(0, 1)_in_Z3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(0, 1)_survives_global_image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(0, 2)_in_Z3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(0, 2)_survives_global_image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(1, 1)_in_Z3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "positive_jet_(1, 1)_survives_global_image",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exceptional_principal_part_(6, 2)_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exceptional_principal_part_(6, 2)_obstruction_zero",
+      "pass": true,
+      "detail": "Global dual sections have no w dependence."
+    },
+    {
+      "name": "exceptional_principal_part_(7, 2)_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exceptional_principal_part_(7, 2)_obstruction_zero",
+      "pass": true,
+      "detail": "Global dual sections have no w dependence."
+    },
+    {
+      "name": "exceptional_principal_part_(6, 3)_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exceptional_principal_part_(6, 3)_obstruction_zero",
+      "pass": true,
+      "detail": "Global dual sections have no w dependence."
+    },
+    {
+      "name": "exact_residue_matrix",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exact_rank_three_minor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "electron_triangle_gauge_bracket_nonzero",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "electron_triangle_relative_charge_closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "electron_triangle_hypercharge_closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "form_degree_a_a_phi_is_2_2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "three_a_forms_not_a_bulk_cubic",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "neutral_phi_center_decouples",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "neutral_phi_relative_stack_can_couple",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "gates_passed": 34
+}

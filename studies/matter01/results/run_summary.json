@@ -1,0 +1,84 @@
+{
+  "milestone": "Matter-01",
+  "passed": true,
+  "source_version": "0.34.0 + unreleased Matter-01 candidate",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "scipy": "1.17.0",
+    "pytest": "8.4.2",
+    "matplotlib": "3.10.8"
+  },
+  "stages": [
+    {
+      "stage": "vacuum_audit",
+      "returncode": 0,
+      "seconds": 1.702,
+      "log": "results/vacuum_audit.log"
+    },
+    {
+      "stage": "u1_reduction",
+      "returncode": 0,
+      "seconds": 5.846,
+      "log": "results/u1_reduction.log"
+    },
+    {
+      "stage": "qed_reference",
+      "returncode": 0,
+      "seconds": 4.663,
+      "log": "results/qed_reference.log"
+    },
+    {
+      "stage": "independent_qed",
+      "returncode": 0,
+      "seconds": 4.978,
+      "log": "results/independent_qed.log"
+    },
+    {
+      "stage": "atlas_ledger",
+      "returncode": 0,
+      "seconds": 0.77,
+      "log": "results/atlas_ledger.log"
+    },
+    {
+      "stage": "focused_tests",
+      "returncode": 0,
+      "seconds": 10.166,
+      "log": "results/focused_tests.log"
+    },
+    {
+      "stage": "compose_lab",
+      "returncode": 0,
+      "seconds": 0.087,
+      "log": "results/compose_lab.log"
+    },
+    {
+      "stage": "build_lab",
+      "returncode": 0,
+      "seconds": 0.053,
+      "log": "results/build_lab.log"
+    },
+    {
+      "stage": "javascript_checks",
+      "returncode": 0,
+      "seconds": 0.236,
+      "log": "results/javascript_checks.log"
+    },
+    {
+      "stage": "scientific_figure",
+      "returncode": 0,
+      "seconds": 2.521,
+      "log": "results/scientific_figure.log"
+    }
+  ],
+  "exact_vacuum_checks": 45,
+  "exact_reduction_identities": 13,
+  "numerical_breathing_samples": 8,
+  "qed_structural_gates": 12,
+  "independent_qed_gates": 14,
+  "browser_layout": "UNVERIFIED; Node mock-DOM checks are not a browser layout test",
+  "physical_electron_photon_derivation": "OPEN",
+  "full_MTFT_release_suite": "NOT RUN by this focused milestone runner"
+}

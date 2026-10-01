@@ -1,0 +1,82 @@
+{
+  "milestone": "Matter-03",
+  "source_version": "0.34.0 + unreleased Matter-01/02/03",
+  "passed": true,
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "pytest": "8.4.2",
+    "matplotlib": "3.10.8"
+  },
+  "vacuum_arithmetic_gates": 57,
+  "charged_arithmetic_gates": 34,
+  "kinetic_checks": 117,
+  "kinetic_check_scope": "11 exact symbolic gates; 106 finite numerical/rejection checks",
+  "classical_paired_metric_existence": "CONDITIONAL THEOREM; metric not computed",
+  "paired_charged_degree_one_classes": {
+    "Qminus": 237,
+    "Qplus": 237
+  },
+  "all_aligned_pairs_lower_bound_per_sign": 160,
+  "selected_higgs_scale": false,
+  "physical_mass_prediction": false,
+  "browser_layout": "UNVERIFIED: mock DOM is not browser layout QA",
+  "full_release_suite": "NOT RUN by this focused runner",
+  "stages": [
+    {
+      "name": "vacuum_certificate",
+      "returncode": 0,
+      "seconds": 0.086,
+      "log": "results/vacuum_certificate.log"
+    },
+    {
+      "name": "charged_certificate",
+      "returncode": 0,
+      "seconds": 0.812,
+      "log": "results/charged_certificate.log"
+    },
+    {
+      "name": "kinetic_diagnostics",
+      "returncode": 0,
+      "seconds": 1.298,
+      "log": "results/kinetic_diagnostics.log"
+    },
+    {
+      "name": "vacuum_api",
+      "returncode": 0,
+      "seconds": 0.723,
+      "log": "results/vacuum_api.log"
+    },
+    {
+      "name": "charged_api",
+      "returncode": 0,
+      "seconds": 0.579,
+      "log": "results/charged_api.log"
+    },
+    {
+      "name": "capability_index",
+      "returncode": 0,
+      "seconds": 0.581,
+      "log": "results/capability_index.log"
+    },
+    {
+      "name": "focused_tests",
+      "returncode": 0,
+      "seconds": 8.877,
+      "log": "results/focused_tests.log"
+    },
+    {
+      "name": "lab_logic",
+      "returncode": 0,
+      "seconds": 0.51,
+      "log": "results/lab_logic.log"
+    },
+    {
+      "name": "scientific_figure",
+      "returncode": 0,
+      "seconds": 1.829,
+      "log": "results/scientific_figure.log"
+    }
+  ]
+}

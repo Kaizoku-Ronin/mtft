@@ -1,0 +1,289 @@
+{
+  "scope": "Offline script/DOM checks. Actual browser layout was not tested.",
+  "passed": 54,
+  "failed": 0,
+  "oraclePoints": 25,
+  "oracleMaxRelative": 1.4347431733301133e-15,
+  "maxAngularIntegralRelative": 1.1024005922343211e-11,
+  "gates": [
+    {
+      "name": "no external scripts or styles",
+      "passed": true,
+      "detail": "Single offline file"
+    },
+    {
+      "name": "three accessible controls",
+      "passed": true,
+      "detail": "β, emission angle, phase"
+    },
+    {
+      "name": "audited constants present",
+      "passed": true,
+      "detail": {
+        "alpha": 0.0072973525643314245,
+        "mass": 0.5109989506899999,
+        "nb": 389379372100
+      }
+    },
+    {
+      "name": "angular Python oracle included",
+      "passed": true,
+      "detail": 25
+    },
+    {
+      "name": "angular JavaScript matches Python oracle",
+      "passed": true,
+      "detail": 1.4347431733301133e-15
+    },
+    {
+      "name": "phase and kinematics render without error",
+      "passed": true,
+      "detail": "Mock canvas/DOM initialized"
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=-1",
+      "passed": true,
+      "detail": 629904683.5218804
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=-0.75",
+      "passed": true,
+      "detail": 629825899.6646972
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=-0.1",
+      "passed": true,
+      "detail": 629660131.809897
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=0",
+      "passed": true,
+      "detail": 629656463.6564928
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=0.1",
+      "passed": true,
+      "detail": 629660131.809897
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=0.75",
+      "passed": true,
+      "detail": 629825899.6646972
+    },
+    {
+      "name": "positive finite angular value β=0.1, c=1",
+      "passed": true,
+      "detail": 629904683.5218804
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=-1",
+      "passed": true,
+      "detail": 180863721.0112333
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=-0.75",
+      "passed": true,
+      "detail": 175475819.91602007
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=-0.1",
+      "passed": true,
+      "detail": 166354617.70340976
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=0",
+      "passed": true,
+      "detail": 166175092.19310725
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=0.1",
+      "passed": true,
+      "detail": 166354617.70340976
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=0.75",
+      "passed": true,
+      "detail": 175475819.91602007
+    },
+    {
+      "name": "positive finite angular value β=0.4, c=1",
+      "passed": true,
+      "detail": 180863721.0112333
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=-1",
+      "passed": true,
+      "detail": 132752189.31366375
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=-0.75",
+      "passed": true,
+      "detail": 98952870.41344216
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=-0.1",
+      "passed": true,
+      "detail": 68591269.62113348
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=0",
+      "passed": true,
+      "detail": 68148915.50445825
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=0.1",
+      "passed": true,
+      "detail": 68591269.62113348
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=0.75",
+      "passed": true,
+      "detail": 98952870.41344216
+    },
+    {
+      "name": "positive finite angular value β=0.7, c=1",
+      "passed": true,
+      "detail": 132752189.31366375
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=-1",
+      "passed": true,
+      "detail": 125426565.14572108
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=-0.75",
+      "passed": true,
+      "detail": 41188878.727997966
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=-0.1",
+      "passed": true,
+      "detail": 17459223.333661895
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=0",
+      "passed": true,
+      "detail": 17218919.204717707
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=0.1",
+      "passed": true,
+      "detail": 17459223.333661895
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=0.75",
+      "passed": true,
+      "detail": 41188878.727997966
+    },
+    {
+      "name": "positive finite angular value β=0.9, c=1",
+      "passed": true,
+      "detail": 125426565.14572108
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=-1",
+      "passed": true,
+      "detail": 124759056.53427923
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=-0.75",
+      "passed": true,
+      "detail": 8839034.713547666
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=-0.1",
+      "passed": true,
+      "detail": 2762475.5266453493
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=0",
+      "passed": true,
+      "detail": 2711818.049229316
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=0.1",
+      "passed": true,
+      "detail": 2762475.5266453493
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=0.75",
+      "passed": true,
+      "detail": 8839034.713547666
+    },
+    {
+      "name": "positive finite angular value β=0.98, c=1",
+      "passed": true,
+      "detail": 124759056.53427923
+    },
+    {
+      "name": "photon interchange symmetry",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "full sphere integral equals event total",
+      "passed": true,
+      "detail": 1.1024005922343211e-11
+    },
+    {
+      "name": "extreme controls update β=0.1, θ=0",
+      "passed": true,
+      "detail": "1.0271"
+    },
+    {
+      "name": "extreme controls update β=0.1, θ=90",
+      "passed": true,
+      "detail": "1.0271"
+    },
+    {
+      "name": "extreme controls update β=0.1, θ=180",
+      "passed": true,
+      "detail": "1.0271"
+    },
+    {
+      "name": "extreme controls update β=0.98, θ=0",
+      "passed": true,
+      "detail": "5.1357"
+    },
+    {
+      "name": "extreme controls update β=0.98, θ=90",
+      "passed": true,
+      "detail": "5.1357"
+    },
+    {
+      "name": "extreme controls update β=0.98, θ=180",
+      "passed": true,
+      "detail": "5.1357"
+    },
+    {
+      "name": "normalized plot toggle",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "theme toggle",
+      "passed": true,
+      "detail": "light"
+    },
+    {
+      "name": "reset returns benchmark",
+      "passed": true,
+      "detail": {
+        "ratio": 1.4002800840280099,
+        "angle": 60,
+        "phase": 45,
+        "normalize": true
+      }
+    },
+    {
+      "name": "evidence rows displayed",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "spectrum status displayed",
+      "passed": true,
+      "detail": 6
+    }
+  ]
+}

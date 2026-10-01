@@ -131,6 +131,21 @@ reviews to detect modules missing from this index.
 | [`mtft.interactions.render`](../src/mtft/interactions/render.py) | Portable, offline HTML and deterministic SVG for the interaction atlas. | `vertex_svg`, `render_html` |
 | [`mtft.interactions.ufo`](../src/mtft/interactions/ufo.py) | Read a conservative, declarative subset of tree-level UFO without executing it. | `UFOError`, `import_ufo` |
 
+## matter
+
+| Module | Scope | Entry points |
+|---|---|---|
+| [`mtft.matter`](../src/mtft/matter/__init__.py) | Matter-01: explicitly labelled reference quantum-field calculations. | Package exports / data |
+| [`mtft.matter.__main__`](../src/mtft/matter/__main__.py) | Run Matter-01's measured-input QED benchmark from a terminal. | `main` |
+| [`mtft.matter.charged_modes`](../src/mtft/matter/charged_modes.py) | Matter-03 charged holomorphic Higgs-deformation complex. | `split_charged_census`, `paired_charged_report`, `certified_paired_charged_report`, `main` |
+| [`mtft.matter.collinear`](../src/mtft/matter/collinear.py) | Matter-02 exact cohomology and a holomorphic Yukawa rank witness. | `Cohomology`, `cohomology`, `cusp_jet_certificate`, `YukawaWitness` (+3 more in source) |
+| [`mtft.matter.higgs_vacuum`](../src/mtft/matter/higgs_vacuum.py) | Matter-03 exact inputs to a conditional classical Higgs-branch theorem. | `single_arrow_gate`, `HiggsPairWitness`, `paired_higgs_witness`, `classical_gauge_certificate` (+2 more in source) |
+| [`mtft.matter.kinetics`](../src/mtft/matter/kinetics.py) | Matter-03 field-coordinate normalization with supplied physical inputs. | `canonical_frame`, `canonical_yukawa`, `canonical_mass_matrix`, `mass_singular_values` |
+| [`mtft.matter.normalization`](../src/mtft/matter/normalization.py) | Conditional U(1) dimensional reduction, not a selected MTFT vacuum. | `canonical_u1_vertex`, `four_dimensional_coupling`, `electroweak_matching`, `breathing_gauge_kinetics` (+1 more in source) |
+| [`mtft.matter.oracle`](../src/mtft/matter/oracle.py) | Independent massive Born e- e+ -> gamma gamma reference formulas. | `mandelstam`, `msq_mandelstam`, `msq_cm`, `dsigma_domega` (+5 more in source) |
+| [`mtft.matter.qed`](../src/mtft/matter/qed.py) | Matter-01: a massive tree-level QED reference process. | `minkowski_dot`, `gamma_matrices`, `slash`, `u_spinor` (+12 more in source) |
+| [`mtft.matter.report`](../src/mtft/matter/report.py) | Deterministic numerical diagnostics and a browser-ready QED reference report. | `numerical_gates`, `benchmark`, `benchmark_report` |
+
 ## origami
 
 | Module | Scope | Entry points |

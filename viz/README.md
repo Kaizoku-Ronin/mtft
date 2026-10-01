@@ -34,3 +34,41 @@ a claude.ai artifact, or your own app.
 These live at the repo root rather than inside the package on purpose:
 a `mtft/viz/` package directory would shadow the Python module
 `mtft/viz.py`, and the wheel has no business shipping JSX.
+
+
+## Matter-01 U(1) lab (unreleased)
+
+[Open the standalone lab](matter01_u1_lab.html) and
+[scientific overview](matter01_u1_overview.png). The lab visualizes a supplied-
+parameter massive QED reference, its amplitude checks, and conditional
+breathing/gauge normalization. It displays the MTFT vacuum gates still OPEN.
+Its Feynman diagrams represent amplitude terms, not literal particle paths.
+
+See the [Matter-01 report](../docs/SM/MATTER01_REPORT.md). Rebuild and verify
+with `python studies/matter01/run_all.py` from the repository root.
+
+## Matter-02 mode lab (unreleased)
+
+[matter02_mode_lab.html](matter02_mode_lab.html) visualizes the specified cusp
+mode counts, local fat jets and an exact residue minor. The selected minor
+has rank three; the full physical mass matrix and photon remain open.
+[Scientific overview](matter02_overview.png) and
+[derivation](../docs/SM/MATTER02_REPORT.md) accompany it.
+
+Reproduce: `python studies/matter02/run_all.py`. Node tests check logic with a
+mock DOM; browser layout has not been verified.
+
+## Matter-03 Higgs lab (unreleased)
+
+[matter03_higgs_lab.html](matter03_higgs_lab.html) shows the single-arrow
+obstruction, paired classical existence branch and unselected common scale.
+It compares 279 split charged classes with 237 for the certified pair and
+the universal lower bound 160 in the aligned two-arrow background. Separate
+INPUT panels illustrate a finite electroweak quartic and positive metric
+normalization; they do not solve the B3 metric or predict masses.
+
+[Scientific overview](matter03_overview.png),
+[report](../docs/SM/MATTER03_REPORT.md), and
+[reproduction guide](../studies/matter03/README.md) accompany it. Reproduce with
+`python studies/matter03/run_all.py`. Node/mock-DOM logic is checked; actual
+browser layout has not been verified.

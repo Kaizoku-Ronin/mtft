@@ -8,7 +8,8 @@ Across a time-reflection plane the Polyakov factor couples the positive and nega
 and the Osterwalder–Seiler mechanism needs k to be POSITIVE-DEFINITE on the group: every coefficient khat(rho) in k = sum khat(rho) chi_rho
 non-negative (Peter–Weyl / Bochner).
 
-1. The lemma is false (EXACT).  "c >= 0 makes exp(c Re Tr P^n) positive-definite" holds for n = 1 only.  Tr U^n is the power sum p_n, a VIRTUAL
+1. The general lemma is false (EXACT). Non-negative c does not ensure exp(c Re Tr P^n) is positive-definite for arbitrary powers and groups.
+   SU(2), n=2 is an exception: Tr U^2 = chi_Sym2 - 1, so exp(c Tr U^2) = exp(-c) exp(c chi_Sym2) is positive-type.  Tr U^n is the power sum p_n, a VIRTUAL
    character: p_n = sum_{k=0}^{n-1} (-1)^k s_{(n-k, 1^k)} (Murnaghan–Nakayama), e.g. Tr U^2 = chi_Sym2 - chi_Lambda2 (the Adams operation
    psi^2 of anomaly8d).  On SU(3): Tr U^2 = chi_6 - chi_3bar, Tr U^3 = chi_10 - chi_8 + 1.  With w_1 = 0 the tower starts at n = 2 and the
    first-order coefficients are, exactly,
@@ -28,14 +29,15 @@ non-negative (Peter–Weyl / Bochner).
    unproven.  Paper 24's own Step 3 argues for n x 1 rectangles, a different action; rectangles crossing the plane off-centre are not of the
    form A Theta(A)^dagger and are not covered by the argument as written either.
 4. Two structural points recorded with the correction.  The Polyakov term singles out the time direction and needs a compact time circle, so
-   the action is not Euclidean (O(4) / hypercubic) invariant — OS1 can hold in the continuum only if the term becomes irrelevant.  And
-   mu_N(y) = min_m sum n^2 a_n (1 - cos 2 pi n m / N) > 0 is the curvature of the classical Polyakov potential at the centre-symmetric point (a
-   sum of non-negative terms): a stiffness, not a spectral gap of any transfer matrix.
+   the action is not Euclidean (O(4) / hypercubic) invariant. An O(4)-invariant vacuum continuum limit requires a separate justification
+   of the fate of that deformation. And
+   mu_N(y) = min_m sum n^2 a_n (1 - cos 2 pi n m / N) > 0 is a defined arithmetic stiffness diagnostic (a sum of non-negative terms).
+   It is neither the Hessian of the current single-trace Polyakov action nor a spectral gap of any transfer matrix.
 5. The repair (EXACT).  Attach the weights to genuine characters: k_sym(U) = exp((kappa/N) sum_n a_n Re chi_Sym^n(U)) is positive-definite
    for every kappa >= 0 (sums, products and exponentials of positive-type class functions are positive-type).  Placing the tower on plaquettes,
-   sum_n a_n Re chi_Sym^n(U_plaquette), restores hypercubic symmetry and falls under Osterwalder–Seiler; the eigenphase potential changes, so
-   mu_N and the spectral lock at y_c must be recomputed for the repaired action.  Universality then predicts the same continuum Yang–Mills:
-   the arithmetic tower can shape the lattice road but cannot by itself supply the continuum gap.
+   sum_n a_n Re chi_Sym^n(U_plaquette), restores hypercubic symmetry and falls under Osterwalder–Seiler; the eigenphase potential changes.
+   Any action-derived curvature and proposed spectral lock must be recomputed for the repaired action. If an appropriate local, isotropic
+   Yang–Mills continuum limit exists, universality is an expectation; its existence and a uniform continuum gap remain separate open gates.
 
 Status: items 1 and 5 EXACT; item 2 EXACT at first order in kappa and NUMERICAL (Weyl integration, representations with l1 + l2 <= 10 for
 SU(3), spins <= 8 for SU(2)) beyond it; item 3 OPEN; item 4 structural."""
