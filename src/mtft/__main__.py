@@ -9,6 +9,7 @@ Usage:
     python -m mtft screen          Materials screening table
     python -m mtft info            Version, constants, module count
     python -m mtft parent [ID]     Parent-action ledger scoreboard (PV-01)
+    python -m mtft matter CMD      Matter toolkit: presets | background NAME | ledger | puzzle | levels | epsilon | benchmark | report
 
 Examples:
     $ python -m mtft verify
@@ -120,7 +121,13 @@ def main():
     p_parent = sub.add_parser("parent", help="Parent-action ledger scoreboard (PV-01)")
     p_parent.add_argument("candidate", nargs="?", default=None, help="catalogue id for per-gate witnesses")
 
+    p_matter = sub.add_parser("matter", help="Matter toolkit (presets, background, ledger, puzzle, levels, epsilon, QED benchmark)", add_help=False)
+    p_matter.add_argument("rest", nargs=argparse.REMAINDER)
+
     args = parser.parse_args()
+    if args.command == "matter":
+        from mtft.matter.__main__ import main as matter_main
+        raise SystemExit(matter_main(args.rest or ["presets"]))
 
     commands = {
         "verify": cmd_verify,

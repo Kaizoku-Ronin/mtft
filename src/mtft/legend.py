@@ -863,6 +863,46 @@ for _d in CC35_LEGEND:
         _reg(LegendEntry(**_d))
 
 # ═══════════════════════════════════════════════════════════════
+#  PG-01 (2026-10-12): the weights as the energy of the primon gas
+# ═══════════════════════════════════════════════════════════════
+
+PG01_LEGEND = (
+    dict(name="divisor_gas_energy", tier="0", kind="identity", primitives=("II", "III"), tag="Pr", exactness="EXACT",
+         nature="w_n = sum_{d|n} log d . d^-1 = -d/dbeta sigma_{-beta}(n) at beta = 1: the energy numerator of n's divisor gas at the Hagedorn "
+                "temperature (the primon gas restricted to the sub-states of n, energy log d, Boltzmann factor 1/d). The loggy laws are the gas's "
+                "additivity: log(mn) = log m + log n.",
+         example="mtft.divisor_gas.divisor_gas(143)", upstream=("w_n",), ref="docs/SM/PG01_ENERGY_TWO_CLOCKS.md"),
+    dict(name="two_primon_energies", tier="0", kind="identity", primitives=("IV", "V"), tag="Pr", exactness="EXACT",
+         nature="The marked ensemble's internal energy U_D(beta) = <log n>_D = -d log(-zeta(beta) zeta'(beta+1))/dbeta beside the unmarked gas's "
+                "U = -zeta'/zeta = sum Lambda(n) n^-beta (von Mangoldt; poles at the zeros). Exactly U_D = U - zeta''(beta+1)/zeta'(beta+1): the "
+                "marked energy keeps every pole of U at the zeros of zeta (residue -1) and adds poles at the zeros of zeta' shifted by one. What is "
+                "RH-blind is Z_D itself and the summatory function sum_{n<=x} w_n = -zeta'(2) x - log^2 x/4 - (ln 2 pi) log x/2 + O(1), not the "
+                "energy (CC-65). Both partition functions have their first singularity at the Hagedorn wall beta = 1.",
+         example="mtft.divisor_gas.marked_energy_decomposition(2.0)", upstream=("Z_D_closed_form", "w_n"), ref="docs/SM/PG01_ENERGY_TWO_CLOCKS.md"),
+    dict(name="mean_weight_glaisher", tier="0", kind="constant", primitives=("IV",), tag="Pr", exactness="EXACT",
+         nature="-zeta'(2) = (pi^2/6)(12 ln A - gamma - ln 2 pi) = 0.9375482543..., A the Glaisher–Kinkelin constant: the density of the weights, "
+                "sum_{n<=x} w_n ~ -zeta'(2) x, in Glaisher's constant. The 12 multiplying ln A is -1/zeta(-1) = 2 pi^2/zeta(2), the functional "
+                "equation at s = 2; the prefactor is zeta(2). The error of the density is -log^2 x/(4x) + O(log x/x).",
+         example="mtft.divisor_gas.mean_weight_glaisher()", upstream=("mean_tano_weight",), ref="docs/SM/PG01_ENERGY_TWO_CLOCKS.md"),
+    dict(name="alphabet_negative_values", tier="0", kind="identity", primitives=("IV",), tag="Pr", exactness="EXACT",
+         nature="W(-k) = -zeta(-k) zeta'(1-k) = zeta(-k) (ln A_{k-1} - B_k H_{k-1}/k): the alphabet at the negative integers is Bernoulli times the log "
+                "of a Bendersky–Glaisher constant — (the regularised sum of n^k) x (the regularised sum of n^{k-1} log n); the Bendersky identity is "
+                "the definition of A_{k-1} rearranged, the closed forms at odd k are the functional equation for zeta'(-2m). W(-1) = -(ln 2 pi)/24 "
+                "(PV-02's identity, now read), W(-2m) = 0, W(-3) = zeta(3)/(480 pi^2), W(-5) = zeta(5)/(336 pi^4); Glaisher's A itself sits at "
+                "W'(-2) = (zeta(3)/4 pi^2)(1/12 - ln A).",
+         example="mtft.divisor_gas.alphabet_negative_values()", upstream=("Z_D_closed_form",), ref="docs/SM/PG01_ENERGY_TWO_CLOCKS.md"),
+    dict(name="clock_is_zeta_minus_one", tier="0", kind="identity", primitives=("II",), tag="Pr", exactness="EXACT",
+         nature="chi(SL(2,Z)) = 1/4 + 1/6 - 1/2 = -1/12 is the rational (Wall–Serre) Euler characteristic of the amalgam Z/4 *_{Z/2} Z/6 of GF-01, "
+                "equal to zeta(-1) by the K = Q case of Harder's theorem chi(SL_2(O_K)) = zeta_K(-1); eta's q^{1/24} is the zeta-regularised "
+                "(1/2) sum n = zeta(-1)/2; the genus formula g - 1 = -mu chi - nu_2/4 - nu_3/3 - c/2 is orbifold Gauss–Bonnet and gives 168/12 - 2 = 12 "
+                "at level 143. That |SL(2,Z)^ab| = 12 = 1/|chi| is a coincidence of size, not a map (AG-D5; CC-65).",
+         example="mtft.divisor_gas.euler_characteristic_is_zeta_minus_one(143)", upstream=("N_143",), ref="docs/SM/PG01_ENERGY_TWO_CLOCKS.md"),
+)
+for _d in PG01_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
+# ═══════════════════════════════════════════════════════════════
 #  External interaction reference (source inputs, not arithmetic predictions)
 # ═══════════════════════════════════════════════════════════════
 
