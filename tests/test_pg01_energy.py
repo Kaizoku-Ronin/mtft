@@ -110,7 +110,7 @@ def test_condensate_and_wilson_line():
 
 def test_atlas_friction_toy_and_gate():
     A = VA.atlas()
-    assert len(A["rows"]) == 7 and A["saddles"] == 0 and A["spirals_without_friction"] == 0
+    assert len(A["rows"]) == 9 and A["saddles"] == 2 and A["spirals_without_friction"] == 0          # CC-66: two saddles on the Wilson-line torus (PG-6)
     assert A["rows"][0][2].startswith("sink") and "runaway" in A["rows"][1][2] and A["rows"][4][2].startswith("source")
     f = VA.friction_type(1.0, 0.2); assert f["type"][0] == 5 and "spiral" in f["kind"] and f["threshold_H"] == pytest.approx(2 / 3)
     assert VA.friction_type(1.0, 1.0)["type"][0] == 2 and "node" in VA.friction_type(1.0, 1.0)["kind"]
@@ -133,16 +133,16 @@ def test_command_lines_and_record():
             code = matter_main(["atlas", *argv])
         return code, buf.getvalue()
     code, out = run(); assert code == 0 and "cosh well" in out and "simulation gate" in out
-    code, out = run("--json"); d = json.loads(out); assert code == 0 and d["atlas"]["saddles"] == 0
+    code, out = run("--json"); d = json.loads(out); assert code == 0 and d["atlas"]["saddles"] == 2               # CC-66
     assert "divisor gas of 143" in D.text() and "residue of U_D at the first zero" in D.text()
     pg = [e for e in L.E if e["wave"] == "PG-01"]
-    assert [e["id"] for e in pg] == ["PG-1", "PG-2", "PG-3", "PG-4", "PG-5"] and all(e["module"] == "mtft.matter.vacuum_atlas" for e in pg)
-    assert [e["status"] for e in pg] == ["active", "superseded", "superseded", "active", "active"]                 # CC-65, append-only
+    assert [e["id"] for e in pg] == ["PG-1", "PG-2", "PG-3", "PG-4", "PG-5", "PG-6"] and all(e["module"] == "mtft.matter.vacuum_atlas" for e in pg)
+    assert [e["status"] for e in pg] == ["active", "superseded", "superseded", "caveat", "active", "active"]      # CC-65, CC-66, append-only
     assert all("CC-65" in e["note"] for e in pg if e["status"] == "superseded")
     cc = next(e for e in L.E if e["id"] == "CC-65")
     assert cc["status"] == "active" and "PG-4" in cc["statement"] and "PG-5" in cc["statement"] and "keeps every pole" in cc["statement"]
-    a = Z.assignment(); assert all(a[f"PG-{i}"] == "IV" for i in (1, 2, 3, 4, 5)) and a["CC-65"] == "IV"
+    a = Z.assignment(); assert all(a[f"PG-{i}"] == "IV" for i in (1, 2, 3, 4, 5, 6)) and a["CC-65"] == "IV" and a["CC-66"] == "IV"
     subs = Z.subs()
-    assert subs["IV.7"][1].status == "answered" and set(subs["IV.7"][1].claims) == {"PG-1", "PG-4", "PG-5", "CC-65"}
+    assert subs["IV.7"][1].status == "answered" and set(subs["IV.7"][1].claims) == {"PG-1", "PG-4", "PG-5", "CC-65", "PG-6", "CC-66"}
     assert subs["I.7"][1].status == "open" and "I.6" in subs["I.7"][1].settle and subs["I.7"][1].claims == ("PG-5",)
     assert any(n["id"] == "N22" and "PG-4" in n["claims"] and "PG-2" not in n["claims"] for n in Z.NEGATIVES)

@@ -72,3 +72,23 @@ normalization; they do not solve the B3 metric or predict masses.
 [reproduction guide](../studies/matter03/README.md) accompany it. Reproduce with
 `python studies/matter03/run_all.py`. Node/mock-DOM logic is checked; actual
 browser layout has not been verified.
+
+## Field lines and the force on the internal torus (unreleased, 2026-10-14)
+
+[wilson_line_torus.html](wilson_line_torus.html) draws the one-loop force −G⁻¹∇V on
+the Wilson line of PA-01's relative U(1), on 143a1's own torus of holonomies, for
+the three even spin structures: the sink at the jet vacuum, the source at the
+untwisting point and the two saddles that PG-01's first filing missed (PG-6,
+CC-66). The torus is drawn in its kinetic metric, so the parallelogram has
+143a1's shape. The page sums the series itself (|m|, |n| ≤ 7, within 5 × 10⁻⁶ of
+`mtft.matter.vacuum_atlas.wilson_line_torus` at the half-periods); see section 5
+of the [PG-01 report](../docs/SM/PG01_ENERGY_TWO_CLOCKS.md).
+
+[field_line_islands.html](field_line_islands.html) is the companion picture from
+fusion: the standard map as the local model of a field-line Poincaré map, with
+islands at the rational rotational transforms and the Ford circles of the same
+rationals, and a slider through Greene's K_c ≈ 0.9716. Magnetic field lines
+preserve area and circulate; a force from a potential drains to its minimum —
+the two pages show both kinds of field on a torus. Both pages are
+self-contained (no network, light and dark themes); browser layout was checked
+with headless Chromium.

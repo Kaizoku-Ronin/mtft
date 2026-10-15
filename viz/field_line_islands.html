@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Field-line islands at Farey rationals</title>
+<style>
+:root{
+  --bg:#f7f7fb; --panel:#ffffff; --ink:#1b1d2a; --muted:#5c6078; --grid:#d9dbe6; --axis:#8a8ea5; --ford:#7c5cff; --gold:#c98a00;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --axis:#6d7396; --ford:#a995ff; --gold:#f0b545; } }
+:root[data-theme="dark"]{ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --axis:#6d7396; --ford:#a995ff; --gold:#f0b545; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.45}
+main{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.45rem;margin:.2em 0 .1em} h2{font-size:1.1rem;margin:1.4em 0 .3em}
+p{margin:.4em 0} .muted{color:var(--muted);font-size:.92rem}
+section{background:var(--panel);border:1px solid var(--grid);border-radius:14px;padding:14px;margin:14px 0}
+canvas{width:100%;height:auto;display:block;border-radius:8px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0}
+label{font-size:.9rem;color:var(--muted)}
+input[type=range]{flex:1;min-width:200px;accent-color:var(--ford)}
+.val{font-family:var(--mono);font-size:.95rem;min-width:7.5em}
+.note{font-size:.9rem;color:var(--muted);min-height:1.4em}
+code{font-family:var(--mono);font-size:.88em}
+</style>
+</head>
+<body>
+<main>
+<h1>Field-line islands at the Farey rationals</h1>
+<p class="muted">The standard map as the local model of a field-line Poincaré map: θ is the poloidal angle, ι the rotational transform.
+Next to it, the Ford circles of the same rationals. The statements below are standard results: the standard map (Chirikov 1979), the
+critical K of the golden-mean circle (Greene 1979), Hurwitz's theorem (1891) and Ford circles (Ford 1938).</p>
+
+<section>
+<div class="row">
+  <label for="k">Perturbation K</label>
+  <input id="k" type="range" min="0" max="1.4" step="0.01" value="0.6" aria-describedby="note">
+  <span class="val" id="kv">K = 0.60</span>
+</div>
+<div class="note" id="note"></div>
+<canvas id="cv" width="900" height="684" aria-label="Poincaré section of the standard map with the Ford circles of the rationals"></canvas>
+</section>
+
+<section>
+<h2>How to read it</h2>
+<p>One turn around the torus maps (θ, ι) to (θ + ι′, ι′) with ι′ = ι + (K/2π) sin 2πθ (both mod 1). The step has Jacobian exactly 1:
+like the flux of a divergence-free magnetic field, area is preserved, so lines never drain anywhere — they circulate.</p>
+<p>At K = 0 every line stays on its own surface ι = const. Turning K on breaks the surfaces with rational ι = n/m first: each becomes a
+chain of m islands, and the low-denominator ones open widest. The magnetic differential equation shows why — its Fourier modes divide by
+m ι − n, which vanishes exactly at those rationals. The Ford circle at n/m has radius 1/(2m²), the same "simplest first" ordering.</p>
+<p>The surfaces that survive longest have rotational transforms as far from every rational as possible. The golden mean (dashed lines,
+ι = 1/φ and 1/φ²) is the worst approximable number, with Hurwitz's constant 1/√5, and its circle is the last to break, at Greene's
+K<sub>c</sub> ≈ 0.9716. Beyond it no rotational circle is left and a line can wander through every ι.</p>
+<p class="muted">Scope: a local model, not a tokamak equilibrium. Orbits are seeded on a 12 × 24 grid and iterated 500 times each; the
+picture is diagnostic. B. V. Chirikov, Phys. Rep. 52, 263 (1979); J. M. Greene, J. Math. Phys. 20, 1183 (1979); A. Hurwitz, Math. Ann. 39,
+279 (1891); L. R. Ford, Amer. Math. Monthly 45, 586 (1938).</p>
+</section>
+</main>
+<script>
+(function(){
+const cv=document.getElementById('cv'),W=900,H=684,dpr=window.devicePixelRatio||1;
+cv.width=W*dpr;cv.height=H*dpr;const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const L=56,T=16,PW=600,PH=600,FX=L+PW+18,FW=W-FX-10;   // plot box and Ford strip
+const TWO_PI=2*Math.PI,KC=0.9716,PHI=(1+Math.sqrt(5))/2;
+const ySc=io=>T+PH*(1-io), xSc=th=>L+PW*th;
+function gcd(a,b){while(b){[a,b]=[b,a%b];}return a;}
+function hue(i,n){return 360*i/n;}
+let pending=false;
+function draw(){
+  pending=false;
+  const K=parseFloat(document.getElementById('k').value);
+  document.getElementById('kv').textContent='K = '+K.toFixed(2);
+  document.getElementById('note').textContent=K<KC?'Below Kc ≈ 0.9716: some rotational circles survive, so lines stay trapped between them.':
+    'Above Kc ≈ 0.9716: the last (golden) circle has broken; lines can wander through every ι.';
+  const ink=css('--ink')||'#222',muted=css('--muted')||'#777',grid=css('--grid')||'#ccc',axis=css('--axis')||'#999',
+        ford=css('--ford')||'#7c5cff',gold=css('--gold')||'#c98a00',panel=css('--panel')||'#fff',font=css('--font')||'sans-serif';
+  const dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement.dataset.theme!=='light'||document.documentElement.dataset.theme==='dark';
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle=panel;ctx.fillRect(L,T,PW,PH);
+  // orbits
+  const NT=12,NI=24,STEPS=500;
+  for(let a=0;a<NT;a++)for(let b=0;b<NI;b++){
+    let th=(a+0.5)/NT, io=(b+0.5)/NI;
+    ctx.fillStyle=`hsla(${hue(b,NI)},${dark?75:70}%,${dark?62:42}%,0.85)`;
+    for(let s=0;s<STEPS;s++){
+      io=io+K/TWO_PI*Math.sin(TWO_PI*th); io-=Math.floor(io);
+      th=th+io; th-=Math.floor(th);
+      ctx.fillRect(xSc(th),ySc(io),1.15,1.15);
+    }
+  }
+  // golden levels
+  ctx.setLineDash([6,5]);ctx.strokeStyle=gold;ctx.lineWidth=1.2;
+  for(const g of[1/PHI,1/(PHI*PHI)]){ctx.beginPath();ctx.moveTo(L,ySc(g));ctx.lineTo(L+PW+FW+8,ySc(g));ctx.stroke();}
+  ctx.setLineDash([]);
+  // frame and axes
+  ctx.strokeStyle=axis;ctx.lineWidth=1;ctx.strokeRect(L,T,PW,PH);
+  ctx.fillStyle=muted;ctx.font='12px '+font;ctx.textAlign='right';ctx.textBaseline='middle';
+  for(const [p,q] of[[0,1],[1,4],[1,3],[1,2],[2,3],[3,4],[1,1]]){ctx.fillText(q===1?String(p):p+'/'+q,L-6,ySc(p/q));}
+  ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('θ (poloidal angle, turns)',L+PW/2,T+PH+6);
+  for(const t of[0,0.25,0.5,0.75,1]){ctx.fillText(String(t),xSc(t),T+PH+22);}
+  ctx.save();ctx.translate(14,T+PH/2);ctx.rotate(-Math.PI/2);ctx.textBaseline='middle';ctx.fillText('ι (rotational transform)',0,0);ctx.restore();
+  // Ford strip: circles tangent to the strip's left edge at n/m, radius PH/(2 m^2), clipped to the strip
+  ctx.save();ctx.beginPath();ctx.rect(FX,T,FW,PH);ctx.clip();
+  ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(FX,T);ctx.lineTo(FX,T+PH);ctx.stroke();
+  for(let m=1;m<=10;m++)for(let n=0;n<=m;n++){if(gcd(n,m)!==1)continue;
+    const r=PH/(2*m*m);ctx.beginPath();ctx.arc(FX+r,ySc(n/m),r,0,TWO_PI);
+    ctx.strokeStyle=ford;ctx.globalAlpha=m<=3?0.9:0.55;ctx.lineWidth=m<=3?1.4:1;ctx.stroke();}
+  ctx.globalAlpha=1;ctx.restore();
+  ctx.fillStyle=muted;ctx.textAlign='left';ctx.textBaseline='bottom';ctx.font='12px '+font;
+  ctx.fillText('Ford circles',FX+4,T+PH+36);
+  ctx.fillStyle=gold;ctx.textBaseline='middle';ctx.fillText('1/φ',FX+FW-30,ySc(1/PHI)-9);ctx.fillText('1/φ²',FX+FW-34,ySc(1/(PHI*PHI))-9);
+}
+function req(){if(!pending){pending=true;requestAnimationFrame(draw);}}
+document.getElementById('k').addEventListener('input',req);
+if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',req);
+draw();
+})();
+</script>
+</body>
+</html>

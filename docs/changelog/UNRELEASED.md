@@ -1,5 +1,27 @@
 # Unreleased — after v0.34.0
 
+## PG-01 addendum (2026-10-14): the Wilson-line torus has two saddles (CC-66, PG-6); two visual pages
+
+- `mtft.matter.vacuum_atlas.wilson_line_torus(eps)`: every critical point of the relative-U(1) Wilson-line potential on the whole torus R^2/Z^2
+  (Newton from a grid of starts), typed by the eigenvalues of G^-1 H in the kinetic metric `kinetic_metric()` (143a1's Hodge metric, det 1), with
+  the Morse count #min - #saddle + #max = chi(T^2) = 0 and the jet-vacuum curvatures in theta-coordinates and in the metric; `saddle_pairing()`
+  guards the argument for why both saddles of the real spin structure sit at V = 0 exactly ((m, n) -> (-m - n, n) keeps |m + n tau| because
+  Re tau = 1/2). Four critical points for each even spin structure, all at half-periods and nondegenerate: sink, source and two saddles (PG-6;
+  exact in PA-01's product approximation that the half-periods are critical, numerical by two routes that there are no others). `atlas()` now
+  lists the two saddles (nine rows, `saddles == 2`); `python -m mtft matter atlas` prints the census and both sets of curvatures.
+- CC-66 caveats PG-4 (append-only; PG-4's statement is unchanged and now carries the note): its "No saddle appears anywhere" held only along PA-01's
+  straight path, and conflicted when filed with BL-3, which had already found saddles at these half-periods for the B–L Wilson line. Also
+  recorded: the Hessian eigenvalues 28.9 and 166.9 are theta-coordinate values; the Wilson-line masses follow the metric curvatures 37.394 and
+  128.985 (ratio 1.857, not 2.404). PA1-1 and the rest of PG-4 stand.
+- `tests/test_pg01_wilson_torus.py` (9 tests, two routes: the package's census on PA-01's box lattice, and in the test an independent disc sum
+  with a winding-number count, a Lipschitz exclusion and a contraction bound for the census, and its own metric curvatures);
+  `tests/test_pg01_energy.py` updated for the nine-row atlas, PG-6 and CC-66. Report: section 5 of `docs/SM/PG01_ENERGY_TWO_CLOCKS.md`.
+- Puzzle map: IV.7 cites PG-6 and CC-66 and its answer names the saddles; piece IV's verdict no longer says "no saddle". Ledger 280 claims
+  (221 active, 34 caveat, 19 superseded, 6 retracted); generated MATTER_LEDGER.md and MATTER_PUZZLE_MAP.md and docs/CAPABILITIES.md refreshed.
+- Visuals: `viz/wilson_line_torus.html` (the force −G^-1 grad V on the holonomy torus, drawn in its own metric, three spin structures) and
+  `viz/field_line_islands.html` (the standard map as the local model of a field-line Poincaré map, Ford circles, Greene's K_c); both self-contained,
+  light and dark, checked in headless Chromium.
+
 ## PG-01 (2026-10-12): energy and the two clocks — the weights as the primon gas's energy, the vacuum as a dynamical system, the simulation gate (corrected the same day, CC-65)
 
 - `mtft.divisor_gas` (five Legend entries, all EXACT): w_n = sum_{d|n} (log d)/d is the energy numerator of n's divisor gas at the Hagedorn

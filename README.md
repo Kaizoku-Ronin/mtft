@@ -294,3 +294,22 @@ The [study guide](studies/matter03/README.md) identifies the exact conditional
 proofs, finite diagnostics and focused regressions. This is a source candidate;
 no observed masses, release version changes or full release certification are
 implied.
+
+## The matter programme: Matter-04 to PG-01 (unreleased)
+
+`python -m mtft matter puzzle` (or the generated [programme map](docs/SM/MATTER_PUZZLE_MAP.md)) lines up the
+ten pieces of the Standard-Model-building programme in dependency order, with their statuses, sub-puzzles,
+pre-registered tests and recorded negatives. The [ledger](docs/SM/MATTER_LEDGER.md) lists every claim with its
+class, status, module and test; corrections are append-only (CC-36 to CC-66). The
+[integration notes](docs/SM/MATTER_PROGRAMME_INTEGRATION_NOTES.md) are written for the audit, and every wave is in
+[Unreleased](docs/changelog/UNRELEASED.md), one report per wave in `docs/SM/`.
+
+```bash
+python -m mtft matter puzzle --open      # what is still open
+python -m mtft matter ledger --status caveat
+python -m mtft matter atlas              # PG-01's vacuum atlas, with the Wilson-line torus census
+python -c "from mtft.matter import ledger, puzzle; print(ledger.check(), puzzle.check())"
+```
+
+Two offline pages draw fields on a torus: [the force on the Wilson-line torus](viz/wilson_line_torus.html)
+(PG-01, section 5) and [field-line islands at the Farey rationals](viz/field_line_islands.html).

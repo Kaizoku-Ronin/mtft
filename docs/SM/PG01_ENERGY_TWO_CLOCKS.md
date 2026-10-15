@@ -115,3 +115,34 @@ PG-2 and PG-3 are superseded by PG-4 and PG-5, and the Legend texts and this rep
 Reading. The loggy function was always an energy: the primon gas's, for the sub-states of n, at the parameter value beta = 1 where the full gas has its
 transition — a coincidence of parameter values from which nothing follows. The vacuum's shape has a floor and the Wilson line a basin; its volume has
 nothing to fall into. The clock of GF-01 has Euler characteristic zeta(-1), and the Glaisher constant is what comes after it in the mean weight.
+
+## 5. Addendum (2026-10-14, append-only): the Wilson-line torus has two saddles (PG-6, CC-66)
+
+Module `mtft.matter.vacuum_atlas` (`wilson_line_torus`, `kinetic_metric`, `saddle_pairing`; `atlas()` now lists the saddles); ledger PG-6 (new)
+and CC-66 (caveats PG-4); tests `tests/test_pg01_wilson_torus.py`, two routes — the package's Newton census on PA-01's box lattice, and in the
+test an independent sum over the disc |w| <= 40 with a winding-number count, a Lipschitz exclusion and a contraction bound; visual
+`viz/wilson_line_torus.html`. Nothing above is edited.
+
+- **Two saddles (EXACT that the half-periods are critical; NUMERICAL, by two routes, that there are no others).** Item 8's sink and source are
+  the critical points PA-01's straight path meets. On the whole torus R^2/Z^2 (the one-loop potential in PA-01's product approximation, item 8's
+  standing), the four half-periods are critical points because V(-theta) = V(theta), and both routes find no others: the sink at theta = 0, the
+  source at theta_eta = eps/2, and saddles at the other two half-periods, all four nondegenerate. For a Morse function on the torus
+  #min - #saddle + #max = chi(T^2) = 0, so one minimum and one maximum force exactly two saddles. So "No saddle appears anywhere in the atlas"
+  held only along the path (CC-66) — and BL-3 had already found these half-periods to be saddles for the B–L Wilson line, whose potential has the
+  same form, so the sentence conflicted with an active claim when it was filed. PA1-1 is unchanged: the jet vacuum is still the only minimum; the
+  saddles are the passes through which the holonomy can wind around the torus.
+- **Their values.** Real spin structure: V = -3.178063 at the sink, 0 and 0 at the saddles, +3.178063 at the source. The saddle zeros are exact
+  (in PA-01's product approximation): (m, n) -> (-m - n, n) keeps |m + n tau| when Re tau = 1/2 and flips the parity of m when n is odd, so the
+  odd windings cancel in pairs at (1/2, 0) and (1/2, 1/2) (summed over a disc, which the pairing preserves, the residue is at rounding level).
+  The conjugate pair: -5.991688, -2.813625, +2.813625, +5.991688, and the same pairing gives V_(1,0)(0) = V_(1,0)(0, 1/2) + V_(0,1)(0) exactly.
+- **Curvatures belong to the kinetic metric.** The Hessian eigenvalues 28.9 and 166.9 of item 8 are in theta-coordinates. The kinetic metric of the
+  Wilson-line moduli is 143a1's Hodge metric G = [[|tau|^2/y, -x/y], [-x/y, 1/y]] (det 1), and small oscillations go with the eigenvalues of
+  G^-1 H: 37.394 and 128.985 in the real spin structure (the same product), a ratio of Wilson-line masses of 1.857 rather than 2.404. A
+  consistency check on G (necessary, not sufficient): the spin structures with eta at tau/2 and at (1 + tau)/2 are mirror images under the
+  curve's real structure; their theta-coordinate eigenvalues differ (46.0, 257.5 against 65.5, 180.9) and their metric eigenvalues agree
+  (60.834, 194.868).
+- **Why there is a force at all (STRUCTURAL).** The weight -2 on odd windings is -(1 - eta(w)), bosons minus fermions: even windings cancel and,
+  with no Scherk–Schwarz twist (eta = 1), the potential vanishes identically. The force on the Wilson line is made by the twist.
+
+Reading. The Wilson line's basin has two passes; its floor is where PA1-1 put it. The saddles appear as soon as the whole torus is examined
+instead of the one path, and for a Morse function the count says they had to be there.

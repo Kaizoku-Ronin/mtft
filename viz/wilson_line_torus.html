@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wilson-line force on the 143a1 torus</title>
+<style>
+:root{
+  --bg:#f7f7fb; --panel:#ffffff; --ink:#1b1d2a; --muted:#5c6078; --grid:#d9dbe6; --line:#6b7089;
+  --low:55,138,221; --high:216,90,48; --path:#ba7517; --accent:#7c5cff;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --line:#9aa0c3; --path:#e0a64a; } }
+:root[data-theme="dark"]{ --bg:#0b0e1a; --panel:#121631; --ink:#eef0ff; --muted:#a9adc9; --grid:#252a4a; --line:#9aa0c3; --path:#e0a64a; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.45}
+main{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.45rem;margin:.2em 0 .1em} h2{font-size:1.1rem;margin:1.4em 0 .3em}
+p{margin:.4em 0} .muted{color:var(--muted);font-size:.92rem}
+section{background:var(--panel);border:1px solid var(--grid);border-radius:14px;padding:14px;margin:14px 0}
+canvas{width:100%;height:auto;display:block;border-radius:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+button{font:inherit;font-size:.9rem;padding:6px 10px;border-radius:8px;border:1px solid var(--grid);background:var(--panel);color:var(--ink);cursor:pointer}
+button[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+label{font-size:.9rem;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer}
+table{border-collapse:collapse;font-family:var(--mono);font-size:.85rem;width:100%}
+td,th{border-bottom:1px solid var(--grid);padding:5px 8px;text-align:left} th{color:var(--muted);font-weight:600}
+code{font-family:var(--mono);font-size:.88em}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+</style>
+</head>
+<body>
+<main>
+<h1>The force on the Wilson line, drawn on 143a1's own torus</h1>
+<p class="muted">The one-loop potential of PA-01's relative U(1) holonomy θ = (θ₁, θ₂) around the two loops of 143a1, and the force
+−G⁻¹∇V it exerts, for each of the three even (Scherk–Schwarz) spin structures. The page sums the series itself; its values agree
+with <code>mtft.matter.vacuum_atlas.wilson_line_torus</code>, which <code>tests/test_pg01_wilson_torus.py</code> checks by two routes (PG-6, CC-66).</p>
+
+<section>
+<div class="row" role="group" aria-label="Spin structure">
+  <button class="sb" aria-pressed="true" data-s="0,1">Periodic on the 1-loop (real)</button>
+  <button class="sb" aria-pressed="false" data-s="1,0">Periodic on the τ-loop</button>
+  <button class="sb" aria-pressed="false" data-s="1,1">Periodic on the 1+τ loop</button>
+</div>
+<canvas id="wt" width="900" height="560" aria-label="Flow of the one-loop force on the holonomy torus"></canvas>
+<div class="row">
+  <label><input type="checkbox" id="pth"> Show the straight path PA-01 checked (jet vacuum to untwisting point)</label>
+</div>
+<div class="legend">
+  <span><span class="sw" style="background:rgb(55,138,221)"></span>V &lt; 0</span>
+  <span><span class="sw" style="background:rgb(216,90,48)"></span>V &gt; 0</span>
+  <span>● sink (jet vacuum, θ = 0)</span><span>○ source (untwisting point θ<sub>η</sub> = s/2)</span><span>✕ saddle</span>
+</div>
+<table aria-label="Values at the four half-periods">
+  <thead><tr><th>Critical point</th><th>θ</th><th>V (one-loop units)</th></tr></thead>
+  <tbody id="tab"></tbody>
+</table>
+</section>
+
+<section>
+<h2>What is drawn</h2>
+<p>V(θ) = −2 Σ<sub>w odd</sub> |w|⁻⁸ cos 2π θ·w over windings w = (m, n), |w| = |m + nτ|/√Im τ with τ = ½ + 1.0232745927 i.
+"Odd" means s₁m + s₂n is odd for the spin structure s. The weight is bosons minus fermions: even windings cancel, and with no twist
+(supersymmetry unbroken) the potential vanishes identically — the force exists because of the Scherk–Schwarz twist.</p>
+<p>The torus is drawn in its kinetic metric G = [[|τ|²/y, −x/y], [−x/y, 1/y]] (det 1), so the parallelogram has 143a1's shape and its
+four corners are one point. Flow lines follow −G⁻¹∇V: every generic line starts at the untwisting point and drains into the jet vacuum.</p>
+<p>For a Morse function on a torus #min − #saddle + #max = 0, so one sink and one source force two saddles; the half-periods are critical
+by symmetry, two independent searches find no other critical points, and all four are nondegenerate. In the real spin structure both
+saddles sit at exactly V = 0, by the pairing (m, n) → (−m − n, n), which keeps |m + nτ| because Re τ = ½. The jet vacuum is the only
+minimum (PA1-1 unchanged); the saddles are the passes for winding the holonomy. Scope: one loop, PA-01's product approximation; the overall
+scale (M<sub>KK</sub>, sub-puzzle III.5) is unassigned.</p>
+<p class="muted">Curvatures are metric quantities: at the jet vacuum the eigenvalues of G⁻¹H are 37.394 and 128.985 (real structure), not the
+θ-coordinate Hessian's 28.893 and 166.935; the product agrees because det G = 1. The drawing truncates the sum at |m|, |n| ≤ 7 (error at the
+half-periods ≤ 5 × 10⁻⁶).</p>
+</section>
+</main>
+<script>
+(function(){
+const cv=document.getElementById('wt'),W=900,H=560,dpr=window.devicePixelRatio||1;
+cv.width=W*dpr;cv.height=H*dpr;const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const tx=0.5,ty=1.0232745927,G11=(tx*tx+ty*ty)/ty,G12=-tx/ty,G22=1/ty;
+const p11=Math.sqrt(G11),p12=G12/p11,p22=Math.sqrt(G22-p12*p12);
+const sc=Math.min((W-80)/(p11-p12),(H-90)/p22),ox=40-p12*sc,oy=34+p22*sc;
+const toS=(a,b)=>[ox+sc*(p11*a+p12*b),oy-sc*p22*b];
+const toT=(X,Y)=>{const b=(oy-Y)/sc/p22;return[((X-ox)/sc-p12*b)/p11,b];};
+let S=[0,1],T=[],Vm=1;
+function build(){T=[];for(let m=-7;m<=7;m++)for(let n=-7;n<=7;n++){if(!m&&!n)continue;
+  if((((S[0]*m+S[1]*n)%2)+2)%2!==1)continue;const re=m+n*tx,im=n*ty,w2=(re*re+im*im)/ty;T.push([m,n,-2*Math.pow(w2,-4)]);}
+  Vm=Math.abs(V(0,0));}
+function V(a,b){let v=0;for(const t of T)v+=t[2]*Math.cos(2*Math.PI*(a*t[0]+b*t[1]));return v;}
+function F(a,b){let g1=0,g2=0;for(const t of T){const s=-t[2]*2*Math.PI*Math.sin(2*Math.PI*(a*t[0]+b*t[1]));g1+=s*t[0];g2+=s*t[1];}
+  return[-(G22*g1-G12*g2),-(-G12*g1+G11*g2)];}
+function draw(){
+  build();ctx.clearRect(0,0,W,H);
+  const ink=css('--ink')||'#222',line=css('--line')||'#777',font=css('--font')||'sans-serif',path=css('--path')||'#ba7517';
+  const low=css('--low')||'55,138,221',high=css('--high')||'216,90,48';
+  const x0=ox+sc*p12,x1=ox+sc*p11;
+  for(let X=x0;X<x1;X+=4)for(let Y=oy-sc*p22;Y<oy;Y+=4){const t=toT(X+2,Y+2);if(t[0]<0||t[0]>=1||t[1]<0||t[1]>=1)continue;
+    const v=V(t[0],t[1])/Vm,al=0.6*Math.pow(Math.abs(v),0.8);ctx.fillStyle=`rgba(${v<0?low:high},${al})`;ctx.fillRect(X,Y,4,4);}
+  ctx.strokeStyle=line;ctx.lineWidth=1;ctx.beginPath();[[0,0],[1,0],[1,1],[0,1],[0,0]].forEach((p,i)=>{const q=toS(p[0],p[1]);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.stroke();
+  ctx.lineWidth=0.9;ctx.globalAlpha=0.85;
+  for(let i=0;i<16;i++)for(let j=0;j<16;j++){let a=(i+0.5)/16,b=(j+0.5)/16;ctx.beginPath();let q=toS(a,b);ctx.moveTo(q[0],q[1]);let arrow=null;
+    for(let k=0;k<300;k++){const f=F(a,b),vz1=p11*f[0]+p12*f[1],vz2=p22*f[1],sp=Math.hypot(vz1,vz2);if(sp<1e-3)break;
+      const dz1=vz1/sp*0.005,dz2=vz2/sp*0.005,db=dz2/p22,da=(dz1-p12*db)/p11;a+=da;b+=db;let wrap=false;
+      if(a<0){a+=1;wrap=true}if(a>=1){a-=1;wrap=true}if(b<0){b+=1;wrap=true}if(b>=1){b-=1;wrap=true}
+      q=toS(a,b);if(wrap)ctx.moveTo(q[0],q[1]);else ctx.lineTo(q[0],q[1]);if(k===45)arrow=[q[0],q[1],vz1,-vz2];
+      if(Math.hypot(Math.min(a,1-a),Math.min(b,1-b))<0.01)break;}
+    ctx.strokeStyle=line;ctx.stroke();
+    if(arrow){const an=Math.atan2(arrow[3],arrow[2]);ctx.save();ctx.translate(arrow[0],arrow[1]);ctx.rotate(an);ctx.beginPath();ctx.moveTo(4.5,0);ctx.lineTo(-3,-3.2);ctx.lineTo(-3,3.2);ctx.closePath();ctx.fillStyle=line;ctx.fill();ctx.restore();}}
+  ctx.globalAlpha=1;
+  const half=[[0,0],[0.5,0],[0,0.5],[0.5,0.5]],eta=[S[0]/2,S[1]/2];
+  const kind=h=>(!h[0]&&!h[1])?'sink':(h[0]===eta[0]&&h[1]===eta[1])?'source':'saddle';
+  const copies=h=>{const c=[];for(const d1 of[0,1])for(const d2 of[0,1]){const a=h[0]+d1,b=h[1]+d2;if(a<=1&&b<=1)c.push([a,b]);}return c;};
+  if(document.getElementById('pth').checked){ctx.setLineDash([7,5]);ctx.strokeStyle=path;ctx.lineWidth=1.8;const p0=toS(0,0),p1=toS(eta[0],eta[1]);ctx.beginPath();ctx.moveTo(p0[0],p0[1]);ctx.lineTo(p1[0],p1[1]);ctx.stroke();ctx.setLineDash([]);}
+  for(const h of half){const k=kind(h);for(const c of copies(h)){const p=toS(c[0],c[1]);ctx.fillStyle=ink;ctx.strokeStyle=ink;ctx.lineWidth=1.8;
+    if(k==='sink'){ctx.beginPath();ctx.arc(p[0],p[1],6,0,2*Math.PI);ctx.fill();}
+    else if(k==='source'){ctx.beginPath();ctx.arc(p[0],p[1],6.5,0,2*Math.PI);ctx.stroke();}
+    else{ctx.beginPath();ctx.moveTo(p[0]-5.5,p[1]-5.5);ctx.lineTo(p[0]+5.5,p[1]+5.5);ctx.moveTo(p[0]+5.5,p[1]-5.5);ctx.lineTo(p[0]-5.5,p[1]+5.5);ctx.stroke();}}}
+  ctx.font='13px '+font;ctx.textBaseline='middle';ctx.fillStyle=ink;
+  const put=(h,txt,dx,dy,al)=>{const p=toS(h[0],h[1]);ctx.textAlign=al;ctx.fillText(txt,p[0]+dx,p[1]+dy);};
+  put([0,0],'jet vacuum (sink)',10,16,'left');
+  if(eta[0]===0)put([1,0.5],'untwisting point (source)',-12,0,'right');else put(eta,'untwisting point (source)',0,-17,'center');
+  half.filter(h=>kind(h)==='saddle').forEach(h=>put(h,'saddle',0,h[1]===0?17:-17,'center'));
+  const exact=S[0]===0&&S[1]===1,fmt=v=>(Math.abs(v)<5e-4&&exact)?'0 (exact)':(v>=0?'+':'−')+Math.abs(v).toFixed(4);
+  const rows=half.map(h=>[kind(h),h,V(h[0],h[1])]).sort((r1,r2)=>r1[2]-r2[2]);
+  document.getElementById('tab').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>(${r[1][0]}, ${r[1][1]})</td><td>${fmt(r[2])}</td></tr>`).join('');
+}
+document.querySelectorAll('.sb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.sb').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');S=b.dataset.s.split(',').map(Number);draw();}));
+document.getElementById('pth').addEventListener('change',draw);
+if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+draw();
+})();
+</script>
+</body>
+</html>

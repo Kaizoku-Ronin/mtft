@@ -16,10 +16,15 @@ What the atlas finds (EXACT unless marked):
      0 < m^2 < xi moves the minimum to v^2 = (8/13)(xi - m^2) and lifts that eigenvalue to exactly 4 m^2 — a sink (CO-1 made quantitative);
   4. the relative-U(1) Wilson line on the torus of flat connections has a two-dimensional sink at the jet vacuum theta = 0 and a two-dimensional source
      at the untwisted point theta_eta (the full Hessians, extending PA1-1's statement along the straight path), for all three even spin structures —
-     EXACT in PA-01's product approximation to the potential, as PA1-1 is;
+     EXACT in PA-01's product approximation to the potential, as PA1-1 is; on the whole torus two nondegenerate saddles at the other two
+     half-periods complete the picture, as a Morse function on the torus requires (#min - #saddle + #max = chi(T^2) = 0), and in the real spin
+     structure both sit at V = 0 exactly (PG-6, 2026-10-14; CC-66 caveats the first filing's "no saddle", which BL-3 had already contradicted);
+     curvatures, and so the Wilson-line masses, are those of G^-1 H in the kinetic metric G of 143a1 (`wilson_line_torus`, `kinetic_metric`,
+     `saddle_pairing`);
   5. the bosonic adjoints have positive one-loop masses (M05-1: sinks) and the one-loop Casimir energy has no minimum in A_X (MS-6: no critical point).
-  No saddle appears anywhere in the atlas, and no spiral: spirals need time, and with Hubble friction 3H a sink of mass m is a spiral iff m > 3H/2
-  (otherwise a node).  The type of every sink in a cosmological run is therefore set by m/H, which the programme has not fixed (STRUCTURAL).
+  Two saddles appear, both on the Wilson-line torus (PG-6; the first filing said none, CC-66), and no spiral: spirals need time, and with Hubble
+  friction 3H a sink of mass m is a spiral iff m > 3H/2 (otherwise a node).  The type of every sink in a cosmological run is therefore set by
+  m/H, which the programme has not fixed (STRUCTURAL).
   6. a toy run (DIAGNOSTIC, normalisation not derived): phi'' + 3H phi' + sinh(phi - phi*) = 0 with constant H and in a radiation era H = 1/(2t) shows
      the spiral capture of the shape at the self-dual point (18 floor crossings in a run of length 60/m at H = 0.2 m; the count grows with the run);
      capture itself is guaranteed by the energy argument dE/dt = -3H phi'^2 <= 0 for E = phi'^2/2 + cosh(phi - phi*) - 1, checked on every run
@@ -28,7 +33,7 @@ What the atlas finds (EXACT unless marked):
   7. the simulation gate: what a big-bang-to-matter run of this vacuum needs — a declared parent (I.1), a vacuum energy from the parent action with a
      volume stationary point (I.6; GS-1's fixed Kaehler moduli), the couplings as functions of the moduli (GC-01), a cosmological background (the
      package's Friedmann module is pheno-tier), and then standard physics at confinement and nucleosynthesis, to be used, not re-derived.
-Tests: tests/test_pg01_energy.py.  Report: docs/SM/PG01_ENERGY_TWO_CLOCKS.md."""
+Tests: tests/test_pg01_energy.py, tests/test_pg01_wilson_torus.py.  Report: docs/SM/PG01_ENERGY_TWO_CLOCKS.md (section 5: the 2026-10-14 addendum)."""
 from __future__ import annotations
 
 import math
@@ -137,6 +142,96 @@ def wilson_line_hessians(eps=(0, 1), N=60):
             "minus_each_other": bool(np.allclose(H0, -He))}
 
 
+# ------------------------------------------------------------------------------------------------------------------------------ 4b. the whole torus (CC-66)
+def kinetic_metric():
+    """The kinetic metric of the Wilson-line moduli in the holonomy coordinates theta = (theta_1, theta_2) around the 1-loop and the tau-loop of 143a1:
+    its Hodge metric G = [[|tau|^2/y, -x/y], [-x/y, 1/y]] with tau = x + i y (det G = 1; the overall normalisation of the kinetic term is not fixed here).
+    The gradient flow of V is -G^-1 grad V, and small oscillations about a minimum have frequencies^2 equal to the eigenvalues of G^-1 H."""
+    from mtft.research.theta_torus import tau_143a1
+    tau = complex(tau_143a1()); x, y = tau.real, tau.imag
+    return np.array([[abs(tau) ** 2 / y, -x / y], [-x / y, 1 / y]])
+
+
+def _odd_windings(eps, N):
+    from mtft.matter.path_a import _lattice
+    a = np.array([(m, n, r2) for m, n, r2, odd in _lattice(eps, N) if odd], dtype=float)
+    return a[:, 0], a[:, 1], a[:, 2] ** -4                                            # m, n, |w|^-8
+
+
+def wilson_line_torus(eps=(0, 1), N=40, grid=12):
+    """Every critical point of V(theta) = -2 sum_{odd w} |w|^-8 cos(2 pi theta . w) on the whole torus R^2/Z^2, not only along PA-01's straight path
+    (PG-6, CC-66): Newton's method from a grid x grid set of starts; each point typed by the eigenvalues of G^-1 H in the kinetic metric
+    (`kinetic_metric`); the Morse count #min - #saddle + #max, which must be chi(T^2) = 0 for a Morse function; the curvatures at the jet vacuum in
+    theta-coordinates and in the metric (the masses follow the latter; the product agrees because det G = 1).  In PA-01's product approximation it
+    is EXACT that the four half-periods are critical points (V(-theta) = V(theta); V(theta_eta + d) = -V(d) maps the sink to the source) and
+    NUMERICAL that there are no others (this census, and in tests/test_pg01_wilson_torus.py a winding-number count with a Lipschitz exclusion
+    and a contraction bound); all four are nondegenerate, so the torus forces exactly two saddles.  The values are lattice sums over the box
+    |m|, |n| <= N."""
+    m, n, w8 = _odd_windings(eps, N)
+    Gi = np.linalg.inv(kinetic_metric())
+    ph = lambda t: 2 * math.pi * (t[0] * m + t[1] * n)
+    V = lambda t: float(-2 * np.sum(w8 * np.cos(ph(t))))
+    def grad(t):
+        s = np.sin(ph(t)) * w8
+        return np.array([4 * math.pi * np.sum(s * m), 4 * math.pi * np.sum(s * n)])
+    def hess(t):
+        c = np.cos(ph(t)) * w8 * 8 * math.pi ** 2
+        return np.array([[np.sum(c * m * m), np.sum(c * m * n)], [np.sum(c * m * n), np.sum(c * n * n)]])
+    found = []
+    for i in range(grid):
+        for j in range(grid):
+            t = np.array([(i + 0.5) / grid, (j + 0.5) / grid])
+            for _ in range(80):
+                g = grad(t)
+                if np.linalg.norm(g) < 1e-11:
+                    break
+                try:
+                    step = np.linalg.solve(hess(t), g)
+                except np.linalg.LinAlgError:
+                    break
+                if np.linalg.norm(step) > 0.05:
+                    step *= 0.05 / np.linalg.norm(step)
+                t = t - step
+            if np.linalg.norm(grad(t)) < 1e-9:
+                t = np.round(t % 1.0, 9) % 1.0
+                if not any(np.allclose(((t - f + 0.5) % 1.0) - 0.5, 0, atol=1e-6) for f in found):
+                    found.append(t)
+    rows = []
+    for t in sorted(found, key=lambda u: (round(float(u[0]), 6), round(float(u[1]), 6))):
+        ev = sorted(float(x) for x in np.linalg.eigvals(Gi @ hess(t)).real)
+        kind = "sink" if ev[0] > 0 else "source" if ev[1] < 0 else "saddle"
+        rows.append({"theta": (round(float(t[0]), 6), round(float(t[1]), 6)), "V": V(t), "type": kind,
+                     "flow_type": classify(gradient_flow_eigs(ev))[1], "metric_curvatures": ev})
+    kinds = [r["type"] for r in rows]
+    H0 = hess((0.0, 0.0))
+    e_theta = sorted(float(x) for x in np.linalg.eigvalsh(H0)); e_metric = sorted(float(x) for x in np.linalg.eigvals(Gi @ H0).real)
+    return {"eps": tuple(eps), "critical_points": rows, "counts": {k: kinds.count(k) for k in ("sink", "saddle", "source")},
+            "morse_sum": kinds.count("sink") - kinds.count("saddle") + kinds.count("source"),
+            "all_at_half_periods": all(abs(2 * x - round(2 * x)) < 1e-6 for r in rows for x in r["theta"]),
+            "jet_curvatures_theta": e_theta, "jet_curvatures_metric": e_metric,
+            "mass_ratio_metric": math.sqrt(e_metric[1] / e_metric[0]), "mass_ratio_if_theta_coordinates": math.sqrt(e_theta[1] / e_theta[0])}
+
+
+def saddle_pairing(N=40):
+    """The argument for the exact zeros at the two saddles of the real spin structure eps = (0, 1) (odd n): (m, n) -> (-m - n, n) keeps
+    |m + n tau| because Re tau = 1/2, and for odd n it flips the parity of m, so at theta = (1/2, 0) and (1/2, 1/2) the odd windings cancel in
+    pairs.  The two facts are algebraic identities once Re tau = 1/2, so this is a regression guard on tau (it fails only if Re tau moves off 1/2);
+    the zeros themselves are evaluated in `wilson_line_torus` and by the disc sum in tests/test_pg01_wilson_torus.py."""
+    eps = (0, 1)
+    from mtft.research.theta_torus import tau_143a1
+    tau = complex(tau_143a1()); s = math.sqrt(tau.imag)
+    norm = parity = True; pairs = 0
+    for mm in range(-N, N + 1):
+        for nn in range(-N, N + 1):
+            if (eps[0] * mm + eps[1] * nn) % 2 != 1 or abs(mm + nn) > N:
+                continue
+            pairs += 1
+            norm &= abs(abs(mm + nn * tau) - abs(-mm - nn + nn * tau)) / s < 1e-9
+            parity &= (-mm - nn - mm) % 2 == 1
+    return {"re_tau_is_half": abs(tau.real - 0.5) < 1e-12, "windings_checked": pairs, "norm_preserved": bool(norm),
+            "parity_of_m_flipped": bool(parity)}
+
+
 # ------------------------------------------------------------------------------------------------------------------------------ 5. the rest, cited
 def cited_directions():
     from mtft.matter import one_loop_adjoints as OL, moduli_casimir as MC
@@ -148,16 +243,20 @@ def cited_directions():
 # ------------------------------------------------------------------------------------------------------------------------------ the atlas
 def atlas():
     sw = shape_well(); vr = volume_runaway(); cd = condensate_dterm(m2=sp.Rational(1, 20)); wl = {e: wilson_line_hessians(e) for e in ((0, 1), (1, 0), (1, 1))}
+    wt = wilson_line_torus((0, 1))
     cited = cited_directions()
     rows = [("shape r = A_X/A_E (flux landscape, PV-01)", "cosh well, floor at r* = sqrt(19/11)", sw["type"][1], "PG-1"),
             ("volume Vol (Einstein frame, PV-01)", "no finite critical point", vr["type"][1], "PG-4"),
             ("condensate (v^2, vbar^2) (CO-01)", "degenerate line, lifted by m^2 > 0", f"{cd['type_unlifted'][1]} -> {cd['type_lifted'][1]}", "PG-4"),
             ("Wilson line theta on the torus (PA-01), jet vacuum", "2D minimum", wl[(0, 1)]["type_jet"][1], "PG-4"),
             ("Wilson line theta, untwisted point theta_eta", "2D maximum", wl[(0, 1)]["type_untwisted"][1], "PG-4"),
+            *[(f"Wilson line theta, saddle at {r['theta']}", "2D saddle (V = 0 exactly, real spin structure)", r["flow_type"], "PG-6")
+              for r in wt["critical_points"] if r["type"] == "saddle"],
             ("27 bosonic adjoints per generator (M05-1)", "positive one-loop masses", cited["adjoints"]["type"][1], "PG-4"),
             ("A_X at one loop (MS-01)", "no Casimir minimum", cited["casimir_A_X"]["type"][1], "PG-4")]
-    return {"rows": rows, "shape": sw, "volume": vr, "condensate": cd, "wilson": wl, "cited": cited,
-            "saddles": 0, "spirals_without_friction": 0, "reading": "sinks, one source, one degenerate line, two runaways; no saddle; spirals need time"}
+    return {"rows": rows, "shape": sw, "volume": vr, "condensate": cd, "wilson": wl, "wilson_torus": wt, "cited": cited,
+            "saddles": wt["counts"]["saddle"], "spirals_without_friction": 0,
+            "reading": "sinks, one source, two saddles (the Wilson-line torus), one degenerate line, two runaways; spirals need time"}
 
 
 # ------------------------------------------------------------------------------------------------------------------------------ friction and the toy
@@ -253,6 +352,11 @@ def text():
     L.append(f"shape well: E/E* = cosh(phi - phi*) {sw['cosh_identity']}, floor r* = {sw['r_star']}, curvature at the floor {sw['curvature_at_floor_phi']} (units of E*)")
     wl = r["atlas"]["wilson"]["(0, 1)"]
     L.append(f"Wilson line (eps = (0,1)): Hessian eigenvalues jet {[round(x, 3) for x in wl['eigs_jet']]}, untwisted {[round(x, 3) for x in wl['eigs_untwisted']]}, minus each other {wl['minus_each_other']}")
+    wt = r["atlas"]["wilson_torus"]
+    residue = ", ".join(f"{c['V']:.1e}" for c in wt["critical_points"] if c["type"] == "saddle")
+    L.append(f"Wilson-line torus (eps = (0,1)): {wt['counts']['sink']} sink, {wt['counts']['saddle']} saddles, {wt['counts']['source']} source at the half-periods, "
+             f"Morse sum {wt['morse_sum']}; saddle values exactly 0 by the pairing (box-truncation residue {residue}); "
+             f"jet curvatures in the metric {[round(x, 3) for x in wt['jet_curvatures_metric']]} (theta-coordinates {[round(x, 3) for x in wt['jet_curvatures_theta']]}) [PG-6, CC-66]")
     for H, f in r["friction"].items():
         L.append(f"friction: m = 1, H = {H:.3f}: {f['kind']} (threshold H = 2m/3 = {f['threshold_H']:.3f})")
     for k, run in r["runs"].items():
