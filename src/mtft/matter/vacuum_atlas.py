@@ -27,13 +27,16 @@ What the atlas finds (EXACT unless marked):
   m/H, which the programme has not fixed (STRUCTURAL).
   6. a toy run (DIAGNOSTIC, normalisation not derived): phi'' + 3H phi' + sinh(phi - phi*) = 0 with constant H and in a radiation era H = 1/(2t) shows
      the spiral capture of the shape at the self-dual point (18 floor crossings in a run of length 60/m at H = 0.2 m; the count grows with the run);
-     capture itself is guaranteed by the energy argument dE/dt = -3H phi'^2 <= 0 for E = phi'^2/2 + cosh(phi - phi*) - 1, checked on every run
-     (`energy_argument`), and the "captured" flag is only a smoke test of the envelope; the volume rolls away alongside, like (2/3) log t at late
+     the energy identity dE/dt = -3H phi'^2 <= 0 for E = phi'^2/2 + cosh(phi - phi*) - 1 is checked on every run (`energy_argument`), and capture
+     follows from it when H is bounded, of bounded variation and not integrable — constant H and the radiation and matter eras, the cases run here
+     — but not for every H > 0: an integrable H leaves energy behind and a fast-growing H can freeze the field off the floor (CC-67, 2026-10-16;
+     `capture_conditions`); the "captured" flag is only a smoke test of the envelope; the volume rolls away alongside, like (2/3) log t at late
      times with constant H.
   7. the simulation gate: what a big-bang-to-matter run of this vacuum needs — a declared parent (I.1), a vacuum energy from the parent action with a
      volume stationary point (I.6; GS-1's fixed Kaehler moduli), the couplings as functions of the moduli (GC-01), a cosmological background (the
      package's Friedmann module is pheno-tier), and then standard physics at confinement and nucleosynthesis, to be used, not re-derived.
-Tests: tests/test_pg01_energy.py, tests/test_pg01_wilson_torus.py.  Report: docs/SM/PG01_ENERGY_TWO_CLOCKS.md (section 5: the 2026-10-14 addendum)."""
+Tests: tests/test_pg01_energy.py, tests/test_pg01_wilson_torus.py, tests/test_pg01_corrections.py.  Report: docs/SM/PG01_ENERGY_TWO_CLOCKS.md
+(section 5: the 2026-10-14 addendum; section 6: the 2026-10-16 addendum, CC-67 and CC-68)."""
 from __future__ import annotations
 
 import math
@@ -276,9 +279,10 @@ def toy_run(H=0.2, mode="constant", phi0=1.5, v0=0.0, t_end=60.0, n=6000, model=
     """DIAGNOSTIC: the shape modulus rolling in its cosh well with Hubble friction, phi'' + 3H(t) phi' + sinh(phi - phi*) = 0, in units where the
     well's curvature at the floor is 1 (time in units of 1/m); mode 'constant' or 'radiation' (H = 1/(2t), started at t0 = 1/(2H)).  Returns the
     trajectory, the crossings of the floor — a count that grows with the run length (18 in a run of length 60 at H = 0.2, 15 in one of length 50) —
-    and the final distance.  Capture is guaranteed by the energy argument (`energy_argument`): E = phi'^2/2 + cosh(phi - phi*) - 1 has
-    dE/dt = -3H phi'^2 <= 0 and the well has one critical point, so every run ends at the floor; the "captured" flag is only a smoke test that the
-    envelope has shrunk within the run.  The normalisation of H against the modulus mass is not derived (the point of the gate)."""
+    and the final distance.  Capture: E = phi'^2/2 + cosh(phi - phi*) - 1 has dE/dt = -3H phi'^2 <= 0 (`energy_argument`), and with H bounded,
+    of bounded variation and not integrable — both modes here — E -> 0 (CC-67; `capture_conditions` has the theorem and the cases where it fails);
+    the "captured" flag is only a smoke test that the envelope has shrunk within the run.  The normalisation of H against the modulus mass is not
+    derived (the point of the gate)."""
     from scipy.integrate import solve_ivp
     sw = shape_well(model); phis = float(sp.log(sw["r_star"]))
     t0 = 0.0 if mode == "constant" else 1 / (2 * H)
@@ -298,12 +302,62 @@ def toy_run(H=0.2, mode="constant", phi0=1.5, v0=0.0, t_end=60.0, n=6000, model=
 
 
 def energy_argument(run):
-    """The capture argument, checked on a run: E = phi'^2/2 + cosh(phi - phi*) - 1 satisfies dE/dt = -3H phi'^2 <= 0 (the friction only removes energy),
-    and the well has a single critical point at the floor, so every trajectory ends there whatever H(t) > 0 is.  Returns E along the run, whether it
-    is non-increasing, and the fraction of the initial energy that remains."""
+    """The energy identity, checked on a run: E = phi'^2/2 + cosh(phi - phi*) - 1 satisfies dE/dt = -3H phi'^2 <= 0 (the friction only removes energy).
+    Capture at the floor follows when H is bounded, of bounded variation and not integrable, as in both modes of `toy_run` — not for every
+    H(t) > 0 (CC-67 corrected that; see `capture_conditions`).  Returns E along the run, whether it is non-increasing, and the fraction of the
+    initial energy that remains."""
     E = 0.5 * np.asarray(run["phidot"]) ** 2 + np.cosh(np.asarray(run["phi"]) - run["phi_star"]) - 1
     return {"E_initial": float(E[0]), "E_final": float(E[-1]), "non_increasing": bool(np.all(np.diff(E) <= 1e-9 * max(1.0, float(E[0])))),
-            "fraction_remaining": float(E[-1] / E[0]) if E[0] > 0 else 0.0, "statement": "dE/dt = -3H phi'^2 <= 0: capture at the floor is guaranteed"}
+            "fraction_remaining": float(E[-1] / E[0]) if E[0] > 0 else 0.0,
+            "statement": "dE/dt = -3H phi'^2 <= 0; capture follows for H bounded, of bounded variation and not integrable (CC-67)"}
+
+
+def capture_conditions(phi0=1.5, t_late=(400.0, 1500.0)):
+    """When Hubble friction captures the shape, and when it does not (CC-67, 2026-10-16).  In the well, x = phi - phi*, E = x'^2/2 + cosh x - 1 has
+    dE/dt = -3H x'^2 <= 0 for any H >= 0, but capture needs more.
+    EXACT (proof in the PG-01 report, section 6): in a convex coercive single well, with H >= 0 of bounded variation (so bounded) and
+    int H dt = infinity, every trajectory is captured, E -> 0 — with W = x x', the convexity inequality x V'(x) >= V(x) and two
+    Riemann–Stieltjes integrations by parts give int H E dt < infinity (the nonincreasing case is Cabot–Engler–Gadat, Trans. AMS 361 (2009)
+    5983).  Neither hypothesis can simply be dropped, though neither is necessary (H = t also captures): an integrable H leaves
+    E(t) >= E(0) exp(-6 int_0^t H) (Gronwall, since x'^2 <= 2E), and a fast-growing H overdamps the field to rest off the floor:
+    x = a + b e^-t with a, b > 0 solves x'' + 3H x' + sinh x = 0 exactly with H = 1/3 + e^t sinh(x)/(3b) > 0, whose integral diverges (Codex's
+    example).  NUMERICAL: the integrable case H = 0.1 e^-t, the overdamped example, and captured cases — constant H, radiation H = 1/(2t) and
+    matter H = 2/(3t) from t0 > 0 (the toy runs use the first two) — whose energies decay like t^-1.5 and t^-2 at late times (E ~ t^(-3p) for
+    H = p/t, from the Bessel asymptotics of x'' + (3p/t) x' + x = 0)."""
+    from scipy.integrate import solve_ivp
+
+    def run(Hf, t0, t1, x0, v0=0.0, method="DOP853"):
+        sol = solve_ivp(lambda t, y: [y[1], -3.0 * Hf(t) * y[1] - math.sinh(y[0])], (t0, t1), [x0, v0], method=method, rtol=1e-10, atol=1e-12,
+                        dense_output=True)
+        def E(t):
+            x, v = sol.sol(t)
+            return 0.5 * v * v + math.cosh(x) - 1.0
+        return sol, E
+
+    E0 = math.cosh(phi0) - 1.0
+    sol, E = run(lambda t: 0.1 * math.exp(-t), 0.0, 200.0, phi0)
+    ts = np.linspace(0.0, 200.0, 2001); Es = np.array([E(t) for t in ts])
+    integrable = {"H": "0.1 exp(-t)", "fraction_left": float(Es[-1] / E0), "gronwall_floor": math.exp(-0.6),
+                  "bound_holds": bool(np.all(Es >= E0 * np.exp(-0.6 * (1 - np.exp(-ts))) * (1 - 1e-9)))}
+    a, b = 1.0, 0.5
+    t_, a_, b_ = sp.symbols("t a b", positive=True)
+    xs = a_ + b_ * sp.exp(-t_); Hs = sp.Rational(1, 3) + sp.exp(t_) * sp.sinh(xs) / (3 * b_)
+    exact = sp.simplify(sp.diff(xs, t_, 2) + 3 * Hs * sp.diff(xs, t_) + sp.sinh(xs)) == 0
+    sol, E = run(lambda t: 1 / 3 + math.exp(t) * math.sinh(a + b * math.exp(-t)) / (3 * b), 0.0, 12.0, a + b, -b, method="Radau")
+    overdamped = {"exact_solution": bool(exact), "x_at_12": float(sol.y[0][-1]), "x_limit": a, "H_integral_diverges": True,
+                  "energy_left": float(E(12.0) / (0.5 * b * b + math.cosh(a + b) - 1.0))}
+    captured = {}
+    for name, Hf, t0, t1, p in (("constant H = 0.2", lambda t: 0.2, 0.0, 200.0, None),
+                                ("radiation H = 1/(2t)", lambda t: 1 / (2 * t), 1.25, t_late[1], 0.5),
+                                ("matter H = 2/(3t)", lambda t: 2 / (3 * t), 1.0, t_late[1], 2 / 3)):
+        sol, E = run(Hf, t0, t1, phi0)
+        row = {"E_end_over_E0": float(E(t1) / E0)}
+        if p is not None:
+            row.update({"decay_exponent": math.log(E(t_late[1]) / E(t_late[0])) / math.log(t_late[1] / t_late[0]), "predicted": -3 * p})
+        captured[name] = row
+    return {"integrable": integrable, "overdamped": overdamped, "captured": captured,
+            "theorem": "convex coercive single well, H >= 0 bounded, of bounded variation, int H = infinity => E -> 0",
+            "class": "EXACT (theorem and identities) / NUMERICAL (runs)"}
 
 
 def volume_companion(t_end=60.0, n=600, c_f=1.0, c_c=1.0, H=0.2):

@@ -52,8 +52,8 @@ def test_glaisher_identities():
     assert m["agree"] and abs(m["minus_zeta_prime_2"] - 0.9375482543) < 1e-9
     d1, d2 = D.partial_sum_density(2000), D.partial_sum_density(20000)
     assert abs(d2["density"] - d2["limit"]) < 3e-3 < abs(d1["density"] - d1["limit"])                 # the error shrinks like log^2 x / x
-    for d in (d1, d2):
-        assert d["error"] < 0 and abs(d["error"] - d["predicted_error"]) < 0.05 * abs(d["predicted_error"])  # -log^2 x/(4x) - (ln 2pi) log x/(2x)
+    for d in (d1, d2):                                                                             # the mean -log^2 x/(4x) - (ln 2pi) log x/(2x),
+        assert d["error"] < 0 and abs(d["error"] - d["predicted_error"]) < 0.05 * abs(d["predicted_error"])  # followed numerically (CC-68: not a bound)
     nv = D.alphabet_negative_values(7)
     assert all(nv["checks"].values()) and all(r["agree"] for r in nv["rows"])
     assert abs(nv["rows"][0]["W"] + math.log(2 * math.pi) / 24) < 1e-15 and nv["rows"][1]["W"] == 0 and nv["rows"][3]["W"] == 0
@@ -118,7 +118,7 @@ def test_atlas_friction_toy_and_gate():
     r = VA.toy_run(0.2, t_end=50.0); assert r["captured"] and r["floor_crossings"] == 15 and r["class"] == "DIAGNOSTIC"
     r60 = VA.toy_run(0.2, t_end=60.0); assert r60["floor_crossings"] == 18 > r["floor_crossings"]     # the count grows with the run (CC-65)
     for run in (r, r60):
-        assert run["energy"]["non_increasing"] and run["energy"]["fraction_remaining"] < 1e-6         # dE/dt = -3H phi'^2 <= 0: the capture argument
+        assert run["energy"]["non_increasing"] and run["energy"]["fraction_remaining"] < 1e-6         # dE/dt = -3H phi'^2 <= 0; H bounded, int H = oo (CC-67)
     r = VA.toy_run(1.0, t_end=50.0); assert r["captured"] and r["floor_crossings"] == 0 and r["energy"]["non_increasing"]
     r = VA.toy_run(0.4, mode="radiation", t_end=60.0); assert r["captured"] and r["floor_crossings"] >= 10 and r["energy"]["non_increasing"]
     v = VA.volume_companion(t_end=40.0); assert v["monotone_increasing"] and v["final_log_vol"] > 2
@@ -137,12 +137,12 @@ def test_command_lines_and_record():
     assert "divisor gas of 143" in D.text() and "residue of U_D at the first zero" in D.text()
     pg = [e for e in L.E if e["wave"] == "PG-01"]
     assert [e["id"] for e in pg] == ["PG-1", "PG-2", "PG-3", "PG-4", "PG-5", "PG-6"] and all(e["module"] == "mtft.matter.vacuum_atlas" for e in pg)
-    assert [e["status"] for e in pg] == ["active", "superseded", "superseded", "caveat", "active", "active"]      # CC-65, CC-66, append-only
+    assert [e["status"] for e in pg] == ["active", "superseded", "superseded", "caveat", "caveat", "active"]      # CC-65, CC-66, CC-67, append-only
     assert all("CC-65" in e["note"] for e in pg if e["status"] == "superseded")
     cc = next(e for e in L.E if e["id"] == "CC-65")
-    assert cc["status"] == "active" and "PG-4" in cc["statement"] and "PG-5" in cc["statement"] and "keeps every pole" in cc["statement"]
+    assert cc["status"] == "caveat" and "CC-68" in cc["note"] and "PG-4" in cc["statement"] and "PG-5" in cc["statement"] and "keeps every pole" in cc["statement"]
     a = Z.assignment(); assert all(a[f"PG-{i}"] == "IV" for i in (1, 2, 3, 4, 5, 6)) and a["CC-65"] == "IV" and a["CC-66"] == "IV"
     subs = Z.subs()
-    assert subs["IV.7"][1].status == "answered" and set(subs["IV.7"][1].claims) == {"PG-1", "PG-4", "PG-5", "CC-65", "PG-6", "CC-66"}
+    assert subs["IV.7"][1].status == "answered" and set(subs["IV.7"][1].claims) == {"PG-1", "PG-4", "PG-5", "CC-65", "PG-6", "CC-66", "CC-67"}
     assert subs["I.7"][1].status == "open" and "I.6" in subs["I.7"][1].settle and subs["I.7"][1].claims == ("PG-5",)
     assert any(n["id"] == "N22" and "PG-4" in n["claims"] and "PG-2" not in n["claims"] for n in Z.NEGATIVES)

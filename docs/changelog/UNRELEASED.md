@@ -1,5 +1,25 @@
 # Unreleased — after v0.34.0
 
+## PG-01 corrections (2026-10-16): capture needs hypotheses (CC-67); the divisor series' second pole and summatory remainder (CC-68)
+
+From Astra's review of `ca289dad` and Codex's RESPONSE-02 preflight, re-derived independently before filing; append-only.
+
+- CC-67 caveats PG-5: dE/dt = -3H phi'^2 <= 0 holds for any H >= 0, but capture of the shape does not follow "for any H(t) > 0" — an integrable
+  H leaves E(t) >= E(0) exp(-6 int H) (Gronwall; H = 0.1 e^-t keeps 77% in the toy run) and a fast-growing H freezes the field off the floor
+  (Codex's exact solution). What holds, with proof: a convex coercive single well and H >= 0 of bounded variation with int H = infinity give
+  capture — constant H and the radiation and matter eras (energies ~ t^-1.5 and t^-2); the hypotheses are sufficient, not necessary. New `vacuum_atlas.capture_conditions()`; the docstrings
+  of the module, `toy_run` and `energy_argument` and the IV.7 answer now state the hypotheses.
+- CC-68 caveats CC-65 and corrects `mtft.divisor_gas`, the Legend (`two_primon_energies`, `mean_weight_glaisher`) and the report: Z_D has a
+  double pole at s = 0, -1/(2 s^2) - (ln 2 pi)/(2 s) + c0 with c0 = (zeta''(0) - gamma_1)/2 = -0.9667703052, besides the pole at s = 1; and
+  sum_{n<=x} w_n has no O(1) remainder (it jumps by the unbounded w_n). What holds: -(1/2) log^2 x - log x - O(1) <= S(x) + zeta'(2) x <= 0,
+  so S = -zeta'(2) x + O(log^2 x), with the s = 0 terms as its mean (proved through the first Riesz mean) and exact term by term under a smooth
+  weight. New `divisor_gas.pole_at_zero()` (two routes), `summatory_bounds()`, `smoothed_sum()`.
+- Ledger 282 claims (221 active, 36 caveat, 19 superseded, 6 retracted): PG-5 and CC-65 now caveat with notes, statements unchanged; CC-67 and
+  CC-68 added (IV). Generated MATTER_LEDGER.md, MATTER_PUZZLE_MAP.md and docs/CAPABILITIES.md refreshed. Report: section 6 of
+  `docs/SM/PG01_ENERGY_TWO_CLOCKS.md`.
+- `tests/test_pg01_corrections.py` (8 tests); `tests/test_pg01_energy.py` updated for the two caveats and IV.7's claims. README's correction range
+  now reads CC-36 to CC-68.
+
 ## PG-01 addendum (2026-10-14): the Wilson-line torus has two saddles (CC-66, PG-6); two visual pages
 
 - `mtft.matter.vacuum_atlas.wilson_line_torus(eps)`: every critical point of the relative-U(1) Wilson-line potential on the whole torus R^2/Z^2

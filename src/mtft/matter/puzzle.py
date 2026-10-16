@@ -220,7 +220,7 @@ PIECES = (
           "system, the shape r sits in a cosh well with its floor at the self-dual point (PG-1) while the volume has no critical point at all (PG-4); "
           "the atlas's saddles are the two passes of the Wilson-line torus (PG-6), the half-periods at which BL-01's B–L line also sits (BL-3; "
           "CC-66 corrected the first filing's 'no saddle' on 2026-10-14), and the spiral type of a cosmological run is set by m/H, which nothing "
-          "fixes (PG-5; CC-65 corrected the wave's first filing the same day).",
+          "fixes (PG-5; CC-65 corrected the wave's first filing the same day, and CC-67 (2026-10-16) supplied the hypotheses its capture argument needs).",
           ("MS-6", "MS-7", "CS-3", "AG-4", "AG-5", "FH-3", "SQ-8", "PG-1", "PG-4", "PG-6"),
           ("MS-01", "MS-02", "CS-01", "FH-01", "PR-01", "PG-01"), ("II", "III"),
           (),
@@ -240,16 +240,17 @@ PIECES = (
                settle="A rule sealed in mtft.matter.prereg before it is run on the 13 torus levels (SQ-8, PR-1): it must select 143 and reject the "
                       "other twelve, 123 (same index, genus and cusps) and 77 (consecutive primes) included. Seventeen properties have been tried "
                       "after the fact and four single 143 out (PR-3; X17, the twelve-loop systole, selects 118, 141, 142 and 143, GF-9); none counts."),
-           Sub("IV.7", "What kind of critical point is each modulus of the vacuum?", "answered", claims=("PG-1", "PG-4", "PG-5", "CC-65", "PG-6", "CC-66"), docs=("PG01_ENERGY_TWO_CLOCKS.md",),
+           Sub("IV.7", "What kind of critical point is each modulus of the vacuum?", "answered", claims=("PG-1", "PG-4", "PG-5", "CC-65", "PG-6", "CC-66", "CC-67"), docs=("PG01_ENERGY_TWO_CLOCKS.md",),
                answer="Shape: a sink in a cosh well, floor at r* = sqrt(19/11), curvature 1 in floor units (PG-1). Volume: no finite critical point, a "
                       "runaway, given PV-01's positive coefficients (PG-4). Condensate: a degenerate line lifted to a sink by a mass term with "
                       "0 < m^2 < xi (eigenvalue 4 m^2). Wilson line: a 2D sink at the jet vacuum, a 2D source at the untwisted point and, on the "
                       "whole torus, two saddles at the other half-periods (at V = 0 exactly in the real spin structure), exact in PA-01's product "
                       "approximation; its masses follow the curvatures in 143a1's kinetic metric (PG-6). Adjoints: sinks; A_X at one loop: no "
-                      "critical point. Spirals only with time, when m > 3H/2; capture of the shape is guaranteed by the energy argument, the toy run "
-                      "only illustrates it (PG-5). CC-65 corrected the first filing (hypotheses, the run-length-dependent count, and the arithmetic "
+                      "critical point. Spirals only with time, when m > 3H/2; capture of the shape follows from the energy argument when H is "
+                      "bounded, of bounded variation and not integrable — constant H and the radiation and matter eras — not for every H > 0, and "
+                      "the toy run only illustrates it (PG-5, CC-67). CC-65 corrected the first filing (hypotheses, the run-length-dependent count, and the arithmetic "
                       "half's RH sentence) the same day; CC-66 (2026-10-14) corrected its 'no saddle', which held only along the straight path "
-                      "and conflicted with BL-3.")),
+                      "and conflicted with BL-3; CC-67 (2026-10-16) added the hypotheses of the capture argument.")),
           ),
     Piece("VI", "Couplings, the Pati–Salam scale and b–tau",
           "Do the gauge couplings and the bottom–tau relation agree with a Pati–Salam scale this geometry allows?",
@@ -401,7 +402,7 @@ CLAIM_PIECE = {
     "FH-1": "II", "OM-1": "II",
     "TP-1": "III", "CK1-2": "III", "CC-37": "III",
     "SP-2": "IV", "SP-4": "IV", "AG-4": "IV", "AG-5": "IV", "FA-2": "IV", "BL-4": "IV", "CA-1": "IV", "CA-2": "IV", "CA-3": "IV",
-    "CC-55": "IV", "CC-56": "IV",
+    "CC-55": "IV", "CC-56": "IV", "CC-68": "IV",
     "PS1-4": "VI", "CA-5": "VI",
     "FH-2": "IX", "FH-4": "IX", "YB-2": "IX", "CC-39": "IX", "CC-47": "IX", "CC-60": "IX",
     "CD-4": "X", "DP-4": "X",

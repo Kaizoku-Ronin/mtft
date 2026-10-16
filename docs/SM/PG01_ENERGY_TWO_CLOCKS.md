@@ -146,3 +146,60 @@ test an independent sum over the disc |w| <= 40 with a winding-number count, a L
 
 Reading. The Wilson line's basin has two passes; its floor is where PA1-1 put it. The saddles appear as soon as the whole torus is examined
 instead of the one path, and for a Morse function the count says they had to be there.
+
+## 6. Addendum (2026-10-16, append-only): capture needs hypotheses (CC-67); the divisor series' second pole and summatory remainder (CC-68)
+
+From Astra's review of `ca289dad` and Codex's RESPONSE-02 preflight, re-derived independently and reviewed before filing. Module functions
+`vacuum_atlas.capture_conditions`, `divisor_gas.pole_at_zero`, `divisor_gas.summatory_bounds`, `divisor_gas.smoothed_sum`; ledger CC-67 (caveats
+PG-5) and CC-68 (caveats CC-65; corrects `divisor_gas`, the Legend entries `two_primon_energies` and `mean_weight_glaisher`, and this report's
+section 1); tests `tests/test_pg01_corrections.py`. Nothing above is edited.
+
+- **Capture under Hubble friction (CC-67).** Item 9's "capture ... for any H(t) > 0" is false. In the well, x = phi - phi*, the energy
+  E = x'^2/2 + cosh x - 1 still has dE/dt = -3H x'^2 <= 0, but that alone captures nothing:
+  - *Integrable H.* Since x'^2 <= 2E, dE/dt >= -6HE, so E(t) >= E(0) exp(-6 int_0^t H) (Gronwall). For H = 0.1 e^-t at least e^-0.6 = 0.549 of
+    the energy remains for ever; the toy run from x0 = 1.5 keeps 0.768 of it (0.781 from x0 = 1, the 78% Astra found).
+  - *Fast-growing H.* With a, b > 0, x = a + b e^-t solves x'' + 3H x' + sinh x = 0 exactly with H = 1/3 + e^t sinh(x)/(3b) > 0 (Codex's
+    example). Its integral diverges, yet the field is overdamped to rest at x = a, off the floor. A bounded H with a divergent integral can fail
+    too, if it varies without bound — small whenever x' is large.
+  - *What holds (EXACT).* Let V be convex and coercive with its unique minimum V(0) = 0, and let H >= 0 have bounded variation on [t0, infinity),
+    TV(H) = int |dH| < infinity (for instance H nonincreasing; such an H is bounded, H <= H0), with int H dt = infinity. Then E -> 0. Proof: E is
+    nonincreasing, so |x| <= R and |x'| <= sqrt(2 E(t0)), and int H x'^2 dt <= E(t0)/3. Put W = x x'. Then W' = x'^2 - 3H x x' - x V'(x) <=
+    x'^2 - 3H x x' - V(x), because convexity gives x V'(x) >= V(x). Multiply by H and integrate. In the Riemann–Stieltjes integrations by parts
+    int H^2 x x' dt = [H^2 x^2/2] - int (x^2/2) d(H^2) and int H dW = [HW] - int W dH (valid because x^2 and W are C^1), every term is bounded
+    by H0 and TV(H), so int H V(x) dt < infinity, and with it int H E dt. Since E is nonincreasing and int H = infinity, its limit is 0. For
+    nonincreasing damping this is Cabot, Engler and Gadat, Trans. AMS 361 (2009) 5983. The hypotheses are sufficient, not necessary: H = t also
+    captures, slowly (x ~ t^-1/3).
+  - *The cases run here (from t0 > 0).* Constant H, the radiation era H = 1/2t and the matter era H = 2/3t satisfy the hypotheses; the toy runs
+    use the first two. Numerically their energies decay like e^(-3Ht) at small H, like t^-1.5 and like t^-2 (exponents -1.499 and -1.999 between
+    t = 400 and 1500), as the Bessel asymptotics of x'' + (3p/t) x' + x = 0 predict (E ~ t^(-3p)).
+  - *The Wilson-line torus.* With several equilibria and constant H > 0, capture is generic, not universal: data on the stable manifolds of the
+    two saddles (codimension 1 in phase space) and of the maximum (codimension 2) do not reach the minimum. This rests on PG-6's census, which is
+    NUMERICAL, in PA-01's product approximation.
+- **The divisor series (CC-68).** Section 1's "Z_D(s) = -zeta(s) zeta'(s+1) is entire except at s = 1" and its "... + O(1)" are false:
+  - *The double pole.* Since zeta(s) = -1/2 - (ln 2 pi) s/2 + ... and zeta'(1 + s) = -1/s^2 - gamma_1 + ..., Z_D has a double pole at s = 0,
+    Z_D(s) = -1/(2 s^2) - (ln 2 pi)/(2 s) + c0 + O(s) with c0 = (zeta''(0) - gamma_1)/2 = -0.9667703052. Cauchy integrals on |s| = 1/2, a route
+    that uses no Taylor coefficient, agree to 1e-12. With the simple pole at s = 1 these are the only poles.
+  - *No O(1) remainder.* S(x) = sum_{n<=x} w_n jumps by w_n at every integer, and w_{m!} >= sum_{d=2}^m (log d)/d grows without bound
+    (w_{12!} = 9.43). So no continuous main term can stay within bounded distance of S.
+  - *What holds (EXACT).* S(x) + zeta'(2) x = -x sum_{d>x} (log d)/d^2 - sum_{d<=x} ((log d)/d){x/d}. Both terms are <= 0, so
+    -(1/2) log^2 x - log x - O(1) <= S(x) + zeta'(2) x <= 0 (checked with O(1) = 2 for every x <= 2 x 10^6), and S(x) = -zeta'(2) x + O(log^2 x).
+    The density error is O(log^2 x/x).
+  - *The mean (EXACT).* M(x) = -(1/4) log^2 x - (1/2)(ln 2 pi) log x + c0, the residue of the Perron integrand Z_D(s) x^s/s at its triple pole
+    s = 0, is the mean of S(x) + zeta'(2) x. Proof: the first Riesz mean int_1^X S(u) du = (1/2 pi i) int_(2) Z_D(s) X^(s+1)/(s(s+1)) ds,
+    shifted to Re s = -1/8, picks up -zeta'(2) X^2/2 at s = 1 and X Res_0[Z_D(s) X^s/(s(s+1))] at s = 0. The convexity bounds
+    zeta(-1/8 + it) << |t|^(5/8) and zeta'(7/8 + it) << |t|^(1/16 + eps) make the shifted integral O(X^(7/8)). The two residues equal
+    int_1^X (-zeta'(2) u + M(u)) du + O(1), so (1/X) int_1^X (S(u) + zeta'(2) u - M(u)) du = O(X^-1/8). Numerically the integral is -19 at
+    X = 2 x 10^6, against X^(7/8) = 3 x 10^5; pointwise, the remainder at the integers stays between -4.1 and +4.9 up to 2 x 10^6 (NUMERICAL).
+  - *A smooth weight.* With a smooth weight the expansion is exact term by term:
+    sum_n w_n e^{-n/x} = -zeta'(2) x + Res_{s=0}[Z_D(s) Gamma(s) x^s] + (ln 2 pi)/(24 x) + O(x^-3). The poles beyond s = 0 are Gamma's at the odd
+    negative integers, -Z_D(-1)/x with Z_D(-1) = -(ln 2 pi)/24 the first, while Z_D vanishes at the even ones. It agrees to rounding at x = 500
+    and 2000.
+  - *Not proved.* The sharper "-log^2 x/(4x) + O(log x/x)" — in the Legend, in section 1 above and in the first docstring — follows the numbers
+    but would need sum_{d<=x} ((log d)/d) psi(x/d) = O(log x), with psi(y) = {y} - 1/2; the elementary bound is O(log^2 x). It is now stated as
+    the mean with an O(log^2 x/x) bound.
+  - *What still stands.* Z_D vanishes at the zeros of zeta, so S has no oscillating term from them; the RH-blindness of CC-65 stands.
+
+Reading. The energy identity was right and the conclusion drawn from it was too strong. Capture holds when the friction is not integrable and
+varies boundedly, as constant H and the power-law eras H = p/t (from t0 > 0) do; friction that dies out integrably, or grows fast, can fail to
+capture. The arithmetic clock's density is -zeta'(2), its deviation is O(log^2 x), and the lower-order terms describe its mean, not a bounded
+remainder.

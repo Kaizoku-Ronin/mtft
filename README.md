@@ -300,7 +300,7 @@ implied.
 `python -m mtft matter puzzle` (or the generated [programme map](docs/SM/MATTER_PUZZLE_MAP.md)) lines up the
 ten pieces of the Standard-Model-building programme in dependency order, with their statuses, sub-puzzles,
 pre-registered tests and recorded negatives. The [ledger](docs/SM/MATTER_LEDGER.md) lists every claim with its
-class, status, module and test; corrections are append-only (CC-36 to CC-66). The
+class, status, module and test; corrections are append-only (CC-36 to CC-68). The
 [integration notes](docs/SM/MATTER_PROGRAMME_INTEGRATION_NOTES.md) are written for the audit, and every wave is in
 [Unreleased](docs/changelog/UNRELEASED.md), one report per wave in `docs/SM/`.
 

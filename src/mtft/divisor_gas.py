@@ -18,8 +18,12 @@ Two energies sit side by side (EXACT):
 Exactly, U_D(beta) = U(beta) - zeta''(beta+1)/zeta'(beta+1): the marked energy keeps every pole of U at the zeros of zeta (residue -1) and adds poles
 at beta = s' - 1 for every zero s' of zeta' — marking does not move the energy off the zeros, it adds singularities (CC-65 corrected the first
 statement of this wave, which said the opposite).  What is RH-blind is the partition function and the summatory function: Z_D(s) = -zeta(s) zeta'(s+1)
-is entire except at s = 1 and vanishes at the zeros of zeta, so sum_{n<=x} w_n = -zeta'(2) x - (1/4) log^2 x - (1/2)(ln 2 pi) log x + O(1) carries
-no term from the zeros.
+has poles only at s = 1 (simple, residue -zeta'(2)) and s = 0 (double: -1/(2 s^2) - (ln 2 pi)/(2 s) + c0, `pole_at_zero`) and vanishes at the zeros
+of zeta, so S(x) = sum_{n<=x} w_n = -zeta'(2) x + O(log^2 x) — exactly, -(1/2) log^2 x - log x - O(1) <= S(x) + zeta'(2) x <= 0 — carries no
+oscillating term from the zeros; the residue of Z_D(s) x^s/s at s = 0, -(1/4) log^2 x - (1/2)(ln 2 pi) log x + c0, is its mean (proved through
+the first Riesz mean), and there is no O(1) remainder,
+because S jumps by w_n at every integer and w_n is unbounded (`summatory_bounds`, `smoothed_sum`).  CC-68 (2026-10-16) corrected the first filing's
+'entire except at s = 1' and its O(1).
 
 Also here (EXACT): the mean weight -zeta'(2) = (pi^2/6)(12 ln A - gamma - ln 2pi) with A the Glaisher–Kinkelin constant (the 12 multiplying ln A is
 -1/zeta(-1) = 2 pi^2/zeta(2), the functional equation at s = 2; the prefactor is zeta(2)); the alphabet at the negative integers,
@@ -163,13 +167,88 @@ def mean_weight_glaisher():
 
 
 def partial_sum_density(x=100000):
-    """sum_{n<=x} w_n / x against -zeta'(2): the error is -log^2 x/(4x) + O(log x/x), from the triple pole of Z_D(s) x^s/s at s = 0
-    (sum_{n<=x} w_n = -zeta'(2) x - (1/4) log^2 x - (1/2)(ln 2 pi) log x + O(1))."""
+    """sum_{n<=x} w_n / x against -zeta'(2): the error is O(log^2 x/x) (EXACT, `summatory_bounds`), and its mean is
+    -log^2 x/(4x) - (ln 2 pi) log x/(2x) + c0/x, from the triple pole of Z_D(s) x^s/s at s = 0, which the numbers follow ('predicted_error' omits
+    the c0/x); a pointwise O(log x/x) bound on the rest is not proved, and an O(1) remainder for the sum itself is false (CC-68)."""
     S = 0.0
     for d in range(1, x + 1):
         S += math.log(d) / d * (x // d)
     lim = float(-mp.zeta(2, derivative=1)); lx = math.log(x)
     return {"x": x, "density": S / x, "limit": lim, "error": S / x - lim, "predicted_error": -(lx * lx / 4 + math.log(2 * math.pi) * lx / 2) / x}
+
+
+def pole_at_zero():
+    """The Laurent expansion of Z_D(s) = -zeta(s) zeta'(s+1) at s = 0 (CC-68): a double pole, Z_D(s) = -1/(2 s^2) - (ln 2 pi)/(2 s) + c0 + O(s) with
+    c0 = (zeta''(0) - gamma_1)/2 (EXACT, from zeta(s) = -1/2 - (ln 2 pi) s/2 + ... and zeta'(1 + s) = -1/s^2 - gamma_1 + ...), checked against Cauchy
+    integrals of Z_D on the circle |s| = 1/2, a route that uses no Taylor coefficient (NUMERICAL).  With the simple pole at s = 1 these are the only
+    poles: zeta has none elsewhere and zeta'(s + 1) only at s = 0."""
+    with mp.workdps(18):
+        Z = lambda s: -mp.zeta(s) * mp.zeta(s + 1, derivative=1)
+        closed = (mp.zeta(0), mp.zeta(0, derivative=1), mp.zeta(0, derivative=2) / 2 + mp.zeta(0) * mp.stieltjes(1))
+        r = mp.mpf(1) / 2
+
+        def coeff(k):
+            f = lambda th: Z(r * mp.expj(th)) * (r * mp.expj(th)) ** (-k)
+            return mp.quad(f, [0, mp.pi / 2, mp.pi, 3 * mp.pi / 2, 2 * mp.pi]) / (2 * mp.pi)
+        cauchy = [coeff(k) for k in (-2, -1, 0)]
+        tol = mp.mpf(10) ** -12
+        return {"s^-2": float(closed[0]), "s^-1": float(closed[1]), "c0": float(closed[2]), "cauchy": [float(mp.re(c)) for c in cauchy],
+                "double_pole_minus_half": abs(closed[0] + mp.mpf(1) / 2) < tol, "simple_part_minus_half_log_2pi": abs(closed[1] + mp.log(2 * mp.pi) / 2) < tol,
+                "two_routes_agree": all(abs(c - k) < tol for c, k in zip(cauchy, closed)), "no_triple_pole": abs(coeff(-3)) < tol,
+                "residue_at_1": float(mp.limit(lambda s: (s - 1) * Z(s), 1))}
+
+
+def summatory_bounds(N=200000, mmax=12):
+    """S(x) = sum_{n<=x} w_n as corrected by CC-68.  EXACT: S(x) + zeta'(2) x = -x sum_{d>x} (log d)/d^2 - sum_{d<=x} ((log d)/d) {x/d}, both terms
+    <= 0, so -(1/2) log^2 x - log x - O(1) <= S(x) + zeta'(2) x <= 0 and S(x) = -zeta'(2) x + O(log^2 x); here checked at every x <= N with O(1) = 2.
+    No O(1) remainder: S jumps by w_n at each integer, and w_{m!} >= sum_{d=2}^m (log d)/d (every d <= m divides m!) grows without bound, so S stays
+    within bounded distance of no continuous function.  The mean: with M(x) = -zeta'(2) x - (1/4) log^2 x - (1/2)(ln 2 pi) log x + c0 (the residues
+    of Z_D(s) x^s/s at s = 1 and s = 0), (1/X) int_1^X (S - M) = O(X^-1/8) (EXACT, the first Riesz mean shifted to Re s = -1/8; PG-01 report,
+    section 6), checked here at X = N.  NUMERICAL: the remainder R = S - M at the integers and its range on [100, N]."""
+    import numpy as np
+    from mtft.marked_gas import weights_sieve
+    w = weights_sieve(N); S = np.cumsum(w); n = np.arange(1, N + 1, dtype=float); S = S[1:]
+    mz = float(-mp.zeta(2, derivative=1))
+    with mp.workdps(25):
+        c0 = float(mp.zeta(0, derivative=2) / 2 + mp.zeta(0) * mp.stieltjes(1))
+    L = np.log(n + 1)
+    upper = S - mz * n                                     # the largest value of S(x) + zeta'(2) x on [n, n + 1)
+    lower = S - mz * (n + 1)                               # its infimum on [n, n + 1)
+    M = mz * n - 0.25 * np.log(n) ** 2 - 0.5 * math.log(2 * math.pi) * np.log(n) + c0
+    R = (S - M)[99:]                                       # from x = 100; at the integers, just after each jump
+    jumps = [(m, divisor_energy(math.factorial(m)), sum(math.log(d) / d for d in range(2, m + 1))) for m in range(2, mmax + 1)]
+    return {"N": N, "upper_bound_holds": bool(np.all(upper <= 1e-9)), "lower_bound_holds": bool(np.all(lower >= -(0.5 * L ** 2 + L + 2))),
+            "min_ratio_to_log2": float(np.min(lower[99:] / L[99:] ** 2)),
+            "jumps": [{"m": m, "w_m_factorial": wm, "lower_bound": lb} for m, wm, lb in jumps],
+            "jumps_exceed_bound": all(wm >= lb - 1e-12 for _, wm, lb in jumps), "jumps_grow": all(jumps[i + 1][1] > jumps[i][1] for i in range(len(jumps) - 1)),
+            "remainder_min": float(R.min()), "remainder_max": float(R.max()),
+            "mean_over_x": _riesz_mean_residual(S, N, mz, c0) / N, "riesz_bound": N ** -0.125,
+            "class": "EXACT (bounds, jumps, mean) / NUMERICAL (remainder range)"}
+
+
+def _riesz_mean_residual(S, X, mz, c0):
+    """int_1^X (S(u) + zeta'(2) u - M(u)) du for integer X, with S the step function (S[n - 1] = S(n)) and M = -(1/4) log^2 u - (1/2)(ln 2 pi) log u + c0."""
+    L2p = math.log(2 * math.pi)
+    F = lambda u: -0.25 * u * (math.log(u) ** 2 - 2 * math.log(u) + 2) - 0.5 * L2p * u * (math.log(u) - 1) + c0 * u
+    return float(S[:X - 1].sum() - mz * (X * X - 1) / 2 - (F(float(X)) - F(1.0)))
+
+
+def smoothed_sum(x=2000.0):
+    """With a smooth weight the expansion is exact term by term (CC-68): sum_n w_n e^{-n/x} = -zeta'(2) x + Res_{s=0}[Z_D(s) Gamma(s) x^s]
+    + (ln 2 pi)/(24 x) + O(x^-3), by Mellin inversion (EXACT; the further poles are Gamma's at the odd negative integers, where Z_D does not vanish —
+    the term at s = -1 is -Z_D(-1)/x with Z_D(-1) = -(ln 2 pi)/24 — while at the even ones Z_D vanishes).  The residue at the triple pole s = 0 is
+    taken by a Cauchy integral on |s| = 0.4 and the sum by the sieve (NUMERICAL)."""
+    import numpy as np
+    from mtft.marked_gas import weights_sieve
+    K = int(60 * x); w = weights_sieve(K); k = np.arange(1, K + 1)
+    total = float(np.sum(w[1:] * np.exp(-k / x)))
+    with mp.workdps(20):
+        Z = lambda s: -mp.zeta(s) * mp.zeta(s + 1, derivative=1)
+        r = mp.mpf("0.4")
+        f = lambda th: (lambda s: Z(s) * mp.gamma(s) * mp.power(x, s) * s)(r * mp.expj(th))
+        res0 = mp.re(mp.quad(f, [0, mp.pi / 2, mp.pi, 3 * mp.pi / 2, 2 * mp.pi]) / (2 * mp.pi))
+        pred = float(-mp.zeta(2, derivative=1) * x + res0 + mp.log(2 * mp.pi) / (24 * x))
+    return {"x": x, "smoothed_sum": total, "prediction": pred, "relative_difference": abs(total - pred) / total}
 
 
 def bendersky_constant_log(k):
