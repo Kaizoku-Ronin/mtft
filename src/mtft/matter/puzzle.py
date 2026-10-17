@@ -88,8 +88,12 @@ PIECES = (
                       "test: the lifted strong coupling must sit on a mirror of the modular tiling whose class matches the quark-mass phase, theta-bar = "
                       "theta + arg det(M_u M_d) = 0; the rule is sealed as PR-S2 (TR-8; PR-S1 was superseded the same day, CC-63) and waits for "
                       "a candidate."),
-           Sub("I.5", "Reflection positivity of the lattice action (OS2)", "open", docs=("CC35_REFLECTION_POSITIVITY.md",),
-               settle="Positivity restricted to gauge-invariant functions; CC-35 retracted 'proven' to open."),
+           Sub("I.5", "Reflection positivity of the lattice action (OS2)", "answered", docs=("CC35_REFLECTION_POSITIVITY.md", "CC69_REPAIRED_ACTION.md"),
+               answer="For the programme's action since CC-69 (2026-10-17) — the arithmetic tower on Sym^n characters on plaquettes, CC-35's repair "
+                      "adopted — yes, by Osterwalder–Seiler: the weight is a positive-type class function, so link-reflection positivity, a positive "
+                      "transfer matrix and a strong-coupling mass gap follow, and centre symmetry is restored. For the original Polyakov power-sum "
+                      "placement it stays unproven (CC-35). What remains open is what is open for every lattice action: the continuum limit with a "
+                      "uniform gap."),
            Sub("I.6", "A vacuum energy computed from the parent action", "open", docs=("CC34_DARK_ENERGY_FORMULA_AUDIT.md", "PG01_ENERGY_TWO_CLOCKS.md"),
                settle="The dark-energy formula stays DIAGNOSTIC until it has a route from an action (CC-34). The classical flux and curvature terms "
                       "have no stationary point in the volume (PV-01; the atlas of PG-4 records the runaway), so the route must also stabilise it."),

@@ -1,5 +1,19 @@
 # Unreleased — after v0.34.0
 
+## CC-69 (2026-10-17): the character repair of CC-35 adopted — the plaquette action with the tower on Sym^n characters
+
+- New `mtft.research.repaired_action`: the programme's lattice action is now s(U_p) = beta (1 - Re Tr U_p/N) + (kappa/N) sum_{n>=2} a_n (d_n -
+  Re chi_Sym^n(U_p)). Its weight is a positive-type class function (every character coefficient >= 0, checked to 1e-16 for kappa <= 1000 on
+  SU(2) and SU(3)), so Osterwalder–Seiler gives link-reflection positivity, a positive transfer matrix and a strong-coupling mass gap and area
+  law; the continuum limit with a uniform gap stays open, as for every lattice action. Plaquettes are centre-blind, so centre symmetry is
+  restored (both Polyakov-line placements broke it explicitly: 0.066 kappa and 0.176 kappa per site on SU(3)); Sym^n has N-ality n mod N, so the
+  n-th weight couples to the centre-vortex class of its index.
+- Sizes (Weyl integration): at kappa = 1 the tower moves u_f = c_f/c_0 by 0.8% (SU(3)) to 1.8% (SU(2)), worth Delta beta = 0.05-0.06 in Wilson
+  units; kappa = 9.3 for a 10% change at beta = 5.7; alone it gives u_f = 7e-5, O(kappa^2). The lock y_c = 0.18174 plays no role in the
+  repaired action. Reading: the gap is Wilson's gap, corrected at the per-cent level by the arithmetic layer.
+- Legend `cc69_repaired_action`; puzzle I.5 answered for the repaired action (open for the original); `mtft.lattice` docstring points to the
+  repair; CC-35's register carries a dated addendum; `tests/test_repaired_action.py` (12 tests). Report: `docs/SM/CC69_REPAIRED_ACTION.md`.
+
 ## PG-01 corrections (2026-10-16): capture needs hypotheses (CC-67); the divisor series' second pole and summatory remainder (CC-68)
 
 From Astra's review of `ca289dad` and Codex's RESPONSE-02 preflight, re-derived independently before filing; append-only.

@@ -862,6 +862,22 @@ for _d in CC35_LEGEND:
     if _d["name"] not in REGISTRY:
         _reg(LegendEntry(**_d))
 
+CC69_LEGEND = (
+    dict(name="cc69_repaired_action", tier="2", kind="identity", primitives=("III",), tag="Pr", exactness="EXACT (positivity, centre symmetry, N-ality) / NUMERICAL (sizes)",
+         nature="CC-69 (2026-10-17): CC-35's character repair adopted. The programme's lattice action puts the arithmetic tower on plaquettes as "
+                "(kappa/N) sum_{n>=2} a_n (d_n - Re chi_Sym^n(U)) beside the Wilson term. Its weight is a positive-type class function (every "
+                "character coefficient >= 0, checked to 1e-16 for kappa <= 1000), so Osterwalder-Seiler gives link-reflection positivity, a positive "
+                "transfer matrix and a strong-coupling mass gap and area law; the continuum limit with a uniform gap stays open, as for every lattice "
+                "action. Plaquettes are centre-blind, so centre symmetry is restored (both Polyakov-line placements broke it: 0.066 kappa and 0.176 kappa "
+                "per site on SU(3)). Sym^n has N-ality n mod N: the n-th weight couples to the centre-vortex class of its index. At kappa = 1 the tower "
+                "moves u_f = c_f/c_0 by 0.8% (SU(3)) to 1.8% (SU(2)), worth Delta beta = 0.05-0.06; kappa = 9.3 for 10% at beta = 5.7; alone it gives "
+                "u_f = 7e-5, O(kappa^2). y_c = 0.18174 plays no role here. The gap of the repaired action is Wilson's gap, corrected at the per-cent level.",
+         example="mtft.research.repaired_action.report()", upstream=("cc35_reflection_positivity",), ref="docs/SM/CC69_REPAIRED_ACTION.md"),
+)
+for _d in CC69_LEGEND:
+    if _d["name"] not in REGISTRY:
+        _reg(LegendEntry(**_d))
+
 # ═══════════════════════════════════════════════════════════════
 #  PG-01 (2026-10-12): the weights as the energy of the primon gas
 # ═══════════════════════════════════════════════════════════════

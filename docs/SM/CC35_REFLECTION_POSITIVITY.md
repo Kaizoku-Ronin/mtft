@@ -60,6 +60,12 @@ for c ≥ 0) fails for arbitrary powers and groups because power sums are virtua
 at strong coupling at the default κ and y. μ_N(y) is an arithmetic stiffness diagnostic, not the actual Polyakov-action Hessian or a spectral gap. A character-based
 repair is exact and available. None of this touches the arithmetic layer."
 
+## Addendum (2026-10-17, CC-69)
+The repair is adopted: `mtft.research.repaired_action` puts the tower on Sym^n characters on plaquettes. For that action reflection positivity,
+a positive transfer matrix and a strong-coupling mass gap are theorems (Osterwalder–Seiler), centre symmetry is restored, and the arithmetic layer
+is a per-cent correction to Wilson's gap at kappa = 1; see `docs/SM/CC69_REPAIRED_ACTION.md`. The statements above about the original
+Polyakov power-sum action are unchanged.
+
 ## What would upgrade it
 RP proved for link reflections at physical β for the current action, or adoption of the character repair with its physical curvature and proposed critical point recomputed; then the
 programme's position relative to the Clay problem is that of any reflection-positive lattice action: the continuum limit with a uniform gap is open.

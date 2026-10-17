@@ -18,6 +18,9 @@ Key features:
       Polyakov term it is UNPROVEN — CC-35: the lemma "c_n >= 0 makes exp(c_n Re Tr P^n) positive-definite" (Paper 13
       §4.2, Paper 24 Thm 2.4) fails for arbitrary powers and groups, and site-reflection positivity fails at strong coupling at the
       default (kappa, y).  See mtft.research.reflection_positivity and docs/SM/CC35_REFLECTION_POSITIVITY.md.
+      CC-69 (2026-10-17): the repair is adopted — the programme's action puts the tower on Sym^n characters on plaquettes
+      (mtft.research.repaired_action), for which reflection positivity, a positive transfer matrix and a strong-coupling gap are
+      theorems (Osterwalder–Seiler) and centre symmetry is restored.  The Polyakov power-sum form kept here is the historical one.
     - μ_N(y) > 0 for the full convergent arithmetic sum: a defined arithmetic stiffness diagnostic, NOT the
       Hessian of this single-trace Polyakov action or a spectral gap of its transfer matrix (CC-35).
     - The Polyakov term singles out time and needs a compact time circle: the action is not O(4)/hypercubic invariant.
