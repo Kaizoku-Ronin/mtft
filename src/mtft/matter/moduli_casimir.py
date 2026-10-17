@@ -2,7 +2,7 @@
 
 1. The structure (EXACT, one loop).  With the twist on the torus only, bosons and fermions differ only on odd windings w (chi_F(w) = -1), where each degree of freedom
    counts once with weight 2.  Heat-kernel expansion along the curve, Tr e^{-t Delta_C} = A_X/(4 pi t) + a_1 + ..., and Poisson resummation on the torus give
-   V_J = -K [ (384/pi) N A_X A_E^-3 S0 + 128 a_1 A_E^-2 S1 ],  S_k = sum over odd windings of the unit-area lattice of |w|^-(2k+6),
+   V_J = -K [ (384/pi) N A_X A_E^-3 S0 + 128 a_1 A_E^-2 S1 ],  S_k = sum over odd windings of the unit-area lattice of |w|^-(8-2k) (CC-70: not 2k+6),
    with N the twisted degrees of freedom and a_1 their summed curvature coefficient.  In the Einstein frame (divide by Vol^2 = (A_X A_E)^2) this is
    V_E = alpha / A_X + beta / A_X^2 with alpha < 0 (the thermal-like leading term) and beta of sign -a_1.
 2. The condition (EXACT).  A minimum in A_X exists iff beta > 0, i.e. a_1 < 0, at A_X / A_E = (2 pi / 3)(|a_1| / N)(S1 / S0).  The curve's Euler characteristic

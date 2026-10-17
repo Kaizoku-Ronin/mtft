@@ -70,7 +70,8 @@ PIECES = (
           (), (), (),
           ("PV01_PARENT_VACUUM_REGISTER.md", "PV02_BLOWUP_SUSY_REGISTER.md", "PARENT_ACTION_REQUIREMENTS.md", "CC29_R2C04_REGISTER.md",
            "R2C03_ANOMALY_LIFT_REGISTER.md", "CC33_TENSOR_COEFFICIENT.md", "WAVE_C_GATES.md", "V0340_PARENT_REVIEW_CORRECTIONS.md",
-           "MATTER01_VACUUM_AUDIT.md", "CC35_REFLECTION_POSITIVITY.md", "CC34_DARK_ENERGY_FORMULA_AUDIT.md", "GF01_FORCES_FIRST.md"),
+           "MATTER01_VACUUM_AUDIT.md", "CC35_REFLECTION_POSITIVITY.md", "CC34_DARK_ENERGY_FORMULA_AUDIT.md", "GF01_FORCES_FIRST.md",
+           "VE01_VACUUM_ENERGY.md"),
           (Sub("I.1", "Is the parent supersymmetric?", "open", claims=("GF-6", "GF-11"),
                docs=("PV01_PARENT_VACUUM_REGISTER.md", "PV02_BLOWUP_SUSY_REGISTER.md", "GF01_FORCES_FIRST.md"),
                settle="Declare it: it decides whether the U(8) class needs a supersymmetric completion or only its two Green–Schwarz fields (PV-01). "
@@ -94,9 +95,16 @@ PIECES = (
                       "transfer matrix and a strong-coupling mass gap follow, and centre symmetry is restored. For the original Polyakov power-sum "
                       "placement it stays unproven (CC-35). What remains open is what is open for every lattice action: the continuum limit with a "
                       "uniform gap."),
-           Sub("I.6", "A vacuum energy computed from the parent action", "open", docs=("CC34_DARK_ENERGY_FORMULA_AUDIT.md", "PG01_ENERGY_TWO_CLOCKS.md"),
+           Sub("I.6", "A vacuum energy computed from the parent action", "open", claims=("VE-1", "VE-2", "VE-3", "VE-6"),
+               docs=("CC34_DARK_ENERGY_FORMULA_AUDIT.md", "PG01_ENERGY_TWO_CLOCKS.md", "VE01_VACUUM_ENERGY.md"),
                settle="The dark-energy formula stays DIAGNOSTIC until it has a route from an action (CC-34). The classical flux and curvature terms "
-                      "have no stationary point in the volume (PV-01; the atlas of PG-4 records the runaway), so the route must also stabilise it."),
+                      "have no stationary point in the volume (PV-01; the atlas of PG-4 records the runaway), so the route must also stabilise it. "
+                      "What the programme's own terms give (VE-01, 2026-10-17): the classical curvature term is positive, 10^105-10^110 rho_Lambda on the "
+                      "measured background; the one-loop energy is minus a square, -c sum_odd K(w) |Tr U^w|^2 (VE-1), -3.7 to -4.5 M_KK^4 at the jet "
+                      "vacuum (VE-6), and it vanishes exactly at the Bose-Fermi-balanced Z/2 point Tr W = 0 - PA-01's matter-untwisted background (VE-2) - "
+                      "which is the global maximum of the Wilson-line potential (VE-3). A vanishing one-loop energy at a vacuum therefore needs the "
+                      "Z/2 twist realised without continuous torus Wilson lines (a Green-Schwarz mass for the anomalous T handles two of the fourteen "
+                      "unstable directions, I.2; Atkin-Lehner parity none that matter)."),
            Sub("I.7", "What would a big-bang-to-matter run of this vacuum need?", "open", claims=("PG-5",), docs=("PG01_ENERGY_TWO_CLOCKS.md",),
                settle="The gate of PG-01, in order: a declared parent (I.1, now a two-way choice); a vacuum energy from the parent action with a "
                       "stationary point in the volume (I.6; GS-1's fixed Kaehler moduli) — today the classical terms run away and the one-loop Casimir "
@@ -231,7 +239,7 @@ PIECES = (
           "CC-66 corrected the first filing's 'no saddle' on 2026-10-14), and the spiral type of a cosmological run is set by m/H, which nothing "
           "fixes (PG-5; CC-65 corrected the wave's first filing the same day, and CC-67 (2026-10-16) supplied the hypotheses its capture argument needs).",
           ("MS-6", "MS-7", "CS-3", "AG-4", "AG-5", "FH-3", "SQ-8", "PG-1", "PG-4", "PG-6"),
-          ("MS-01", "MS-02", "CS-01", "FH-01", "PR-01", "PG-01"), ("II", "III"),
+          ("MS-01", "MS-02", "CS-01", "FH-01", "PR-01", "PG-01", "VE-01"), ("II", "III"),
           (),
           (Sub("IV.1", "A mechanism for r = A_X/A_E", "open", claims=("MS-6", "MS-7", "CS-1", "CS-3"), prereg="T1",
                settle="Flux quantisation of the Kaehler class or a non-perturbative potential; nothing in the present model supplies one."),
@@ -431,7 +439,7 @@ WAVE_DATES = {
     "DD-01": "2026-10-05", "CA-01": "2026-10-05", "TO-01": "2026-10-05", "FL-01": "2026-10-05", "CD-01": "2026-10-05", "DP-01": "2026-10-05",
     "GT-01": "2026-10-05", "QL-01": "2026-10-06", "CI-01": "2026-10-06", "BL-01": "2026-10-06", "FA-01": "2026-10-06", "AG-01": "2026-10-07",
     "FH-01": "2026-10-07", "LV-01": "2026-10-07", "TL-01": "2026-10-07", "DS-01": "2026-10-07", "PAR-01": "2026-10-08", "OM-01": "2026-10-08",
-    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17",
+    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17", "VE-01": "2026-10-17",
 }
 
 WAVE_REPORT = {
@@ -451,7 +459,7 @@ WAVE_REPORT = {
     "TL-01": "TL01_TILT.md", "DS-01": "DS01_DOWN_PARITY.md", "PAR-01": "PA01_PARITY_AUDIT.md", "OM-01": "OM01_YB01_EXPERIMENTS.md",
     "YB-01": "OM01_YB01_EXPERIMENTS.md", "SQ-01": "SQ01_STAR_QUOTIENTS.md", "TR-01": "TR01_TIME_REVERSAL.md", "PR-01": "PR01_PREREGISTRATION.md",
     "GF-01": "GF01_FORCES_FIRST.md", "PG-01": "PG01_ENERGY_TWO_CLOCKS.md",
- "SC-01": "SC01_SCALE_LADDER.md",
+ "SC-01": "SC01_SCALE_LADDER.md", "VE-01": "VE01_VACUUM_ENERGY.md",
 }
 
 PREREG = (

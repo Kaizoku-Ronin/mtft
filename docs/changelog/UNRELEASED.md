@@ -1,5 +1,22 @@
 # Unreleased — after v0.34.0
 
+## VE-01 (2026-10-17): the vacuum energy — minus a square, zero at the Bose–Fermi-balanced point, which is the top; CC-70 corrects SC-4
+
+- New `mtft.matter.vacuum_energy`: at one loop the U(8) multiplet's torus-Wilson-line potential is V(U) = -c sum_odd K(w) |Tr U^w|^2 (VE-1, EXACT
+  through a_1 by MS-5): never positive, zero exactly where Tr U^w = 0, and that locus is the global maximum. For the Z/2 Wilson lines of the
+  Pati–Salam groups N(bosons untwisted) - N(fermions untwisted) = (Tr W)^2 in all eight cases (VE-2): 64 at the jet vacuum, 0 at PA-01's
+  matter-untwisted point — the super no-scale point n_F = n_B, where the one-loop vacuum energy vanishes. Its Hessian has signature (2, 14, 0)
+  against the jet vacuum's (0, 2, 14); the two tachyons are the relative U(1) T, the twelve other non-trace directions are quartic maxima
+  (VE-3): a vacuum there needs no continuous torus Wilson lines at all. T is anomalous (SU(2)_L^2 T = 12), so a Green–Schwarz mass above
+  1.85–2.2 and 3.4–4.1 M_KK would lift the two tachyons (I.2); Atkin–Lehner left–right parity lifts none that matter.
+- CC-70 caveats SC-4: the torus images weight the curve's heat kernel at <t> = 0.11 A_E, so the curve corrections to Matter-05's closed forms
+  are +1.0–1.2% (a_1, EXACT), under 10^-3 (a_2) and under 10^-5 (shortest geodesics) — not O(1) (VE-4); lambda/16 remains the only O(1)
+  uncertainty. The ladder's lowest rung, the curve's 1/(2 R_C) = 0.063–0.070 M_KK (Selberg's 1/4, a theorem at level 143; the AdS_2
+  Breitenlohner–Freedman bound), was missing from SC-01 (VE-5). MS-01's S_k exponent typo fixed.
+- Ledger on the measured background (VE-6, STRUCTURAL): classical curvature +M_P^2/R_C^2 = 10^105–10^110 rho_Lambda; one-loop jet-vacuum
+  Casimir -3.7 to -4.5 M_KK^4 = 10^95–10^105 rho_Lambda. I.6 stays open. Ledger 294 claims; report `docs/SM/VE01_VACUUM_ENERGY.md`;
+  `tests/test_ve01_vacuum_energy.py` (6 tests).
+
 ## SC-01 (2026-10-17): the scale ladder — puzzle III.5's ratios fixed, its absolute scale bounded
 
 - New `mtft.matter.scales`: every scale of the twisted compactification is M_KK = 2 pi/sqrt(A_E) times a pure number or times sqrt(lambda),
