@@ -65,7 +65,28 @@ New `mtft.research.repaired_action` and `tests/test_repaired_action.py` (12 test
 `cc35_reflection_positivity`); puzzle I.5 answered for the repaired action, open for the original; `mtft.lattice` docstring points here;
 CC-35's register carries a dated addendum. Function names unchanged.
 
+## The bulk transition (SU(2), Monte Carlo, 2026-10-17; NUMERICAL)
+
+![CC-69 bulk scan](figs/cc69_su2_bulk.png)
+
+`scripts/cc69/bulk_mc_su2.py` (Metropolis, SU(2) quaternion links, 6^4 lattice, 300 sweeps per point, beta swept up from a hot start and down
+from a cold start in steps of 0.125; data in `docs/SM/data/cc69_su2_bulk_k*.json`). The Sym^2 coupling in Bhanot–Creutz's convention is
+beta_A = 3 kappa a_2 / 2 = 0.053 kappa, so their first-order region beta_A >~ 1.25 predicts a bulk transition for kappa >~ 25.
+
+| kappa | beta_A | hot branch | cold branch | reading |
+|---|---|---|---|---|
+| 0 | 0 | crossover; branches within 0.12 of each other near beta = 1.5 | same | Wilson's crossover; the 0.12 band is the method's thermalisation noise |
+| 10 | 0.53 | crossover, branches within 0.13 | same | below the line, as predicted |
+| 30 | 1.59 | jumps 0.25 -> 0.75 between beta = 0.5 and 0.75 | stays at P >= 0.90 down to beta = 0 | first-order bulk transition, far above the noise |
+| 50 | 2.65 | P = 0.18 -> 0.38 over 0 <= beta <= 3, never jumps | P = 0.96 throughout | two phases coexist over the whole scan: strongly first order |
+
+So the transition opens between kappa = 10 and kappa = 30, where Bhanot–Creutz's line says it should. For kappa <~ 20 the repaired SU(2)
+action has no bulk transition between its strong-coupling regime (where the gap is a theorem) and its scaling regime; at the package default
+kappa = 1 it is in Wilson's universality class with nothing in the way. Large kappa is excluded by a first-order wall. Caveats: one lattice size,
+Metropolis with modest statistics (the 0.12 baseline band is the price), the line's location good to a few tenths in beta, the threshold in
+kappa bracketed only to (10, 30).
+
 ## What would upgrade it
 
-The bulk-transition line in the (beta, kappa) plane (mean field or Monte Carlo), to know where the strong-coupling regime connects to the
-continuum one; then, as for every lattice action, the continuum limit itself.
+The threshold kappa_c pinned between 10 and 30 (two or three more scans, a second lattice size); SU(3); then, as for every lattice action,
+the continuum limit itself.

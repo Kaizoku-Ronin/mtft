@@ -13,6 +13,9 @@
   repaired action. Reading: the gap is Wilson's gap, corrected at the per-cent level by the arithmetic layer.
 - Legend `cc69_repaired_action`; puzzle I.5 answered for the repaired action (open for the original); `mtft.lattice` docstring points to the
   repair; CC-35's register carries a dated addendum; `tests/test_repaired_action.py` (12 tests). Report: `docs/SM/CC69_REPAIRED_ACTION.md`.
+- Bulk transition (SU(2), 6^4 Monte Carlo, `scripts/cc69/bulk_mc_su2.py`, data in `docs/SM/data/`): hysteresis scans at kappa = 0, 10, 30, 50
+  show the first-order bulk transition opening between kappa = 10 and 30, where Bhanot–Creutz's line (beta_A = 0.053 kappa >~ 1.25) predicts it;
+  for kappa <~ 20 — and at the default kappa = 1 — nothing separates the strong-coupling regime from the scaling one.
 
 ## PG-01 corrections (2026-10-16): capture needs hypotheses (CC-67); the divisor series' second pole and summatory remainder (CC-68)
 
