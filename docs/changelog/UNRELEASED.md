@@ -1,5 +1,16 @@
 # Unreleased — after v0.34.0
 
+## GC-02 (2026-10-17): two scales, not one — the couplings matched at the curve's compactification scale, Pati–Salam running between
+
+- New `mtft.matter.two_scales`. GC-01 matched the flux-split couplings at the Pati–Salam scale M_PS, identifying it with the compactification
+  scale; VE-5 puts the curve's KK tower at M_C = 0.063–0.070 M_KK above M_PS (the breaking is a 4D condensate, SC-01's R1). With Pati–Salam
+  running between them (b_4 = -32/3, b_L = b_R = 2/3 + n_H/3 for any bidoublet Higgs content) the ratio R rises above M_PS (GC-6, EXACT):
+  the designs below the SM value keep GC-01's scales, and the designs R = 5 and 9 that GC-01 listed as unreachable are met at M_C = 1.7e7 and
+  2.8e8 GeV with M_PS at the b–tau crossing, so M_KK = 2.5e8–4.4e9 GeV and no 30–35 per cent b–tau correction is needed on them (GC-7,
+  NUMERICAL). GC-4, CC-48 and SC-2 carry GC-02's caveats; puzzle VI.4 reopened, VI.3 updated. Not included: thresholds at M_C, which background
+  realises R = 5 or 9, the K_L -> mu e bound near 1e6 GeV. Ledger 296 claims; report `docs/SM/GC02_TWO_SCALES.md`; `tests/test_gc02_two_scales.py`
+  (4 tests).
+
 ## VE-01 (2026-10-17): the vacuum energy — minus a square, zero at the Bose–Fermi-balanced point, which is the top; CC-70 corrects SC-4
 
 - New `mtft.matter.vacuum_energy`: at one loop the U(8) multiplet's torus-Wilson-line potential is V(U) = -c sum_odd K(w) |Tr U^w|^2 (VE-1, EXACT

@@ -275,18 +275,26 @@ PIECES = (
           "Not as things stand. Flux designs quantise R to 1/9 ... 9 (two-point) or 1/5, 1, 5, never the data's 3.678 (GC-3); the allowed matching "
           "scales 8.9e11–2.1e14 GeV leave y_b/y_tau = 0.66–0.71, so b–tau needs a 30–35 per cent threshold (GC-4); thresholds need about 17 light "
           "pairs (TH-2, TH-3). Couplings fix V/kappa, never the shape A_X/A_E (GC-1). On the force torus the couplings are lengths and the matching "
-          "is Pythagoras (GF-5).",
-          ("GC-1", "GC-3", "GC-4", "TH-2", "TH-3", "GF-5"),
-          ("GC-01", "TH-01"), ("V",),
+          "is Pythagoras (GF-5). GC-02 (2026-10-17) separates the two scales GC-01 had identified: matched at the curve's compactification scale "
+          "M_C above M_PS, with Pati–Salam running between, R rises and the designs R = 5 and 9 are met at M_C = 1.7e7 and 2.8e8 GeV with M_PS at "
+          "the b–tau crossing — no threshold correction needed on those designs (GC-6, GC-7).",
+          ("GC-1", "GC-3", "GC-4", "TH-2", "TH-3", "GF-5", "GC-6"),
+          ("GC-01", "TH-01", "GC-02"), ("V",),
           ("PHOTON_KERNEL_REPORT.md", "KKT01_MAGNETIC_TOWERS_REPORT.md"),
           (Sub("VI.1", "Can thresholds reconcile R with the allowed matching scales?", "open", claims=("TH-1", "TH-2", "TH-3", "CA-5"),
                settle="A mass source for about 17 right-handed pairs (gamma-charge 2); with charge 1 they sit near 3 TeV."),
            Sub("VI.2", "The Kaluza–Klein towers' beta coefficients", "open", claims=("TH-4",),
                settle="The curve's spectral invariant against the torus's DKL factor 0.3527: the only place the shape enters the couplings."),
-           Sub("VI.3", "The b–tau normalisation at matching", "open", claims=("GC-4", "QL-1"),
-               settle="A 30–35 per cent threshold correction at 8.9e11–2.1e14 GeV; the data want y_tau/y_b = 1.40–1.53 there."),
-           Sub("VI.4", "Is the Pati–Salam scale where y_b = y_tau (1.1e6 GeV)?", "answered", claims=("CC-48", "GC-4"),
-               answer="No: gauge matching allows only 8.9e11–2.1e14 GeV."),
+           Sub("VI.3", "The b–tau normalisation at matching", "open", claims=("GC-4", "QL-1", "GC-7"),
+               settle="Under GC-01's single-scale matching, a 30–35 per cent threshold correction at 8.9e11–2.1e14 GeV (the data want y_tau/y_b = "
+                      "1.40–1.53 there); under GC-02's two-scale matching with M_PS at the b–tau crossing, none — the question becomes which design "
+                      "(R = 5 or 9) the background realises and what the thresholds at M_C do (VI.2)."),
+           Sub("VI.4", "Is the Pati–Salam scale where y_b = y_tau (1.1e6 GeV)?", "open", claims=("CC-48", "GC-4", "GC-6", "GC-7"),
+               docs=("GC02_TWO_SCALES.md",),
+               settle="Not if the couplings are matched at the Pati–Salam scale itself (GC-01: 8.9e11–2.1e14 GeV). It can be if the flux splitting is "
+                      "matched at the curve's compactification scale M_C above M_PS (GC-6): the designs R = 5 and 9 then meet it at M_C = 1.7e7 and "
+                      "2.8e8 GeV with M_PS = 1.1e6 GeV (GC-7). To settle: the background's design, the thresholds at M_C, and the K_L -> mu e bound "
+                      "on the leptoquarks, which sits near 1e6 GeV."),
            Sub("VI.5", "Does an SU(2)_R-breaking Wilson-line split move the matching?", "open", claims=("GT-4", "QL-4"),
                settle="Its effect on GC-01's matching; its lepton purpose is closed (QL-4)."),
            Sub("VI.6", "Are the couplings the shape of the force torus?", "answered", claims=("GF-5", "GC-3"),
@@ -439,7 +447,7 @@ WAVE_DATES = {
     "DD-01": "2026-10-05", "CA-01": "2026-10-05", "TO-01": "2026-10-05", "FL-01": "2026-10-05", "CD-01": "2026-10-05", "DP-01": "2026-10-05",
     "GT-01": "2026-10-05", "QL-01": "2026-10-06", "CI-01": "2026-10-06", "BL-01": "2026-10-06", "FA-01": "2026-10-06", "AG-01": "2026-10-07",
     "FH-01": "2026-10-07", "LV-01": "2026-10-07", "TL-01": "2026-10-07", "DS-01": "2026-10-07", "PAR-01": "2026-10-08", "OM-01": "2026-10-08",
-    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17", "VE-01": "2026-10-17",
+    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17", "VE-01": "2026-10-17", "GC-02": "2026-10-17",
 }
 
 WAVE_REPORT = {
@@ -459,7 +467,7 @@ WAVE_REPORT = {
     "TL-01": "TL01_TILT.md", "DS-01": "DS01_DOWN_PARITY.md", "PAR-01": "PA01_PARITY_AUDIT.md", "OM-01": "OM01_YB01_EXPERIMENTS.md",
     "YB-01": "OM01_YB01_EXPERIMENTS.md", "SQ-01": "SQ01_STAR_QUOTIENTS.md", "TR-01": "TR01_TIME_REVERSAL.md", "PR-01": "PR01_PREREGISTRATION.md",
     "GF-01": "GF01_FORCES_FIRST.md", "PG-01": "PG01_ENERGY_TWO_CLOCKS.md",
- "SC-01": "SC01_SCALE_LADDER.md", "VE-01": "VE01_VACUUM_ENERGY.md",
+ "SC-01": "SC01_SCALE_LADDER.md", "VE-01": "VE01_VACUUM_ENERGY.md", "GC-02": "GC02_TWO_SCALES.md",
 }
 
 PREREG = (
