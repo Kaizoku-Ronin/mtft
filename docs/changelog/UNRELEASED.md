@@ -1,5 +1,16 @@
 # Unreleased — after v0.34.0
 
+## SC-01 (2026-10-17): the scale ladder — puzzle III.5's ratios fixed, its absolute scale bounded
+
+- New `mtft.matter.scales`: every scale of the twisted compactification is M_KK = 2 pi/sqrt(A_E) times a pure number or times sqrt(lambda),
+  lambda = g_8^2/A_E^2 = g_4^2 r — M_SS = 0.4943 M_KK (PA-01's 3.106 by a second route), the pair threshold 0.9886 M_KK, the saddles' gap
+  0.5629 M_KK, the Wilson-line masses 0.2175 and 0.4039 sqrt(lambda) M_KK, the Phi masses 0.1324 sqrt(lambda) M_KK (convention C1 stated).
+- On the measured background (FH-3's r = 230-280; GC-01's matching window as a lower bound on M_KK) lambda = 72-104: every one-loop modulus
+  is heavier than the KK scale (SC-2), the Wilson line decays linearly into messenger pairs with Gamma/omega = 0.2-3 (SC-3), and the closed
+  forms are O(1) uncertain there — 56 pi/r = 0.63-0.77, lambda/16 = 4.5-6.5 (SC-4). The absolute M_KK is bounded below by GC-01 and above only
+  once the volume is stabilised (SC-5). Ledger 287 claims; III.5 stays open with the ratios answered. Report `docs/SM/SC01_SCALE_LADDER.md`;
+  `tests/test_sc01_scales.py` (4 tests).
+
 ## CC-69 (2026-10-17): the character repair of CC-35 adopted — the plaquette action with the tower on Sym^n characters
 
 - New `mtft.research.repaired_action`: the programme's lattice action is now s(U_p) = beta (1 - Re Tr U_p/N) + (kappa/N) sum_{n>=2} a_n (d_n -

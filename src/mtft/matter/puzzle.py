@@ -161,7 +161,7 @@ PIECES = (
           "one unit of torus flux costs 24 chiral families (TP-1). The families are jets at a blown-up point (CK1-2, with the caveat that the third "
           "cannot be a jet).",
           ("M04-1", "M05-1", "PA1-1", "AL1-1", "TP-1"),
-          ("Matter-04", "Matter-05", "PA-01", "AL-01"), ("I", "II"),
+          ("Matter-04", "Matter-05", "PA-01", "AL-01", "SC-01"), ("I", "II"),
           ("SM01_PREREGISTRATION.md", "SM01_REPORT.md", "R2C01_CHIRALITY_REGISTER.md", "R2C08_SURFACE_CHIRALITY_REGISTER.md", "MATTER02_REPORT.md",
            "COHOMOLOGY_DERIVATION.md", "CHARGED_COMPLEX_DERIVATION.md"),
           (Sub("III.1", "Does the twist remove the adjoint fermions?", "answered", claims=("M04-1", "M04-3"),
@@ -172,8 +172,13 @@ PIECES = (
                answer="No: full Atkin–Lehner symmetry forbids three families, and one family per cusp is retired for phenomenology."),
            Sub("III.4", "What does torus flux cost?", "answered", claims=("TP-1", "CC-45"),
                answer="24 chiral families per unit (2g - 2 for genus 13); CC-45 retracts the design that assumed one."),
-           Sub("III.5", "The physical scales of the compactification and the twist", "open", claims=("M05-2",),
-               settle="Assign M_KK and the Scherk–Schwarz scale; Matter-04 and Matter-05 leave them unassigned."),
+           Sub("III.5", "The physical scales of the compactification and the twist", "open", claims=("M05-2", "SC-1", "SC-2", "SC-3", "SC-4", "SC-5"),
+               docs=("SC01_SCALE_LADDER.md",),
+               settle="The ratios are fixed (SC-1): M_SS = 0.4943 M_KK, the pair threshold 0.9886 M_KK, and the Wilson-line and Phi masses as "
+                      "0.2175, 0.4039 and 0.1324 times sqrt(lambda) M_KK, lambda = g_4^2 r. On the measured background (r = 230-280, M_KK above GC-01's "
+                      "matching window) lambda = 72-104 and every one-loop modulus is heavier than the KK scale (SC-2), so the Wilson line decays "
+                      "linearly into messenger pairs (SC-3); the closed forms are O(1) uncertain there (SC-4). What stays open is the absolute M_KK: "
+                      "bounded below by GC-01, bounded above only once the volume is stabilised (I.6, SC-5)."),
            Sub("III.6", "The excess charged modes of Matter-03's Higgs branch", "open", docs=("CHARGED_COMPLEX_DERIVATION.md",),
                settle="Additional interactions, a changed background or different parent data to lift them (Matter-03).")),
           ),
@@ -426,7 +431,7 @@ WAVE_DATES = {
     "DD-01": "2026-10-05", "CA-01": "2026-10-05", "TO-01": "2026-10-05", "FL-01": "2026-10-05", "CD-01": "2026-10-05", "DP-01": "2026-10-05",
     "GT-01": "2026-10-05", "QL-01": "2026-10-06", "CI-01": "2026-10-06", "BL-01": "2026-10-06", "FA-01": "2026-10-06", "AG-01": "2026-10-07",
     "FH-01": "2026-10-07", "LV-01": "2026-10-07", "TL-01": "2026-10-07", "DS-01": "2026-10-07", "PAR-01": "2026-10-08", "OM-01": "2026-10-08",
-    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12",
+    "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17",
 }
 
 WAVE_REPORT = {
@@ -446,6 +451,7 @@ WAVE_REPORT = {
     "TL-01": "TL01_TILT.md", "DS-01": "DS01_DOWN_PARITY.md", "PAR-01": "PA01_PARITY_AUDIT.md", "OM-01": "OM01_YB01_EXPERIMENTS.md",
     "YB-01": "OM01_YB01_EXPERIMENTS.md", "SQ-01": "SQ01_STAR_QUOTIENTS.md", "TR-01": "TR01_TIME_REVERSAL.md", "PR-01": "PR01_PREREGISTRATION.md",
     "GF-01": "GF01_FORCES_FIRST.md", "PG-01": "PG01_ENERGY_TWO_CLOCKS.md",
+ "SC-01": "SC01_SCALE_LADDER.md",
 }
 
 PREREG = (
