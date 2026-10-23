@@ -207,6 +207,31 @@ class TestQThermo:
             assert abs(ens.fisher_beta(beta) - ens.var_fd(beta)) < 1e-4
             assert ens.heat_capacity(beta) >= 0
 
+    def test_entropy_with_degeneracies(self):
+        """Route A = route B when Omega_k != 1 (fixed 2026-10-22: entropy()
+        used to return the label entropy H(p) only)."""
+        # two degenerate-energy levels with Omega = (1, 2): three equiprobable microstates
+        ens = C.Ensemble(energies=[0.0, 0.0], log_degeneracies=np.log([1.0, 2.0]))
+        assert abs(ens.entropy(1.0) - math.log(3)) < 1e-12
+        assert abs(ens.entropy_identity(1.0) - math.log(3)) < 1e-12
+        h = -(1 / 3) * math.log(1 / 3) - (2 / 3) * math.log(2 / 3)
+        assert abs(ens.label_entropy(1.0) - h) < 1e-12
+        assert abs(ens.entropy(1.0) - ens.label_entropy(1.0) - (2 / 3) * math.log(2)) < 1e-12
+        # Gaussian-binomial ensemble at q = 2: Omega_k = [4,k]_2, E_k = [k]_2
+        om = [sum(c * 2 ** d for d, c in enumerate(C.gaussian_binomial(4, k))) for k in range(5)]
+        assert om == [1, 15, 35, 15, 1]
+        E = [float(2 ** k - 1) for k in range(5)]
+        ens2 = C.Ensemble(energies=E, log_degeneracies=np.log(np.asarray(om, dtype=float)))
+        for beta in (0.1, math.log(2), 1.5, 3.0):
+            assert abs(ens2.entropy(beta) - ens2.entropy_identity(beta)) < 1e-9
+            p = ens2.probs(beta)
+            assert abs(ens2.entropy(beta) - ens2.label_entropy(beta)
+                       - float(p @ np.log(np.asarray(om, dtype=float)))) < 1e-12
+            assert ens2.entropy(beta) >= ens2.label_entropy(beta)
+        # Omega = 1 everywhere: the two coincide
+        ens3 = C.Ensemble(energies=E)
+        assert abs(ens3.entropy(1.0) - ens3.label_entropy(1.0)) < 1e-15
+
     def test_multiplicity_energy_specials(self):
         # binomial multiplicities: Z(1) = 2^n exactly
         om = [math.comb(10, k) for k in range(11)]

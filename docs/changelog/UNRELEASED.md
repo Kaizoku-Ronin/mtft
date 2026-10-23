@@ -1,5 +1,13 @@
 # Unreleased — after v0.34.0
 
+## Fix (2026-10-22): `Ensemble.entropy()` is the microstate entropy
+
+- `mtft.combinatorial.Ensemble.entropy()` returned the Shannon entropy H(p) of the level probabilities, while `entropy_identity()` returns
+  beta·U + log Z = H(p) + sum_k p_k log Omega_k; the two differed whenever the degeneracies were not all 1 ((2/3) log 2 for energies (0, 0)
+  with Omega = (1, 2)), and `test_thermo_identities_two_routes` only exercised Omega = 1. `entropy()` now returns the microstate entropy
+  -sum_k p_k log(p_k/Omega_k), equal to route B for any degeneracies; the label entropy H(p) is kept as the new `label_entropy()`.
+  Reported by Astra's thermal-time notebook (inspected at a705960); `tests/test_combinatorial.py::TestQThermo::test_entropy_with_degeneracies`.
+
 ## GC-02 (2026-10-17): two scales, not one — the couplings matched at the curve's compactification scale, Pati–Salam running between
 
 - New `mtft.matter.two_scales`. GC-01 matched the flux-split couplings at the Pati–Salam scale M_PS, identifying it with the compactification

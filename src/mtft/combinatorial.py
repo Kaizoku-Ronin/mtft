@@ -724,6 +724,23 @@ class Ensemble:
         return float(p @ (self.energies - u) ** 2)
 
     def entropy(self, beta: float) -> float:
+        """Microstate (Gibbs) entropy S = −Σ_k p_k log(p_k/Omega_k)
+        = H(p) + Σ_k p_k log Omega_k (route A).
+
+        Each level k carries Omega_k equiprobable microstates, so this is
+        the entropy that equals beta·U + logZ (route B, ``entropy_identity``)
+        for any degeneracies.  With Omega_k = 1 it reduces to the label
+        entropy H(p); for the label entropy alone use ``label_entropy``.
+        Before 2026-10-22 this method returned H(p) only, which differs by
+        Σ p_k log Omega_k when the degeneracies are nontrivial."""
+        p = self.probs(beta)
+        live = p > 1e-300
+        return shannon_entropy(p) + float(p[live] @ self.log_degeneracies[live])
+
+    def label_entropy(self, beta: float) -> float:
+        """Shannon entropy H(p) of the level (label) distribution alone —
+        the entropy of 'which level', without the Omega_k microstates
+        inside each level.  Equals ``entropy`` iff all Omega_k = 1."""
         return shannon_entropy(self.probs(beta))
 
     # ── route B: derivatives of logZ ─────────────────────────────
@@ -735,7 +752,8 @@ class Ensemble:
                 + self.log_Z(beta - h)) / h ** 2
 
     def entropy_identity(self, beta: float) -> float:
-        """S = beta·U + logZ (route B; algebraic identity)."""
+        """S = beta·U + logZ (route B; algebraic identity).  Equals the
+        microstate entropy ``entropy`` for any degeneracies."""
         return beta * self.U(beta) + self.log_Z(beta)
 
     # ── derived ──────────────────────────────────────────────────
