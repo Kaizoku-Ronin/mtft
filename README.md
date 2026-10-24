@@ -158,8 +158,11 @@ The atlas trace terminates at **external SM reference inputs**. Its data is
 not presented as an arithmetic derivation. A passed software test verifies its
 stated calculation, not an unrestricted claim of physical validity.
 
-For the current v0.34.x research line (v0.34.0 adds the parent-action gates, the blow-up branch and CC-35, listed in [the v0.34.0 changelog](docs/changelog/CHANGELOG_v0340.md); later work is in [Unreleased](docs/changelog/UNRELEASED.md)), start with:
+For the current v1.0.x research line (v1.0.0 ships the matter programme, Matter-01 to GC-02 with the corrections CC-36 to CC-70, and Sphereland, listed in [the v1.0.0 changelog](docs/changelog/CHANGELOG_v100.md); the parent-action gates, the blow-up branch and CC-35 came in [v0.34.0](docs/changelog/CHANGELOG_v0340.md), and later work goes to [Unreleased](docs/changelog/UNRELEASED.md)), start with:
 
+- [Matter programme map](docs/SM/MATTER_PUZZLE_MAP.md) and [ledger](docs/SM/MATTER_LEDGER.md):
+  the pieces of the Standard-Model-building programme in dependency order, and
+  every claim with its class, status, module, test and correction.
 - [Compendium implementation notes](docs/SM/V0330_COMPENDIUM_NOTES.md): exact
   inputs, operator conventions, rank qualifications and independent routes.
 - [CC-33 tensor coefficient correction](docs/SM/CC33_TENSOR_COEFFICIENT.md):
@@ -184,6 +187,14 @@ tools. The graph-clock wavepacket animation is a model evolution on the
 X₀(143) dual graph, not a simulation of experimentally established matter:
 
 ![Wavepacket on the X₀(143) graph](https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/wavepacket_X0143.gif)
+
+[Sphereland](viz/sphereland/index.html) is the visual companion: a single
+self-contained page of twenty-five instruments, from spheres and the laws of
+motion through knots one dimension up and the modular torus to mass gaps.
+Every panel is labelled by layer (structure, model, derived, hypothesis), and
+its numbers are computed in the page or certified by the
+[check scripts](viz/sphereland/checks/README.md) beside it. It lives in the
+repository only, not in the sdist or the wheel.
 
 For long PARI/GP work:
 
@@ -228,7 +239,7 @@ The external MadGraph reference retains its
 [upstream license](src/mtft/interactions/_data/MADGRAPH_LICENSE.txt).
 
 
-## Matter-01: electromagnetic U(1) reference (unreleased)
+## Matter-01: electromagnetic U(1) reference
 
 The [Matter-01 report](docs/SM/MATTER01_REPORT.md) records a massive tree-level
 `e- e+ -> gamma gamma` benchmark, an independent scalar oracle, conditional
@@ -247,11 +258,11 @@ python -m mtft.matter benchmark --sqrt-s-gev 0.01 --cos-theta 0.37 --output benc
 python -m mtft.matter report --output qed_report.json
 ```
 
-This addition does not change the release version or substitute for the full
-MTFT release suite. Its source, checks, logs and derivations are in
+The focused gate does not substitute for the full MTFT release suite. Source,
+checks, logs and derivations are in
 [`studies/matter01/`](studies/matter01/).
 
-## Matter-02: exact collinear modes and a bulk coupling (unreleased)
+## Matter-02: exact collinear modes and a bulk coupling
 
 The [Matter-02 report](docs/SM/MATTER02_REPORT.md) specifies a cusp blow-up
 representative and computes its actual cohomology dimensions. An exact
@@ -269,9 +280,9 @@ python -m mtft.matter.collinear --output collinear_report.json
 
 The standard-library cohomology and Yukawa scripts are under
 `studies/matter02/`; the photon audit uses the repository's existing SymPy
-dependency. These are unreleased additions to v0.34.0.
+dependency.
 
-## Matter-03: a paired Higgs branch and the light-mode gate (unreleased)
+## Matter-03: a paired Higgs branch and the light-mode gate
 
 The [Matter-03 report](docs/SM/MATTER03_REPORT.md) excludes a nonzero single
 directed Higgs vacuum in the unchanged full B3 background and constructs a
@@ -291,18 +302,17 @@ python -m mtft.matter.charged_modes --output charged_modes.json
 ```
 
 The [study guide](studies/matter03/README.md) identifies the exact conditional
-proofs, finite diagnostics and focused regressions. This is a source candidate;
-no observed masses, release version changes or full release certification are
-implied.
+proofs, finite diagnostics and focused regressions. No observed masses are
+implied, and the focused gate is not the full release certification.
 
-## The matter programme: Matter-04 to PG-01 (unreleased)
+## The matter programme: Matter-04 to GC-02
 
 `python -m mtft matter puzzle` (or the generated [programme map](docs/SM/MATTER_PUZZLE_MAP.md)) lines up the
 ten pieces of the Standard-Model-building programme in dependency order, with their statuses, sub-puzzles,
 pre-registered tests and recorded negatives. The [ledger](docs/SM/MATTER_LEDGER.md) lists every claim with its
 class, status, module and test; corrections are append-only (CC-36 to CC-70; CC-69, the lattice action's repair, is a Legend entry); the latest waves are VE-01, the vacuum energy, and GC-02, the two-scale matching. The
 [integration notes](docs/SM/MATTER_PROGRAMME_INTEGRATION_NOTES.md) are written for the audit, and every wave is in
-[Unreleased](docs/changelog/UNRELEASED.md), one report per wave in `docs/SM/`.
+[the v1.0.0 changelog](docs/changelog/CHANGELOG_v100.md), one report per wave in `docs/SM/`.
 
 ```bash
 python -m mtft matter puzzle --open      # what is still open

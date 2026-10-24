@@ -65,3 +65,9 @@ CITATION.cff agree.
   - `python -m mtft matter puzzle --markdown | diff - docs/SM/MATTER_PUZZLE_MAP.md` (no output);
   - with cypari2: `python scripts/star_quotient_scan.py --max-level 400 --check` (prints 'differences from the frozen tables: none').
 - Teaching material is kept out of the package: the plain-language board built from `puzzle --json` lives outside the release.
+
+## Released (2026-10-24)
+
+The candidate shipped as mtft v1.0.0, together with the later waves (the PG-01 addendum and corrections, CC-69 and its addendum,
+SC-01, VE-01, GC-02), the `Ensemble.entropy()` fix and Sphereland. The version strings moved together (pyproject.toml,
+`mtft.__version__`, CITATION.cff, `tests/_release_pin.py`); the release notes are `docs/changelog/CHANGELOG_v100.md`.

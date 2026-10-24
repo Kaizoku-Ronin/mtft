@@ -6,6 +6,7 @@ The current README and capability index describe the current source tree.
 
 - [Unreleased changes](UNRELEASED.md)
 
+- [mtft v1.0.0 — the matter programme (Matter-01 to GC-02, CC-36 to CC-70), the entropy fix and Sphereland (2026-10-24)](CHANGELOG_v100.md)
 - [mtft v0.34.0 — parent actions and vacua, the blow-up and supersymmetric twist, CC-35 (2026-09-29)](CHANGELOG_v0340.md)
 - [mtft v0.33.1 — SM interaction atlas, repository navigation, and the v0.33.0 review corrections (2026-09-26)](CHANGELOG_v0331.md)
 - [mtft v0.33.0 — the theorem compendium applied to the toolset; CC-33 (2026-09-23)](CHANGELOG_v0330.md)

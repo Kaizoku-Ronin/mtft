@@ -36,7 +36,7 @@ a `mtft/viz/` package directory would shadow the Python module
 `mtft/viz.py`, and the wheel has no business shipping JSX.
 
 
-## Matter-01 U(1) lab (unreleased)
+## Matter-01 U(1) lab
 
 [Open the standalone lab](matter01_u1_lab.html) and
 [scientific overview](matter01_u1_overview.png). The lab visualizes a supplied-
@@ -47,7 +47,7 @@ Its Feynman diagrams represent amplitude terms, not literal particle paths.
 See the [Matter-01 report](../docs/SM/MATTER01_REPORT.md). Rebuild and verify
 with `python studies/matter01/run_all.py` from the repository root.
 
-## Matter-02 mode lab (unreleased)
+## Matter-02 mode lab
 
 [matter02_mode_lab.html](matter02_mode_lab.html) visualizes the specified cusp
 mode counts, local fat jets and an exact residue minor. The selected minor
@@ -58,7 +58,7 @@ has rank three; the full physical mass matrix and photon remain open.
 Reproduce: `python studies/matter02/run_all.py`. Node tests check logic with a
 mock DOM; browser layout has not been verified.
 
-## Matter-03 Higgs lab (unreleased)
+## Matter-03 Higgs lab
 
 [matter03_higgs_lab.html](matter03_higgs_lab.html) shows the single-arrow
 obstruction, paired classical existence branch and unselected common scale.
@@ -73,7 +73,7 @@ normalization; they do not solve the B3 metric or predict masses.
 `python studies/matter03/run_all.py`. Node/mock-DOM logic is checked; actual
 browser layout has not been verified.
 
-## Field lines and the force on the internal torus (unreleased, 2026-10-14)
+## Field lines and the force on the internal torus (2026-10-14)
 
 [wilson_line_torus.html](wilson_line_torus.html) draws the one-loop force −G⁻¹∇V on
 the Wilson line of PA-01's relative U(1), on 143a1's own torus of holonomies, for
@@ -93,7 +93,7 @@ the two pages show both kinds of field on a torus. Both pages are
 self-contained (no network, light and dark themes); browser layout was checked
 with headless Chromium.
 
-## Sphereland (unreleased, 2026-10-24)
+## Sphereland (2026-10-24)
 
 [sphereland/index.html](sphereland/index.html) is the visual companion to the
 repository: twenty-five interactive instruments, from spheres and the laws of

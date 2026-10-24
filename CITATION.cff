@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "MTFT: Modular Time Field Theory"
-version: 0.34.0
-date-released: 2026-09-26
+version: 1.0.0
+date-released: 2026-10-24
 authors:
   - family-names: "Tano"
     given-names: "Roger"
