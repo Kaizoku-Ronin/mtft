@@ -92,3 +92,23 @@ preserve area and circulate; a force from a potential drains to its minimum —
 the two pages show both kinds of field on a torus. Both pages are
 self-contained (no network, light and dark themes); browser layout was checked
 with headless Chromium.
+
+## Sphereland (unreleased, 2026-10-24)
+
+[sphereland/index.html](sphereland/index.html) is the visual companion to the
+repository: twenty-five interactive instruments, from spheres and the laws of
+motion through knots one dimension up and the modular torus to mass gaps. The
+newest three are the modular flip between the confined and the fluid filling
+of a thermal torus, the strips of analyticity behind the Yang–Mills and
+Navier–Stokes problems, and the spectral gap of the modular curve. Every panel
+is labelled by layer (structure, model, derived, hypothesis); MTFT readings are
+folded into labelled boxes, and a reading-mode switch shows the essentials or
+everything. The page is self-contained apart from web fonts, which fall back to
+system fonts offline, and has light and dark themes; its layout was checked with
+headless Chromium at desktop and phone widths.
+
+Its numbers are computed in the page or certified by the scripts in
+[sphereland/checks/](sphereland/checks/README.md), each of which ends with
+`ALL CHECKS PASSED`. The page and its scripts sit in a subfolder on purpose:
+`MANIFEST.in` ships only top-level `viz/*.html`, so neither is in the sdist or
+the wheel.

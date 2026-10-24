@@ -1,5 +1,24 @@
 # Unreleased — after v0.34.0
 
+## Sphereland (2026-10-24): the visual companion, `viz/sphereland/`
+
+- `viz/sphereland/index.html`: one self-contained page (web fonts optional; light and dark themes; layout checked with headless Chromium at
+  desktop and phone widths) with twenty-five instruments, from spheres, holes and the laws of motion through knots one dimension up, the Hopf
+  qubit and the modular torus to mass gaps. Every panel is labelled by layer (structure, model, derived, hypothesis); the MTFT readings are
+  folded into labelled boxes, and a reading-mode switch shows the essentials or everything. The newest three: the modular flip (Instrument 22:
+  a thermal torus has two solid-torus fillings, confined and gapped or fluid, and the shortest cycle caps, so the phase diagram is the Farey
+  tiling; the AdS5 soliton's glueballs against the black brane's quasinormal modes; the cusps and Atkin–Lehner involutions of Gamma0(143));
+  two strips (Instrument 23: a mass gap is a strip of analyticity in momentum, smoothness one in position; Burgers' complex poles by Cole–Hopf:
+  without viscosity the second strip closes in finite time, with it the strip stays open); the gap on the modular curve (Instrument 24: the
+  hyperbolic plane's 1/4, Selberg's conjecture, a theorem at level 143; Maass forms by Hejhal's method; the scattering phase, whose
+  resonances are the Riemann zeros, all of one width exactly when RH holds).
+- `viz/sphereland/checks/`: fourteen certificate scripts, each ending `ALL CHECKS PASSED`, and a README mapping them to the instruments
+  (numpy, scipy, sympy, mpmath, and shapely for Kakeya; `modular_flip_20261024.py --json` writes the data Instruments 22–24 embed). The
+  Monte Carlo quoted by Instrument 16 is `scripts/cc69/bulk_mc_su2.py`, not a copy. `kronecker_thermal_20261022.py` checks the entropy fix
+  on this checkout's package (and reproduces the old discrepancy on mtft <= 0.34.0).
+- Not in the sdist or the wheel: `MANIFEST.in` ships only top-level `viz/*.html`, and the page sits in a subfolder (checked by building the
+  sdist). No package code, test or frozen number changes.
+
 ## Fix (2026-10-22): `Ensemble.entropy()` is the microstate entropy
 
 - `mtft.combinatorial.Ensemble.entropy()` returned the Shannon entropy H(p) of the level probabilities, while `entropy_identity()` returns
