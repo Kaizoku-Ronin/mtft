@@ -16,6 +16,12 @@ The Tano-Seebeck Bridge (Paper 19) connects entropy-per-mass to
 entropy-per-charge: Ψ = S_Seebeck · M / (T_a · e).
 
 Reference: Paper 1 §37, Paper 19.
+
+CC-71 (2026-10-29): S_m is tabulated per mole of the standard-state formula
+unit, which for H2, N2 and O2 is a mole of molecules; T_a now divides by the
+mass of that formula unit (atoms x M), so the three diatomic gases carry half
+their former values (H 129.64 -> 64.82, N 13.68 -> 6.84, O 12.82 -> 6.41
+J g^-1 K^-1).  The pre-correction values stay in TANO_METRIC_RETRACTED_CC71.
 """
 
 from __future__ import annotations
@@ -33,30 +39,35 @@ from mtft.constants import CriticalDepths, FEIGENBAUM_DELTA
 
 @dataclass(frozen=True)
 class Element:
-    """Elemental data for Tano metric computation."""
+    """Elemental data for Tano metric computation.
+
+    ``molar_entropy`` is S° as tabulated: per mole of the standard-state
+    formula unit, which is a mole of molecules for H2, N2 and O2.  ``atoms``
+    is the number of atoms in that formula unit (CC-71)."""
     symbol: str
     name: str
     Z: int
-    molar_mass: float      # g/mol
-    molar_entropy: float   # J/(mol·K) at 298 K
+    molar_mass: float      # g/mol, per atom
+    molar_entropy: float   # J/(mol·K) at 298 K, per mole of the standard-state formula unit
     debye_temp: float      # K
+    atoms: int = 1         # atoms per standard-state formula unit: 2 for H2, N2, O2 (CC-71)
 
     @property
     def tano_metric(self) -> float:
-        """T_a = S_m / M_a — entropy per unit mass."""
-        return self.molar_entropy / self.molar_mass
+        """T_a = S_m / (atoms · M_a) — entropy per unit mass of the element, J g^-1 K^-1 (CC-71)."""
+        return self.molar_entropy / (self.atoms * self.molar_mass)
 
 
 # Standard thermodynamic data (CRC Handbook, NIST)
 _ELEMENT_DATA = {
-    "H":  Element("H",  "Hydrogen",   1,   1.008, 130.68, 110),
+    "H":  Element("H",  "Hydrogen",   1,   1.008, 130.68, 110, atoms=2),
     "He": Element("He", "Helium",     2,   4.003,  126.15, 25),
     "Li": Element("Li", "Lithium",    3,   6.941,   29.12, 344),
     "Be": Element("Be", "Beryllium",  4,   9.012,    9.50, 1440),
     "B":  Element("B",  "Boron",      5,  10.81,     5.90, 1250),
     "C":  Element("C",  "Carbon",     6,  12.011,    5.74, 2230),
-    "N":  Element("N",  "Nitrogen",   7,  14.007, 191.61, 70),
-    "O":  Element("O",  "Oxygen",     8,  15.999, 205.14, 91),
+    "N":  Element("N",  "Nitrogen",   7,  14.007, 191.61, 70, atoms=2),
+    "O":  Element("O",  "Oxygen",     8,  15.999, 205.14, 91, atoms=2),
     "Na": Element("Na", "Sodium",    11,  22.990,   51.30, 158),
     "Mg": Element("Mg", "Magnesium", 12,  24.305,   32.67, 400),
     "Al": Element("Al", "Aluminium", 13,  26.982,   28.33, 428),
@@ -88,6 +99,14 @@ _ELEMENT_DATA = {
 }
 
 ELEMENTS: Dict[str, Element] = _ELEMENT_DATA
+
+# CC-71 (2026-10-29): the values before the correction, S°(X2)/M(X) in J g^-1 K^-1,
+# twice the specific entropy of the gas.  Kept for reproducibility; do not use.
+TANO_METRIC_RETRACTED_CC71 = {
+    "H": 130.68 / 1.008,
+    "N": 191.61 / 14.007,
+    "O": 205.14 / 15.999,
+}
 
 
 def get_element(symbol: str) -> Element:
@@ -282,7 +301,7 @@ def seebeck_diagnostic(
     # T_a in J/(mol·K·(g/mol)) = J/(g·K), M in g/mol
     # Need consistent units: use S in V/K, M in kg/mol, T_a in J/(kg·K)
     M_kg = el.molar_mass * 1e-3  # g/mol → kg/mol
-    Ta_SI = el.molar_entropy / M_kg  # J/(kg·K)
+    Ta_SI = el.molar_entropy / (el.atoms * M_kg)  # J/(kg·K); per formula unit's mass (CC-71; unchanged for metals)
     psi = S_SI * M_kg / (Ta_SI * E_CHARGE_SI) if Ta_SI > 0 else 0.0
 
     return {
