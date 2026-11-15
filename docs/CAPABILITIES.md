@@ -23,7 +23,7 @@ reviews to detect modules missing from this index.
 | [`mtft.arithmetic`](../src/mtft/arithmetic.py) | MTFT Arithmetic Weights and Holonomy Stiffness | `weight`, `weight_array`, `weight_euler`, `damped_weight` (+10 more in source) |
 | [`mtft.arithmetic_machine`](../src/mtft/arithmetic_machine.py) | Arithmetic Machine: Computation as a Five-Primitive Object | `Primitive`, `PrimitiveLevel`, `PrimitiveDecomposition`, `decompose_turing_machine` (+29 more in source) |
 | [`mtft.arithmetic_wick`](../src/mtft/arithmetic_wick.py) | Arithmetic Wick Rotation: Two Ensembles on the Same Weights | `sieve_primes`, `compute_weights`, `compute_skeleton_weights`, `DirichletEnsemble` (+14 more in source) |
-| [`mtft.burning_ship`](../src/mtft/burning_ship.py) | Burning Ship Fractal: The Fermion Vacuum | `burning_ship_iterate`, `burning_ship_array`, `sector`, `jacobian` (+4 more in source) |
+| [`mtft.burning_ship`](../src/mtft/burning_ship.py) | Burning Ship Fractal: The Fermion Vacuum | `burning_ship_iterate`, `burning_ship_array`, `sector`, `jacobian` (+6 more in source) |
 | [`mtft.busy_beaver`](../src/mtft/busy_beaver.py) | Arithmetic Busy Beavers: Modular Constraints on Uncomputability | `HeckeSign`, `hecke_sign`, `hecke_sign_pattern`, `hecke_constraint_density` (+29 more in source) |
 | [`mtft.chain`](../src/mtft/chain.py) | mtft.chain — the internal (rung-4) model, de-duplicated | `rho`, `Internal`, `internal`, `gap` (+4 more in source) |
 | [`mtft.codifferent`](../src/mtft/codifferent.py) | mtft.codifferent — the Canonical Codifferent Theorem at X0(143) (v0.19.0). | `field_trace_table`, `eigen_an`, `gamma_table`, `verify_orbit` (+1 more in source) |

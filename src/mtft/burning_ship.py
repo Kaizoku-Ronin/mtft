@@ -141,6 +141,9 @@ class AnisotropicScaling:
     Power laws:
         δ ∝ ρ_x^{+0.29}  (x-fold)
         δ ∝ ρ_y^{−0.21}  (y-fold)
+
+    CC-72 (2026-11-15), caveat: β_x and β_y were fitted to points that are not one
+    cascade; see ``cc72_cascade_check``.  The values stay exposed and unconfirmed.
     """
     delta: float = FEIGENBAUM_DELTA
     delta_x: float = DELTA_X
@@ -200,3 +203,81 @@ def satellite_mass_scale(n: int, delta_eff: float = None) -> float:
     if delta_eff is None:
         delta_eff = DELTA_Y
     return delta_eff ** (-2 * (n - 1))
+
+
+# ═══════════════════════════════════════════════════════════════
+#  CC-72 (2026-11-15): the fold exponents wait on a cascade search
+# ═══════════════════════════════════════════════════════════════
+#
+# Caveat, no numeric change.  β_x = +0.29 and β_y = −0.21 were fitted to the five points of
+# Paper 4's off-axis table (periods 48, 96, 192, 384, 768).  The four gaps between those points
+# do not behave like one period-doubling cascade: a cascade's gaps shrink by Feigenbaum's δ at
+# each doubling, δ³ = 101.8 over three, while these shrink 1.81 times over three doublings and
+# the third gap is larger than the second.  So the five points are not consecutive doublings of
+# one cascade, and exponents fitted to them are unconfirmed.  β_x, β_y, DELTA_X and DELTA_Y stay
+# exposed (append-only).  What would settle them is an off-axis search that confirms each
+# doubling before any fit.  On the real axis the Burning Ship's map is x² + c, so its real
+# cascade has Feigenbaum's δ exactly: ``real_axis_cascade`` is that control.
+#
+# Found on 2026-11-06 in the Modular Plane lab (record MP05, Room 11).  The gaps are as
+# transcribed there from Paper 4's table; the transcription is to be checked against the paper
+# at audit.
+
+PAPER4_OFFAXIS_GAPS = (2.42e-4, 1.81e-4, 2.08e-4, 1.34e-4)   # |c_n − c_{n−1}|, periods 48 → 768
+
+CC72_DEPENDENTS = (
+    "mtft.constants.BETA_X", "mtft.constants.BETA_Y", "mtft.constants.DELTA_X", "mtft.constants.DELTA_Y",
+    "mtft.constants.MassRatios.m_tau_over_m_mu",
+    "mtft.burning_ship.AnisotropicScaling", "mtft.burning_ship.satellite_mass_scale",
+)
+
+
+def real_axis_cascade(n_max: int = 10) -> dict:
+    """Superstable parameters of x ↦ x² + c with period 2ⁿ, n = 0 … n_max, by Newton's method.
+
+    c_n solves f_c^{2ⁿ}(0) = 0; the derivative in c follows the orbit, x′ ↦ 2x·x′ + 1.  The gaps
+    c_{n−1} − c_n shrink by a ratio that tends to Feigenbaum's δ, and c_n tends to the Feigenbaum
+    point −1.401155189092….  In double precision this is reliable to n_max = 11 (period 2048).
+
+    Returns ``{"c": [...], "gaps": [...], "ratios": [...], "c_inf": float}``.
+    """
+    if not 2 <= n_max <= 11:
+        raise ValueError("n_max must lie between 2 and 11 (double precision)")
+    cs = [0.0, -1.0]
+    for n in range(2, n_max + 1):
+        c = cs[-1] + (cs[-1] - cs[-2]) / FEIGENBAUM_DELTA
+        for _ in range(80):
+            x, dx = 0.0, 0.0
+            for _ in range(2 ** n):
+                x, dx = x * x + c, 2.0 * x * dx + 1.0
+            step = x / dx
+            c -= step
+            if abs(step) < 1e-15:
+                break
+        cs.append(c)
+    gaps = [cs[i - 1] - cs[i] for i in range(1, len(cs))]
+    ratios = [gaps[i - 1] / gaps[i] for i in range(1, len(gaps))]
+    return {"c": cs, "gaps": gaps, "ratios": ratios, "c_inf": cs[-1] + (cs[-1] - cs[-2]) / (ratios[-1] - 1.0)}
+
+
+def cc72_cascade_check() -> dict:
+    """CC-72: are the five points of Paper 4's off-axis table one period-doubling cascade?  No.
+
+    Compares the table's four gaps with what a cascade does.  ``ratios`` are the successive gap
+    ratios (a cascade's tend to δ = 4.669…); ``shrink`` is the first gap over the last (a cascade
+    over three doublings: δ³ = 101.8).  ``one_cascade`` asks that every ratio lie within a quarter
+    of δ, a window far wider than a cascade needs at these periods.
+    """
+    g = PAPER4_OFFAXIS_GAPS
+    ratios = [g[i] / g[i + 1] for i in range(len(g) - 1)]
+    monotone = all(r > 1.0 for r in ratios)
+    return {
+        "gaps": g,
+        "ratios": ratios,
+        "shrink": g[0] / g[-1],
+        "cascade_shrink": FEIGENBAUM_DELTA ** (len(g) - 1),
+        "monotone": monotone,
+        "one_cascade": monotone and all(abs(r / FEIGENBAUM_DELTA - 1.0) < 0.25 for r in ratios),
+        "status": "caveat: β_x, β_y unconfirmed until an off-axis cascade search confirms each doubling",
+        "dependents": CC72_DEPENDENTS,
+    }

@@ -17,3 +17,18 @@ Everything after v0.34.0 shipped in v1.0.0 ([release notes](CHANGELOG_v100.md)).
   Θ e^(−1/λ) without the (1 + λ) renormalisation or μ*, is a model choice rather than part of this correction and stays as it is (DIAGNOSTIC).
 - Found on 2026-10-28 in a review of Roger's Tano repository workbook, where the same doubling affects seven rows outside the package
   (H, N, O, F, Cl, Br, I). `tests/test_cc71_tano_diatomic.py` (11 tests).
+
+## CC-72 (2026-11-15): the Burning Ship fold exponents are a caveat — Paper 4's off-axis table is not one cascade
+
+- `mtft.constants.BETA_X = +0.29` and `BETA_Y = −0.21` (and `DELTA_X`, `DELTA_Y`, defined from them) were fitted to the five points of
+  Paper 4's off-axis table, periods 48 to 768. The four gaps between those points are 2.42, 1.81, 2.08 and 1.34 × 10⁻⁴: they shrink 1.81
+  times over three doublings, where a period-doubling cascade shrinks δ³ = 101.8 times, and the third gap is larger than the second. The
+  five points are not consecutive doublings of one cascade, so the exponents are unconfirmed.
+- No number changes and nothing is removed (append-only). `mtft.burning_ship.cc72_cascade_check()` states the comparison and lists the
+  dependents (`AnisotropicScaling`, `satellite_mass_scale`, `MassRatios.m_tau_over_m_mu`); `mtft.burning_ship.real_axis_cascade()` is
+  the control: on the real axis the Burning Ship's map is x² + c, and its superstable parameters do shrink by Feigenbaum's δ
+  (δ₁₀ = 4.6691951, c∞ = −1.401155189092). `DELTA_X_MEASURED` and `DELTA_Y_MEASURED` (Paper 16) were not examined.
+- What would settle it: an off-axis cascade search that confirms each doubling before any fit.
+- Found on 2026-11-06 in the Modular Plane lab (record MP05, Room 11). The gaps are as transcribed there from Paper 4's table; the
+  transcription is to be checked against the paper at audit. `tests/test_cc72_burning_ship_cascade.py` (4 tests).
+

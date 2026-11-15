@@ -34,6 +34,12 @@ DELTA_X_MEASURED = 7.2422                   # attractor fold, measured
 DELTA_Y_MEASURED = 3.3699                   # barrier fold, measured
 BETA_X  = +0.29
 BETA_Y  = -0.21
+# CC-72 (2026-11-15): caveat, no numeric change.  BETA_X and BETA_Y were fitted to the five
+# points of Paper 4's off-axis table (periods 48 to 768), whose gaps do not shrink like one
+# period-doubling cascade (mtft.burning_ship.cc72_cascade_check).  They stay exposed, with
+# DELTA_X and DELTA_Y defined from them; treat all four as unconfirmed until an off-axis
+# search confirms each doubling.  DELTA_X_MEASURED and DELTA_Y_MEASURED (Paper 16) were not
+# examined.
 XI      = math.sqrt(7.0 / 5.0)             # sector metric ≈1.183
 
 # ── Tier 3: Number-theoretic ─────────────────────────────────
