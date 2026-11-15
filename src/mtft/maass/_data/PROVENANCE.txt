@@ -1,0 +1,8 @@
+mtft.maass frozen data: provenance (SHA-1)
+
+c12ca20d5cdc6c025da9026508de90234d9f5ab6  maass_143.json
+abfd7208c2fbc1f0fd71917cd41a78539280af25  maass_143_coefficients.npz
+
+built by studies/maass_2026nov/build_frozen_spectrum.py from
+d573ed5ebe00ede5fa335d33eb9703d88f90270c  studies/maass_2026nov/lab/mp19/mp19_numbers.json
+f89bc3938af0da55db1e5830bbe20eb1ffc1bae6  studies/maass_2026nov/lab/mp18/mp18_numbers.json

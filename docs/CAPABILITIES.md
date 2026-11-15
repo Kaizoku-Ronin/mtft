@@ -132,6 +132,18 @@ reviews to detect modules missing from this index.
 | [`mtft.interactions.render`](../src/mtft/interactions/render.py) | Portable, offline HTML and deterministic SVG for the interaction atlas. | `vertex_svg`, `render_html` |
 | [`mtft.interactions.ufo`](../src/mtft/interactions/ufo.py) | Read a conservative, declarative subset of tree-level UFO without executing it. | `UFOError`, `import_ufo` |
 
+## maass
+
+| Module | Scope | Entry points |
+|---|---|---|
+| [`mtft.maass`](../src/mtft/maass/__init__.py) | mtft.maass — the Laplace spectrum of X₀(143): Maass cusp forms by Hejhal's method (v1.1.0). | Package exports / data |
+| [`mtft.maass.domain`](../src/mtft/maass/domain.py) | mtft.maass.domain — carrying a point into the Ford domain of Γ₀*(N), with its characters (EXACT rule). | `prime_factors`, `is_squarefree`, `egcd`, `sign_mod2` (+2 more in source) |
+| [`mtft.maass.ford`](../src/mtft/maass/ford.py) | mtft.maass.ford — the Ford domain of Γ₀*(N) and integrals over it (CERTIFIED numerics). | `area`, `circles`, `intervals`, `breakpoints` (+10 more in source) |
+| [`mtft.maass.hejhal`](../src/mtft/maass/hejhal.py) | mtft.maass.hejhal — Hejhal's method for Maass cusp forms on Γ₀*(N) (CERTIFIED numerics). | `Setup`, `sample_count`, `setup`, `frequencies` (+9 more in source) |
+| [`mtft.maass.kbessel`](../src/mtft/maass/kbessel.py) | mtft.maass.kbessel — the Bessel function K_{iR}(x) of imaginary order (CERTIFIED against mpmath). | `kir`, `kir_mp`, `k_bessel` |
+| [`mtft.maass.scattering`](../src/mtft/maass/scattering.py) | mtft.maass.scattering — the scattering matrix and Eisenstein series of Γ₀(N), N squarefree (EXACT formulas; MA-01, 2026-11-15). | `xi`, `phi`, `local_matrix`, `cusps` (+3 more in source) |
+| [`mtft.maass.spectrum`](../src/mtft/maass/spectrum.py) | mtft.maass.spectrum — the frozen Maass spectrum of Γ₀(143) (CERTIFIED; data with SHA-1 provenance; MA-01, 2026-11-15). | `metadata`, `verify_provenance`, `forms`, `form` (+6 more in source) |
+
 ## matter
 
 | Module | Scope | Entry points |

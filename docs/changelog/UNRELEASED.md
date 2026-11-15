@@ -32,3 +32,32 @@ Everything after v0.34.0 shipped in v1.0.0 ([release notes](CHANGELOG_v100.md)).
 - Found on 2026-11-06 in the Modular Plane lab (record MP05, Room 11). The gaps are as transcribed there from Paper 4's table; the
   transcription is to be checked against the paper at audit. `tests/test_cc72_burning_ship_cascade.py` (4 tests).
 
+## MA-01 (2026-11-15): `mtft.maass` — the Maass spectrum of Γ₀(143) by Hejhal's method, the cusps' scattering matrix, the Ford domain
+
+A new subpackage, ported from the Modular Plane lab's records MP14 to MP20. Import it on demand (`import mtft.maass`); nothing is added
+to the top-level namespace. Report: `docs/SM/MA01_MAASS_SPECTRUM.md`. It makes no statement about physics.
+
+- `mtft.maass.kbessel`: K_{iR}(x) by a trapezoid rule (R ≤ 3), 2.1 × 10⁻¹⁴ against mpmath on the gate's sample; mpmath above R = 3.
+- `mtft.maass.domain`: the reduction of a point into the Ford domain of Γ₀*(N) (Γ₀(N) with its Atkin–Lehner matrices, N squarefree),
+  with the Atkin–Lehner characters and, for odd N, the sign of the η-twist χ = ν_η¹². Gated on Eisenstein series (no Maass form
+  involved) and on words in S and T.
+- `mtft.maass.hejhal`: the solver. `refine` finds the R at which a coefficient agrees on two horocycles; `sigma_min` is the pole-free
+  detector. Gates: LMFDB's form 13.1 at level 13 (0.97081541), three forms at level 11, three at level 143, SL(2, ℤ)'s first two
+  eigenvalues with mpmath's Bessel function (marked slow), and controls that a wrong sign, parity or R does not pass.
+- `mtft.maass.spectrum`: the frozen table. 41 cusp forms below R = 2.0 (even 4, 4, 4, 7; odd 6, 6, 5, 5 by Atkin–Lehner sector) and 42
+  forms of the η-twist below R = 1.8, each with 400 coefficients and SHA-1 provenance. The first eigenvalue is λ₁ = ¼ + 0.3738518157²
+  = 0.3897652 (odd, signs (−,−)). Every eigenvalue was found again by the package's solver when the table was built, within 5 × 10⁻¹² of
+  the lab's. `evaluate` gives a form's value anywhere in the upper half-plane; `rederive` repeats the solver for one form.
+- `mtft.maass.scattering`: Φ(s) = φ(s) M₁₁(s) ⊗ M₁₃(s) and the Eisenstein series of the four cusps (mpmath). Φ(s)Φ(1 − s) = I,
+  unitarity on Re s = ½, residue 1/(56π) at s = 1, Φ(½) = −I: every Eisenstein series vanishes at the bottom of the continuum.
+- `mtft.maass.ford`: the Ford domain of Γ₀*(N) (17 tops, 24 vertices and 16 distinct heights at N = 143; lowest vertex at height
+  0.009851) with a panel quadrature: the area 14π to 2 × 10⁻¹¹, norms, overlaps, triple products, participation ratios (the lab's seven
+  values to 10⁻³). Products whose character is not trivial are zero on the curve by symmetry and are returned as zero without integrating.
+- Ledger (`mtft.matter.ledger`), wave MA-01 in piece IV: MA-1 upgrades the diagnostic figure of VE-5 (whose text stands) to λ₁ =
+  0.3897652, with SPEC-01's finite elements as the independent route (0.3925, and the next eight eigenvalues within 1.5 %, the double one
+  included); MA-2, the tower, with the caveat below; MA-3, the edge of the continuum.
+- **Caveat.** The lists' completeness (below R = 1.98 untwisted, 1.8 twisted) rests on the lab's trace formulas, whose geometric side
+  needs class numbers from PARI. Those formulas are not in the package: completeness is a recorded result, not a gate.
+- Provenance: `studies/maass_2026nov/` (the build script and the lab's scripts and number files). Tests: `test_maass_solver.py` (10),
+  `test_maass_spectrum.py` (9), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_ma01_maass_rung.py` (3).
+
