@@ -1,0 +1,16 @@
+E the derivation
+  ok   E1 dx/dxi_1 = 2 tan(Theta), dTheta/dxi_1 = p - q cos^2/sin^2, and these are Hamilton's equations for 2 ln H (EXACT, symbolic p, q)
+  ok   E2 the coefficients a, b, c, the Theta^4/6 term, and the bracket of the closed form from the area's second-order term (EXACT, symbolic p, q)
+  ok   E2' the level curve to order eps and its area: A = (pi eps/sqrt(a)) [1 + eps (15 b^2/(32 a^3) - 3c/(8 a^2) - 3 beta/8)] (EXACT)
+P1 the profile integral
+  ok   P1 PREDICTION (iota(u) - nu)/u at u = 1e-3, 2e-3, 4e-3, extrapolated, equals the closed form to 1e-8 of nu for seven pairs; the hopfion's iota - 2 is zero to 1e-20   [worst 4.9e-10 of nu; hopfion 5.2e-25]
+P2 lines in space
+    (2,3): closed form 1.1188619; in space 1.1188620 (t = 0), 1.1188620 (t = 0.8)
+    (3,2): closed form 1.1188619; in space 1.1188620 (t = 0), 1.1188620 (t = 0.8)
+    (2,5): closed form 1.8593394; in space 1.8593397 (t = 0), 1.8593397 (t = 0.8)
+    (1,8): closed form 0.9722222; in space 0.9722224 (t = 0), 0.9722223 (t = 0.8)
+  ok   P2 PREDICTION the slope from lines integrated in space at t = 0 and t = 0.8 (u = 0.004, 0.008, 0.016, extrapolated) is the closed form to 1e-5 of nu for (2,3), (3,2), (2,5), (1,8); hopfion |iota - 2| < 1e-8   [worst 2.6e-08 of nu; between the times 1.0e-09; hopfion 7.1e-12; drift of H 3.3e-12]
+F1 the size of the next term
+  held   F1 FORECAST |iota - nu - S u| < 3 S u^2 at u = 0.016 for the four knotted pairs   [ratios to S u^2: 0.615, 0.615, 0.625, 0.567]
+5 passed, 0 failed
+exit 0

@@ -116,6 +116,16 @@ reviews to detect modules missing from this index.
 | [`mtft.gprun`](../src/mtft/gprun/__init__.py) | mtft.gprun — a local job runner for long PARI/GP computations. | `find_gp`, `Job`, `serve`, `main` |
 | [`mtft.gprun.__main__`](../src/mtft/gprun/__main__.py) | See module source for its public interface. | Package exports / data |
 
+## gravity
+
+| Module | Scope | Entry points |
+|---|---|---|
+| [`mtft.gravity`](../src/mtft/gravity/__init__.py) | mtft.gravity — knotted weak fields on flat space: the tube, the squared hopfion's lines of force, a frozen tetrad (v1.1.0). | Package exports / data |
+| [`mtft.gravity.fields`](../src/mtft/gravity/fields.py) | mtft.gravity.fields — the labels, the knotted light fields and the squared field, in space (MODEL; v1.1.0, 2026-11-16). | `ab`, `dd`, `labels`, `grad_labels` (+12 more in source) |
+| [`mtft.gravity.hopfion`](../src/mtft/gravity/hopfion.py) | mtft.gravity.hopfion — the squared hopfion's lines of force after t = 0, as an integrable system (MODEL; v1.1.0, 2026-11-16). | `Hopfion`, `periods`, `winding_axial`, `table` (+5 more in source) |
+| [`mtft.gravity.knotted`](../src/mtft/gravity/knotted.py) | mtft.gravity.knotted — the (p, q) knotted fields: the tube round a core line, its rotation and its shear (MODEL; v1.1.0, 2026-11-16). | `nu_squared`, `nu`, `is_whole`, `whole_pairs` (+22 more in source) |
+| [`mtft.gravity.tetrad`](../src/mtft/gravity/tetrad.py) | mtft.gravity.tetrad — a tetrad for the squared hopfion, frozen into its null flow; the two helicities (MODEL; v1.1.0, 2026-11-16). | `GQ`, `Jet`, `exhibit`, `potential` (+8 more in source) |
+
 ## homology
 
 | Module | Scope | Entry points |

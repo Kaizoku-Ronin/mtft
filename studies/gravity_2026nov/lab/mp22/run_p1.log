@@ -1,0 +1,8 @@
+P1 the invariant
+    t = 0.1 done, worst so far 8.0e-12 (12 s)
+    t = 0.2 done, worst so far 1.2e-11 (23 s)
+    t = 0.4 done, worst so far 6.9e-11 (34 s)
+    t = 0.8 done, worst so far 7.5e-11 (45 s)
+    t = 1.5 done, worst so far 2.7e-10 (58 s)
+  ok   P1 PREDICTION I_2 is constant along lines of force integrated in space: five lines of each type at t = 0.1, 0.2, 0.4, 0.8, 1.5, twenty circuits (1e-8 of its range)   [worst 2.7e-10]
+1 passed, 0 failed (58 s)

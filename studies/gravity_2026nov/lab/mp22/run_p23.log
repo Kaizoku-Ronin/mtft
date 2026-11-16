@@ -1,0 +1,14 @@
+P2 the two closed lines
+  ok   P2 PREDICTION the axial great circle and the cross line are closed lines of force (tangent 1e-7, closure 1e-8), linked once; I_2 on 20,000 random points lies strictly between its values on them   [tangent 3.0e-08; closure 2.9e-11; off the hyperbola 6.8e-13; linking [-1.0, 1.0, -1.0, 1.0, -1.0, 1.0, -1.0, 1.0]; nearest to an end 2.6e-06 of the range]
+P3 the periods
+    t = 0.1 line 0: W = 1.001037362, measured 1.001037362; periods constant to 2.3e-11, 3.1e-11
+    t = 0.1 line 1: W = 1.001034411, measured 1.001034411; periods constant to 4.7e-11, 4.6e-11
+    t = 0.1 line 2: W = 1.001032593, measured 1.001032593; periods constant to 3.8e-11, 3.1e-11
+    t = 0.4 line 0: W = 1.015659778, measured 1.015659778; periods constant to 3.1e-11, 3.2e-11
+    t = 0.4 line 1: W = 1.015420472, measured 1.015420472; periods constant to 2.7e-11, 3.3e-11
+    t = 0.4 line 2: W = 1.015047947, measured 1.015047947; periods constant to 3.3e-11, 3.9e-11
+    t = 0.8 line 0: W = 1.047809014, measured 1.047809014; periods constant to 4.2e-11, 3.6e-11
+    t = 0.8 line 1: W = 1.054426294, measured 1.054426294; periods constant to 3.5e-11, 3.5e-11
+    t = 0.8 line 2: W = 1.053326432, measured 1.053326432; periods constant to 4.0e-11, 4.2e-11
+  ok   P3 PREDICTION the separated time between crossings of y = 0 is constant along a line and equals T_mu/f; between passages of nu through its middle, T_nu/f (1e-7; three lines at t = 0.1, 0.4, 0.8)   [worst 4.7e-11]
+2 passed, 0 failed (11 s)

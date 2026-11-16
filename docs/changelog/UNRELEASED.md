@@ -178,3 +178,34 @@ Class PHENO: a comparison under a stated dictionary. **Its result is negative: H
   the negative, because its forecasts are open.
 - Provenance: `studies/maass_2026nov/lab/` (MP15, MP18, MP19, MP20, and `needed_shifts.json`, added now). Tests:
   `test_maass_glueballs.py` (9), `test_gb01_glueball_comparison.py` (4).
+
+## `mtft.gravity` (2026-11-16): knotted weak fields — the tube, the squared hopfion's lines of force, a frozen tetrad
+
+A new subpackage with four modules, ported from the Modular Plane lab's records MP09 and MP21 to MP23. Import it on demand
+(`import mtft.gravity`). Report: `docs/gravity/KNOTTED_FIELDS.md`. Status: model. Every field in it is a weak wave on flat space;
+Newton's constant is not derived anywhere in MTFT, and the module's first page says so. It has no ledger entries yet: the ledger of
+the gravity map is the next wave's work.
+
+- **A search of the literature came first**, as the release plan required, and nothing here is called new. The (p, q) fields and their
+  invariant are Kedia, Bialynicki-Birula, Peralta-Salas and Irvine's (2013); gravity's lines of force as the light's lines turned by a
+  local duality angle are Swearngin et al.'s (2013); the integrable potential the later lines land on is Garnier's; and a helicity of the
+  gravitational hopfion was computed in transverse-traceless gauge, with a different and time-dependent answer, by Huang, Long, Zhao
+  and Zhou (arXiv:2608.30154) three months before the lab's record. What the search did not find is listed as "not found", which is
+  not "new": the rotation number, the shear, the reduction of the later lines to the integrable system, the frozen tetrad.
+- `fields`: the labels, F_pq, the squared hopfion, the null flow, and `integrate`, the package's own routine for lines of force (an
+  extrapolation of the modified midpoint rule; no scipy), with crossings located to the routine's own accuracy.
+- `knotted`: ν = √(2pq(p + q)), the circuit matrix, the pairs where it is the identity ((1, 1), (1, 8), (1, 49), (32, 49) among coprime
+  p ≤ q ≤ 60; 22 pairs without "coprime"); the profile ι(h) on every torus; the shear at the core line,
+  ν[3pq(p + q) − 2(p² + pq + q²)]/(12pq(p + q)), by three routes (closed form, the integral at 30 digits, the section integrated as a
+  differential equation); the derivation exactly, for symbolic p and q. Out of sample: helicity 2π² pq·p! q!/(p + q)! and energy (p + q)
+  times it, by quadrature on the label sphere and in space; their ratio is Kedia et al.'s.
+- `hopfion`: the reduced system H = |P|² + |s² − σ²|²/t², the second invariant I₂, the winding as a ratio of two periods, MP22's table of
+  W − 1 (to 10⁻⁹ against the lab's file), the two closed lines. In space, on the field itself: I₂ is kept to 10⁻¹³ of its range over 100
+  circuits; the closed lines are linked −1 and +1; the winding measured along an orbit equals the integrals to 10⁻¹⁵.
+- `tetrad`: B_μ = Re[(i a² (∂_μ b) dγ − b² (∂_μ a) dβ)/d²]. `exhibit` shows it frozen into the null flow with curvature equal to the squared
+  hopfion and zero Ricci tensor: to 2·10⁻¹⁵ in double precision, to 10⁻⁴⁰ at 40 digits, and exactly over the Gaussian rationals. The
+  helicities (2/3)π² and π², on the label sphere and on two slices of space.
+- Kept: every recorded miss of the four records (report, section 5). Open: T-G3 not attempted; H-G7 not tested.
+- Found in the records during the build: MP09's "positive factor" is negative; MP23's file has the sphere's helicities with a minus
+  sign, from the order of its coordinates.
+- Provenance: `studies/gravity_2026nov/`. Tests: `test_gravity_knotted.py` (10), `test_gravity_hopfion.py` (7), `test_gravity_tetrad.py` (5).
