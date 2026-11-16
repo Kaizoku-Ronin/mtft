@@ -154,6 +154,7 @@ reviews to detect modules missing from this index.
 | [`mtft.maass`](../src/mtft/maass/__init__.py) | mtft.maass — the Laplace spectrum of X₀(143): Maass cusp forms by Hejhal's method (v1.1.0). | Package exports / data |
 | [`mtft.maass.domain`](../src/mtft/maass/domain.py) | mtft.maass.domain — carrying a point into the Ford domain of Γ₀*(N), with its characters (EXACT rule). | `prime_factors`, `is_squarefree`, `egcd`, `sign_mod2` (+2 more in source) |
 | [`mtft.maass.ford`](../src/mtft/maass/ford.py) | mtft.maass.ford — the Ford domain of Γ₀*(N) and integrals over it (CERTIFIED numerics). | `area`, `circles`, `intervals`, `breakpoints` (+10 more in source) |
+| [`mtft.maass.glueballs`](../src/mtft/maass/glueballs.py) | mtft.maass.glueballs — H24 against the lattice: the dictionary, every registered forecast and its outcome (PHENO; GB-01, 2026-11-16). | `chi2_sf`, `lattice_ratio`, `curve_ratio`, `covariance` (+18 more in source) |
 | [`mtft.maass.hejhal`](../src/mtft/maass/hejhal.py) | mtft.maass.hejhal — Hejhal's method for Maass cusp forms on Γ₀*(N) (CERTIFIED numerics). | `Setup`, `sample_count`, `setup`, `frequencies` (+9 more in source) |
 | [`mtft.maass.kbessel`](../src/mtft/maass/kbessel.py) | mtft.maass.kbessel — the Bessel function K_{iR}(x) of imaginary order (CERTIFIED against mpmath). | `kir`, `kir_mp`, `k_bessel` |
 | [`mtft.maass.scattering`](../src/mtft/maass/scattering.py) | mtft.maass.scattering — the scattering matrix and Eisenstein series of Γ₀(N), N squarefree (EXACT formulas; MA-01, 2026-11-15). | `xi`, `phi`, `local_matrix`, `cusps` (+3 more in source) |
@@ -264,6 +265,14 @@ reviews to detect modules missing from this index.
 | [`mtft.periods.involutions`](../src/mtft/periods/involutions.py) | Involutions on the promoted X_0(143) homology stage. | `al_matrix`, `transported_intersection`, `hecke_blocks`, `al_signs` (+5 more in source) |
 | [`mtft.periods.oldtorus`](../src/mtft/periods/oldtorus.py) | The level-11 oldspace of X_0(143) as an arithmetic abelian surface. | `old_lattice`, `intersection_on_old`, `polarization_type`, `j_arith` (+5 more in source) |
 | [`mtft.periods.physics`](../src/mtft/periods/physics.py) | Physics-facing, but epistemically separated, tools built from X_0(143). | `hodge_structure_hecke`, `hodge_metric_hecke`, `graph_coupling`, `complex_linear_decomposition` (+3 more in source) |
+
+## plane
+
+| Module | Scope | Entry points |
+|---|---|---|
+| [`mtft.plane`](../src/mtft/plane/__init__.py) | mtft.plane — the Modular Plane lab's kernel: one matrix read eight ways, and the lattice of quantities (v1.1.0). | Package exports / data |
+| [`mtft.plane.kernel`](../src/mtft/plane/kernel.py) | mtft.plane.kernel — one real 2 × 2 matrix read eight ways (EXACT structure; v1.1.0, 2026-11-16). | `decompose`, `invariants`, `kind`, `region` (+8 more in source) |
+| [`mtft.plane.quantities`](../src/mtft/plane/quantities.py) | mtft.plane.quantities — the lattice of physical quantities, its units and what lives at a site (EXACT; v1.1.0, 2026-11-16). | `mass_dimension`, `charge_parity`, `natural`, `planck_class` (+7 more in source) |
 
 ## research
 

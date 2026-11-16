@@ -114,3 +114,67 @@ no statement about gravity.
   under `studies/maass_2026nov/lab/mp14`). Data: `src/mtft/lines/_data/lines_143.json` (28 kB) with SHA-1 in `PROVENANCE.txt`.
   Tests: `test_lines_darts.py` (9), `test_lines_closed.py` (6), `test_lines_periods.py` (7), `test_lines_crossings.py` (10),
   `test_ln01_closed_lines.py` (4).
+
+## `mtft.plane` (2026-11-16): the Modular Plane lab's kernel — one matrix read eight ways, and the lattice of quantities
+
+A new subpackage with two modules, ported from the core of the Modular Plane lab (version 8.3). Import it on demand
+(`import mtft.plane`). It has no ledger entries: nothing in it is a claim about X₀(143) or about physics.
+
+- `mtft.plane.kernel`: `read(M)` returns the lab's eight readings of a real 2 × 2 matrix as a motion of the plane (a motion of τ; a
+  form and a momentum; a number a + εb in ℝ[M], complex, dual or split; a flow; a field equation; one mode's vacuum; two levels; its
+  numerical range), with its invariants and kind; `read(M, generator=True)` reads it as a generator, whose motion is `expm(L, t)`.
+  Entries may be integers, Fractions or floats; exact entries give exact rational quantities. For an integer matrix of determinant 1
+  it adds Rademacher's Ψ and the Lorenz word, and with `level=N` the cycle type on P¹(ℤ/N), all through `mtft.lines`.
+  `numerical_range`, `jacobi_monodromy`, `fixed_points`, `decompose`, `region` are also callable alone.
+- Gates from the lab's pre-registered table (record MP06): the Pell unit [[12, 1], [143, 12]] has rapidity 3.176313, length 6.352626,
+  a numerical range centred at 12 with semi-axes 72 and 71 and numerical radius 84, ‖M‖/w = 1.7144, and Jacobi monodromy of trace
+  574 = tr M²; the dual unit's range is the disk of radius ½, where Crouzeix's bound 2 is sharp; the cat map's is the segment [1/φ², φ²].
+- **Three identities, stated and gated** (elementary; noticed while porting). Write M = αI + s₁S₁ + s₂S₂ + wJ with strain
+  s = √(s₁² + s₂²). Then W(M) is the ellipse centred at α with semi-axis s along the real axis and |w| along the imaginary one, so the
+  lab's seventh reading (two levels: gap 2s, rotation w) and its eighth (the range) carry the same two numbers; the spectral norm is
+  |α + iw| + s; and for det M = 1, s² = sinh²(d/2), the quanta of the sixth reading (for the Pell unit, 72² = 5184). Checked on 500
+  random matrices against the lab core's own computation (kept as `lab_numerical_range`) to 10⁻¹² and against numpy with no formula for
+  the range (the top eigenvalue of the Hermitian part of e^{−iφ}M) to 10⁻⁹. The numerical radius has a closed form here; the lab
+  searched for it.
+- `mtft.plane.quantities`: the lattice ℤ⁴ of dimensions M^a L^b T^c I^d with the lab's catalogue (33 + 26 + 13 entries, identical to
+  the lab's). `lattice()` computes, through `mtft.integral_lattice`, that ⟨c, ħ, ε₀⟩ has Smith invariants 1, 1, 2 (so natural units
+  leave ℤ ⊕ ℤ/2: a mass dimension and a charge parity, `natural`) and that the Planck sublattice ⟨c, ħ, ε₀, G⟩ has invariants
+  1, 1, 2, 2 and index 4. `planck_decompose` writes a site in those terms with integer coefficients; `site(v)` is the lab's prospector:
+  what lives at a site, which pairs of catalogued quantities build it, and its class.
+- What stays out: the lab's page, its matrix glossary and its instruments (the tidal catalogue, Newton's method, Morley's triangle).
+  They are teaching material.
+- **The port against the original.** The lab's own JavaScript core was run on 52 matrices and 49 sites and its output frozen in
+  `studies/plane_2026nov/` with the core's SHA-256. Two tests compare the package with it: every number agrees to 3 · 10⁻¹⁶ relative
+  and every label, integer and name exactly. The core itself is the lab's and is not shipped.
+- Tests: `test_plane_kernel.py` (7), `test_plane_quantities.py` (6).
+
+## GB-01 (2026-11-16): `mtft.maass.glueballs` — H24 against the lattice, with every registered forecast and two that are sealed
+
+A new module in `mtft.maass`, ported from the lab's records MP15, MP18, MP19 and MP20. Report: `docs/SM/GB01_GLUEBALL_COMPARISON.md`.
+Class PHENO: a comparison under a stated dictionary. **Its result is negative: H24 as written fails.**
+
+- The lattice table (`LATTICE`): six values of M/√σ for SU(3) in the continuum limit, from Athenodorou and Teper (JHEP 11 (2020) 172),
+  as the lab transcribed them on 12 November. They were not re-read against the paper in this release's build, on purpose: the same
+  tables would show the states the sealed forecasts are about (`TRANSCRIPTION`).
+- `reading_b()`: with the cusp forms only and C the Fricke sign, all five predictions miss (the lowest cusp form is odd; ratios 0.870,
+  2.236, 1.247 against windows near 1.55, 1.72, 2.14; a C = −1 form at 2.152).
+- `comparison()` and `needed_shifts()`: reading a with the η-twist as C = −1, state by state, in the form of `mtft.falsify`: the 0⁻⁺ at
+  1.559 against 1.549(16) passes (the one registered pass, recorded as a coincidence without a mechanism); the 0⁺⁺* is 4.5σ off; the
+  C = −1 states are 9.7σ and 7.5σ too light, a registered miss. Reading a fails on structure in any case: its 0⁺⁺ is the edge of a
+  continuum.
+- `self_interaction_fit()`, `one_coupling_fit()`, `minus_sector_fit()`, `twist_energy()`: MP20's fits recomputed from the frozen
+  table: χ² = 10.2 on 2 for one coupling on C = +1; 170 on 4 for one coupling on all five; μ = 0.218(18) with χ² = 1.57 on 1 for a
+  constant twist energy. The lab had kept no code for the 170: rebuilding it showed it used independent errors (178 with the shared
+  error of the 0⁺⁺); both are in the function. `participation(recompute=True)` repeats the seven participation ratios with
+  `mtft.maass.ford` (10⁻⁸ from the lab's).
+- **Two open forecasts, sealed** (`SEALS`, GB-S1): a second odd C = −1 state at 2.87(7) and a second even one at 3.24(7), in units of
+  the 0⁺⁺. Registered by the lab on 14 November before any lookup; the criterion was fixed and the text, numbers and rule hash-sealed
+  on 16 November, still before any lookup. `evaluate_open` runs the sealed rule and refuses a seal that no longer verifies. The lookup
+  has not been made.
+- `register_forecast` and `compare_forecast`: a new dictionary is compared with the lattice only from a sealed record, forecast first.
+- `register()`: the 23 registered forecasts and checks of the four records, each with the probability given beforehand where there
+  was one, and its outcome.
+- Ledger, wave GB-01 in piece IV: GB-1 to GB-5; negative N24 on the puzzle map. GB-5 (the twist energy) is a caveat and is not part of
+  the negative, because its forecasts are open.
+- Provenance: `studies/maass_2026nov/lab/` (MP15, MP18, MP19, MP20, and `needed_shifts.json`, added now). Tests:
+  `test_maass_glueballs.py` (9), `test_gb01_glueball_comparison.py` (4).

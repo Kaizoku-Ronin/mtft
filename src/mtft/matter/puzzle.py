@@ -239,7 +239,7 @@ PIECES = (
           "CC-66 corrected the first filing's 'no saddle' on 2026-10-14), and the spiral type of a cosmological run is set by m/H, which nothing "
           "fixes (PG-5; CC-65 corrected the wave's first filing the same day, and CC-67 (2026-10-16) supplied the hypotheses its capture argument needs).",
           ("MS-6", "MS-7", "CS-3", "AG-4", "AG-5", "FH-3", "SQ-8", "PG-1", "PG-4", "PG-6"),
-          ("MS-01", "MS-02", "CS-01", "FH-01", "PR-01", "PG-01", "VE-01", "MA-01"), ("II", "III"),
+          ("MS-01", "MS-02", "CS-01", "FH-01", "PR-01", "PG-01", "VE-01", "MA-01", "GB-01"), ("II", "III"),
           (),
           (Sub("IV.1", "A mechanism for r = A_X/A_E", "open", claims=("MS-6", "MS-7", "CS-1", "CS-3"), prereg="T1",
                settle="Flux quantisation of the Kaehler class or a non-perturbative potential; nothing in the present model supplies one."),
@@ -448,7 +448,7 @@ WAVE_DATES = {
     "GT-01": "2026-10-05", "QL-01": "2026-10-06", "CI-01": "2026-10-06", "BL-01": "2026-10-06", "FA-01": "2026-10-06", "AG-01": "2026-10-07",
     "FH-01": "2026-10-07", "LV-01": "2026-10-07", "TL-01": "2026-10-07", "DS-01": "2026-10-07", "PAR-01": "2026-10-08", "OM-01": "2026-10-08",
     "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17", "VE-01": "2026-10-17", "GC-02": "2026-10-17",
-    "MA-01": "2026-11-15", "LN-01": "2026-11-16",
+    "MA-01": "2026-11-15", "LN-01": "2026-11-16", "GB-01": "2026-11-16",
 }
 
 WAVE_REPORT = {
@@ -469,7 +469,7 @@ WAVE_REPORT = {
     "YB-01": "OM01_YB01_EXPERIMENTS.md", "SQ-01": "SQ01_STAR_QUOTIENTS.md", "TR-01": "TR01_TIME_REVERSAL.md", "PR-01": "PR01_PREREGISTRATION.md",
     "GF-01": "GF01_FORCES_FIRST.md", "PG-01": "PG01_ENERGY_TWO_CLOCKS.md",
  "SC-01": "SC01_SCALE_LADDER.md", "VE-01": "VE01_VACUUM_ENERGY.md", "GC-02": "GC02_TWO_SCALES.md",
-    "MA-01": "MA01_MAASS_SPECTRUM.md", "LN-01": "LN01_CLOSED_LINES.md",
+    "MA-01": "MA01_MAASS_SPECTRUM.md", "LN-01": "LN01_CLOSED_LINES.md", "GB-01": "GB01_GLUEBALL_COMPARISON.md",
 }
 
 PREREG = (
@@ -544,6 +544,10 @@ NEGATIVES = (
     {"id": "N23", "piece": "II", "what": "A closed line of the curve's unit tangent bundle with no 143a1 component need not be negated by an "
                                            "Atkin–Lehner involution: the lab's pre-registered conjecture (MP12, P13) fails on two of Sphereland 10's "
                                            "lines of length 30, whose zeros have no mechanism yet", "claims": ("LN-6",), "docs": ("LN01_CLOSED_LINES.md",)},
+    {"id": "N24", "piece": "IV", "what": "The glueball spectrum of the lattice is not the Maass spectrum of X0(143) under any dictionary tried "
+                                           "(H24): reading b misses all five predictions, reading a has no isolated 0++, the eta-twist puts "
+                                           "C = -1 states 7.5 and 9.7 sigma too low, and a self-interaction does not repair it",
+     "claims": ("GB-1", "GB-2", "GB-3", "GB-4"), "docs": ("GB01_GLUEBALL_COMPARISON.md",)},
 )
 
 REFERENCE_DOCS = ("MATTER01_REPORT.md", "MATTER01_QED_DERIVATION.md", "INTERACTION_ATLAS.md")

@@ -1,0 +1,47 @@
+{
+ "0-+": {
+  "lattice ratio": 1.5494860499265786,
+  "error": 0.016308949406905405,
+  "curve ratio": 1.559060720408747,
+  "needed shift in lambda": -0.002393667620542106,
+  "its error": 0.004077237351726351,
+  "sigma": 0.587080764265195,
+  "needed shift, percent of the curve value": -0.6141306978510871
+ },
+ "0++*": {
+  "lattice ratio": 1.719530102790015,
+  "error": 0.01604540953565171,
+  "curve ratio": 1.7920300867027612,
+  "needed shift in lambda": -0.018124995978186564,
+  "its error": 0.004011352383912928,
+  "sigma": 4.5184252699600265,
+  "needed shift, percent of the curve value": -4.0456901059145896
+ },
+ "0-+*": {
+  "lattice ratio": 2.140969162995595,
+  "error": 0.040398003196213644,
+  "curve ratio": 2.234549463278719,
+  "needed shift in lambda": -0.02339507507078098,
+  "its error": 0.010099500799053411,
+  "sigma": 2.3164585593154974,
+  "needed shift, percent of the curve value": -4.187882247449338
+ },
+ "A1+-": {
+  "lattice ratio": 2.7371512481644644,
+  "error": 0.08394686175050449,
+  "curve ratio": 1.9219314121890338,
+  "needed shift in lambda": 0.20380495899385764,
+  "its error": 0.020986715437626122,
+  "sigma": -9.711141297911967,
+  "needed shift, percent of the curve value": 42.41669764098994
+ },
+ "A1--": {
+  "lattice ratio": 2.8722466960352424,
+  "error": 0.1362518856627578,
+  "curve ratio": 1.8565188643613126,
+  "needed shift in lambda": 0.25393195791848244,
+  "its error": 0.03406297141568945,
+  "sigma": -7.454779996131548,
+  "needed shift, percent of the curve value": 54.71141991457031
+ }
+}

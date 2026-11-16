@@ -14,13 +14,16 @@ Layers, with their claim classes:
                          (lengths to 17); the positivity bound: no form missing below R = 1.95
   ford        CERTIFIED  the Ford domain of Γ₀*(143) with quadrature: norms, overlaps,
                          participation ratios
+  glueballs   PHENO      H24 against the lattice: the dictionary, every registered forecast with
+                         its outcome, the fits, and two sealed forecasts that are still open
 
 Provenance: the Modular Plane lab, records MP14 to MP20 (12 to 14 November 2026).  The lab's own
 scripts and number files are preserved under ``studies/maass_2026nov/``.  Nothing here is a
-statement about physics; the lattice comparison lives apart, with its forecasts and misses.
+statement about physics except ``glueballs``, which is a comparison under a stated dictionary
+and records that the hypothesis it tests fails.
 """
 from __future__ import annotations
 
-from . import domain, ford, hejhal, kbessel, scattering, spectrum, trace
+from . import domain, ford, glueballs, hejhal, kbessel, scattering, spectrum, trace
 
-__all__ = ["domain", "ford", "hejhal", "kbessel", "scattering", "spectrum", "trace"]
+__all__ = ["domain", "ford", "glueballs", "hejhal", "kbessel", "scattering", "spectrum", "trace"]

@@ -29,3 +29,10 @@ regulators of real quadratic orders, which PARI supplies (conditional on GRH in 
 finite sum). The package freezes the weights to length 17, which a test function of width 0.43 to 0.5 needs, and certifies the lists
 complete below R = 1.959 (untwisted) and 1.607 (twisted, together). The lab's sharper radii, 1.98 and 1.8, came from a width of 0.35
 and lengths to 23.5: 126,751 traces per coset, megabytes of weights that are not stored here. They are a recorded result of these scripts.
+
+The lattice comparison (`mtft.maass.glueballs`, added 16 November 2026) rests on the same folders: `lab/mp15` (H24's test and its
+dictionary), `lab/mp18` (the η-twist as C = −1), `lab/mp19` (the empty window for a second even form) and `lab/mp20` (the
+self-interaction fits). `lab/needed_shifts.json` is the lab's table of needed shifts, which `mp20_selfint.py` reads from the folder above
+its own; the package recomputes it from the frozen spectrum and a test compares the two. The lab's "one coupling for all five" and its
+twist-energy fit were computed after MP20's run and are stored only as numbers in `lab/mp20/mp20_numbers.json`; the package's functions
+rebuild them and reproduce those numbers.
