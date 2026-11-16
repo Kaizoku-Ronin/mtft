@@ -42,7 +42,7 @@ zero for the hopfion only. Three routes to it, the third the package's own:
 - `exact_checks()`: for symbolic p and q, the cross-section is a Hamiltonian system for 2 ln H; its linear part at the core line is
   [[0, −s], [2(p + q)s, 0]], s = √(pq)/(p + q); one circuit is a rotation by 2πν; the area of a level to second order gives the bracket.
 - ν is a whole number, and the circuit matrix the identity, exactly when 2pq(p + q) is a square. For coprime p ≤ q ≤ 60 that is
-  [(1, 1), (1, 8), (1, 49), (32, 49)] (MP09); for p = 1 it is Pell's equation, q = [1, 8, 49, 288]. Without "coprime", which the release plan's gate left
+  (1, 1), (1, 8), (1, 49) and (32, 49) (MP09); for p = 1 it is Pell's equation, q = 1, 8, 49, 288. Without "coprime", which the release plan's gate left
   out, there are 22 pairs, among them (p, p) for every square p, and (18, 32).
 - For (1, 8) the matrix is the identity and the shear is 35/36: the neighbours close to first order and miss at third. H-G7, that such
   a core line answers a perturbation by its cube root, is a hypothesis and is **not tested**.
@@ -82,8 +82,8 @@ What is checked, and how:
 - `exact_checks()`: the change of label; {H, I₂} = 0 for symbolic t; the normal form at the 1 : 1 resonance; W = 1 + (5/12)ε² on the axial line.
 - The reduction, in space, with exact gradients: a step along the field moves (s, P) along the Hamiltonian flow to 10⁻¹⁴ in angle (the lab,
   by differences: 2·10⁻⁸).
-- **I₂ along lines of force integrated in space** on the field itself: the line through (0.6, −0.3, 0.5) keeps it to 3e-14 of its range
-  over 20 circuits at t = 0.4 and to 1e-13 over 100 circuits at t = 0.8 (the lab, with scipy: 2.7·10⁻¹⁰). The package integrates with its
+- **I₂ along lines of force integrated in space** on the field itself: the line through (0.6, −0.3, 0.5) keeps it to 3·10⁻¹⁴ of its range
+  over 20 circuits at t = 0.4 and to 1·10⁻¹³ over 100 circuits at t = 0.8 (the lab, with scipy: 2.7·10⁻¹⁰). The package integrates with its
   own routine, an extrapolation of the midpoint rule, because scipy is an optional extra.
 - The winding by a second route: the two periods measured along an orbit of the plane system equal the two integrals to 10⁻¹⁵. For that
   line at t = 0.4, W − 1 = 0.015660: **one turn in 63.9 circuits**.
