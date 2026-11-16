@@ -35,4 +35,12 @@ package with them.
   order of coordinates it integrates in, (η, ξ₁, ξ₂), is the orientation opposite to the one space gives the sphere. The package uses
   (ξ₁, η, ξ₂), and its sphere and its slices agree in sign.
 
+## The gravity map
+
+`lab/MTFT_Gravity_Puzzle_Map.md` is the lab's gravity puzzle map as last changed on 14 November 2026 (SHA-1
+`8730ed451d2fc3f6c85a5c281fa95b2c53ccab11`): eleven pieces, ten pre-registered tests, sixteen recorded negatives. It is a working
+document written by hand. `build_gravity_map.py` parses its pieces, its tests and its negatives into
+`src/mtft/gravity/_data/gravity_map.json`, and `mtft.gravity.ledger` carries them in the map's own words, checked by that SHA-1.
+The map's other statements (its sub-puzzles and leads) are not claims of the package.
+
 The search of the literature that the release plan asked for is in `docs/gravity/KNOTTED_FIELDS.md`, section 1.

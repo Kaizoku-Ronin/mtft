@@ -1,0 +1,253 @@
+{
+ "source": "MTFT_Gravity_Puzzle_Map.md",
+ "source_sha1": "8730ed451d2fc3f6c85a5c281fa95b2c53ccab11",
+ "last_changed": "14 November 2026",
+ "summary_line": "11 pieces, 58 sub-puzzles (27 open), 10 pre-registered tests (1 pending, T-G3; the other nine done), 16 recorded negatives.",
+ "pieces": [
+  {
+   "piece": "I",
+   "title": "The coupling: Newton's constant",
+   "status": "open"
+  },
+  {
+   "piece": "II",
+   "title": "The arena: where gravity sits on X₀(143)",
+   "status": "open"
+  },
+  {
+   "piece": "III",
+   "title": "Gravity as a square (the coin)",
+   "status": "partial"
+  },
+  {
+   "piece": "IV",
+   "title": "The frozen field",
+   "status": "partial"
+  },
+  {
+   "piece": "V",
+   "title": "Breaking and reconnecting",
+   "status": "open"
+  },
+  {
+   "piece": "VI",
+   "title": "The field equations",
+   "status": "open"
+  },
+  {
+   "piece": "VII",
+   "title": "The vacuum and the expansion",
+   "status": "open"
+  },
+  {
+   "piece": "VIII",
+   "title": "Dark matter",
+   "status": "open"
+  },
+  {
+   "piece": "IX",
+   "title": "Gravitational waves",
+   "status": "open"
+  },
+  {
+   "piece": "X",
+   "title": "Black holes",
+   "status": "open"
+  },
+  {
+   "piece": "XI",
+   "title": "Is gravity quantum? The low-mass frontier",
+   "status": "open"
+  }
+ ],
+ "tests": [
+  {
+   "id": "T-G1",
+   "title": "A metric perturbation for the double-copy hopfion, frozen into its null flow",
+   "registered": "2026-11-10 (note)",
+   "criterion": "h_μν with k^μ𝓕^a_μν = 0 to machine precision, or a proof none exists",
+   "outcome": "**done 2026-11-14** (MP23, predictions before the run): exhibited. The tetrad of III.4 is frozen into k to 3·10⁻¹⁶, its curvature is the squared hopfion to 2·10⁻¹⁶ and its Ricci tensor 4·10⁻¹⁶, at 60 points. Found by a fit in the class 𝓕 = Re[G dα ∧ dβ] with holomorphic G, where it is unique up to degree 4. One forecast missed (the square of the potentials), one held in part",
+   "status": "done",
+   "done": "2026-11-14"
+  },
+  {
+   "id": "T-G2",
+   "title": "Its gravitational helicity against the electromagnetic one",
+   "registered": "2026-11-10 (note)",
+   "criterion": "Both numbers in the frame of T-G1",
+   "outcome": "**done 2026-11-14** (MP23): H_g = (2/3)π² and H_em = π², constant in time. **The registered hand value 3/4 missed** on an algebra slip, which is recorded",
+   "status": "done",
+   "done": "2026-11-14"
+  },
+  {
+   "id": "T-G3",
+   "title": "A three-dimensional resistive example",
+   "registered": "2026-11-10 (note)",
+   "criterion": "dH/dt = −2∫E·B to tolerance on two linked rings; linking lost per unit rate",
+   "outcome": "pending. A lead by hand, not checked (MP23): with a uniform resistivity the first half is an identity between two double line integrals; the second half needs a localised resistivity and traced field lines",
+   "status": "pending",
+   "done": null
+  },
+  {
+   "id": "T-G4",
+   "title": "The linking invariant at level 143",
+   "registered": "2026-11-10 (note); predictions in MP12, written before the run",
+   "criterion": "What replaces Ghys's Rademacher function on Γ₀(143)\\PSL(2, ℝ)",
+   "outcome": "**done 2026-11-12**: the class of the closed line in ℤ³⁰ (Ψ, three windings, 26 periods as 2 + 4 + 8 + 12), computed for 12.7's 28 lines; none bounds. 25 of 26 pre-registered checks on Route A, 8 on mtft's own model, 5 on the page's core; **one pre-registered conjecture missed and recorded** (Atkin–Lehner signs account for eight of the ten lines with no 143a1 component, not for the other two); one fault of the plan's sample recorded (P9)",
+   "status": "done",
+   "done": "2026-11-12"
+  },
+  {
+   "id": "T-G5",
+   "title": "The 2 × 2 matrix of field lines round a core line",
+   "registered": "2026-11-10 (MP08, added after the run; predictions in MP09)",
+   "criterion": "Elliptic, parabolic or hyperbolic for (p, q) ≠ (1, 1); it gives the tube's physical twist",
+   "outcome": "**done 2026-11-10**: elliptic, a rotation by 2π√(2pq(p + q)); the identity for the hopfion; winding √(2pq(p + q)) − pq against Seifert. 10 checks on the field in space, no prediction missed; one printed decimal of the plan was wrong and is recorded (MP09)",
+   "status": "done",
+   "done": "2026-11-10"
+  },
+  {
+   "id": "T-G6",
+   "title": "The gravitational tube",
+   "registered": "2026-11-10 (MP09, opened by T-G5's result)",
+   "criterion": "The return matrix of the lines of force of W round the core lines, against ν = √(2pq(p + q))",
+   "outcome": "**done 2026-11-11** (predictions in MP10, written before the run): at t = 0 the same matrix, for tendex and vortex lines alike; afterwards the lines of force are not carried by the light rays, and the tubes persist, displaced, with det 1 and ν_t = ν + O(t²). 7 checks in space passed; **two pre-registered windows missed and recorded** (the size of the term after t², for the shift of ν and for the hopfion's defect)",
+   "status": "done",
+   "done": "2026-11-11"
+  },
+  {
+   "id": "T-G7",
+   "title": "The shear at the core line",
+   "registered": "2026-11-10 (MP09)",
+   "criterion": "dι/dh at the core line in closed form, checked against the profile ι(h)",
+   "outcome": "**done 2026-11-14** (MP21, predictions before the run): dι/du = ν[3pq(p + q) − 2(p² + pq + q²)]/(12pq(p + q)) at the core line, u = 1 − h/h_max. Confirmed by the profile integral (5·10⁻¹⁰ of ν), by lines in space at two times (3·10⁻⁸) and by the page's own function (3·10⁻⁸). No prediction missed; three faults of mine recorded (two hand decimals of the plan, a root finder, a wrong first repair)",
+   "status": "done",
+   "done": "2026-11-14"
+  },
+  {
+   "id": "T-G8",
+   "title": "The gravitational hopfion after t = 0",
+   "registered": "2026-11-11 (MP10, opened by T-G6's result)",
+   "criterion": "An exact invariant of its lines of force at t > 0, or evidence that there is none; the closed lines; the slow winding in closed form against the measured one turn in about 29 circuits at t = 0.4",
+   "outcome": "**done 2026-11-14** (MP22, predictions before the run): an exact invariant exists (IV.9). Thirteen checks held; one forecast missed (how far the line at t = 0.8 travels: 4.7, not over 10); one clause of an added test printed MISS on a fault of the test (its counter counted the starting point). Two earlier statements corrected (N-G15)",
+   "status": "done",
+   "done": "2026-11-14"
+  },
+  {
+   "id": "T-G9",
+   "title": "The linking numbers of the lines that bound",
+   "registered": "2026-11-12 (MP13, predictions before the run; opened by T-G4)",
+   "criterion": "Lk of the unions K_γ = γ̂ ∪ γ̂ʳ from the crossings of the geodesics on the curve, against a formula on the darts and against Ghys's Lorenz template through the 168-sheeted cover",
+   "outcome": "**done 2026-11-12**: Lk(K_γ, K_δ) = −I(γ, δ) ≤ 0; the cat block 0, −6, −8, −8, −6, −24; totals 336, 336, 1008 = 168 × the template's 2, 2, 6. 8 checks on Route A (exact rational arithmetic), 4 on the page's core, 5 on the template; nothing missed",
+   "status": "done",
+   "done": "2026-11-12"
+  },
+  {
+   "id": "T-G10",
+   "title": "The Pell zeros, and the gap at infinite horodepth",
+   "registered": "2026-11-12 (MP14, predictions before the run; opened by II.10 and by Roger's idea of 3 November)",
+   "criterion": "A mechanism for the Pell lines' zero signed counts, tested on new closed geodesics (the mirror rule, the Pell classes crossing by crossing, a non-zero pairing, the shadows one level down); the scattering matrix of Γ₀(143), the threshold s = 1/2 and the Eisenstein series on the Pell line, with a second route that sums over the group",
+   "outcome": "**done 2026-11-12**: the mirror, shadows that miss one level down, and homology account for the zeros (II.10). Φ(1/2) = −I, so every Eisenstein series vanishes at the bottom of the continuum; on the Pell line E_∞ = E₀ and E_{1/11} = E_{1/13}; the gap is exactly 1/4, set by the cusps, with nothing below it (a theorem at this level, from the literature). 9 checks on Route A, 7 on Route B; nothing missed, the low-confidence conjecture included; two faults of the apparatus recorded and repaired (a residue check's precision; rounding near two cusps)",
+   "status": "done",
+   "done": "2026-11-12"
+  }
+ ],
+ "negatives": [
+  {
+   "id": "N-G1",
+   "pieces": "I",
+   "statement": "G is not derived; Paper 31's formula is a model, +3.7 % or +61 % by the depth",
+   "record": "RD_Notes §27 iv"
+  },
+  {
+   "id": "N-G2",
+   "pieces": "I",
+   "statement": "In 3 + 1 dimensions gravity has local degrees of freedom and no Chern–Simons level: the 2 + 1 chain does not carry over by itself",
+   "record": "RD_Notes §27"
+  },
+  {
+   "id": "N-G3",
+   "pieces": "III",
+   "statement": "The coin holds for gravity as a square, not as a flip; \"gravity on the strong force's face\" is mixed",
+   "record": "8D Box scorecard"
+  },
+  {
+   "id": "N-G4",
+   "pieces": "IV",
+   "statement": "The oscillator's hidden circle and the frozen field's lines are not the same objects: mirror families",
+   "record": "12.1; note"
+  },
+  {
+   "id": "N-G5",
+   "pieces": "IV",
+   "statement": "The frozen-in helicity is a property of the frame, not of the spacetime",
+   "record": "note A2"
+  },
+  {
+   "id": "N-G6",
+   "pieces": "IV",
+   "statement": "In the observers' own freely falling frame the freeze cannot hold where there is a tide",
+   "record": "12.5"
+  },
+  {
+   "id": "N-G7",
+   "pieces": "IV",
+   "statement": "The pre-registered sign of the ribbon's linking was wrong: −pq, as the 22 October record for the trefoil's torus framing already had it (−6.00000)",
+   "record": "MP08; RD_Notes, 22 October"
+  },
+  {
+   "id": "N-G8",
+   "pieces": "V",
+   "statement": "No gravitational reconnection has been computed, in the papers or here",
+   "record": "12.6"
+  },
+  {
+   "id": "N-G9",
+   "pieces": "IV",
+   "statement": "The lines of force of the squared field W = F ⊗ F/S are not frozen into the flow of light rays: they agree with the light field's carried lines only at t = 0",
+   "record": "MP10 (P3)"
+  },
+  {
+   "id": "N-G10",
+   "pieces": "IV",
+   "statement": "Two pre-registered windows in T-G6 were wrong: the shift of ν and the hopfion's defect do start at order t², but the next term is many times larger than assumed",
+   "record": "MP10 (P4w, P5w)"
+  },
+  {
+   "id": "N-G11",
+   "pieces": "XI",
+   "statement": "The milligram experiment tests nothing the programme predicts: no force law at short range, no statement on entanglement; its 5 % value of G adds nothing to CODATA for Paper 31's formula",
+   "record": "`gravity_milligram_20261111.md`"
+  },
+  {
+   "id": "N-G12",
+   "pieces": "I, III, IX",
+   "statement": "Sphereland's two charts, joined to the matrix algebra, organise and predict nothing for the programme: no pair (p, q), no dimension, no G. Three space dimensions are singled out twice (an integer knot charge for lines; the oscillator's square is Newton's potential) and derived by neither, and the dial still offers four space-times",
+   "record": "`sphere_charts_20261112.md`"
+  },
+  {
+   "id": "N-G13",
+   "pieces": "II",
+   "statement": "The pre-registered conjecture of T-G4 was wrong: Atkin–Lehner signs do not account for every closed line with no 143a1 component. They account for eight of the ten. The involutions carry the other two, lines of length 30, to lifts of other motions, and those two zeros have no mechanism (II.9)",
+   "record": "MP12 (P13; H2)"
+  },
+  {
+   "id": "N-G14",
+   "pieces": "II",
+   "statement": "MP12's Result, and II.8 as first written, said that all the lifts of one motion together bound. Only the cat map's do: the fibre numbers of the lifts add up to 168Ψ(A), so for Sphereland 10's motion and the Pell unit the union is homologous to −28 and −588 fibres. Corrected by appending, in MP12 and II.8",
+   "record": "MP12 (correction); MP13"
+  },
+  {
+   "id": "N-G15",
+   "pieces": "IV",
+   "statement": "Two statements about the gravitational hopfion were wrong. \"One turn in about 29 circuits\" at t = 0.4 (MP10) was a miscount: the return function took the crossing nearest the start within an arc of 60, ten times the eighth one, so sixty returns were 131 circuits; the figure is one turn in 63.9. And the line \"lost\" at t = 0.8 (MP11) was not lost: it keeps its invariant and returns, and it was the search plane that its loops left for an arc of 69.8. The \"half a turn round the mean\" printed at t = 0.1 and 0.2 was the angle of a short arc seen from its own middle.",
+   "record": "MP22"
+  },
+  {
+   "id": "N-G16",
+   "pieces": "III",
+   "statement": "The coin does not work at the level of potentials: the square d·σ ⊗ σ of the light's potential over the scalar is not a potential for the squared hopfion; its own Ricci tensor is 5.9 times |W| (forecast at 0.75, missed). And the hand value H_g/H_em = 3/4, registered before the integral was computed, was wrong: it is 2/3.",
+   "record": "MP23"
+  }
+ ]
+}

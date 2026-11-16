@@ -119,6 +119,9 @@ source and entry points, covering both older tools and current research code.
 | Discrete and boundary geometry | Origami/dimers, insertion calculus, boundary diagnostics and finite graph tools: [`origami`](src/mtft/origami/), [`boundary`](src/mtft/boundary/) |
 | Modular-surface geometry | Manin meshes, cycle lattices, exact transport, Hodge frames, marked/oldform sectors, CRT dessins, spin circles and Hopf bookkeeping: [`surface`](src/mtft/surface/) |
 | Fields on the surface | Yang–Mills partition functions, line operators, Ising models, Hamiltonian evolution, FEM Laplace/Bochner spectra, Petersson and HYM normalization: `surface.gauge`, `.ising`, `.dynamics`, `.spectral`, `.magnetic`, `.petersson`, `.hym` |
+| Laplace spectrum and closed lines | Maass cusp forms of Γ₀(143) by Hejhal's method with trace-formula gates on completeness, the Ford domain, the scattering matrix and the lattice comparison with its sealed forecasts; closed geodesics with their thirty integers, crossings and linking numbers: [`maass`](src/mtft/maass/), [`lines`](src/mtft/lines/) |
+| Matrix kernel and quantities | One real 2 × 2 matrix read eight ways and the lattice of physical quantities, the Modular Plane lab's kernel: [`plane`](src/mtft/plane/) |
+| Knotted weak fields | The (p, q) knotted light fields and the tube round a core line, the squared hopfion's lines of force as an integrable system, a tetrad frozen into the null flow, and the gravity ledger with its negatives; weak waves on flat space, Newton's constant not derived: [`gravity`](src/mtft/gravity/) |
 | Fluxes and Yukawa tensors | Spin/CM data, Riemann–Roch spaces, canonical multiplication tensors, flux scans and condensation: `surface.arithspin`, `.rrspace`, `.yukawa`, `.smflux`, `.condensation` |
 | Parent-theory gates | Parent records, anomaly polynomials, charge lattices, discrete/bordism tests, tensor factorization, mode/chirality gates and compactification: [`research`](src/mtft/research/) |
 | Product-surface research | Vector Higgs operators, X₀(143)×E slopes/indices, Künneth selection rules and torus theta factors: `research.vector_higgs`, `.product_surface`, `.yukawa_triangle`, `.theta_torus`, `.unified_parent`, `.involutions` |
@@ -158,7 +161,7 @@ The atlas trace terminates at **external SM reference inputs**. Its data is
 not presented as an arithmetic derivation. A passed software test verifies its
 stated calculation, not an unrestricted claim of physical validity.
 
-For the current v1.0.x research line (v1.0.0 ships the matter programme, Matter-01 to GC-02 with the corrections CC-36 to CC-70, and Sphereland, listed in [the v1.0.0 changelog](docs/changelog/CHANGELOG_v100.md); the parent-action gates, the blow-up branch and CC-35 came in [v0.34.0](docs/changelog/CHANGELOG_v0340.md), and later work goes to [Unreleased](docs/changelog/UNRELEASED.md)), start with:
+For the current v1.1.x research line (v1.1.0 adds the Maass spectrum of Γ₀(143), the closed lines of its unit tangent bundle, the lattice comparison with its sealed forecasts, the Modular Plane's kernel and knotted weak fields, listed in [the v1.1.0 changelog](docs/changelog/CHANGELOG_v110.md); v1.0.0 shipped the matter programme, Matter-01 to GC-02 with the corrections CC-36 to CC-70, and Sphereland, listed in [the v1.0.0 changelog](docs/changelog/CHANGELOG_v100.md); the parent-action gates, the blow-up branch and CC-35 came in [v0.34.0](docs/changelog/CHANGELOG_v0340.md), and later work goes to [Unreleased](docs/changelog/UNRELEASED.md)), start with:
 
 - [Matter programme map](docs/SM/MATTER_PUZZLE_MAP.md) and [ledger](docs/SM/MATTER_LEDGER.md):
   the pieces of the Standard-Model-building programme in dependency order, and
@@ -172,6 +175,14 @@ For the current v1.0.x research line (v1.0.0 ships the matter programme, Matter-
 - [Wave C gates](docs/SM/WAVE_C_GATES.md),
   [chirality register](docs/SM/R2C01_CHIRALITY_REGISTER.md) and
   [product-surface register](docs/SM/R2C07_PRODUCT_SURFACE_REGISTER.md).
+- New in v1.1.0:
+  [the Maass spectrum of Γ₀(143)](docs/SM/MA01_MAASS_SPECTRUM.md) (`mtft.maass`: 41 cusp forms below R = 2 and 42 of the η-twist below R = 1.8 by
+  Hejhal's method, with completeness gated by trace formulas below R = 1.959 and 1.607); [the closed lines](docs/SM/LN01_CLOSED_LINES.md) (`mtft.lines`: thirty integers for every closed
+  line, their crossings and linking numbers); [H24 against the lattice](docs/SM/GB01_GLUEBALL_COMPARISON.md), a negative result, and
+  [its two sealed forecasts, looked up](docs/SM/GB02_E5_SEALED_FORECASTS.md) (`mtft.maass.glueballs`); `mtft.plane`, one matrix read
+  eight ways ([its record against the lab's own code](studies/plane_2026nov/README.md)); and
+  [knotted weak fields](docs/gravity/KNOTTED_FIELDS.md) with [the gravity ledger](docs/gravity/GRAVITY_LEDGER.md)
+  (`mtft.gravity`: weak waves on flat space; Newton's constant is not derived).
 
 Historical results and frozen handoffs stay in `studies/`. They may contain
 superseded hypotheses and release-specific scripts; their original bytes and

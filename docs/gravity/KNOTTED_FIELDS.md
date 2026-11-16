@@ -149,3 +149,9 @@ Found in this build:
 - The frozen tetrad against the Kerr–Schild potential of the same field, and its helicity against Huang et al.'s in one normalisation.
 - The other gravitational (p, q) fields: no invariant is known for their later lines of force.
 - A proof that the frame is unique among all frozen frames.
+
+## 7. The ledger
+
+The results of sections 2 to 4 are entries of [the gravity ledger](GRAVITY_LEDGER.md) (`mtft.gravity.ledger`), each with its class, status,
+module and test. The ledger also carries the gravity map's ten pre-registered tests and sixteen negatives in the map's own words, and the misses of
+section 5.

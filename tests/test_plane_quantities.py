@@ -97,7 +97,7 @@ def test_the_prospector_equals_the_lab_core():
     lab = json.loads(LAB_CORE.read_text(encoding="utf-8"))
     assert lab["planck_index"] == Q.lattice()["planck"]["index"] == 4 and len(lab["sites"]) == len(lab["quantities"]) == 49
     occupied = 0
-    for v, J in zip(lab["sites"], lab["quantities"], strict=True):
+    for v, J in zip(lab["sites"], lab["quantities"]):                               # equal lengths, asserted above (no strict=: Python 3.9)
         s = Q.site(v)
         occupied += bool(J["here"])
         assert [q[0] for q in s["here"]] == J["here"] and s["products"] == J["products"] and len(s["mates"]) == J["mates"]

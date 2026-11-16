@@ -17,9 +17,15 @@ def test_capability_index_covers_current_source():
 def test_current_navigation_links_resolve():
     paths = [ROOT / "README.md", ROOT / "docs/CAPABILITIES.md",
              ROOT / "docs/SM/INTERACTION_ATLAS.md", ROOT / "docs/changelog/README.md"]
+    # An unpacked sdist does not carry viz/sphereland (MANIFEST.in takes only the top level of viz): the README's
+    # links into it resolve in a checkout and on GitHub.  Found on 2026-11-16, when the suite was first run whole
+    # from an sdist; v1.0.0's sdist was the same.  In a checkout nothing is excused.
+    sdist_without_sphereland = (ROOT / "PKG-INFO").exists() and not (ROOT / "viz" / "sphereland").exists()
     for path in paths:
         for href in re.findall(r"\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
             if href.startswith(("https://", "http://", "#")):
+                continue
+            if sdist_without_sphereland and path.name == "README.md" and href.startswith("viz/sphereland/"):
                 continue
             assert (path.parent / href.split("#")[0]).exists(), (path, href)
 

@@ -9,6 +9,9 @@ r"""mtft.gravity — knotted weak fields on flat space: the tube, the squared ho
   tetrad   MODEL    a tetrad e = dx + B for the squared hopfion that is frozen into its null flow; its field
                     strength; the helicities (2/3)π² and π²
 
+  ledger            the entries for these modules, the gravity map's pre-registered tests and sixteen negatives in its
+                    own words, and every recorded miss
+
 What this is, and is not.
   * Every field here is a weak wave on flat Minkowski space: Maxwell's equations and the linearised vacuum Einstein
     equations.  Nothing is a solution of the full Einstein equations.
@@ -35,10 +38,10 @@ Open: T-G3 (a three-dimensional resistive example) has not been attempted; H-G7 
 """
 from __future__ import annotations
 
-from . import fields, hopfion, knotted, tetrad
+from . import fields, hopfion, knotted, ledger, tetrad
 
 OPEN = {"T-G3": "a three-dimensional example with resistivity: dH/dt = -2 int E.B to tolerance, and the linking lost per unit of the rate; not attempted",
         "H-G7": knotted.OPEN["H-G7"]}
 NOT_DERIVED = {"N-G1": "Newton's constant is not derived"}
 
-__all__ = ["NOT_DERIVED", "OPEN", "fields", "hopfion", "knotted", "tetrad"]
+__all__ = ["NOT_DERIVED", "OPEN", "fields", "hopfion", "knotted", "ledger", "tetrad"]

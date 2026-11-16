@@ -185,7 +185,7 @@ def test_the_port_equals_the_lab_core():
     lab = json.loads(LAB_CORE.read_text(encoding="utf-8"))
     assert len(lab["core_sha256"]) == 64 and len(lab["matrices"]) == len(lab["kernel"]) == 52
     worst = 0.0
-    for M, J in zip(lab["matrices"], lab["kernel"], strict=True):
+    for M, J in zip(lab["matrices"], lab["kernel"]):                                # equal lengths, asserted above (no strict=: Python 3.9)
         Mt = tuple(tuple(row) for row in M)
         r, R, L = K.read(Mt), K.numerical_range(Mt), K.lab_numerical_range(Mt)
         dec, motion = r["decomposition"], r["readings"]["motion"]

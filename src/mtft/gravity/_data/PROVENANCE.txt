@@ -1,0 +1,4 @@
+gravity_map.json: the pieces, pre-registered tests and honest negatives of the lab's gravity puzzle map, in the map's own words.
+Source: studies/gravity_2026nov/lab/MTFT_Gravity_Puzzle_Map.md (last changed 14 November 2026), SHA-1 8730ed451d2fc3f6c85a5c281fa95b2c53ccab11.
+Built by studies/gravity_2026nov/build_gravity_map.py on 2026-11-16.
+gravity_map.json SHA-1 1b61fb857070f007106e680b1cb104e707f212bf
