@@ -207,6 +207,31 @@ its numbers are computed in the page or certified by the
 [check scripts](viz/sphereland/checks/README.md) beside it. It lives in the
 repository only, not in the sdist or the wheel.
 
+Instrument 22, the modular flip. A torus can be filled in two ways: cap the
+space circle and the world is confined and gapped; cap the time circle and it
+is a fluid. The shortest cycle always caps, so the map of which filling wins
+over the half-plane is the Farey tiling, with the Hawking–Page point at i and
+the Fricke point of X₀(143) at i/√143:
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/sphereland/figs/i22_two_fillings.png" width="49%" alt="Instrument 22: the boundary torus and its two fillings, confined and deconfined">
+<img src="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/sphereland/figs/i22_which_filling_wins.png" width="49%" alt="Instrument 22: which filling wins, everywhere on the half-plane">
+</p>
+
+Three more, beside this release's tools: a closed geodesic of the modular
+surface drawn as a knot in the complement of the trefoil (instrument 10;
+`mtft.lines` works with the closed lines over Γ₀(143), their crossings and
+linking numbers); the Maass cusp forms of the modular surface and their count
+against Weyl's law (instrument 24; `mtft.maass` computes those of Γ₀(143)); and
+Neptune and Pluto in 3:2 resonance, a torus knot (instrument 18;
+`mtft.gravity` follows lines of force round nested tori):
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/sphereland/figs/i10_modular_knot.png" width="32%" alt="Instrument 10: the modular knot of A = L²R in the complement of the trefoil">
+<img src="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/sphereland/figs/i24_modular_spectrum.png" width="32%" alt="Instrument 24: Maass cusp forms of the modular surface and Weyl's law">
+<img src="https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/viz/sphereland/figs/i18_resonance_knot.png" width="32%" alt="Instrument 18: the 3:2 resonance of Neptune and Pluto as the torus knot T(3,2)">
+</p>
+
 For long PARI/GP work:
 
 ```bash

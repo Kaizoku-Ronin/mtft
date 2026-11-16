@@ -112,3 +112,9 @@ Its numbers are computed in the page or certified by the scripts in
 `ALL CHECKS PASSED`. The page and its scripts sit in a subfolder on purpose:
 `MANIFEST.in` ships only top-level `viz/*.html`, so neither is in the sdist or
 the wheel.
+
+The five pictures of instruments 10, 18, 22 and 24 in the repository's README are in
+[sphereland/figs/](sphereland/figs/PROVENANCE.txt), rendered from the page by headless
+Chrome with `sphereland/figs/render_figs.py` (2026-11-16); `PROVENANCE.txt` gives the
+page's hash, the browser, the fonts and each picture's hash. They are repository-only
+too: the README shows them through their GitHub addresses.

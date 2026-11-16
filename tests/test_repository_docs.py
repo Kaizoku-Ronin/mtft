@@ -30,6 +30,26 @@ def test_current_navigation_links_resolve():
             assert (path.parent / href.split("#")[0]).exists(), (path, href)
 
 
+def test_readme_pictures_are_in_the_repository():
+    """The README shows pictures through GitHub addresses on main (so that PyPI shows them too); each must be a
+    file of the repository.  An sdist need not carry them, so outside a git checkout there is nothing to check."""
+    if not (ROOT / ".git").exists():
+        import pytest
+        pytest.skip("not a git checkout: the README's pictures are served from GitHub")
+    prefix = "https://raw.githubusercontent.com/Kaizoku-Ronin/mtft/main/"
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    pictures = re.findall(re.escape(prefix) + r"([^)\"\s]+)", text)
+    assert len(pictures) >= 7                         # the stiffness landscape, the wavepacket, five of Sphereland
+    missing = [p for p in pictures if not (ROOT / p).is_file()]
+    assert not missing, missing
+    provenance = (ROOT / "viz/sphereland/figs/PROVENANCE.txt").read_text(encoding="utf-8")
+    import hashlib
+    for p in pictures:
+        if p.startswith("viz/sphereland/figs/"):      # each Sphereland picture is the one its provenance describes
+            name = p.rsplit("/", 1)[1]
+            assert f"{name}  " in provenance and hashlib.sha256((ROOT / p).read_bytes()).hexdigest() in provenance, name
+
+
 def test_changelogs_are_indexed_in_one_folder():
     assert not list(ROOT.glob("CHANGELOG_*.md"))
     directory = ROOT / "docs/changelog"

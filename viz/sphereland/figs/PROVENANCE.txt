@@ -1,0 +1,11 @@
+Pictures of Sphereland's instruments for the README, rendered from index.html (SHA-256 bd6f056f792d153e91f88d74745ebd59caca458cfaea108fa2c87c35fc284fe6)
+by headless Google Chrome 153.0.8010.12 through Playwright, at 2x, viewport 1280 px wide, light scheme;
+fonts: Bricolage Grotesque 200 800, IBM Plex Mono 400, IBM Plex Mono 500, IBM Plex Sans 400, IBM Plex Sans 600 (fontsource 5.3.0 from npm, served in place of Google Fonts).
+Each picture is one <figure> of the page as it opens, above its caption. Made by
+    python viz/sphereland/figs/render_figs.py --fonts <node_modules> --out viz/sphereland/figs --readme
+
+i22_two_fillings.png  instrument 22, figure 1 (#flipPanel), 563 x 408 css px, SHA-256 ef829a7e7f45ab3e596c42b985352db379e20dfccd22a03327ed967d3dc7c86b
+i22_which_filling_wins.png  instrument 22, figure 3 (#flipPanel), 563 x 422 css px, SHA-256 d3eac9f21c1acc72b6fda00a51c8d34158186fe6cb02bfd9435eeb6e045f76f5
+i10_modular_knot.png  instrument 10, figure 1 (#modPanel), 563 x 428 css px, SHA-256 ba8ba1aaa68a97edf1eb02ca10813447053d992093482bc4ea9d30f5ea131848
+i24_modular_spectrum.png  instrument 24, figure 1 (#curveGapPanel), 563 x 408 css px, SHA-256 15224470c9e553c1f5c0e3d0438718da83415ff2a88d4fa9282d4d589af8372e
+i18_resonance_knot.png  instrument 18, figure 3 (#gravityPanel), 563 x 305 css px, SHA-256 abc70536659251e25be8b75552fa608977f1b5bd51640b9b1c49038715392c75
