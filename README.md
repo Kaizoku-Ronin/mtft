@@ -49,8 +49,8 @@ python -m pip install -e ".[dev,full]"
 
 | Dependency set | Purpose |
 |---|---|
-| Base package | NumPy, SymPy and mpmath arithmetic/numerical engines |
-| `mtft[full]` | SciPy solvers/quadrature and Matplotlib plots |
+| Base package | NumPy, SciPy, SymPy and mpmath: everything the package computes with |
+| `mtft[full]` | Matplotlib, for the drawings `mtft.viz` makes when asked (`plot=True`) |
 | `mtft[viz]` | Matplotlib and Plotly visualization helpers |
 | `mtft[dev]` | pytest, coverage and Ruff |
 | `mtft[lhc]` | uproot and Awkward for the optional ROOT/LHCb analysis bridge |

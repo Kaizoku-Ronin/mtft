@@ -19,7 +19,8 @@ _FILE = "x0143_certified.json"
 
 
 def _load() -> dict:
-    with resources.files("mtft.surface._data").joinpath(_FILE).open() as fh:
+    # through the package, not the folder: Python 3.9 cannot open a folder without an __init__.py as a resource root
+    with resources.files(__package__).joinpath("_data").joinpath(_FILE).open() as fh:
         return json.load(fh)
 
 

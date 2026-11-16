@@ -335,15 +335,16 @@ def stage_C(ms, K, T2, T2star, H, Vh, edge_list_g):
                 Wv[i] += 0.5 * diag[e]
                 Wv[j] += 0.5 * diag[e]
         dev = max(dev, float(np.max(np.abs(Wv - Wv.mean()))))
+    verdict = ('PASS — LINE-LEVEL MASS EQUIDISTRIBUTION (Cert): every '
+               'Hecke line spreads uniformly over the 56 triangles, so '
+               'first-order dispersion vanishes for EVERY profile '
+               'orthogonal to constants, not just the Fiedler mode.'
+               if dev < 1e-9 else
+               'nonconstant — the vanishing is profile-specific '
+               '(parity/selection); see C5.')     # outside the f-string: Python 3.9 to 3.11 (2026-11-16)
     print(f"  C2c mechanism: per-line vertex weights W_a(i) — max "
           f"deviation from constancy over all 12 lines = {dev:.2e}  "
-          f"{'PASS — LINE-LEVEL MASS EQUIDISTRIBUTION (Cert): every '
-             'Hecke line spreads uniformly over the 56 triangles, so '
-             'first-order dispersion vanishes for EVERY profile '
-             'orthogonal to constants, not just the Fiedler mode.'
-             if dev < 1e-9 else
-             'nonconstant — the vanishing is profile-specific '
-             '(parity/selection); see C5.'}")
+          f"{verdict}")
     LEDGER["C2c equidistribution_dev (Cert)"] = f"{dev:.3e}"
 
     # inter-line coupling
