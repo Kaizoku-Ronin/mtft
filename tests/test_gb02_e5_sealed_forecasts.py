@@ -74,6 +74,19 @@ def test_the_refit_identifies_the_column():
     assert {later[2][0], later[3][0]} == {G.TABLE14_A1[2][0], G.TABLE14_A1[3][0]}
 
 
+def test_the_column_as_read_from_the_pdf():
+    """Added after the lookup: the PDF's page was read (Roger Tano's screenshot of Table 14, and the file's text with its layout
+    kept).  The columns of the A1 block, and that they are the flattened rows of the first reading and the column identified."""
+    cols = G.TABLE14_A1_COLUMNS
+    assert list(cols) == ["P=+,C=+", "P=-,C=+", "P=+,C=-", "P=-,C=-"] and [len(v) for v in cols.values()] == [4, 4, 1, 2]
+    rows = tuple(tuple(c[k] for c in cols.values() if len(c) > k) for k in range(4))
+    assert rows == G.TABLE14_A1                                                            # the flattened text was the table read row by row
+    assert cols["P=-,C=-"][1] == G.EXCITED["A1--"] and cols["P=+,C=-"] == (G.LATTICE["A1+-"][:2],) and G.EXCITED["A1+-"] is None
+    assert G.identify_column()["column"] == "P=-,C=-" and "P=-,C=-" in G.EXCITED_READ and "confirmed" in G.EXCITED_READ
+    assert G.e5()["column read"] == G.EXCITED_READ
+    assert G.A1_PLUS_MINUS_ALL[6.235] == ((1.431, 0.020), (1.482, 0.025), (1.77, 0.04))    # the third state, which the flattened text left without a column
+
+
 def test_what_the_pass_is_worth():
     got = G.e5()
     lo, hi = got["passing window at this error"]

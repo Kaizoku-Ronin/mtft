@@ -234,4 +234,7 @@ The experiment GB-01 left sealed. Report: `docs/SM/GB02_E5_SEALED_FORECASTS.md`.
 - Kept: `LATTICE` is not edited; GB-5 and the GB-01 report stand as written, each with a dated pointer. The earlier tests that pinned
   "pending" and "open" now pin the outcome.
 - Ledger, wave GB-02 in piece IV: GB-6 (the outcome; caveat) and GB-7 (the spin of the A₁⁺⁻ ground state). N24 is unchanged.
-- Tests: `test_gb02_e5_sealed_forecasts.py` (5).
+- **Read since.** Roger Tano read the PDF's page (a screenshot of Table 14), and the file's text with its layout kept shows the same:
+  10.39(37) stands under P=−,C=−, as identified (`EXCITED_READ`, `TABLE14_A1_COLUMNS`). Every number held from the paper for this
+  experiment was compared with the layout and agrees.
+- Tests: `test_gb02_e5_sealed_forecasts.py` (6).

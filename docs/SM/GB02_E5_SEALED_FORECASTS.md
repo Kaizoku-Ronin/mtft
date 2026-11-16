@@ -92,3 +92,12 @@ in √σ), where at 9 to 10 the paper's levels lie 0.3 to 1.5 apart. The even fo
 
 GB-6 (the outcome; MODEL, caveat) and GB-7 (the spin of the A₁⁺⁻ ground state; STRUCTURAL, active), wave GB-02 in piece IV. GB-5 is kept as
 written, with a pointer. The negative N24 is unchanged: a pass, however weak, is not a negative, and H24's failure does not rest on it.
+
+## 8. Added at 11:08 on 16 November 2026: the column, read
+
+Roger Tano read the PDF's page 43 (a screenshot of Table 14): in the A₁ block 9.32(28) stands alone under P=+,C=−, and 10.39(37) stands
+beneath 9.78(46) under P=−,C=−. The same file's text with its layout kept shows the same (arXiv:2007.06422v2, sha256 f0eb6406…de23d0). So the
+identification of section 2 is confirmed by reading, and it was the odd forecast that was tested. Everything the package holds from the
+paper for this experiment was then compared with the layout, column by column, and agrees digit for digit; one A₁⁺⁻ state at a single
+spacing, 1.77(4) at β = 6.235, was added to a list that no fit uses. Sections 1 to 7 stand as written before this reading.
+

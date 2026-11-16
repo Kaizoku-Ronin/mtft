@@ -44,6 +44,10 @@ degenerate, and the source assigns the A₁⁺⁻ ground state, which the compar
 as J = 0, to spin 4 (``SPIN_OF_A1``).  The six transcribed values are right (``transcription_check``).
 The paper was read as flattened text; the column of 10.39(37) is identified, not read
 (``identify_column``).  H24's verdict does not change.
+
+Added at 11:08 the same day: the column has now been read from the PDF's page, by Roger Tano and from
+the file's text with its layout kept (``EXCITED_READ``, ``TABLE14_A1_COLUMNS``).  It is P=−,C=−, as
+identified.
 """
 from __future__ import annotations
 
@@ -488,6 +492,12 @@ EXCITED = {"A1--": (10.39, 0.37), "A1+-": None}
 EXCITED_NOTE = ("10.39(37) is the only excited C = -1 state of A1 in the continuum table.  That it stands under P=-,C=- is identified, not "
                 "read: by refitting the paper's finite-spacing values (identify_column) and by the same authors' later SU(3) table, "
                 "whose cells are kept (LATER).  The sealed rule's overall verdict is the same for either column.")
+EXCITED_READ = ("read from the PDF's page 43 on 16 November 2026, 11:05 New York time, by Roger Tano (a screenshot of Table 14), and then from "
+                "the same file's text with its layout kept (arXiv:2007.06422v2, sha256 f0eb6406...de23d0): 10.39(37) stands under P=-,C=-, "
+                "beneath 9.78(46), and 9.32(28) stands alone under P=+,C=-.  The identification of identify_column is confirmed")
+TABLE14_A1_COLUMNS = {"P=+,C=+": ((3.405, 0.021), (5.855, 0.041), (7.515, 0.050), (7.38, 0.11)),
+                      "P=-,C=+": ((5.276, 0.045), (7.29, 0.13), (9.18, 0.26), (9.37, 0.22)),
+                      "P=+,C=-": ((9.32, 0.28),), "P=-,C=-": ((9.78, 0.46), (10.39, 0.37))}
 LATER = {"source": "A. Athenodorou and M. Teper, arXiv:2106.00364 (JHEP 12 (2021) 082), Table 24, read from the HTML",
          "A1 block": (((3.405, 0.021), (5.276, 0.045), (9.32, 0.28), (9.93, 0.49)), ((5.855, 0.041), (7.29, 0.13), None, (10.03, 0.47)),
                       ((7.38, 0.11), (9.18, 0.26), None, None), ((7.515, 0.050), (9.37, 0.22), None, None))}
@@ -503,7 +513,7 @@ A1_ROW1 = {5.8941: ((0.799, 0.010), (1.440, 0.025), (2.67, 0.25), (2.74, 0.51)),
            6.338: ((0.4276, 0.0037), (0.688, 0.008), (1.234, 0.046), (1.327, 0.017)), 6.50: ((0.3474, 0.0022), (0.5568, 0.0050), (0.992, 0.024), (1.016, 0.047))}
 A1_ROW2 = {6.0625: ((1.111, 0.011), (1.419, 0.026), (2.13, 0.08), (1.99, 0.09)), 6.235: ((0.8626, 0.0052), (1.132, 0.011), (1.482, 0.025), (1.588, 0.027)),
            6.338: ((0.7452, 0.0045), (0.956, 0.022), (1.318, 0.062), (1.277, 0.050)), 6.50: ((0.6036, 0.0036), (0.761, 0.012), (1.150, 0.011), (1.034, 0.036))}
-A1_PLUS_MINUS_ALL = {6.0625: ((1.98, 0.07), (2.13, 0.08), (2.05, 0.07)), 6.235: ((1.431, 0.020), (1.482, 0.025)),
+A1_PLUS_MINUS_ALL = {6.0625: ((1.98, 0.07), (2.13, 0.08), (2.05, 0.07)), 6.235: ((1.431, 0.020), (1.482, 0.025), (1.77, 0.04)),
                      6.338: ((1.234, 0.046), (1.318, 0.062), (1.38, 0.09)), 6.50: ((0.992, 0.024), (1.150, 0.011), (1.092, 0.021), (1.169, 0.034))}
 FINE = (6.0625, 6.235, 6.338, 6.50)
 TRANSCRIPTION_CHECK = ("checked against the paper on 16 November 2026 (E5): the six values of LATTICE agree digit for digit with its Tables 14 and 17, "
@@ -572,7 +582,7 @@ def e5() -> dict:
     later = LATER["A1 block"][1][3]
     w = [1 / s ** 2 for _, s in SPIN_OF_A1["A1+- gs"]["members"]]
     mean = sum(wi * m for wi, (m, _) in zip(w, SPIN_OF_A1["A1+- gs"]["members"])) / sum(w)
-    return {"read": E5_READ, "sealed": sealed, "column": identify_column()["column"], "note": EXCITED_NOTE,
+    return {"read": E5_READ, "sealed": sealed, "column": identify_column()["column"], "note": EXCITED_NOTE, "column read": EXCITED_READ,
             "if the column were the other": other["overall"], "sigma if the column were the other": other["A1+- first excited (second even)"]["sigma"],
             "passing window at this error": (lo, hi), "ground state": LATTICE["A1--"][:2],
             "outside the seal: the authors' later value": {"value": later, "sigma": twist_test(excited_odd=later)["A1-- first excited (second odd)"]["sigma"]},
