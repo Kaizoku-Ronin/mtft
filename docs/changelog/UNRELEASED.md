@@ -55,9 +55,17 @@ to the top-level namespace. Report: `docs/SM/MA01_MAASS_SPECTRUM.md`. It makes n
   values to 10⁻³). Products whose character is not trivial are zero on the curve by symmetry and are returned as zero without integrating.
 - Ledger (`mtft.matter.ledger`), wave MA-01 in piece IV: MA-1 upgrades the diagnostic figure of VE-5 (whose text stands) to λ₁ =
   0.3897652, with SPEC-01's finite elements as the independent route (0.3925, and the next eight eigenvalues within 1.5 %, the double one
-  included); MA-2, the tower, with the caveat below; MA-3, the edge of the continuum.
-- **Caveat.** The lists' completeness (below R = 1.98 untwisted, 1.8 twisted) rests on the lab's trace formulas, whose geometric side
-  needs class numbers from PARI. Those formulas are not in the package: completeness is a recorded result, not a gate.
-- Provenance: `studies/maass_2026nov/` (the build script and the lab's scripts and number files). Tests: `test_maass_solver.py` (10),
-  `test_maass_spectrum.py` (9), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_ma01_maass_rung.py` (3).
+  included); MA-2, the tower; MA-3, the edge of the continuum; MA-4, the trace formula's certificate.
+- `mtft.maass.trace`: the Selberg trace formula by sector (odd; even with the continuum; the η-twist's total) on class-number weights
+  frozen for lengths up to 17 (`_data/trace_weights.npz`, 276 kB, recomputed with PARI and equal to the lab's tables). By positivity no
+  cusp form is missing below R = 1.959 in any untwisted sector and parity, nor below R = 1.607 in the twisted lists together, and no
+  residual comes near the 2 an eigenvalue below ¼ would add (ledger MA-4). Controls: PSL(2, ℤ)'s whole formula cancels to 10⁻¹⁰; level
+  11's three forms to 2 × 10⁻⁹; a removed form is located to 0.002; a spurious one breaks positivity. `l1_dirichlet` and `weight` are a
+  second route for the class numbers with no PARI (150 weights to 10⁻⁹ in the tests).
+- **What stays recorded and not gated.** The lab's sharper radii (1.98 untwisted, 1.8 twisted) used a narrower test function and lengths
+  to 23.5, megabytes of weights that are not shipped. The class numbers are PARI's (conditional on GRH in general); the sample and the
+  level-1 cancellation are the checks on them.
+- Provenance: `studies/maass_2026nov/` (the two build scripts and the lab's scripts and number files). Tests: `test_maass_solver.py`
+  (10), `test_maass_spectrum.py` (9), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_maass_trace.py` (8),
+  `test_ma01_maass_rung.py` (3).
 

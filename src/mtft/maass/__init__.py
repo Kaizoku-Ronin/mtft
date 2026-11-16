@@ -10,6 +10,8 @@ Layers, with their claim classes:
                          η-twisted forms below R = 1.8, with coefficient vectors
   scattering  EXACT      the scattering matrix of the four cusps, Φ(s) = φ(s) M₁₁(s) ⊗ M₁₃(s),
                          Φ(½) = −I, and the Eisenstein series
+  trace       CERTIFIED  the Selberg trace formula by sector on frozen class-number weights
+                         (lengths to 17); the positivity bound: no form missing below R = 1.95
   ford        CERTIFIED  the Ford domain of Γ₀*(143) with quadrature: norms, overlaps,
                          participation ratios
 
@@ -19,6 +21,6 @@ statement about physics; the lattice comparison lives apart, with its forecasts 
 """
 from __future__ import annotations
 
-from . import domain, ford, hejhal, kbessel, scattering, spectrum
+from . import domain, ford, hejhal, kbessel, scattering, spectrum, trace
 
-__all__ = ["domain", "ford", "hejhal", "kbessel", "scattering", "spectrum"]
+__all__ = ["domain", "ford", "hejhal", "kbessel", "scattering", "spectrum", "trace"]

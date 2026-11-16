@@ -27,7 +27,8 @@ def test_finite_elements_reproduce_the_first_nine_eigenvalues():
 def test_ledger_entries_and_the_map():
     E = {e["id"]: e for e in L.E}
     assert E["MA-1"]["class"] == "NUMERICAL" and E["MA-1"]["status"] == "active" and E["MA-1"]["module"] == "mtft.maass.spectrum"
-    assert E["MA-2"]["status"] == "caveat" and "not yet in the package" in E["MA-2"]["note"]
+    assert E["MA-2"]["status"] == "caveat" and "MA-4 gates it" in E["MA-2"]["note"]
+    assert E["MA-4"]["class"] == "NUMERICAL" and E["MA-4"]["module"] == "mtft.maass.trace" and "1.959" in E["MA-4"]["statement"]
     assert E["MA-3"]["class"] == "EXACT" and E["MA-3"]["module"] == "mtft.maass.scattering"
     assert "sqrt(0.39)" in E["VE-5"]["statement"] and "DIAGNOSTIC" in E["VE-5"]["statement"]      # VE-5's own text stands
     assert Z.WAVE_DATES["MA-01"] == "2026-11-15" and Z.assignment()["MA-1"] == Z.assignment()["VE-5"] == "IV"

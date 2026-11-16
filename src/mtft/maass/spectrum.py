@@ -2,10 +2,10 @@
 
 The table holds the 41 Maass cusp forms of Γ₀(143) with R < 2.0 (λ = ¼ + R²) and the 42 forms of
 the η-twist with R < 1.8, each with its parity, its Atkin–Lehner signs (ε₁₁, ε₁₃) and the first
-400 coefficients of its expansion at the cusp ∞ (``mtft.maass.hejhal``).  The untwisted list is
-complete below R = 1.98 and the twisted one below R = 1.8, by the trace formulas of the lab's
-records MP17, MP18 and MP19; those formulas are not yet in the package, so here completeness is a
-recorded result, not a gate.
+400 coefficients of its expansion at the cusp ∞ (``mtft.maass.hejhal``).  Completeness: by the
+package's own trace formulas (``mtft.maass.trace``, lengths to 17) no form is missing below
+R = 1.95 in any untwisted sector, nor below R = 1.60 in the twisted lists together; the lab's
+records MP17 to MP19, with lengths to 23.5, give 1.98 and 1.8, which stay recorded results.
 
 Every eigenvalue in the table was found again by the package's own solver when the table was
 built (``studies/maass_2026nov/build_frozen_spectrum.py``): the lab's value is kept beside it as
@@ -108,7 +108,7 @@ def gap() -> dict:
     """The spectral gap of X₀(143): the continuum's edge ¼ and the first cusp form above it."""
     f = first(False)
     return {"edge": 0.25, "lambda_1": f["lambda"], "R_1": f["R"], "id": f["id"], "parity": "odd" if f["parity"] else "even",
-            "eps": f["eps"], "class": "CERTIFIED: two horocycles, Hecke relations; completeness below R = 1.98 by the lab's trace formulas"}
+            "eps": f["eps"], "class": "CERTIFIED: two horocycles, Hecke relations; no form missing below R = 1.95 by mtft.maass.trace"}
 
 
 def sectors(twist: bool = False) -> dict:

@@ -20,8 +20,12 @@ This folder keeps what that port rests on.
 | `lab/mp19` | MP19 | the even sectors with the continuum; the untwisted spectrum complete below R = 1.98 |
 | `lab/mp20` | MP20 | the Ford domain's quadrature; participation ratios; a Monte Carlo second route |
 
-What is in the package and what is not. The solver, the reduction, the frozen table, the scattering matrix and the Ford domain are in
-`mtft.maass`, with their gates in `tests/test_maass_*.py`. The trace formulas of MP16 to MP19 are not: their geometric side needs class
-numbers and regulators of real quadratic orders, which the lab took from PARI (conditional on GRH in general, and checked there against
-an L-series on a sample). So the completeness of the lists, below R = 1.98 untwisted and below 1.8 twisted, is a recorded result of these
-scripts and not a gate of the package. The weight tables they computed (some megabytes) are not stored here.
+- `build_trace_weights.py` recomputes the geometric weights of the trace formulas for lengths up to 17 with cypari2 and writes
+  `src/mtft/maass/_data/trace_weights.npz`. Given the folder of the lab's stored tables it compares: they agree exactly. About ten seconds.
+
+What is in the package and what is not. The solver, the reduction, the frozen table, the scattering matrix, the Ford domain and the trace
+formulas are in `mtft.maass`, with their gates in `tests/test_maass_*.py`. The trace formulas' geometric side needs class numbers and
+regulators of real quadratic orders, which PARI supplies (conditional on GRH in general; the package checks a sample against Dirichlet's
+finite sum). The package freezes the weights to length 17, which a test function of width 0.43 to 0.5 needs, and certifies the lists
+complete below R = 1.959 (untwisted) and 1.607 (twisted, together). The lab's sharper radii, 1.98 and 1.8, came from a width of 0.35
+and lengths to 23.5: 126,751 traces per coset, megabytes of weights that are not stored here. They are a recorded result of these scripts.
