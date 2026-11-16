@@ -106,6 +106,10 @@ TENSION to 3σ, FAIL beyond; a channel with no excited state listed has no verdi
 **The lookup has not been made.** It is experiment E5 of the release plan. The six lattice values of section 1 should be checked against
 the paper at the same time.
 
+**Added later on 16 November 2026.** The lookup was made that day: `GB02_E5_SEALED_FORECASTS.md`. The odd forecast passed at 1.4σ with little
+power; the even one has no lattice value; the six values are right; and the source assigns the A₁⁺⁻ ground state to spin 4, which this report
+did not know. Everything above stands as it was written before the lookup.
+
 ## 6. Every registered forecast and its outcome
 
 `register()` returns this table; the outcomes that can be recomputed from the frozen data are checked against it in the tests.

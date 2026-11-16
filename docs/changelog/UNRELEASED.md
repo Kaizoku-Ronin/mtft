@@ -211,3 +211,27 @@ the gravity map is the next wave's work.
 - Found in the records during the build: MP09's "positive factor" is negative; MP23's file has the sphere's helicities with a minus
   sign, from the order of its coordinates.
 - Provenance: `studies/gravity_2026nov/`. Tests: `test_gravity_knotted.py` (10), `test_gravity_hopfion.py` (7), `test_gravity_tetrad.py` (6).
+
+## GB-02 (2026-11-16): E5 — the two sealed forecasts of the twist energy, looked up
+
+The experiment GB-01 left sealed. Report: `docs/SM/GB02_E5_SEALED_FORECASTS.md`. Class PHENO. **H24's verdict does not change.**
+
+- How a table is read was written down before the paper was opened (which table, what "first excited" means, single-spacing values are
+  no data, two readings that must agree). The seal GB-S1 verifies as sealed; its outcome fields, which are outside its hash, are filled.
+- **The odd forecast passed, at 1.4σ.** The continuum table of Athenodorou and Teper lists one excited C = −1 state of A₁, 10.39(37), the
+  second A₁⁻⁻ state: 3.051(110) in units of the 0⁺⁺ against the forecast 2.866(72). **The even forecast has no lattice value**: A₁⁺⁻ has no
+  excited state in the continuum table. By the seal's own words a pass is weak support.
+- **Why it is worth little** (`e5()`): at the lattice's error any first excited state from 8.87 to 10.65 passes, and the ground state is at
+  9.78(46); the pair is nearly degenerate and noisy (9.93(49), 10.03(47) in the authors' later paper); μ is one fitted number.
+- **The lab's six transcribed values are right**, digit for digit (`transcription_check()`). What its record left out: the paper assigns the
+  A₁⁺⁻ ground state to the 4⁺⁻ ground state, with "significant uncertainty". Under the dictionary's D2 that state is not a J = 0 state: the
+  even twisted form of GB-01's comparison then has no lattice partner, and the twist energy was fitted to two ground states of which one
+  probably should not have been used. Neither helps H24.
+- **A limit of the reading, stated.** The paper was read as flattened text by automated extraction, twice; the PDF's layout was not seen.
+  That 10.39(37) stands under P=−,C=− is identified (`identify_column()`): by redoing the paper's continuum extrapolation from its own
+  finite-spacing tables (it reproduces 3.405(21), 9.32(28) and 10.39(37), and nothing under P=+,C=− gives the last without a poor fit),
+  and by the same authors' later SU(3) table, whose cells are kept. The sealed rule's overall verdict is the same for either column.
+- Kept: `LATTICE` is not edited; GB-5 and the GB-01 report stand as written, each with a dated pointer. The earlier tests that pinned
+  "pending" and "open" now pin the outcome.
+- Ledger, wave GB-02 in piece IV: GB-6 (the outcome; caveat) and GB-7 (the spin of the A₁⁺⁻ ground state). N24 is unchanged.
+- Tests: `test_gb02_e5_sealed_forecasts.py` (5).

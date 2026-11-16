@@ -56,9 +56,10 @@ def test_the_lab_record_of_needed_shifts_agrees():
         assert d["percent"] == pytest.approx(rec["needed shift, percent of the curve value"], abs=1e-6)
 
 
-def test_the_seal_is_intact_and_nothing_was_looked_up():
+def test_the_seal_is_intact_and_the_table_is_as_it_was_sealed():
+    """Until E5 (16 November 2026, later the same day) the outcome was "pending"; the lookup's result is tested in test_gb02."""
     assert G.verify_seals() == {"GB-S1": True}
     seal = G.SEALS[0]
     assert seal["sha256"] == "e75106afbfc3e3bd92c29ebcfeea81db48a0c67ab715c50fdc29dad1735500e7"   # as written into the build record at sealing
-    assert seal["outcome"] == "pending" and seal["evaluated"] is None and "not looked up" in seal["result"]
+    assert seal["outcome"] == "pass in one channel, no data in the other" and seal["evaluated"] == "2026-11-16" and "E5" in seal["result"]
     assert set(G.LATTICE) == {"0++", "0++*", "0-+", "0-+*", "A1+-", "A1--"}                        # no excited C = −1 state is in the table

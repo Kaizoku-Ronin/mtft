@@ -104,7 +104,7 @@ def test_participation_ratios_by_the_package_own_quadrature():
 
 def test_the_two_open_forecasts_are_sealed(monkeypatch):
     seal = G.SEALS[0]
-    assert G.verify_seals() == {"GB-S1": True} and len(seal["sha256"]) == 64 and seal["outcome"] == "pending" and seal["evaluated"] is None
+    assert G.verify_seals() == {"GB-S1": True} and len(seal["sha256"]) == 64 and seal["outcome"] == "pass in one channel, no data in the other" and seal["evaluated"] == "2026-11-16"
     assert seal["sealed"] == "2026-11-16" and seal["registered"].startswith("2026-11-14 08:21") and "before any lookup" in G.TWIST_RULE
     tw, p = G.twist_energy(), G.TWIST_PARAMS                                      # the sealed numbers are the fit's, to four decimals
     assert abs(p["second_odd"] - tw["second_odd"]) < 5e-5 and abs(p["second_even"] - tw["second_even"]) < 5e-5
@@ -159,7 +159,7 @@ def test_the_register_of_forecasts_and_outcomes():
     assert (by["MP15-S2"]["outcome"] == "passed") == ra["S2"]["holds"] and (by["MP18-P1"]["outcome"] == "missed") == (not ra["MP18-P1"]["holds"])
     assert (by["MP19-P4"]["outcome"] == "held") == ra["MP19-P4"]["holds"] and (by["MP20-P1"]["outcome"] == "failed") == (not G.self_interaction_fit()["passes"])
     assert by["MP20-F1"]["outcome"] == "held" and all(1.5 <= v <= 4.5 for v in G.PARTICIPATION.values())
-    assert by["GB-S1"]["outcome"] == "open" and by["MP15-F4"]["outcome"] == "missed" and by["MP15-F4"]["probability"] == 0.9
+    assert by["GB-S1"]["outcome"] == "passed in one channel; no data in the other" and by["MP15-F4"]["outcome"] == "missed" and by["MP15-F4"]["probability"] == 0.9
     reg[0]["outcome"] = "changed"                                                 # a copy
     assert G.register()[0]["outcome"] == "missed"
     assert sorted({r["record"] for r in reg}) == ["MP15", "MP18", "MP19", "MP20"]

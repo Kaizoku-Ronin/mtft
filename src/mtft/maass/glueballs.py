@@ -35,6 +35,15 @@ verifies.
 
 A new dictionary is tested forecast first: ``register_forecast`` seals the predicted ratios, and
 ``compare_forecast`` takes only such a record and answers in the form of ``mtft.falsify``.
+
+Added later on 16 November 2026 (E5, wave GB-02; everything above stands as written before it).  The
+lookup was made, by reading rules written down first: ``e5()``.  The continuum table lists one excited
+C = −1 state of A₁, 10.39(37), the second A₁⁻⁻ state: the odd forecast passes at 1.4σ; the even one has
+no lattice value.  That is weak support at most: the test had little power, the pair is nearly
+degenerate, and the source assigns the A₁⁺⁻ ground state, which the comparison and the fit had taken
+as J = 0, to spin 4 (``SPIN_OF_A1``).  The six transcribed values are right (``transcription_check``).
+The paper was read as flattened text; the column of 10.39(37) is identified, not read
+(``identify_column``).  H24's verdict does not change.
 """
 from __future__ import annotations
 
@@ -315,7 +324,9 @@ SEALS = (
      "params": {"source": "arXiv:2007.06422, SU(3), continuum", "channels": ["A1--", "A1+-"], "thresholds": [2, 3]},
      "window": "sigma <= 2 PASS; 2 < sigma <= 3 TENSION; sigma > 3 FAIL; no excited state listed: NO DATA",
      "sha256": "e75106afbfc3e3bd92c29ebcfeea81db48a0c67ab715c50fdc29dad1735500e7",
-     "outcome": "pending", "evaluated": None, "result": "not looked up: the plan's experiment E5"},
+     "outcome": "pass in one channel, no data in the other", "evaluated": "2026-11-16",
+     "result": "E5: the first excited A1-- state is 10.39(37), ratio 3.051(110), 1.41 sigma from 2.866(72): PASS; A1+- has no excited "
+               "state in the continuum table: NO DATA.  Weak support only, as the seal said beforehand (see e5())"},
 )
 
 
@@ -440,8 +451,10 @@ REGISTER = (
     {"id": "MP20-F1", "record": "MP20", "registered": "2026-11-14 07:59", "whose": "forecast", "probability": 0.8,
      "statement": "all seven participation ratios lie between 1.5 and 4.5", "outcome": "held", "result": "1.89 to 2.47"},
     {"id": "GB-S1", "record": "MP20", "registered": "2026-11-14 08:21", "whose": "the twist energy", "probability": None,
-     "statement": "a second odd C = -1 state at 2.87(7) and a second even one at 3.24(7), in units of the 0++", "outcome": "open",
-     "result": "sealed on 2026-11-16 before any lookup"},
+     "statement": "a second odd C = -1 state at 2.87(7) and a second even one at 3.24(7), in units of the 0++",
+     "outcome": "passed in one channel; no data in the other",
+     "result": "sealed on 2026-11-16 before any lookup; looked up later that day (E5): odd, 3.051(110) against 2.866(72), 1.41 sigma, PASS; "
+               "even, no excited A1+- state in the continuum table; weak support, little power"},
 )
 
 
@@ -457,4 +470,114 @@ def summary() -> dict:
     return {"reading_b_all_miss": rb["all_miss"], "S2_holds": ra["S2"]["holds"], "eta_twist_bound_holds": ra["MP18-P1"]["holds"],
             "comparison": comp, "self_interaction_chi2": self_interaction_fit()["chi2"], "one_coupling_chi2": one_coupling_fit()["chi2"],
             "twist_energy": (tw["mu"], tw["error"], tw["chi2"]), "open": (tw["second_odd"], tw["second_even"], tw["state_error"]),
-            "seals": verify_seals(), "status": "H24 as written fails in both readings; no claim about Yang–Mills follows"}
+            "seals": verify_seals(), "e5": SEALS[0]["outcome"], "status": "H24 as written fails in both readings; no claim about Yang–Mills follows"}
+
+
+
+# ------------------------------------------------------------------ E5: the lookup of 16 November 2026
+E5_READ = ("arXiv:2007.06422v2, the PDF's text by two separate automated extractions on 16 November 2026, between 09:34:41 and 09:43:50 "
+           "New York time: after the reading rules were written down and before the result was (the two clock readings of the build "
+           "record of mtft 1.1.0).  The text of the tables is flattened: a short row's numbers come in order with nothing to show "
+           "their columns.  The PDF's layout was not seen.")
+TABLE14_A1 = (((3.405, 0.021), (5.276, 0.045), (9.32, 0.28), (9.78, 0.46)),      # P=+,C=+ | P=-,C=+ | P=+,C=- | P=-,C=-
+              ((5.855, 0.041), (7.29, 0.13), (10.39, 0.37)),                     # three numbers: the third's column is not shown
+              ((7.515, 0.050), (9.18, 0.26)),
+              ((7.38, 0.11), (9.37, 0.22)))
+TABLE17_J0 = {"0 gs": ((3.405, 0.021), (5.276, 0.045)), "0 ex1": ((5.855, 0.041), (7.29, 0.13))}
+EXCITED = {"A1--": (10.39, 0.37), "A1+-": None}
+EXCITED_NOTE = ("10.39(37) is the only excited C = -1 state of A1 in the continuum table.  That it stands under P=-,C=- is identified, not "
+                "read: by refitting the paper's finite-spacing values (identify_column) and by the same authors' later SU(3) table, "
+                "whose cells are kept (LATER).  The sealed rule's overall verdict is the same for either column.")
+LATER = {"source": "A. Athenodorou and M. Teper, arXiv:2106.00364 (JHEP 12 (2021) 082), Table 24, read from the HTML",
+         "A1 block": (((3.405, 0.021), (5.276, 0.045), (9.32, 0.28), (9.93, 0.49)), ((5.855, 0.041), (7.29, 0.13), None, (10.03, 0.47)),
+                      ((7.38, 0.11), (9.18, 0.26), None, None), ((7.515, 0.050), (9.37, 0.22), None, None))}
+SPIN_OF_A1 = {"A1+- gs": {"assigned": "4+- gs", "stars": 2, "with": ("E+- ex1", "T1+- ex3", "T2+- ex2"),
+                          "table 16": "4+-gs ~** A1+-gs + E+-ex1 + T1+-ex3 + T2+-ex2  (two stars: 'significant uncertainty')",
+                          "members": ((9.32, 0.28), (9.03, 0.23), (8.92, 0.10), (9.06, 0.08)), "table 17": (9.02, 0.10)},
+              "A1-- gs": None, "A1-- ex1": None}
+# the paper's Table 1 (a sqrt(sigma)) and the A1 blocks of its Tables 8 to 13 (a M), as read; rows in the flattened order
+STRING_TENSION = {5.8941: (0.26118, 0.00037), 5.99: (0.21982, 0.00077), 6.0625: (0.19472, 0.00054), 6.235: (0.15003, 0.00030),
+                  6.338: (0.12928, 0.00027), 6.50: (0.10383, 0.00024)}
+A1_ROW1 = {5.8941: ((0.799, 0.010), (1.440, 0.025), (2.67, 0.25), (2.74, 0.51)), 5.99: ((0.7045, 0.0065), (1.169, 0.015), (2.14, 0.11), (2.37, 0.13)),
+           6.0625: ((0.6365, 0.0043), (1.001, 0.032), (1.98, 0.07), (1.93, 0.08)), 6.235: ((0.4969, 0.0029), (0.781, 0.013), (1.431, 0.020), (1.512, 0.021)),
+           6.338: ((0.4276, 0.0037), (0.688, 0.008), (1.234, 0.046), (1.327, 0.017)), 6.50: ((0.3474, 0.0022), (0.5568, 0.0050), (0.992, 0.024), (1.016, 0.047))}
+A1_ROW2 = {6.0625: ((1.111, 0.011), (1.419, 0.026), (2.13, 0.08), (1.99, 0.09)), 6.235: ((0.8626, 0.0052), (1.132, 0.011), (1.482, 0.025), (1.588, 0.027)),
+           6.338: ((0.7452, 0.0045), (0.956, 0.022), (1.318, 0.062), (1.277, 0.050)), 6.50: ((0.6036, 0.0036), (0.761, 0.012), (1.150, 0.011), (1.034, 0.036))}
+A1_PLUS_MINUS_ALL = {6.0625: ((1.98, 0.07), (2.13, 0.08), (2.05, 0.07)), 6.235: ((1.431, 0.020), (1.482, 0.025)),
+                     6.338: ((1.234, 0.046), (1.318, 0.062), (1.38, 0.09)), 6.50: ((0.992, 0.024), (1.150, 0.011), (1.092, 0.021), (1.169, 0.034))}
+FINE = (6.0625, 6.235, 6.338, 6.50)
+TRANSCRIPTION_CHECK = ("checked against the paper on 16 November 2026 (E5): the six values of LATTICE agree digit for digit with its Tables 14 and 17, "
+                       "table numbers included.  What the lab's record left out: the paper's Table 16 assigns the A1+- ground state to the 4+- ground "
+                       "state, with 'significant uncertainty', and no A1-- state to any spin")
+
+
+def transcription_check() -> dict:
+    """The six transcribed values of ``LATTICE`` against the paper's tables as read in E5: True where they agree digit for digit."""
+    read = {"0++": TABLE14_A1[0][0], "0-+": TABLE14_A1[0][1], "A1+-": TABLE14_A1[0][2], "A1--": TABLE14_A1[0][3], "0++*": TABLE14_A1[1][0], "0-+*": TABLE14_A1[1][1]}
+    out = {k: LATTICE[k][:2] == read[k] for k in LATTICE}
+    out["table 17, J = 0"] = (TABLE17_J0["0 gs"] == (LATTICE["0++"][:2], LATTICE["0-+"][:2]) and TABLE17_J0["0 ex1"] == (LATTICE["0++*"][:2], LATTICE["0-+*"][:2]))
+    return out
+
+
+def continuum_fit(points: dict) -> dict:
+    """The paper's continuum extrapolation, redone: a weighted straight line in a²σ through M/√σ at each β of ``points``
+    ({β: (aM, error)}), with the string tensions of its Table 1.  Returns the value at a = 0, its error, χ² and the degrees of freedom."""
+    import numpy as np
+    x, y, e = [], [], []
+    for beta, (m, dm) in points.items():
+        sg, dsg = STRING_TENSION[beta]
+        x.append(sg * sg)
+        y.append(m / sg)
+        e.append(m / sg * math.hypot(dm / m, dsg / sg))
+    x, y, e = np.array(x), np.array(y), np.array(e)
+    A = np.vstack([np.ones_like(x), x]).T / e[:, None]
+    cov = np.linalg.inv(A.T @ A)
+    c = cov @ A.T @ (y / e)
+    return {"value": float(c[0]), "error": float(math.sqrt(cov[0, 0])), "chi2": float(np.sum(((y - c[0] - c[1] * x) / e) ** 2)), "dof": len(x) - 2}
+
+
+def identify_column() -> dict:
+    """Which C = -1 column of the paper's continuum table holds 10.39(37): the refit that stands in for a reading of the layout.
+
+    Controls first: the method reproduces 3.405(21) and 9.32(28).  Then the candidates: the P=-,C=- states listed first at the
+    four finest spacings extrapolate to 10.389(364), which is the paper's 10.39(37); under P=+,C=- the second row as listed and
+    the second-lightest state at each spacing both give fits with χ² per degree of freedom above 2.5, which the paper would
+    have starred, and 10.39(37) carries no star."""
+    def col(rows, k, betas):
+        return {b: rows[b][k] for b in betas}
+    out = {"control A1++ gs (paper: 3.405(21))": continuum_fit(col(A1_ROW1, 0, A1_ROW1)),
+           "control A1+- gs, beta >= 5.99 (paper: 9.32(28))": continuum_fit(col(A1_ROW1, 2, (5.99, *FINE))),
+           "P=-,C=- listed first, four finest": continuum_fit(col(A1_ROW1, 3, FINE)),
+           "P=-,C=- listed second, four finest": continuum_fit(col(A1_ROW2, 3, FINE)),
+           "P=+,C=- listed second, four finest": continuum_fit(col(A1_ROW2, 2, FINE)),
+           "P=+,C=- second lightest, four finest": continuum_fit({b: sorted(A1_PLUS_MINUS_ALL[b])[1] for b in FINE})}
+    target = EXCITED["A1--"]
+    hit = {k: abs(v["value"] - target[0]) < 0.01 and v["chi2"] / v["dof"] <= 2.5 for k, v in out.items() if k.startswith("P=")}
+    out["matches 10.39(37) with an unstarred fit"] = [k for k, v in hit.items() if v]
+    out["column"] = "P=-,C=-" if out["matches 10.39(37) with an unstarred fit"] == ["P=-,C=- listed first, four finest"] else "undetermined"
+    return out
+
+
+def e5() -> dict:
+    """The lookup of the two sealed forecasts, as made on 16 November 2026, and what it is worth.
+
+    ``sealed`` is the seal's own rule on the value read; nothing else in the result is part of the seal."""
+    odd = EXCITED["A1--"]
+    sealed = evaluate_open(excited_odd=odd, excited_even=EXCITED["A1+-"])
+    other = twist_test(excited_even=odd)
+    lo = hi = None
+    for k in range(8000, 12001):                                              # the masses, at the lattice's error, that would have passed
+        if twist_test(excited_odd=(k / 1000, odd[1]))["A1-- first excited (second odd)"]["verdict"] == "PASS":
+            lo, hi = (k / 1000 if lo is None else lo), k / 1000
+    later = LATER["A1 block"][1][3]
+    w = [1 / s ** 2 for _, s in SPIN_OF_A1["A1+- gs"]["members"]]
+    mean = sum(wi * m for wi, (m, _) in zip(w, SPIN_OF_A1["A1+- gs"]["members"])) / sum(w)
+    return {"read": E5_READ, "sealed": sealed, "column": identify_column()["column"], "note": EXCITED_NOTE,
+            "if the column were the other": other["overall"], "sigma if the column were the other": other["A1+- first excited (second even)"]["sigma"],
+            "passing window at this error": (lo, hi), "ground state": LATTICE["A1--"][:2],
+            "outside the seal: the authors' later value": {"value": later, "sigma": twist_test(excited_odd=later)["A1-- first excited (second odd)"]["sigma"]},
+            "spin of the A1+- ground state in the source": SPIN_OF_A1["A1+- gs"]["table 16"], "mean of the four 4+- members": mean,
+            "transcription": transcription_check(),
+            "worth": "weak support at most: one fitted number, little power, a nearly degenerate and noisy pair, and one of the two states the "
+                     "twist energy was fitted to is assigned to spin 4 by the source"}
+
