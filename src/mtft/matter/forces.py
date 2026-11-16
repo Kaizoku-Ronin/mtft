@@ -524,8 +524,9 @@ def modular_clock():
     """SL(2,Z) = <S, T | S^4, (ST)^6, S^2 = (ST)^3>: abelianisation Z/12 (Smith form of the relation matrix), PSL(2,Z): Z/6; the orders of S, ST, -1;
     the subgroup orders of Z/12 are the divisors of 12; eta^2 carries the order-12 character, Delta = eta^24 has weight 12."""
     from sympy.matrices.normalforms import smith_normal_form
-    sl = smith_normal_form(sp.Matrix([[4, 0], [6, 6], [-1, -3]]), domain=sp.ZZ).diagonal()
-    psl = smith_normal_form(sp.Matrix([[2, 0], [3, 3]]), domain=sp.ZZ).diagonal()
+    # invariant factors are defined up to sign; sympy before 1.14 can return -12 here (2026-11-16)
+    sl = [abs(int(x)) for x in smith_normal_form(sp.Matrix([[4, 0], [6, 6], [-1, -3]]), domain=sp.ZZ).diagonal()]
+    psl = [abs(int(x)) for x in smith_normal_form(sp.Matrix([[2, 0], [3, 3]]), domain=sp.ZZ).diagonal()]
     ST = S_MAT * T_MAT
     orders = {"S": next(k for k in range(1, 9) if S_MAT ** k == sp.eye(2)), "ST": next(k for k in range(1, 13) if ST ** k == sp.eye(2)),
               "-1": 2, "S^2 = -1": S_MAT ** 2 == -sp.eye(2), "(ST)^3 = -1": ST ** 3 == -sp.eye(2)}

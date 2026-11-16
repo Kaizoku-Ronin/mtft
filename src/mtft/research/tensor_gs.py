@@ -11,7 +11,8 @@ def native_scalar_flux_gate(K, m):
 def flux_transgression(K):
     """Integral tensor flux reduction induces 3 k_1 (not k_1): K_hat = [k_Delta; 3 k_1], SNF (1, 3) -> candidate Z3."""
     kd = K.row(1) - K.row(0); Kh = sp.Matrix.vstack(kd, 3 * K.row(0)); S = smith_normal_form(Kh, domain=sp.ZZ)
-    return {"K_hat": Kh, "invariant_factors": [S[i, i] for i in range(min(S.shape))], "discrete_remnant": [S[i, i] for i in range(min(S.shape)) if S[i, i] not in (0, 1, -1)]}
+    d = [abs(S[i, i]) for i in range(min(S.shape))]                      # invariant factors are defined up to sign
+    return {"K_hat": Kh, "invariant_factors": d, "discrete_remnant": [x for x in d if x not in (0, 1)]}
 
 def factorization_check(I, X, Y):
     """Symbolic identity I = X * Y for anomaly polynomials in commuting characteristic classes."""

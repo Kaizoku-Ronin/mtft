@@ -10,7 +10,7 @@ def shift_kernel(K): return {"kernel": K.nullspace(), "rank": K.rank(), "massles
 
 def smith_remnant(K):
     from sympy.matrices.normalforms import smith_normal_form
-    S = smith_normal_form(K, domain=sp.ZZ); d = [S[i, i] for i in range(min(S.shape)) if S[i, i] != 0]
+    S = smith_normal_form(K, domain=sp.ZZ); d = [abs(S[i, i]) for i in range(min(S.shape)) if S[i, i] != 0]   # defined up to sign
     return {"invariant_factors": d, "finite_remnant": [x for x in d if x not in (1, -1)]}
 
 def integer_dressing(K, q_operator):

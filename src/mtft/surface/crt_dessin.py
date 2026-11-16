@@ -49,5 +49,6 @@ def dessin():
 def genus_squarefree(N):
     import sympy as sp
     primes = list(sp.factorint(N)); mu = sp.Integer(N) * sp.prod(1 + sp.Rational(1, p) for p in primes)
-    e2 = sp.prod(1 + sp.legendre_symbol(-1, p) for p in primes); e3 = sp.prod(1 + sp.legendre_symbol(-3, p) for p in primes); cusps = 2 ** len(primes)
+    # sp.Integer: before sympy 1.13 legendre_symbol returns a Python int, and e2 / 4 would be a float (2026-11-16)
+    e2 = sp.Integer(sp.prod(1 + sp.legendre_symbol(-1, p) for p in primes)); e3 = sp.Integer(sp.prod(1 + sp.legendre_symbol(-3, p) for p in primes)); cusps = 2 ** len(primes)
     return {"level": N, "index": mu, "e2": e2, "e3": e3, "cusps": cusps, "genus": 1 + mu / 12 - e2 / 4 - e3 / 3 - sp.Rational(cusps, 2)}
