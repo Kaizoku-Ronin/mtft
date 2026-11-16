@@ -265,21 +265,23 @@ The experiment GB-01 left sealed. Report: `docs/SM/GB02_E5_SEALED_FORECASTS.md`.
   import in `src/mtft` and fails on one that is neither the standard library, the package, a declared dependency, nor an optional
   library imported only inside a function; run against v1.0.0's `pyproject.toml` it names the module-level scipy imports. The publish
   workflow now installs only the package and pytest, so a release proves the declared set suffices.
-- Repairs found by running the whole suite on every supported Python and at the floors. In older code:
-  `mtft.surface.frozen` read its data through a folder without an `__init__.py`, which Python 3.9 cannot open as a resource root;
-  `studies/du03_dispersion.py` had an f-string whose replacement field ran over several lines, which needs Python 3.12 (so 3.9, 3.10
-  and 3.11 failed; output unchanged); with sympy before 1.14 the abelianisation of SL(2,ℤ) in `mtft.matter.forces.modular_clock`
-  came out as ℤ/−12 (invariant factors are defined up to sign, and the function now takes absolute values, as
-  `mtft.surface.arithspin` already did, and so do `mtft.research.charge_lattices.smith_remnant` and
-  `mtft.research.tensor_gs.flux_transgression`); with sympy before 1.13 `mtft.surface.crt_dessin.genus_squarefree` gave the genus
-  of X₀(13) as −1.1·10⁻¹⁶, because `legendre_symbol` returned a Python int and a quotient became a float (now exact). With current
-  libraries none of these changes a value. In this release's tests: two tests of `mtft.plane` used `zip(strict=True)`, which
-  Python 3.9 lacks.
+- Repairs found by running the whole suite on every supported Python, at the floors, and from an sdist installed as a package. In older
+  code: `mtft.surface.frozen` read its data through a folder without an `__init__.py`, which Python 3.9 cannot open as a resource root;
+  `studies/du03_dispersion.py` had an f-string whose replacement field ran over several lines, which needs Python 3.12 (so 3.9, 3.10 and
+  3.11 failed; output unchanged); with sympy before 1.14 the abelianisation of SL(2,ℤ) in `mtft.matter.forces.modular_clock` came out as
+  ℤ/−12 (invariant factors are defined up to sign, and the function now takes absolute values, as `mtft.surface.arithspin` already did,
+  and so do `mtft.research.charge_lattices.smith_remnant` and `mtft.research.tensor_gs.flux_transgression`); with sympy before 1.13
+  `mtft.surface.crt_dessin.genus_squarefree` gave the genus of X₀(13) as −1.1·10⁻¹⁶, because `legendre_symbol` returned a Python int and
+  a quotient became a float (now exact). With current libraries none of these changes a value. Installed from the sdist rather than in
+  editable mode, `mtft.matter.puzzle.check()` found no reports beside its own file and skipped its checks of them, which
+  `test_puzzle_map.py` requires to run; `check()` now takes the folder of the reports, and the test passes the one beside it. In this
+  release's tests: two tests of `mtft.plane` used `zip(strict=True)`, which Python 3.9 lacks.
 - Checks: in clean environments the whole fast suite runs without a failure on Python 3.9 at the declared floors (numpy 2.0.0, scipy
-  1.13.0, sympy 1.10, mpmath 1.3.0) and with current libraries on Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14, skipping only the six tests
-  that need PARI/GP or cypari2, which are installed separately; 40 of the 41 slow tests, which the publish workflow runs, pass and one
-  skips; and the suite run from the unpacked sdist, in a clean environment holding only the package's declared dependencies and pytest,
-  gives the checkout's result. The classifiers name Python 3.13 and 3.14.
+  1.13.0, sympy 1.10, mpmath 1.3.0) and with current libraries on Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14, skipping only the six
+  tests that need PARI/GP or cypari2, which are installed separately; 40 of the 41 slow tests, which the publish workflow runs, pass and
+  one skips. Run from the unpacked sdist, with the sdist installed as a package and nothing else but its dependencies and pytest,
+  nothing fails, and it skips the same six and one more: the test of the README's pictures, which needs a git checkout. The classifiers
+  name Python 3.13 and 3.14.
 - The README shows pictures of Sphereland's instrument 22, the modular flip (the boundary torus and its two fillings, and which
   filling wins over the half-plane: the Farey tiling, with the Fricke point of X₀(143) at i/√143), and of instruments 10, 24 and
   18. They are rendered from the page itself by headless Chrome, with the page's own fonts, by `viz/sphereland/figs/render_figs.py`;

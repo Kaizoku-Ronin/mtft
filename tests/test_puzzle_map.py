@@ -16,9 +16,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_map_integrity_and_non_vacuity():
-    c = Z.check()
+    c = Z.check(docs=ROOT / "docs" / "SM")                                   # the reports beside these tests, however mtft is installed
     assert all(c.values()), {k: v for k, v in c.items() if not v}
     assert {"docs_exist", "every_doc_placed"} <= set(c)                      # the source-tree checks ran
+    assert all(Z.check().values())                                          # and the default: this module's own tree, if it has one
     assert len(Z.PIECES) == 10 and sum(len(p.subs) for p in Z.PIECES) >= 50
     assert len(Z.PREREG) >= 6 and len(Z.NEGATIVES) >= 19
 

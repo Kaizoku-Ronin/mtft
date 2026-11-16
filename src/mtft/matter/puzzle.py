@@ -675,8 +675,11 @@ def docs_dir():
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------ checks
-def check():
-    """Integrity of the map against the ledger (and, in a source tree, the reports). Returns {check: bool}."""
+def check(docs=None):
+    """Integrity of the map against the ledger (and, in a source tree, the reports). Returns {check: bool}.
+
+    ``docs`` is the folder of the reports; by default, ``docs/SM`` of the source tree this module sits in, if there is one.
+    The tests pass their own tree's, so that an installed copy is checked against the reports beside them (2026-11-16)."""
     E = _ledger(); ids = {e["id"]: e for e in E}; P = pieces()
     out = {}
     try:
@@ -704,7 +707,7 @@ def check():
         all(s.prereg in {t["id"] for t in PREREG} for p in PIECES for s in p.subs if s.prereg)
     out["negatives_valid"] = all(n["piece"] in P and (n["claims"] or n["docs"]) for n in NEGATIVES)
     out["chronology_complete"] = set(WAVE_DATES) == set(WAVE_REPORT) == set(waves)
-    d = docs_dir()
+    d = Path(docs) if docs is not None else docs_dir()
     if d.is_dir():
         on_disk = {f.name for f in d.glob("*.md")}
         named = set(all_docs())
