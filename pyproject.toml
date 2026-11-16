@@ -50,6 +50,7 @@ mtft = ["mtft_legend.md"]
 "mtft.periods" = ["_data/*.json", "_data/*.txt"]
 "mtft.surface" = ["_data/*.json", "_data/*.npz"]
 "mtft.maass" = ["_data/*.json", "_data/*.npz", "_data/*.txt"]
+"mtft.lines" = ["_data/*.json", "_data/*.txt"]
 "mtft.interactions" = ["_data/*.json", "_data/*.html", "_data/*.txt"]
 
 [tool.pytest.ini_options]

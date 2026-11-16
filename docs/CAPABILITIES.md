@@ -132,6 +132,21 @@ reviews to detect modules missing from this index.
 | [`mtft.interactions.render`](../src/mtft/interactions/render.py) | Portable, offline HTML and deterministic SVG for the interaction atlas. | `vertex_svg`, `render_html` |
 | [`mtft.interactions.ufo`](../src/mtft/interactions/ufo.py) | Read a conservative, declarative subset of tree-level UFO without executing it. | `UFOError`, `import_ufo` |
 
+## lines
+
+| Module | Scope | Entry points |
+|---|---|---|
+| [`mtft.lines`](../src/mtft/lines/__init__.py) | mtft.lines — the closed lines of Γ₀(143)\PSL(2, ℝ): their thirty integers, their crossings and linking numbers (v1.1.0). | Package exports / data |
+| [`mtft.lines.closed`](../src/mtft/lines/closed.py) | mtft.lines.closed — the closed lines of Γ₀(N)\PSL(2, ℝ) over a motion, and their integers (EXACT; LN-01, 2026-11-16). | `Line`, `lifts`, `lines_143`, `invariants` (+2 more in source) |
+| [`mtft.lines.crossings`](../src/mtft/lines/crossings.py) | mtft.lines.crossings — every crossing of two closed geodesics on X₀(N), exactly, and the linking numbers (LN-01, 2026-11-16). | `Crossings`, `crossings_143`, `crossings_143_extended`, `crossings` |
+| [`mtft.lines.cutting`](../src/mtft/lines/cutting.py) | mtft.lines.cutting — a closed geodesic of the modular surface cut along the fundamental domain, exactly (LN-01, 2026-11-16). | `pos`, `same`, `conj`, `mirror_matrix` (+8 more in source) |
+| [`mtft.lines.darts`](../src/mtft/lines/darts.py) | mtft.lines.darts — the darts of P¹(ℤ/N), their graph, and the class of a group element (EXACT; LN-01, 2026-11-16). | `mm`, `inv`, `neg`, `mpow` (+12 more in source) |
+| [`mtft.lines.involutions`](../src/mtft/lines/involutions.py) | mtft.lines.involutions — the Atkin–Lehner involutions and the mirror on the classes of Γ₀(143) (EXACT; LN-01, 2026-11-16). | `al_conjugate`, `psi_shift`, `mirror_conjugate`, `al_matrix` (+9 more in source) |
+| [`mtft.lines.lorenz`](../src/mtft/lines/lorenz.py) | mtft.lines.lorenz — modular knots as Lorenz knots: words and linking numbers on the template (EXACT; LN-01, 2026-11-16). | `positive_conjugate`, `canon`, `lorenz_word`, `word_matrix` (+4 more in source) |
+| [`mtft.lines.periods`](../src/mtft/lines/periods.py) | mtft.lines.periods — the 26 periods of a class by Hecke block, by two routes, and the lattice of 143a1 (LN-01, 2026-11-16). | `coordinates`, `coordinates_of`, `flat`, `thirty` (+14 more in source) |
+| [`mtft.lines.rademacher`](../src/mtft/lines/rademacher.py) | mtft.lines.rademacher — Dedekind sums, Rademacher's Ψ and the windings round the cusps (EXACT; LN-01, 2026-11-16). | `sign`, `dedekind`, `dedekind_by_definition`, `Phi` (+5 more in source) |
+| [`mtft.lines.table`](../src/mtft/lines/table.py) | mtft.lines.table — the lab's frozen record of the closed lines of Γ₀(143), with SHA-1 provenance (LN-01, 2026-11-16). | `verify_provenance`, `record`, `metadata`, `lines` (+3 more in source) |
+
 ## maass
 
 | Module | Scope | Entry points |

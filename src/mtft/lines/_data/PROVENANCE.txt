@@ -1,0 +1,8 @@
+mtft.lines frozen data: provenance (SHA-1)
+
+7eefc768c8ac5781822414ff3e5ad3630e54fe81  lines_143.json
+
+built by studies/lines_2026nov/build_frozen_lines.py from
+da9bf0e0fc1ebae84736913748c87786a81f8f90  studies/lines_2026nov/lab/mp12/mp12_numbers.json
+794ed28c630a1e7cf9f0644087e2fe43cbbd2774  studies/lines_2026nov/lab/mp13/mp13_numbers.json
+49a1fc4e26e310b982537dee0246541df374a03b  studies/maass_2026nov/lab/mp14/mp14_numbers.json

@@ -125,7 +125,7 @@ PIECES = (
           "is Z/12, the abelianisation of SL(2,Z) (S of order 4, ST of order 6), and its two shortest loops cross the mirrors only at CM points: the "
           "golden loop through i, the twelve loop through rho (GF-12).",
           ("FA-4", "LB-1", "M04-2", "SP-1", "FA-3", "AG-1", "AG-3", "FH-1", "OM-1", "SQ-1", "SQ-3", "TR-3", "TR-2", "TR-4", "GF-12"),
-          ("SP-01", "AG-01", "SQ-01", "TR-01"), (),
+          ("SP-01", "AG-01", "SQ-01", "TR-01", "LN-01"), (),
           ("R2C07_PRODUCT_SURFACE_REGISTER.md", "V0330_COMPENDIUM_NOTES.md"),
           (Sub("II.1", "A second, independent route to the canonical kernel (the E2 rule)", "open", claims=("AG-3",),
                settle="Compute the Arakelov Green's function between the cusps infinity and 0 with the same Ford-domain machinery and compare with the "
@@ -448,7 +448,7 @@ WAVE_DATES = {
     "GT-01": "2026-10-05", "QL-01": "2026-10-06", "CI-01": "2026-10-06", "BL-01": "2026-10-06", "FA-01": "2026-10-06", "AG-01": "2026-10-07",
     "FH-01": "2026-10-07", "LV-01": "2026-10-07", "TL-01": "2026-10-07", "DS-01": "2026-10-07", "PAR-01": "2026-10-08", "OM-01": "2026-10-08",
     "YB-01": "2026-10-08", "SQ-01": "2026-10-08", "TR-01": "2026-10-10", "PR-01": "2026-10-10", "GF-01": "2026-10-11", "PG-01": "2026-10-12", "SC-01": "2026-10-17", "VE-01": "2026-10-17", "GC-02": "2026-10-17",
-    "MA-01": "2026-11-15",
+    "MA-01": "2026-11-15", "LN-01": "2026-11-16",
 }
 
 WAVE_REPORT = {
@@ -469,7 +469,7 @@ WAVE_REPORT = {
     "YB-01": "OM01_YB01_EXPERIMENTS.md", "SQ-01": "SQ01_STAR_QUOTIENTS.md", "TR-01": "TR01_TIME_REVERSAL.md", "PR-01": "PR01_PREREGISTRATION.md",
     "GF-01": "GF01_FORCES_FIRST.md", "PG-01": "PG01_ENERGY_TWO_CLOCKS.md",
  "SC-01": "SC01_SCALE_LADDER.md", "VE-01": "VE01_VACUUM_ENERGY.md", "GC-02": "GC02_TWO_SCALES.md",
-    "MA-01": "MA01_MAASS_SPECTRUM.md",
+    "MA-01": "MA01_MAASS_SPECTRUM.md", "LN-01": "LN01_CLOSED_LINES.md",
 }
 
 PREREG = (
@@ -541,6 +541,9 @@ NEGATIVES = (
     {"id": "N21", "piece": "I", "what": "A supersymmetric SO(16) or E8 parent reached through U(8) with the stack hypercharge does not give the exact "
                                           "Standard Model: SO(16)'s quark doublets come in an even number, E8's three come with three chiral exotic doublets, "
                                           "and in both the lepton rows force net(L) + net(e^c) = 0", "claims": ("GF-11",), "docs": ()},
+    {"id": "N23", "piece": "II", "what": "A closed line of the curve's unit tangent bundle with no 143a1 component need not be negated by an "
+                                           "Atkin–Lehner involution: the lab's pre-registered conjecture (MP12, P13) fails on two of Sphereland 10's "
+                                           "lines of length 30, whose zeros have no mechanism yet", "claims": ("LN-6",), "docs": ("LN01_CLOSED_LINES.md",)},
 )
 
 REFERENCE_DOCS = ("MATTER01_REPORT.md", "MATTER01_QED_DERIVATION.md", "INTERACTION_ATLAS.md")

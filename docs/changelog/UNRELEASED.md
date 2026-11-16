@@ -70,3 +70,47 @@ to the top-level namespace. Report: `docs/SM/MA01_MAASS_SPECTRUM.md`. It makes n
   (10), `test_maass_spectrum.py` (10), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_maass_trace.py` (8),
   `test_ma01_maass_rung.py` (3).
 
+
+## LN-01 (2026-11-16): `mtft.lines` — the closed lines of Γ₀(143)\PSL(2, ℝ): thirty integers, every crossing, linking numbers
+
+A new subpackage, ported from the Modular Plane lab's records MP12, MP13 and MP14. Import it on demand (`import mtft.lines`); nothing is
+added to the top-level namespace. Report: `docs/SM/LN01_CLOSED_LINES.md`. It is mathematics of the curve's unit tangent bundle and makes
+no statement about gravity.
+
+- `mtft.lines.darts`: P¹(ℤ/N) and the graph on its darts (at 143: 56 vertices, 84 edges, 4 faces of lengths 1, 11, 13, 143; b₁ = 29).
+  `Graph.cls` gives the class of an element of Γ₀(N) in ℤ^b₁ from its word in S and T; `Graph.generators` are the 29 generators of
+  Γ₀(143). Levels with elliptic points are refused; `Darts` (cycle types of any matrix) works at every level.
+- `mtft.lines.rademacher`: Dedekind sums by reciprocity, Rademacher's Φ and Ψ, the windings of η-quotients round the cusps (`windings`
+  for the three units of level 143) and Ligozat's orders at the cusps, which the windings on the cusp loops must equal.
+- `mtft.lines.closed`: `lifts(A, N)` builds the closed lines over a hyperbolic matrix, each with ℓ, its darts, γ = g A^ℓ g⁻¹, Ψ and its
+  class; `lines_143()` is the lab's 28 over the cat map, Sphereland 10's motion and the Pell unit, equal to its table integer for
+  integer. `transfer` gates the sums over a motion's lifts: classes to zero, fibre numbers to 168Ψ(A).
+- `mtft.lines.periods`: the 26 periods of a class on the Hecke blocks (2 + 4 + 8 + 12) by two routes, the lab's frozen coordinates and
+  the package's own Manin symbols in `mtft.hecke`, compared through zeros, ranks, relations and the lattice they span; `thirty(γ)`
+  returns all thirty integers of an element. `lattice_143a1` gives Ω₁ = −0.984962 + 2.015772i, Ω₂ = −1.969923 from the q-series
+  (CERTIFIED 1e-8), and `stored_periods_in_lattice` checks them against `mtft.periods`' PARI periods (index 1).
+- `mtft.lines.involutions`: W₁₁, W₁₃, W₁₄₃ and the mirror as integer matrices on ℤ²⁹, their signs on the blocks, and
+  `psi_shift`: an Atkin–Lehner involution does not keep the fibre number, Ψ(W_Q γ W_Q⁻¹) = Ψ(γ) + the winding of (η(Qτ)/η(τ))²⁴
+  along γ. `conjecture_p13` computes the lab's missed conjecture (below).
+- `mtft.lines.cutting`: the cutting sequence of a closed geodesic along the fundamental domain in rational arithmetic (4 arcs a period
+  for the cat map, 3 for Sphereland 10's motion, 25 for the Pell unit); proper powers are refused.
+- `mtft.lines.crossings`: `Crossings(N, motions)` counts every crossing of the closed geodesics over some motions, with signs, in two
+  half-open conventions that must agree; `linking()` is Lk(K_γ, K_δ) = −I(γ, δ) for lines taken with their reverses (the lab's
+  derivation). At 143 with the three motions: 24 geodesics, 3214 crossings between them, 2918 self-crossings, the cat unions linking
+  0, −6, −8, −24; with three more motions, MP14's 38 geodesics. The mirror's action on the geodesics and the vanishing of the Pell rows
+  of the signed matrix are gated.
+- `mtft.lines.lorenz`: Ghys's Lorenz template. `lorenz_word`, `lorenz_linking`, and `transfer_sum`: the total of crossings between the
+  geodesics over two motions at level N is ψ(N) times the template's sum. Gated on all fifteen pairs of six motions at levels 143, 11
+  and 23, and on a pair no record holds.
+- Ledger (`mtft.matter.ledger`), wave LN-01 in piece II: LN-1 to LN-8. **LN-6 records a miss**: the lab's pre-registered conjecture that
+  every line with no 143a1 component is negated by an Atkin–Lehner involution is false (lines 22 and 24); it is also negative N23 of
+  the puzzle map. LN-8 (the linking formula) is STRUCTURAL with a caveat: its sign assumes an orientation that was not checked.
+- **Found during the build.** Five tests failed on their first runs, all through something their author had written without computing
+  it; none through the port. Four were corrected and say so. The fifth was a wrong belief, that the involutions keep Ψ; the law above
+  replaced it (LN-5).
+- **What is not here.** A mechanism for the two zeros of LN-6; levels with elliptic points (so the lab's shadows on X₀(13)); any
+  physical reading of the thirty integers.
+- Provenance: `studies/lines_2026nov/` (the build script and the lab's scripts and number files for MP12 and MP13; MP14's are already
+  under `studies/maass_2026nov/lab/mp14`). Data: `src/mtft/lines/_data/lines_143.json` (28 kB) with SHA-1 in `PROVENANCE.txt`.
+  Tests: `test_lines_darts.py` (9), `test_lines_closed.py` (6), `test_lines_periods.py` (7), `test_lines_crossings.py` (10),
+  `test_ln01_closed_lines.py` (4).
