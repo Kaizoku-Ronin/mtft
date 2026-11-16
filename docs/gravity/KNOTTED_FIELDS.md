@@ -1,7 +1,7 @@
 # `mtft.gravity` — knotted weak fields: the tube, the squared hopfion's lines of force, a frozen tetrad (2026-11-16)
 
 Modules `mtft.gravity.fields`, `knotted`, `hopfion`, `tetrad`; tests `tests/test_gravity_knotted.py`, `test_gravity_hopfion.py`,
-`test_gravity_tetrad.py` (22 tests, 11 s). Ported from the Modular Plane lab's records MP09 and MP21 to MP23 (10 and 14 November 2026),
+`test_gravity_tetrad.py` (23 tests, 12 s). Ported from the Modular Plane lab's records MP09 and MP21 to MP23 (10 and 14 November 2026),
 which are kept under `studies/gravity_2026nov/lab/`. Status of the whole: **model**. Every field is a weak wave on flat space (Maxwell's
 equations; the linearised vacuum Einstein equations). Newton's constant is not derived anywhere in MTFT (the gravity map's N-G1), and
 nothing here bears on it. No link to X₀(143) is claimed.
@@ -103,6 +103,11 @@ Ricci tensor is zero. `exhibit(x)` checks this at an event with exact derivative
 | double precision, 60 events | 1.5e-15 | 1.1e-15 | 1.3e-15 | 2.0e-15 |
 | 40 digits, 8 events | below 2e-40 | | | |
 | Gaussian rationals, 10 rational events | exactly 0 | exactly 0 | exactly 0 | exactly 0 |
+
+`certificate()` turns the last row into a statement about every event. Each of the 114 differences is a polynomial of total degree at
+most 22 over a denominator with no real zero. By the Schwartz–Zippel lemma, exact zeros at ten events whose coordinates are drawn
+from 4001 values each leave a chance below 3·10⁻²¹ that an identity which is not true has passed. That is a randomized certificate
+(CERT), not a symbolic proof.
 
 The helicity 3-form of a frame is e_a ∧ de^a; its part of second order, B_a ∧ dB^a, lives on the label sphere for this frame, so it does not
 change in time:

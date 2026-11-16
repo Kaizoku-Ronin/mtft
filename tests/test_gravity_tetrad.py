@@ -59,6 +59,19 @@ def test_the_same_at_forty_digits_and_over_the_rationals():
     assert a * b / b == a and (a - a) == 0 and 1 / (1 / a) == a and (a * a.conjugate()).imag == 0 and a + 1 - 1 == a
 
 
+def test_the_certificate_for_every_event():
+    """Exact zeros at ten random rational events, and what they prove: a false identity would pass with chance below 3e-21."""
+    cert = TE.certificate()
+    assert cert["holds"] is True and cert["points"] == 10 and cert["values_per_coordinate"] == 4001 and cert["differences"] == 16 + 9 + 9 + 16 + 64
+    assert cert["degree_bound"] == 22 and cert["false_pass_below"] == pytest.approx(114 * (22 / 4001) ** 10) and cert["false_pass_below"] < 3e-21
+    # a control in the same exact arithmetic: the other sign of the magnetic part is not zero
+    x = (Fr(3, 10), Fr(-7, 20), Fr(11, 25), Fr(1, 2))
+    _, _, d2B, s = TE._parts(x, "exact")
+    R, W = TE._riemann(d2B), TE._fields(s)[1]
+    Bm = sum(e * R[0][1][k + 1][m + 1] for (j, k, m), e in TE._EPS3.items() if j == 1) / 2
+    assert Bm + W[0][1].imag == 0 and Bm - W[0][1].imag != 0
+
+
 def test_the_field_strength_is_the_light_two_form_times_a_weight():
     for x in _events(20, 3):
         F = TE.field_strength(x)

@@ -27,7 +27,8 @@ a slip of algebra.
 
 Derivatives here are exact: every quantity is a rational function of (t, x, y, z), carried with its first and
 second derivatives (``Jet``).  ``exhibit`` runs in double precision, at any number of digits (mpmath), or over the
-Gaussian rationals, where the differences are exactly zero.
+Gaussian rationals, where the differences are exactly zero.  ``certificate`` turns exact zeros at random rational
+events into a statement about every event, with a stated chance of error (Schwartz–Zippel).
 """
 from __future__ import annotations
 
@@ -40,6 +41,7 @@ import numpy as np
 H_EM = math.pi ** 2
 H_G = 2 * math.pi ** 2 / 3
 ETA = (-1, 1, 1, 1)
+DEGREE_BOUND = 22                                    # of the numerators of the differences that ``exhibit`` tests (see ``certificate``)
 _EPS3 = {(0, 1, 2): 1, (1, 2, 0): 1, (2, 0, 1): 1, (0, 2, 1): -1, (2, 1, 0): -1, (1, 0, 2): -1}
 
 
@@ -240,6 +242,28 @@ def exhibit(x, scalar: str = "float") -> dict:
         return max(abs(v) for v in vals)
     sF, sW, sR = big([v for a in F for b in a for v in b]), big([abs(v) for row in W for v in row]), big([v for a in R for b in a for c in b for v in c])
     return {"frozen": float(big(froz) / sF), "E": float(big(dE) / sW), "B": float(big(dBm) / sW), "ricci": float(big(ric) / sW), "Rk": float(big(Rk) / sR)}
+
+
+def certificate(points: int = 10, grid: int = 2000, seed: int = 143) -> dict:
+    """A randomized certificate that the identities of ``exhibit`` hold at every event, not only where they were tried.
+
+    Each of the 114 differences (i_k 𝓕: 16; E − Re W and B + Im W: 9 each; Ricci: 16; R·k: 64) is a polynomial of total
+    degree at most ``DEGREE_BOUND`` in (t, x, y, z) over a denominator that has no real zero.  The count: B_μν = Re(N/d⁴)
+    with deg N ≤ 4; each derivative raises the numerator's degree by one and the power of d by one; a real part of
+    N/d^k has a numerator of degree deg N + 2k; W's real and imaginary parts have degree 14 over |d|¹⁰; and the flow k
+    brings a numerator and a denominator of degree 4.  That gives 19 for i_k 𝓕, 18 for the curvature and 22 for R·k.
+
+    By the Schwartz–Zippel lemma a non-zero polynomial of degree D vanishes at a point whose coordinates are drawn
+    independently and uniformly from a set of S values with probability at most D/S.  Here every coordinate is drawn
+    from the 2·grid + 1 values k/1000, |k| ≤ grid, and the differences are evaluated exactly over the Gaussian
+    rationals.  ``false_pass_below`` is the bound, over all 114 differences, on the chance that an identity which is not
+    true passes at all the points.  The points come from a seeded generator; the bound is the lemma's, for a uniform draw."""
+    import random
+    rng = random.Random(seed)
+    values = 2 * grid + 1
+    holds = all(exhibit(tuple(Fraction(rng.randint(-grid, grid), 1000) for _ in range(4)), "exact")["exact"] for _ in range(points))
+    return {"holds": holds, "points": points, "values_per_coordinate": values, "degree_bound": DEGREE_BOUND, "differences": 114,
+            "false_pass_below": 114 * (DEGREE_BOUND / values) ** points}
 
 
 def potential(x) -> np.ndarray:

@@ -203,9 +203,11 @@ the gravity map is the next wave's work.
   W − 1 (to 10⁻⁹ against the lab's file), the two closed lines. In space, on the field itself: I₂ is kept to 10⁻¹³ of its range over 100
   circuits; the closed lines are linked −1 and +1; the winding measured along an orbit equals the integrals to 10⁻¹⁵.
 - `tetrad`: B_μ = Re[(i a² (∂_μ b) dγ − b² (∂_μ a) dβ)/d²]. `exhibit` shows it frozen into the null flow with curvature equal to the squared
-  hopfion and zero Ricci tensor: to 2·10⁻¹⁵ in double precision, to 10⁻⁴⁰ at 40 digits, and exactly over the Gaussian rationals. The
-  helicities (2/3)π² and π², on the label sphere and on two slices of space.
+  hopfion and zero Ricci tensor: to 2·10⁻¹⁵ in double precision, to 10⁻⁴⁰ at 40 digits, and exactly over the Gaussian rationals.
+  `certificate` makes the exact zeros a statement about every event: the differences are polynomials of degree at most 22, so ten
+  random rational events leave a chance below 3·10⁻²¹ of a false pass (Schwartz–Zippel). The helicities (2/3)π² and π², on the label
+  sphere and on two slices of space.
 - Kept: every recorded miss of the four records (report, section 5). Open: T-G3 not attempted; H-G7 not tested.
 - Found in the records during the build: MP09's "positive factor" is negative; MP23's file has the sphere's helicities with a minus
   sign, from the order of its coordinates.
-- Provenance: `studies/gravity_2026nov/`. Tests: `test_gravity_knotted.py` (10), `test_gravity_hopfion.py` (7), `test_gravity_tetrad.py` (5).
+- Provenance: `studies/gravity_2026nov/`. Tests: `test_gravity_knotted.py` (10), `test_gravity_hopfion.py` (7), `test_gravity_tetrad.py` (6).
