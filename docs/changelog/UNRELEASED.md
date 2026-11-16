@@ -47,7 +47,8 @@ to the top-level namespace. Report: `docs/SM/MA01_MAASS_SPECTRUM.md`. It makes n
 - `mtft.maass.spectrum`: the frozen table. 41 cusp forms below R = 2.0 (even 4, 4, 4, 7; odd 6, 6, 5, 5 by Atkin–Lehner sector) and 42
   forms of the η-twist below R = 1.8, each with 400 coefficients and SHA-1 provenance. The first eigenvalue is λ₁ = ¼ + 0.3738518157²
   = 0.3897652 (odd, signs (−,−)). Every eigenvalue was found again by the package's solver when the table was built, within 5 × 10⁻¹² of
-  the lab's. `evaluate` gives a form's value anywhere in the upper half-plane; `rederive` repeats the solver for one form.
+  the lab's. `evaluate` gives a form's value anywhere in the upper half-plane (a grid of it is a picture); `rederive` repeats the solver for one
+  form; `tones` and `sonify` hand the table to `mtft.music` as pitches, root·√(λ/λ₁).
 - `mtft.maass.scattering`: Φ(s) = φ(s) M₁₁(s) ⊗ M₁₃(s) and the Eisenstein series of the four cusps (mpmath). Φ(s)Φ(1 − s) = I,
   unitarity on Re s = ½, residue 1/(56π) at s = 1, Φ(½) = −I: every Eisenstein series vanishes at the bottom of the continuum.
 - `mtft.maass.ford`: the Ford domain of Γ₀*(N) (17 tops, 24 vertices and 16 distinct heights at N = 143; lowest vertex at height
@@ -66,6 +67,6 @@ to the top-level namespace. Report: `docs/SM/MA01_MAASS_SPECTRUM.md`. It makes n
   to 23.5, megabytes of weights that are not shipped. The class numbers are PARI's (conditional on GRH in general); the sample and the
   level-1 cancellation are the checks on them.
 - Provenance: `studies/maass_2026nov/` (the two build scripts and the lab's scripts and number files). Tests: `test_maass_solver.py`
-  (10), `test_maass_spectrum.py` (9), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_maass_trace.py` (8),
+  (10), `test_maass_spectrum.py` (10), `test_maass_scattering.py` (5), `test_maass_ford.py` (5), `test_maass_trace.py` (8),
   `test_ma01_maass_rung.py` (3).
 

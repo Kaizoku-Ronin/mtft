@@ -142,7 +142,7 @@ reviews to detect modules missing from this index.
 | [`mtft.maass.hejhal`](../src/mtft/maass/hejhal.py) | mtft.maass.hejhal — Hejhal's method for Maass cusp forms on Γ₀*(N) (CERTIFIED numerics). | `Setup`, `sample_count`, `setup`, `frequencies` (+9 more in source) |
 | [`mtft.maass.kbessel`](../src/mtft/maass/kbessel.py) | mtft.maass.kbessel — the Bessel function K_{iR}(x) of imaginary order (CERTIFIED against mpmath). | `kir`, `kir_mp`, `k_bessel` |
 | [`mtft.maass.scattering`](../src/mtft/maass/scattering.py) | mtft.maass.scattering — the scattering matrix and Eisenstein series of Γ₀(N), N squarefree (EXACT formulas; MA-01, 2026-11-15). | `xi`, `phi`, `local_matrix`, `cusps` (+3 more in source) |
-| [`mtft.maass.spectrum`](../src/mtft/maass/spectrum.py) | mtft.maass.spectrum — the frozen Maass spectrum of Γ₀(143) (CERTIFIED; data with SHA-1 provenance; MA-01, 2026-11-15). | `metadata`, `verify_provenance`, `forms`, `form` (+6 more in source) |
+| [`mtft.maass.spectrum`](../src/mtft/maass/spectrum.py) | mtft.maass.spectrum — the frozen Maass spectrum of Γ₀(143) (CERTIFIED; data with SHA-1 provenance; MA-01, 2026-11-15). | `metadata`, `verify_provenance`, `forms`, `form` (+8 more in source) |
 | [`mtft.maass.trace`](../src/mtft/maass/trace.py) | mtft.maass.trace — the Selberg trace formula on X₀(N), sector by sector, and what it certifies (MA-01, 2026-11-15). | `TestFunction`, `digamma`, `kronecker_table`, `kronecker` (+21 more in source) |
 
 ## matter

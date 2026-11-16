@@ -16,6 +16,9 @@ signs (−, −).  Nothing lies in (0, ¼): Selberg's conjecture is a theorem at
 
 Form ids read ``u.o.mm.1``: untwisted or twisted (u, t); even or odd (e, o); the signs of ε₁₁ and
 ε₁₃ (p, m); the place in its sector by increasing R.
+
+Pictures and sound.  ``evaluate(f, X[None, :], Y[:, None])`` fills a grid for an image of a form
+on the half-plane; ``sonify`` writes the table's pitches to a WAV file through ``mtft.music``.
 """
 from __future__ import annotations
 
@@ -168,3 +171,21 @@ def rederive(f, half_width: float = 1e-6) -> dict:
     r["difference"] = r["R"] - f["R"]
     r["id"] = f["id"]
     return r
+
+
+def tones(root: float = 143.0, twist: bool = False, r_max: float | None = None) -> list:
+    """The table as pitches: a drum's notes go as √λ, so form j sounds at root·√(λ_j/λ₁) hertz.
+
+    Returns dictionaries with ``id``, ``R``, ``lambda`` and ``frequency``, by increasing pitch.  The
+    two oldforms that share an eigenvalue share a pitch.  A way of listening, not a claim.
+    """
+    fs = forms(twist=twist, r_max=r_max)
+    lam1 = fs[0]["lambda"]
+    return [{"id": f["id"], "R": f["R"], "lambda": f["lambda"], "frequency": root * math.sqrt(f["lambda"] / lam1)} for f in fs]
+
+
+def sonify(filepath: str, root: float = 143.0, twist: bool = False, r_max: float | None = None, note_duration: float = 0.35) -> str:
+    """Write the table's pitches, up and back down, to a WAV file with ``mtft.music``'s own voice."""
+    from mtft.music import ModularScale
+    return ModularScale().render_scale(str(filepath), [x["frequency"] for x in tones(root, twist, r_max)], note_duration)
+

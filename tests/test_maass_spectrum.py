@@ -91,3 +91,19 @@ def test_series_below_the_domain_agrees_with_the_value_carried_into_it():
 def test_rederive_one_form_at_call_time():
     r = SP.rederive("u.e.pp.1")
     assert abs(r["difference"]) < 1e-10 and r["agreement"] < 1e-9 and r["hecke"] < 1e-9 and r["id"] == "u.e.pp.1"
+
+
+def test_tones_and_the_wav_file(tmp_path):
+    import wave
+    ts = SP.tones(root=143.0)
+    assert len(ts) == 41 and ts[0]["id"] == "u.o.mm.1" and ts[0]["frequency"] == 143.0
+    assert all(a["frequency"] <= b["frequency"] for a, b in zip(ts, ts[1:]))
+    assert abs(ts[1]["frequency"] / 143.0 - (0.4480075216756903 / 0.38976518010218675) ** 0.5) < 1e-9          # sqrt(lambda_2 / lambda_1)
+    twins = [x for x in ts if abs(x["R"] - 0.9708154170) < 1e-6]
+    assert len(twins) == 2 and abs(twins[0]["frequency"] - twins[1]["frequency"]) < 1e-6                         # the double eigenvalue: one pitch
+    assert len(SP.tones(twist=True)) == 42 and len(SP.tones(r_max=1.0)) < 41
+    out = SP.sonify(tmp_path / "curve.wav", r_max=1.0, note_duration=0.1)
+    with wave.open(out) as w:
+        n = len(SP.tones(r_max=1.0))
+        assert w.getframerate() == 44100 and w.getnframes() == int((2 * n - 1) * 0.1 * 44100)
+
