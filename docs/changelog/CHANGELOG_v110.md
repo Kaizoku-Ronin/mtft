@@ -256,18 +256,35 @@ The experiment GB-01 left sealed. Report: `docs/SM/GB02_E5_SEALED_FORECASTS.md`.
   correction changes values that v1.0.0 returned (CC-71: the Tano metric of H, N and O, which was doubled), and one adds a caveat
   (CC-72: the Burning Ship fold exponents). No earlier entry of the matter ledger changes in any field; the ledger gains MA-1 to MA-4,
   LN-1 to LN-8 and GB-1 to GB-7, and the puzzle map two negatives (N23, N24).
-- Checks on the candidate beyond the suite on Python 3.13: the pull-request workflow's test list and this release's test files on
-  Python 3.9, where two tests of `mtft.plane` used `zip(strict=True)`, which 3.9 lacks (fixed; the package's own code was not affected);
-  the four new subpackages at the lowest declared versions (numpy 1.22.0, sympy 1.10, mpmath 1.3.0) and without scipy; the slow tests,
-  which the publish workflow runs; the suite from the unpacked sdist, where one older test failed: the README's two links into
-  `viz/sphereland`, a folder the sdist does not carry and v1.0.0's did not either. `test_current_navigation_links_resolve` now excuses
-  those two links in an unpacked sdist and nowhere else; what the sdist carries is unchanged.
-- Found by those checks, older than this release and not changed by it: `mtft.surface` and three modules of `mtft.matter`
-  (`gauge_couplings`, `neutrino_gate`, `two_scales`) do not import without scipy, which is declared as an optional extra, and 35 test
-  modules cannot be collected without it (34 older ones and this release's `test_ma01_maass_rung.py`, which uses `mtft.surface`). The
-  publish workflow installs scipy for its tests. And on Python 3.9 at the lowest declared versions (numpy 1.22.0, scipy 1.9.0,
-  sympy 1.10) 29 tests in 16 older test files fail, none of them this release's: data folders read through
-  `importlib.resources.files`, which Python 3.9 cannot do for a folder without an `__init__.py` (14 tests); `numpy.trapezoid`, which
-  numpy 2.0 introduced, in `mtft.weil`, `mtft.matter.special_points` and `mtft.matter.vacuum_energy` (5); a study script whose
-  f-string needs Python 3.12 (6); four numerical comparisons. `requires-python` and the declared floors are left as they were, for a
-  decision; this release's own code and tests pass there.
+- Everything the package needs is declared (decided by Roger Tano on 16 November). Up to v1.0.0 scipy was imported at module
+  level by `mtft.surface` and three modules of `mtft.matter` (`gauge_couplings`, `neutrino_gate`, `two_scales`) but declared only
+  in the extra `full`, so a plain install could not import them. scipy is now a dependency, and the floors are the oldest versions
+  that provide what the code calls: `numpy>=2.0` (`numpy.trapezoid`, called by `mtft.weil`, `mtft.matter.special_points` and
+  `mtft.matter.vacuum_energy`), `scipy>=1.13` (the first built for numpy 2), `sympy>=1.10` and `mpmath>=1.3` as before. The extra
+  `full` is now Matplotlib alone (`>=3.9`), for the drawings `mtft.viz` makes when asked. `tests/test_dependencies.py` reads every
+  import in `src/mtft` and fails on one that is neither the standard library, the package, a declared dependency, nor an optional
+  library imported only inside a function; run against v1.0.0's `pyproject.toml` it names the module-level scipy imports. The publish
+  workflow now installs only the package and pytest, so a release proves the declared set suffices.
+- Repairs found by running the whole suite on every supported Python and at the floors. In older code:
+  `mtft.surface.frozen` read its data through a folder without an `__init__.py`, which Python 3.9 cannot open as a resource root;
+  `studies/du03_dispersion.py` had an f-string whose replacement field ran over several lines, which needs Python 3.12 (so 3.9, 3.10
+  and 3.11 failed; output unchanged); with sympy before 1.14 the abelianisation of SL(2,ℤ) in `mtft.matter.forces.modular_clock`
+  came out as ℤ/−12 (invariant factors are defined up to sign, and the function now takes absolute values, as
+  `mtft.surface.arithspin` already did, and so do `mtft.research.charge_lattices.smith_remnant` and
+  `mtft.research.tensor_gs.flux_transgression`); with sympy before 1.13 `mtft.surface.crt_dessin.genus_squarefree` gave the genus
+  of X₀(13) as −1.1·10⁻¹⁶, because `legendre_symbol` returned a Python int and a quotient became a float (now exact). With current
+  libraries none of these changes a value. In this release's tests: two tests of `mtft.plane` used `zip(strict=True)`, which
+  Python 3.9 lacks.
+- Checks: in clean environments the whole fast suite runs without a failure on Python 3.9 at the declared floors (numpy 2.0.0, scipy
+  1.13.0, sympy 1.10, mpmath 1.3.0) and with current libraries on Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14, skipping only the six tests
+  that need PARI/GP or cypari2, which are installed separately; 40 of the 41 slow tests, which the publish workflow runs, pass and one
+  skips; and the suite run from the unpacked sdist, in a clean environment holding only the package's declared dependencies and pytest,
+  gives the checkout's result. The classifiers name Python 3.13 and 3.14.
+- The README shows pictures of Sphereland's instrument 22, the modular flip (the boundary torus and its two fillings, and which
+  filling wins over the half-plane: the Farey tiling, with the Fricke point of X₀(143) at i/√143), and of instruments 10, 24 and
+  18. They are rendered from the page itself by headless Chrome, with the page's own fonts, by `viz/sphereland/figs/render_figs.py`;
+  `PROVENANCE.txt` beside them gives the page's hash, the browser, the fonts and each picture's hash. Like the page, they stay in
+  the repository, and the README shows them through their GitHub addresses, so PyPI shows them too. In an unpacked sdist, which
+  does not carry `viz/sphereland` (nor did v1.0.0's), `test_current_navigation_links_resolve` excuses the README's two links into
+  it, and nowhere else. Tests: `test_dependencies.py` (3), and a test that every picture the README shows is a file of the
+  repository and the one its provenance describes.
