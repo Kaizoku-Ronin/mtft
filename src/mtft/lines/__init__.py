@@ -17,6 +17,7 @@ Layers, with their claim classes:
   crossings    EXACT      every crossing of two closed geodesics on the curve; Lk(K_γ, K_δ) = −I(γ, δ)
   lorenz       EXACT      Ghys's Lorenz template: words and linking numbers at level 1; the transfer
   table        frozen     the lab's record, with SHA-1 provenance, for the gates to compare with
+  genus        EXACT      genus characters; the trace-4 law Ψ(A_p) = χ₋₃(p)Ψ(A) and the systole's windings (KN-1)
 
 Provenance: the Modular Plane lab, records MP12 to MP14 (12 November 2026); the lab's scripts and
 number files are preserved under ``studies/lines_2026nov/``.  What this is and is not: mathematics
@@ -25,6 +26,6 @@ thirty integers is a charge of a frozen field is not known.
 """
 from __future__ import annotations
 
-from . import closed, crossings, cutting, darts, involutions, lorenz, periods, rademacher, table
+from . import closed, crossings, cutting, darts, genus, involutions, lorenz, periods, rademacher, table
 
-__all__ = ["closed", "crossings", "cutting", "darts", "involutions", "lorenz", "periods", "rademacher", "table"]
+__all__ = ["closed", "crossings", "cutting", "darts", "genus", "involutions", "lorenz", "periods", "rademacher", "table"]
