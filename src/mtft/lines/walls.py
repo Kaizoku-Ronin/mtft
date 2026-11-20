@@ -156,10 +156,11 @@ def shortest_by_class(lmax: float, N: int = 143) -> tuple:
 def wall_ball(radius: float, N: int = 143) -> dict:
     """{Y: (N(Y), the lengths of the geodesics of a least wall)} for every class with N(Y) ≤ radius (Y = 0 included).
 
-    N(Y) is exact.  The geodesics are one least wall.  Lengths over one level-1 class are commensurable (ℓ L_A), so a class
-    can have least walls with different numbers of geodesics: within 16, 64 classes do, all through such sums (for
-    example 5L = 2L + 3L over the systole's level-1 class, L = 2 arccosh 2).  Which one is returned depends on the order
-    of the search."""
+    N(Y) is exact.  The geodesics are one least wall.  Lengths can be commensurable: level-1 classes whose units are
+    powers of one unit have lengths in ratio (for 2 + √3, the systole's, L = 2 arccosh 2 at traces 4, 14, 52, 194,
+    724 = 2 T_k(2) give L, 2L, 3L, 4L, 5L), and lifts add ℓ L_A.  So a class can have least walls with different numbers
+    of geodesics.  Within 16, 64 classes do, all through multiples of L: 5L = 2L + 3L, 6L = 2L + 4L, L + 5L = L + 2L + 3L.
+    Which one is returned depends on the order of the search."""
     gens = shortest_by_class(radius, N)
     best = {0: (0.0, -1, 0)}
     heap = [(0.0, 0)]

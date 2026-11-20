@@ -30,10 +30,15 @@ Status: EXACT within the radius. Gates and routes:
   takes 63 s.
 
 How many geodesics a least wall uses is not an invariant. Within 16, 64 classes have least walls of two sizes, equal in length
-to 10⁻⁹: 24 classes have walls of one or two geodesics, and 40 have walls of two or three. Every such tie is a sum of
-commensurable lengths, for example 5L = 2L + 3L over lifts of the systole's level-1 class (L = 2 arccosh 2). By number of
-geodesics, the package's walls are 60,218 / 47,619 / 12,288 / 691 / 10 and FF-20's are 60,202 / 47,595 / 12,328 / 691 / 10. The
-differences (+16, +24, −40) are what these ties allow. The distance is the invariant.
+to 10⁻⁹: 24 classes have walls of one or two geodesics, and 40 have walls of two or three. Every piece of every tie is a
+multiple of the systole length L = 2 arccosh 2: 5L = 2L + 3L (16 classes), 6L = 2L + 4L (8) and L + 5L = L + 2L + 3L (40).
+Geodesics of length kL lie over level-1 classes of trace 2T_k(2) = 4, 14, 52, 194, 724, whose units are powers of 2 + √3. Of
+the 368 geodesics of length 5L, 8 are fifth lifts of the systole's class and 360 lie over primitive classes of trace 724. By
+number of geodesics, the package's walls are 60,218 / 47,619 / 12,288 / 691 / 10 and FF-20's are 60,202 / 47,595 / 12,328 /
+691 / 10. The differences (+16, +24, −40) are what these ties allow. The distance is the invariant.
 
 What this is not: the twist energy. The depth of each band therefore comes from the record (FF-20: each systole twisted adds about
 0.23 of the minimum's depth). The wall between the two energy minima stays bracketed in [16, 19.12] (FF-20).
+
+Correction (20 November 2026, before any push): the first version of this note said the tied geodesics were lifts of the
+systole's level-1 class. Only 8 of them are; the rest lie over their own level-1 classes in orders of ℚ(√3).
