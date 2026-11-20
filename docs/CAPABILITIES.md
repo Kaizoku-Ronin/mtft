@@ -159,6 +159,7 @@ reviews to detect modules missing from this index.
 | [`mtft.lines.periods`](../src/mtft/lines/periods.py) | mtft.lines.periods — the 26 periods of a class by Hecke block, by two routes, and the lattice of 143a1 (LN-01, 2026-11-16). | `coordinates`, `coordinates_of`, `flat`, `thirty` (+14 more in source) |
 | [`mtft.lines.rademacher`](../src/mtft/lines/rademacher.py) | mtft.lines.rademacher — Dedekind sums, Rademacher's Ψ and the windings round the cusps (EXACT; LN-01, 2026-11-16). | `sign`, `dedekind`, `dedekind_by_definition`, `Phi` (+5 more in source) |
 | [`mtft.lines.table`](../src/mtft/lines/table.py) | mtft.lines.table — the lab's frozen record of the closed lines of Γ₀(143), with SHA-1 provenance (LN-01, 2026-11-16). | `verify_provenance`, `record`, `metadata`, `lines` (+3 more in source) |
+| [`mtft.lines.twist_energy`](../src/mtft/lines/twist_energy.py) | mtft.lines.twist_energy — the twist landscape: the relative heat trace of a twist, and the energy and pin it gives. | `classes`, `per_trace_check`, `twisted`, `heat_terms` (+18 more in source) |
 | [`mtft.lines.twists`](../src/mtft/lines/twists.py) | mtft.lines.twists — the twists of X₀(143) mod 2: the records' encoding, the cup form, 143a1's pullbacks, the flux charge. | `parity`, `apply_rows`, `graph`, `basis` (+24 more in source) |
 | [`mtft.lines.walls`](../src/mtft/lines/walls.py) | mtft.lines.walls — walls between twists: the wall distance, the systole band and one-way bottleneck costs. | `level1_classes`, `lifts`, `primitive_classes`, `shortest_by_class` (+11 more in source) |
 

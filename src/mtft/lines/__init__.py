@@ -24,6 +24,8 @@ Layers, with their claim classes:
                           the homology lattice and the flux-free lattice ker φ_* (rank 24, det 16) (IF-01)
   walls        EXACT      the wall distance between twists, d_W = least total length of geodesics in a class mod 2,
                           exact within its radius; the systole band; one-way bottleneck costs (WL-01)
+  twist_energy EXACT*     the relative heat trace D_ζ of a twist, and the energy and pins it gives, for one twist or all
+                          2²⁶ by the Walsh–Hadamard transform; the depth bands; the hold (TE-01; *within VE-01's model)
 
 Provenance: the Modular Plane lab, records MP12 to MP14 (12 November 2026); the lab's scripts and
 number files are preserved under ``studies/lines_2026nov/``.  What this is and is not: mathematics
@@ -44,9 +46,10 @@ from . import (
     periods,
     rademacher,
     table,
+    twist_energy,
     twists,
     walls,
 )
 
 __all__ = ["closed", "crossings", "cutting", "darts", "genus", "intersection", "involutions", "lorenz", "periods", "rademacher", "table",
-           "twists", "walls"]
+           "twist_energy", "twists", "walls"]

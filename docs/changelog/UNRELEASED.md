@@ -25,3 +25,13 @@ Everything after v1.0.0 shipped in v1.1.0 ([release notes](CHANGELOG_v110.md)). 
   and FF-20; it agrees with FF-20 class by class on all 120,827 classes within 16.
 - Ledger entries `docs/tools/ZT01_TWISTS.md`, `docs/tools/IF01_INTERSECTION.md` and `docs/tools/WL01_WALLS.md` (off the puzzle map);
   tests `test_zt01_twists.py`, `test_if01_intersection.py`, `test_wl01_walls.py`.
+
+## Wave 9 (2026-11-20): the twist landscape
+
+- `mtft.lines.twist_energy` (TE-01): the relative heat trace D_ζ of a twist from the Selberg side (a lower bound from the
+  geodesics up to length 14, and a central value with the tail); the per-class weights of the one-loop energy at the pattern
+  (FF-15, the w = 0 winding included) and of the twelve's pins (FF-14); the energy and pins of one twist by direct sums, and of
+  all 2²⁶ twists by the Walsh–Hadamard transform; the depth bands by the number of systoles twisted (FF-20); the twelve's
+  curvature eigenvalues and the hold of τ from a D curve. The classes are checked against `mtft.maass.trace`'s frozen weights
+  per trace. Not the glueball fit's `mtft.maass.glueballs.twist_energy` (GB-02).
+- Ledger entry `docs/tools/TE01_TWIST_ENERGY.md` (off the puzzle map); tests `test_te01_twist_energy.py`.
