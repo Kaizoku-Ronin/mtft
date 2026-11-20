@@ -153,11 +153,14 @@ reviews to detect modules missing from this index.
 | [`mtft.lines.cutting`](../src/mtft/lines/cutting.py) | mtft.lines.cutting — a closed geodesic of the modular surface cut along the fundamental domain, exactly (LN-01, 2026-11-16). | `pos`, `same`, `conj`, `mirror_matrix` (+8 more in source) |
 | [`mtft.lines.darts`](../src/mtft/lines/darts.py) | mtft.lines.darts — the darts of P¹(ℤ/N), their graph, and the class of a group element (EXACT; LN-01, 2026-11-16). | `mm`, `inv`, `neg`, `mpow` (+12 more in source) |
 | [`mtft.lines.genus`](../src/mtft/lines/genus.py) | mtft.lines.genus — genus characters, and why the systole of X₀(143) winds round one cusp only (EXACT; KN-1, 2026-11-19). | `jacobi`, `kronecker`, `is_fundamental`, `prime_discriminants` (+6 more in source) |
+| [`mtft.lines.intersection`](../src/mtft/lines/intersection.py) | mtft.lines.intersection — the intersection form of X₀(143) on its Hecke blocks, deg φ = 4 and the flux-free lattice. | `block_coordinates`, `geodesics`, `intersection_form`, `modular_degree` (+4 more in source) |
 | [`mtft.lines.involutions`](../src/mtft/lines/involutions.py) | mtft.lines.involutions — the Atkin–Lehner involutions and the mirror on the classes of Γ₀(143) (EXACT; LN-01, 2026-11-16). | `al_conjugate`, `psi_shift`, `mirror_conjugate`, `al_matrix` (+9 more in source) |
 | [`mtft.lines.lorenz`](../src/mtft/lines/lorenz.py) | mtft.lines.lorenz — modular knots as Lorenz knots: words and linking numbers on the template (EXACT; LN-01, 2026-11-16). | `positive_conjugate`, `canon`, `lorenz_word`, `word_matrix` (+4 more in source) |
 | [`mtft.lines.periods`](../src/mtft/lines/periods.py) | mtft.lines.periods — the 26 periods of a class by Hecke block, by two routes, and the lattice of 143a1 (LN-01, 2026-11-16). | `coordinates`, `coordinates_of`, `flat`, `thirty` (+14 more in source) |
 | [`mtft.lines.rademacher`](../src/mtft/lines/rademacher.py) | mtft.lines.rademacher — Dedekind sums, Rademacher's Ψ and the windings round the cusps (EXACT; LN-01, 2026-11-16). | `sign`, `dedekind`, `dedekind_by_definition`, `Phi` (+5 more in source) |
 | [`mtft.lines.table`](../src/mtft/lines/table.py) | mtft.lines.table — the lab's frozen record of the closed lines of Γ₀(143), with SHA-1 provenance (LN-01, 2026-11-16). | `verify_provenance`, `record`, `metadata`, `lines` (+3 more in source) |
+| [`mtft.lines.twists`](../src/mtft/lines/twists.py) | mtft.lines.twists — the twists of X₀(143) mod 2: the records' encoding, the cup form, 143a1's pullbacks, the flux charge. | `parity`, `apply_rows`, `graph`, `basis` (+24 more in source) |
+| [`mtft.lines.walls`](../src/mtft/lines/walls.py) | mtft.lines.walls — walls between twists: the wall distance, the systole band and one-way bottleneck costs. | `level1_classes`, `lifts`, `primitive_classes`, `shortest_by_class` (+11 more in source) |
 
 ## maass
 

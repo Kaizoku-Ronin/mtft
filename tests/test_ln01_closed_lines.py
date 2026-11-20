@@ -38,7 +38,8 @@ def test_the_frozen_record_and_the_front_page():
     assert TB.verify_provenance() == {"lines_143.json": True}
     meta = TB.metadata()
     assert meta["level"] == 143 and "MP12" in meta["source"] and "MP14" in meta["source"]
-    assert set(LN.__all__) == {"closed", "crossings", "cutting", "darts", "genus", "involutions", "lorenz", "periods", "rademacher", "table"}            # genus: wave 7 (KN-01)
+    assert set(LN.__all__) == {"closed", "crossings", "cutting", "darts", "genus", "involutions", "lorenz", "periods", "rademacher", "table",
+                               "twists", "intersection", "walls"}            # genus: wave 7 (KN-01); twists, intersection, walls: wave 8
     assert set(TB.motions()) == set(C.MOTIONS) | set(C.MORE_MOTIONS)
     assert all(TB.motions()[k] == A for k, A in {**C.MOTIONS, **C.MORE_MOTIONS}.items())
     rec = TB.record()

@@ -18,6 +18,12 @@ Layers, with their claim classes:
   lorenz       EXACT      Ghys's Lorenz template: words and linking numbers at level 1; the transfer
   table        frozen     the lab's record, with SHA-1 provenance, for the gates to compare with
   genus        EXACT      genus characters; the trace-4 law Ψ(A_p) = χ₋₃(p)Ψ(A) and the systole's windings (KN-1)
+  twists       EXACT      twists ζ ∈ H¹(X₀(N), ℤ/2) in the records' 26 bits; the cup form by route A; 143a1's pullbacks,
+                          the transfer N(ζ) = φ*φ_!ζ and the flux charge q (ZT-01)
+  intersection EXACT      the intersection form on the 26 Hecke-block coordinates from signed crossings; deg φ = 4;
+                          the homology lattice and the flux-free lattice ker φ_* (rank 24, det 16) (IF-01)
+  walls        EXACT      the wall distance between twists, d_W = least total length of geodesics in a class mod 2,
+                          exact within its radius; the systole band; one-way bottleneck costs (WL-01)
 
 Provenance: the Modular Plane lab, records MP12 to MP14 (12 November 2026); the lab's scripts and
 number files are preserved under ``studies/lines_2026nov/``.  What this is and is not: mathematics
@@ -26,6 +32,21 @@ thirty integers is a charge of a frozen field is not known.
 """
 from __future__ import annotations
 
-from . import closed, crossings, cutting, darts, genus, involutions, lorenz, periods, rademacher, table
+from . import (
+    closed,
+    crossings,
+    cutting,
+    darts,
+    genus,
+    intersection,
+    involutions,
+    lorenz,
+    periods,
+    rademacher,
+    table,
+    twists,
+    walls,
+)
 
-__all__ = ["closed", "crossings", "cutting", "darts", "genus", "involutions", "lorenz", "periods", "rademacher", "table"]
+__all__ = ["closed", "crossings", "cutting", "darts", "genus", "intersection", "involutions", "lorenz", "periods", "rademacher", "table",
+           "twists", "walls"]
